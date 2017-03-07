@@ -32,3 +32,4 @@ Test/*
 *.exe
 *.out
 *.app
+/.DS_Store
