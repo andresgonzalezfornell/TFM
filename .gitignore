@@ -3,6 +3,11 @@ Debug/*
 Release/*
 Test/*
 
+# Eclipse
+src/.cproject
+src/.project
+src/.settings/language.settings.xml
+
 # Compiled Object files
 *.slo
 *.lo
