@@ -1,3 +1,8 @@
+# Folders
+Debug/*
+Release/*
+Test/*
+
 # Compiled Object files
 *.slo
 *.lo
