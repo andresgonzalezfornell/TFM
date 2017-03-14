@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]]
+  ['audioinfo',['AudioInfo',['../class_audio_info.html',1,'']]]
 ];

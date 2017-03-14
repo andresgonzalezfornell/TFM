@@ -689,7 +689,90 @@ qtlibraries.o: ../src/qtlibraries.cpp ../src/qtlibraries.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QtMultimedia \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qtmultimediaglobal.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qabstractvideobuffer.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qabstractvideofilter.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qabstractvideosurface.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudio.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiobuffer.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiodecoder.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiodecodercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiodeviceinfo.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudioencodersettingscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudioformat.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudioinput.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudioinputselectorcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiooutput.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiooutputselectorcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudioprobe.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiorecorder.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiorolecontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiosystem.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qaudiosystemplugin.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamera.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameracapturebufferformatcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameracapturedestinationcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameracontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraexposure.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraexposurecontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerafeedbackcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraflashcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerafocus.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerafocuscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraimagecapture.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraimagecapturecontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraimageprocessing.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraimageprocessingcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerainfo.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerainfocontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameralockscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraviewfindersettings.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcameraviewfindersettingscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qcamerazoomcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qimageencodercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaaudioprobecontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaavailabilitycontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediabindableinterface.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediacontainercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediacontent.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediacontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaencodersettings.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaenumdebug.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediagaplessplaybackcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmedianetworkaccesscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaobject.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplaylist.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediarecorder.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediarecordercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaresource.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaservice.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaserviceproviderplugin.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediastreamscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediatimerange.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediavideoprobecontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmetadatareadercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmetadatawritercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmultimedia.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qradiodata.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qradiodatacontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qradiotuner.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qradiotunercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qsound.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qsoundeffect.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qtmultimediadefs.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideodeviceselectorcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideoencodersettingscontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideoframe.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideoprobe.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideorenderercontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideosurfaceformat.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qvideowindowcontrol.h \
+		/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qtmultimediaversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qtlibraries.o ../src/qtlibraries.cpp
 
 ####### Install

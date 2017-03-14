@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['black',['black',['../_logger_8cpp.html#ac28df5fb2095879dde9f0798fea73623',1,'Logger.cpp']]],
-  ['blue',['blue',['../_logger_8cpp.html#a679c8f05bd397c3b2ad08274a1e5e752',1,'Logger.cpp']]],
-  ['bold',['bold',['../_logger_8cpp.html#a530f00c8dc2d1aaefe8a048b417e7290',1,'Logger.cpp']]]
+  ['pull_5fmode_5flabel',['PULL_MODE_LABEL',['../audioinput_8cpp.html#a6d8240d440dbe35584e73330a18105a9',1,'audioinput.cpp']]],
+  ['push_5fmode_5flabel',['PUSH_MODE_LABEL',['../audioinput_8cpp.html#a3f8db1f3365fd7cb8f5c95275abbfab2',1,'audioinput.cpp']]]
 ];

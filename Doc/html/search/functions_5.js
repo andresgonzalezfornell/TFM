@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7emainwindow',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7erectangle',['~Rectangle',['../classstd_1_1_rectangle.html#ae5adae6e1fe09a437ce24517e04df185',1,'std::Rectangle']]]
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;test.cpp']]],
+  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]]
 ];

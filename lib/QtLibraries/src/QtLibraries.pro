@@ -75,3 +75,13 @@ else:unix: LIBS += -L$$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/
 
 INCLUDEPATH += $$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/include
 DEPENDPATH += $$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/include
+
+# Framework - Qt Multimedia
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/lib/release/ -lQtMultimedia
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/lib/debug/ -lQtMultimedia
+else:mac: LIBS += -F$$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/lib/ -framework QtMultimedia
+else:unix: LIBS += -L$$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/lib/ -lQtMultimedia
+
+INCLUDEPATH += $$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/include
+DEPENDPATH += $$PWD/../../../../../../../../Applications/Qt/5.8/clang_64/include

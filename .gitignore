@@ -4,9 +4,15 @@ Release/*
 Test/*
 
 # Eclipse
+<<<<<<< Updated upstream
 .cproject
 .project
 .settings/language.settings.xml
+=======
+src/.cproject
+src/.project
+src/.settings/language.settings.xml
+>>>>>>> Stashed changes
 
 # Compiled Object files
 *.slo
@@ -37,4 +43,9 @@ Test/*
 *.exe
 *.out
 *.app
+<<<<<<< Updated upstream
 /.DS_Store
+=======
+/.DS_Store
+/Test/
+>>>>>>> Stashed changes

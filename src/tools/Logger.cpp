@@ -4,7 +4,7 @@
  * @brief	Functions to create log messages on console.
  */
 
-// Libraries
+// Class libraries
 #include "Logger.h"
 
 using namespace std;
@@ -76,6 +76,10 @@ void consolelog(string source, logtype type, string message) {
 	case progress:
 		type_name = "progress";
 		type_style = green;
+		break;
+	case interaction:
+		type_name = "user action";
+		type_style = magenta;
 		break;
 	default:
 		type_name = "general";

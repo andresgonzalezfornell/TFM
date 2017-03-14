@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;test.cpp']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]]
+  ['consolelog',['consolelog',['../_logger_8cpp.html#a3f85eaa9017d14a9e6322f0497f7866c',1,'consolelog(string source, logtype type, string message):&#160;Logger.cpp'],['../_logger_8h.html#a2e805d10f94345b63e9a6efde8985328',1,'consolelog(string, logtype, string):&#160;Logger.cpp']]],
+  ['createaudioinput',['createAudioInput',['../class_input_test.html#afb117faa5e806f6d906f30d7e97c2e8f',1,'InputTest']]]
 ];

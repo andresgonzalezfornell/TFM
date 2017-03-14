@@ -26,30 +26,30 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1488885633338</id>
+			<id>1488889714453</id>
 			<name></name>
-			<type>30</type>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-lib</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1488889714456</id>
+			<name></name>
+			<type>10</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-projectRelativePath-matches-false-false-interface</arguments>
 			</matcher>
 		</filter>
 		<filter>
-			<id>1488885633342</id>
+			<id>1488889714459</id>
 			<name></name>
-			<type>10</type>
+			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-projectRelativePath-matches-true-false-Release</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1488885633345</id>
-			<name></name>
-			<type>10</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-projectRelativePath-matches-true-false-Debug</arguments>
+				<arguments>1.0-projectRelativePath-matches-false-false-src</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

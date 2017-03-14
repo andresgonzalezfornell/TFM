@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['warning',['warning',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afa8de9aef05fc85e519a0cfce33573f492',1,'Logger.h']]],
-  ['white',['white',['../_logger_8cpp.html#a8d7b86cd064a2206e7859f9ee35de092',1,'Logger.cpp']]]
+  ['tab',['tab',['../_logger_8cpp.html#a3013405c202e8ad84b43779507f8a256',1,'Logger.cpp']]],
+  ['test_2ecpp',['test.cpp',['../test_8cpp.html',1,'']]],
+  ['togglemode',['toggleMode',['../class_input_test.html#a299335a3dc236f12d24296c49b064228',1,'InputTest']]],
+  ['togglesuspend',['toggleSuspend',['../class_input_test.html#ab9bcbda7cd28e75a3cc015c04692f302',1,'InputTest']]]
 ];

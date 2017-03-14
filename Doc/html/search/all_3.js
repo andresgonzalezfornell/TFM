@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green',['green',['../_logger_8cpp.html#ac7174a3942c3a9b337488d24da43ca0e',1,'Logger.cpp']]]
+  ['devicechanged',['deviceChanged',['../class_input_test.html#a25195e8ef673bf772da5e9a650244566',1,'InputTest']]]
 ];

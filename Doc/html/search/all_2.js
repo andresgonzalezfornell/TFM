@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['error',['error',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afad606e435413ea0944dd00d49e901e4ed',1,'Logger.h']]]
+  ['consolelog',['consolelog',['../_logger_8cpp.html#a3f85eaa9017d14a9e6322f0497f7866c',1,'consolelog(string source, logtype type, string message):&#160;Logger.cpp'],['../_logger_8h.html#a2e805d10f94345b63e9a6efde8985328',1,'consolelog(string, logtype, string):&#160;Logger.cpp']]],
+  ['createaudioinput',['createAudioInput',['../class_input_test.html#afb117faa5e806f6d906f30d7e97c2e8f',1,'InputTest']]],
+  ['cyan',['cyan',['../_logger_8cpp.html#a6d8a9829359497d79b411a7794651a24',1,'Logger.cpp']]]
 ];

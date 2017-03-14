@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['logger_2ecpp',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
-  ['logger_2eh',['Logger.h',['../_logger_8h.html',1,'']]],
-  ['logtype',['logtype',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3af',1,'Logger.h']]]
+  ['green',['green',['../_logger_8cpp.html#ac7174a3942c3a9b337488d24da43ca0e',1,'Logger.cpp']]]
 ];

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['magenta',['magenta',['../_logger_8cpp.html#ade1892ed779ed70f4a2d04b3dee3b867',1,'Logger.cpp']]],
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;test.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
-  ['mainwindow_2ecpp',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh',['mainwindow.h',['../mainwindow_8h.html',1,'']]]
+  ['info',['info',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4',1,'Logger.h']]],
+  ['initializeaudio',['initializeAudio',['../class_input_test.html#a2812288593fcbc464a440f65f3ee0800',1,'InputTest']]],
+  ['initializewindow',['initializeWindow',['../class_input_test.html#ac9bcdfa48ab5637ca2ebcbe9992c0848',1,'InputTest']]],
+  ['inputtest',['InputTest',['../class_input_test.html',1,'InputTest'],['../class_input_test.html#a3c1bfbc68268854b529a1c35f40a2020',1,'InputTest::InputTest()']]],
+  ['italic',['italic',['../_logger_8cpp.html#aec2a9c56cb3180a2f497cc2f41d972f2',1,'Logger.cpp']]]
 ];
