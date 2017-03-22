@@ -20,13 +20,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     ../tools/Logger.cpp \
     ../module/AudioObject.cpp \
-    input.cpp
+    ObjectsConfiguration.cpp \
+    Objects.cpp \
+    ObjectInput.cpp \
+    DeviceChannel.cpp \
+    DeviceLevel.cpp \
+    Device.cpp
 
 HEADERS  += mainwindow.h \
     ../tools/Logger.h \
     ../module/AudioObject.h \
     ../../lib/QtLibraries/src/qtlibraries.h \
-    input.h
+    objects.h \
+    device.h
 
-FORMS    += mainwindow.ui \
-    configuration.ui
+FORMS    += mainwindow.ui

@@ -2,24 +2,28 @@
 #define INPUT_H
 
 // Qt libraries
-#include <QAudioInput>
-#include <QByteArray>
-#include <QComboBox>
-#include <QMainWindow>
-#include <QObject>
-#include <QPixmap>
-#include <QPushButton>
-#include <QSlider>
-#include <QWidget>
+#include "QAudioInput"
+#include "QAudioDeviceInfo"
+#include "QByteArray"
+#include "QComboBox"
+#include "QMainWindow"
+#include "QObject"
+#include "QPixmap"
+#include "QPushButton"
+#include "QSlider"
+#include "QWidget"
+#include "QPainter"
+#include "QVBoxLayout"
+#include "qendian.h"
 // Classes and local files
 #include "../tools/Logger.h"
 
-class InputChannel  : public QIODevice
+class DeviceChannel  : public QIODevice
 {
     Q_OBJECT
 public:
-    InputChannel(const QAudioFormat &format, QObject *parent);
-    ~InputChannel();
+    DeviceChannel(const QAudioFormat &format, QObject *parent);
+    ~DeviceChannel();
     void start();
     void stop();
     qreal getLevel();
@@ -30,14 +34,15 @@ private:
     quint32 amplitude;
     qreal level; // 0.0 <= m_level <= 1.0
 signals:
-    void update();
+    void newLevel();
+    void newData(quint32);
 };
 
-class InputLevel : public QWidget
+class DeviceLevel : public QWidget
 {
     Q_OBJECT
 public:
-    InputLevel(QWidget *parent);
+    DeviceLevel(QWidget *parent);
     void setLevel(qreal value);
 protected:
     void paintEvent(QPaintEvent *event);
@@ -47,14 +52,15 @@ private:
     QPixmap pixmap;
 };
 
-class Input : public QMainWindow
+class Device : public QMainWindow
 {
     Q_OBJECT
 public:
-    Input(QWidget *ui_input);
-    ~Input();
+    Device(QWidget *ui_device);
+    ~Device();
+    DeviceChannel *channel;
     // Devices
-    void updateDevices(QComboBox &input_device);
+    void updateDevices(QComboBox &device_selector);
     QAudioDeviceInfo getDevice(int index);
     void setDevice(int index);
     // Level
@@ -63,16 +69,14 @@ public:
     void playPause(QPushButton *button);
     void switchMode(QPushButton *button);
     void initialize();
-    
 public slots:
-    void refresh();
+    void updateLevel();
 private:
-    QWidget *ui_input;
-    QAudioDeviceInfo device;
-    InputChannel *channel;
+    QWidget *ui_device;
+    QAudioDeviceInfo deviceinfo;
     QAudioInput *audioinput;
     QAudioFormat format;
-    InputLevel *volumeter;
+    DeviceLevel *volumeter;
 };
 
 #endif // INPUT_H

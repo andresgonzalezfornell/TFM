@@ -11,10 +11,9 @@
 int main(int argc, char *argv[]) {
 	consolelog("test", progress, "running test");
 
-	std::vector<float> a = {1,2};
-	AudioObject object1 = AudioObject(a);
-	std::vector<float> w = object1.getData();
-	consolelog("test",info,std::to_string(w.at(1)));
+	AudioObject object1(2);
+    object1.setData(1,1.1);
+    consolelog("main",info,std::to_string(object1.getData(1)));
 
 	consolelog("test", progress, "test was completed");
 }

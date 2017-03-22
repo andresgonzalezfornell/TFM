@@ -15,10 +15,8 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
-#include "../tools/Logger.h"
 #include "mainwindow.h"
-
-
+#include "../tools/Logger.h"
 #include "../module/AudioObject.h"
 
 /**

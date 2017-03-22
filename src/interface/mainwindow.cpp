@@ -9,7 +9,6 @@
 #include "ui_mainwindow.h"
 
 using namespace std;
-Input input();
 
 /**
  * @brief	MainWindow constructor.
@@ -19,8 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // Input
-    input = new Input(ui->input);
+    // Objects
+    objects = new Objects(ui->objects);
     consolelog("mainwindow", progress, "MainWindow object is created");
 }
 
@@ -34,27 +33,33 @@ MainWindow::~MainWindow()
 }
 
 /**
- * @name	Input
- * @brief	Input control functions.
+ * @name	Objects
+ * @brief	Objects control functions.
  * @{
  */
 
-void MainWindow::on_input_device_currentIndexChanged(int index)
+void MainWindow::on_device_selector_currentIndexChanged(int index)
 {
     consolelog("mainwindow",interaction,"input device set to device[" + std::to_string(index) + "]");
-    input->setDevice(index);
+    objects->device->setDevice(index);
 }
 
-void MainWindow::on_input_volume_valueChanged(int value)
+void MainWindow::on_device_volume_valueChanged(int value)
 {
-    consolelog("mainwindow",interaction,"input volumen level set to " + std::to_string(value));
-    input->setVolume(value);
+    consolelog("mainwindow",interaction,"device volumen level set to " + std::to_string(value));
+    objects->device->setVolume(value);
 }
 
-void MainWindow::on_input_pause_clicked()
+void MainWindow::on_device_pause_clicked()
 {
-    consolelog("mainwindow",interaction,"input play/pause clicked");
-    input->playPause(ui->input_pause);
+    consolelog("mainwindow",interaction,"device play/pause clicked");
+    objects->device->playPause(ui->device_pause);
+}
+
+void MainWindow::on_objects_number_valueChanged(int value) {
+    consolelog("mainwindow",interaction,"objects number changed to " + std::to_string(value));
+    objects->objectconfiguration->setNumber(ui->objects_configuration, value);
+    //update();
 }
 
 /** @} */

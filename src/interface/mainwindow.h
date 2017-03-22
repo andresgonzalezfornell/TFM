@@ -10,7 +10,8 @@
 #include "QMainWindow"
 // Classes and local files
 #include "../tools/Logger.h"
-#include "input.h"
+#include "device.h"
+#include "objects.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,13 +27,14 @@ public:
     void initialize();
 
 private slots:
-    void on_input_device_currentIndexChanged(int index);
-    void on_input_volume_valueChanged(int value);
-    void on_input_pause_clicked();
+    void on_device_selector_currentIndexChanged(int index);
+    void on_device_volume_valueChanged(int value);
+    void on_device_pause_clicked();
+    void on_objects_number_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
-    Input *input;
+    Objects *objects;
 };
 
 #endif // MAINWINDOW_H

@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>771</width>
-    <height>470</height>
+    <height>527</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -55,7 +55,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QGroupBox" name="input">
+        <widget class="QGroupBox" name="device">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
@@ -94,9 +94,9 @@
            <number>0</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="input_control_1">
+           <layout class="QHBoxLayout" name="device_control_1">
             <item>
-             <widget class="QComboBox" name="input_device">
+             <widget class="QComboBox" name="device_selector">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -118,7 +118,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="input_pause">
+             <widget class="QPushButton" name="device_pause">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -145,12 +145,12 @@
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="input_control_2">
+           <layout class="QVBoxLayout" name="device_control_2">
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item>
-             <widget class="QWidget" name="input_level" native="true">
+             <widget class="QWidget" name="device_level" native="true">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -172,13 +172,38 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="input_volume">
+             <widget class="QSlider" name="device_volume">
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>70</number>
+              </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
              </widget>
             </item>
            </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="objects_configuration" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QSpinBox" name="objects_number">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -336,6 +361,12 @@
             </item>
             <item>
              <widget class="QSlider" name="playback_volume">
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>70</number>
+              </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
