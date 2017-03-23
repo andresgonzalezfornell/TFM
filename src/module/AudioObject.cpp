@@ -12,14 +12,14 @@
 AudioObject::AudioObject() {
     this->time_first = 0;
     this->time_last = 0;
-    consolelog("audioobject",progress,"AudioObject object is created");
+    consolelog("AudioObject",progress,"AudioObject object is created");
 }
 
 /**
  * @brief	AudioObject destructor.
  */
 AudioObject::~AudioObject() {
-    consolelog("audioobject",progress,"AudioInput object is deleted");
+    consolelog("AudioObject",progress,"AudioInput object is deleted");
 }
 
 /**
@@ -76,6 +76,11 @@ void AudioObject::setSample(int time, float sample) {
     }
 }
 
+/**
+ * @brief	It checks if the selected time is available in the queu.
+ * @param   time
+ * @return  true if it is available
+ */
 bool AudioObject::isAvailable(int time) {
     return (this->time_first<=time) && (this->time_last>=time);
 }

@@ -3,6 +3,8 @@
 
 // System libraries
 #include "string"
+#include "math.h"
+#include "stdlib.h"
 // Qt libraries
 #include "QMainWindow"
 #include "QObject"
@@ -10,10 +12,13 @@
 #include "QLayout"
 #include "QSpinBox"
 #include "QCheckBox"
+#include "QVector"
 // Classes and local files
 #include "device.h"
+#include "audiochart.h"
 #include "../tools/Logger.h"
 #include "../module/AudioObject.h"
+#include "../module/AudioSignal.h"
 
 class ObjectInput  {
 public:
@@ -32,16 +37,19 @@ private:
 class ObjectsConfiguration : public QObject {
     Q_OBJECT
 public:
-    ObjectsConfiguration(QWidget *parent, int number);
+    ObjectsConfiguration(QWidget *parent, int number, AudioChart *audiochart);
     ~ObjectsConfiguration();
     void setNumber(QWidget *parent, int number);
     int getNumber();
     void sendOutput();
 public slots:
-    void receiveDevice(quint32);
+    void receiveDevice(quint32 devicedata);
 private:
     QList<ObjectInput> objects;
     int number;
+    AudioChart *audiochart;
+    AudioSignal *master;
+    void plotAudio(float sample);
 };
 
 class Objects : public QMainWindow
@@ -52,6 +60,7 @@ public:
     ~Objects();
     Device *device;
     ObjectsConfiguration *objectconfiguration;
+    AudioChart *audiochart;
 private:
     QWidget *ui_objects;
 };

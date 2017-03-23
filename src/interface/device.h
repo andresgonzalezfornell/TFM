@@ -1,6 +1,9 @@
 #ifndef INPUT_H
 #define INPUT_H
 
+// System libraries
+#include "math.h"
+#include "stdlib.h"
 // Qt libraries
 #include "QAudioInput"
 #include "QAudioDeviceInfo"

@@ -7,13 +7,10 @@
 // Class libraries
 #include "device.h"
 #include "ui_mainwindow.h"
-// System libraries
-#include "math.h"
-#include "stdlib.h"
 
 /**
  * @brief	Device constructor.
- * @param   &framework  user interface framework of device
+ * @param   framework   user interface framework of device
  */
 Device::Device(QWidget *framework) :
     deviceinfo(QAudioDeviceInfo::defaultInputDevice()),

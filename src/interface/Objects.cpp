@@ -13,19 +13,20 @@
 
 /**
  * @brief	Objects constructor.
- * @param   &framework  user interface framework of objects
+ * @param   framework   user interface framework of objects
  */
 Objects::Objects(QWidget *framework) {
     framework->setUpdatesEnabled(true);
     device = new Device(framework->findChild<QWidget*>("device"));
-    objectconfiguration = new ObjectsConfiguration(framework->findChild<QWidget *>("objects_configuration"),framework->findChild<QSpinBox *>("objects_number")->value());
+    audiochart = new AudioChart(framework->findChild<QWidget *>("objects_chart"),"Audio objects");
+    objectconfiguration = new ObjectsConfiguration(framework->findChild<QWidget *>("objects_configuration"),framework->findChild<QSpinBox *>("objects_number")->value(),audiochart);
     QObject::connect(device->channel, SIGNAL(newData(quint32)), objectconfiguration, SLOT(receiveDevice(quint32)));
-    consolelog("objects",progress,"Objects object is created");
+    consolelog("Objects",progress,"Objects object is created");
 }
 
 /**
  * @brief	Objects destructor.
  */
 Objects::~Objects() {
-    consolelog("objects",progress,"Objects object is deleted");
+    consolelog("Objects",progress,"Objects object is deleted");
 }

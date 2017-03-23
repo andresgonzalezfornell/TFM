@@ -10,6 +10,7 @@
 #include "QMainWindow"
 // Classes and local files
 #include "../tools/Logger.h"
+#include "audiochart.h"
 #include "device.h"
 #include "objects.h"
 

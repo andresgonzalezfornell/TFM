@@ -8,9 +8,6 @@
 
 namespace std {
 
-/**
- *
- */
 class AudioObject {
 public:
     AudioObject();

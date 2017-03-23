@@ -7,25 +7,24 @@
 // Class libraries
 #include "objects.h"
 #include "ui_mainwindow.h"
-// System libraries
-#include "math.h"
-#include "stdlib.h"
 
 /**
  * @brief	ObjectsConfiguration constructor.
  * @param   &parent     objects user interface parent
  * @param   number      number of objects
  */
-ObjectsConfiguration::ObjectsConfiguration(QWidget *parent, int number) {
+ObjectsConfiguration::ObjectsConfiguration(QWidget *parent, int number, AudioChart *audiochart) {
     this->setNumber(parent, number);
-    consolelog("objects",progress,"ObjectsConfiguration object is created");
+    this->audiochart = audiochart;
+    this->master = new AudioSignal();
+    consolelog("Objects",progress,"ObjectsConfiguration object is created");
 }
 
 /**
  * @brief	ObjectsConfiguration destructor.
  */
 ObjectsConfiguration::~ObjectsConfiguration() {
-    consolelog("objects",progress,"ObjectsConfiguration object is deleted");
+    consolelog("Objects",progress,"ObjectsConfiguration object is deleted");
 }
 
 /**
@@ -56,30 +55,38 @@ int ObjectsConfiguration::getNumber() {
 
 /**
  * @brief	It is called when device data has been received.
- * @param   data
+ * @param   devicedata
  */
-void ObjectsConfiguration::receiveDevice(quint32 data) {
+void ObjectsConfiguration::receiveDevice(quint32 devicedata) {
+    const float amplitude_max = 500000;
+    double amplitude = 0;
+    float data = 0;
     for (int item = 0; item<this->getNumber();item++) {
+        ObjectInput object = objects.at(item);
         if(objects.at(item).fromdevice) {
-            ObjectInput object = objects.at(item);
-            object.sendData(data);
+            data = (float)devicedata/amplitude_max;
+        } else {
+//            data = object.getData().toFloat();
         }
+        amplitude += data;
+        object.sendData(data);
     }
-    consolelog("ObjectsConfiguration",info,std::to_string(data));
+    plotAudio(amplitude);
 }
 
 /**
- * @brief	It sends the output audio from the current objects configuration to the audio input
- * @param   data
+ * @brief	It adds a sample to plot input audio.
+ * @param   sample
  */
-void ObjectsConfiguration::sendOutput() {
-    double audiosignal = 0;
-    double data = 0;
-    for (int item = 0; item<this->getNumber();item++) {
-        ObjectInput object = objects.at(item);
-//        data = object.getData();
-//        object.sendData(data);
-//        audiosignal += data;
+void ObjectsConfiguration::plotAudio(float sample) {
+    if(master->size >= AudioSignal::fs()) {
+        QVector<QPointF> *points = new QVector<QPointF>();
+        vector<float> spectrum = master->getSpectrum();
+        for (int f = 0; f < master->size; f++) {
+            points->append(QPointF(f,spectrum[f]));
+        }
+        audiochart->setPoints(points);
+        master->clear();
     }
-    consolelog("ObjectsConfiguration",info,std::to_string(audiosignal));
+    master->addSample(sample);
 }

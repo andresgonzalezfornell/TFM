@@ -22,7 +22,7 @@ ObjectInput::ObjectInput(QWidget *parent, int index) {
     QGroupBox *groupbox = new QGroupBox(parent);
     groupbox->setObjectName(QString("object_%1").arg(index));
     groupbox->setMinimumSize(0,0);
-    groupbox->setMaximumSize(99999999,99999999);
+    groupbox->setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
     QLayout *layout = new QHBoxLayout(groupbox);
     QPushButton *source_select = new QPushButton();
     source_select->setText(QString("object_%1").arg(index));
@@ -32,7 +32,7 @@ ObjectInput::ObjectInput(QWidget *parent, int index) {
     // Initialization
     this->fromdevice = true;
     this->audioobject = new AudioObject();
-    consolelog("objects",progress,"ObjectInput object is created");
+    consolelog("Objects",progress,"ObjectInput object is created");
 }
 
 /**

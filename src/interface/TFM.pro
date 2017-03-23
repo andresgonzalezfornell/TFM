@@ -1,4 +1,4 @@
-QT       += widgets qml quick network opengl sql script scripttools svg xml xmlpatterns multimedia testlib dbus
+QT       += widgets charts qml quick network opengl sql script scripttools svg xml xmlpatterns multimedia testlib dbus
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,19 +19,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     ../tools/Logger.cpp \
+    ../tools/fft.cpp \
     ../module/AudioObject.cpp \
+    ../module/AudioSignal.cpp \
     ObjectsConfiguration.cpp \
     Objects.cpp \
     ObjectInput.cpp \
     DeviceChannel.cpp \
     DeviceLevel.cpp \
-    Device.cpp
+    Device.cpp \
+    AudioChart.cpp
 
 HEADERS  += mainwindow.h \
     ../tools/Logger.h \
+    ../tools/fft.h \
     ../module/AudioObject.h \
+    ../module/AudioSignal.h \
     ../../lib/QtLibraries/src/qtlibraries.h \
     objects.h \
-    device.h
+    device.h \
+    audiochart.h
 
 FORMS    += mainwindow.ui
