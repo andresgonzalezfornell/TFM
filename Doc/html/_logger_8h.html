@@ -88,7 +88,6 @@ $(document).ready(function(){initNavTree('_logger_8h.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;iostream&quot;</code><br />
-<code>#include &quot;cmath&quot;</code><br />
 <code>#include &quot;stdio.h&quot;</code><br />
 <code>#include &quot;string&quot;</code><br />
 </div>
@@ -96,10 +95,14 @@ $(document).ready(function(){initNavTree('_logger_8h.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a39c57ea9c9abd4808b31871bda91a3af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3af">logtype</a> { <a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4">info</a>, 
+<tr class="memitem:a39c57ea9c9abd4808b31871bda91a3af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3af">logtype</a> { <br />
+&#160;&#160;<a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4">info</a>, 
 <a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afa8de9aef05fc85e519a0cfce33573f492">warning</a>, 
 <a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afad606e435413ea0944dd00d49e901e4ed">error</a>, 
-<a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afafb75b11a25b057940cb2b4c67fbf1123">progress</a>
+<a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afafb75b11a25b057940cb2b4c67fbf1123">progress</a>, 
+<br />
+&#160;&#160;<a class="el" href="_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afac80be5e3660b085e53026d9712b85e55">interaction</a>
+<br />
  }</td></tr>
 <tr class="separator:a39c57ea9c9abd4808b31871bda91a3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -122,10 +125,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4"></a>info&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afa8de9aef05fc85e519a0cfce33573f492"></a>warning&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afad606e435413ea0944dd00d49e901e4ed"></a>error&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afafb75b11a25b057940cb2b4c67fbf1123"></a>progress&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4"></a>info&#160;</td><td class="fielddoc"><p>The message is not important, just some information for the user </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afa8de9aef05fc85e519a0cfce33573f492"></a>warning&#160;</td><td class="fielddoc"><p>The message is a warning </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afad606e435413ea0944dd00d49e901e4ed"></a>error&#160;</td><td class="fielddoc"><p>The message comes from an bad execution (do not confuse with execution or compilation errors) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afafb75b11a25b057940cb2b4c67fbf1123"></a>progress&#160;</td><td class="fielddoc"><p>Information about the current steps in the running execution </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a39c57ea9c9abd4808b31871bda91a3afac80be5e3660b085e53026d9712b85e55"></a>interaction&#160;</td><td class="fielddoc"><p>Information about an user interaction </p>
+</td></tr>
 </table>
 
 </div>

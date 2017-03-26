@@ -16,10 +16,16 @@
 #include "QSlider"
 #include "QWidget"
 #include "QPainter"
-#include "QVBoxLayout"
+#include "QLayout"
 #include "qendian.h"
 // Classes and local files
 #include "../tools/Logger.h"
+
+/**
+ * @class	DeviceChannel
+ * @author	Andrés González Fornell
+ * @brief	Input audio device class.
+ */
 
 class DeviceChannel  : public QIODevice
 {
@@ -29,39 +35,48 @@ public:
     ~DeviceChannel();
     void start();
     void stop();
-    qreal getLevel();
     qint64 readData(char *data, qint64 maxlen);
-    qint64 writeData(const char *data, qint64 len);
+    qint64 writeData(const char *data, qint64 datalength);
 private:
-    const QAudioFormat audioformat;
-    quint32 amplitude;
-    qreal level; // 0.0 <= m_level <= 1.0
+    const QAudioFormat audioformat;     /**< audio format of device channel */
+    quint32 amplitude;                  /**< absolute maximum value of the audio signal for the selected audio format*/
 signals:
-    void newLevel();
-    void newData(quint32);
+    void newLevel(float);
+    void newData(float);
 };
 
+/**
+ * @class	DeviceLevel
+ * @author	Andrés González Fornell
+ * @brief	Input audio volumeter class.
+ */
 class DeviceLevel : public QWidget
 {
     Q_OBJECT
 public:
     DeviceLevel(QWidget *parent);
-    void setLevel(qreal value);
+public slots:
+    void setLevel(float level);
 protected:
     void paintEvent(QPaintEvent *event);
 private:
-    int width;
-    qreal level;
-    QPixmap pixmap;
+    int width;          /**< Volumeter width */
+    qreal level;        /**< Current level */
+    QPixmap pixmap;     /**< pixmap */
 };
 
+/**
+ * @class	Device
+ * @author	Andrés González Fornell
+ * @brief	User interface class of Device framework.
+ */
 class Device : public QMainWindow
 {
     Q_OBJECT
 public:
-    Device(QWidget *ui_device);
+    DeviceChannel *channel;         /**< device channel */
+    Device(QWidget *framework);
     ~Device();
-    DeviceChannel *channel;
     // Devices
     void updateDevices(QComboBox &device_selector);
     QAudioDeviceInfo getDevice(int index);
@@ -72,14 +87,12 @@ public:
     void playPause(QPushButton *button);
     void switchMode(QPushButton *button);
     void initialize();
-public slots:
-    void updateLevel();
 private:
-    QWidget *ui_device;
-    QAudioDeviceInfo deviceinfo;
-    QAudioInput *audioinput;
-    QAudioFormat format;
-    DeviceLevel *volumeter;
+    QWidget *framework;             /**< user interface framework of device */
+    QAudioDeviceInfo deviceinfo;    /**< audio device info object */
+    QAudioInput *audioinput;        /**< audio input object */
+    QAudioFormat format;            /**< audio format object */
+    DeviceLevel *volumeter;         /**< volumeter object */
 };
 
 #endif // INPUT_H

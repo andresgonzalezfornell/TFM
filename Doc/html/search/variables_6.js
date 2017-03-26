@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ui',['ui',['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]]
+  ['green',['green',['../_logger_8cpp.html#ac7174a3942c3a9b337488d24da43ca0e',1,'Logger.cpp']]]
 ];

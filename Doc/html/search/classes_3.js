@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rectangle',['Rectangle',['../classstd_1_1_rectangle.html',1,'std']]],
-  ['renderarea',['RenderArea',['../class_render_area.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]]
 ];

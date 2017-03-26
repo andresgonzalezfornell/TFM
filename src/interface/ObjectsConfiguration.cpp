@@ -1,42 +1,37 @@
-/**
- * @name	ObjectsConfiguration.cpp
- * @author	Andrés González Fornell
- * @brief	Objects configuration class.
- */
-
 // Class libraries
 #include "objects.h"
 #include "ui_mainwindow.h"
 
 /**
  * @brief	ObjectsConfiguration constructor.
- * @param   &parent     objects user interface parent
+ * @param   framework   user interface framework of objects configuration
  * @param   number      number of objects
+ * @param   audiochart  master input audio chart
  */
-ObjectsConfiguration::ObjectsConfiguration(QWidget *parent, int number, AudioChart *audiochart) {
-    this->setNumber(parent, number);
+ObjectsConfiguration::ObjectsConfiguration(QWidget *framework, int number, AudioChart *audiochart) {
+    this->setNumber(framework, number);
     this->audiochart = audiochart;
     this->master = new AudioSignal();
-    consolelog("Objects",progress,"ObjectsConfiguration object is created");
+    consolelog("Objects",LogType::progress,"ObjectsConfiguration object is created");
 }
 
 /**
  * @brief	ObjectsConfiguration destructor.
  */
 ObjectsConfiguration::~ObjectsConfiguration() {
-    consolelog("Objects",progress,"ObjectsConfiguration object is deleted");
+    consolelog("Objects",LogType::progress,"ObjectsConfiguration object is deleted");
 }
 
 /**
  * @brief	It sets a number of objects up.
- * @param   &parent     objects user interface parent
+ * @param   framework   user interface framework of objects configuration
  * @param   number      number of objects
  */
-void ObjectsConfiguration::setNumber(QWidget *parent, int number) {
+void ObjectsConfiguration::setNumber(QWidget *framework, int number) {
     this->number = number;
     if (objects.size()<number) {
         for (int index = objects.size(); index < this->number;index++) {
-            this->objects.push_back(ObjectInput(parent, index));
+            this->objects.push_back(ObjectInput(framework, index));
         }
     } else if (objects.size()>number) {
         for (int index = objects.size(); index > this->number;index--) {
@@ -57,19 +52,18 @@ int ObjectsConfiguration::getNumber() {
  * @brief	It is called when device data has been received.
  * @param   devicedata
  */
-void ObjectsConfiguration::receiveDevice(quint32 devicedata) {
-    const float amplitude_max = 500000;
+void ObjectsConfiguration::receiveDevice(float value) {
     double amplitude = 0;
-    float data = 0;
+    float sample = 0;
     for (int item = 0; item<this->getNumber();item++) {
         ObjectInput object = objects.at(item);
         if(objects.at(item).fromdevice) {
-            data = (float)devicedata/amplitude_max;
+            sample = value;
         } else {
-//            data = object.getData().toFloat();
+//            filedata = object.getData().toFloat();
         }
-        amplitude += data;
-        object.sendData(data);
+        amplitude += sample;
+        object.sendData(sample);
     }
     plotAudio(amplitude);
 }
@@ -79,13 +73,15 @@ void ObjectsConfiguration::receiveDevice(quint32 devicedata) {
  * @param   sample
  */
 void ObjectsConfiguration::plotAudio(float sample) {
-    if(master->size >= AudioSignal::fs()) {
+    const int frequencybands = 100; /**< number of frequency bands to plot */
+    const float plotperiod = 0.5;   /**< period of audio plotting [s] */
+    if(master->size >= AudioSignal::fs()*plotperiod) {
         QVector<QPointF> *points = new QVector<QPointF>();
-        vector<float> spectrum = master->getSpectrum();
-        for (int f = 0; f < master->size; f++) {
-            points->append(QPointF(f,spectrum[f]));
+        vector<float> spectrum = master->getSpectrum(frequencybands);
+        for (int f = 0; f < (int)spectrum.size(); f++) {
+            points->append(QPointF(AudioSignal::fs()/2*f/spectrum.size(),spectrum[f]));
         }
-        audiochart->setPoints(points);
+        audiochart->setPoints(*points);
         master->clear();
     }
     master->addSample(sample);

@@ -4,19 +4,22 @@
 // System libraries
 #include "vector"
 #include "math.h"
-#include "valarray"
+// External libraries
+#include "fftw3.h"
 // Classes and local files
 #include "../tools/Logger.h"
-#include "../tools/fft.h"
 
 using namespace std;
 
-typedef std::valarray<Complex> CArray;
-
+/**
+ * @class	AudioSignal
+ * @author	Andrés González Fornell
+ * @brief	TODO AudioSignal.cpp description
+ */
 class AudioSignal {
 public:
-    int size;
-    static float fs() { return 20000; }
+    int size;                               /**< number of samples */
+    static float fs() { return 20000; }     /**< sampling frequency */
     AudioSignal();
 	AudioSignal(vector<float> signal);
 	virtual ~AudioSignal();
@@ -26,9 +29,10 @@ public:
 	vector<float> getSignal();
     void setSignal(vector<float> signal);
     vector<float> getSpectrum();
+    vector<float> getSpectrum(int bands);
     void clear();
 private:
-	vector<float> signal;
+    vector<float> signal;                   /**< signal data vector */
 };
 
 #endif /* SRC_MODULE_AUDIOSIGNAL_H_ */

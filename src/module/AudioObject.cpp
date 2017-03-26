@@ -1,25 +1,19 @@
-/**
- * @name	audioobject.cpp
- * @author	Andrés González Fornell
- * @brief	Audio objects for the SAOC interface.
- */
-
 #include "AudioObject.h"
 
 /**
  * @brief	AudioObject constructor.
  */
 AudioObject::AudioObject() {
-    this->time_first = 0;
-    this->time_last = 0;
-    consolelog("AudioObject",progress,"AudioObject object is created");
+    this->timestamp.start = 0;
+    this->timestamp.end = 0;
+    consolelog("AudioObject", LogType::progress, "AudioObject object is created");
 }
 
 /**
  * @brief	AudioObject destructor.
  */
 AudioObject::~AudioObject() {
-    consolelog("AudioObject",progress,"AudioInput object is deleted");
+    consolelog("AudioObject", LogType::progress, "AudioInput object is deleted");
 }
 
 /**
@@ -27,8 +21,8 @@ AudioObject::~AudioObject() {
  * @param   sample
  */
 void AudioObject::push(float sample) {
-    this->samples.push_back(sample);
-    this->time_last++;
+	this->samples.push_back(sample);
+    this->timestamp.end++;
 }
 
 /**
@@ -36,10 +30,10 @@ void AudioObject::push(float sample) {
  * @return	first sample
  */
 float AudioObject::pop() {
-    float sample = samples[1];
-    this->samples.erase(samples.begin());
-    this->time_first++;
-    return sample;
+	float sample = samples[1];
+	this->samples.erase(samples.begin());
+    this->timestamp.start++;
+	return sample;
 }
 
 /**
@@ -47,7 +41,7 @@ float AudioObject::pop() {
  * @return	samples vector
  */
 vector<float> AudioObject::getSamples() {
-    return this->samples;
+	return this->samples;
 }
 
 /**
@@ -56,11 +50,13 @@ vector<float> AudioObject::getSamples() {
  * @return	sample
  */
 float AudioObject::getSample(int time) {
-    if (this->isAvailable(time)) {
-        return this->samples[time];
-    } else {
-        consolelog("AudioObject",error,"the selected time is not available in the audio object queu");
-    }
+	if (this->isAvailable(time)) {
+		return this->samples[time];
+	} else {
+        consolelog("AudioObject", LogType::error,
+				"the selected time is not available in the audio object queu");
+		return NULL;
+	}
 }
 
 /**
@@ -69,11 +65,12 @@ float AudioObject::getSample(int time) {
  * @param	sample
  */
 void AudioObject::setSample(int time, float sample) {
-    if (this->isAvailable(time)) {
-        this->samples[time] = sample;
-    } else {
-        consolelog("AudioObject",error,"the selected time is not available in the audio object queu");
-    }
+	if (this->isAvailable(time)) {
+		this->samples[time] = sample;
+	} else {
+        consolelog("AudioObject", LogType::error,
+				"the selected time is not available in the audio object queu");
+	}
 }
 
 /**
@@ -82,5 +79,5 @@ void AudioObject::setSample(int time, float sample) {
  * @return  true if it is available
  */
 bool AudioObject::isAvailable(int time) {
-    return (this->time_first<=time) && (this->time_last>=time);
+    return (this->timestamp.start <= time) && (this->timestamp.end >= time);
 }

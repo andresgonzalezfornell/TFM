@@ -1,14 +1,6 @@
-/**
- * @name	mainwindow.cpp
- * @author	Andrés González Fornell
- * @brief	Main window interface code.
- */
-
 // Class libraries
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-using namespace std;
 
 /**
  * @brief	MainWindow constructor.
@@ -20,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     // Objects
     objects = new Objects(ui->objects);
-    consolelog("mainwindow", progress, "MainWindow object is created");
+    consolelog("mainwindow", LogType::progress, "MainWindow object is created");
 }
 
 /**
@@ -29,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    consolelog("mainwindow", progress, "MainWindow object is deleted");
+    consolelog("mainwindow", LogType::progress, "MainWindow object is deleted");
 }
 
 /**
@@ -37,28 +29,27 @@ MainWindow::~MainWindow()
  * @brief	Objects control functions.
  * @{
  */
-
 void MainWindow::on_device_selector_currentIndexChanged(int index)
 {
-    consolelog("mainwindow",interaction,"input device set to device[" + std::to_string(index) + "]");
+    consolelog("mainwindow",LogType::interaction,"input device set to device[" + std::to_string(index) + "]");
     objects->device->setDevice(index);
 }
 
 void MainWindow::on_device_volume_valueChanged(int value)
 {
-    consolelog("mainwindow",interaction,"device volumen level set to " + std::to_string(value));
+    consolelog("mainwindow",LogType::interaction,"device volumen level set to " + std::to_string(value));
     objects->device->setVolume(value);
 }
 
 void MainWindow::on_device_pause_clicked()
 {
-    consolelog("mainwindow",interaction,"device play/pause clicked");
+    consolelog("mainwindow",LogType::interaction,"device play/pause clicked");
     objects->device->playPause(ui->device_pause);
 }
 
 void MainWindow::on_objects_number_valueChanged(int value) {
-    consolelog("mainwindow",interaction,"objects number changed to " + std::to_string(value));
-    objects->objectconfiguration->setNumber(ui->objects_configuration, value);
+    consolelog("mainwindow",LogType::interaction,"objects number changed to " + std::to_string(value));
+    objects->objectsconfiguration->setNumber(ui->objects_configuration, value);
     //update();
 }
 

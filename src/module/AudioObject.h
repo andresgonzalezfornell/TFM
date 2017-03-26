@@ -6,14 +6,21 @@
 // Classes and local files
 #include "../tools/Logger.h"
 
-namespace std {
+using namespace std;
 
+/**
+ * @class	AudioObject
+ * @author	Andrés González Fornell
+ * @brief	Audio objects for the SAOC interface.
+ */
 class AudioObject {
 public:
+    struct TimeSlot {
+        int start, end;
+    };
+    TimeSlot timestamp;       /**< corresponding timestamp for the available data */
     AudioObject();
     ~AudioObject();
-    int time_first;
-    int time_last;
     void push(float sample);
     float pop();
     vector<float> getSamples();
@@ -21,9 +28,7 @@ public:
     float getSample(int time);
     bool isAvailable(int time);
 private:
-    vector<float> samples;
+    vector<float> samples;  /**< available data from the audio object */
 };
-
-} /* namespace std */
 
 #endif /* SRC_MODULE_AUDIOOBJECT_H_ */

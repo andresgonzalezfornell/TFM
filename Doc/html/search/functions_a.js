@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tab',['tab',['../_logger_8cpp.html#a3013405c202e8ad84b43779507f8a256',1,'Logger.cpp']]],
-  ['togglemode',['toggleMode',['../class_input_test.html#a299335a3dc236f12d24296c49b064228',1,'InputTest']]],
-  ['togglesuspend',['toggleSuspend',['../class_input_test.html#ab9bcbda7cd28e75a3cc015c04692f302',1,'InputTest']]]
+  ['readdata',['readData',['../class_device_channel.html#a213266f38fb587526ec024d2bbe543ad',1,'DeviceChannel']]],
+  ['receivedevice',['receiveDevice',['../class_objects_configuration.html#a93c8b29e07b460a903c35cac55e719c5',1,'ObjectsConfiguration']]]
 ];

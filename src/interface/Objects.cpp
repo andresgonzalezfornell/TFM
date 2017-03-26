@@ -1,9 +1,3 @@
-/**
- * @name	Objects.cpp
- * @author	Andrés González Fornell
- * @brief	User interface class of Objects framework.
- */
-
 // Class libraries
 #include "objects.h"
 #include "ui_mainwindow.h"
@@ -18,15 +12,16 @@
 Objects::Objects(QWidget *framework) {
     framework->setUpdatesEnabled(true);
     device = new Device(framework->findChild<QWidget*>("device"));
-    audiochart = new AudioChart(framework->findChild<QWidget *>("objects_chart"),"Audio objects");
-    objectconfiguration = new ObjectsConfiguration(framework->findChild<QWidget *>("objects_configuration"),framework->findChild<QSpinBox *>("objects_number")->value(),audiochart);
-    QObject::connect(device->channel, SIGNAL(newData(quint32)), objectconfiguration, SLOT(receiveDevice(quint32)));
-    consolelog("Objects",progress,"Objects object is created");
+    float chartrange[2][2] = {{0,AudioSignal::fs()/2},{0,500000}};
+    audiochart = new AudioChart(framework->findChild<QWidget *>("objects_chart"),chartrange,"Audio objects",AudioChart::ChartOptions::labelX);
+    objectsconfiguration = new ObjectsConfiguration(framework->findChild<QWidget *>("objects_configuration"),framework->findChild<QSpinBox *>("objects_number")->value(),audiochart);
+    QObject::connect(device->channel, SIGNAL(newData(float)), objectsconfiguration, SLOT(receiveDevice(float)));
+    consolelog("Objects",LogType::progress,"Objects object is created");
 }
 
 /**
  * @brief	Objects destructor.
  */
 Objects::~Objects() {
-    consolelog("Objects",progress,"Objects object is deleted");
+    consolelog("Objects",LogType::progress,"Objects object is deleted");
 }

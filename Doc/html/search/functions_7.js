@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['paintevent',['paintEvent',['../class_render_area.html#a67b7d2e03cd4a27ae18c1e6a8b94f79b',1,'RenderArea']]]
+  ['newdata',['newData',['../class_device_channel.html#afc526bdf437865e5554ef82a1210c2a0',1,'DeviceChannel']]],
+  ['newlevel',['newLevel',['../class_device_channel.html#a663ba508eae4010ccdf5118c4be66e28',1,'DeviceChannel']]]
 ];

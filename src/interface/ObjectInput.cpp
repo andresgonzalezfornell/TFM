@@ -1,9 +1,3 @@
-/**
- * @name	ObjectInput.cpp
- * @author	Andrés González Fornell
- * @brief	Single-object input configuration class.
- */
-
 // Class libraries
 #include "objects.h"
 #include "ui_mainwindow.h"
@@ -13,9 +7,8 @@
 
 /**
  * @brief	ObjectInput constructor.
- * @param   &parent     objects user interface parent
+ * @param   parent      objects user interface parent
  * @param   index       object index
- * @param   file        source file directory
  */
 ObjectInput::ObjectInput(QWidget *parent, int index) {
     // User interface
@@ -32,7 +25,7 @@ ObjectInput::ObjectInput(QWidget *parent, int index) {
     // Initialization
     this->fromdevice = true;
     this->audioobject = new AudioObject();
-    consolelog("Objects",progress,"ObjectInput object is created");
+    consolelog("Objects",LogType::progress,"ObjectInput object is created");
 }
 
 /**
@@ -43,7 +36,7 @@ ObjectInput::~ObjectInput() {
 
 /**
  * @brief	It sets the source file.
- * @param   file        file path
+ * @param   filepath    file path
  */
 void ObjectInput::setFile(string filepath) {
     if (filepath.substr(filepath.size()-4,4) == ".wav"){
@@ -54,6 +47,10 @@ void ObjectInput::setFile(string filepath) {
     }
 }
 
+/**
+ * @brief   It gets data from the object file
+ * @return  data
+ */
 QByteArray ObjectInput::getData() {
     if (!file->open(QIODevice::ReadOnly | QIODevice::Text))
         return 0;
@@ -64,6 +61,13 @@ QByteArray ObjectInput::getData() {
     return 0;
 }
 
+/**
+ * @brief   It sends data to the audio object associated to this input object
+ * @param   data
+ */
 void ObjectInput::sendData(float data) {
+    if(data > 1) {
+        data = -1;
+    }
     audioobject->push(data);
 }

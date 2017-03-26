@@ -4,13 +4,6 @@
  * @brief	Main function
  */
 
-// Functional libraries
-#include "iostream"
-#include "cmath"
-#include "stdio.h"
-#include "string"
-#include "vector"
-
 // Qt libraries
 #include "QApplication"
 #include "QMainWindow"
@@ -23,11 +16,11 @@
  * @brief	Main function
  */
 int main(int argc, char *argv[]) {
-    consolelog("main", progress, "running program");
+    consolelog("main", LogType::progress, "running program");
 	QApplication a(argc, argv);
     MainWindow w;
-    consolelog("main", progress, "showing MainWindow");
+    consolelog("main", LogType::progress, "showing MainWindow");
     w.show();
-    consolelog("main", progress, "program was completed");
+    consolelog("main", LogType::progress, "program was completed");
 	return a.exec();
 }

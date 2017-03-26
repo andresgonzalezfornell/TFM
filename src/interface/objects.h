@@ -20,20 +20,30 @@
 #include "../module/AudioObject.h"
 #include "../module/AudioSignal.h"
 
+/**
+ * @class	ObjectInput
+ * @author	Andrés González Fornell
+ * @brief	Single-object input configuration class.
+ */
 class ObjectInput  {
 public:
+    bool fromdevice;            /**< it indicates if the audio source is a file (instead of an input device) */
     ObjectInput(QWidget *parent, int index);
     ~ObjectInput();
-    bool fromdevice;
     void setFile(string filepath);
     QByteArray getData();
     void sendData(float data);
 private:
-    QFile *file;
-    AudioObject *audioobject;
+    QFile *file;                /**< source file object */
+    AudioObject *audioobject;   /**< audio object */
 
 };
 
+/**
+ * @class	ObjectsConfiguration
+ * @author	Andrés González Fornell
+ * @brief	Objects configuration class.
+ */
 class ObjectsConfiguration : public QObject {
     Q_OBJECT
 public:
@@ -42,27 +52,30 @@ public:
     void setNumber(QWidget *parent, int number);
     int getNumber();
     void sendOutput();
-public slots:
-    void receiveDevice(quint32 devicedata);
 private:
-    QList<ObjectInput> objects;
-    int number;
-    AudioChart *audiochart;
-    AudioSignal *master;
+    QList<ObjectInput> objects;                 /**< list of object input objects */
+    int number;                                 /**< number of objects */
+    AudioChart *audiochart;                     /**< audio chart object */
+    AudioSignal *master;                        /**< input master audio signal */
     void plotAudio(float sample);
+public slots:
+    void receiveDevice(float value);
 };
 
+/**
+ * @class	Objects
+ * @author	Andrés González Fornell
+ * @brief	User interface class of Objects framework.
+ */
 class Objects : public QMainWindow
 {
     Q_OBJECT
 public:
-    Objects(QWidget *ui_device);
+    Device *device;                                 /**< device object */
+    ObjectsConfiguration *objectsconfiguration;     /**< objects configuration object */
+    AudioChart *audiochart;                         /**< audio chart object */
+    Objects(QWidget *framework);
     ~Objects();
-    Device *device;
-    ObjectsConfiguration *objectconfiguration;
-    AudioChart *audiochart;
-private:
-    QWidget *ui_objects;
 };
 
 #endif // OBJECTS_H

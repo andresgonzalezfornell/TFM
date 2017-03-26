@@ -18,6 +18,11 @@ namespace Ui {
 class MainWindow;
 }
 
+/**
+ * @class	MainWindow
+ * @author	Andrés González Fornell
+ * @brief	Main window interface code.
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -34,8 +39,8 @@ private slots:
     void on_objects_number_valueChanged(int value);
 
 private:
-    Ui::MainWindow *ui;
-    Objects *objects;
+    Ui::MainWindow *ui;     /**< User interface object */
+    Objects *objects;       /**< Objects panel object */
 };
 
 #endif // MAINWINDOW_H

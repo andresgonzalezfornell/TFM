@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yellow',['yellow',['../_logger_8cpp.html#a2f7a5f1ba81a08d7d79afec0c27e9d21',1,'Logger.cpp']]]
+  ['level',['level',['../class_device_channel.html#a12039325c380bc9b48c90297e28797ad',1,'DeviceChannel::level()'],['../class_device_level.html#aeb1cba8ae22335bf40730123fda8464f',1,'DeviceLevel::level()']]]
 ];

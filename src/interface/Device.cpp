@@ -1,20 +1,15 @@
-/**
- * @name	Device.cpp
- * @author	Andrés González Fornell
- * @brief	User interface class of Device framework.
- */
-
 // Class libraries
 #include "device.h"
 #include "ui_mainwindow.h"
 
 /**
  * @brief	Device constructor.
- * @param   framework   user interface framework of device
+ * @param   framework       user interface framework of device
  */
 Device::Device(QWidget *framework) :
     deviceinfo(QAudioDeviceInfo::defaultInputDevice()),
     channel(0),
+    volumeter(new DeviceLevel(framework->findChild<QWidget *>("device_level"))),
     audioinput(0)
 {
     // Data channel
@@ -22,9 +17,8 @@ Device::Device(QWidget *framework) :
     // Ui
     QComboBox *device_selector = framework->findChild<QComboBox *>("device_selector");
     updateDevices(*device_selector);
-    volumeter = new DeviceLevel(framework->findChild<QWidget *>("device_level"));
     playPause(framework->findChild<QPushButton *>("device_pause"));
-    consolelog("Device",progress,"Device object is created");
+    consolelog("Device",LogType::progress,"Device object is created");
 }
 
 /**
@@ -33,7 +27,7 @@ Device::Device(QWidget *framework) :
 Device::~Device() {
     channel->stop();
     audioinput->stop();
-    consolelog("Device",progress,"Device object is deleted");
+    consolelog("Device",LogType::progress,"Device object is deleted");
 }
 
 /**
@@ -41,7 +35,7 @@ Device::~Device() {
  */
 void Device::initialize()
 {
-    consolelog("Device",progress,"initializing device");
+    consolelog("Device",LogType::progress,"initializing device");
     format.setSampleRate(8000);
     format.setChannelCount(1);
     format.setSampleSize(16);
@@ -51,23 +45,16 @@ void Device::initialize()
     QAudioDeviceInfo info(deviceinfo);
     if (!info.isFormatSupported(format)) {
         format = info.nearestFormat(format);
-        consolelog("Device",warning,"default format not supported - trying to use nearest");
+        consolelog("Device",LogType::warning,"default format not supported - trying to use nearest");
     }
     if (channel) {
         delete channel;
     }
     channel = new DeviceChannel(format, this);
-    connect(channel, SIGNAL(newLevel()),SLOT(updateLevel()));
+    connect(this->channel, SIGNAL(newLevel(float)),this->volumeter,SLOT(setLevel(float)));
     audioinput = new QAudioInput(deviceinfo, format, this);
     channel->start();
     audioinput->start(channel);
-}
-
-/**
- * @brief	It is called when device level amplitude has been received.
- */
-void Device::updateLevel() {
-    volumeter->setLevel(channel->getLevel());
 }
 
 /**
@@ -82,14 +69,14 @@ void Device::updateDevices(QComboBox &device_selector) {
     QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
     for(int index = 0;index < devices.count();index++) {
         device_selector.addItem(devices.value(index).deviceName());
-        consolelog("Device",info,"Input device updated: " + devices.value(index).deviceName().toStdString());
+        consolelog("Device",LogType::info,"Input device updated: " + devices.value(index).deviceName().toStdString());
     }
     device_selector.blockSignals(false);
 }
 
 /**
  * @brief	It gets selected input audio device.
- * @param   item            device index
+ * @param   index           device index
  * @return  QAudioDeviceInfo selected device.
  */
 QAudioDeviceInfo Device::getDevice(int index) {
@@ -99,7 +86,7 @@ QAudioDeviceInfo Device::getDevice(int index) {
 
 /**
  * @brief	It changes input audio device.
- * @param   item            Selected device index
+ * @param   index       Selected device index
  */
 void Device::setDevice(int index) {
     channel->stop();
@@ -107,13 +94,13 @@ void Device::setDevice(int index) {
     audioinput->disconnect(this);
     QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
     QAudioDeviceInfo deviceinfo = devices.value(index);
-    consolelog("Device",progress,"input device changed to " + deviceinfo.deviceName().toStdString());
+    consolelog("Device",LogType::progress,"input device changed to " + deviceinfo.deviceName().toStdString());
     initialize();
 }
 
 /**
  * @brief	Change input audio device.
- * @param   item            Selected device index
+ * @param   value       Selected value volume
  */
 void Device::setVolume(int value)
 {
@@ -130,16 +117,16 @@ void Device::playPause(QPushButton *button) {
     QString text_new = "";
     if (text_old.toStdString()=="Play") {
         text_new = "Pause";
-        audioinput->resume();
+        this->audioinput->resume();
     } else if(text_old.toStdString()=="Pause") {
         text_new = "Play";
-        audioinput->suspend();
+        this->audioinput->suspend();
     } else {
         text_new = "Pause";
-        audioinput->resume();
+        this->audioinput->resume();
     }
     button->setText(text_new);
-    consolelog("Device",info,"device play/pause button is showing now: " + text_new.toStdString());
+    consolelog("Device",LogType::info,"device play/pause button is showing now: " + text_new.toStdString());
 }
 
 /**
@@ -157,5 +144,5 @@ void Device::switchMode(QPushButton *button) {
         text_new = "Pull";
     }
     button->setText(text_new);
-    consolelog("Device",info,"device play/pause button is showing now: " + text_new.toStdString());
+    consolelog("Device",LogType::info,"device play/pause button is showing now: " + text_new.toStdString());
 }

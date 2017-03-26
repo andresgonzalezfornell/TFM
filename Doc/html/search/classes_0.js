@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['audioinfo',['AudioInfo',['../class_audio_info.html',1,'']]]
+  ['audiochart',['AudioChart',['../class_audio_chart.html',1,'']]],
+  ['audioobject',['AudioObject',['../class_audio_object.html',1,'']]],
+  ['audiosignal',['AudioSignal',['../class_audio_signal.html',1,'']]]
 ];

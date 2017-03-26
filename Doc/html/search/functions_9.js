@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['setlevel',['setLevel',['../class_render_area.html#a51b47a06e703c3d84ce984bdec744805',1,'RenderArea']]],
-  ['sliderchanged',['sliderChanged',['../class_input_test.html#aca4db6bf7cd5528b40f8ad99bf03f2e9',1,'InputTest']]],
-  ['start',['start',['../class_audio_info.html#a3c39e274bab04bdbd610e0bc03ad5db1',1,'AudioInfo']]],
-  ['stop',['stop',['../class_audio_info.html#a24be66ee2d6869d06e343b1eae51e07e',1,'AudioInfo']]]
+  ['paintevent',['paintEvent',['../class_device_level.html#ab73115df0f3eda6cb545fc99ee5845b7',1,'DeviceLevel']]],
+  ['playpause',['playPause',['../class_device.html#a5d52f7e110106833fc33464bba09ffbb',1,'Device']]],
+  ['plotaudio',['plotAudio',['../class_objects_configuration.html#a3ab8c028c2d910d930350da4786bcba2',1,'ObjectsConfiguration']]],
+  ['pop',['pop',['../class_audio_object.html#a65ca8cfaf11588985cd3fa2b0ff02920',1,'AudioObject']]],
+  ['push',['push',['../class_audio_object.html#a9edd3de5a969e523d5884c4c2bbd2515',1,'AudioObject']]]
 ];

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['black',['black',['../_logger_8cpp.html#a1b36ba555ec8bacff77e4dc1981c2cf7',1,'Logger.cpp']]],
-  ['blue',['blue',['../_logger_8cpp.html#a0885a6a72a98454886b9add4d6ac9130',1,'Logger.cpp']]],
-  ['bold',['bold',['../_logger_8cpp.html#af290a2e67251d003617ea26a84227b5e',1,'Logger.cpp']]],
-  ['buffersize',['BufferSize',['../audioinput_8cpp.html#a08004bc62105711b520423240e06a5eb',1,'audioinput.cpp']]]
+  ['amplitude',['amplitude',['../class_device_channel.html#a7a303ce410ac378486f6d8ef7326955a',1,'DeviceChannel']]],
+  ['audiochart',['audiochart',['../class_objects_configuration.html#a3626de86f3fc30bb0bc8e97c750e25ce',1,'ObjectsConfiguration::audiochart()'],['../class_objects.html#a1e913ddd6d614a92c0d5b9bb47e6fc88',1,'Objects::audiochart()']]],
+  ['audioformat',['audioformat',['../class_device_channel.html#a9924624c2f42bb71bcb4fdc643be5fd8',1,'DeviceChannel']]],
+  ['audioinput',['audioinput',['../class_device.html#a5c232fdd16ac0c502485706d876ab1f5',1,'Device']]],
+  ['audioobject',['audioobject',['../class_object_input.html#a80e3717c015359755498fcb8eda2043d',1,'ObjectInput']]]
 ];

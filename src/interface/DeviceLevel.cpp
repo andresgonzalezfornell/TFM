@@ -1,9 +1,3 @@
-/**
- * @name	DeviceLevel.cpp
- * @author	Andrés González Fornell
- * @brief	Input audio volumeter class.
- */
-
 // Class libraries
 #include "device.h"
 #include "ui_mainwindow.h"
@@ -13,14 +7,14 @@
 
 /**
  * @brief	DeviceLevel constructor.
- * @param   *element    user interface element pointer to place the volumeter
+ * @param   *parent     user interface element pointer to place the volumeter
  */
 DeviceLevel::DeviceLevel(QWidget *parent)
     : QWidget(parent)
 {
     width = parent->frameGeometry().width();
     level = 0;
-    consolelog("Device",progress,"DeviceLevel object is created");
+    consolelog("Device",LogType::progress,"DeviceLevel object is created");
 }
 
 /**
@@ -52,8 +46,8 @@ void DeviceLevel::paintEvent(QPaintEvent * /* event */)
  * @brief	It sets the new level value to the volumeter
  * @param   value
  */
-void DeviceLevel::setLevel(qreal value)
+void DeviceLevel::setLevel(float level)
 {
-    level = value;
+    this->level = level;
     update();
 }

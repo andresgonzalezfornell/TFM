@@ -1,5 +1,5 @@
 /**
- * @name	Logger.cpp
+ * @file	Logger.cpp
  * @author	Andrés González Fornell
  * @brief	Functions to create log messages on console.
  */
@@ -18,7 +18,7 @@ const string reset = "\033[0m";
 const string bold = "\033[1m";
 const string italic = "\033[3m";
 const string black = "\033[30m";
-const string red	 = "\033[31m";
+const string red = "\033[31m";
 const string green = "\033[32m";
 const string yellow = "\033[33m";
 const string blue = "\033[34m";
@@ -50,7 +50,7 @@ string tab(string content, const int tab_max) {
  * @param	message		message
  * @return	void
  */
-void consolelog(string source, logtype type, string message) {
+void consolelog(string source, LogType::logtype logtype, string message) {
 	const int tab_max = 2;
 	const int spacespertab = 8;
 	// Source
@@ -60,24 +60,24 @@ void consolelog(string source, logtype type, string message) {
 	// Log type
 	string type_name = "";
 	string type_style = "";
-	switch (type) {
-	case info:
+    switch (logtype) {
+    case LogType::info:
 		type_name = "info";
 		type_style = blue;
 		break;
-	case warning:
+    case LogType::warning:
 		type_name = "warning";
 		type_style = yellow;
 		break;
-	case error:
+    case LogType::error:
 		type_name = "error";
 		type_style = red;
 		break;
-	case progress:
+    case LogType::progress:
 		type_name = "progress";
 		type_style = green;
 		break;
-	case interaction:
+    case LogType::interaction:
 		type_name = "user action";
 		type_style = magenta;
 		break;

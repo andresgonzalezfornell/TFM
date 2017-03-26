@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['ui',['Ui',['../namespace_ui.html',1,'Ui'],['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui()']]],
-  ['update',['update',['../class_audio_info.html#ac34dcfd4324a0d169c1007e0ef9c0dee',1,'AudioInfo']]]
+  ['samples',['samples',['../class_audio_object.html#a800aa7993aa4df94ea860d34be655f82',1,'AudioObject']]],
+  ['senddata',['sendData',['../class_object_input.html#a7e6e84faea7559449eb6923eb3ad97e4',1,'ObjectInput']]],
+  ['sendoutput',['sendOutput',['../class_objects_configuration.html#a2d31ebb2cabf7e99e8bc2ce59023307c',1,'ObjectsConfiguration']]],
+  ['series',['series',['../class_audio_chart.html#a446bb53284f9970030b71ea560c6fa40',1,'AudioChart']]],
+  ['setdevice',['setDevice',['../class_device.html#a787d339c2202356330c932682e17410b',1,'Device']]],
+  ['setfile',['setFile',['../class_object_input.html#a297878a91c0c820a53d6d826840adf0a',1,'ObjectInput']]],
+  ['setlevel',['setLevel',['../class_device_level.html#a3019825bb5d81e4836fd551dd5b53f46',1,'DeviceLevel']]],
+  ['setnumber',['setNumber',['../class_objects_configuration.html#ae59da014f4292c71a88bae256a2d1c56',1,'ObjectsConfiguration']]],
+  ['setpoints',['setPoints',['../class_audio_chart.html#a682418238c77610c9636879bc77f8470',1,'AudioChart']]],
+  ['setsample',['setSample',['../class_audio_object.html#a61990fc72f062bc466e9076bed02139b',1,'AudioObject::setSample()'],['../class_audio_signal.html#aeef099025639235c7f062294470a691f',1,'AudioSignal::setSample()']]],
+  ['setsignal',['setSignal',['../class_audio_signal.html#ad2257998eee46b6727a59edcfff55be5',1,'AudioSignal']]],
+  ['setvolume',['setVolume',['../class_device.html#adf5c756854e766a394bc8857b270ea94',1,'Device']]],
+  ['signal',['signal',['../class_audio_signal.html#ae2ddd28d62dee93fa0b7ebb4df5a86f5',1,'AudioSignal']]],
+  ['size',['size',['../class_audio_signal.html#a44e595328705720f380613f1675dbdd1',1,'AudioSignal']]],
+  ['start',['start',['../struct_audio_object_1_1_time_slot.html#abac4c7aa11ca06f4ef84fda3e0819923',1,'AudioObject::TimeSlot::start()'],['../class_device_channel.html#ae8043b3e65b4fe7a7eb80b43b518f463',1,'DeviceChannel::start()']]],
+  ['stop',['stop',['../class_device_channel.html#a3f716b96dde1d1bdd44842aa40546d58',1,'DeviceChannel']]],
+  ['switchmode',['switchMode',['../class_device.html#a10492365ed3f9a0149d7aafe88546c62',1,'Device']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['green',['green',['../_logger_8cpp.html#ac7174a3942c3a9b337488d24da43ca0e',1,'Logger.cpp']]]
+  ['channel',['channel',['../class_device.html#a47e03eca511d5de82c2c1618ee7a9b9d',1,'Device']]],
+  ['chart',['chart',['../class_audio_chart.html#a8e2ec258d63b2b979191e47db2f67ee3',1,'AudioChart']]],
+  ['cyan',['cyan',['../_logger_8cpp.html#a6d8a9829359497d79b411a7794651a24',1,'Logger.cpp']]]
 ];
