@@ -2,7 +2,7 @@ var searchData=
 [
   ['addsample',['addSample',['../class_audio_signal.html#a94c974f752e3045190944860bd8b0ad8',1,'AudioSignal']]],
   ['amplitude',['amplitude',['../class_device_channel.html#a7a303ce410ac378486f6d8ef7326955a',1,'DeviceChannel']]],
-  ['audiochart',['AudioChart',['../class_audio_chart.html',1,'AudioChart'],['../class_audio_chart.html#aee43931cf52fa901bfc3bfa9fd90cf2c',1,'AudioChart::AudioChart()'],['../class_objects_configuration.html#a3626de86f3fc30bb0bc8e97c750e25ce',1,'ObjectsConfiguration::audiochart()'],['../class_objects.html#a1e913ddd6d614a92c0d5b9bb47e6fc88',1,'Objects::audiochart()']]],
+  ['audiochart',['AudioChart',['../class_audio_chart.html',1,'AudioChart'],['../class_audio_chart.html#a2949c28635d0792a8bb8d00253475652',1,'AudioChart::AudioChart()'],['../class_objects_configuration.html#a3626de86f3fc30bb0bc8e97c750e25ce',1,'ObjectsConfiguration::audiochart()'],['../class_objects.html#a1e913ddd6d614a92c0d5b9bb47e6fc88',1,'Objects::audiochart()']]],
   ['audiochart_2ecpp',['AudioChart.cpp',['../_audio_chart_8cpp.html',1,'']]],
   ['audiochart_2eh',['audiochart.h',['../audiochart_8h.html',1,'']]],
   ['audioformat',['audioformat',['../class_device_channel.html#a9924624c2f42bb71bcb4fdc643be5fd8',1,'DeviceChannel']]],

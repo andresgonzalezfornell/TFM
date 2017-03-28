@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['progress',['progress',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afafb75b11a25b057940cb2b4c67fbf1123',1,'Logger.h']]]
+  ['progress',['progress',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217aaf0ab04c6e780051a63639d0df57eb20',1,'LogType']]]
 ];

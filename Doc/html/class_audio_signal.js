@@ -9,6 +9,7 @@ var class_audio_signal =
     [ "getSample", "class_audio_signal.html#a92006cf482c9c576ec5597e0433174fc", null ],
     [ "getSignal", "class_audio_signal.html#a6f4f932b62fb7298aac87782b3895d92", null ],
     [ "getSpectrum", "class_audio_signal.html#a74891fbfae23ee7b55227f2c48162607", null ],
+    [ "getSpectrum", "class_audio_signal.html#ab4e5826842a32404977ebeb642964eb4", null ],
     [ "setSample", "class_audio_signal.html#aeef099025639235c7f062294470a691f", null ],
     [ "setSignal", "class_audio_signal.html#ad2257998eee46b6727a59edcfff55be5", null ],
     [ "signal", "class_audio_signal.html#ae2ddd28d62dee93fa0b7ebb4df5a86f5", null ],

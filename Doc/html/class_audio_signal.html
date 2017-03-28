@@ -125,6 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74891fbfae23ee7b55227f2c48162607"><td class="memItemLeft" align="right" valign="top">vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a74891fbfae23ee7b55227f2c48162607">getSpectrum</a> ()</td></tr>
 <tr class="memdesc:a74891fbfae23ee7b55227f2c48162607"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the signal spectral density.  <a href="#a74891fbfae23ee7b55227f2c48162607">More...</a><br /></td></tr>
 <tr class="separator:a74891fbfae23ee7b55227f2c48162607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e5826842a32404977ebeb642964eb4"><td class="memItemLeft" align="right" valign="top">vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#ab4e5826842a32404977ebeb642964eb4">getSpectrum</a> (int bands)</td></tr>
+<tr class="memdesc:ab4e5826842a32404977ebeb642964eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the signal spectral density.  <a href="#ab4e5826842a32404977ebeb642964eb4">More...</a><br /></td></tr>
+<tr class="separator:ab4e5826842a32404977ebeb642964eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69279f3fee0a4fe11d3e9a8361615a96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a69279f3fee0a4fe11d3e9a8361615a96">clear</a> ()</td></tr>
 <tr class="memdesc:a69279f3fee0a4fe11d3e9a8361615a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">It removes all samples from the signal.  <a href="#a69279f3fee0a4fe11d3e9a8361615a96">More...</a><br /></td></tr>
 <tr class="separator:a69279f3fee0a4fe11d3e9a8361615a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,7 +343,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a74891fbfae23ee7b55227f2c48162607"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74891fbfae23ee7b55227f2c48162607">&#9670;&nbsp;</a></span>getSpectrum()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a74891fbfae23ee7b55227f2c48162607">&#9670;&nbsp;</a></span>getSpectrum() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,6 +358,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>It gets the signal spectral density. </p>
+<dl class="section return"><dt>Returns</dt><dd>signal spectral density </dd></dl>
+
+</div>
+</div>
+<a id="ab4e5826842a32404977ebeb642964eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e5826842a32404977ebeb642964eb4">&#9670;&nbsp;</a></span>getSpectrum() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; float &gt; AudioSignal::getSpectrum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bands</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets the signal spectral density. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bands</td><td>number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible) </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>signal spectral density </dd></dl>
 
 </div>

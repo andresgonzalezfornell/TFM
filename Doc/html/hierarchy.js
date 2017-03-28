@@ -3,6 +3,7 @@ var hierarchy =
     [ "AudioObject", "class_audio_object.html", null ],
     [ "AudioSignal", "class_audio_signal.html", null ],
     [ "AudioChart::ChartOptions", "struct_audio_chart_1_1_chart_options.html", null ],
+    [ "LogType", "struct_log_type.html", null ],
     [ "ObjectInput", "class_object_input.html", null ],
     [ "QIODevice", null, [
       [ "DeviceChannel", "class_device_channel.html", null ]

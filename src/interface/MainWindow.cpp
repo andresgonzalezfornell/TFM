@@ -41,15 +41,15 @@ void MainWindow::on_device_volume_valueChanged(int value)
     objects->device->setVolume(value);
 }
 
-void MainWindow::on_device_pause_clicked()
+void MainWindow::on_device_muting_clicked()
 {
     consolelog("mainwindow",LogType::interaction,"device play/pause clicked");
-    objects->device->playPause(ui->device_pause);
+    objects->device->switchMuting();
 }
 
 void MainWindow::on_objects_number_valueChanged(int value) {
     consolelog("mainwindow",LogType::interaction,"objects number changed to " + std::to_string(value));
-    objects->objectsconfiguration->setNumber(ui->objects_configuration, value);
+    objects->objectsconfiguration->setNumber(value);
     //update();
 }
 

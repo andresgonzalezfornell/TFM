@@ -6,18 +6,17 @@
  * @brief	Device constructor.
  * @param   framework       user interface framework of device
  */
-Device::Device(QWidget *framework) :
+Device::Device(QWidget *framework, float fs) :
     deviceinfo(QAudioDeviceInfo::defaultInputDevice()),
     channel(0),
     volumeter(new DeviceLevel(framework->findChild<QWidget *>("device_level"))),
     audioinput(0)
 {
-    // Data channel
+    this->fs = fs;
+    this->framework = framework;
     initialize();
-    // Ui
-    QComboBox *device_selector = framework->findChild<QComboBox *>("device_selector");
+    QComboBox *device_selector = this->framework->findChild<QComboBox *>("device_selector");
     updateDevices(*device_selector);
-    playPause(framework->findChild<QPushButton *>("device_pause"));
     consolelog("Device",LogType::progress,"Device object is created");
 }
 
@@ -36,25 +35,32 @@ Device::~Device() {
 void Device::initialize()
 {
     consolelog("Device",LogType::progress,"initializing device");
-    format.setSampleRate(8000);
-    format.setChannelCount(1);
-    format.setSampleSize(16);
-    format.setSampleType(QAudioFormat::SignedInt);
-    format.setByteOrder(QAudioFormat::LittleEndian);
-    format.setCodec("audio/pcm");
+    this->format.setSampleRate(this->fs);
+    this->format.setChannelCount(1);
+    this->format.setSampleSize(16);
+    this->format.setSampleType(QAudioFormat::SignedInt);
+    this->format.setByteOrder(QAudioFormat::LittleEndian);
+    this->format.setCodec("audio/pcm");
     QAudioDeviceInfo info(deviceinfo);
     if (!info.isFormatSupported(format)) {
-        format = info.nearestFormat(format);
+        this->format = info.nearestFormat(format);
         consolelog("Device",LogType::warning,"default format not supported - trying to use nearest");
     }
-    if (channel) {
-        delete channel;
-    }
-    channel = new DeviceChannel(format, this);
-    connect(this->channel, SIGNAL(newLevel(float)),this->volumeter,SLOT(setLevel(float)));
-    audioinput = new QAudioInput(deviceinfo, format, this);
-    channel->start();
-    audioinput->start(channel);
+    channel = new DeviceChannel(this->format, this);
+    QObject::connect(this->channel, SIGNAL(newData(float)),this,SLOT(sendData(float)));
+    QObject::connect(this->channel, SIGNAL(newLevel(float)),this->volumeter,SLOT(setLevel(float)));
+    this->audioinput = new QAudioInput(this->deviceinfo, this->format, this);
+    this->channel->start();
+    this->audioinput->start(channel);
+    this->mute();
+}
+
+/**
+ * @brief   It sends new data from the device channel to Objects.
+ * @param   data
+ */
+void Device::sendData(float data) {
+    emit newData(data);
 }
 
 /**
@@ -91,9 +97,9 @@ QAudioDeviceInfo Device::getDevice(int index) {
 void Device::setDevice(int index) {
     channel->stop();
     audioinput->stop();
-    audioinput->disconnect(this);
+    //audioinput->disconnect(this);
     QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
-    QAudioDeviceInfo deviceinfo = devices.value(index);
+    this->deviceinfo = devices.value(index);
     consolelog("Device",LogType::progress,"input device changed to " + deviceinfo.deviceName().toStdString());
     initialize();
 }
@@ -109,40 +115,33 @@ void Device::setVolume(int value)
 }
 
 /**
- * @brief	Device play/pause action.
- * @param   button
+ * @brief	It sets device as playing.
  */
-void Device::playPause(QPushButton *button) {
-    QString text_old = button->text();
-    QString text_new = "";
-    if (text_old.toStdString()=="Play") {
-        text_new = "Pause";
-        this->audioinput->resume();
-    } else if(text_old.toStdString()=="Pause") {
-        text_new = "Play";
-        this->audioinput->suspend();
-    } else {
-        text_new = "Pause";
-        this->audioinput->resume();
-    }
-    button->setText(text_new);
-    consolelog("Device",LogType::info,"device play/pause button is showing now: " + text_new.toStdString());
+void Device::unmute() {
+    this->channel->unmute();
+    QPushButton *button = this->framework->findChild<QPushButton *>("device_muting");
+    button->setText("Mute");
 }
 
 /**
- * @brief	Device push/pull mode action.
- * @param   button
+ * @brief	It sets device as paused.
  */
-void Device::switchMode(QPushButton *button) {
-    QString text_old = button->text();
-    QString text_new = "";
-    if (text_old.toStdString()=="Push") {
-        text_new = "Pull";
-    } else if(text_old.toStdString()=="Pull") {
-        text_new = "Push";
+void Device::mute() {
+    this->channel->mute();
+    QPushButton *button = this->framework->findChild<QPushButton *>("device_muting");
+    button->setText("Unmute");
+}
+
+/**
+ * @brief	Device play/pause action.
+ */
+void Device::switchMuting() {
+    QPushButton *button = this->framework->findChild<QPushButton *>("device_muting");
+    if (button->text().toStdString()=="Unmute") {
+        this->unmute();
+    } else if(button->text().toStdString()=="Mute") {
+        this->mute();
     } else {
-        text_new = "Pull";
+        this->unmute();
     }
-    button->setText(text_new);
-    consolelog("Device",LogType::info,"device play/pause button is showing now: " + text_new.toStdString());
 }

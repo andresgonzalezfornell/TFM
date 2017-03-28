@@ -9,7 +9,6 @@ var class_device =
     [ "setVolume", "class_device.html#adf5c756854e766a394bc8857b270ea94", null ],
     [ "switchMode", "class_device.html#a10492365ed3f9a0149d7aafe88546c62", null ],
     [ "updateDevices", "class_device.html#a2e4fb9de07ff41b4d7a7431470c1b8f7", null ],
-    [ "updateLevel", "class_device.html#accf5c1d46e029e73982c466e96627420", null ],
     [ "audioinput", "class_device.html#a5c232fdd16ac0c502485706d876ab1f5", null ],
     [ "channel", "class_device.html#a47e03eca511d5de82c2c1618ee7a9b9d", null ],
     [ "deviceinfo", "class_device.html#a07682bee48f7b2f16e2401c9a3f5a3e1", null ],

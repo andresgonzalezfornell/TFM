@@ -28,15 +28,15 @@
 class ObjectInput  {
 public:
     bool fromdevice;            /**< it indicates if the audio source is a file (instead of an input device) */
-    ObjectInput(QWidget *parent, int index);
+    bool actived;               /**< it indicates if the audio source is actived */
+    ObjectInput(QLayout *parent, int index);
     ~ObjectInput();
     void setFile(string filepath);
     QByteArray getData();
-    void sendData(float data);
+    void sendData(const char *datapointer, qint64 datalength);
 private:
     QFile *file;                /**< source file object */
     AudioObject *audioobject;   /**< audio object */
-
 };
 
 /**
@@ -47,19 +47,17 @@ private:
 class ObjectsConfiguration : public QObject {
     Q_OBJECT
 public:
-    ObjectsConfiguration(QWidget *parent, int number, AudioChart *audiochart);
+    ObjectsConfiguration(QWidget *parent, int number);
     ~ObjectsConfiguration();
-    void setNumber(QWidget *parent, int number);
+    ObjectInput getObject(int index);
+    void setNumber(int number);
     int getNumber();
     void sendOutput();
 private:
-    QList<ObjectInput> objects;                 /**< list of object input objects */
-    int number;                                 /**< number of objects */
-    AudioChart *audiochart;                     /**< audio chart object */
-    AudioSignal *master;                        /**< input master audio signal */
-    void plotAudio(float sample);
-public slots:
-    void receiveDevice(float value);
+    QList<ObjectInput> objects;     /**< list of object input objects */
+    QWidget *framework;             /**< user interface framework of objects configuration */
+    QLayout *layout;                /**< user interface layout of the objects list */
+    int number;                     /**< number of objects */
 };
 
 /**
@@ -76,6 +74,11 @@ public:
     AudioChart *audiochart;                         /**< audio chart object */
     Objects(QWidget *framework);
     ~Objects();
+public slots:
+    void receiveDevice(float value);
+private:
+    AudioSignal *master;                            /**< input master audio signal */
+    void addToMaster(float sample);
 };
 
 #endif // OBJECTS_H

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TFM: src/tools/Logger.h File Reference</title>
+<title>TFM: LogType Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_logger_8h.html','');});
+$(document).ready(function(){initNavTree('struct_log_type.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -81,81 +81,64 @@ $(document).ready(function(){initNavTree('_logger_8h.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="struct_log_type-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Logger.h File Reference</div>  </div>
+<div class="title">LogType Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;iostream&quot;</code><br />
-<code>#include &quot;stdio.h&quot;</code><br />
-<code>#include &quot;string&quot;</code><br />
-</div>
-<p><a href="_logger_8h_source.html">Go to the source code of this file.</a></p>
+
+<p><code>#include &lt;<a class="el" href="_logger_8h_source.html">Logger.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_type.html">LogType</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ae4737492051708cda97f96282ed66645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_logger_8h.html#ae4737492051708cda97f96282ed66645">consolelog</a> (string, <a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217">LogType::logtype</a> logtype, string)</td></tr>
-<tr class="memdesc:ae4737492051708cda97f96282ed66645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message on console.  <a href="#ae4737492051708cda97f96282ed66645">More...</a><br /></td></tr>
-<tr class="separator:ae4737492051708cda97f96282ed66645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a42f5153a559d41c697e4763ed36ff217"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217">logtype</a> { <br />
+&#160;&#160;<a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b">info</a>, 
+<a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af479132e55c523158544cc5c059bc9be">warning</a>, 
+<a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af7be1f9d57d8054ac42608401faebff7">error</a>, 
+<a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217aaf0ab04c6e780051a63639d0df57eb20">progress</a>, 
+<br />
+&#160;&#160;<a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c">interaction</a>
+<br />
+ }</td></tr>
+<tr class="separator:a42f5153a559d41c697e4763ed36ff217"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ae4737492051708cda97f96282ed66645"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4737492051708cda97f96282ed66645">&#9670;&nbsp;</a></span>consolelog()</h2>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a42f5153a559d41c697e4763ed36ff217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f5153a559d41c697e4763ed36ff217">&#9670;&nbsp;</a></span>logtype</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void consolelog </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217">LogType::logtype</a>&#160;</td>
-          <td class="paramname"><em>logtype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="struct_log_type.html#a42f5153a559d41c697e4763ed36ff217">LogType::logtype</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Log a message on console. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>origin class/method/file where the message was logged </td></tr>
-    <tr><td class="paramname">type</td><td>type of message </td></tr>
-    <tr><td class="paramname">message</td><td>message </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b"></a>info&#160;</td><td class="fielddoc"><p>The message is not important, just some information for the user </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a42f5153a559d41c697e4763ed36ff217af479132e55c523158544cc5c059bc9be"></a>warning&#160;</td><td class="fielddoc"><p>The message is a warning </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a42f5153a559d41c697e4763ed36ff217af7be1f9d57d8054ac42608401faebff7"></a>error&#160;</td><td class="fielddoc"><p>The message comes from an bad execution (do not confuse with execution or compilation errors) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a42f5153a559d41c697e4763ed36ff217aaf0ab04c6e780051a63639d0df57eb20"></a>progress&#160;</td><td class="fielddoc"><p>Information about the current steps in the running execution </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c"></a>interaction&#160;</td><td class="fielddoc"><p>Information about an user interaction </p>
+</td></tr>
+</table>
 
 </div>
 </div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/tools/<a class="el" href="_logger_8h_source.html">Logger.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1563a38af0d3a5e4a6330d6d45e9792a.html">tools</a></li><li class="navelem"><a class="el" href="_logger_8h.html">Logger.h</a></li>
+    <li class="navelem"><a class="el" href="struct_log_type.html">LogType</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -35,11 +35,14 @@ public:
     ~DeviceChannel();
     void start();
     void stop();
+    void unmute();
+    void mute();
     qint64 readData(char *data, qint64 maxlen);
     qint64 writeData(const char *data, qint64 datalength);
 private:
     const QAudioFormat audioformat;     /**< audio format of device channel */
     quint32 amplitude;                  /**< absolute maximum value of the audio signal for the selected audio format*/
+    bool muted;                         /**< it is true if the audio channel is muted */
 signals:
     void newLevel(float);
     void newData(float);
@@ -75,7 +78,7 @@ class Device : public QMainWindow
     Q_OBJECT
 public:
     DeviceChannel *channel;         /**< device channel */
-    Device(QWidget *framework);
+    Device(QWidget *framework, float fs);
     ~Device();
     // Devices
     void updateDevices(QComboBox &device_selector);
@@ -83,16 +86,22 @@ public:
     void setDevice(int index);
     // Level
     void setVolume(int value);
-    // Ui
-    void playPause(QPushButton *button);
-    void switchMode(QPushButton *button);
+    // Controls
+    void unmute();
+    void mute();
+    void switchMuting();
     void initialize();
+public slots:
+    void sendData(float);
 private:
     QWidget *framework;             /**< user interface framework of device */
     QAudioDeviceInfo deviceinfo;    /**< audio device info object */
     QAudioInput *audioinput;        /**< audio input object */
     QAudioFormat format;            /**< audio format object */
     DeviceLevel *volumeter;         /**< volumeter object */
+    float fs;                       /**< sampling frequency [Hz] */
+signals:
+    void newData(float);
 };
 
 #endif // INPUT_H

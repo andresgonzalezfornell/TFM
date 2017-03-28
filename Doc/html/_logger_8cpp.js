@@ -1,6 +1,6 @@
 var _logger_8cpp =
 [
-    [ "consolelog", "_logger_8cpp.html#a3f85eaa9017d14a9e6322f0497f7866c", null ],
+    [ "consolelog", "_logger_8cpp.html#a96f21a78ef6933b55a122fb2700c6bc5", null ],
     [ "tab", "_logger_8cpp.html#a3013405c202e8ad84b43779507f8a256", null ],
     [ "black", "_logger_8cpp.html#a1b36ba555ec8bacff77e4dc1981c2cf7", null ],
     [ "blue", "_logger_8cpp.html#a0885a6a72a98454886b9add4d6ac9130", null ],

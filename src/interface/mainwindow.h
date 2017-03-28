@@ -26,18 +26,15 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void initialize();
-
 private slots:
     void on_device_selector_currentIndexChanged(int index);
     void on_device_volume_valueChanged(int value);
-    void on_device_pause_clicked();
+    void on_device_muting_clicked();
     void on_objects_number_valueChanged(int value);
-
 private:
     Ui::MainWindow *ui;     /**< User interface object */
     Objects *objects;       /**< Objects panel object */

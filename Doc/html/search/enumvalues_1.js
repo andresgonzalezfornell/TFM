@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['info',['info',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afaa4abb266e72efba828327b605b2ab0f4',1,'Logger.h']]],
-  ['interaction',['interaction',['../_logger_8h.html#a39c57ea9c9abd4808b31871bda91a3afac80be5e3660b085e53026d9712b85e55',1,'Logger.h']]]
+  ['info',['info',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b',1,'LogType']]],
+  ['interaction',['interaction',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c',1,'LogType']]]
 ];
