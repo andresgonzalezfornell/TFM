@@ -43,6 +43,9 @@
        <string>Objects</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -151,7 +154,7 @@
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item>
-             <widget class="QWidget" name="device_level" native="true">
+             <widget class="QWidget" name="device_volumeter" native="true">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -173,7 +176,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="device_volume">
+             <widget class="QSlider" name="device_level">
               <property name="maximum">
                <number>100</number>
               </property>
@@ -191,17 +194,37 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="objects_number">
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>10</number>
-         </property>
-         <property name="value">
-          <number>2</number>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="objects_number_layout">
+         <item>
+          <widget class="QLabel" name="objects_number_label">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Number of objects</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="objects_number">
+           <property name="specialValueText">
+            <string/>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>10</number>
+           </property>
+           <property name="value">
+            <number>2</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QScrollArea" name="objects_configuration">
@@ -237,8 +260,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>227</width>
-            <height>130</height>
+            <width>226</width>
+            <height>91</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="objects_list_layout">

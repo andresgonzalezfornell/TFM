@@ -81,8 +81,11 @@ $(document).ready(function(){initNavTree('class_objects.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_objects-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Objects Class Reference</div>  </div>
@@ -102,6 +105,12 @@ Inheritance diagram for Objects:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:a2917914f542011fe2c7bd484ca36e379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objects.html#a2917914f542011fe2c7bd484ca36e379">receiveDevice</a> (float value)</td></tr>
+<tr class="memdesc:a2917914f542011fe2c7bd484ca36e379"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is called when device data has been received.  <a href="#a2917914f542011fe2c7bd484ca36e379">More...</a><br /></td></tr>
+<tr class="separator:a2917914f542011fe2c7bd484ca36e379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a40edba78775a3ace51b6abaa0dcb4dbe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objects.html#a40edba78775a3ace51b6abaa0dcb4dbe">Objects</a> (QWidget *framework)</td></tr>
@@ -119,6 +128,17 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa2dabc22aa38878a095e72c1c69fdf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e913ddd6d614a92c0d5b9bb47e6fc88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_chart.html">AudioChart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objects.html#a1e913ddd6d614a92c0d5b9bb47e6fc88">audiochart</a></td></tr>
 <tr class="separator:a1e913ddd6d614a92c0d5b9bb47e6fc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a63206fb919b4843589a48e7b7330b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objects.html#a63206fb919b4843589a48e7b7330b2fe">addToMaster</a> (float sample)</td></tr>
+<tr class="memdesc:a63206fb919b4843589a48e7b7330b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds a sample to plot input audio.  <a href="#a63206fb919b4843589a48e7b7330b2fe">More...</a><br /></td></tr>
+<tr class="separator:a63206fb919b4843589a48e7b7330b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae9e5eebcf9984df588de1b840b91ebe1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_signal.html">AudioSignal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objects.html#ae9e5eebcf9984df588de1b840b91ebe1">master</a></td></tr>
+<tr class="separator:ae9e5eebcf9984df588de1b840b91ebe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>User interface class of <a class="el" href="class_objects.html" title="User interface class of Objects framework. ">Objects</a> framework. </p>
@@ -169,6 +189,77 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a63206fb919b4843589a48e7b7330b2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63206fb919b4843589a48e7b7330b2fe">&#9670;&nbsp;</a></span>addToMaster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Objects::addToMaster </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sample</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It adds a sample to plot input audio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; number of frequency bands to plot</p>
+<p>&lt; period of audio plotting [s] </p>
+
+</div>
+</div>
+<a id="a2917914f542011fe2c7bd484ca36e379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2917914f542011fe2c7bd484ca36e379">&#9670;&nbsp;</a></span>receiveDevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Objects::receiveDevice </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It is called when device data has been received. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a1e913ddd6d614a92c0d5b9bb47e6fc88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e913ddd6d614a92c0d5b9bb47e6fc88">&#9670;&nbsp;</a></span>audiochart</h2>
@@ -197,6 +288,29 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>device object </p>
+
+</div>
+</div>
+<a id="ae9e5eebcf9984df588de1b840b91ebe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e5eebcf9984df588de1b840b91ebe1">&#9670;&nbsp;</a></span>master</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_audio_signal.html">AudioSignal</a>* Objects::master</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>input master audio signal </p>
 
 </div>
 </div>

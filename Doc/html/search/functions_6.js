@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;test.cpp']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]]
+  ['newdata',['newData',['../class_device_channel.html#a426f67d53fab40051b905cd17936b287',1,'DeviceChannel::newData()'],['../class_device.html#adaaea433f5bd3dd4f61094a653f15f54',1,'Device::newData()']]],
+  ['newlevel',['newLevel',['../class_device_channel.html#a7b2f41582b55e846affaf5bfb66f4b15',1,'DeviceChannel']]]
 ];

@@ -9,8 +9,8 @@
 #include "module/AudioObject.h"
 
 int main(int argc, char *argv[]) {
-	consolelog("test", progress, "running test");
+	consolelog("test", LogType::progress, "running test");
 
-	consolelog("test", progress, "test was completed");
+	consolelog("test", LogType::progress, "test was completed");
 	return 0;
 }

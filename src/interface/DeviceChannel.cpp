@@ -93,7 +93,7 @@ qint64 DeviceChannel::readData(char *data, qint64 maxlen)
 /**
  * @brief	It writes data from the device channel.
  * @param   *data       data pointer
- * @param   len         data length
+ * @param   datalength  data length
  * @return
  */
 qint64 DeviceChannel::writeData(const char *data, qint64 datalength)

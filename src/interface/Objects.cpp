@@ -18,6 +18,8 @@ Objects::Objects(QWidget *framework) {
     this->master = new AudioSignal(fs);
     float chartrange[2][2] = {{0,master->fs/2},{0,1e-3}};
     this->audiochart = new AudioChart(framework->findChild<QWidget *>("objects_chart"),chartrange,"",AudioChart::ChartOptions::labelX);
+    // User interface slots
+    QObject::connect(framework->findChild<QSpinBox *>("objects_number"),SIGNAL(valueChanged(int)),this->objectsconfiguration,SLOT(setNumber(int)));
     consolelog("Objects",LogType::progress,"Objects object is created");
 }
 
@@ -28,10 +30,9 @@ Objects::~Objects() {
     consolelog("Objects",LogType::progress,"Objects object is deleted");
 }
 
-
 /**
  * @brief	It is called when device data has been received.
- * @param   devicedata
+ * @param   value
  */
 void Objects::receiveDevice(float value) {
     double amplitude = 0;

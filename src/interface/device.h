@@ -5,21 +5,20 @@
 #include "math.h"
 #include "stdlib.h"
 // Qt libraries
+#include "QMainWindow"
+#include "QObject"
+#include "QWidget"
+#include "QComboBox"
+#include "QLayout"
+#include "QPushButton"
+#include "QSlider"
 #include "QAudioInput"
 #include "QAudioDeviceInfo"
 #include "QByteArray"
-#include "QComboBox"
-#include "QMainWindow"
-#include "QObject"
-#include "QPixmap"
-#include "QPushButton"
-#include "QSlider"
-#include "QWidget"
-#include "QPainter"
-#include "QLayout"
 #include "qendian.h"
 // Classes and local files
 #include "../tools/Logger.h"
+#include "volumeter.h"
 
 /**
  * @class	DeviceChannel
@@ -49,26 +48,6 @@ signals:
 };
 
 /**
- * @class	DeviceLevel
- * @author	Andrés González Fornell
- * @brief	Input audio volumeter class.
- */
-class DeviceLevel : public QWidget
-{
-    Q_OBJECT
-public:
-    DeviceLevel(QWidget *parent);
-public slots:
-    void setLevel(float level);
-protected:
-    void paintEvent(QPaintEvent *event);
-private:
-    int width;          /**< Volumeter width */
-    qreal level;        /**< Current level */
-    QPixmap pixmap;     /**< pixmap */
-};
-
-/**
  * @class	Device
  * @author	Andrés González Fornell
  * @brief	User interface class of Device framework.
@@ -80,25 +59,22 @@ public:
     DeviceChannel *channel;         /**< device channel */
     Device(QWidget *framework, float fs);
     ~Device();
-    // Devices
+    void initialize();
     void updateDevices(QComboBox &device_selector);
     QAudioDeviceInfo getDevice(int index);
-    void setDevice(int index);
-    // Level
-    void setVolume(int value);
-    // Controls
     void unmute();
     void mute();
-    void switchMuting();
-    void initialize();
 public slots:
-    void sendData(float);
+    void sendData(float data);
+    void setDevice(int index);
+    void switchMuting();
+    void setLevel(int value);
 private:
     QWidget *framework;             /**< user interface framework of device */
     QAudioDeviceInfo deviceinfo;    /**< audio device info object */
     QAudioInput *audioinput;        /**< audio input object */
     QAudioFormat format;            /**< audio format object */
-    DeviceLevel *volumeter;         /**< volumeter object */
+    Volumeter *volumeter;           /**< volumeter object */
     float fs;                       /**< sampling frequency [Hz] */
 signals:
     void newData(float);

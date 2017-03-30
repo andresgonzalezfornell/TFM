@@ -124,6 +124,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f716b96dde1d1bdd44842aa40546d58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#a3f716b96dde1d1bdd44842aa40546d58">stop</a> ()</td></tr>
 <tr class="memdesc:a3f716b96dde1d1bdd44842aa40546d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stops device channel.  <a href="#a3f716b96dde1d1bdd44842aa40546d58">More...</a><br /></td></tr>
 <tr class="separator:a3f716b96dde1d1bdd44842aa40546d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024c4cf0a3066337f343d4f6c65b334e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#a024c4cf0a3066337f343d4f6c65b334e">unmute</a> ()</td></tr>
+<tr class="memdesc:a024c4cf0a3066337f343d4f6c65b334e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It unmutes device channel.  <a href="#a024c4cf0a3066337f343d4f6c65b334e">More...</a><br /></td></tr>
+<tr class="separator:a024c4cf0a3066337f343d4f6c65b334e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02f3fe82dea6ad73453a0c8b96ae6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#ab02f3fe82dea6ad73453a0c8b96ae6c9">mute</a> ()</td></tr>
+<tr class="memdesc:ab02f3fe82dea6ad73453a0c8b96ae6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It mutes device channel.  <a href="#ab02f3fe82dea6ad73453a0c8b96ae6c9">More...</a><br /></td></tr>
+<tr class="separator:ab02f3fe82dea6ad73453a0c8b96ae6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a213266f38fb587526ec024d2bbe543ad"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#a213266f38fb587526ec024d2bbe543ad">readData</a> (char *data, qint64 maxlen)</td></tr>
 <tr class="memdesc:a213266f38fb587526ec024d2bbe543ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">It reads data from the device channel.  <a href="#a213266f38fb587526ec024d2bbe543ad">More...</a><br /></td></tr>
 <tr class="separator:a213266f38fb587526ec024d2bbe543ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +143,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9924624c2f42bb71bcb4fdc643be5fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a303ce410ac378486f6d8ef7326955a"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#a7a303ce410ac378486f6d8ef7326955a">amplitude</a></td></tr>
 <tr class="separator:a7a303ce410ac378486f6d8ef7326955a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285983439453b0804f2491d46d0b0c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device_channel.html#af285983439453b0804f2491d46d0b0c3">muted</a></td></tr>
+<tr class="separator:af285983439453b0804f2491d46d0b0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input audio device class. </p>
@@ -192,6 +200,25 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab02f3fe82dea6ad73453a0c8b96ae6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02f3fe82dea6ad73453a0c8b96ae6c9">&#9670;&nbsp;</a></span>mute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeviceChannel::mute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It mutes device channel. </p>
+
+</div>
+</div>
 <a id="a426f67d53fab40051b905cd17936b287"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a426f67d53fab40051b905cd17936b287">&#9670;&nbsp;</a></span>newData</h2>
 
@@ -320,6 +347,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a024c4cf0a3066337f343d4f6c65b334e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024c4cf0a3066337f343d4f6c65b334e">&#9670;&nbsp;</a></span>unmute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeviceChannel::unmute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It unmutes device channel. </p>
+
+</div>
+</div>
 <a id="a6e3bfabd16148271993f3994e68a5a15"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e3bfabd16148271993f3994e68a5a15">&#9670;&nbsp;</a></span>writeData()</h2>
 
@@ -350,12 +396,11 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*data</td><td>data pointer </td></tr>
-    <tr><td class="paramname">len</td><td>data length </td></tr>
+    <tr><td class="paramname">datalength</td><td>data length </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<p>&lt; normalization </p>
 
 </div>
 </div>
@@ -403,6 +448,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>audio format of device channel </p>
+
+</div>
+</div>
+<a id="af285983439453b0804f2491d46d0b0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af285983439453b0804f2491d46d0b0c3">&#9670;&nbsp;</a></span>muted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DeviceChannel::muted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>it is true if the audio channel is muted </p>
 
 </div>
 </div>

@@ -24,10 +24,10 @@ SOURCES += main.cpp\
     Objects.cpp \
     ObjectInput.cpp \
     DeviceChannel.cpp \
-    DeviceLevel.cpp \
     Device.cpp \
     AudioChart.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    Volumeter.cpp
 
 HEADERS  += mainwindow.h \
     ../tools/Logger.h \
@@ -36,7 +36,8 @@ HEADERS  += mainwindow.h \
     ../../lib/QtLibraries/src/qtlibraries.h \
     objects.h \
     device.h \
-    audiochart.h
+    audiochart.h \
+    volumeter.h
 
 FORMS    += mainwindow.ui
 

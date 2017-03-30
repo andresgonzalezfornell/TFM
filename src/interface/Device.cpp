@@ -5,11 +5,12 @@
 /**
  * @brief	Device constructor.
  * @param   framework       user interface framework of device
+ * @param   fs              sampling frequency
  */
 Device::Device(QWidget *framework, float fs) :
     deviceinfo(QAudioDeviceInfo::defaultInputDevice()),
     channel(0),
-    volumeter(new DeviceLevel(framework->findChild<QWidget *>("device_level"))),
+    volumeter(new Volumeter(framework->findChild<QWidget *>("device_volumeter"))),
     audioinput(0)
 {
     this->fs = fs;
@@ -17,6 +18,10 @@ Device::Device(QWidget *framework, float fs) :
     initialize();
     QComboBox *device_selector = this->framework->findChild<QComboBox *>("device_selector");
     updateDevices(*device_selector);
+    // User interface slots
+    QObject::connect(this->framework->findChild<QPushButton *>("device_muting"),SIGNAL(released()),this,SLOT(switchMuting()));
+    QObject::connect(this->framework->findChild<QComboBox *>("device_selector"),SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
+    QObject::connect(this->framework->findChild<QSlider *>("device_level"),SIGNAL(valueChanged(int)),this,SLOT(setLevel(int)));
     consolelog("Device",LogType::progress,"Device object is created");
 }
 
@@ -56,14 +61,6 @@ void Device::initialize()
 }
 
 /**
- * @brief   It sends new data from the device channel to Objects.
- * @param   data
- */
-void Device::sendData(float data) {
-    emit newData(data);
-}
-
-/**
  * @brief	It updates system input devices combobox.
  * @param   device_selector    QComboBox object to update
  */
@@ -91,30 +88,6 @@ QAudioDeviceInfo Device::getDevice(int index) {
 }
 
 /**
- * @brief	It changes input audio device.
- * @param   index       Selected device index
- */
-void Device::setDevice(int index) {
-    channel->stop();
-    audioinput->stop();
-    //audioinput->disconnect(this);
-    QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
-    this->deviceinfo = devices.value(index);
-    consolelog("Device",LogType::progress,"input device changed to " + deviceinfo.deviceName().toStdString());
-    initialize();
-}
-
-/**
- * @brief	Change input audio device.
- * @param   value       Selected value volume
- */
-void Device::setVolume(int value)
-{
-        qreal volume = value/100;
-        audioinput->setVolume(volume);
-}
-
-/**
  * @brief	It sets device as playing.
  */
 void Device::unmute() {
@@ -133,15 +106,59 @@ void Device::mute() {
 }
 
 /**
- * @brief	Device play/pause action.
+ * @brief   It sends new data from the device channel to Objects.
+ * @param   data
+ */
+void Device::sendData(float data) {
+    emit newData(data);
+}
+
+/**
+ * @name    Device interface slots
+ * @brief   User interface control functions of device.
+ * @{
+ */
+
+/**
+ * @brief	It changes input audio device.
+ * @param   index       Selected device index
+ */
+void Device::setDevice(int index) {
+    channel->stop();
+    audioinput->stop();
+    //audioinput->disconnect(this);
+    QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
+    this->deviceinfo = devices.value(index);
+    consolelog("Device",LogType::interaction,"input device changed to " + deviceinfo.deviceName().toStdString());
+    initialize();
+}
+
+/**
+ * @brief	Device mute/unmute action.
  */
 void Device::switchMuting() {
     QPushButton *button = this->framework->findChild<QPushButton *>("device_muting");
     if (button->text().toStdString()=="Unmute") {
         this->unmute();
+        consolelog("Device",LogType::interaction,"device has been unmuted");
     } else if(button->text().toStdString()=="Mute") {
         this->mute();
+        consolelog("Device",LogType::interaction,"device has been muted");
     } else {
         this->unmute();
+        consolelog("Device",LogType::interaction,"device has been unmuted");
     }
 }
+
+/**
+ * @brief	Change input audio device.
+ * @param   value       Selected value volume
+ */
+void Device::setLevel(int value)
+{
+        float volume = (float)value/100;
+        audioinput->setVolume(volume);
+        consolelog("Device",LogType::interaction,"device volumen level set to " + std::to_string(value) + "%");
+}
+
+/** @} */

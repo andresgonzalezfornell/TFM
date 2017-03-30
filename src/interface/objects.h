@@ -25,18 +25,38 @@
  * @author	Andrés González Fornell
  * @brief	Single-object input configuration class.
  */
-class ObjectInput  {
+class ObjectInput {
 public:
-    bool fromdevice;            /**< it indicates if the audio source is a file (instead of an input device) */
-    bool actived;               /**< it indicates if the audio source is actived */
+    bool fromdevice;                /**< it indicates if the audio source is a file (instead of an input device) */
+    bool active;                   /**< it indicates if the audio source is active */
+    /**
+     * @brief   user interface elements
+     * @{
+     */
+    QGroupBox *groupbox;            /**< object group box */
+    QLineEdit *label;               /**< field to change the object label */
+    QWidget *volumeterwidget;       /**< object level indicator */
+    QCheckBox *fromdevicecheckbox;  /**< checkbox to indicate if the source is the input device */
+    QCheckBox *activecheckbox;      /**< checkbox to indicate if the object is active */
+    QPushButton *loadfile;          /**< button to load file as source */
+    QLabel *currentsource;          /**< current source indicator */
+    /** @} */
     ObjectInput(QLayout *parent, int index);
     ~ObjectInput();
+    int getIndex() const;
+    void setIndex(int index);
     void setFile(string filepath);
+    void setLabel(string label);
+    void setFromDevice(bool state);
+    void setActive(bool state);
     QByteArray getData();
-    void sendData(const char *datapointer, qint64 datalength);
+    void sendData(float data);
 private:
-    QFile *file;                /**< source file object */
-    AudioObject *audioobject;   /**< audio object */
+    int index;                      /**< object index */
+    QFile *file;                    /**< source file object */
+    AudioObject *audioobject;       /**< audio object */
+    Volumeter *volumeter;           /**< volumeter object */
+    string name;                    /**< input object name */
 };
 
 /**
@@ -50,14 +70,23 @@ public:
     ObjectsConfiguration(QWidget *parent, int number);
     ~ObjectsConfiguration();
     ObjectInput getObject(int index);
-    void setNumber(int number);
     int getNumber();
-    void sendOutput();
+    void deleteObject(int index);
+    ObjectInput getParentObject(QObject *element);
 private:
-    QList<ObjectInput> objects;     /**< list of object input objects */
     QWidget *framework;             /**< user interface framework of objects configuration */
+    QList<ObjectInput> objects;     /**< list of object input objects */
     QLayout *layout;                /**< user interface layout of the objects list */
     int number;                     /**< number of objects */
+    Volumeter *volumeter;           /**< volumeter object */
+private slots:
+    // Objects configuration controls
+    void setNumber(int number);
+    // Inputs objects controls
+    void setLabel(QString label);
+    void setFromDevice(bool state);
+    void setActive(bool state);
+    void loadFile();
 };
 
 /**

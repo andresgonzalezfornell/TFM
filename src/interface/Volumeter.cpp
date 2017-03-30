@@ -1,26 +1,22 @@
 // Class libraries
-#include "device.h"
-#include "ui_mainwindow.h"
-// System libraries
-#include "math.h"
-#include "stdlib.h"
+#include "volumeter.h"
 
 /**
- * @brief	DeviceLevel constructor.
+ * @brief	Volumeter constructor.
  * @param   *parent     user interface element pointer to place the volumeter
  */
-DeviceLevel::DeviceLevel(QWidget *parent)
+Volumeter::Volumeter(QWidget *parent)
     : QWidget(parent)
 {
     width = parent->frameGeometry().width();
     level = 0;
-    consolelog("Device",LogType::progress,"DeviceLevel object is created");
+    consolelog("Volumeter",LogType::progress,"Volumeter object is created");
 }
 
 /**
  * @brief	It fills the volumeter.
  */
-void DeviceLevel::paintEvent(QPaintEvent * /* event */)
+void Volumeter::paintEvent(QPaintEvent * /* event */)
 {
     QPainter painter(this);
     // Size
@@ -44,9 +40,9 @@ void DeviceLevel::paintEvent(QPaintEvent * /* event */)
 
 /**
  * @brief	It sets the new level value to the volumeter
- * @param   value
+ * @param   level
  */
-void DeviceLevel::setLevel(float level)
+void Volumeter::setLevel(float level)
 {
     this->level = level;
     update();

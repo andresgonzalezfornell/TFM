@@ -46,7 +46,7 @@ string tab(string content, const int tab_max) {
 /**
  * @brief	Log a message on console
  * @param	source		origin class/method/file where the message was logged
- * @param	type		type of message
+ * @param	logtype		type of message
  * @param	message		message
  * @return	void
  */
