@@ -9,7 +9,7 @@
 #include "QMainWindow"
 // Classes and local files
 #include "mainwindow.h"
-#include "AudioObject.h"
+#include "AudioSignal.h"
 #include "../tools/Logger.h"
 
 /**

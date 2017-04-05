@@ -25,9 +25,9 @@
 #include "device.h"
 #include "AudioFile.h"
 #include "AudioInfo.h"
-#include "AudioObject.h"
 #include "AudioSignal.h"
 #include "AudioChart.h"
+#include "../tools/AudioStream.h"
 #include "../tools/Logger.h"
 
 /**
@@ -83,7 +83,7 @@ public:
     float getLastValue();
 private:
     int index;                      /**< object index */
-    AudioObject *audioobject;       /**< audio object */
+    AudioStream *audiostream;       /**< audio object */
     Volumeter *volumeter;           /**< volumeter object */
     std::string name;               /**< input object name */
     float lastvalue;                /**< last received value */

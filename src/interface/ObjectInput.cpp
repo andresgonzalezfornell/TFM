@@ -30,12 +30,12 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     // Initialization
     this->file = NULL;
     this->name = QString("Object %1").arg(index).toStdString();
-    this->audioobject = new AudioObject();
+    this->audiostream = new AudioStream(Objects::fs);
     this->setIndex(index);
     this->setLabel(this->name);
     this->setLevel(70);
     this->setActive(false);
-    this->volumeter = new Volumeter(this->volumeterwidget,this->audioobject->fs);
+    this->volumeter = new Volumeter(this->volumeterwidget,Objects::fs);
     this->setFromDevice(true);
     this->setFile("");
     this->pauseFile();
@@ -142,7 +142,6 @@ void ObjectInput::setFromDevice(bool state) {
     this->fromdevicecheckbox->setChecked(state);
     this->loadfile->setEnabled(!state);
     if(state) {
-        this->audioobject->fs = Objects::fs;
         this->currentsource->setText("input device");
         this->loadfile->hide();
         this->audioprogress->hide();
@@ -152,10 +151,8 @@ void ObjectInput::setFromDevice(bool state) {
         this->audiotime->hide();
     } else {
         if(file==NULL) {
-            this->audioobject->fs = 0;
             this->currentsource->setText("load a file");
         } else {
-            this->audioobject->fs = this->file->header.samplerate;
             this->currentsource->setText(QString::fromStdString(this->file->getFilepath()));
         }
         this->loadfile->show();
@@ -313,7 +310,7 @@ float ObjectInput::readData() {
 void ObjectInput::sendData(float data) {
     data *= this->level;
     this->lastvalue = data;
-    this->audioobject->push(data);
+    this->audiostream->push(data);
     this->volumeter->addSample(data);
 }
 

@@ -1,5 +1,5 @@
-#ifndef SRC_MODULE_AUDIOOBJECT_H_
-#define SRC_MODULE_AUDIOOBJECT_H_
+#ifndef SRC_MODULE_AUDIOSTREAM_H_
+#define SRC_MODULE_AUDIOSTREAM_H_
 
 // System libraries
 #include "vector"
@@ -7,11 +7,11 @@
 #include "../tools/Logger.h"
 
 /**
- * @class	AudioObject
+ * @class	AudioStream
  * @author	Andrés González Fornell
  * @brief	Audio objects for the SAOC interface.
  */
-class AudioObject {
+class AudioStream {
 public:
     /**
      * @brief   It indicates time slot of the available signal.
@@ -22,9 +22,9 @@ public:
     };
     TimeSlot timestamp;     /**< corresponding timestamp for the available data */
     int fs;               /**< signal sampling frequency [Hz] */
-    AudioObject();
-    AudioObject(int fs);
-    ~AudioObject();
+    AudioStream();
+    AudioStream(int fs);
+    ~AudioStream();
     void push(float sample);
     float pop();
     std::vector<float> getSamples();
@@ -35,4 +35,4 @@ private:
     std::vector<float> samples;  /**< available data from the audio object */
 };
 
-#endif /* SRC_MODULE_AUDIOOBJECT_H_ */
+#endif /* SRC_MODULE_AUDIOSTREAM_H_ */

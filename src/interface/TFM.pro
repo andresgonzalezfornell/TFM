@@ -23,25 +23,47 @@ SOURCES += main.cpp\
     ObjectInput.cpp \
     Device.cpp \
     DeviceChannel.cpp \
-    AudioFile.cpp \
-    AudioObject.cpp \
     AudioSignal.cpp \
+    AudioFile.cpp \
+    AudioInfo.cpp \
     AudioChart.cpp \
     Volumeter.cpp \
-    ../tools/Logger.cpp \
-    AudioInfo.cpp
+    ../coder/bitstream.c \
+    ../coder/sac_bd_embedder.c \
+    ../coder/sac_enc.c \
+    ../coder/sac_encoder.c \
+    ../coder/sac_huff_cld.c \
+    ../coder/sac_huff_cpc.c \
+    ../coder/sac_huff_icc.c \
+    ../coder/sac_hybfilter.c \
+    ../coder/sac_nlc_enc.c \
+    ../coder/sac_polyphase.c \
+    ../coder/sac_stream.c \
+    ../tools/AudioStream.cpp \
+    ../tools/Logger.cpp
 
 HEADERS  += mainwindow.h \
     objects.h \
     device.h \
-    AudioFile.h \
-    AudioObject.h \
     AudioSignal.h \
+    AudioFile.h \
+    AudioInfo.h \
     AudioChart.h \
     Volumeter.h \
+    ../coder/bitstream.h \
+    ../coder/defines.h \
+    ../coder/sac_bd_embedder.h \
+    ../coder/sac_enc.h \
+    ../coder/sac_huff_tab.h \
+    ../coder/sac_hybfilter.h \
+    ../coder/sac_nlc_enc.h \
+    ../coder/sac_polyphase.h \
+    ../coder/sac_sbrconst.h \
+    ../coder/sac_stream.h \
+    ../coder/sac_types.h \
+    ../tools/AudioStream.h \
     ../tools/Logger.h \
-    ../../lib/QtLibraries/src/qtlibraries.h \
-    AudioInfo.h
+    ../../lib/QtLibraries/src/qtlibraries.h
 
 FORMS    += mainwindow.ui \
     AudioInfo.ui
@@ -61,3 +83,11 @@ else:unix: PRE_TARGETDEPS += $$PWD/../../../../../../../usr/local/lib/libfftw3.a
 
 RESOURCES += \
     media.qrc
+
+unix|win32: LIBS += -L$$PWD/../../lib/AFsp/lib/ -ltsp
+
+INCLUDEPATH += $$PWD/../../lib/AFsp/src
+DEPENDPATH += $$PWD/../../lib/AFsp/src
+
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../lib/AFsp/lib/tsp.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../lib/AFsp/lib/libtsp.a
