@@ -10,8 +10,8 @@
 #include "QtCharts"
 #include "QPointF"
 // Classes and local files
+#include "AudioSignal.h"
 #include "../tools/Logger.h"
-#include "../module/AudioSignal.h"
 
 using namespace QtCharts;
 
@@ -23,7 +23,7 @@ using namespace QtCharts;
 class AudioChart : public QWidget {
     Q_OBJECT
 public:
-    AudioChart(QWidget *framework, float range[2][2], string title, int options);
+    AudioChart(QWidget *framework, float range[2][2], std::string title, int options);
     ~AudioChart();
     void setPoints(QVector<QPointF> points);
     QVector<QPointF> getPoints();
@@ -41,6 +41,7 @@ public:
             legend = 0x10000    /**< it shows the legend on the chart  */
         };
     };
+    void setRange(float range[2][2]);
 private:
     QChart *chart;              /**< chart object */
     QChartView *view;           /**< chart view object from chart */

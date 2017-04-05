@@ -9,16 +9,13 @@
 #include "QObject"
 #include "QWidget"
 #include "QComboBox"
-#include "QLayout"
-#include "QPushButton"
-#include "QSlider"
 #include "QAudioInput"
 #include "QAudioDeviceInfo"
 #include "QByteArray"
-#include "qendian.h"
+#include "QtEndian"
 // Classes and local files
 #include "../tools/Logger.h"
-#include "volumeter.h"
+#include "Volumeter.h"
 
 /**
  * @class	DeviceChannel
@@ -43,7 +40,6 @@ private:
     quint32 amplitude;                  /**< absolute maximum value of the audio signal for the selected audio format*/
     bool muted;                         /**< it is true if the audio channel is muted */
 signals:
-    void newLevel(float);
     void newData(float);
 };
 
@@ -56,10 +52,11 @@ class Device : public QMainWindow
 {
     Q_OBJECT
 public:
-    DeviceChannel *channel;         /**< device channel */
-    Device(QWidget *framework, float fs);
+    int fs;                           /**< signal sampling frequency [Hz] */
+    DeviceChannel *channel;             /**< device channel */
+    Device(QWidget *framework, int fs);
     ~Device();
-    void initialize();
+    void initialize(int fs);
     void updateDevices(QComboBox &device_selector);
     QAudioDeviceInfo getDevice(int index);
     void unmute();
@@ -70,12 +67,11 @@ public slots:
     void switchMuting();
     void setLevel(int value);
 private:
-    QWidget *framework;             /**< user interface framework of device */
-    QAudioDeviceInfo deviceinfo;    /**< audio device info object */
-    QAudioInput *audioinput;        /**< audio input object */
-    QAudioFormat format;            /**< audio format object */
-    Volumeter *volumeter;           /**< volumeter object */
-    float fs;                       /**< sampling frequency [Hz] */
+    QWidget *framework;                 /**< user interface framework of device */
+    QAudioDeviceInfo deviceinfo;        /**< audio device info object */
+    QAudioInput *audioinput;            /**< audio input object */
+    QAudioFormat format;                /**< audio format object */
+    Volumeter *volumeter;               /**< volumeter object */
 signals:
     void newData(float);
 };

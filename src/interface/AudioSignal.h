@@ -9,8 +9,6 @@
 // Classes and local files
 #include "../tools/Logger.h"
 
-using namespace std;
-
 /**
  * @class	AudioSignal
  * @author	Andrés González Fornell
@@ -19,23 +17,23 @@ using namespace std;
 class AudioSignal {
 public:
     int size;                       /**< number of samples */
-    float fs;                       /**< sampling frequency [Hz] */
-    AudioSignal(float fs);
-    AudioSignal(vector<float> signal, float fs);
+    int fs;                       /**< signal sampling frequency [Hz] */
+    AudioSignal(int fs);
+    AudioSignal(std::vector<float> signal, int fs);
 	virtual ~AudioSignal();
     float getSample(int index);
     void setSample(int index, float sample);
     void addSample(float sample);
-	vector<float> getSignal();
-    void setSignal(vector<float> signal);
-    vector<float> getTimes();
-    vector<float> getSpectrum();
-    vector<float> getSpectrum(int bands);
-    vector<float> getFrequencies();
-    vector<float> getFrequencies(int bands);
+    std::vector<float> getSignal();
+    void setSignal(std::vector<float> signal);
+    std::vector<float> getTimes();
+    std::vector<float> getSpectrum();
+    std::vector<float> getSpectrum(int bands);
+    std::vector<float> getFrequencies();
+    std::vector<float> getFrequencies(int bands);
     void clear();
 private:
-    vector<float> signal;           /**< signal data vector */
+    std::vector<float> signal;           /**< signal data vector */
 };
 
 #endif /* SRC_MODULE_AUDIOSIGNAL_H_ */

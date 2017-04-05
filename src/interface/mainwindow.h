@@ -10,7 +10,7 @@
 #include "QMainWindow"
 // Classes and local files
 #include "../tools/Logger.h"
-#include "audiochart.h"
+#include "AudioChart.h"
 #include "device.h"
 #include "objects.h"
 
@@ -33,6 +33,9 @@ public:
 private:
     Ui::MainWindow *ui;     /**< User interface object */
     Objects *objects;       /**< Objects panel object */
+    void setfs(int index);
+private slots:
+    void setfs();
 };
 
 #endif // MAINWINDOW_H

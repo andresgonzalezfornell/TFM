@@ -4,7 +4,6 @@ var class_device_channel =
     [ "~DeviceChannel", "class_device_channel.html#a32c6d33c4e4d8f66c73fa511f775e736", null ],
     [ "mute", "class_device_channel.html#ab02f3fe82dea6ad73453a0c8b96ae6c9", null ],
     [ "newData", "class_device_channel.html#a426f67d53fab40051b905cd17936b287", null ],
-    [ "newLevel", "class_device_channel.html#a7b2f41582b55e846affaf5bfb66f4b15", null ],
     [ "readData", "class_device_channel.html#a213266f38fb587526ec024d2bbe543ad", null ],
     [ "start", "class_device_channel.html#ae8043b3e65b4fe7a7eb80b43b518f463", null ],
     [ "stop", "class_device_channel.html#a3f716b96dde1d1bdd44842aa40546d58", null ],

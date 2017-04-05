@@ -1,8 +1,10 @@
 var hierarchy =
 [
+    [ "AudioFile", "class_audio_file.html", null ],
     [ "AudioObject", "class_audio_object.html", null ],
     [ "AudioSignal", "class_audio_signal.html", null ],
     [ "AudioChart::ChartOptions", "struct_audio_chart_1_1_chart_options.html", null ],
+    [ "AudioFile::format", "struct_audio_file_1_1format.html", null ],
     [ "LogType", "struct_log_type.html", null ],
     [ "ObjectInput", "class_object_input.html", null ],
     [ "QIODevice", null, [
@@ -18,7 +20,7 @@ var hierarchy =
     ] ],
     [ "QWidget", null, [
       [ "AudioChart", "class_audio_chart.html", null ],
-      [ "DeviceLevel", "class_device_level.html", null ]
+      [ "Volumeter", "class_volumeter.html", null ]
     ] ],
     [ "AudioObject::TimeSlot", "struct_audio_object_1_1_time_slot.html", null ]
 ];

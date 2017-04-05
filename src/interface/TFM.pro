@@ -17,29 +17,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp\
-    ../tools/Logger.cpp \
-    ../module/AudioObject.cpp \
-    ../module/AudioSignal.cpp \
-    ObjectsConfiguration.cpp \
-    Objects.cpp \
-    ObjectInput.cpp \
-    DeviceChannel.cpp \
-    Device.cpp \
-    AudioChart.cpp \
     MainWindow.cpp \
-    Volumeter.cpp
+    Objects.cpp \
+    ObjectsConfiguration.cpp \
+    ObjectInput.cpp \
+    Device.cpp \
+    DeviceChannel.cpp \
+    AudioFile.cpp \
+    AudioObject.cpp \
+    AudioSignal.cpp \
+    AudioChart.cpp \
+    Volumeter.cpp \
+    ../tools/Logger.cpp \
+    AudioInfo.cpp
 
 HEADERS  += mainwindow.h \
-    ../tools/Logger.h \
-    ../module/AudioObject.h \
-    ../module/AudioSignal.h \
-    ../../lib/QtLibraries/src/qtlibraries.h \
     objects.h \
     device.h \
-    audiochart.h \
-    volumeter.h
+    AudioFile.h \
+    AudioObject.h \
+    AudioSignal.h \
+    AudioChart.h \
+    Volumeter.h \
+    ../tools/Logger.h \
+    ../../lib/QtLibraries/src/qtlibraries.h \
+    AudioInfo.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    AudioInfo.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../usr/local/lib/release/ -lfftw3
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../usr/local/lib/debug/ -lfftw3
@@ -53,3 +58,6 @@ else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../../..
 else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../../../../../../usr/local/lib/release/fftw3.lib
 else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../../../../../../usr/local/lib/debug/fftw3.lib
 else:unix: PRE_TARGETDEPS += $$PWD/../../../../../../../usr/local/lib/libfftw3.a
+
+RESOURCES += \
+    media.qrc

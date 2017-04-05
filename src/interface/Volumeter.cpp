@@ -1,15 +1,17 @@
 // Class libraries
-#include "volumeter.h"
+#include "Volumeter.h"
 
 /**
  * @brief	Volumeter constructor.
- * @param   *parent     user interface element pointer to place the volumeter
+ * @param   *parent         user interface element pointer to place the volumeter
+ * @param   fs              signal sampling frequency [Hz]
  */
-Volumeter::Volumeter(QWidget *parent)
+Volumeter::Volumeter(QWidget *parent, int fs)
     : QWidget(parent)
 {
-    width = parent->frameGeometry().width();
-    level = 0;
+    this->width = parent->frameGeometry().width();
+    this->level = 0;
+    this->fs = fs;
     consolelog("Volumeter",LogType::progress,"Volumeter object is created");
 }
 
@@ -34,7 +36,7 @@ void Volumeter::paintEvent(QPaintEvent * /* event */)
     painter.setPen(QPen(color_contour));
     painter.drawRect(QRect(x,y,width,height));
     if (level != 0) {
-        painter.fillRect(x,y,width*level,height,color_fill);
+        painter.fillRect(x,y,this->level*width,height,color_fill);
     }
 }
 
@@ -46,4 +48,18 @@ void Volumeter::setLevel(float level)
 {
     this->level = level;
     update();
+}
+
+/**
+ * @brief   It adds a sample for level calculation.
+ * @param   sample
+ */
+void Volumeter::addSample(float sample) {
+    this->energy += pow(sample,2);
+    this->samples++;
+    if (this->samples >= (this->refreshperiod*this->fs)) {
+        this->setLevel(energy/this->samples);
+        this->energy = 0;
+        this->samples = 0;
+    }
 }

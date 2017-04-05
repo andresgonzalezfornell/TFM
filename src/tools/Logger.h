@@ -6,8 +6,10 @@
 #include "stdio.h"
 #include "string"
 
-using namespace std;
-
+/**
+ * @name    LogType
+ * @brief   Logger message type.
+ */
 struct LogType {
     enum logtype {
         info,           /**< The message is not important, just some information for the user */
@@ -18,6 +20,6 @@ struct LogType {
     };
 };
 
-void consolelog(string, LogType::logtype logtype, string);
+void consolelog(std::string, LogType::logtype logtype, std::string);
 
 #endif /* LOGGER_H_ */

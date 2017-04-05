@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>Andrés González Fornell</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>771</width>
-    <height>527</height>
+    <width>779</width>
+    <height>571</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,7 +19,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="window">
+  <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QGroupBox" name="objects">
@@ -261,7 +257,7 @@
             <x>0</x>
             <y>0</y>
             <width>226</width>
-            <height>91</height>
+            <height>113</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="objects_list_layout">
@@ -479,10 +475,27 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>771</width>
+     <width>779</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="objects_menu">
+    <property name="title">
+     <string>Objects</string>
+    </property>
+    <widget class="QMenu" name="objects_fs">
+     <property name="title">
+      <string>Sampling frequency</string>
+     </property>
+     <addaction name="objects_fs_0"/>
+     <addaction name="objects_fs_1"/>
+     <addaction name="objects_fs_2"/>
+     <addaction name="objects_fs_3"/>
+     <addaction name="objects_fs_4"/>
+    </widget>
+    <addaction name="objects_fs"/>
+   </widget>
+   <addaction name="objects_menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -493,6 +506,46 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="objects_fs_0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>8000 Hz</string>
+   </property>
+  </action>
+  <action name="objects_fs_1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>11025 Hz</string>
+   </property>
+  </action>
+  <action name="objects_fs_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>22050 Hz</string>
+   </property>
+  </action>
+  <action name="objects_fs_3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>32000 Hz</string>
+   </property>
+  </action>
+  <action name="objects_fs_4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>44100 Hz</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

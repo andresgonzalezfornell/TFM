@@ -7,24 +7,22 @@
 // Class libraries
 #include "Logger.h"
 
-using namespace std;
-
 /**
  * @name	Font styles
  * @brief	ANSI code for some font styles for log messages usage.
  * @{
  */
-const string reset = "\033[0m";
-const string bold = "\033[1m";
-const string italic = "\033[3m";
-const string black = "\033[30m";
-const string red = "\033[31m";
-const string green = "\033[32m";
-const string yellow = "\033[33m";
-const string blue = "\033[34m";
-const string magenta = "\033[35m";
-const string cyan = "\033[36m";
-const string white = "\033[37m";
+const std::string reset = "\033[0m";
+const std::string bold = "\033[1m";
+const std::string italic = "\033[3m";
+const std::string black = "\033[30m";
+const std::string red = "\033[31m";
+const std::string green = "\033[32m";
+const std::string yellow = "\033[33m";
+const std::string blue = "\033[34m";
+const std::string magenta = "\033[35m";
+const std::string cyan = "\033[36m";
+const std::string white = "\033[37m";
 /** @} */
 
 /**
@@ -32,10 +30,10 @@ const string white = "\033[37m";
  * @param	content		Content of the tabulation
  * @param	tab_max		Maximum number of tabulations
  */
-string tab(string content, const int tab_max) {
+std::string tab(std::string content, const int tab_max) {
 	const int spacespertab = 8;
 	int tab_number = 0;
-	string tab = "";
+    std::string tab = "";
 	tab_number = tab_max - int(content.length() / spacespertab);
 	for (int i = 1; i <= tab_number; i++) {
 		tab = tab + "\t";
@@ -50,7 +48,7 @@ string tab(string content, const int tab_max) {
  * @param	message		message
  * @return	void
  */
-void consolelog(string source, LogType::logtype logtype, string message) {
+void consolelog(std::string source, LogType::logtype logtype, std::string message) {
 	const int tab_max = 2;
 	const int spacespertab = 8;
 	// Source
@@ -58,8 +56,8 @@ void consolelog(string source, LogType::logtype logtype, string message) {
 		source = source.substr(0, 15);
 	}
 	// Log type
-	string type_name = "";
-	string type_style = "";
+    std::string type_name = "";
+    std::string type_style = "";
     switch (logtype) {
     case LogType::info:
 		type_name = "info";
@@ -87,8 +85,8 @@ void consolelog(string source, LogType::logtype logtype, string message) {
 		break;
 	}
 	// Log
-	cout << white << "Log message ";
-	cout << "from " << italic << source << tab(source, tab_max) << reset;
-	cout << bold << type_style << type_name << tab(type_name, tab_max) << reset;
-	cout << message << reset << endl;
+    std::cout << white << "Log message ";
+    std::cout << "from " << italic << source << tab(source, tab_max) << reset;
+    std::cout << bold << type_style << type_name << tab(type_name, tab_max) << reset;
+    std::cout << message << reset << std::endl;
 }

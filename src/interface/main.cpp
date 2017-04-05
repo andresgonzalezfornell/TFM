@@ -9,8 +9,8 @@
 #include "QMainWindow"
 // Classes and local files
 #include "mainwindow.h"
+#include "AudioObject.h"
 #include "../tools/Logger.h"
-#include "../module/AudioObject.h"
 
 /**
  * @brief	Main function

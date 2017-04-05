@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logtype',['LogType',['../struct_log_type.html',1,'']]]
+  ['format',['format',['../struct_audio_file_1_1format.html',1,'AudioFile']]]
 ];

@@ -1,16 +1,16 @@
 var _logger_8cpp =
 [
-    [ "consolelog", "_logger_8cpp.html#a96f21a78ef6933b55a122fb2700c6bc5", null ],
-    [ "tab", "_logger_8cpp.html#a3013405c202e8ad84b43779507f8a256", null ],
-    [ "black", "_logger_8cpp.html#a1b36ba555ec8bacff77e4dc1981c2cf7", null ],
-    [ "blue", "_logger_8cpp.html#a0885a6a72a98454886b9add4d6ac9130", null ],
-    [ "bold", "_logger_8cpp.html#af290a2e67251d003617ea26a84227b5e", null ],
-    [ "cyan", "_logger_8cpp.html#a6d8a9829359497d79b411a7794651a24", null ],
-    [ "green", "_logger_8cpp.html#ac7174a3942c3a9b337488d24da43ca0e", null ],
-    [ "italic", "_logger_8cpp.html#aec2a9c56cb3180a2f497cc2f41d972f2", null ],
-    [ "magenta", "_logger_8cpp.html#ade1892ed779ed70f4a2d04b3dee3b867", null ],
-    [ "red", "_logger_8cpp.html#adedf24559f54b88f12c441475ccde139", null ],
-    [ "reset", "_logger_8cpp.html#a559f92b9f69aa3d702a9a6c699700ee7", null ],
-    [ "white", "_logger_8cpp.html#a8d7b86cd064a2206e7859f9ee35de092", null ],
-    [ "yellow", "_logger_8cpp.html#a2f7a5f1ba81a08d7d79afec0c27e9d21", null ]
+    [ "consolelog", "_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4", null ],
+    [ "tab", "_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd", null ],
+    [ "black", "_logger_8cpp.html#a630d308e3f9d63ffeaca09929cf30ee4", null ],
+    [ "blue", "_logger_8cpp.html#a3f312aaa00f31d382a52e52d9505df08", null ],
+    [ "bold", "_logger_8cpp.html#a80cda35843a67360b271e19d75a25d32", null ],
+    [ "cyan", "_logger_8cpp.html#a318c6830790132f4763b2f2b6dbaf126", null ],
+    [ "green", "_logger_8cpp.html#a0490a675322d0259b6571db0d96599b8", null ],
+    [ "italic", "_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b", null ],
+    [ "magenta", "_logger_8cpp.html#a9c3c2560b6f423f7902776457532fdba", null ],
+    [ "red", "_logger_8cpp.html#acb5d1f5a5f86e947972f13be5e9bc5c8", null ],
+    [ "reset", "_logger_8cpp.html#a6ea20d23dc6f0e5681125ae9108d61e9", null ],
+    [ "white", "_logger_8cpp.html#aa43aab7dde2acab2faa29544ea9e02ec", null ],
+    [ "yellow", "_logger_8cpp.html#ad2360f7af7d877c5a313e9ca50b65e8a", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yellow',['yellow',['../_logger_8cpp.html#a2f7a5f1ba81a08d7d79afec0c27e9d21',1,'Logger.cpp']]]
+  ['yellow',['yellow',['../_logger_8cpp.html#ad2360f7af7d877c5a313e9ca50b65e8a',1,'Logger.cpp']]]
 ];

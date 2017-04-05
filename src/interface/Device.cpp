@@ -5,17 +5,16 @@
 /**
  * @brief	Device constructor.
  * @param   framework       user interface framework of device
- * @param   fs              sampling frequency
  */
-Device::Device(QWidget *framework, float fs) :
+Device::Device(QWidget *framework, int fs) :
     deviceinfo(QAudioDeviceInfo::defaultInputDevice()),
     channel(0),
-    volumeter(new Volumeter(framework->findChild<QWidget *>("device_volumeter"))),
+    volumeter(new Volumeter(framework->findChild<QWidget *>("device_volumeter"),fs)),
     audioinput(0)
 {
-    this->fs = fs;
     this->framework = framework;
-    initialize();
+    this->fs = fs;
+    this->initialize(fs);
     QComboBox *device_selector = this->framework->findChild<QComboBox *>("device_selector");
     updateDevices(*device_selector);
     // User interface slots
@@ -37,10 +36,10 @@ Device::~Device() {
 /**
  * @brief	It initializes audio device.
  */
-void Device::initialize()
+void Device::initialize(int fs)
 {
     consolelog("Device",LogType::progress,"initializing device");
-    this->format.setSampleRate(this->fs);
+    this->format.setSampleRate((int)fs);
     this->format.setChannelCount(1);
     this->format.setSampleSize(16);
     this->format.setSampleType(QAudioFormat::SignedInt);
@@ -53,7 +52,6 @@ void Device::initialize()
     }
     channel = new DeviceChannel(this->format, this);
     QObject::connect(this->channel, SIGNAL(newData(float)),this,SLOT(sendData(float)));
-    QObject::connect(this->channel, SIGNAL(newLevel(float)),this->volumeter,SLOT(setLevel(float)));
     this->audioinput = new QAudioInput(this->deviceinfo, this->format, this);
     this->channel->start();
     this->audioinput->start(channel);
@@ -110,6 +108,7 @@ void Device::mute() {
  * @param   data
  */
 void Device::sendData(float data) {
+    this->volumeter->addSample(data);
     emit newData(data);
 }
 
@@ -130,7 +129,7 @@ void Device::setDevice(int index) {
     QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioInput);
     this->deviceinfo = devices.value(index);
     consolelog("Device",LogType::interaction,"input device changed to " + deviceinfo.deviceName().toStdString());
-    initialize();
+    initialize(this->fs);
 }
 
 /**
@@ -151,8 +150,8 @@ void Device::switchMuting() {
 }
 
 /**
- * @brief	Change input audio device.
- * @param   value       Selected value volume
+ * @brief	It sets the input audio volume level.
+ * @param   value       selected volume level
  */
 void Device::setLevel(int value)
 {

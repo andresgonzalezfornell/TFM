@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_device.html','');});
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_device-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -107,9 +108,21 @@ Inheritance diagram for Device:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a3a517564c3fb40bb547d92ead3269836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a3a517564c3fb40bb547d92ead3269836">sendData</a> (float)</td></tr>
-<tr class="memdesc:a3a517564c3fb40bb547d92ead3269836"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends new data from the device channel to <a class="el" href="class_objects.html" title="User interface class of Objects framework. ">Objects</a>.  <a href="#a3a517564c3fb40bb547d92ead3269836">More...</a><br /></td></tr>
-<tr class="separator:a3a517564c3fb40bb547d92ead3269836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe599db4c7dc023e5037c3fa8e413044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#abe599db4c7dc023e5037c3fa8e413044">sendData</a> (float data)</td></tr>
+<tr class="memdesc:abe599db4c7dc023e5037c3fa8e413044"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends new data from the device channel to <a class="el" href="class_objects.html" title="User interface class of Objects framework. ">Objects</a>.  <a href="#abe599db4c7dc023e5037c3fa8e413044">More...</a><br /></td></tr>
+<tr class="separator:abe599db4c7dc023e5037c3fa8e413044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Device interface slots</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>User interface control functions of device. </p>
+</div></td></tr>
+<tr class="memitem:a787d339c2202356330c932682e17410b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a787d339c2202356330c932682e17410b">setDevice</a> (int index)</td></tr>
+<tr class="memdesc:a787d339c2202356330c932682e17410b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It changes input audio device.  <a href="#a787d339c2202356330c932682e17410b">More...</a><br /></td></tr>
+<tr class="separator:a787d339c2202356330c932682e17410b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3176aeb8cf19b6a6f7599a7200c48634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a3176aeb8cf19b6a6f7599a7200c48634">switchMuting</a> ()</td></tr>
+<tr class="memdesc:a3176aeb8cf19b6a6f7599a7200c48634"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> mute/unmute action.  <a href="#a3176aeb8cf19b6a6f7599a7200c48634">More...</a><br /></td></tr>
+<tr class="separator:a3176aeb8cf19b6a6f7599a7200c48634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719760bdd7c4344a292b1f0959f5a7b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a719760bdd7c4344a292b1f0959f5a7b1">setLevel</a> (int value)</td></tr>
+<tr class="memdesc:a719760bdd7c4344a292b1f0959f5a7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the input audio volume level.  <a href="#a719760bdd7c4344a292b1f0959f5a7b1">More...</a><br /></td></tr>
+<tr class="separator:a719760bdd7c4344a292b1f0959f5a7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -118,41 +131,37 @@ Signals</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a08db02f69a4cd9b991110e40bdcf5625"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a08db02f69a4cd9b991110e40bdcf5625">Device</a> (QWidget *<a class="el" href="class_device.html#a48ab92af2ead9b7823d466fe5fb60f86">framework</a>, float <a class="el" href="class_device.html#a56f45fe4b4abc121d5fd69ec5a6e72d3">fs</a>)</td></tr>
-<tr class="memdesc:a08db02f69a4cd9b991110e40bdcf5625"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> constructor.  <a href="#a08db02f69a4cd9b991110e40bdcf5625">More...</a><br /></td></tr>
-<tr class="separator:a08db02f69a4cd9b991110e40bdcf5625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051f750aba8b2df2662ca9afb74d393c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a051f750aba8b2df2662ca9afb74d393c">Device</a> (QWidget *<a class="el" href="class_device.html#a48ab92af2ead9b7823d466fe5fb60f86">framework</a>)</td></tr>
+<tr class="memdesc:a051f750aba8b2df2662ca9afb74d393c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> constructor.  <a href="#a051f750aba8b2df2662ca9afb74d393c">More...</a><br /></td></tr>
+<tr class="separator:a051f750aba8b2df2662ca9afb74d393c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dabc419c8d8df3a686c33ce042bc99a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a9dabc419c8d8df3a686c33ce042bc99a">~Device</a> ()</td></tr>
 <tr class="memdesc:a9dabc419c8d8df3a686c33ce042bc99a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> destructor.  <a href="#a9dabc419c8d8df3a686c33ce042bc99a">More...</a><br /></td></tr>
 <tr class="separator:a9dabc419c8d8df3a686c33ce042bc99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a098d0a2980c918e19988f58a4c46edfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a098d0a2980c918e19988f58a4c46edfb">initialize</a> ()</td></tr>
+<tr class="memdesc:a098d0a2980c918e19988f58a4c46edfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes audio device.  <a href="#a098d0a2980c918e19988f58a4c46edfb">More...</a><br /></td></tr>
+<tr class="separator:a098d0a2980c918e19988f58a4c46edfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4fb9de07ff41b4d7a7431470c1b8f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a2e4fb9de07ff41b4d7a7431470c1b8f7">updateDevices</a> (QComboBox &amp;device_selector)</td></tr>
 <tr class="memdesc:a2e4fb9de07ff41b4d7a7431470c1b8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">It updates system input devices combobox.  <a href="#a2e4fb9de07ff41b4d7a7431470c1b8f7">More...</a><br /></td></tr>
 <tr class="separator:a2e4fb9de07ff41b4d7a7431470c1b8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7164fa40091a813500a9c40d3a0fda0"><td class="memItemLeft" align="right" valign="top">QAudioDeviceInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#ae7164fa40091a813500a9c40d3a0fda0">getDevice</a> (int index)</td></tr>
 <tr class="memdesc:ae7164fa40091a813500a9c40d3a0fda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets selected input audio device.  <a href="#ae7164fa40091a813500a9c40d3a0fda0">More...</a><br /></td></tr>
 <tr class="separator:ae7164fa40091a813500a9c40d3a0fda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a787d339c2202356330c932682e17410b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a787d339c2202356330c932682e17410b">setDevice</a> (int index)</td></tr>
-<tr class="memdesc:a787d339c2202356330c932682e17410b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It changes input audio device.  <a href="#a787d339c2202356330c932682e17410b">More...</a><br /></td></tr>
-<tr class="separator:a787d339c2202356330c932682e17410b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf5c756854e766a394bc8857b270ea94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#adf5c756854e766a394bc8857b270ea94">setVolume</a> (int value)</td></tr>
-<tr class="memdesc:adf5c756854e766a394bc8857b270ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change input audio device.  <a href="#adf5c756854e766a394bc8857b270ea94">More...</a><br /></td></tr>
-<tr class="separator:adf5c756854e766a394bc8857b270ea94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc47326d3704593e1e614a365b78695"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#aabc47326d3704593e1e614a365b78695">unmute</a> ()</td></tr>
 <tr class="memdesc:aabc47326d3704593e1e614a365b78695"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets device as playing.  <a href="#aabc47326d3704593e1e614a365b78695">More...</a><br /></td></tr>
 <tr class="separator:aabc47326d3704593e1e614a365b78695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59159d343cd9b69f2b73e03f4a2c35f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a59159d343cd9b69f2b73e03f4a2c35f2">mute</a> ()</td></tr>
 <tr class="memdesc:a59159d343cd9b69f2b73e03f4a2c35f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets device as paused.  <a href="#a59159d343cd9b69f2b73e03f4a2c35f2">More...</a><br /></td></tr>
 <tr class="separator:a59159d343cd9b69f2b73e03f4a2c35f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3176aeb8cf19b6a6f7599a7200c48634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a3176aeb8cf19b6a6f7599a7200c48634">switchMuting</a> ()</td></tr>
-<tr class="memdesc:a3176aeb8cf19b6a6f7599a7200c48634"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> play/pause action.  <a href="#a3176aeb8cf19b6a6f7599a7200c48634">More...</a><br /></td></tr>
-<tr class="separator:a3176aeb8cf19b6a6f7599a7200c48634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a098d0a2980c918e19988f58a4c46edfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a098d0a2980c918e19988f58a4c46edfb">initialize</a> ()</td></tr>
-<tr class="memdesc:a098d0a2980c918e19988f58a4c46edfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes audio device.  <a href="#a098d0a2980c918e19988f58a4c46edfb">More...</a><br /></td></tr>
-<tr class="separator:a098d0a2980c918e19988f58a4c46edfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a47e03eca511d5de82c2c1618ee7a9b9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_device_channel.html">DeviceChannel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a47e03eca511d5de82c2c1618ee7a9b9d">channel</a></td></tr>
 <tr class="separator:a47e03eca511d5de82c2c1618ee7a9b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a56f45fe4b4abc121d5fd69ec5a6e72d3"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a56f45fe4b4abc121d5fd69ec5a6e72d3">fs</a> = 44000</td></tr>
+<tr class="separator:a56f45fe4b4abc121d5fd69ec5a6e72d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -164,17 +173,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5c232fdd16ac0c502485706d876ab1f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dcabb204ddcd88d1112545ca10ab383"><td class="memItemLeft" align="right" valign="top">QAudioFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a1dcabb204ddcd88d1112545ca10ab383">format</a></td></tr>
 <tr class="separator:a1dcabb204ddcd88d1112545ca10ab383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a018d92ee1506dc3c37ab9b02b4d138ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_device_level.html">DeviceLevel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a018d92ee1506dc3c37ab9b02b4d138ec">volumeter</a></td></tr>
-<tr class="separator:a018d92ee1506dc3c37ab9b02b4d138ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f45fe4b4abc121d5fd69ec5a6e72d3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a56f45fe4b4abc121d5fd69ec5a6e72d3">fs</a></td></tr>
-<tr class="separator:a56f45fe4b4abc121d5fd69ec5a6e72d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613197bfcc2bfa673053d33441fe2e60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_volumeter.html">Volumeter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a613197bfcc2bfa673053d33441fe2e60">volumeter</a></td></tr>
+<tr class="separator:a613197bfcc2bfa673053d33441fe2e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>User interface class of <a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> framework. </p>
 <dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a08db02f69a4cd9b991110e40bdcf5625"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08db02f69a4cd9b991110e40bdcf5625">&#9670;&nbsp;</a></span>Device()</h2>
+<a id="a051f750aba8b2df2662ca9afb74d393c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051f750aba8b2df2662ca9afb74d393c">&#9670;&nbsp;</a></span>Device()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,18 +190,8 @@ Private Attributes</h2></td></tr>
           <td class="memname">Device::Device </td>
           <td>(</td>
           <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>framework</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>framework</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>fs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -203,7 +200,6 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">framework</td><td>user interface framework of device </td></tr>
-    <tr><td class="paramname">fs</td><td>sampling frequency </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,8 +317,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a517564c3fb40bb547d92ead3269836"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a517564c3fb40bb547d92ead3269836">&#9670;&nbsp;</a></span>sendData</h2>
+<a id="abe599db4c7dc023e5037c3fa8e413044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe599db4c7dc023e5037c3fa8e413044">&#9670;&nbsp;</a></span>sendData</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,10 +352,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a787d339c2202356330c932682e17410b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a787d339c2202356330c932682e17410b">&#9670;&nbsp;</a></span>setDevice()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a787d339c2202356330c932682e17410b">&#9670;&nbsp;</a></span>setDevice</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Device::setDevice </td>
@@ -369,6 +368,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>It changes input audio device. </p>
@@ -381,26 +385,34 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adf5c756854e766a394bc8857b270ea94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf5c756854e766a394bc8857b270ea94">&#9670;&nbsp;</a></span>setVolume()</h2>
+<a id="a719760bdd7c4344a292b1f0959f5a7b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719760bdd7c4344a292b1f0959f5a7b1">&#9670;&nbsp;</a></span>setLevel</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Device::setVolume </td>
+          <td class="memname">void Device::setLevel </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Change input audio device. </p>
+<p>It sets the input audio volume level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Selected value volume </td></tr>
+    <tr><td class="paramname">value</td><td>selected volume level </td></tr>
   </table>
   </dd>
 </dl>
@@ -408,10 +420,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a3176aeb8cf19b6a6f7599a7200c48634"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3176aeb8cf19b6a6f7599a7200c48634">&#9670;&nbsp;</a></span>switchMuting()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3176aeb8cf19b6a6f7599a7200c48634">&#9670;&nbsp;</a></span>switchMuting</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Device::switchMuting </td>
@@ -420,9 +435,14 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> play/pause action. </p>
+<p><a class="el" href="class_device.html" title="User interface class of Device framework. ">Device</a> mute/unmute action. </p>
 
 </div>
 </div>
@@ -589,21 +609,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float Device::fs</td>
+          <td class="memname">float Device::fs = 44000</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>sampling frequency [Hz] </p>
+<p>sampling frequency [Hz]</p>
+<p>Sampling frequency [Hz] </p>
 
 </div>
 </div>
-<a id="a018d92ee1506dc3c37ab9b02b4d138ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a018d92ee1506dc3c37ab9b02b4d138ec">&#9670;&nbsp;</a></span>volumeter</h2>
+<a id="a613197bfcc2bfa673053d33441fe2e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613197bfcc2bfa673053d33441fe2e60">&#9670;&nbsp;</a></span>volumeter</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +633,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_device_level.html">DeviceLevel</a>* Device::volumeter</td>
+          <td class="memname"><a class="el" href="class_volumeter.html">Volumeter</a>* Device::volumeter</td>
         </tr>
       </table>
   </td>
@@ -628,6 +649,7 @@ Private Attributes</h2></td></tr>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/interface/<a class="el" href="device_8h_source.html">device.h</a></li>
 <li>src/interface/<a class="el" href="_device_8cpp.html">Device.cpp</a></li>
+<li>src/interface/<a class="el" href="_objects_8cpp.html">Objects.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]]
+  ['logtype',['LogType',['../struct_log_type.html',1,'']]]
 ];

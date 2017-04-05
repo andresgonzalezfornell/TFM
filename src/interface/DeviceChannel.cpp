@@ -11,7 +11,7 @@ DeviceChannel::DeviceChannel(const QAudioFormat &format, QObject *parent)
     ,   amplitude(0)
 {
     int sign;
-    string audioformat_description = std::to_string(audioformat.sampleSize()) + "bits ";
+    std::string audioformat_description = std::to_string(audioformat.sampleSize()) + "bits ";
     switch(audioformat.sampleType()) {
     case QAudioFormat::UnSignedInt:
         sign = 0;
@@ -104,8 +104,7 @@ qint64 DeviceChannel::writeData(const char *data, qint64 datalength)
         const int sampleBytes = channels * channelBytes;
         const int samples = datalength / sampleBytes;
         const unsigned char *ptr = reinterpret_cast<const unsigned char *>(data);
-        float value, energy;
-        energy = 0;
+        float value;
         for (int sample = 0; sample < samples; ++sample) {
             for (int channel = 0; channel < channels; channel++) {
                 if (this->muted) {
@@ -177,11 +176,9 @@ qint64 DeviceChannel::writeData(const char *data, qint64 datalength)
                 }
                 value /= this->amplitude;   // normalization
                 emit newData(value);
-                energy = qMax((float)pow(value,2), energy);
                 ptr += channelBytes;
             }
         }
-        emit newLevel(energy);
     }
     return datalength;
 }

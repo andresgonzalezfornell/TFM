@@ -14,10 +14,10 @@
 
 /**
  * @brief	AudioSignal constructor (empty signal vector).
- * @param   fs          sampling frequency
+ * @param   fs          signal sampling frequency [Hz]
  */
-AudioSignal::AudioSignal(float fs) {
-	this->signal = vector<float>();
+AudioSignal::AudioSignal(int fs) {
+    this->signal = std::vector<float>();
 	this->size = 0;
     this->fs = fs;
 }
@@ -25,9 +25,9 @@ AudioSignal::AudioSignal(float fs) {
 /**
  * @brief	AudioSignal constructor.
  * @param   signal      vector of signal samples
- * @param   fs          sampling frequency
+ * @param   fs          signal sampling frequency [Hz]
  */
-AudioSignal::AudioSignal(vector<float> signal, float fs) {
+AudioSignal::AudioSignal(std::vector<float> signal, int fs) {
 	this->signal = signal;
 	this->size = this->signal.size();
     this->fs = fs;
@@ -69,13 +69,17 @@ void AudioSignal::setSample(int index, float sample) {
 void AudioSignal::addSample(float sample) {
 	this->signal.push_back(sample);
 	this->size += 1;
+    // delete afterwards
+    if(this->size > 100000) {
+        this->clear();
+    }
 }
 
 /**
  * @brief	It gets the entire signal.
  * @return  signal
  */
-vector<float> AudioSignal::getSignal() {
+std::vector<float> AudioSignal::getSignal() {
 	return this->signal;
 }
 
@@ -83,7 +87,7 @@ vector<float> AudioSignal::getSignal() {
  * @brief	It sets the entire signal.
  * @param   signal
  */
-void AudioSignal::setSignal(vector<float> signal) {
+void AudioSignal::setSignal(std::vector<float> signal) {
 	this->signal = signal;
 }
 
@@ -91,9 +95,9 @@ void AudioSignal::setSignal(vector<float> signal) {
  * @brief   It gets time [s] axis as a vector
  * @return  time vector
  */
-vector<float> AudioSignal::getTimes() {
+std::vector<float> AudioSignal::getTimes() {
     int N = this->size;
-    vector<float> times = vector<float>(N);
+    std::vector<float> times = std::vector<float>(N);
     for (int n = 0; n<N; n++) {
         times[n] = n/this->fs;
     }
@@ -105,7 +109,7 @@ vector<float> AudioSignal::getTimes() {
  * @return  signal spectral density
  *
  */
-vector<float> AudioSignal::getSpectrum() {
+std::vector<float> AudioSignal::getSpectrum() {
     int F = (int)ceil(this->size / 2);
     fftw_complex x_t[this->size];
     fftw_complex x_f[this->size];
@@ -118,7 +122,7 @@ vector<float> AudioSignal::getSpectrum() {
 	fftw_execute(fft);
 	fftw_destroy_plan(fft);
 	fftw_cleanup();
-    vector<float> spectrum = vector<float>(F);
+    std::vector<float> spectrum = std::vector<float>(F);
     for (int f = 0; f < F; f++) {
         spectrum[f] = (pow(x_f[f][real], 2) + pow(x_f[f][imag], 2)) / (this->size * this->fs);
 	}
@@ -130,13 +134,13 @@ vector<float> AudioSignal::getSpectrum() {
  * @param   bands       number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
  * @return  signal spectral density
  */
-vector<float> AudioSignal::getSpectrum(int bands) {
-    vector<float> spectrum = this->getSpectrum();
+std::vector<float> AudioSignal::getSpectrum(int bands) {
+    std::vector<float> spectrum = this->getSpectrum();
     int F = spectrum.size();
     if (F<=bands) {
         return spectrum;
     } else {
-        vector<float> spectrum_shrunk = vector<float>(bands);
+        std::vector<float> spectrum_shrunk = std::vector<float>(bands);
         int step = ceil(F/bands);
         int band = 0;
         for(int f = 0; f < F; f += step) {
@@ -162,9 +166,9 @@ vector<float> AudioSignal::getSpectrum(int bands) {
  * @brief   It gets frequencies [Hz] axis as a vector
  * @return  frequencies vector
  */
-vector<float> AudioSignal::getFrequencies() {
+std::vector<float> AudioSignal::getFrequencies() {
     int F = (int)ceil(this->size / 2);
-    vector<float> frequencies = vector<float>(F);
+    std::vector<float> frequencies = std::vector<float>(F);
     for (int f = 0; f<F; f++) {
         frequencies[f] = (this->fs/2)*((float)f/F);
     }
@@ -176,13 +180,13 @@ vector<float> AudioSignal::getFrequencies() {
  * @param   bands       number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
  * @return  frequencies vector
  */
-vector<float> AudioSignal::getFrequencies(int bands) {
-    vector<float> frequencies = this->getFrequencies();
+std::vector<float> AudioSignal::getFrequencies(int bands) {
+    std::vector<float> frequencies = this->getFrequencies();
     int F = frequencies.size();
     if (F<=bands) {
         return frequencies;
     } else {
-        vector<float> frequencies_shrunk = vector<float>(bands);
+        std::vector<float> frequencies_shrunk = std::vector<float>(bands);
         int step = ceil(F/bands);
         int band = 0;
         for(int f = 0; f < F; f += step) {

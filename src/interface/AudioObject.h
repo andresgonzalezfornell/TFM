@@ -6,8 +6,6 @@
 // Classes and local files
 #include "../tools/Logger.h"
 
-using namespace std;
-
 /**
  * @class	AudioObject
  * @author	Andrés González Fornell
@@ -15,20 +13,26 @@ using namespace std;
  */
 class AudioObject {
 public:
+    /**
+     * @brief   It indicates time slot of the available signal.
+     */
     struct TimeSlot {
-        int start, end;
+        int start;          /**< start time */
+        int end;            /**< end time */
     };
-    TimeSlot timestamp;       /**< corresponding timestamp for the available data */
+    TimeSlot timestamp;     /**< corresponding timestamp for the available data */
+    int fs;               /**< signal sampling frequency [Hz] */
     AudioObject();
+    AudioObject(int fs);
     ~AudioObject();
     void push(float sample);
     float pop();
-    vector<float> getSamples();
+    std::vector<float> getSamples();
     void setSample(int time, float sample);
     float getSample(int time);
     bool isAvailable(int time);
 private:
-    vector<float> samples;  /**< available data from the audio object */
+    std::vector<float> samples;  /**< available data from the audio object */
 };
 
 #endif /* SRC_MODULE_AUDIOOBJECT_H_ */

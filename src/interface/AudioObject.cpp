@@ -10,6 +10,17 @@ AudioObject::AudioObject() {
 }
 
 /**
+ * @brief	AudioObject constructor.
+ * @param   fs          signal sampling frequency [Hz]
+ */
+AudioObject::AudioObject(int fs) {
+    this->fs = fs;
+    this->timestamp.start = 0;
+    this->timestamp.end = 0;
+    consolelog("AudioObject", LogType::progress, "AudioObject object is created");
+}
+
+/**
  * @brief	AudioObject destructor.
  */
 AudioObject::~AudioObject() {
@@ -40,7 +51,7 @@ float AudioObject::pop() {
  * @brief	It gets the samples vector.
  * @return	samples vector
  */
-vector<float> AudioObject::getSamples() {
+std::vector<float> AudioObject::getSamples() {
 	return this->samples;
 }
 
@@ -55,7 +66,7 @@ float AudioObject::getSample(int time) {
 	} else {
         consolelog("AudioObject", LogType::error,
 				"the selected time is not available in the audio object queu");
-		return NULL;
+        return 0;
 	}
 }
 

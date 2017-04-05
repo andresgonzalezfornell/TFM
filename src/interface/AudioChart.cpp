@@ -1,5 +1,5 @@
 // Class libraries
-#include "audiochart.h"
+#include "AudioChart.h"
 
 /**
  * @brief	AudioChart constructor.
@@ -9,13 +9,13 @@
  * @param   options
  * @ref     ChartOptions
  */
-AudioChart::AudioChart(QWidget *framework, float range[2][2], string title, int options) {
-    chart = new QChart();
-    view = new QChartView(chart,framework);
-    view->setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
-    view->setMinimumSize(250,200);
-    series = new QLineSeries();
-    chart->addSeries(series);
+AudioChart::AudioChart(QWidget *framework, float range[2][2], std::string title, int options) {
+    this->chart = new QChart();
+    this->view = new QChartView(chart,framework);
+    this->view->setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
+    this->view->setMinimumSize(250,200);
+    this->series = new QLineSeries();
+    this->chart->addSeries(series);
     // Axes
     QAbstractAxis *x_axis;
     QAbstractAxis *y_axis;
@@ -39,12 +39,12 @@ AudioChart::AudioChart(QWidget *framework, float range[2][2], string title, int 
     if (!(options & ChartOptions::labelY)) {
         y_axis->hide();
     }
-    chart->setAxisX(x_axis,series);
-    chart->setAxisY(y_axis,series);
+    chart->setAxisX(x_axis,this->series);
+    chart->setAxisY(y_axis,this->series);
     if (!(options & ChartOptions::legend)) {
-        chart->legend()->hide();
+        this->chart->legend()->hide();
     }
-    chart->setTitle(QString::fromStdString(title));
+    this->chart->setTitle(QString::fromStdString(title));
     consolelog("AudioChart",LogType::progress,"AudioChart object is created");
 }
 
@@ -69,4 +69,13 @@ void AudioChart::setPoints(QVector<QPointF> points) {
  */
 QVector<QPointF> AudioChart::getPoints() {
     return series->pointsVector();
+}
+
+/**
+ * @brief   It sets the axis range.
+ * @param   range       axis range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
+ */
+void AudioChart::setRange(float range[2][2]) {
+    this->chart->axisX(this->series)->setRange(range[0][0],range[0][1]);
+    this->chart->axisY(this->series)->setRange(range[1][0],range[1][1]);
 }

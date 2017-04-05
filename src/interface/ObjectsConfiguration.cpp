@@ -26,8 +26,8 @@ ObjectsConfiguration::~ObjectsConfiguration() {
  * @param   index       object index
  * @return  object
  */
-ObjectInput ObjectsConfiguration::getObject(int index) {
-    return this->objects.at(index);
+ObjectInput *ObjectsConfiguration::getObject(int index) {
+    return this->objects[index];
 }
 
 /**
@@ -38,13 +38,17 @@ void ObjectsConfiguration::setNumber(int number) {
     this->number = number;
     if (objects.size()<number) {
         for (int index = objects.size(); index < this->number;index++) {
-            ObjectInput object = ObjectInput(this->layout, index);
+            ObjectInput *object = new ObjectInput(this->layout, index);
             this->objects.push_back(object);
             // User interface control
-            QObject::connect(object.label,SIGNAL(textChanged(QString)),this,SLOT(setLabel(QString)));
-            QObject::connect(object.fromdevicecheckbox,SIGNAL(clicked(bool)),this,SLOT(setFromDevice(bool)));
-            QObject::connect(object.activecheckbox,SIGNAL(clicked(bool)),this,SLOT(setActive(bool)));
-            QObject::connect(object.loadfile,SIGNAL(clicked()),this,SLOT(loadFile()));
+            QObject::connect(object->levelslider,SIGNAL(valueChanged(int)),this,SLOT(setLevel(int)));
+            QObject::connect(object->label,SIGNAL(textChanged(QString)),this,SLOT(setLabel(QString)));
+            QObject::connect(object->fromdevicecheckbox,SIGNAL(clicked(bool)),this,SLOT(setFromDevice(bool)));
+            QObject::connect(object->activecheckbox,SIGNAL(clicked(bool)),this,SLOT(setActive(bool)));
+            QObject::connect(object->loadfile,SIGNAL(released()),this,SLOT(loadFile()));
+            QObject::connect(object->playpause,SIGNAL(released()),this,SLOT(switchPlayPause()));
+            QObject::connect(object->previewbutton,SIGNAL(released()),this,SLOT(switchPreview()));
+            QObject::connect(object->info,SIGNAL(released()),this,SLOT(openInfo()));
         }
     } else if (objects.size()>number) {
         for (int index = objects.size()-1; index >= this->number;index--) {
@@ -74,14 +78,13 @@ void ObjectsConfiguration::deleteObject(int index) {
 }
 
 /**
- * @brief   It gets the parent input object of a user interface element object.
- * @param   object      user interface element object
+ * @brief   It gets the input object index of a user interface element object.
+ * @param   element     user interface element object
  * @return  index
  */
-ObjectInput ObjectsConfiguration::getParentObject(QObject *element) {
-    string prefix = "objects_";
-    int index = std::stoi(element->objectName().toStdString().substr(element->objectName().toStdString().find(prefix) + prefix.length(),1));
-    return getObject(index);
+int ObjectsConfiguration::getObjectIndex(QObject *element) {
+    std::string prefix = "objects_";
+    return std::stoi(element->objectName().toStdString().substr(element->objectName().toStdString().find(prefix) + prefix.length(),1));
 }
 
 /**
@@ -91,12 +94,27 @@ ObjectInput ObjectsConfiguration::getParentObject(QObject *element) {
  */
 
 /**
+ * @brief   Input object slots for setting the object level.
+ * @param   level
+ */
+void ObjectsConfiguration::setLevel(int level) {
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    this->objects[index]->setLevel(level);
+    consolelog("ObjectsConfiguration",LogType::interaction,"volume level of object " + std::to_string(index) + " set to " + std::to_string(level) + "%");
+    QObject::sender()->blockSignals(false);
+}
+
+/**
  * @brief   Input object slots for setting the object label.
  * @param   label
  */
 void ObjectsConfiguration::setLabel(QString label) {
-    this->getParentObject(QObject::sender()).setLabel(label.toStdString());
-    consolelog("ObjectsConfiguration",LogType::interaction,"label of object " + std::to_string(this->getParentObject(QObject::sender()).getIndex()) + " has been changed to \"" + label.toStdString() + "\"");
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    this->objects[index]->setLabel(label.toStdString());
+    consolelog("ObjectsConfiguration",LogType::interaction,"label of object " + std::to_string(index) + " has been changed to \"" + label.toStdString() + "\"");
+    QObject::sender()->blockSignals(false);
 }
 
 /**
@@ -104,15 +122,17 @@ void ObjectsConfiguration::setLabel(QString label) {
  * @param   state       current checkbox state
  */
 void ObjectsConfiguration::setFromDevice(bool state) {
-    ObjectInput object = this->getParentObject(QObject::sender());
-    object.setFromDevice(state);
-    string message = "object " + std::to_string(object.getIndex()) + " source has been changed to be obtained ";
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    objects[index]->setFromDevice(state);
+    std::string message = "object " + std::to_string(index) + " source has been changed to be obtained ";
     if(state) {
         message += "from the device";
     } else {
         message += "from a file";
     }
     consolelog("ObjectsConfiguration",LogType::interaction,message);
+    QObject::sender()->blockSignals(false);
 }
 
 /**
@@ -120,21 +140,80 @@ void ObjectsConfiguration::setFromDevice(bool state) {
  * @param   state       current checkbox state
  */
 void ObjectsConfiguration::setActive(bool state) {
-    ObjectInput object = this->getParentObject(QObject::sender());
-    object.setActive(state);
-    string message = "object " + std::to_string(object.getIndex()) + " has been changed to ";
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    objects[index]->setActive(state);
+    std::string message = "object " + std::to_string(index) + " has been changed to ";
     if(state) {
         message += "active";
     } else {
         message += "inactive";
     }
     consolelog("ObjectsConfiguration",LogType::interaction,message);
+    QObject::sender()->blockSignals(false);
 }
 
 /**
  * @brief   Input object slots for loading a file.
  */
 void ObjectsConfiguration::loadFile() {
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    consolelog("ObjectsConfiguration",LogType::interaction,"selecting source file for object " + std::to_string(index));
+    std::string filepath = QFileDialog::getOpenFileName(this->framework, "Load audio file","","*.wav").toStdString();
+    if(filepath=="") {
+        consolelog("ObjectsConfiguration",LogType::interaction,"canceling source file selection for object " + std::to_string(index));
+    } else {
+        consolelog("ObjectsConfiguration",LogType::interaction,"selected \"" + filepath + "\" as source file for object " + std::to_string(index));
+        this->objects[index]->setFile(filepath);
+    }
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief	Input object slots for play/pause action.
+ */
+void ObjectsConfiguration::switchPlayPause() {
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    if (this->objects[index]->paused) {
+        this->objects[index]->playFile();
+        consolelog("ObjectsConfiguration",LogType::interaction,"object " + std::to_string(index) + " has been resumed");
+    } else {
+        this->objects[index]->pauseFile();
+        consolelog("ObjectsConfiguration",LogType::interaction,"object " + std::to_string(index) + " has been paused");
+    }
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Input object slots for preview action.
+ */
+void ObjectsConfiguration::switchPreview() {
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    if (this->objects[index]->preview) {
+        this->objects[index]->mutePreview();
+        consolelog("ObjectsConfiguration",LogType::interaction,"object " + std::to_string(index) + " preview has been muted");
+    } else {
+        this->objects[index]->unmutePreview();
+        consolelog("ObjectsConfiguration",LogType::interaction,"object " + std::to_string(index) + " preview has been unmuted");
+    }
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Input object slots for info action.
+ */
+void ObjectsConfiguration::openInfo() {
+    QObject::sender()->blockSignals(true);
+    int index = this->getObjectIndex(QObject::sender());
+    AudioInfo info;
+    info.setFile(this->objects[index]->file);
+    info.setWindowTitle(this->objects[index]->label->text() + QString(" - Info"));
+    info.exec();
+    consolelog("ObjectsConfiguration",LogType::interaction,"object " + std::to_string(index) + " is now showing info");
+    QObject::sender()->blockSignals(false);
 }
 
 /** @} */
