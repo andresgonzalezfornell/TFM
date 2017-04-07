@@ -1,7 +1,7 @@
 #include "AudioFile.h"
 
 /**
- * @brief	Objects constructor.
+ * @brief	Channels constructor.
  */
 AudioFile::AudioFile() {
     this->file = new QFile();
@@ -11,7 +11,7 @@ AudioFile::AudioFile() {
 }
 
 /**
- * @brief	Objects constructor.
+ * @brief	Channels constructor.
  * @param   filepath        file path
  */
 AudioFile::AudioFile(std::string filepath) {
@@ -23,7 +23,7 @@ AudioFile::AudioFile(std::string filepath) {
 }
 
 /**
- * @brief	Objects destructor.
+ * @brief	Channels destructor.
  */
 AudioFile::~AudioFile() {
     consolelog("AudioFile",LogType::progress,"AudioFile object is deleted");

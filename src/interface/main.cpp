@@ -8,7 +8,7 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
-#include "mainwindow.h"
+#include "Coder.h"
 #include "AudioSignal.h"
 #include "../tools/Logger.h"
 
@@ -18,8 +18,8 @@
 int main(int argc, char *argv[]) {
     consolelog("main", LogType::progress, "running program");
 	QApplication a(argc, argv);
-    MainWindow w;
-    consolelog("main", LogType::progress, "showing MainWindow");
+    Coder w;
+    consolelog("main", LogType::progress, "showing Coder");
     w.show();
     consolelog("main", LogType::progress, "program was completed");
 	return a.exec();

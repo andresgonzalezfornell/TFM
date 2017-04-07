@@ -1,16 +1,12 @@
 // Class libraries
-#include "objects.h"
-#include "ui_mainwindow.h"
-// System libraries
-#include "math.h"
-#include "stdlib.h"
+#include "channels.h"
 
 /**
- * @brief	ObjectInput constructor.
- * @param   parent          objects user interface parent
- * @param   index           object index
+ * @brief	Channels constructor.
+ * @param   parent          channels user interface parent
+ * @param   index           channel index
  */
-ObjectInput::ObjectInput(QLayout *parent, int index) {
+Channel::Channel(QLayout *parent, int index) {
     // Elements creation
     this->groupbox = new QGroupBox();
     QGridLayout *layout = new QGridLayout(groupbox);
@@ -18,7 +14,6 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     this->levelslider = new QSlider(Qt::Horizontal);
     this->activecheckbox = new QCheckBox();
     this->volumeterwidget = new QWidget();
-    this->fromdevicecheckbox = new QCheckBox();
     this->currentsource = new QLineEdit();
     this->loadfile = new QPushButton();
     this->audioprogress = new QProgressBar();
@@ -29,20 +24,19 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     this->audiotime = new QTimeEdit();
     // Initialization
     this->file = NULL;
-    this->name = QString("Object %1").arg(index).toStdString();
-    this->audiostream = new AudioStream(Objects::fs);
+    this->name = QString("Channel %1").arg(index).toStdString();
+    this->audiostream = new AudioStream(Channels::fs);
     this->setIndex(index);
     this->setLabel(this->name);
     this->setLevel(70);
     this->setActive(false);
-    this->volumeter = new Volumeter(this->volumeterwidget,Objects::fs);
-    this->setFromDevice(true);
+    this->volumeter = new Volumeter(this->volumeterwidget,Channels::fs);
     this->setFile("");
     this->pauseFile();
     this->mutePreview();
     this->info->setIcon(QIcon(QPixmap(":/icons/info")));
     // Elements attributes
-    int layout_height = 200;          // height of object configuration interface
+    int layout_height = 200;          // height of channel configuration interface
     this->groupbox->setMinimumSize(200,0);
     this->groupbox->setMaximumSize(QWIDGETSIZE_MAX,layout_height);
     layout->setSpacing(8);
@@ -51,7 +45,6 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     this->levelslider->setMaximum(100);
     this->activecheckbox->setText("Active");
     this->volumeterwidget->setMaximumSize(80,5);
-    this->fromdevicecheckbox->setText("From device");
     this->currentsource->setMaximumHeight(15);
     this->currentsource->setReadOnly(true);
     this->loadfile->setText("Load file");
@@ -65,7 +58,6 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     layout->addWidget(this->levelslider,0,1);
     layout->addWidget(this->activecheckbox,1,0);
     layout->addWidget(this->volumeterwidget,1,1);
-    layout->addWidget(this->fromdevicecheckbox,2,0);
     layout->addWidget(this->currentsource,2,1);
     layout->addWidget(this->loadfile,3,0);
     layout->addWidget(this->audioprogress,3,1);
@@ -76,36 +68,35 @@ ObjectInput::ObjectInput(QLayout *parent, int index) {
     layout->addWidget(this->audiotime,4,1);
     layout->setMargin(10);
     parent->addWidget(this->groupbox);
-    consolelog("Objects",LogType::progress,"ObjectInput object is created");
+    consolelog("Channels",LogType::progress,"Channels object is created");
 }
 
 /**
- * @brief	ObjectInput desctructor.
+ * @brief	Channels desctructor.
  */
-ObjectInput::~ObjectInput() {
+Channel::~Channel() {
 }
 
 /**
- * @brief   It gets the object index.
+ * @brief   It gets the channel index.
  * @return  index
  */
-int ObjectInput::getIndex() const {
+int Channel::getIndex() const {
     return index;
 }
 
 /**
- * @brief   It sets the object index.
+ * @brief   It sets the channel index.
  * @param   index
  */
-void ObjectInput::setIndex(int index) {
+void Channel::setIndex(int index) {
     this->index = index;
-    this->groupbox->setObjectName(QString("objects_%1").arg(index));
+    this->groupbox->setObjectName(QString("channels_%1").arg(index));
     QString prefix = groupbox->objectName() + "_";
     this->label->setObjectName(prefix + "objectname");
     this->levelslider->setObjectName(prefix + "level");
     this->activecheckbox->setObjectName(prefix + "active");
     this->volumeterwidget->setObjectName(prefix + "volumeter");
-    this->fromdevicecheckbox->setObjectName(prefix + "fromdevice");
     this->currentsource->setObjectName(prefix + "currentsource");
     this->loadfile->setObjectName(prefix + "loadfile");
     this->audioprogress->setObjectName(prefix + "fileprogress");
@@ -119,60 +110,25 @@ void ObjectInput::setIndex(int index) {
  * @brief   It sets the input object volume level.
  * @param   level           selected volume level
  */
-void ObjectInput::setLevel(int level) {
+void Channel::setLevel(int level) {
     this->level = (float)level/100;
     this->levelslider->setValue(level);
 }
 
 /**
- * @brief   It sets a label to the object name, i.e., group box title and label text.
+ * @brief   It sets a label to the channel name, i.e., group box title and label text.
  * @param   label
  */
-void ObjectInput::setLabel(std::string label) {
+void Channel::setLabel(std::string label) {
     this->groupbox->setTitle("#" + QString::number(this->index) + " " + QString::fromStdString(label));
     this->label->setText(QString::fromStdString(label));
 }
 
 /**
- * @brief   It sets if the source is from device.
+ * @brief   It sets if the channel is active.
  * @param   state
  */
-void ObjectInput::setFromDevice(bool state) {
-    this->fromdevice = state;
-    this->fromdevicecheckbox->setChecked(state);
-    this->loadfile->setEnabled(!state);
-    if(state) {
-        this->currentsource->setText("input device");
-        this->loadfile->hide();
-        this->audioprogress->hide();
-        this->playpause->hide();
-        this->info->hide();
-        this->previewbutton->hide();
-        this->audiotime->hide();
-    } else {
-        if(file==NULL) {
-            this->currentsource->setText("load a file");
-        } else {
-            this->currentsource->setText(QString::fromStdString(this->file->getFilepath()));
-        }
-        this->loadfile->show();
-        this->audioprogress->show();
-        this->playpause->show();
-        this->info->show();
-        this->previewbutton->show();
-        this->audiotime->show();
-    }
-    QFont font = QFont();
-    font.setPointSize(10);
-    font.setItalic(state);
-    this->currentsource->setFont(font);
-}
-
-/**
- * @brief   It sets if the object is active.
- * @param   state
- */
-void ObjectInput::setActive(bool state) {
+void Channel::setActive(bool state) {
     this->active = state;
     this->activecheckbox->setChecked(state);
 }
@@ -181,7 +137,7 @@ void ObjectInput::setActive(bool state) {
  * @brief	It sets the source file.
  * @param   filepath        file path
  */
-void ObjectInput::setFile(std::string filepath) {
+void Channel::setFile(std::string filepath) {
     if(filepath == "") {
         if(this->file->exists()) {
             delete this->file;
@@ -204,14 +160,14 @@ void ObjectInput::setFile(std::string filepath) {
  * @brief   It sets the current playback progress.
  * @param   value           value of completion (from 0 to 1)
  */
-void ObjectInput::setAudioProgress(float value) {
+void Channel::setAudioProgress(float value) {
 
 }
 
 /**
  * @brief   It resumes file playback.
  */
-void ObjectInput::playFile() {
+void Channel::playFile() {
     this->paused = false;
     this->playpause->setIcon(QIcon(QPixmap(":/icons/pause")));
     this->audioprogress->setEnabled(this->paused);
@@ -220,7 +176,7 @@ void ObjectInput::playFile() {
 /**
  * @brief   It pauses file playback.
  */
-void ObjectInput::pauseFile() {
+void Channel::pauseFile() {
     this->paused = true;
     this->playpause->setIcon(QIcon(QPixmap(":/icons/play")));
     this->audioprogress->setEnabled(this->paused);
@@ -229,7 +185,7 @@ void ObjectInput::pauseFile() {
 /**
  * @brief   It unmutes file playback preview.
  */
-void ObjectInput::unmutePreview() {
+void Channel::unmutePreview() {
     this->preview = true;
     this->previewbutton->setIcon(QIcon(QPixmap(":/icons/preview_mute")));
 }
@@ -237,7 +193,7 @@ void ObjectInput::unmutePreview() {
 /**
  * @brief   It mutes file playback preview.
  */
-void ObjectInput::mutePreview() {
+void Channel::mutePreview() {
     this->preview = false;
     this->previewbutton->setIcon(QIcon(QPixmap(":/icons/preview_unmute")));
 }
@@ -246,7 +202,7 @@ void ObjectInput::mutePreview() {
  * @brief   It sets the current playback time.
  * @param   time            time as QTime object
  */
-void ObjectInput::setAudioTime(QTime time) {
+void Channel::setAudioTime(QTime time) {
     this->audiotime->setTime(time);
 }
 
@@ -254,7 +210,7 @@ void ObjectInput::setAudioTime(QTime time) {
  * @brief   It sets the current playback time.
  * @param   milliseconds    time in milliseconds [ms]
  */
-void ObjectInput::setAudioTime(int milliseconds) {
+void Channel::setAudioTime(int milliseconds) {
     int seconds = (int)((float)milliseconds/1000);
     int minutes = (int)((float)seconds/60);
     int hours = (int)((float)minutes/60);
@@ -264,10 +220,10 @@ void ObjectInput::setAudioTime(int milliseconds) {
 }
 
 /**
- * @brief   It reads data from the object file.
+ * @brief   It reads data from the channel file.
  * @return  data
  */
-float ObjectInput::readData() {
+float Channel::readData() {
     if(this->file->exists()) {
         if (this->paused) {
             return 0;
@@ -298,16 +254,16 @@ float ObjectInput::readData() {
             return value;
         }
     } else {
-        consolelog("ObjectInput",LogType::error,"error while reading data because audio file does not exist");
+        consolelog("Channels",LogType::error,"error while reading data because audio file does not exist");
         return 0;
     }
 }
 
 /**
- * @brief   It sends data to the audio object associated to this input object.
+ * @brief   It sends data to the audio channel associated to this input channel.
  * @param   data
  */
-void ObjectInput::sendData(float data) {
+void Channel::sendData(float data) {
     data *= this->level;
     this->lastvalue = data;
     this->audiostream->push(data);
@@ -315,9 +271,9 @@ void ObjectInput::sendData(float data) {
 }
 
 /**
- * @brief   It gets the last data value sent to the audio object.
+ * @brief   It gets the last data value sent to the audio channel.
  * @return  last value
  */
-float ObjectInput::getLastValue() {
+float Channel::getLastValue() {
     return this->lastvalue;
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Decoder</class>
+ <widget class="QMainWindow" name="Decoder">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -22,7 +22,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QGroupBox" name="objects">
+     <widget class="QGroupBox" name="channels">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -36,7 +36,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Objects</string>
+       <string>Input</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
@@ -55,175 +55,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QGroupBox" name="device">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Input</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <layout class="QHBoxLayout" name="device_control_1">
-            <item>
-             <widget class="QComboBox" name="device_selector">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>32</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="device_muting">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="device_control_2">
-            <property name="sizeConstraint">
-             <enum>QLayout::SetDefaultConstraint</enum>
-            </property>
-            <item>
-             <widget class="QWidget" name="device_volumeter" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>5</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>5</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QSlider" name="device_level">
-              <property name="maximum">
-               <number>100</number>
-              </property>
-              <property name="value">
-               <number>70</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="objects_number_layout">
-         <item>
-          <widget class="QLabel" name="objects_number_label">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Number of objects</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="objects_number">
-           <property name="specialValueText">
-            <string/>
-           </property>
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>10</number>
-           </property>
-           <property name="value">
-            <number>2</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QScrollArea" name="objects_configuration">
+        <widget class="QScrollArea" name="channels_configuration">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>13</horstretch>
@@ -251,16 +83,16 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
-         <widget class="QWidget" name="objects_list">
+         <widget class="QWidget" name="channels_list">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
             <width>226</width>
-            <height>113</height>
+            <height>327</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="objects_list_layout">
+          <layout class="QVBoxLayout" name="channels_list_layout">
            <property name="leftMargin">
             <number>5</number>
            </property>
@@ -278,7 +110,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="objects_chart" native="true">
+        <widget class="QWidget" name="channels_chart" native="true">
          <property name="minimumSize">
           <size>
            <width>200</width>
@@ -479,23 +311,23 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="objects_menu">
+   <widget class="QMenu" name="channels_menu">
     <property name="title">
      <string>Objects</string>
     </property>
-    <widget class="QMenu" name="objects_fs">
+    <widget class="QMenu" name="channels_fs">
      <property name="title">
       <string>Sampling frequency</string>
      </property>
-     <addaction name="objects_fs_0"/>
-     <addaction name="objects_fs_1"/>
-     <addaction name="objects_fs_2"/>
-     <addaction name="objects_fs_3"/>
-     <addaction name="objects_fs_4"/>
+     <addaction name="channels_fs_0"/>
+     <addaction name="channels_fs_1"/>
+     <addaction name="channels_fs_2"/>
+     <addaction name="channels_fs_3"/>
+     <addaction name="channels_fs_4"/>
     </widget>
-    <addaction name="objects_fs"/>
+    <addaction name="channels_fs"/>
    </widget>
-   <addaction name="objects_menu"/>
+   <addaction name="channels_menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -506,7 +338,7 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="objects_fs_0">
+  <action name="channels_fs_0">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -514,7 +346,7 @@
     <string>8000 Hz</string>
    </property>
   </action>
-  <action name="objects_fs_1">
+  <action name="channels_fs_1">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -522,7 +354,7 @@
     <string>11025 Hz</string>
    </property>
   </action>
-  <action name="objects_fs_2">
+  <action name="channels_fs_2">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -530,7 +362,7 @@
     <string>22050 Hz</string>
    </property>
   </action>
-  <action name="objects_fs_3">
+  <action name="channels_fs_3">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -538,7 +370,7 @@
     <string>32000 Hz</string>
    </property>
   </action>
-  <action name="objects_fs_4">
+  <action name="channels_fs_4">
    <property name="checkable">
     <bool>true</bool>
    </property>

@@ -1,5 +1,5 @@
-#ifndef OBJECTS_H
-#define OBJECTS_H
+#ifndef CHANNELS_H
+#define CHANNELS_H
 
 // System libraries
 #include "string"
@@ -22,24 +22,23 @@
 #include "QPixmap"
 #include "QVector"
 // Classes and local files
-#include "device.h"
 #include "AudioFile.h"
 #include "AudioInfo.h"
 #include "AudioSignal.h"
 #include "AudioChart.h"
+#include "Volumeter.h"
 #include "../tools/AudioStream.h"
 #include "../tools/Logger.h"
 
 /**
- * @class	ObjectInput
+ * @class	Channels
  * @author	Andrés González Fornell
  * @brief	Single-object input configuration class.
  */
-class ObjectInput {
+class Channel {
 public:
     float level;                    /**< current audio volume level */
     AudioFile *file;                /**< source audio file object */
-    bool fromdevice;                /**< it indicates if the audio source is a file (instead of an input device) */
     bool active;                    /**< it indicates if the audio source is active */
     bool paused;                    /**< it indicates if the audio is paused */
     bool preview;                   /**< it indicates if the audio file preview is unmuted */
@@ -48,11 +47,10 @@ public:
      * @{
      */
     QSlider *levelslider;           /**< volume level slider */
-    QGroupBox *groupbox;            /**< object group box */
-    QLineEdit *label;               /**< field to change the object label */
-    QWidget *volumeterwidget;       /**< object level indicator */
-    QCheckBox *fromdevicecheckbox;  /**< checkbox to indicate if the source is the input device */
-    QCheckBox *activecheckbox;      /**< checkbox to indicate if the object is active */
+    QGroupBox *groupbox;            /**< channel group box */
+    QLineEdit *label;               /**< field to change the channel label */
+    QWidget *volumeterwidget;       /**< channel level indicator */
+    QCheckBox *activecheckbox;      /**< checkbox to indicate if the channel is active */
     QPushButton *loadfile;          /**< button to load file as source */
     QLineEdit *currentsource;       /**< current source indicator */
     QProgressBar *audioprogress;    /**< file playback progress bar */
@@ -61,13 +59,12 @@ public:
     QPushButton *info;              /**< audio file info button */
     QTimeEdit *audiotime;           /**< file playback current time field */
     /** @} */
-    ObjectInput(QLayout *parent, int index);
-    ~ObjectInput();
+    Channel(QLayout *parent, int index);
+    ~Channel();
     int getIndex() const;
     void setIndex(int index);
     void setLevel(int level);
     void setLabel(std::string label);
-    void setFromDevice(bool state);
     void setActive(bool state);
     void setFile(std::string filepath);
     void setAudioProgress(float value);
@@ -82,40 +79,39 @@ public:
     void sendData(float data);
     float getLastValue();
 private:
-    int index;                      /**< object index */
-    AudioStream *audiostream;       /**< audio object */
+    int index;                      /**< channel index */
+    AudioStream *audiostream;       /**< audio channel stream */
     Volumeter *volumeter;           /**< volumeter object */
-    std::string name;               /**< input object name */
+    std::string name;               /**< input channel name */
     float lastvalue;                /**< last received value */
 };
 
 /**
- * @class	ObjectsConfiguration
+ * @class	ChannelsConfiguration
  * @author	Andrés González Fornell
- * @brief	Objects configuration class.
+ * @brief	Channels configuration class.
  */
-class ObjectsConfiguration : public QObject {
+class ChannelsConfiguration : public QObject {
     Q_OBJECT
 public:
-    ObjectsConfiguration(QWidget *parent, int number);
-    ~ObjectsConfiguration();
-    ObjectInput *getObject(int index);
+    ChannelsConfiguration(QWidget *parent, int number);
+    ~ChannelsConfiguration();
+    Channel *getChannel(int index);
     int getNumber();
-    void deleteObject(int index);
-    int getObjectIndex(QObject *element);
+    void deleteChannel(int index);
+    int getChannelIndex(QObject *element);
 private:
-    QWidget *framework;             /**< user interface framework of objects configuration */
-    QList<ObjectInput *> objects;   /**< list of object input objects */
-    QLayout *layout;                /**< user interface layout of the objects list */
-    int number;                     /**< number of objects */
+    QWidget *framework;             /**< user interface framework of channels configuration */
+    QList<Channel *> channels;      /**< list of channels */
+    QLayout *layout;                /**< user interface layout of the channels list */
+    int number;                     /**< number of channels */
     Volumeter *volumeter;           /**< volumeter object */
 private slots:
-    // Objects configuration controls
+    // Channels configuration controls
     void setNumber(int number);
-    // Inputs objects controls
+    // Inputs channels controls
     void setLevel(int level);
     void setLabel(QString label);
-    void setFromDevice(bool state);
     void setActive(bool state);
     void loadFile();
     void switchPlayPause();
@@ -124,26 +120,22 @@ private slots:
 };
 
 /**
- * @class	Objects
+ * @class	Channels
  * @author	Andrés González Fornell
- * @brief	User interface class of Objects framework.
+ * @brief	User interface class of Channels framework.
  */
-class Objects : public QMainWindow
+class Channels : public QMainWindow
 {
     Q_OBJECT
 public:
-    static int fs;                                /**< signal sampling frequency [Hz] */
-    Device *device;                                 /**< device object */
-    ObjectsConfiguration *objectsconfiguration;     /**< objects configuration object */
-    AudioChart *audiochart;                         /**< audio chart object */
-    Objects(QWidget *framework);
-    ~Objects();
+    static int fs;                                      /**< signal sampling frequency [Hz] */
+    ChannelsConfiguration *channelsconfiguration;       /**< channels configuration object */
+    AudioChart *audiochart;                             /**< audio chart object */
+    Channels(QWidget *framework);
+    ~Channels();
     void setfs(int fs);
-public slots:
-    void receiveDevice(float value);
 private:
-    AudioSignal *master;                            /**< input master audio signal */
-    void addToMaster(float sample);
+    AudioSignal *master;                                /**< input master audio signal */
 };
 
-#endif // OBJECTS_H
+#endif // CHANNELS_H
