@@ -101,7 +101,7 @@ public:
     void deleteChannel(int index);
     int getChannelIndex(QObject *element);
 private:
-    QWidget *framework;             /**< user interface framework of channels configuration */
+    QWidget *fs;             /**< user interface framework of channels configuration */
     QList<Channel *> channels;      /**< list of channels */
     QLayout *layout;                /**< user interface layout of the channels list */
     int number;                     /**< number of channels */
@@ -117,25 +117,6 @@ private slots:
     void switchPlayPause();
     void switchPreview();
     void openInfo();
-};
-
-/**
- * @class	Channels
- * @author	Andrés González Fornell
- * @brief	User interface class of Channels framework.
- */
-class Channels : public QMainWindow
-{
-    Q_OBJECT
-public:
-    static int fs;                                      /**< signal sampling frequency [Hz] */
-    ChannelsConfiguration *channelsconfiguration;       /**< channels configuration object */
-    AudioChart *audiochart;                             /**< audio chart object */
-    Channels(QWidget *framework);
-    ~Channels();
-    void setfs(int fs);
-private:
-    AudioSignal *master;                                /**< input master audio signal */
 };
 
 #endif // CHANNELS_H

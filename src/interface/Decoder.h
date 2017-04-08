@@ -9,8 +9,10 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
+#include "Coder.h"
+#include "ChannelsList.h"
+#include "AudioFile.h"
 #include "../tools/Logger.h"
-#include "AudioChart.h"
 
 namespace Ui {
 class Decoder;
@@ -30,7 +32,10 @@ public:
     void setfs(int fs);
 private:
     Ui::Decoder *ui;        /**< User interface object */
-    int fs;                 /**< Signal sampling frequency */
+    AudioFile *file;        /**< Coder input file object */
+private slots:
+    void load();
+    void encode();
 };
 
 #endif // DECODER_H

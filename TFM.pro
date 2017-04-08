@@ -17,9 +17,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += src/interface/main.cpp\
-    src/interface/Channel.cpp \
+    src/interface/Decoder.cpp \
+    src/interface/Coder.cpp \
+    src/interface/ChannelsList.cpp \
     src/interface/ChannelsConfiguration.cpp \
-    src/interface/Channels.cpp \
     src/interface/AudioSignal.cpp \
     src/interface/AudioFile.cpp \
     src/interface/AudioInfo.cpp \
@@ -37,12 +38,13 @@ SOURCES += src/interface/main.cpp\
     src/coder/sac_polyphase.c \
     src/coder/sac_stream.c \
     src/tools/AudioStream.cpp \
-    src/tools/Logger.cpp \
-    src/interface/Coder.cpp \
-    src/interface/Decoder.cpp
+    src/tools/Logger.cpp
 
 HEADERS  += \
-    src/interface/channels.h \
+    src/interface/Decoder.h \
+    src/interface/Coder.h \
+    src/interface/ChannelsList.h \
+    src/interface/ChannelsConfiguration.h \
     src/interface/AudioSignal.h \
     src/interface/AudioFile.h \
     src/interface/AudioInfo.h \
@@ -61,9 +63,7 @@ HEADERS  += \
     src/coder/sac_types.h \
     src/tools/AudioStream.h \
     src/tools/Logger.h \
-    lib/QtLibraries/src/qtlibraries.h \
-    src/interface/Coder.h \
-    src/interface/Decoder.h
+    lib/QtLibraries/src/qtlibraries.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \

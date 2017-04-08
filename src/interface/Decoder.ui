@@ -17,12 +17,12 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Decoder</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QGroupBox" name="channels">
+     <widget class="QGroupBox" name="input">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -38,7 +38,7 @@
       <property name="title">
        <string>Input</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="input_layout">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -55,7 +55,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QScrollArea" name="channels_configuration">
+        <widget class="QScrollArea" name="input_channels">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>13</horstretch>
@@ -83,7 +83,7 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
-         <widget class="QWidget" name="channels_list">
+         <widget class="QWidget" name="input_list">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -92,7 +92,7 @@
             <height>327</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="channels_list_layout">
+          <layout class="QVBoxLayout" name="input_list_layout">
            <property name="leftMargin">
             <number>5</number>
            </property>
@@ -110,7 +110,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="channels_chart" native="true">
+        <widget class="QWidget" name="input_chart" native="true">
          <property name="minimumSize">
           <size>
            <width>200</width>
@@ -155,7 +155,10 @@
       <property name="title">
        <string>Output</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="output_layout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -169,133 +172,69 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QGroupBox" name="playback">
+        <widget class="QScrollArea" name="output_channels">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>13</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOn</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <widget class="QWidget" name="output_list">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>226</width>
+            <height>327</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="output_list_layout">
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="output_chart" native="true">
          <property name="minimumSize">
           <size>
-           <width>0</width>
-           <height>100</height>
+           <width>200</width>
+           <height>150</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>16777215</width>
-           <height>100</height>
+           <width>300</width>
+           <height>150</height>
           </size>
          </property>
-         <property name="title">
-          <string>Playback</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <layout class="QHBoxLayout" name="playback_control_1">
-            <item>
-             <widget class="QComboBox" name="playback_device">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>32</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="playback_pause">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Mute</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="playback_control_2">
-            <item>
-             <widget class="QWidget" name="playback_level" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>5</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>5</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QSlider" name="playback_volume">
-              <property name="maximum">
-               <number>100</number>
-              </property>
-              <property name="value">
-               <number>70</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
         </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="output_time" native="true"/>
        </item>
       </layout>
      </widget>
@@ -311,23 +250,14 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="channels_menu">
+   <widget class="QMenu" name="menu_file">
     <property name="title">
-     <string>Objects</string>
+     <string>File</string>
     </property>
-    <widget class="QMenu" name="channels_fs">
-     <property name="title">
-      <string>Sampling frequency</string>
-     </property>
-     <addaction name="channels_fs_0"/>
-     <addaction name="channels_fs_1"/>
-     <addaction name="channels_fs_2"/>
-     <addaction name="channels_fs_3"/>
-     <addaction name="channels_fs_4"/>
-    </widget>
-    <addaction name="channels_fs"/>
+    <addaction name="menu_file_load"/>
+    <addaction name="menu_file_encode"/>
    </widget>
-   <addaction name="channels_menu"/>
+   <addaction name="menu_file"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -376,6 +306,16 @@
    </property>
    <property name="text">
     <string>44100 Hz</string>
+   </property>
+  </action>
+  <action name="menu_file_load">
+   <property name="text">
+    <string>Load</string>
+   </property>
+  </action>
+  <action name="menu_file_encode">
+   <property name="text">
+    <string>Encode new</string>
    </property>
   </action>
  </widget>
