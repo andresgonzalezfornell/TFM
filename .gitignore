@@ -1,6 +1,6 @@
 # Folders
 Debug/*
-Release/*
+bin/*
 Test/*
 
 # Eclipse
@@ -24,20 +24,9 @@ src/.settings/language.settings.xml
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
 # Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
 # Executables
 *.exe
