@@ -22,7 +22,7 @@ AudioInfo::~AudioInfo()
 
 }
 
-void AudioInfo::setFile(AudioFile *file) {
+void AudioInfo::setFile(WAVFile *file) {
     QTableWidget *table = ui->infotable;
     QStringList labels;
     int columns = 2;

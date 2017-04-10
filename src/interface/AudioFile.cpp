@@ -1,29 +1,26 @@
 #include "AudioFile.h"
 
 /**
- * @brief	Objects constructor.
+ * @brief	AudioFile constructor.
  */
 AudioFile::AudioFile() {
     this->file = new QFile();
     this->file->open(QIODevice::ReadOnly);
-    this->cursor = 0;
     consolelog("AudioFile",LogType::progress,"AudioFile object is created");
 }
 
 /**
- * @brief	Objects constructor.
+ * @brief	AudioFile constructor.
  * @param   filepath        file path
  */
 AudioFile::AudioFile(std::string filepath) {
     this->file = new QFile(QString::fromStdString(filepath));
     this->file->open(QIODevice::ReadOnly);
-    this->cursor = 0;
-    this->readHeader();
     consolelog("AudioFile",LogType::progress,"AudioFile object is created");
 }
 
 /**
- * @brief	Objects destructor.
+ * @brief	AudioFile destructor.
  */
 AudioFile::~AudioFile() {
     consolelog("AudioFile",LogType::progress,"AudioFile object is deleted");
@@ -38,9 +35,37 @@ std::string AudioFile::getFilepath() {
 }
 
 /**
+ * @brief   It indicates if the file object exists.
+ * @return  true if the file object exists
+ */
+bool AudioFile::exists() {
+    if(this!=NULL) {
+        return this->file->exists();
+    } else {
+        return false;
+    }
+}
+
+/**
+ * @brief	WAVFile constructor.
+ */
+WAVFile::WAVFile() : AudioFile::AudioFile() {
+    this->cursor = 0;
+}
+
+/**
+ * @brief	WAVFile constructor.
+ * @param   filepath        file path
+ */
+WAVFile::WAVFile(std::string filepath) : AudioFile::AudioFile(filepath) {
+    this->cursor = 0;
+    this->readHeader();
+}
+
+/**
  * @brief   It reads the file header and sets the format header into the audio file object.
  */
-void AudioFile::readHeader() {
+void WAVFile::readHeader() {
     // Format header
     this->header.chunkID = QString(this->readData(4)).toStdString();
     this->header.chunksize = this->readDataNumber(4,Endianess::littleendian);
@@ -133,7 +158,7 @@ void AudioFile::readHeader() {
  * @param   length          data length in bytes
  * @return  data
  */
-QByteArray AudioFile::readData(int length) {
+QByteArray WAVFile::readData(int length) {
     if(this->file->exists()) {
         if (!this->file->isOpen()) {
             this->file->open(QIODevice::ReadOnly);
@@ -158,7 +183,7 @@ QByteArray AudioFile::readData(int length) {
  * @param   endianess       data order (big endian or little endian)
  * @return  data
  */
-unsigned long int AudioFile::readDataNumber(int length,Endianess::endianess endianess) {
+unsigned long int WAVFile::readDataNumber(int length,Endianess::endianess endianess) {
     QByteArray data = this->readData(length);
     if (data.isNull()) {
         return 0;
@@ -176,17 +201,5 @@ unsigned long int AudioFile::readDataNumber(int length,Endianess::endianess endi
             }
         }
         return number;
-    }
-}
-
-/**
- * @brief   It indicates if the file object exists.
- * @return  true if the file object exists
- */
-bool AudioFile::exists() {
-    if(this!=NULL) {
-        return this->file->exists();
-    } else {
-        return false;
     }
 }

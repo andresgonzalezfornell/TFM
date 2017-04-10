@@ -8,19 +8,21 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
-#include "mainwindow.h"
-#include "AudioObject.h"
+#include "Coder.h"
+#include "Decoder.h"
 #include "../tools/Logger.h"
 
 /**
  * @brief	Main function
  */
 int main(int argc, char *argv[]) {
+    std::system(":sac_enc/sac_enc");
+    std::system("pwd");
     consolelog("main", LogType::progress, "running program");
-	QApplication a(argc, argv);
-    MainWindow w;
-    consolelog("main", LogType::progress, "showing MainWindow");
-    w.show();
+    QApplication app(argc, argv);
+    Decoder decoder;
+    consolelog("main", LogType::progress, "showing Decoder");
+    decoder.show();
     consolelog("main", LogType::progress, "program was completed");
-	return a.exec();
+    return app.exec();
 }

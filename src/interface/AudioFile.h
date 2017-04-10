@@ -15,8 +15,22 @@
  * @author	Andrés González Fornell
  * @brief	Audio file class.
  */
-
 class AudioFile {
+public:
+    QFile *file;                            /**< file object */
+    AudioFile();
+    AudioFile(std::string filepath);
+    ~AudioFile();
+    std::string getFilepath();
+    bool exists();
+};
+
+/**
+ * @class	WAVFile
+ * @author	Andrés González Fornell
+ * @brief	Audio file as WAV format class.
+ */
+class WAVFile : public AudioFile {
 public:
     /**
      * @name    Endianess
@@ -67,16 +81,11 @@ public:
     Header header;                          /**< audio file header */
     int cursor;                             /**< audio file reading cursor [Bytes] */
     float duration;                         /**< audio file duration [s] */
-    AudioFile();
-    AudioFile(std::string filepath);
-    ~AudioFile();
-    std::string getFilepath();
+    WAVFile();
+    WAVFile(std::string filepath);
     QByteArray readData(int length);
     unsigned long readDataNumber(int length,Endianess::endianess endianess);
-    void readHeader();
-    bool exists();
-private:
-    QFile *file;                            /**< file object */
+    void readHeader();                      /**< file object */
 };
 
 #endif // AUDIOFILE_H
