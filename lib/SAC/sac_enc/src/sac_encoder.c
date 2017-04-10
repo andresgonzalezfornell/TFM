@@ -42,7 +42,7 @@ Copyright (c) ISO/IEC 2009.
 
 static void encode(AFILE *inputFile, int nSamples, AFILE *downmixFile, Stream *bitFile, int bury, int dmChannels, int timeSlots);
 
-int sac_encode(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
   int i;
   char *inputFilename = NULL, *downmixFilename = NULL, *bitFilename = NULL;

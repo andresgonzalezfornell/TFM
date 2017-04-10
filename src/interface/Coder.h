@@ -10,12 +10,9 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
+#include "ui_Coder.h"
 #include "AudioChart.h"
 #include "ChannelsConfiguration.h"
-#include "libtsp.h"
-#include "../coder/sac_enc.h"
-#include "../coder/bitstream.h"
-#include "../coder/sac_bd_embedder.h"
 #include "../tools/Logger.h"
 
 namespace Ui {
@@ -40,7 +37,6 @@ private:
     Ui::Coder *ui;                      /**< user interface object */
     ChannelsConfiguration *channels;    /**< channels panel object */
     int fs;                             /**< signal sampling frequency */
-    static void encode(AFILE *inputFile, int nSamples, AFILE *downmixFile, Stream *bitFile, int bury, int dmChannels, int timeSlots);
 private slots:
     // Input
     void loadInput();

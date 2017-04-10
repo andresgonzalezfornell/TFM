@@ -26,17 +26,6 @@ SOURCES += src/interface/main.cpp\
     src/interface/AudioInfo.cpp \
     src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
-    src/coder/bitstream.c \
-    src/coder/sac_bd_embedder.c \
-    src/coder/sac_enc.c \
-    src/coder/sac_encoder.c \
-    src/coder/sac_huff_cld.c \
-    src/coder/sac_huff_cpc.c \
-    src/coder/sac_huff_icc.c \
-    src/coder/sac_hybfilter.c \
-    src/coder/sac_nlc_enc.c \
-    src/coder/sac_polyphase.c \
-    src/coder/sac_stream.c \
     src/tools/AudioStream.cpp \
     src/tools/Logger.cpp
 
@@ -50,17 +39,6 @@ HEADERS  += \
     src/interface/AudioInfo.h \
     src/interface/AudioChart.h \
     src/interface/Volumeter.h \
-    src/coder/bitstream.h \
-    src/coder/defines.h \
-    src/coder/sac_bd_embedder.h \
-    src/coder/sac_enc.h \
-    src/coder/sac_huff_tab.h \
-    src/coder/sac_hybfilter.h \
-    src/coder/sac_nlc_enc.h \
-    src/coder/sac_polyphase.h \
-    src/coder/sac_sbrconst.h \
-    src/coder/sac_stream.h \
-    src/coder/sac_types.h \
     src/tools/AudioStream.h \
     src/tools/Logger.h \
     lib/QtLibraries/src/qtlibraries.h
@@ -69,6 +47,14 @@ FORMS    += \
     src/interface/AudioInfo.ui \
     src/interface/Coder.ui \
     src/interface/Decoder.ui
+
+RESOURCES += \
+    src/interface/media.qrc \
+    sac.qrc
+
+# Libraries
+
+# fftw3
 
 win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lfftw3
 else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lfftw3
@@ -83,13 +69,29 @@ else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += /usr/loc
 else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += /usr/local/lib/debug/fftw3.lib
 else:unix: PRE_TARGETDEPS += /usr/local/lib/libfftw3.a
 
-RESOURCES += \
-    src/interface/media.qrc
+# libtsp
 
-unix|win32: LIBS += -L$$PWD/lib/AFsp/lib/ -ltsp
+unix: LIBS += -L$$PWD/lib/AFsp/lib/ -ltsp
 
-INCLUDEPATH += $$PWD/lib/AFsp/src
-DEPENDPATH += $$PWD/lib/AFsp/src
+INCLUDEPATH += $$PWD/lib/AFsp/include
+DEPENDPATH += $$PWD/lib/AFsp/include
 
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/lib/AFsp/lib/tsp.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/lib/AFsp/lib/libtsp.a
+unix: PRE_TARGETDEPS += $$PWD/lib/AFsp/lib/libtsp.a
+
+# sac_enc
+
+unix: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
+
+INCLUDEPATH += $$PWD/lib/SAC/sac_enc/include
+DEPENDPATH += $$PWD/lib/SAC/sac_enc/include
+
+unix: PRE_TARGETDEPS += $$PWD/lib/SAC/sac_enc/lib/libsac_enc.a
+
+# sac_dec
+
+unix: LIBS += -L$$PWD/lib/SAC/sac_dec/lib/ -lsac_dec
+
+INCLUDEPATH += $$PWD/lib/SAC/sac_dec/include
+DEPENDPATH += $$PWD/lib/SAC/sac_dec/include
+
+unix: PRE_TARGETDEPS += $$PWD/lib/SAC/sac_dec/lib/libsac_dec.a

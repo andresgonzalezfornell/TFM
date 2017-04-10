@@ -1,11 +1,5 @@
 // Class libraries
 #include "Coder.h"
-#include "ui_Coder.h"
-#include "../coder/sac_enc.h"
-#include "../coder/bitstream.h"
-#include "../coder/sac_bd_embedder.h"
-
-int ChannelsConfiguration::fs;
 
 /**
  * @brief	Coder constructor.
@@ -16,6 +10,8 @@ Coder::Coder(QWidget *parent) :
 {
     ui->setupUi(this);
     this->fs = 44100;
+    this->input = NULL;
+    this->output = NULL;
     this->setFilename("",ui->input_filename);
     this->setFilename("",ui->output_filename);
     // Signals
@@ -43,11 +39,12 @@ Coder::~Coder()
  * @param   framework           user interface element to place file path
  */
 void Coder::setFilename(std::string filepath, QLineEdit *framework) {
+    std::string loadingrequest = "please load a file";
     QFont font;
     if(filepath=="") {
         font.setItalic(true);
         framework->setFont(font);
-        framework->setText("please load a file");
+        framework->setText(QString::fromStdString(loadingrequest));
         consolelog("Coder",LogType::warning,"selected audio file is empty");
     } else {
         font.setItalic(false);
@@ -55,6 +52,8 @@ void Coder::setFilename(std::string filepath, QLineEdit *framework) {
         framework->setText(QString::fromStdString(filepath));
         consolelog("Coder",LogType::progress,"selected \"" + filepath + "\" as audio file");
     }
+    // Buttons enabling
+    ui->coding_controls->button(QDialogButtonBox::Apply)->setEnabled(this->input->exists());
     ui->output_controls->button(QDialogButtonBox::Ok)->setEnabled(this->input->exists() && this->output->exists());
 }
 
@@ -70,6 +69,9 @@ void Coder::setFilename(std::string filepath, QLineEdit *framework) {
 void Coder::loadInput() {
     consolelog("Coder",LogType::interaction,"selecting input audio file");
     std::string filepath = QFileDialog::getOpenFileName(NULL, "Load audio file","","*.wav").toStdString();
+    if(filepath != "") {
+        this->input = new WAVFile(filepath);
+    }
     this->setFilename(filepath, ui->input_filename);
 }
 
@@ -86,29 +88,16 @@ void Coder::reset() {
 void Coder::apply() {
     consolelog("Coder",LogType::interaction,"selecting input audio file");
     std::string filepath = QFileDialog::getSaveFileName(NULL, "Load audio file","","*.sac").toStdString();
-    this->setFilename(filepath,ui->output_filename);
     if(filepath != "") {
         this->output = new AudioFile(filepath);
+    }
+    this->setFilename(filepath,ui->output_filename);
+    if(filepath != "") {
         // SAC coding
-        Stream bitstream;
         int bury = 0;
         int treeConfig = 5151;  // tree config: 5151, 5152, 525 (5151 is the default)
         int timeSlots = 32;     // times slots, 16 or 32 (32 is the default)
-        long int sampleNum, channelNum;
-        double sampleFreq = (double)this->fs;
-        int outputchannels = 0;
-        switch(treeConfig) {
-        case 5151:
-        case 5152:
-            outputchannels=1;
-            break;
-        case 525:
-            outputchannels=2;
-        }
-        AFILE *inputfile = AFopnRead(this->input->getFilepath().c_str(), &sampleNum, &channelNum, &sampleFreq, NULL);
-        AFILE *outputfile = AFopnWrite(this->output->getFilepath().c_str(), 2+16, 5 , outputchannels, sampleFreq, NULL);
-        consolelog("Coder",LogType::interaction,"starting coding");
-    //    this->encode(inputfile, 1, outputfile, &bitstream, 1,1,1);
+        std::system("../../lib/SAC/sac_enc/bin/sac_enc");
     }
 }
 
@@ -127,7 +116,3 @@ void Coder::submit() {
 }
 
 /** @} */
-
-static void encode(AFILE *inputFile, int nSamples, AFILE *downmixFile, Stream *bitstream, int bury, int treeConfig, int timeSlots) {
-
-}

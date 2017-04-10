@@ -88,8 +88,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>226</width>
-            <height>327</height>
+            <width>215</width>
+            <height>295</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="input_list_layout">
@@ -125,6 +125,16 @@
          </property>
          <property name="toolTipDuration">
           <number>-1</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="input_start">
+         <property name="text">
+          <string>Start</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -199,7 +209,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>226</width>
+            <width>227</width>
             <height>327</height>
            </rect>
           </property>

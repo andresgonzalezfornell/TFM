@@ -16,6 +16,8 @@
  * @brief	Main function
  */
 int main(int argc, char *argv[]) {
+    std::system(":sac_enc/sac_enc");
+    std::system("pwd");
     consolelog("main", LogType::progress, "running program");
     QApplication app(argc, argv);
     Decoder decoder;

@@ -14,6 +14,18 @@
 #include "AudioFile.h"
 #include "../tools/Logger.h"
 
+//#include "libtsp.h"
+//#include "libtsp/AFpar.h"
+
+//#include "sac_dec.h"
+//#include "lib/SAC/sac_dec/include/sac_polyphase.h"
+//#include "spatial_filereader.h"
+//#include "spatial_bdreader.h"
+//#include "spatial_hrtfreader.h"
+//#include "sac_parallelReverb.h"
+
+#include "spatial_frontend.c"
+
 namespace Ui {
 class Decoder;
 }
@@ -36,6 +48,7 @@ private:
 private slots:
     void load();
     void encode();
+    void decode();
 };
 
 #endif // DECODER_H

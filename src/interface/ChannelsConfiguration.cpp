@@ -1,6 +1,8 @@
 // Class libraries
 #include "ChannelsConfiguration.h"
 
+int ChannelsConfiguration::fs;
+
 /**
  * @brief	ChannelsConfiguration constructor.
  * @param   framework   user interface framework of channels configuration
