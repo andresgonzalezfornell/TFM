@@ -260,14 +260,14 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_file">
+   <widget class="QMenu" name="menu_input">
     <property name="title">
-     <string>File</string>
+     <string>Input</string>
     </property>
-    <addaction name="menu_file_load"/>
-    <addaction name="menu_file_encode"/>
+    <addaction name="menu_input_load"/>
+    <addaction name="menu_input_encode"/>
    </widget>
-   <addaction name="menu_file"/>
+   <addaction name="menu_input"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -318,14 +318,14 @@
     <string>44100 Hz</string>
    </property>
   </action>
-  <action name="menu_file_load">
+  <action name="menu_input_load">
    <property name="text">
-    <string>Load</string>
+    <string>Load from a file</string>
    </property>
   </action>
-  <action name="menu_file_encode">
+  <action name="menu_input_encode">
    <property name="text">
-    <string>Encode new</string>
+    <string>Load from encoder</string>
    </property>
   </action>
  </widget>

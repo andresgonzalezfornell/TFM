@@ -15,7 +15,7 @@ CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG
 CFLAGS        = -pipe -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -O2 -fPIC -Wall -W $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -O2 -fPIC -std=gnu++11 -Wall -W $(DEFINES)
-INCPATH       = -I../../sac_enc -I. -I../../../AFsp/include -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang
+INCPATH       = -I../../sac_enc -I. -I../include -I../../../AFsp/include -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang
 QMAKE         = /Applications/Qt/5.8/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -231,17 +231,17 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/yacc.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/lex.prf \
-		../../libsac_enc.pro src/bitstream.h \
-		src/defines.h \
-		src/sac_bd_embedder.h \
-		src/sac_enc.h \
-		src/sac_huff_tab.h \
-		src/sac_hybfilter.h \
-		src/sac_nlc_enc.h \
-		src/sac_polyphase.h \
-		src/sac_sbrconst.h \
-		src/sac_stream.h \
-		src/sac_types.h ../src/bitstream.c \
+		../../libsac_enc.pro include/bitstream.h \
+		include/defines.h \
+		include/sac_bd_embedder.h \
+		include/sac_enc.h \
+		include/sac_huff_tab.h \
+		include/sac_hybfilter.h \
+		include/sac_nlc_enc.h \
+		include/sac_polyphase.h \
+		include/sac_sbrconst.h \
+		include/sac_stream.h \
+		include/sac_types.h ../src/bitstream.c \
 		../src/sac_bd_embedder.c \
 		../src/sac_enc.c \
 		../src/sac_encoder.c \
@@ -644,57 +644,57 @@ compiler_clean:
 
 ####### Compile
 
-bitstream.o: ../src/bitstream.c ../src/sac_types.h \
-		../src/sac_nlc_enc.h \
-		../src/sac_stream.h \
-		../src/bitstream.h
+bitstream.o: ../src/bitstream.c ../include/sac_types.h \
+		../include/sac_nlc_enc.h \
+		../include/sac_stream.h \
+		../include/bitstream.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o bitstream.o ../src/bitstream.c
 
-sac_bd_embedder.o: ../src/sac_bd_embedder.c ../src/sac_bd_embedder.h
+sac_bd_embedder.o: ../src/sac_bd_embedder.c ../include/sac_bd_embedder.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_bd_embedder.o ../src/sac_bd_embedder.c
 
-sac_enc.o: ../src/sac_enc.c ../src/sac_enc.h \
-		../src/sac_polyphase.h \
-		../src/sac_hybfilter.h \
-		../src/defines.h \
-		../src/bitstream.h \
-		../src/sac_stream.h
+sac_enc.o: ../src/sac_enc.c ../include/sac_enc.h \
+		../include/sac_polyphase.h \
+		../include/sac_hybfilter.h \
+		../include/defines.h \
+		../include/bitstream.h \
+		../include/sac_stream.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_enc.o ../src/sac_enc.c
 
 sac_encoder.o: ../src/sac_encoder.c ../../../AFsp/include/libtsp.h \
-		../src/sac_enc.h \
-		../src/sac_polyphase.h \
-		../src/sac_hybfilter.h \
-		../src/defines.h \
-		../src/bitstream.h \
-		../src/sac_stream.h \
-		../src/sac_bd_embedder.h
+		../include/sac_enc.h \
+		../include/sac_polyphase.h \
+		../include/sac_hybfilter.h \
+		../include/defines.h \
+		../include/bitstream.h \
+		../include/sac_stream.h \
+		../include/sac_bd_embedder.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_encoder.o ../src/sac_encoder.c
 
-sac_huff_cld.o: ../src/sac_huff_cld.c ../src/sac_huff_tab.h
+sac_huff_cld.o: ../src/sac_huff_cld.c ../include/sac_huff_tab.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_huff_cld.o ../src/sac_huff_cld.c
 
-sac_huff_cpc.o: ../src/sac_huff_cpc.c ../src/sac_huff_tab.h
+sac_huff_cpc.o: ../src/sac_huff_cpc.c ../include/sac_huff_tab.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_huff_cpc.o ../src/sac_huff_cpc.c
 
-sac_huff_icc.o: ../src/sac_huff_icc.c ../src/sac_huff_tab.h
+sac_huff_icc.o: ../src/sac_huff_icc.c ../include/sac_huff_tab.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_huff_icc.o ../src/sac_huff_icc.c
 
-sac_hybfilter.o: ../src/sac_hybfilter.c ../src/sac_hybfilter.h \
-		../src/defines.h
+sac_hybfilter.o: ../src/sac_hybfilter.c ../include/sac_hybfilter.h \
+		../include/defines.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_hybfilter.o ../src/sac_hybfilter.c
 
-sac_nlc_enc.o: ../src/sac_nlc_enc.c ../src/sac_stream.h \
-		../src/sac_nlc_enc.h \
-		../src/sac_types.h \
-		../src/sac_huff_tab.h
+sac_nlc_enc.o: ../src/sac_nlc_enc.c ../include/sac_stream.h \
+		../include/sac_nlc_enc.h \
+		../include/sac_types.h \
+		../include/sac_huff_tab.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nlc_enc.o ../src/sac_nlc_enc.c
 
-sac_polyphase.o: ../src/sac_polyphase.c ../src/sac_polyphase.h \
-		../src/sac_sbrconst.h
+sac_polyphase.o: ../src/sac_polyphase.c ../include/sac_polyphase.h \
+		../include/sac_sbrconst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_polyphase.o ../src/sac_polyphase.c
 
-sac_stream.o: ../src/sac_stream.c ../src/sac_stream.h
+sac_stream.o: ../src/sac_stream.c ../include/sac_stream.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_stream.o ../src/sac_stream.c
 
 ####### Install

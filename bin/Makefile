@@ -59,8 +59,9 @@ SOURCES       = ../src/interface/main.cpp \
 		../src/interface/AudioChart.cpp \
 		../src/interface/Volumeter.cpp \
 		../src/tools/AudioStream.cpp \
-		../src/tools/Logger.cpp qrc_media.cpp \
-		qrc_sac.cpp \
+		../src/sac/sac_decoder.c \
+		../src/tools/Logger.cpp \
+		../src/sac/sac_encoder.c qrc_media.cpp \
 		moc_Decoder.cpp \
 		moc_Coder.cpp \
 		moc_ChannelsList.cpp \
@@ -79,9 +80,10 @@ OBJECTS       = main.o \
 		AudioChart.o \
 		Volumeter.o \
 		AudioStream.o \
+		sac_decoder.o \
 		Logger.o \
+		sac_encoder.o \
 		qrc_media.o \
-		qrc_sac.o \
 		moc_Decoder.o \
 		moc_Coder.o \
 		moc_ChannelsList.o \
@@ -272,7 +274,9 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../src/interface/Volumeter.h \
 		../src/tools/AudioStream.h \
 		../src/tools/Logger.h \
-		../lib/QtLibraries/src/qtlibraries.h ../src/interface/main.cpp \
+		../src/sac/sac_decoder.h \
+		../lib/QtLibraries/src/qtlibraries.h \
+		../src/sac/sac_encoder.h ../src/interface/main.cpp \
 		../src/interface/Decoder.cpp \
 		../src/interface/Coder.cpp \
 		../src/interface/ChannelsList.cpp \
@@ -283,7 +287,9 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../src/interface/AudioChart.cpp \
 		../src/interface/Volumeter.cpp \
 		../src/tools/AudioStream.cpp \
-		../src/tools/Logger.cpp
+		../src/sac/sac_decoder.c \
+		../src/tools/Logger.cpp \
+		../src/sac/sac_encoder.c
 QMAKE_TARGET  = TFM
 DESTDIR       = 
 TARGET        = TFM.app/Contents/MacOS/TFM
@@ -470,7 +476,6 @@ Makefile: ../TFM.pro /Applications/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf
 		/Applications/Qt/5.8/clang_64/mkspecs/features/lex.prf \
 		../TFM.pro \
 		../src/interface/media.qrc \
-		../sac.qrc \
 		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/QtCharts.prl \
 		/Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl \
 		/Applications/Qt/5.8/clang_64/lib/QtSvg.framework/QtSvg.prl \
@@ -663,7 +668,6 @@ Makefile: ../TFM.pro /Applications/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf
 /Applications/Qt/5.8/clang_64/mkspecs/features/lex.prf:
 ../TFM.pro:
 ../src/interface/media.qrc:
-../sac.qrc:
 /Applications/Qt/5.8/clang_64/lib/QtCharts.framework/QtCharts.prl:
 /Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl:
 /Applications/Qt/5.8/clang_64/lib/QtSvg.framework/QtSvg.prl:
@@ -710,10 +714,10 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/media.qrc ../sac.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/media.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Applications/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/Decoder.h ../src/interface/Coder.h ../src/interface/ChannelsList.h ../src/interface/ChannelsConfiguration.h ../src/interface/AudioSignal.h ../src/interface/AudioFile.h ../src/interface/AudioInfo.h ../src/interface/AudioChart.h ../src/interface/Volumeter.h ../src/tools/AudioStream.h ../src/tools/Logger.h ../lib/QtLibraries/src/qtlibraries.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/main.cpp ../src/interface/Decoder.cpp ../src/interface/Coder.cpp ../src/interface/ChannelsList.cpp ../src/interface/ChannelsConfiguration.cpp ../src/interface/AudioSignal.cpp ../src/interface/AudioFile.cpp ../src/interface/AudioInfo.cpp ../src/interface/AudioChart.cpp ../src/interface/Volumeter.cpp ../src/tools/AudioStream.cpp ../src/tools/Logger.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/Decoder.h ../src/interface/Coder.h ../src/interface/ChannelsList.h ../src/interface/ChannelsConfiguration.h ../src/interface/AudioSignal.h ../src/interface/AudioFile.h ../src/interface/AudioInfo.h ../src/interface/AudioChart.h ../src/interface/Volumeter.h ../src/tools/AudioStream.h ../src/tools/Logger.h ../src/sac/sac_decoder.h ../lib/QtLibraries/src/qtlibraries.h ../src/sac/sac_encoder.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/main.cpp ../src/interface/Decoder.cpp ../src/interface/Coder.cpp ../src/interface/ChannelsList.cpp ../src/interface/ChannelsConfiguration.cpp ../src/interface/AudioSignal.cpp ../src/interface/AudioFile.cpp ../src/interface/AudioInfo.cpp ../src/interface/AudioChart.cpp ../src/interface/Volumeter.cpp ../src/tools/AudioStream.cpp ../src/sac/sac_decoder.c ../src/tools/Logger.cpp ../src/sac/sac_encoder.c $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/interface/AudioInfo.ui ../src/interface/Coder.ui ../src/interface/Decoder.ui $(DISTDIR)/
 
 
@@ -738,9 +742,9 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_media.cpp qrc_sac.cpp
+compiler_rcc_make_all: qrc_media.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_media.cpp qrc_sac.cpp
+	-$(DEL_FILE) qrc_media.cpp
 qrc_media.cpp: ../src/interface/media.qrc \
 		/Applications/Qt/5.8/clang_64/bin/rcc \
 		../src/interface/media/icon_info.png \
@@ -749,11 +753,6 @@ qrc_media.cpp: ../src/interface/media.qrc \
 		../src/interface/media/icon_play.png \
 		../src/interface/media/icon_preview_mute.png
 	/Applications/Qt/5.8/clang_64/bin/rcc -name media ../src/interface/media.qrc -o qrc_media.cpp
-
-qrc_sac.cpp: ../sac.qrc \
-		/Applications/Qt/5.8/clang_64/bin/rcc \
-		../lib/SAC/sac_enc/bin/sac_enc
-	/Applications/Qt/5.8/clang_64/bin/rcc -name sac ../sac.qrc -o qrc_sac.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
@@ -870,15 +869,12 @@ moc_Decoder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/Q
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
 		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h \
 		../src/interface/ChannelsList.h \
 		../src/interface/Volumeter.h \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPainter \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpainter.h \
-		../lib/AFsp/include/libtsp.h \
-		../lib/SAC/sac_enc/include/sac_polyphase.h \
-		../lib/SAC/sac_dec/include/spatial_filereader.h \
-		../lib/SAC/sac_dec/include/sac_dec_interface.h \
-		../lib/SAC/sac_dec/include/spatial_bdreader.h \
+		../src/sac/sac_decoder.h \
 		../src/interface/Decoder.h \
 		moc_predefs.h \
 		/Applications/Qt/5.8/clang_64/bin/moc
@@ -989,6 +985,7 @@ moc_Coder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QAp
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
 		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h \
 		../src/interface/Coder.h \
 		moc_predefs.h \
 		/Applications/Qt/5.8/clang_64/bin/moc
@@ -1415,16 +1412,13 @@ main.o: ../src/interface/main.cpp /Applications/Qt/5.8/clang_64/lib/QtWidgets.fr
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
 		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h \
 		../src/interface/Decoder.h \
 		../src/interface/ChannelsList.h \
 		../src/interface/Volumeter.h \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPainter \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpainter.h \
-		../lib/AFsp/include/libtsp.h \
-		../lib/SAC/sac_enc/include/sac_polyphase.h \
-		../lib/SAC/sac_dec/include/spatial_filereader.h \
-		../lib/SAC/sac_dec/include/sac_dec_interface.h \
-		../lib/SAC/sac_dec/include/spatial_bdreader.h
+		../src/sac/sac_decoder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../src/interface/main.cpp
 
 Decoder.o: ../src/interface/Decoder.cpp ../src/interface/Decoder.h \
@@ -1534,15 +1528,12 @@ Decoder.o: ../src/interface/Decoder.cpp ../src/interface/Decoder.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
 		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h \
 		../src/interface/ChannelsList.h \
 		../src/interface/Volumeter.h \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPainter \
 		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpainter.h \
-		../lib/AFsp/include/libtsp.h \
-		../lib/SAC/sac_enc/include/sac_polyphase.h \
-		../lib/SAC/sac_dec/include/spatial_filereader.h \
-		../lib/SAC/sac_dec/include/sac_dec_interface.h \
-		../lib/SAC/sac_dec/include/spatial_bdreader.h \
+		../src/sac/sac_decoder.h \
 		ui_Decoder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Decoder.o ../src/interface/Decoder.cpp
 
@@ -1651,7 +1642,8 @@ Coder.o: ../src/interface/Coder.cpp ../src/interface/Coder.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
-		../src/tools/AudioStream.h
+		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Coder.o ../src/interface/Coder.cpp
 
 ChannelsList.o: ../src/interface/ChannelsList.cpp ../src/interface/ChannelsList.h \
@@ -1950,14 +1942,40 @@ AudioStream.o: ../src/tools/AudioStream.cpp ../src/tools/AudioStream.h \
 		../src/tools/Logger.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o AudioStream.o ../src/tools/AudioStream.cpp
 
+sac_decoder.o: ../src/sac/sac_decoder.c ../src/sac/sac_decoder.h \
+		../lib/SAC/sac_dec/include/spatial_frontend.h \
+		../lib/SAC/sac_dec/include/sac_dec.h \
+		../lib/AFsp/include/libtsp.h \
+		../lib/SAC/sac_dec/include/sac_dec_interface.h \
+		../lib/SAC/sac_dec/include/sac_polyphase.h \
+		../lib/SAC/sac_dec/include/sac_bitinput.h \
+		../lib/SAC/sac_dec/include/sac_config.h \
+		../lib/SAC/sac_dec/include/sac_chandefs.h \
+		../lib/SAC/sac_dec/include/sac_interface.h \
+		../lib/AFsp/include/libtsp/AFpar.h \
+		../lib/AFsp/include/libtsp/UTpar.h \
+		../lib/SAC/sac_dec/include/spatial_filereader.h \
+		../lib/SAC/sac_dec/include/spatial_bdreader.h \
+		../lib/SAC/sac_dec/include/spatial_hrtfreader.h \
+		../lib/SAC/sac_dec/include/sac_parallelReverb.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_decoder.o ../src/sac/sac_decoder.c
+
 Logger.o: ../src/tools/Logger.cpp ../src/tools/Logger.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Logger.o ../src/tools/Logger.cpp
 
+sac_encoder.o: ../src/sac/sac_encoder.c ../src/sac/sac_encoder.h \
+		../lib/AFsp/include/libtsp.h \
+		../lib/SAC/sac_enc/include/sac_enc.h \
+		../lib/SAC/sac_dec/include/sac_polyphase.h \
+		../lib/SAC/sac_enc/include/sac_hybfilter.h \
+		../lib/SAC/sac_enc/include/defines.h \
+		../lib/SAC/sac_enc/include/bitstream.h \
+		../lib/SAC/sac_enc/include/sac_stream.h \
+		../lib/SAC/sac_enc/include/sac_bd_embedder.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_encoder.o ../src/sac/sac_encoder.c
+
 qrc_media.o: qrc_media.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_media.o qrc_media.cpp
-
-qrc_sac.o: qrc_sac.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_sac.o qrc_sac.cpp
 
 moc_Decoder.o: moc_Decoder.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Decoder.o moc_Decoder.cpp

@@ -2259,7 +2259,7 @@ void SpatialDecDecodeHeader(spatialDec* self) {
   self->frameLength = self->timeSlots * self->qmfBands;
   self->bitstreamParameterBands = freqResTable[config->bsFreqRes];
 
-  self->hybridBands       = SacGetHybridSubbands(self->qmfBands);
+  self->hybridBands       = SacDecGetHybridSubbands(self->qmfBands);
   self->tp_hybBandBorder  = 12;
 
   if (self->upmixType == 2) {

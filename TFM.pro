@@ -27,7 +27,9 @@ SOURCES += src/interface/main.cpp\
     src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
     src/tools/AudioStream.cpp \
-    src/tools/Logger.cpp
+    src/sac/sac_decoder.c \
+    src/tools/Logger.cpp \
+    src/sac/sac_encoder.c
 
 HEADERS  += \
     src/interface/Decoder.h \
@@ -41,7 +43,9 @@ HEADERS  += \
     src/interface/Volumeter.h \
     src/tools/AudioStream.h \
     src/tools/Logger.h \
-    lib/QtLibraries/src/qtlibraries.h
+    src/sac/sac_decoder.h \
+    lib/QtLibraries/src/qtlibraries.h \
+    src/sac/sac_encoder.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \
@@ -49,8 +53,7 @@ FORMS    += \
     src/interface/Decoder.ui
 
 RESOURCES += \
-    src/interface/media.qrc \
-    sac.qrc
+    src/interface/media.qrc
 
 # Libraries
 

@@ -1,9 +1,9 @@
 #ifndef CODER_H
 #define CODER_H
 
-// C libraries
+// System libraries
 #include "stdio.h"
-#include "string"
+#include "string.h"
 #include "stdlib.h"
 #include "math.h"
 // Qt libraries
@@ -14,6 +14,9 @@
 #include "AudioChart.h"
 #include "ChannelsConfiguration.h"
 #include "../tools/Logger.h"
+extern "C" {
+#include "../sac/sac_encoder.h"
+}
 
 namespace Ui {
 class Coder;
@@ -32,18 +35,23 @@ public:
     AudioFile *output;                  /**< output file object */
     Coder(QWidget *parent = 0);
     ~Coder();
-    void setFilename(std::string filepath, QLineEdit *framework);
+    void setInput(std::string filepath);
+    void setOutput(std::string filepath);
+    void setTree(int tree);
 private:
     Ui::Coder *ui;                      /**< user interface object */
     ChannelsConfiguration *channels;    /**< channels panel object */
     int fs;                             /**< signal sampling frequency */
+    int tree;                           /**< SAC encoder parameter */
 private slots:
-    // Input
-    void loadInput();
-    // Coding
+    // Configuration
+    void setBitstream();
+    void setBuried(bool state);
+    void toggleTree();
+    // Buttons
+    void load();
     void reset();
     void apply();
-    // Output
     void cancel();
     void submit();
 };

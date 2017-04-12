@@ -42,11 +42,11 @@ typedef struct _TwiddleSac
 
 
 void
-SacInitSbrSynFilterbank(const TwiddleSac *twiddle,
+SacEncInitSbrSynFilterbank(const TwiddleSac *twiddle,
                      int bDownSampleSBR);
 
 void
-SacCalculateSbrSynFilterbank( float * Sr,
+SacEncCalculateSbrSynFilterbank( float * Sr,
                            float * Si,
                            float * timeSig,
                            int bDownSampledSbr,
@@ -60,10 +60,10 @@ typedef struct  {
 } SBR_ENCODER_ANA_FILTERBANK;
 
 void
-SacInitAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank);
+SacEncInitAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank);
 
 void
-SacCalculateAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank,
+SacEncCalculateAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank,
                           float * timeSig,
                           float * Sr,
                           float * Si);

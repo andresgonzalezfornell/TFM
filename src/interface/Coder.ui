@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
-    <height>159</height>
+    <width>677</width>
+    <height>183</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QGroupBox" name="input">
+    <widget class="QGroupBox" name="input_group">
      <property name="title">
       <string>Input</string>
      </property>
@@ -44,12 +44,6 @@
       </item>
       <item>
        <widget class="QDialogButtonBox" name="input_controls">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="standardButtons">
          <set>QDialogButtonBox::Open</set>
         </property>
@@ -80,6 +74,86 @@
        <number>5</number>
       </property>
       <item>
+       <widget class="QGroupBox" name="bitstream_group">
+        <property name="title">
+         <string>Bitstream</string>
+        </property>
+        <layout class="QHBoxLayout" name="bitstream_layout">
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="bitstream_filename">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="bitstream_buried">
+           <property name="text">
+            <string>Buried</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="tree_group">
+        <property name="title">
+         <string>Tree config</string>
+        </property>
+        <layout class="QHBoxLayout" name="tree_layout">
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="tree_5151">
+           <property name="text">
+            <string>5151</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="tree_5152">
+           <property name="text">
+            <string>5152</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="tree_525">
+           <property name="text">
+            <string>525</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
        <widget class="QDialogButtonBox" name="coding_controls">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -99,7 +173,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="output">
+    <widget class="QGroupBox" name="output_group">
      <property name="title">
       <string>Output</string>
      </property>

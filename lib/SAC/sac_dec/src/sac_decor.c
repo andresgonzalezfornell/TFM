@@ -617,7 +617,7 @@ static int DecorrFilterCreatePS
 
             if ( errorCode == ERR_NONE )
             {
-                qmfBand = SacGetQmfSubband( hybridBand );
+                qmfBand = SacDecGetQmfSubband( hybridBand );
 
                 if ( qmfBand < QMF_BANDS_TO_HYBRID )
                 {
@@ -1140,7 +1140,7 @@ int     SpatialDecDecorrelateCreate(    HANDLE_DECORR_DEC *hDecorrDec,
         for (i = 0; i < self->numbins; i++)
         {
             reverb_band = 0;
-            while ( (reverb_band < 3) && (SacGetQmfSubband(i) >= (REV_splitfreq[reverb_band]-1)) )
+            while ( (reverb_band < 3) && (SacDecGetQmfSubband(i) >= (REV_splitfreq[reverb_band]-1)) )
                 reverb_band++;
 
             if ( decorrType == 1 )
@@ -1153,7 +1153,7 @@ int     SpatialDecDecorrelateCreate(    HANDLE_DECORR_DEC *hDecorrDec,
             {
                 self->noSampleDelay[i] = REV_delay[reverb_band][self->decorr_seed];  
 
-                errorCode = DecorrFilterCreate( &self->Filter[i], self->decorr_seed, SacGetQmfSubband(i), reverb_band, decType );
+                errorCode = DecorrFilterCreate( &self->Filter[i], self->decorr_seed, SacDecGetQmfSubband(i), reverb_band, decType );
             }
         }
 

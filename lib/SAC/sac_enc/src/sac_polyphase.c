@@ -215,7 +215,7 @@ static struct N {
 
 
 void
-SacInitSbrSynFilterbank(const TwiddleSac *twiddle,
+SacEncInitSbrSynFilterbank(const TwiddleSac *twiddle,
                      int bDownSampleSBR)
 {
   int l,k;
@@ -290,7 +290,7 @@ SacInitSbrSynFilterbank(const TwiddleSac *twiddle,
 
 
 void
-SacCalculateSbrSynFilterbank( float * Sr,
+SacEncCalculateSbrSynFilterbank( float * Sr,
                            float * Si,
                            float * timeSig,
                            int bDownSampledSbr,
@@ -403,7 +403,7 @@ SacCalculateSbrSynFilterbank( float * Sr,
 }
 
 void
-SacInitAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank)
+SacEncInitAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank)
 {
   int i, k, l;
 
@@ -423,7 +423,7 @@ SacInitAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank)
 }
 
 void
-SacCalculateAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank,
+SacEncCalculateAnaFilterbank(SBR_ENCODER_ANA_FILTERBANK * filterbank,
                              float * timeSig,
                              float * Sr,
                              float * Si)

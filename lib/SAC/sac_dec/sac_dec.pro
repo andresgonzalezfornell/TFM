@@ -45,45 +45,47 @@ SOURCES += \
     src/spatial_hrtfreader.c
 
 HEADERS += \
-    src/sac_bitdec.h \
-    src/sac_bitinput.h \
-    src/sac_bitstream.h \
-    src/sac_blind.h \
-    src/sac_calcM1andM2.h \
-    src/sac_chandefs.h \
-    src/sac_config.h \
-    src/sac_dec.h \
-    src/sac_decor.h \
-    src/sac_hrtf.h \
-    src/sac_huff_nodes.h \
-    src/sac_hybfilter.h \
-    src/sac_interface.h \
-    src/sac_intrins.h \
-    src/sac_mdct2qmf.h \
-    src/sac_mdct2qmf_wf_tables.h \
-    src/sac_nlc_dec.h \
-    src/sac_parallelReverb.h \
-    src/sac_polyphase.h \
-    src/sac_process.h \
-    src/sac_resdecode.h \
-    src/sac_resdefs.h \
-    src/sac_reshapeBBEnv.h \
-    src/sac_reshuffdec.h \
-    src/sac_reshuffdec_intern.h \
-    src/sac_reshuffinit.h \
-    src/sac_reshufftables.h \
-    src/sac_resintrins.h \
-    src/sac_restns.h \
-    src/sac_sbrconst.h \
-    src/sac_smoothing.h \
-    src/sac_stream.h \
-    src/sac_tonality.h \
-    src/sac_TPprocess.h \
-    src/sac_types.h \
-    src/spatial_bdreader.h \
-    src/spatial_filereader.h \
-    src/spatial_hrtfreader.h \
-    src/sac_dec_interface.h
+    include/sac_bitdec.h \
+    include/sac_bitinput.h \
+    include/sac_bitstream.h \
+    include/sac_blind.h \
+    include/sac_calcM1andM2.h \
+    include/sac_chandefs.h \
+    include/sac_config.h \
+    include/sac_dec.h \
+    include/sac_dec_interface.h \
+    include/sac_decor.h \
+    include/sac_hrtf.h \
+    include/sac_huff_nodes.h \
+    include/sac_hybfilter.h \
+    include/sac_interface.h \
+    include/sac_intrins.h \
+    include/sac_mdct2qmf.h \
+    include/sac_mdct2qmf_wf_tables.h \
+    include/sac_nlc_dec.h \
+    include/sac_parallelReverb.h \
+    include/sac_polyphase.h \
+    include/sac_process.h \
+    include/sac_resdecode.h \
+    include/sac_resdefs.h \
+    include/sac_reshapeBBEnv.h \
+    include/sac_reshuffdec.h \
+    include/sac_reshuffdec_intern.h \
+    include/sac_reshuffinit.h \
+    include/sac_reshufftables.h \
+    include/sac_resintrins.h \
+    include/sac_restns.h \
+    include/sac_sbrconst.h \
+    include/sac_smoothing.h \
+    include/sac_stream.h \
+    include/sac_tonality.h \
+    include/sac_TPprocess.h \
+    include/sac_types.h \
+    include/spatial_bdreader.h \
+    include/spatial_filereader.h \
+    include/spatial_hrtfreader.h
+
+INCLUDEPATH += $$PWD/include
 
 unix|win32: LIBS += -L$$PWD/../../AFsp/lib/ -ltsp
 

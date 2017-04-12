@@ -511,7 +511,7 @@ void tpProcess(spatialDec* self)
                                  NULL,
                                  &self->timeOut[ch][self->qmfBands*ts]);
 #else
-       SacCalculateSynFilterbank(self->qmfFilterState[ch],
+       SacDecCalculateSynFilterbank(self->qmfFilterState[ch],
                                  self->qmfOutputRealDry[ch][ts],
                                  self->qmfOutputImagDry[ch][ts],
                                  &self->timeOut[ch][self->qmfBands*ts]);

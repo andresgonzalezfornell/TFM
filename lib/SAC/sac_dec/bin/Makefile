@@ -15,7 +15,7 @@ CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 DEFINES       = 
 CFLAGS        = -pipe -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -O2 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -O2 -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../../sac_dec -I. -I../../../AFsp/include -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang
+INCPATH       = -I../../sac_dec -I. -I../include -I../../../AFsp/include -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang
 QMAKE         = /Applications/Qt/5.8/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -288,45 +288,45 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/yacc.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/lex.prf \
-		../../sac_dec.pro src/sac_bitdec.h \
-		src/sac_bitinput.h \
-		src/sac_bitstream.h \
-		src/sac_blind.h \
-		src/sac_calcM1andM2.h \
-		src/sac_chandefs.h \
-		src/sac_config.h \
-		src/sac_dec.h \
-		src/sac_decor.h \
-		src/sac_hrtf.h \
-		src/sac_huff_nodes.h \
-		src/sac_hybfilter.h \
-		src/sac_interface.h \
-		src/sac_intrins.h \
-		src/sac_mdct2qmf.h \
-		src/sac_mdct2qmf_wf_tables.h \
-		src/sac_nlc_dec.h \
-		src/sac_parallelReverb.h \
-		src/sac_polyphase.h \
-		src/sac_process.h \
-		src/sac_resdecode.h \
-		src/sac_resdefs.h \
-		src/sac_reshapeBBEnv.h \
-		src/sac_reshuffdec.h \
-		src/sac_reshuffdec_intern.h \
-		src/sac_reshuffinit.h \
-		src/sac_reshufftables.h \
-		src/sac_resintrins.h \
-		src/sac_restns.h \
-		src/sac_sbrconst.h \
-		src/sac_smoothing.h \
-		src/sac_stream.h \
-		src/sac_tonality.h \
-		src/sac_TPprocess.h \
-		src/sac_types.h \
-		src/spatial_bdreader.h \
-		src/spatial_filereader.h \
-		src/spatial_hrtfreader.h \
-		src/sac_dec_interface.h ../src/sac_arbitraryTree.c \
+		../../sac_dec.pro include/sac_bitdec.h \
+		include/sac_bitinput.h \
+		include/sac_bitstream.h \
+		include/sac_blind.h \
+		include/sac_calcM1andM2.h \
+		include/sac_chandefs.h \
+		include/sac_config.h \
+		include/sac_dec.h \
+		include/sac_dec_interface.h \
+		include/sac_decor.h \
+		include/sac_hrtf.h \
+		include/sac_huff_nodes.h \
+		include/sac_hybfilter.h \
+		include/sac_interface.h \
+		include/sac_intrins.h \
+		include/sac_mdct2qmf.h \
+		include/sac_mdct2qmf_wf_tables.h \
+		include/sac_nlc_dec.h \
+		include/sac_parallelReverb.h \
+		include/sac_polyphase.h \
+		include/sac_process.h \
+		include/sac_resdecode.h \
+		include/sac_resdefs.h \
+		include/sac_reshapeBBEnv.h \
+		include/sac_reshuffdec.h \
+		include/sac_reshuffdec_intern.h \
+		include/sac_reshuffinit.h \
+		include/sac_reshufftables.h \
+		include/sac_resintrins.h \
+		include/sac_restns.h \
+		include/sac_sbrconst.h \
+		include/sac_smoothing.h \
+		include/sac_stream.h \
+		include/sac_tonality.h \
+		include/sac_TPprocess.h \
+		include/sac_types.h \
+		include/spatial_bdreader.h \
+		include/spatial_filereader.h \
+		include/spatial_hrtfreader.h ../src/sac_arbitraryTree.c \
 		../src/sac_bitdec.c \
 		../src/sac_bitinput.c \
 		../src/sac_blind.c \
@@ -748,405 +748,405 @@ compiler_clean:
 
 ####### Compile
 
-sac_arbitraryTree.o: ../src/sac_arbitraryTree.c ../src/sac_dec.h \
+sac_arbitraryTree.o: ../src/sac_arbitraryTree.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_bitdec.h \
-		../src/sac_types.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_bitdec.h \
+		../include/sac_types.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_arbitraryTree.o ../src/sac_arbitraryTree.c
 
-sac_bitdec.o: ../src/sac_bitdec.c ../src/sac_bitdec.h \
-		../src/sac_dec.h \
+sac_bitdec.o: ../src/sac_bitdec.c ../include/sac_bitdec.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_resdecode.h \
-		../src/sac_resdefs.h \
-		../src/sac_restns.h \
-		../src/sac_nlc_dec.h \
-		../src/sac_types.h \
-		../src/sac_hybfilter.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_resdecode.h \
+		../include/sac_resdefs.h \
+		../include/sac_restns.h \
+		../include/sac_nlc_dec.h \
+		../include/sac_types.h \
+		../include/sac_hybfilter.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_bitdec.o ../src/sac_bitdec.c
 
-sac_bitinput.o: ../src/sac_bitinput.c ../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_reshuffinit.h \
-		../src/sac_resdefs.h
+sac_bitinput.o: ../src/sac_bitinput.c ../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_reshuffinit.h \
+		../include/sac_resdefs.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_bitinput.o ../src/sac_bitinput.c
 
-sac_blind.o: ../src/sac_blind.c ../src/sac_dec.h \
+sac_blind.o: ../src/sac_blind.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_blind.h \
-		../src/sac_bitdec.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_blind.h \
+		../include/sac_bitdec.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_blind.o ../src/sac_blind.c
 
-sac_calcM1andM2.o: ../src/sac_calcM1andM2.c ../src/sac_dec.h \
+sac_calcM1andM2.o: ../src/sac_calcM1andM2.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_calcM1andM2.h \
-		../src/sac_bitdec.h \
-		../src/sac_hrtf.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_calcM1andM2.h \
+		../include/sac_bitdec.h \
+		../include/sac_hrtf.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_calcM1andM2.o ../src/sac_calcM1andM2.c
 
-sac_config.o: ../src/sac_config.c ../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_resdefs.h \
-		../src/sac_reshuffinit.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_restns.h
+sac_config.o: ../src/sac_config.c ../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_resdefs.h \
+		../include/sac_reshuffinit.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_restns.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_config.o ../src/sac_config.c
 
-sac_dec.o: ../src/sac_dec.c ../src/sac_dec.h \
+sac_dec.o: ../src/sac_dec.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_process.h \
-		../src/sac_bitdec.h \
-		../src/sac_decor.h \
-		../src/sac_hybfilter.h \
-		../src/sac_types.h \
-		../src/sac_smoothing.h \
-		../src/sac_tonality.h \
-		../src/sac_TPprocess.h \
-		../src/sac_reshapeBBEnv.h \
-		../src/sac_nlc_dec.h \
-		../src/sac_mdct2qmf.h \
-		../src/sac_blind.h \
-		../src/sac_calcM1andM2.h \
-		../src/sac_hrtf.h \
-		../src/sac_parallelReverb.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_process.h \
+		../include/sac_bitdec.h \
+		../include/sac_decor.h \
+		../include/sac_hybfilter.h \
+		../include/sac_types.h \
+		../include/sac_smoothing.h \
+		../include/sac_tonality.h \
+		../include/sac_TPprocess.h \
+		../include/sac_reshapeBBEnv.h \
+		../include/sac_nlc_dec.h \
+		../include/sac_mdct2qmf.h \
+		../include/sac_blind.h \
+		../include/sac_calcM1andM2.h \
+		../include/sac_hrtf.h \
+		../include/sac_parallelReverb.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_dec.o ../src/sac_dec.c
 
-sac_decor.o: ../src/sac_decor.c ../src/sac_decor.h \
-		../src/sac_dec.h \
+sac_decor.o: ../src/sac_decor.c ../include/sac_decor.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_sbrconst.h \
-		../src/sac_calcM1andM2.h \
-		../src/sac_hybfilter.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_sbrconst.h \
+		../include/sac_calcM1andM2.h \
+		../include/sac_hybfilter.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_decor.o ../src/sac_decor.c
 
-sac_hrtf.o: ../src/sac_hrtf.c ../src/sac_dec.h \
+sac_hrtf.o: ../src/sac_hrtf.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_hrtf.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_hrtf.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_hrtf.o ../src/sac_hrtf.c
 
-sac_hrtffilter.o: ../src/sac_hrtffilter.c ../src/sac_dec.h \
+sac_hrtffilter.o: ../src/sac_hrtffilter.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_hrtf.h \
-		../src/sac_sbrconst.h \
-		../src/sac_hybfilter.h \
-		../src/sac_calcM1andM2.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_hrtf.h \
+		../include/sac_sbrconst.h \
+		../include/sac_hybfilter.h \
+		../include/sac_calcM1andM2.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_hrtffilter.o ../src/sac_hrtffilter.c
 
-sac_hybfilter.o: ../src/sac_hybfilter.c ../src/sac_hybfilter.h \
-		../src/sac_dec.h \
+sac_hybfilter.o: ../src/sac_hybfilter.c ../include/sac_hybfilter.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_sbrconst.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_sbrconst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_hybfilter.o ../src/sac_hybfilter.c
 
-sac_mdct2qmf.o: ../src/sac_mdct2qmf.c ../src/sac_dec.h \
+sac_mdct2qmf.o: ../src/sac_mdct2qmf.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_mdct2qmf.h \
-		../src/sac_mdct2qmf_wf_tables.h \
-		../src/sac_sbrconst.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_mdct2qmf.h \
+		../include/sac_mdct2qmf_wf_tables.h \
+		../include/sac_sbrconst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_mdct2qmf.o ../src/sac_mdct2qmf.c
 
-sac_mdct2qmf_wf_tables.o: ../src/sac_mdct2qmf_wf_tables.c ../src/sac_mdct2qmf_wf_tables.h \
-		../src/sac_dec.h \
+sac_mdct2qmf_wf_tables.o: ../src/sac_mdct2qmf_wf_tables.c ../include/sac_mdct2qmf_wf_tables.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_mdct2qmf.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_mdct2qmf.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_mdct2qmf_wf_tables.o ../src/sac_mdct2qmf_wf_tables.c
 
-sac_nlc_dec.o: ../src/sac_nlc_dec.c ../src/sac_nlc_dec.h \
-		../src/sac_types.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_dec.h \
+sac_nlc_dec.o: ../src/sac_nlc_dec.c ../include/sac_nlc_dec.h \
+		../include/sac_types.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_polyphase.h \
-		../src/sac_huff_nodes.h
+		../include/sac_polyphase.h \
+		../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nlc_dec.o ../src/sac_nlc_dec.c
 
-sac_nodes_cld.o: ../src/sac_nodes_cld.c ../src/sac_huff_nodes.h
+sac_nodes_cld.o: ../src/sac_nodes_cld.c ../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nodes_cld.o ../src/sac_nodes_cld.c
 
-sac_nodes_cpc.o: ../src/sac_nodes_cpc.c ../src/sac_huff_nodes.h
+sac_nodes_cpc.o: ../src/sac_nodes_cpc.c ../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nodes_cpc.o ../src/sac_nodes_cpc.c
 
-sac_nodes_icc.o: ../src/sac_nodes_icc.c ../src/sac_huff_nodes.h
+sac_nodes_icc.o: ../src/sac_nodes_icc.c ../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nodes_icc.o ../src/sac_nodes_icc.c
 
-sac_nodes_pt0.o: ../src/sac_nodes_pt0.c ../src/sac_huff_nodes.h
+sac_nodes_pt0.o: ../src/sac_nodes_pt0.c ../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nodes_pt0.o ../src/sac_nodes_pt0.c
 
-sac_nodes_reshape.o: ../src/sac_nodes_reshape.c ../src/sac_huff_nodes.h
+sac_nodes_reshape.o: ../src/sac_nodes_reshape.c ../include/sac_huff_nodes.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_nodes_reshape.o ../src/sac_nodes_reshape.c
 
-sac_parallelReverb.o: ../src/sac_parallelReverb.c ../src/sac_parallelReverb.h \
-		../src/sac_dec_interface.h \
-		../src/sac_dec.h \
+sac_parallelReverb.o: ../src/sac_parallelReverb.c ../include/sac_parallelReverb.h \
+		../include/sac_dec_interface.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_parallelReverb.o ../src/sac_parallelReverb.c
 
-sac_partiallyComplex.o: ../src/sac_partiallyComplex.c ../src/sac_dec.h \
+sac_partiallyComplex.o: ../src/sac_partiallyComplex.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_partiallyComplex.o ../src/sac_partiallyComplex.c
 
-sac_polyphase.o: ../src/sac_polyphase.c ../src/sac_polyphase.h \
-		../src/sac_sbrconst.h
+sac_polyphase.o: ../src/sac_polyphase.c ../include/sac_polyphase.h \
+		../include/sac_sbrconst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_polyphase.o ../src/sac_polyphase.c
 
-sac_process.o: ../src/sac_process.c ../src/sac_process.h \
-		../src/sac_dec.h \
+sac_process.o: ../src/sac_process.c ../include/sac_process.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_hybfilter.h \
-		../src/sac_decor.h \
-		../src/sac_mdct2qmf.h \
-		../src/sac_calcM1andM2.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_hybfilter.h \
+		../include/sac_decor.h \
+		../include/sac_mdct2qmf.h \
+		../include/sac_calcM1andM2.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_process.o ../src/sac_process.c
 
-sac_resdecode.o: ../src/sac_resdecode.c ../src/sac_resdecode.h \
-		../src/sac_dec.h \
+sac_resdecode.o: ../src/sac_resdecode.c ../include/sac_resdecode.h \
+		../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_resdefs.h \
-		../src/sac_restns.h \
-		../src/sac_reshuffdec.h \
-		../src/sac_reshuffinit.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_resdefs.h \
+		../include/sac_restns.h \
+		../include/sac_reshuffdec.h \
+		../include/sac_reshuffinit.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_resdecode.o ../src/sac_resdecode.c
 
-sac_reshapeBBEnv.o: ../src/sac_reshapeBBEnv.c ../src/sac_dec.h \
+sac_reshapeBBEnv.o: ../src/sac_reshapeBBEnv.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_bitdec.h \
-		../src/sac_reshapeBBEnv.h \
-		../src/sac_calcM1andM2.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_bitdec.h \
+		../include/sac_reshapeBBEnv.h \
+		../include/sac_calcM1andM2.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshapeBBEnv.o ../src/sac_reshapeBBEnv.c
 
-sac_reshuffdec1.o: ../src/sac_reshuffdec1.c ../src/sac_resintrins.h \
-		../src/sac_resdefs.h \
-		../src/sac_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_reshuffdec.h \
-		../src/sac_reshuffinit.h \
-		../src/sac_restns.h \
-		../src/sac_reshuffdec_intern.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h
+sac_reshuffdec1.o: ../src/sac_reshuffdec1.c ../include/sac_resintrins.h \
+		../include/sac_resdefs.h \
+		../include/sac_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_reshuffdec.h \
+		../include/sac_reshuffinit.h \
+		../include/sac_restns.h \
+		../include/sac_reshuffdec_intern.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshuffdec1.o ../src/sac_reshuffdec1.c
 
-sac_reshuffdec2.o: ../src/sac_reshuffdec2.c ../src/sac_resdefs.h \
-		../src/sac_interface.h \
-		../src/sac_reshuffdec_intern.h \
-		../src/sac_reshuffinit.h \
-		../src/sac_restns.h \
-		../src/sac_resintrins.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h
+sac_reshuffdec2.o: ../src/sac_reshuffdec2.c ../include/sac_resdefs.h \
+		../include/sac_interface.h \
+		../include/sac_reshuffdec_intern.h \
+		../include/sac_reshuffinit.h \
+		../include/sac_restns.h \
+		../include/sac_resintrins.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshuffdec2.o ../src/sac_reshuffdec2.c
 
-sac_reshuffdec3.o: ../src/sac_reshuffdec3.c ../src/sac_reshuffinit.h \
-		../src/sac_resdefs.h \
-		../src/sac_interface.h \
-		../src/sac_reshuffdec_intern.h \
-		../src/sac_restns.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h
+sac_reshuffdec3.o: ../src/sac_reshuffdec3.c ../include/sac_reshuffinit.h \
+		../include/sac_resdefs.h \
+		../include/sac_interface.h \
+		../include/sac_reshuffdec_intern.h \
+		../include/sac_restns.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshuffdec3.o ../src/sac_reshuffdec3.c
 
-sac_reshuffinit.o: ../src/sac_reshuffinit.c ../src/sac_reshuffinit.h \
-		../src/sac_resdefs.h \
-		../src/sac_interface.h \
-		../src/sac_reshufftables.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h
+sac_reshuffinit.o: ../src/sac_reshuffinit.c ../include/sac_reshuffinit.h \
+		../include/sac_resdefs.h \
+		../include/sac_interface.h \
+		../include/sac_reshufftables.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshuffinit.o ../src/sac_reshuffinit.c
 
-sac_reshufftables.o: ../src/sac_reshufftables.c ../src/sac_reshuffinit.h \
-		../src/sac_resdefs.h \
-		../src/sac_interface.h
+sac_reshufftables.o: ../src/sac_reshufftables.c ../include/sac_reshuffinit.h \
+		../include/sac_resdefs.h \
+		../include/sac_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_reshufftables.o ../src/sac_reshufftables.c
 
-sac_resintrins.o: ../src/sac_resintrins.c ../src/sac_interface.h \
-		../src/sac_resintrins.h \
-		../src/sac_resdefs.h
+sac_resintrins.o: ../src/sac_resintrins.c ../include/sac_interface.h \
+		../include/sac_resintrins.h \
+		../include/sac_resdefs.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_resintrins.o ../src/sac_resintrins.c
 
-sac_restns.o: ../src/sac_restns.c ../src/sac_resintrins.h \
-		../src/sac_resdefs.h \
-		../src/sac_interface.h \
-		../src/sac_bitinput.h \
-		../src/sac_dec_interface.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_restns.h
+sac_restns.o: ../src/sac_restns.c ../include/sac_resintrins.h \
+		../include/sac_resdefs.h \
+		../include/sac_interface.h \
+		../include/sac_bitinput.h \
+		../include/sac_dec_interface.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_restns.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_restns.o ../src/sac_restns.c
 
-sac_smoothing.o: ../src/sac_smoothing.c ../src/sac_dec.h \
+sac_smoothing.o: ../src/sac_smoothing.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_bitdec.h \
-		../src/sac_smoothing.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_bitdec.h \
+		../include/sac_smoothing.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_smoothing.o ../src/sac_smoothing.c
 
-sac_tonality.o: ../src/sac_tonality.c ../src/sac_dec.h \
+sac_tonality.o: ../src/sac_tonality.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_tonality.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_tonality.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_tonality.o ../src/sac_tonality.c
 
-sac_TPprocess.o: ../src/sac_TPprocess.c ../src/sac_dec.h \
+sac_TPprocess.o: ../src/sac_TPprocess.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
-		../src/sac_TPprocess.h \
-		../src/sac_process.h \
-		../src/sac_calcM1andM2.h \
-		../src/sac_sbrconst.h
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
+		../include/sac_TPprocess.h \
+		../include/sac_process.h \
+		../include/sac_calcM1andM2.h \
+		../include/sac_sbrconst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_TPprocess.o ../src/sac_TPprocess.c
 
 spatial_bdreader.o: ../src/spatial_bdreader.c ../../../AFsp/include/libtsp/AFpar.h \
 		../../../AFsp/include/libtsp/UTpar.h \
-		../src/spatial_bdreader.h \
-		../src/sac_dec_interface.h
+		../include/spatial_bdreader.h \
+		../include/sac_dec_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o spatial_bdreader.o ../src/spatial_bdreader.c
 
-spatial_filereader.o: ../src/spatial_filereader.c ../src/spatial_filereader.h \
-		../src/sac_dec_interface.h
+spatial_filereader.o: ../src/spatial_filereader.c ../include/spatial_filereader.h \
+		../include/sac_dec_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o spatial_filereader.o ../src/spatial_filereader.c
 
-spatial_frontend.o: ../src/spatial_frontend.c ../src/sac_dec.h \
+spatial_frontend.o: ../src/spatial_frontend.c ../include/sac_dec.h \
 		../../../AFsp/include/libtsp.h \
-		../src/sac_dec_interface.h \
-		../src/sac_polyphase.h \
-		../src/sac_bitinput.h \
-		../src/sac_config.h \
-		../src/sac_chandefs.h \
-		../src/sac_interface.h \
+		../include/sac_dec_interface.h \
+		../include/sac_polyphase.h \
+		../include/sac_bitinput.h \
+		../include/sac_config.h \
+		../include/sac_chandefs.h \
+		../include/sac_interface.h \
 		../../../AFsp/include/libtsp/AFpar.h \
 		../../../AFsp/include/libtsp/UTpar.h \
-		../src/spatial_filereader.h \
-		../src/spatial_bdreader.h \
-		../src/spatial_hrtfreader.h \
-		../src/sac_parallelReverb.h
+		../include/spatial_filereader.h \
+		../include/spatial_bdreader.h \
+		../include/spatial_hrtfreader.h \
+		../include/sac_parallelReverb.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o spatial_frontend.o ../src/spatial_frontend.c
 
-spatial_hrtfreader.o: ../src/spatial_hrtfreader.c ../src/spatial_hrtfreader.h \
-		../src/sac_dec_interface.h
+spatial_hrtfreader.o: ../src/spatial_hrtfreader.c ../include/spatial_hrtfreader.h \
+		../include/sac_dec_interface.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o spatial_hrtfreader.o ../src/spatial_hrtfreader.c
 
 ####### Install

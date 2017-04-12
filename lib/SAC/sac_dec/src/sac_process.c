@@ -90,7 +90,7 @@ void SpatialDecHybridQMFAnalysis(spatialDec* self)
 
     for(ch=0; ch <self->numInputChannels; ch++) 
     {
-        SacApplyAnaHybFilterbank(&self->hybFilterState[ch],
+        SacDecApplyAnaHybFilterbank(&self->hybFilterState[ch],
                                  self->qmfInputReal[ch],
                                  self->qmfInputImag[ch],
                                  self->qmfBands,
@@ -103,7 +103,7 @@ void SpatialDecHybridQMFAnalysis(spatialDec* self)
   if ((self->residualCoding) && (self->upmixType != 2)) {
     for (ch = 0; ch < self->numOttBoxes + self->numTttBoxes; ch++) {
       if (self->resBands[ch] > 0) {
-        SacApplyAnaHybFilterbank(&self->hybFilterState[ch + self->numInputChannels],
+        SacDecApplyAnaHybFilterbank(&self->hybFilterState[ch + self->numInputChannels],
                                  self->qmfResidualReal[ch],
                                  self->qmfResidualImag[ch],
                                  self->qmfBands,
@@ -117,7 +117,7 @@ void SpatialDecHybridQMFAnalysis(spatialDec* self)
   if (self->arbitraryDownmix == 2) {
     int offset = self->numOttBoxes + self->numTttBoxes;
     for (ch = 0; ch < self->numInputChannels; ch++) {
-      SacApplyAnaHybFilterbank(&self->hybFilterState[offset + ch + self->numInputChannels],
+      SacDecApplyAnaHybFilterbank(&self->hybFilterState[offset + ch + self->numInputChannels],
                                self->qmfResidualReal[offset + ch],
                                self->qmfResidualImag[offset + ch],
                                self->qmfBands,
@@ -146,7 +146,7 @@ void SpatialDecHybridQMFSynthesis(spatialDec* self)
         }
       }
 #endif
-      SacApplySynHybFilterbank(self->hybOutputRealDry[ch],
+      SacDecApplySynHybFilterbank(self->hybOutputRealDry[ch],
                                self->hybOutputImagDry[ch],
                                self->qmfBands,
                                self->timeSlots,
@@ -159,7 +159,7 @@ void SpatialDecHybridQMFSynthesis(spatialDec* self)
 #endif
                                );
 
-      SacApplySynHybFilterbank(self->hybOutputRealWet[ch],
+      SacDecApplySynHybFilterbank(self->hybOutputRealWet[ch],
                                self->hybOutputImagWet[ch],
                                self->qmfBands,
                                self->timeSlots,

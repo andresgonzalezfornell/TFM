@@ -36,8 +36,8 @@ public:
     QAction *channels_fs_2;
     QAction *channels_fs_3;
     QAction *channels_fs_4;
-    QAction *menu_file_load;
-    QAction *menu_file_encode;
+    QAction *menu_input_load;
+    QAction *menu_input_encode;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QGroupBox *input;
@@ -55,7 +55,7 @@ public:
     QVBoxLayout *output_list_layout;
     QWidget *output_chart;
     QMenuBar *menuBar;
-    QMenu *menu_file;
+    QMenu *menu_input;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -84,10 +84,10 @@ public:
         channels_fs_4 = new QAction(Decoder);
         channels_fs_4->setObjectName(QStringLiteral("channels_fs_4"));
         channels_fs_4->setCheckable(true);
-        menu_file_load = new QAction(Decoder);
-        menu_file_load->setObjectName(QStringLiteral("menu_file_load"));
-        menu_file_encode = new QAction(Decoder);
-        menu_file_encode->setObjectName(QStringLiteral("menu_file_encode"));
+        menu_input_load = new QAction(Decoder);
+        menu_input_load->setObjectName(QStringLiteral("menu_input_load"));
+        menu_input_encode = new QAction(Decoder);
+        menu_input_encode->setObjectName(QStringLiteral("menu_input_encode"));
         centralWidget = new QWidget(Decoder);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
@@ -195,8 +195,8 @@ public:
         menuBar = new QMenuBar(Decoder);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 779, 22));
-        menu_file = new QMenu(menuBar);
-        menu_file->setObjectName(QStringLiteral("menu_file"));
+        menu_input = new QMenu(menuBar);
+        menu_input->setObjectName(QStringLiteral("menu_input"));
         Decoder->setMenuBar(menuBar);
         mainToolBar = new QToolBar(Decoder);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -205,9 +205,9 @@ public:
         statusBar->setObjectName(QStringLiteral("statusBar"));
         Decoder->setStatusBar(statusBar);
 
-        menuBar->addAction(menu_file->menuAction());
-        menu_file->addAction(menu_file_load);
-        menu_file->addAction(menu_file_encode);
+        menuBar->addAction(menu_input->menuAction());
+        menu_input->addAction(menu_input_load);
+        menu_input->addAction(menu_input_encode);
 
         retranslateUi(Decoder);
 
@@ -222,13 +222,13 @@ public:
         channels_fs_2->setText(QApplication::translate("Decoder", "22050 Hz", Q_NULLPTR));
         channels_fs_3->setText(QApplication::translate("Decoder", "32000 Hz", Q_NULLPTR));
         channels_fs_4->setText(QApplication::translate("Decoder", "44100 Hz", Q_NULLPTR));
-        menu_file_load->setText(QApplication::translate("Decoder", "Load", Q_NULLPTR));
-        menu_file_encode->setText(QApplication::translate("Decoder", "Encode new", Q_NULLPTR));
+        menu_input_load->setText(QApplication::translate("Decoder", "Load from a file", Q_NULLPTR));
+        menu_input_encode->setText(QApplication::translate("Decoder", "Load from encoder", Q_NULLPTR));
         input->setTitle(QApplication::translate("Decoder", "Input", Q_NULLPTR));
         input_start->setText(QApplication::translate("Decoder", "Start", Q_NULLPTR));
         effect->setTitle(QApplication::translate("Decoder", "Effect", Q_NULLPTR));
         output->setTitle(QApplication::translate("Decoder", "Output", Q_NULLPTR));
-        menu_file->setTitle(QApplication::translate("Decoder", "File", Q_NULLPTR));
+        menu_input->setTitle(QApplication::translate("Decoder", "Input", Q_NULLPTR));
     } // retranslateUi
 
 };

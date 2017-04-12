@@ -32,14 +32,14 @@ Copyright (c) ISO/IEC 2009.
 #include<math.h>
 #include"sac_hybfilter.h"
 
-const float sacHybFilterCoef8[PROTO_LEN] = {
+const float sacEncHybFilterCoef8[PROTO_LEN] = {
    0.00746082949812f,   0.02270420949825f,   0.04546865930473f,
    0.07266113929591f,   0.09885108575264f,   0.11793710567217f,
    0.12500000000000f,   0.11793710567217f,   0.09885108575264f,
    0.07266113929591f,   0.04546865930473f,   0.02270420949825f,
    0.00746082949812f};
 
-const float sacHybFilterCoef2[PROTO_LEN] = {
+const float sacEncHybFilterCoef2[PROTO_LEN] = {
                 0.0f,   0.01899487526049f,                0.0f,
   -0.07293139167538f,                0.0f,   0.30596630545168f,
                 0.5f,   0.30596630545168f,                0.0f,
@@ -60,7 +60,7 @@ static void sacKChannelFilteringAsym( const float *pQmfReal,
                                       float offset);
 
 
-void SacInitAnaHybFilterbank(tHybFilterState *hybState)
+void SacEncInitAnaHybFilterbank(tHybFilterState *hybState)
 {
     int k, n;
 
@@ -83,12 +83,12 @@ void SacInitAnaHybFilterbank(tHybFilterState *hybState)
     }
 }
 
-void SacInitSynHybFilterbank()
+void SacEncInitSynHybFilterbank()
 {
     ;
 }
 
-void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
+void SacEncApplyAnaHybFilterbank(tHybFilterState *hybState,
                               float mQmfReal[MAX_TIME_SLOTS][NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][NUM_QMF_BANDS],
                               int nrSamples,
@@ -154,7 +154,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              8,
                              1,
-                             sacHybFilterCoef8,
+                             sacEncHybFilterCoef8,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -193,7 +193,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              2,
                              0,
-                             sacHybFilterCoef2,
+                             sacEncHybFilterCoef2,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -213,7 +213,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              2,
                              0,
-                             sacHybFilterCoef2,
+                             sacEncHybFilterCoef2,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -236,7 +236,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
     }
 }
 
-void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
+void SacEncApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               int nrSamples,
                               float mQmfReal[MAX_TIME_SLOTS][NUM_QMF_BANDS],
@@ -270,12 +270,12 @@ void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS
 }
 
 
-void SacCloseAnaHybFilterbank()
+void SacEncCloseAnaHybFilterbank()
 {
     ;
 }
 
-void SacCloseSynHybFilterbank()
+void SacEncCloseSynHybFilterbank()
 {
     ;
 }

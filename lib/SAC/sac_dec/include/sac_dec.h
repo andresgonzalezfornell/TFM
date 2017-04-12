@@ -63,9 +63,9 @@ Copyright (c) ISO/IEC 2009.
 
 #define ABS_THR                         ( 1e-9f * 32768 * 32768 )
 
-#define MAX_NUM_QMF_BANDS               ( 128 )
+#define MAX_NUM_QMF_BANDS               ( 64 ) // 128
 #define MAX_HYBRID_BANDS                ( MAX_NUM_QMF_BANDS - 3 + 10 )
-#define MAX_TIME_SLOTS                  ( 72 )
+#define MAX_TIME_SLOTS                  ( 32 ) // 72
 #define MAX_INPUT_CHANNELS              ( 6 )
 #define MAX_PARAMETER_BANDS             ( 28 )
 
@@ -74,7 +74,7 @@ Copyright (c) ISO/IEC 2009.
 #define MAX_RESIDUAL_BISTREAM           ( 836 ) 
 #define MAX_MDCT_COEFFS                 ( 1024 )
 
-#define MAX_OUTPUT_CHANNELS             ( 13 )
+#define MAX_OUTPUT_CHANNELS             ( 12 ) // 13
 
 #define MAX_NUM_OTT                     ( 5 )
 #define MAX_NUM_TTT                     ( 1 )

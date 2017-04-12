@@ -46,5 +46,4 @@ void SpatialDecApplyM0(spatialDec* self);
 void SpatialDecApplyM1(spatialDec* self);
 void SpatialDecApplyM2(spatialDec* self);
 
-
 #endif 

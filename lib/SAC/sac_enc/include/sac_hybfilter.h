@@ -45,23 +45,23 @@ typedef struct {
 } tHybFilterState;
 
 
-void SacInitAnaHybFilterbank(tHybFilterState *hybState);
-void SacInitSynHybFilterbank(void);
+void SacEncInitAnaHybFilterbank(tHybFilterState *hybState);
+void SacEncInitSynHybFilterbank(void);
 
-void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
+void SacEncApplyAnaHybFilterbank(tHybFilterState *hybState,
                               float mQmfReal[MAX_TIME_SLOTS][NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][NUM_QMF_BANDS],
                               int nrSamples,
                               float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS]);
 
-void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
+void SacEncApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               int nrSamples,
                               float mQmfReal[MAX_TIME_SLOTS][NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][NUM_QMF_BANDS]);
 
-void SacCloseAnaHybFilterbank(void);
-void SacCloseSynHybFilterbank(void);
+void SacEncCloseAnaHybFilterbank(void);
+void SacEncCloseSynHybFilterbank(void);
 
 #endif

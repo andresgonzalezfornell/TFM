@@ -260,9 +260,9 @@ main(int argc, char *argv[])
                           binauralQuality);
 
 
-  SacInitAnaFilterbank(NULL, qmfBands);
+  SacDecInitAnaFilterbank(NULL, qmfBands);
   for (channel = 0; channel < nChannels; channel++)
-    SacOpenAnaFilterbank(&filterbank[channel]);
+    SacDecOpenAnaFilterbank(&filterbank[channel]);
 
   inSamplesDeinterleaved = (float*) calloc(sizeof(float), qmfBands);
 
@@ -317,12 +317,12 @@ main(int argc, char *argv[])
           }
 
 #ifdef PARTIALLY_COMPLEX
-          SacCalculateAnaFilterbank( filterbank[channel],
+          SacDecCalculateAnaFilterbank( filterbank[channel],
                                      inSamplesDeinterleaved,
                                      inPointers[channel][ts],
                                      NULL );
 #else
-          SacCalculateAnaFilterbank( filterbank[channel],
+          SacDecCalculateAnaFilterbank( filterbank[channel],
                                      inSamplesDeinterleaved,
                                      inPointers[2*channel][ts],
                                      inPointers[2*channel+1][ts] );
@@ -346,7 +346,7 @@ main(int argc, char *argv[])
   if (inSamplesDeinterleaved != NULL) free(inSamplesDeinterleaved);
 
   for (channel = 0; channel < nChannels; channel++)
-    SacCloseAnaFilterbank(filterbank[channel]);
+    SacDecCloseAnaFilterbank(filterbank[channel]);
 
   SpatialDecClose(ourDec);
   if (bitstreamSource == BS_FILE) FileReaderClose(fileReader);
@@ -496,9 +496,9 @@ parse_cmdline(int argc, char *argv[])
     if((argc < 4)||(argc>5)){
       usage(cmd);
     }
-    pcmInFile = argv[0];
-    spatialBitstreamFile = argv[1];
-    spatialPcmOutFile = argv[2];
+    pcmInFile = argv[1];
+    spatialBitstreamFile = argv[2];
+    spatialPcmOutFile = argv[3];
 #ifndef PARTIALLY_COMPLEX
     if (argc>4)
     {

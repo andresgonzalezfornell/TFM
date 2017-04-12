@@ -34,13 +34,13 @@ Copyright (c) ISO/IEC 2009.
 
 #include "sac_dec.h"
 
-int SacGetHybridSubbands(int qmfSubbands);
-int SacGetQmfSubband(int hybridSubband);
-int SacGetParameterPhase(int hybridSubband);
-void SacInitAnaHybFilterbank(tHybFilterState *hybState);
-void SacInitSynHybFilterbank(void);
+int SacDecGetHybridSubbands(int qmfSubbands);
+int SacDecGetQmfSubband(int hybridSubband);
+int SacDecGetParameterPhase(int hybridSubband);
+void SacDecInitAnaHybFilterbank(tHybFilterState *hybState);
+void SacDecInitSynHybFilterbank(void);
 
-void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
+void SacDecApplyAnaHybFilterbank(tHybFilterState *hybState,
                               float mQmfReal[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS],
                               int nrBands,
@@ -48,14 +48,14 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                               float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS]);
 
-void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
+void SacDecApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               int nrBands,
                               int nrSamples,
                               float mQmfReal[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS]);
 
-void SacCloseAnaHybFilterbank(void);
-void SacCloseSynHybFilterbank(void);
+void SacDecCloseAnaHybFilterbank(void);
+void SacDecCloseSynHybFilterbank(void);
 
 #endif

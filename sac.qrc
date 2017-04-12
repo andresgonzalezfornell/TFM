@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/sac_enc">
-        <file alias="sac_enc">lib/SAC/sac_enc/bin/sac_enc</file>
-    </qresource>
-</RCC>

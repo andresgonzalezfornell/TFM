@@ -274,10 +274,10 @@ tSpatialEnc *SpatialEncOpen(int treeConfig, int timeSlots, int *bufferSize, Stre
   *bufferSize = enc->frameSize;
 
 
-  SacInitSbrSynFilterbank(0,0);
+  SacEncInitSbrSynFilterbank(0,0);
   for(i = 0; i < 6; i++) {
-    SacInitAnaFilterbank(&enc->filterbank[i]);
-    SacInitAnaHybFilterbank(&enc->hybState[i]);
+    SacEncInitAnaFilterbank(&enc->filterbank[i]);
+    SacEncInitAnaHybFilterbank(&enc->hybState[i]);
   }
 
 
@@ -361,13 +361,13 @@ void SpatialEncApply(tSpatialEnc *self, float *audioInput, float *audioOutput, S
 
   for(l = 0; l < self->timeSlots; l++) {
     for(j = 0; j < 6; j++) {
-      SacCalculateAnaFilterbank(&self->filterbank[j], &in[j][l*64], mQmfReal[j][l], mQmfImag[j][l]);
+      SacEncCalculateAnaFilterbank(&self->filterbank[j], &in[j][l*64], mQmfReal[j][l], mQmfImag[j][l]);
     }
   }
 
 
   for(k = 0; k < 6; k++) {
-    SacApplyAnaHybFilterbank(
+    SacEncApplyAnaHybFilterbank(
       &self->hybState[k],
       mQmfReal[k],
       mQmfImag[k],
@@ -430,7 +430,7 @@ void SpatialEncApply(tSpatialEnc *self, float *audioInput, float *audioOutput, S
 
 
   if(self->outputChannels == 1) {
-    SacApplySynHybFilterbank(
+    SacEncApplySynHybFilterbank(
       mHybridReal[0],
       mHybridImag[0],
       self->timeSlots,
@@ -438,16 +438,16 @@ void SpatialEncApply(tSpatialEnc *self, float *audioInput, float *audioOutput, S
       mQmfImagOut[0]);
 
     for(i = 0; i < self->timeSlots; i++) {
-      SacCalculateSbrSynFilterbank(mQmfRealOut[0][i], mQmfImagOut[0][i], &audioOutput[i*64], 0, 0);
+      SacEncCalculateSbrSynFilterbank(mQmfRealOut[0][i], mQmfImagOut[0][i], &audioOutput[i*64], 0, 0);
     }
   } else {
-    SacApplySynHybFilterbank(
+    SacEncApplySynHybFilterbank(
       mHybridReal[0],
       mHybridImag[0],
       self->timeSlots,
       mQmfRealOut[0],
       mQmfImagOut[0]);
-    SacApplySynHybFilterbank(
+    SacEncApplySynHybFilterbank(
       mHybridReal[1],
       mHybridImag[1],
       self->timeSlots,
@@ -455,12 +455,12 @@ void SpatialEncApply(tSpatialEnc *self, float *audioInput, float *audioOutput, S
       mQmfImagOut[1]);
 
     for(i = 0; i < self->timeSlots; i++) {
-      SacCalculateSbrSynFilterbank(mQmfRealOut[0][i],
+      SacEncCalculateSbrSynFilterbank(mQmfRealOut[0][i],
         mQmfImagOut[0][i],
         out[0],
         0,
         0);
-      SacCalculateSbrSynFilterbank(mQmfRealOut[1][i],
+      SacEncCalculateSbrSynFilterbank(mQmfRealOut[1][i],
         mQmfImagOut[1][i],
         out[1],
         0,

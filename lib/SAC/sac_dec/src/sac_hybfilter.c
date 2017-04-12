@@ -33,15 +33,14 @@ Copyright (c) ISO/IEC 2009.
 #include"sac_hybfilter.h"
 #include"sac_sbrconst.h"
 
-
-const float sacHybFilterCoef8[PROTO_LEN] = {
+const float sacDecHybFilterCoef8[PROTO_LEN] = {
    0.00746082949812f,   0.02270420949825f,   0.04546865930473f,
    0.07266113929591f,   0.09885108575264f,   0.11793710567217f,
    0.12500000000000f,   0.11793710567217f,   0.09885108575264f,
    0.07266113929591f,   0.04546865930473f,   0.02270420949825f,
    0.00746082949812f};
 
-const float sacHybFilterCoef2[PROTO_LEN] = {
+const float sacDecHybFilterCoef2[PROTO_LEN] = {
                 0.0f,   0.01899487526049f,                0.0f,
   -0.07293139167538f,                0.0f,   0.30596630545168f,
                 0.5f,   0.30596630545168f,                0.0f,
@@ -72,28 +71,25 @@ static void sacKChannelFilteringAsym( const float *pQmfReal,
                                       int pLen,
                                       float offset);
 
-
-int SacGetHybridSubbands(int qmfSubbands)
+int SacDecGetHybridSubbands(int qmfSubbands)
 {
     return qmfSubbands - QMF_BANDS_TO_HYBRID + 10;
 }
 
-int SacGetQmfSubband(int hybridSubband)
+int SacDecGetQmfSubband(int hybridSubband)
 {
     return hybrid2qmf[hybridSubband];
 }
 
-int SacGetParameterPhase(int hybridSubband)
+int SacDecGetParameterPhase(int hybridSubband)
 {
     return (hybridSubband < 2)? -1: 1;
 }
 
-
-void SacInitAnaHybFilterbank(tHybFilterState *hybState)
+void SacDecInitAnaHybFilterbank(tHybFilterState *hybState)
 {
     int k, n;
 
-    
     for (k=0; k<QMF_BANDS_TO_HYBRID; k++)
     {
         for (n=0; n< PROTO_LEN-1+MAX_TIME_SLOTS; n++)
@@ -102,7 +98,6 @@ void SacInitAnaHybFilterbank(tHybFilterState *hybState)
             hybState->bufferLFImag[k][n] = 0.0;
         }
     }
-
     
     for (k=0; k<MAX_NUM_QMF_BANDS; k++)
     {
@@ -114,12 +109,12 @@ void SacInitAnaHybFilterbank(tHybFilterState *hybState)
     }
 }
 
-void SacInitSynHybFilterbank()
+void SacDecInitSynHybFilterbank()
 {
     ;
 }
 
-void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
+void SacDecApplyAnaHybFilterbank(tHybFilterState *hybState,
                               float mQmfReal[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS],
                               float mQmfImag[MAX_TIME_SLOTS][MAX_NUM_QMF_BANDS],
                               int nrBands,
@@ -186,7 +181,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              8,
                              1,
-                             sacHybFilterCoef8,
+                             sacDecHybFilterCoef8,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -225,7 +220,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              2,
                              0,
-                             sacHybFilterCoef2,
+                             sacDecHybFilterCoef2,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -245,7 +240,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
                              nrSamples,
                              2,
                              0,
-                             sacHybFilterCoef2,
+                             sacDecHybFilterCoef2,
                              PROTO_LEN,
                              (float)(PROTO_LEN-1)/2);
 
@@ -268,7 +263,7 @@ void SacApplyAnaHybFilterbank(tHybFilterState *hybState,
     }
 }
 
-void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
+void SacDecApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               float mHybridImag[MAX_TIME_SLOTS][MAX_HYBRID_BANDS],
                               int nrBands,
                               int nrSamples,
@@ -304,12 +299,12 @@ void SacApplySynHybFilterbank(float mHybridReal[MAX_TIME_SLOTS][MAX_HYBRID_BANDS
 
 
 
-void SacCloseAnaHybFilterbank()
+void SacDecCloseAnaHybFilterbank()
 {
     ;
 }
 
-void SacCloseSynHybFilterbank()
+void SacDecCloseSynHybFilterbank()
 {
     ;
 }

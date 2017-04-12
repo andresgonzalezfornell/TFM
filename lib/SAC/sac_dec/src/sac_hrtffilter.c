@@ -241,7 +241,7 @@ static void GetPrototype(int qmfBands,
   memset(v, 0, sizeof(v));
   memset(r, 0, sizeof(r));
 
-  SacGetFilterbankPrototype(qmfBands, qmfPrototype);
+  SacDecGetFilterbankPrototype(qmfBands, qmfPrototype);
 
   
   offset1 = qmfBands * PROTOTYPE_SLOTS;
@@ -521,7 +521,7 @@ void SpatialDecOpenHrtfFilterbank(HRTF_FILTERBANK **selfPtr,
 
   if (self != NULL) {
     self->qmfBands = qmfBands;
-    self->hybridBands = SacGetHybridSubbands(qmfBands);
+    self->hybridBands = SacDecGetHybridSubbands(qmfBands);
     self->surroundGain = surroundGain;
     self->filterSlot[0] = -1;
 
@@ -635,8 +635,8 @@ void SpatialDecUpdateHrtfFilterbank(HRTF_FILTERBANK *self,
 
 
   for (hs = 0; hs < self->hybridBands; hs++) {
-    sign = SacGetParameterPhase(hs);
-    qs = SacGetQmfSubband(hs);
+    sign = SacDecGetParameterPhase(hs);
+    qs = SacDecGetQmfSubband(hs);
     pb = SpatialDecGetParameterBand(MAX_PARAMETER_BANDS, hs);
 
     for (i = 0; i < self->maskSlots; i++) {

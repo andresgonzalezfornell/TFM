@@ -173,26 +173,26 @@ spatialDec* SpatialDecOpen(HANDLE_BYTE_READER bitstream,
   SacInitBBEnv(self);
 
   if (twiddleExtern != NULL) {
-    SacInitSynFilterbank(twiddleExtern, self->qmfBands);
+    SacDecInitSynFilterbank(twiddleExtern, self->qmfBands);
   }
   else {
-    SacInitSynFilterbank(NULL, self->qmfBands);
+    SacDecInitSynFilterbank(NULL, self->qmfBands);
   }
 
   for (nCh = 0; nCh < self->numOutputChannelsAT; nCh++) {
-    SacOpenSynFilterbank(&self->qmfFilterState[nCh]);
+    SacDecOpenSynFilterbank(&self->qmfFilterState[nCh]);
   }
 
   
   for (nCh = 0; nCh < self->numInputChannels; nCh++) {
-    SacInitAnaHybFilterbank(&self->hybFilterState[nCh]);
+    SacDecInitAnaHybFilterbank(&self->hybFilterState[nCh]);
   }
 
   if (self->residualCoding) {
     int offset = self->numInputChannels;
     for (nCh = 0; nCh < self->numOttBoxes + self->numTttBoxes; nCh++) {
       if (self->resBands[nCh] > 0) {
-        SacInitAnaHybFilterbank(&self->hybFilterState[offset + nCh]);
+        SacDecInitAnaHybFilterbank(&self->hybFilterState[offset + nCh]);
       }
     }
   }
@@ -200,13 +200,13 @@ spatialDec* SpatialDecOpen(HANDLE_BYTE_READER bitstream,
   if (self->arbitraryDownmix == 2) {
     int offset = self->numInputChannels + self->numOttBoxes + self->numTttBoxes;
     for (nCh = 0; nCh < self->numInputChannels; nCh++) {
-      SacInitAnaHybFilterbank(&self->hybFilterState[offset + nCh]);
+      SacDecInitAnaHybFilterbank(&self->hybFilterState[offset + nCh]);
     }
   }
 
   for (nCh=0; nCh<self->numOutputChannelsAT; nCh++)
   {
-    SacInitSynHybFilterbank();
+    SacDecInitSynHybFilterbank();
   }
 
 #ifdef PARTIALLY_COMPLEX
@@ -394,11 +394,11 @@ void SpatialDecClose(spatialDec* self) {
 
   if (self) {
     for (k = 0; k < self->numOutputChannelsAT; k++) {
-      SacCloseSynFilterbank(self->qmfFilterState[k]);
+      SacDecCloseSynFilterbank(self->qmfFilterState[k]);
     }
 
-    SacCloseAnaHybFilterbank(); 
-    SacCloseSynHybFilterbank();
+    SacDecCloseAnaHybFilterbank(); 
+    SacDecCloseSynHybFilterbank();
 
     for (k = 0; k < MAX_NO_DECORR_CHANNELS; k++) {
       SpatialDecDecorrelateDestroy(&self->apDecor[k]);

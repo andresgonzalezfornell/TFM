@@ -233,7 +233,7 @@ static struct N
 
 
 void
-SacInitSynFilterbank(const Twiddle *twiddle,
+SacDecInitSynFilterbank(const Twiddle *twiddle,
                      int resolution)
 {
   int l,k;
@@ -276,7 +276,7 @@ SacInitSynFilterbank(const Twiddle *twiddle,
 
 
 void
-SacOpenSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK **selfPtr)
+SacDecOpenSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK **selfPtr)
 {
   SAC_POLYPHASE_SYN_FILTERBANK *self;
 
@@ -289,7 +289,7 @@ SacOpenSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK **selfPtr)
 
 
 void
-SacCloseSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self)
+SacDecCloseSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self)
 {
   if (self != NULL) {
     free(self->V);
@@ -299,7 +299,7 @@ SacCloseSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self)
 
 
 void
-SacCalculateSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self,
+SacDecCalculateSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self,
                           float  *Sr,
                           float  *Si,
                           double *timeSig)
@@ -357,7 +357,7 @@ SacCalculateSynFilterbank(SAC_POLYPHASE_SYN_FILTERBANK *self,
 
 
 void
-SacInitAnaFilterbank(const Twiddle *twiddle,
+SacDecInitAnaFilterbank(const Twiddle *twiddle,
                      int resolution)
 {
   int k,l;
@@ -401,7 +401,7 @@ SacInitAnaFilterbank(const Twiddle *twiddle,
 
 
 void
-SacOpenAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK **selfPtr)
+SacDecOpenAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK **selfPtr)
 {
   SAC_POLYPHASE_ANA_FILTERBANK *self;
 
@@ -414,7 +414,7 @@ SacOpenAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK **selfPtr)
 
 
 void
-SacCloseAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self)
+SacDecCloseAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self)
 {
   if (self != NULL) {
     free(self->X);
@@ -424,7 +424,7 @@ SacCloseAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self)
 
 
 void
-SacCalculateAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self,
+SacDecCalculateAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self,
                           float * timeSig,
                           float * Sr,
                           float * Si)
@@ -480,7 +480,7 @@ SacCalculateAnaFilterbank(SAC_POLYPHASE_ANA_FILTERBANK *self,
 }
 
 void
-SacGetFilterbankPrototype(int resolution,
+SacDecGetFilterbankPrototype(int resolution,
                           float * prototype)
 {
   const double* C = sacPolyphaseFilterbankCoefficients;

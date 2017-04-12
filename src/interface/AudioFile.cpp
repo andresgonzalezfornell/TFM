@@ -109,9 +109,9 @@ void WAVFile::readHeader() {
         incorrect = true;
         incorrectfields += "\n\taudio format = " + std::to_string(this->header.audioformat);
     }
-    if(this->header.numchannels != 1) {
+    if(this->header.numchannels < 1) {
         incorrect = true;
-        incorrectfields += "\n\tnumber of channels: not equal to 1 (mono) = " + std::to_string(this->header.numchannels);
+        incorrectfields += "\n\tnumber of channels lower than 1 = " + std::to_string(this->header.numchannels);
     }
     if(this->header.samplerate == 0) {
         incorrect = true;

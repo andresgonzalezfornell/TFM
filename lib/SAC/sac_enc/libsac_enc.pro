@@ -35,17 +35,20 @@ SOURCES += \
     src/sac_stream.c
 
 HEADERS += \
-    src/bitstream.h \
-    src/defines.h \
-    src/sac_bd_embedder.h \
-    src/sac_enc.h \
-    src/sac_huff_tab.h \
-    src/sac_hybfilter.h \
-    src/sac_nlc_enc.h \
-    src/sac_polyphase.h \
-    src/sac_sbrconst.h \
-    src/sac_stream.h \
-    src/sac_types.h
+    include/bitstream.h \
+    include/defines.h \
+    include/sac_bd_embedder.h \
+    include/sac_enc.h \
+    include/sac_huff_tab.h \
+    include/sac_hybfilter.h \
+    include/sac_nlc_enc.h \
+    include/sac_polyphase.h \
+    include/sac_sbrconst.h \
+    include/sac_stream.h \
+    include/sac_types.h
+
+INCLUDEPATH += $$PWD/include
+
 unix {
     target.path = /usr/lib
     INSTALLS += target
