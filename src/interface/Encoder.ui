@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Coder</class>
- <widget class="QDialog" name="Coder">
+ <class>Encoder</class>
+ <widget class="QDialog" name="Encoder">
   <property name="windowModality">
    <enum>Qt::WindowModal</enum>
   </property>
@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>677</width>
-    <height>183</height>
+    <height>171</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,9 @@
       <string>Input</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>5</number>
+      </property>
       <property name="leftMargin">
        <number>5</number>
       </property>
@@ -38,7 +41,10 @@
       <item>
        <widget class="QLineEdit" name="input_filename">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -56,11 +62,14 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="coding">
+    <widget class="QGroupBox" name="encoding_group">
      <property name="title">
       <string>Coding</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>5</number>
+      </property>
       <property name="leftMargin">
        <number>5</number>
       </property>
@@ -154,7 +163,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QDialogButtonBox" name="coding_controls">
+       <widget class="QDialogButtonBox" name="encoding_controls">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -178,6 +187,9 @@
       <string>Output</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>5</number>
+      </property>
       <property name="leftMargin">
        <number>5</number>
       </property>
@@ -193,7 +205,10 @@
       <item>
        <widget class="QLineEdit" name="output_filename">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -226,7 +241,7 @@
   <connection>
    <sender>output_controls</sender>
    <signal>accepted()</signal>
-   <receiver>Coder</receiver>
+   <receiver>Encoder</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -242,7 +257,7 @@
   <connection>
    <sender>output_controls</sender>
    <signal>rejected()</signal>
-   <receiver>Coder</receiver>
+   <receiver>Encoder</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

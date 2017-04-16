@@ -1,20 +1,10 @@
 var searchData=
 [
-  ['senddata',['sendData',['../class_device.html#abe599db4c7dc023e5037c3fa8e413044',1,'Device::sendData()'],['../class_object_input.html#a7e6e84faea7559449eb6923eb3ad97e4',1,'ObjectInput::sendData()']]],
-  ['setactive',['setActive',['../class_object_input.html#a09fde72438017a0368b162c479b3b2e7',1,'ObjectInput::setActive()'],['../class_objects_configuration.html#a13a8eb0efd42b099435c5a394d47804f',1,'ObjectsConfiguration::setActive()']]],
-  ['setdevice',['setDevice',['../class_device.html#a787d339c2202356330c932682e17410b',1,'Device']]],
-  ['setfile',['setFile',['../class_object_input.html#ad42a59b654023c02f328ad6a8baee06e',1,'ObjectInput']]],
-  ['setfilepath',['setFilepath',['../class_audio_file.html#a733ad2bc746305b02e728378307428d4',1,'AudioFile']]],
-  ['setfromdevice',['setFromDevice',['../class_object_input.html#ae568e7b8798d4d0ef18b78666bafe0e9',1,'ObjectInput::setFromDevice()'],['../class_objects_configuration.html#ab94b9623b9e1d9fe04ce7009c0ca692e',1,'ObjectsConfiguration::setFromDevice()']]],
-  ['setindex',['setIndex',['../class_object_input.html#aac4ce11b6efcf7b539cdc4ba1e0204c7',1,'ObjectInput']]],
-  ['setlabel',['setLabel',['../class_object_input.html#a5ee587d137ca718c191e64d1d1c5e64f',1,'ObjectInput::setLabel()'],['../class_objects_configuration.html#a15894c814f4309df666e379b37ed9e48',1,'ObjectsConfiguration::setLabel()']]],
-  ['setlevel',['setLevel',['../class_device.html#a719760bdd7c4344a292b1f0959f5a7b1',1,'Device::setLevel()'],['../class_object_input.html#abd701098861dae00b93b07e16d8e9cea',1,'ObjectInput::setLevel()'],['../class_objects_configuration.html#abc9fb706e51ca24e6b37f00047b3d098',1,'ObjectsConfiguration::setLevel()'],['../class_volumeter.html#a81209dbd4ae4bd6d95fd19f37de15663',1,'Volumeter::setLevel()']]],
-  ['setnumber',['setNumber',['../class_objects_configuration.html#ac6b500aa6bc30d74971b0ce597b977c5',1,'ObjectsConfiguration']]],
-  ['setpoints',['setPoints',['../class_audio_chart.html#ac87e095ff7f0e2bbe94a7ccdc7d56ce8',1,'AudioChart']]],
-  ['setsample',['setSample',['../class_audio_object.html#a61990fc72f062bc466e9076bed02139b',1,'AudioObject::setSample()'],['../class_audio_signal.html#aeef099025639235c7f062294470a691f',1,'AudioSignal::setSample()']]],
-  ['setsignal',['setSignal',['../class_audio_signal.html#a90eda59db04d3b18bd1949b8fa9e9c81',1,'AudioSignal']]],
-  ['start',['start',['../class_device_channel.html#ae8043b3e65b4fe7a7eb80b43b518f463',1,'DeviceChannel']]],
-  ['stop',['stop',['../class_device_channel.html#a3f716b96dde1d1bdd44842aa40546d58',1,'DeviceChannel']]],
-  ['switchmuting',['switchMuting',['../class_device.html#a3176aeb8cf19b6a6f7599a7200c48634',1,'Device']]],
-  ['switchplaypause',['switchPlayPause',['../class_objects_configuration.html#a184b4dbf277fa0864f08d6bd74f36116',1,'ObjectsConfiguration']]]
+  ['paintevent',['paintEvent',['../class_volumeter.html#a24fea36a102688596721c22b9025db5c',1,'Volumeter']]],
+  ['pause',['pause',['../class_decoder.html#a35165ebc2ae31b7ac82b5f05b091b02c',1,'Decoder']]],
+  ['pausefile',['pauseFile',['../class_channel.html#ad0d783133a374851bab35e02777f5fa6',1,'Channel']]],
+  ['play',['play',['../class_decoder.html#afa07f713f455cbdac5cd3b461fd002eb',1,'Decoder']]],
+  ['playfile',['playFile',['../class_channel.html#a4e07f003631ccf298390ed02be32e621',1,'Channel']]],
+  ['pop',['pop',['../class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5',1,'AudioStream::pop()'],['../class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5',1,'AudioStream::pop()']]],
+  ['push',['push',['../class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83',1,'AudioStream::push(float sample)'],['../class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83',1,'AudioStream::push(float sample)']]]
 ];

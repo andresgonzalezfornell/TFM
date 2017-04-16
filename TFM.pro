@@ -18,7 +18,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += src/interface/main.cpp\
     src/interface/Decoder.cpp \
-    src/interface/Coder.cpp \
     src/interface/ChannelsList.cpp \
     src/interface/ChannelsConfiguration.cpp \
     src/interface/AudioSignal.cpp \
@@ -29,11 +28,11 @@ SOURCES += src/interface/main.cpp\
     src/tools/AudioStream.cpp \
     src/sac/sac_decoder.c \
     src/tools/Logger.cpp \
-    src/sac/sac_encoder.c
+    src/sac/sac_encoder.c \
+    src/interface/Encoder.cpp
 
 HEADERS  += \
     src/interface/Decoder.h \
-    src/interface/Coder.h \
     src/interface/ChannelsList.h \
     src/interface/ChannelsConfiguration.h \
     src/interface/AudioSignal.h \
@@ -45,12 +44,13 @@ HEADERS  += \
     src/tools/Logger.h \
     src/sac/sac_decoder.h \
     lib/QtLibraries/src/qtlibraries.h \
-    src/sac/sac_encoder.h
+    src/sac/sac_encoder.h \
+    src/interface/Encoder.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \
-    src/interface/Coder.ui \
-    src/interface/Decoder.ui
+    src/interface/Decoder.ui \
+    src/interface/Encoder.ui
 
 RESOURCES += \
     src/interface/media.qrc

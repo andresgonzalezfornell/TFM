@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['device',['device',['../class_objects.html#a27ab9a58118abd5e0bca0d469c70d5ec',1,'Objects']]],
-  ['deviceinfo',['deviceinfo',['../class_device.html#a07682bee48f7b2f16e2401c9a3f5a3e1',1,'Device']]]
+  ['debuggermode',['debuggermode',['../class_decoder.html#a08cd17a1d6050f9a88ec94487d3270f9',1,'Decoder']]],
+  ['decodingtype',['decodingtype',['../class_decoder.html#af23cd86d80d1eb0b2c7cacc1838d416b',1,'Decoder']]],
+  ['duration',['duration',['../class_w_a_v_file.html#a81e30fcaeaa79ecbd94c332d1458d064',1,'WAVFile']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['index',['index',['../class_object_input.html#a8a081bb755fad1d8975ed4b77debe079',1,'ObjectInput']]],
-  ['italic',['italic',['../_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b',1,'Logger.cpp']]]
+  ['header',['header',['../class_w_a_v_file.html#a2060260682e854baa148ebef76d81aae',1,'WAVFile']]],
+  ['hrtfmodel',['hrtfmodel',['../class_decoder.html#ab6720131d60751ed2f0d0e56eb6addb2',1,'Decoder']]]
 ];

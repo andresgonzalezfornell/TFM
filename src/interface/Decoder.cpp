@@ -12,12 +12,32 @@ Decoder::Decoder(QWidget *parent) :
     ui(new Ui::Decoder)
 {
     ui->setupUi(this);
-    this->file = NULL;
-    QObject::connect(ui->menu_input_load,SIGNAL(triggered(bool)),this,SLOT(load()));
-    QObject::connect(ui->menu_input_encode,SIGNAL(triggered(bool)),this,SLOT(encode()));
-    QObject::connect(ui->input_start,SIGNAL(released()),this,SLOT(decode()));
+    this->channels_input = new ChannelsList(ui->input_channels,3);
+    this->source = NULL;
+    this->input = NULL;
+    this->bitstream = NULL;
+    this->setSource("");
+    this->reset();
     // Channels
-    ChannelsList::fs = 44100;
+    ChannelsList::fs = this->fs;
+    // Signals
+    QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
+    QObject::connect(ui->output_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
+    QObject::connect(ui->input_info,SIGNAL(released()),this,SLOT(openInfo()));
+    // Menu
+    // Actions
+    QObject::connect(ui->menu_encode,SIGNAL(triggered(bool)),this,SLOT(encode()));
+    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
+    // Arguments
+    QObject::connect(ui->menu_load_source,SIGNAL(triggered(bool)),this,SLOT(load()));
+    QObject::connect(ui->menu_load_bitstream,SIGNAL(triggered(bool)),this,SLOT(load()));
+    // Decoder parameters
+    QObject::connect(ui->menu_bitstream_buried,SIGNAL(toggled(bool)),this,SLOT(setBuried(bool)));;
+    QObject::connect(ui->menu_upmixtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleUpmixType(QAction*)));
+    QObject::connect(ui->menu_decodingtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleDecodingType(QAction*)));
+    QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
+    QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
+    QObject::connect(ui->menu_debuggermode,SIGNAL(toggled(bool)),this,SLOT(setDebuggerMode(bool)));
     consolelog("Decoder", LogType::progress, "Decoder object is created");
 }
 
@@ -32,15 +52,244 @@ Decoder::~Decoder()
 }
 
 /**
- * @brief   It sets the signal sampling frequency.
+ * @brief   It starts playing input.
  */
-void Decoder::setfs(int fs) {
-    ChannelsList::fs = fs;
+void Decoder::play() {
+
 }
 
 /**
- * @name    Decoder interface slots
- * @brief   User interface control functions of decoder window.
+ * @brief   It pauses input playback.
+ */
+void Decoder::pause() {
+
+}
+
+/**
+ * @brief   It mutes output playback.
+ */
+void Decoder::mute() {
+
+}
+
+/**
+ * @brief   It unmutes output playback.
+ */
+void Decoder::unmute() {
+
+}
+
+/**
+ * @brief   It resets all decoding parameters, including input file.
+ */
+void Decoder::reset() {
+    this->bitstream = NULL;
+    this->input = NULL;
+    this->setBitstream("");
+    this->setInput("");
+    this->setBuried(false);
+    this->setUpmixType(UpmixType::normal);
+    this->setDecodingType(DecodingType::low);
+    this->setBinauralQuality(BinauralQuality::parametric);
+    this->setHRTFModel(HRTFModel::kemar);
+    this->setDebuggerMode(false);
+    consolelog("Decoder",LogType::interaction,"all decoding parameters has been reset as default");
+}
+
+/**
+ * @brief   It updates enability of user interface controls according to the current parameters state.
+ */
+void Decoder::updateControls() {
+    // Input controls
+    ui->input_playback->setEnabled(this->input->exists());
+    ui->input_info->setEnabled(this->input->exists());
+    // Bitstream
+    ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
+    // Decoder
+    ui->menu_decode->setEnabled(this->source->exists() && this->bitstream);
+}
+
+/**
+ * @brief   It sets the source audio file.
+ * @param   filename            file path
+ */
+void Decoder::setSource(std::string filename) {
+    if(filename != "") {
+        this->source = new WAVFile(filename);
+    }
+    bool loaded = this->source->exists();
+    if(loaded && filename != "") {
+        ui->source_filename->setText(QString::fromStdString(filename));
+        consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as source file");
+    } else if(loaded && filename == "") {
+        ui->source_filename->setText(QString::fromStdString(this->source->getFilepath()));
+        consolelog("Decoder",LogType::interaction,"source file selection was cancelled");
+    } else {
+        ui->source_filename->setText(QString::fromStdString("please load a file"));
+        consolelog("Decoder",LogType::warning,"source audio file is empty");
+    }
+    // File name font
+    QFont font;
+    font.setItalic(!loaded);
+    ui->source_filename->setFont(font);
+    // Controls update
+    this->updateControls();
+}
+
+/**
+ * @brief   It sets the bitstream audio file.
+ * @param   filename            file path
+ */
+void Decoder::setBitstream(std::string filename) {
+    if(filename != "") {
+        this->bitstream = new QFile(QString::fromStdString(filename));
+    }
+    bool loaded = this->bitstream;
+    if (this->buried) {
+        ui->bitstream_filename->setText("buried");
+    } else {
+        if(loaded && filename != "") {
+            ui->bitstream_filename->setText(QString::fromStdString(filename));
+            consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as bitstream file");
+        } else if(loaded && filename == "") {
+            ui->bitstream_filename->setText(this->bitstream->fileName());
+        } else {
+            ui->bitstream_filename->setText(QString::fromStdString("please load a file"));
+            consolelog("Decoder",LogType::warning,"bitstream file is empty");
+        }
+    }
+    // File name font
+    QFont font;
+    font.setItalic(!loaded || this->buried);
+    ui->bitstream_filename->setFont(font);
+    // Controls update
+    this->updateControls();
+}
+
+/**
+ * @brief   It sets the input audio file.
+ * @param   filename            file path
+ */
+void Decoder::setInput(std::string filename) {
+    if(filename != "") {
+        this->input = new WAVFile(filename);
+    }
+    bool loaded = this->input->exists();
+    if(loaded && filename != "") {
+        ui->input_filename->setText(QString::fromStdString(filename));
+        consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as input file");
+    } else if(loaded && filename == "") {
+        ui->input_filename->setText(QString::fromStdString(this->input->getFilepath()));
+        consolelog("Decoder",LogType::interaction,"input file selection was cancelled");
+    } else {
+        this->channels_input->setChannelsNumber(0);
+        ui->input_filename->setText(QString::fromStdString("please decode source"));
+        consolelog("Decoder",LogType::warning,"input file is empty");
+    }
+    // File name font
+    QFont font;
+    font.setItalic(!loaded);
+    ui->input_filename->setFont(font);
+    // Controls update
+    this->updateControls();
+}
+
+/**
+ * @brief   It sets SAC parameter upmix type
+ * @param   upmixtype           upmix type
+ */
+void Decoder::setUpmixType(UpmixType::upmixtype upmixtype) {
+    this->upmixtype = upmixtype;
+    QList<QAction *> actions = ui->menu_upmixtype->actions();
+    for (int item = 0; item < actions.length(); item++) {
+        actions[item]->setChecked(false);
+    }
+    switch (upmixtype) {
+    case UpmixType::normal:
+    default:
+        ui->menu_upmixtype_normal->setChecked(true);
+        break;
+    case UpmixType::blind:
+        ui->menu_upmixtype_blind->setChecked(true);
+        break;
+    case UpmixType::binaural:
+        ui->menu_upmixtype_binaural->setChecked(true);
+        break;
+    case UpmixType::stereo:
+        ui->menu_upmixtype_stereo->setChecked(true);
+        break;
+    }
+}
+
+/**
+ * @brief   It sets SAC parameter decoding type
+ * @param   decodingtype        decoding type
+ */
+void Decoder::setDecodingType(DecodingType::decodingtype decodingtype) {
+    this->decodingtype = decodingtype;
+    QList<QAction *> actions = ui->menu_decodingtype->actions();
+    for (int item = 0; item < actions.length(); item++) {
+        actions[item]->setChecked(false);
+    }
+    switch (decodingtype) {
+    case DecodingType::low:
+    default:
+        ui->menu_decodingtype_low->setChecked(true);
+        break;
+    case DecodingType::high:
+        ui->menu_decodingtype_high->setChecked(true);
+        break;
+    }
+}
+
+/**
+ * @brief   It sets SAC parameter binaural quality
+ * @param   binauralquality     binaural quality
+ */
+void Decoder::setBinauralQuality(BinauralQuality::binauralquality binauralquality) {
+    this->binauralquality = binauralquality;
+    QList<QAction *> actions = ui->menu_binauralquality->actions();
+    for (int item = 0; item < actions.length(); item++) {
+        actions[item]->setChecked(false);
+    }
+    switch (binauralquality) {
+    case BinauralQuality::parametric:
+    default:
+        ui->menu_binauralquality_parametric->setChecked(true);
+        break;
+    case BinauralQuality::filtering:
+        ui->menu_binauralquality_filtering->setChecked(true);
+        break;
+    }
+}
+
+/**
+ * @brief   It sets SAC parameter HRTF model
+ * @param   hrtfmodel           HRTF model
+ */
+void Decoder::setHRTFModel(HRTFModel::hrtfmodel hrtfmodel) {
+    this->hrtfmodel = hrtfmodel;
+    QList<QAction *> actions = ui->menu_hrtfmodel->actions();
+    for (int item = 0; item < actions.length(); item++) {
+        actions[item]->setChecked(false);
+    }
+    switch (hrtfmodel) {
+    case HRTFModel::kemar:
+    default:
+        ui->menu_hrtfmodel_kemar->setChecked(true);
+        break;
+    case HRTFModel::vast:
+        ui->menu_hrtfmodel_vast->setChecked(true);
+        break;
+    case HRTFModel::mps_vt:
+        ui->menu_hrtfmodel_mpsvt->setChecked(true);
+        break;
+    }
+}
+
+/**
+ * @name    Decoder menu bar interface slots
+ * @brief   User interface control functions of decoder menu bar.
  * @{
  */
 
@@ -48,12 +297,20 @@ void Decoder::setfs(int fs) {
  * @brief   It loads a file as decoder input.
  */
 void Decoder::load() {
-    std::string filepath = QFileDialog::getOpenFileName(NULL, "Load audio file","","*.wav").toStdString();
-    if(filepath=="") {
-        consolelog("Decoder",LogType::interaction,"canceling source file selection for decoder");
-    } else {
-        consolelog("Decoder",LogType::interaction,"selected \"" + filepath + "\" as source file for decoder");
-        this->file = new AudioFile(filepath);
+    std::string prefix = "menu_load_";
+    std::string file = QObject::sender()->objectName().toStdString().substr(QObject::sender()->objectName().toStdString().find(prefix) + prefix.length());
+    std::string format = "";
+    if(file=="source" || file =="input") {
+        format = "*.wav";
+    }
+    std::string filename = QFileDialog::getOpenFileName(NULL, QString::fromStdString("Load " + file + " file"),"",QString::fromStdString(format)).toStdString();
+    if(file=="source") {
+        this->setSource(filename);
+        if(filename!="") {
+            this->reset();
+        }
+    } else if(file=="bitstream") {
+        this->setBitstream(filename);
     }
 }
 
@@ -61,10 +318,16 @@ void Decoder::load() {
  * @brief   It encodes a new audio through Coder.
  */
 void Decoder::encode() {
-    Coder *coder = new Coder();
-    coder->exec();
-    if (coder->output) {
-        this->file = coder->output;
+    Encoder *encoder = new Encoder();
+    encoder->fs = this->fs;
+    encoder->exec();
+    if (encoder->output) {
+        this->setSource(encoder->output->getFilepath());
+        this->setBitstream(encoder->bitstream->fileName().toStdString());
+        this->reset();
+        this->decode();
+    } else {
+        this->setSource("");
     }
 }
 
@@ -72,7 +335,193 @@ void Decoder::encode() {
  * @brief   It decodes the audio input.
  */
 void Decoder::decode() {
-    sac_decode();
+    consolelog("Decoder",LogType::interaction,"decoding");
+    std::string input_str = this->source->getFilepath();
+    std::string output_str = QFileDialog::getSaveFileName(NULL, "Save decoded input file","","*.wav").toStdString();
+    std::string bitstream_str;
+    if(output_str != "") {
+        // SAC decoding
+        consolelog("Decoder",LogType::progress,"proceeding to SAC decoder");
+        if(this->bitstream == NULL) {
+            bitstream_str = "buried";
+        } else {
+            bitstream_str = this->bitstream->fileName().toStdString();
+        }
+        const char *input_char = input_str.c_str();
+        const char *output_char = output_str.c_str();
+        const char *bitstream_char = bitstream_str.c_str();
+        consolelog("Decoder",LogType::info,"input file:\t " + input_str);
+        consolelog("Decoder",LogType::info,"output file:\t " + output_str);
+        consolelog("Decoder",LogType::info,"bitstream file:\t " + bitstream_str);
+        consolelog("Decoder",LogType::info,"upmix type:\t " + std::to_string(upmixtype));
+        consolelog("Encoder",LogType::info,"sampling frequency:\t " + std::to_string(this->fs) + "Hz");
+        consolelog("Decoder",LogType::info,"upmix type:\t " + std::to_string(this->upmixtype));
+        consolelog("Decoder",LogType::info,"decoding type:\t " + std::to_string(this->decodingtype));
+        consolelog("Decoder",LogType::info,"binaural quality:\t " + std::to_string(this->binauralquality));
+        consolelog("Decoder",LogType::info,"HRTF model type:\t " + std::to_string(this->hrtfmodel));
+        consolelog("Decoder",LogType::info,"debugger mode:\t " + std::to_string(this->debuggermode));
+        char *error = sac_decode(input_char, output_char, bitstream_char, (double)this->fs, this->upmixtype, this->decodingtype, this->binauralquality, this->hrtfmodel, this->debuggermode);
+        if(error == NULL) {
+            this->setInput(output_str);
+            consolelog("sac_decoder",LogType::progress,"decoding was completed successfully");
+        } else {
+            consolelog("sac_decoder",LogType::error,std::string(error));
+        }
+    }
+}
+
+/**
+ * @brief   It controls the input and output playback.
+ * @param   state               true to play and false to pause
+ */
+void Decoder::setPlayback(bool state) {
+    QObject::sender()->blockSignals(true);
+    std::string module = QObject::sender()->objectName().toStdString().substr(0,QObject::sender()->objectName().toStdString().find("_"));
+    if (module == "input") {
+        if (state) {
+            consolelog("Decoder",LogType::interaction,"input is now playing");
+        } else {
+            consolelog("Decoder",LogType::interaction,"input is now paused");
+        }
+    } else if (module == "output") {
+        if (state) {
+            consolelog("Decoder",LogType::interaction,"output is now unmuted");
+        } else {
+            consolelog("Decoder",LogType::interaction,"input is now muted");
+        }
+    }
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   It opens audio file info dialog.
+ */
+void Decoder::openInfo() {
+    QObject::sender()->blockSignals(true);
+    AudioInfo info;
+    info.setFile(this->input);
+    info.setWindowTitle("Input file info");
+    info.exec();
+    consolelog("Decoder",LogType::interaction,"showing input info");
+    QObject::sender()->blockSignals(false);
+}
+
+/**< @} */
+
+/**
+ * @name    Decoder menu bar interface slots
+ * @brief   User interface control functions of decoder menu bar.
+ * @{
+ */
+
+/**
+ * @brief   It sets bitstream as buried or not.
+ * @param   state               true if bitstream is buried
+ */
+void Decoder::setBuried(bool state) {
+    this->buried = state;
+    ui->menu_load_bitstream->setEnabled(!state);
+    this->setBitstream("");
+    if(state) {
+        consolelog("Decoder",LogType::interaction,"bitstream has been set to buried");
+    } else {
+        consolelog("Decoder",LogType::interaction,"bitstream is not buried now");
+    }
+}
+
+/**
+ * @brief   Slot action for menu upmix type items
+ * @param   item                selected item
+ */
+void Decoder::toggleUpmixType(QAction *item) {
+    QObject::sender()->blockSignals(true);
+    std::string prefix = "menu_upmixtype_";
+    std::string type = item->objectName().toStdString().substr(prefix.length());
+    if(type=="normal") {
+        this->setUpmixType(UpmixType::normal);
+    } else if(type=="blind") {
+        this->setUpmixType(UpmixType::blind);
+    } else if (type=="binaural") {
+        this->setUpmixType(UpmixType::binaural);
+    } else if (type=="stereo") {
+        this->setUpmixType(UpmixType::stereo);
+    } else {
+        this->setUpmixType(UpmixType::normal);
+    }
+    consolelog("Decoder",LogType::interaction,"upmix type set to " + type);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Slot action for menu decoding type items
+ * @param   item                selected item
+ */
+void Decoder::toggleDecodingType(QAction *item) {
+    QObject::sender()->blockSignals(true);
+    std::string prefix = "menu_decodingtype_";
+    std::string type = item->objectName().toStdString().substr(prefix.length());
+    if(type=="low") {
+        this->setDecodingType(DecodingType::low);
+    } else if (type=="high") {
+        this->setDecodingType(DecodingType::high);
+    } else {
+        this->setDecodingType(DecodingType::low);
+    }
+    consolelog("Decoder",LogType::interaction,"decoding type set to " + type);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Slot action for menu binaural quality items
+ * @param   item                selected item
+ */
+void Decoder::toggleBinauralQuality(QAction *item) {
+    QObject::sender()->blockSignals(true);
+    std::string prefix = "menu_binauralquality_";
+    std::string type = item->objectName().toStdString().substr(prefix.length());
+    if (type=="normal") {
+        this->setBinauralQuality(BinauralQuality::parametric);
+    } else if (type=="blind") {
+        this->setBinauralQuality(BinauralQuality::filtering);
+    } else {
+        this->setBinauralQuality(BinauralQuality::parametric);
+    }
+    consolelog("Decoder",LogType::interaction,"binaural quality set to " + type);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Slot action for menu HRTF model items
+ * @param   item                selected item
+ */
+void Decoder::toggleHRTFModel(QAction *item) {
+    QObject::sender()->blockSignals(true);
+    std::string prefix = "menu_hrtfmodel_";
+    std::string type = item->objectName().toStdString().substr(prefix.length());
+    if (type=="kemar") {
+        this->setHRTFModel(HRTFModel::kemar);
+    } else if(type=="vast") {
+        this->setHRTFModel(HRTFModel::vast);
+    } else if(type=="mpsvt") {
+        this->setHRTFModel(HRTFModel::mps_vt);
+    } else {
+        this->setHRTFModel(HRTFModel::kemar);
+    }
+    consolelog("Decoder",LogType::interaction,"HRTF model set to " + type);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   It sets SAC parameter debugger mode
+ * @param   state               true to set the debugger mode to on
+ */
+void Decoder::setDebuggerMode(bool state) {
+    this->debuggermode = state;
+    if(state) {
+        consolelog("Decoder",LogType::interaction,"debugger mode activated");
+    } else {
+        consolelog("Decoder",LogType::interaction,"debugger mode deactivated");
+    }
 }
 
 /** @} */

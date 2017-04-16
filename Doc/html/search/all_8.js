@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['label',['label',['../class_object_input.html#a752153fbd72ed0c1ff8174c0519f81ef',1,'ObjectInput']]],
-  ['labelx',['labelX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a3d5390c398d2dffe459abc0e5904ce5c',1,'AudioChart::ChartOptions']]],
-  ['labelxy',['labelXY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ad664eeb9abfbc6fe36fd10267d9055bd',1,'AudioChart::ChartOptions']]],
-  ['labely',['labelY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a678a633cc4abb19484fb6c798df343b4',1,'AudioChart::ChartOptions']]],
-  ['lastvalue',['lastvalue',['../class_object_input.html#a2381b1378695acd2804ea56b1fbefb2c',1,'ObjectInput']]],
-  ['layout',['layout',['../class_objects_configuration.html#adae2dd1804c451401766fbc97f4036ff',1,'ObjectsConfiguration']]],
-  ['legend',['legend',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ac406fef06cda8e5148dc87023bc93af9',1,'AudioChart::ChartOptions']]],
-  ['level',['level',['../class_object_input.html#a6e1936aa3bf0956344487b5a8592fd37',1,'ObjectInput::level()'],['../class_volumeter.html#adf7109e2c42ba90322e887c54c4edd4d',1,'Volumeter::level()']]],
-  ['levelslider',['levelslider',['../class_object_input.html#ac4d915888f8c0effa0f331e8c0d9d1ab',1,'ObjectInput']]],
-  ['loadfile',['loadFile',['../class_objects_configuration.html#a8f73200661d4645598ea450e8e445945',1,'ObjectsConfiguration::loadFile()'],['../class_object_input.html#ace751bf5398b1080ae12ea58cd4d88ae',1,'ObjectInput::loadfile()']]],
-  ['logger_2ecpp',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
-  ['logger_2eh',['Logger.h',['../_logger_8h.html',1,'']]],
-  ['logtype',['LogType',['../struct_log_type.html',1,'LogType'],['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType::logtype()']]],
-  ['logx',['logX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ad87d045c5f1eeefed9cf643b9c45c833',1,'AudioChart::ChartOptions']]],
-  ['logxy',['logXY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a79142857b35b457a0f81ab500305d54c',1,'AudioChart::ChartOptions']]],
-  ['logy',['logY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ab2b18374bbf667f63a425a711ca1a90c',1,'AudioChart::ChartOptions']]]
+  ['if',['if',['../sac__decoder_8c.html#a4886878a85e5c08aa353bdec90d702db',1,'if(input_samples !=NULL):&#160;sac_decoder.c'],['../sac__decoder_8c.html#a16c12acc93abe028863508fe88aa1f53',1,'if(input_interleaved !=NULL):&#160;sac_decoder.c'],['../sac__decoder_8c.html#ae607b3e1359f2da19367b45b67da6dee',1,'if(bitstream_type==BS_FILE):&#160;sac_decoder.c'],['../sac__decoder_8c.html#a1815c8f6ab79fa11002471bc2d0acbdf',1,'if(strcmp(error,&quot;&quot;)==0):&#160;sac_decoder.c']]],
+  ['imag',['imag',['../_audio_signal_8cpp.html#a06ebc6bb2d8547759c483e78d2087c51',1,'AudioSignal.cpp']]],
+  ['index',['index',['../class_configuration_channel.html#ade95ce20ee8f5e07b0edf92cee21ff94',1,'ConfigurationChannel::index()'],['../class_channel.html#a992b8f195f395a64b4e966886bb41f00',1,'Channel::index()']]],
+  ['info',['info',['../class_configuration_channel.html#a4c9c0675fe3c376b4d6677faf5f0e479',1,'ConfigurationChannel::info()'],['../class_channel.html#a1a0cc3de6f6caf2096a3bcf1ccb3e84c',1,'Channel::info()'],['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b',1,'LogType::info()']]],
+  ['input',['input',['../class_decoder.html#a20abaa0e71352b9f90e59beed0c309bb',1,'Decoder::input()'],['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()']]],
+  ['interaction',['interaction',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c',1,'LogType']]],
+  ['isavailable',['isAvailable',['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream::isAvailable(int time)'],['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream::isAvailable(int time)']]],
+  ['italic',['italic',['../_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b',1,'Logger.cpp']]]
 ];

@@ -9,13 +9,14 @@
 /**
  * @brief   It performs the SAC encoder.
  * @param   input_filename      filename of the multichannel input audio file
- * @param   output_filename     filename of the downmix output audio file
- * @param   bitstream_filename  filename of the bitstream output file or "buried"
+ * @param   output_filename     filename of the downmix output audio file (it will be automatically created)
+ * @param   bitstream_filename  filename of the bitstream output file or "buried" (it will be automatically created)
+ * @param   fs                  audio sampling frequency [Hz]
  * @param   tree                tree config: 5151 (mono), 5152 (mono), 525 (stereo) (5151 by default)
  * @param   timeslots           times slots: 16 or 32 (32 by default)
  * @return  error message (NULL if the encoding has succeded)
  */
-char *sac_encode(const char *input_filename, const char *output_filename, const char *bitstream_filename, int tree, int timeslots, double fs) {
+char *sac_encode(const char *input_filename, const char *output_filename, const char *bitstream_filename, double fs, int tree, int timeslots) {
     // Arguments
     int buried = strcmp(bitstream_filename,"buried")==0;
     int output_channels = 0;
@@ -38,9 +39,9 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
     AFILE *output;
     Stream bitstream;
     long int input_channels;
-    long int sample;
+    long int samples;
     InitStream(&bitstream, bitstream_filename, STREAM_WRITE);
-    input = AFopnRead(input_filename, &sample, &input_channels, &fs, NULL);
+    input = AFopnRead(input_filename, &samples, &input_channels, &fs, NULL);
     if(input_channels != 6) {
         return "input audio file must have 6 channels";
     }
@@ -67,7 +68,7 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
             return "failed to open buried data embedder";
         }
     }
-    while(offset < sample) {
+    while(offset < samples) {
         AFfReadData(input, offset, input_buffer, buffersize * 6);
         SpatialEncApply(encoder, input_buffer, output_buffer, &bitstream);
         if(buried) {
@@ -94,5 +95,5 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
     if(output != NULL) {
       AFclose(output);
     }
-    return NULL;
+	return NULL;
 }

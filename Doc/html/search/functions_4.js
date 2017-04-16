@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['initialize',['initialize',['../class_device.html#a098d0a2980c918e19988f58a4c46edfb',1,'Device::initialize()'],['../class_main_window.html#a43f05c4d3f5d840d070829d3291c9ec7',1,'MainWindow::initialize()']]],
-  ['isavailable',['isAvailable',['../class_audio_object.html#a8687ac53d5e3dc24f21fd6dc397e959b',1,'AudioObject']]]
+  ['encode',['encode',['../class_decoder.html#a314324dc0c0861921f498bbc804c844b',1,'Decoder']]],
+  ['encoder',['Encoder',['../class_encoder.html#a0b084c3a7e670faafd9d651d6913d105',1,'Encoder']]],
+  ['exists',['exists',['../class_audio_file.html#a167cc496500f88e8483bab8f393a73c3',1,'AudioFile']]]
 ];

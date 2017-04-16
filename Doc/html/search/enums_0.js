@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logtype',['logtype',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType']]]
+  ['binauralquality',['binauralquality',['../struct_binaural_quality.html#a3a009a287684c778dbb5507226cf24e4',1,'BinauralQuality']]]
 ];

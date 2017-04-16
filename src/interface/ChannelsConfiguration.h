@@ -91,8 +91,8 @@ private slots:
     // Channels configuration controls
     void setNumber(int number);
     // Inputs channels controls
-    void setLevel(int level);
     void setLabel(QString label);
+    void setLevel(int level);
     void setActive(bool state);
     void loadFile();
     void openInfo();

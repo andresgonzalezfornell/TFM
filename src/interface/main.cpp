@@ -8,7 +8,7 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
-#include "Coder.h"
+#include "Encoder.h"
 #include "Decoder.h"
 #include "../tools/Logger.h"
 

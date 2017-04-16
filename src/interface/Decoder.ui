@@ -22,7 +22,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QGroupBox" name="input">
+     <widget class="QGroupBox" name="input_group">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -40,33 +40,157 @@
       </property>
       <layout class="QVBoxLayout" name="input_layout">
        <property name="spacing">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="leftMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="topMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="rightMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="bottomMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
+       <item>
+        <widget class="QGroupBox" name="decoder_group">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Decoder</string>
+         </property>
+         <layout class="QVBoxLayout" name="decoder_mainlayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QFormLayout" name="decoder_layout">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <property name="rowWrapPolicy">
+             <enum>QFormLayout::DontWrapRows</enum>
+            </property>
+            <property name="formAlignment">
+             <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="source_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Source</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="source_filename">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="input_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Input</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="input_filename">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="bitstream_label">
+              <property name="text">
+               <string>Bitstream</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="bitstream_filename">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item>
         <widget class="QScrollArea" name="input_channels">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>13</horstretch>
+           <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
          </property>
          <property name="verticalScrollBarPolicy">
           <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -83,16 +207,19 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
-         <widget class="QWidget" name="input_list">
+         <widget class="QWidget" name="input_channel_list">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>215</width>
-            <height>295</height>
+            <width>216</width>
+            <height>94</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="input_list_layout">
+          <layout class="QVBoxLayout" name="input_channels_layout">
+           <property name="spacing">
+            <number>5</number>
+           </property>
            <property name="leftMargin">
             <number>5</number>
            </property>
@@ -129,27 +256,89 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="input_start">
-         <property name="text">
-          <string>Start</string>
+        <layout class="QHBoxLayout" name="input_controls">
+         <property name="spacing">
+          <number>5</number>
          </property>
-         <property name="checkable">
-          <bool>true</bool>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
          </property>
-        </widget>
+         <item>
+          <widget class="QPushButton" name="input_playback">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/play</normaloff>
+             <normalon>:/icons/pause</normalon>:/icons/play</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="input_info">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/info</normaloff>:/icons/info</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="effect">
+     <widget class="QGroupBox" name="effect_group">
       <property name="title">
        <string>Effect</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="output">
+     <widget class="QGroupBox" name="output_group">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -167,25 +356,25 @@
       </property>
       <layout class="QVBoxLayout" name="output_layout">
        <property name="spacing">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="leftMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="topMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="rightMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="bottomMargin">
-        <number>0</number>
+        <number>5</number>
        </property>
        <item>
         <widget class="QScrollArea" name="output_channels">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>13</horstretch>
+           <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
@@ -209,11 +398,14 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>227</width>
-            <height>327</height>
+            <width>216</width>
+            <height>153</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="output_list_layout">
+           <property name="spacing">
+            <number>5</number>
+           </property>
            <property name="leftMargin">
             <number>5</number>
            </property>
@@ -246,6 +438,40 @@
          </property>
         </widget>
        </item>
+       <item>
+        <layout class="QHBoxLayout" name="output_controls">
+         <item>
+          <widget class="QPushButton" name="output_playback">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/preview_unmute</normaloff>
+             <normalon>:/icons/preview_mute</normalon>:/icons/preview_unmute</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
     </item>
@@ -260,13 +486,70 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_source">
+    <property name="title">
+     <string>Source</string>
+    </property>
+    <addaction name="menu_load_source"/>
+    <addaction name="menu_encode"/>
+   </widget>
+   <widget class="QMenu" name="menu_decoder">
+    <property name="title">
+     <string>Decoder</string>
+    </property>
+    <widget class="QMenu" name="menu_upmixtype">
+     <property name="title">
+      <string>Upmix type</string>
+     </property>
+     <addaction name="menu_upmixtype_normal"/>
+     <addaction name="menu_upmixtype_blind"/>
+     <addaction name="menu_upmixtype_binaural"/>
+     <addaction name="menu_upmixtype_stereo"/>
+    </widget>
+    <widget class="QMenu" name="menu_decodingtype">
+     <property name="title">
+      <string>Decoding type</string>
+     </property>
+     <addaction name="menu_decodingtype_low"/>
+     <addaction name="menu_decodingtype_high"/>
+    </widget>
+    <widget class="QMenu" name="menu_binauralquality">
+     <property name="title">
+      <string>Binaural upmix quality</string>
+     </property>
+     <addaction name="menu_binauralquality_parametric"/>
+     <addaction name="menu_binauralquality_filtering"/>
+    </widget>
+    <widget class="QMenu" name="menu_hrtfmodel">
+     <property name="title">
+      <string>HRTF model</string>
+     </property>
+     <addaction name="menu_hrtfmodel_kemar"/>
+     <addaction name="menu_hrtfmodel_vast"/>
+     <addaction name="menu_hrtfmodel_mpsvt"/>
+    </widget>
+    <addaction name="menu_upmixtype"/>
+    <addaction name="menu_decodingtype"/>
+    <addaction name="menu_binauralquality"/>
+    <addaction name="menu_hrtfmodel"/>
+    <addaction name="menu_debuggermode"/>
+   </widget>
    <widget class="QMenu" name="menu_input">
     <property name="title">
      <string>Input</string>
     </property>
-    <addaction name="menu_input_load"/>
-    <addaction name="menu_input_encode"/>
+    <addaction name="menu_decode"/>
    </widget>
+   <widget class="QMenu" name="menu_bitstream">
+    <property name="title">
+     <string>Bitstream</string>
+    </property>
+    <addaction name="menu_load_bitstream"/>
+    <addaction name="menu_bitstream_buried"/>
+   </widget>
+   <addaction name="menu_source"/>
+   <addaction name="menu_bitstream"/>
+   <addaction name="menu_decoder"/>
    <addaction name="menu_input"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -318,18 +601,134 @@
     <string>44100 Hz</string>
    </property>
   </action>
-  <action name="menu_input_load">
+  <action name="menu_load_source">
    <property name="text">
-    <string>Load from a file</string>
+    <string>Load from file</string>
    </property>
   </action>
-  <action name="menu_input_encode">
+  <action name="menu_encode">
    <property name="text">
     <string>Load from encoder</string>
    </property>
   </action>
+  <action name="menu_debuggermode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Debugger mode</string>
+   </property>
+  </action>
+  <action name="menu_upmixtype_normal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="menu_upmixtype_blind">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Blind</string>
+   </property>
+  </action>
+  <action name="menu_upmixtype_binaural">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Binaural</string>
+   </property>
+  </action>
+  <action name="menu_upmixtype_stereo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Stereo</string>
+   </property>
+  </action>
+  <action name="menu_decodingtype_low">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Low</string>
+   </property>
+  </action>
+  <action name="menu_decodingtype_high">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>High</string>
+   </property>
+  </action>
+  <action name="menu_binauralquality_parametric">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Parametric</string>
+   </property>
+  </action>
+  <action name="menu_binauralquality_filtering">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Filtering</string>
+   </property>
+  </action>
+  <action name="menu_hrtfmodel_kemar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Kemar</string>
+   </property>
+  </action>
+  <action name="menu_hrtfmodel_vast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Vast</string>
+   </property>
+  </action>
+  <action name="menu_hrtfmodel_mpsvt">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>MPS VT</string>
+   </property>
+  </action>
+  <action name="menu_decode">
+   <property name="text">
+    <string>Decode source</string>
+   </property>
+  </action>
+  <action name="menu_load_bitstream">
+   <property name="text">
+    <string>Load from file</string>
+   </property>
+  </action>
+  <action name="menu_bitstream_buried">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Buried</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="media.qrc"/>
+ </resources>
  <connections/>
 </ui>

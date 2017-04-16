@@ -55,17 +55,19 @@ public:
         if (Coder->objectName().isEmpty())
             Coder->setObjectName(QStringLiteral("Coder"));
         Coder->setWindowModality(Qt::WindowModal);
-        Coder->resize(677, 183);
+        Coder->resize(677, 171);
         horizontalLayout = new QHBoxLayout(Coder);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         input_group = new QGroupBox(Coder);
         input_group->setObjectName(QStringLiteral("input_group"));
         verticalLayout_3 = new QVBoxLayout(input_group);
+        verticalLayout_3->setSpacing(5);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(5, 5, 5, 5);
         input_filename = new QLineEdit(input_group);
         input_filename->setObjectName(QStringLiteral("input_filename"));
-        input_filename->setEnabled(false);
+        input_filename->setEnabled(true);
+        input_filename->setReadOnly(true);
 
         verticalLayout_3->addWidget(input_filename);
 
@@ -82,6 +84,7 @@ public:
         coding = new QGroupBox(Coder);
         coding->setObjectName(QStringLiteral("coding"));
         verticalLayout_2 = new QVBoxLayout(coding);
+        verticalLayout_2->setSpacing(5);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(5, 5, 5, 5);
         bitstream_group = new QGroupBox(coding);
@@ -144,11 +147,13 @@ public:
         output_group = new QGroupBox(Coder);
         output_group->setObjectName(QStringLiteral("output_group"));
         verticalLayout = new QVBoxLayout(output_group);
+        verticalLayout->setSpacing(5);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(5, 5, 5, 5);
         output_filename = new QLineEdit(output_group);
         output_filename->setObjectName(QStringLiteral("output_filename"));
-        output_filename->setEnabled(false);
+        output_filename->setEnabled(true);
+        output_filename->setReadOnly(true);
 
         verticalLayout->addWidget(output_filename);
 

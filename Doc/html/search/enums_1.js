@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['options',['Options',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3',1,'AudioChart::ChartOptions']]]
+  ['decodingtype',['decodingtype',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822',1,'DecodingType']]]
 ];

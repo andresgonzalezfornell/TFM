@@ -10,264 +10,286 @@ char *error = "";
  * @param s
  */
 void myexit(char *s) {
-    // End line
-    error = (char *)malloc(1+strlen(error)+strlen("\n"));
-    strcpy(error, error);
-    strcat(error, "\n");
-    // Message
-    error = (char *)malloc(1+strlen(error)+strlen(s));
-    strcpy(error, error);
-    strcat(error, s);
+	// End line
+	error = (char *) malloc(1 + strlen(error) + strlen("\n"));
+	strcpy(error, error);
+	strcat(error, "\n");
+	// Message
+	error = (char *) malloc(1 + strlen(error) + strlen(s));
+	strcpy(error, error);
+	strcat(error, s);
 }
 
 /**
  * @brief   It performs the SAC decoder.
- * @return  0 unless errors occurred
+ * @param   input_filename      filename of the downmix input audio file
+ * @param   output_filename     filename of the multichannel output audio file (it will be automatically created)
+ * @param   bitstream_filename  filename of the bitstream file (not present in blind upmix case)
+ * @param   fs                  audio sampling frequency [Hz]
+ * @param   upmixtype           upmix type              0: normal       1: blind        2: binaural     3: stereo
+ * @param   decodingtype        decoding type           0: low          1: high
+ * @param   binauralquality     binaural upmix quality  0: parametric   1: filtering
+ * @param   hrtfmodel           HRTF model              0: kemar        1: vast         2: mps_vt
+ * @param   debuggermode        debugger mode           0: off          1: on
+ * @return  error message (NULL if the decoding has succeded)
  */
-int sac_decode() {
-	spatialDec* ourDec;
-	long int nSamples;
-	long int nChannels;
-	double sampleFreq;
-	int qmfBands = 0;
-	int nTimeSlots;
-	AFILE* pcmIn = 0;
-	HANDLE_FILE_READER fileReader = NULL;
-	HANDLE_BURIED_DATA_READER bdReader = NULL;
-	BD_INPUT_BUFFER bdBuffer;
+char *sac_decode(const char *input_filename, const char *output_filename,
+		const char *bitstream_filename, double fs, int upmixtype,
+		int decodingtype, int binauralquality, int hrtfmodel, int debuggermode) {
+	// Arguments
+	int buried = strcmp(bitstream_filename, "buried") == 0;
+	BITSTREAM_SOURCE bitstream_type;
+	if (buried) {
+		bitstream_type = BS_BURIED;
+	} else {
+		bitstream_type = BS_FILE;
+	}
+	// Initialization
+	long int input_channels;
+	float* input_samples;
+	float* input_interleaved;
+	BD_INPUT_BUFFER input_buffer;
 	HANDLE_BYTE_READER bitstream = NULL;
+	HANDLE_FILE_READER bitstream_reader = NULL;
 #ifdef HRTF_DYNAMIC_UPDATE
-	HANDLE_HRTF_READER hrtfReader = NULL;
-	HANDLE_HRTF_SOURCE hrtfSource = NULL;
+	HANDLE_HRTF_READER hrtf_reader = NULL;
+	HANDLE_HRTF_SOURCE hrtf_source = NULL;
 #endif
-	int done = 0;
-	int samplesToReadPerCall;
-	int samplesRead;
-	float* inSamples;
-	float* inSamplesDeinterleaved;
-	int i;
-	int j;
-	int channel;
-	int ts;
+	spatialDec* decoder;
+	int done = 0; // flag to exit decoding
+	long int samples;
+	int samples_read;
+	int samplespercall;
+	int qmfbands = 0;
+	int timeslots;
 	long int offset = 0;
+	HANDLE_BURIED_DATA_READER bdreader = NULL;
 	SAC_POLYPHASE_ANA_FILTERBANK *filterbank[MAX_INPUT_CHANNELS] = { 0 };
-	float** qmfInReal[MAX_INPUT_CHANNELS];
-	float** qmfInImag[MAX_INPUT_CHANNELS];
-	float** inPointers[2 * MAX_INPUT_CHANNELS];
+	float** qmf_real[MAX_INPUT_CHANNELS];
+	float** qmf_imag[MAX_INPUT_CHANNELS];
+	float** input_pointers[2 * MAX_INPUT_CHANNELS];
+	AFILE* input = 0;
+	if (input_filename) {
+		input = AFopnRead(input_filename, &samples, &input_channels, &fs, 0);
+	}
+	if (bitstream_type == BS_FILE) {
+		bitstream_reader = FileReaderOpen(bitstream_filename);
+		bitstream = FileReaderGetByteReader(bitstream_reader);
+	}
+	// QMF bands
 #ifdef PARTIALLY_COMPLEX
-	for (i=0; i < MAX_INPUT_CHANNELS; i++) {
-		qmfInReal[i] = (float **) calloc (MAX_TIME_SLOTS, sizeof (float*));
-		for (j=0; j < MAX_TIME_SLOTS; j++) {
-			qmfInReal[i][j] = (float *) calloc (MAX_QMF_BANDS, sizeof (float));
+	for (int band=0; band < MAX_INPUT_CHANNELS; band++) {
+		qmf_real[band] = (float **) calloc (MAX_TIME_SLOTS, sizeof (float*));
+		for (int timeslot=0; timeslot < MAX_TIME_SLOTS; timeslot++) {
+			qmf_real[band][timeslot] = (float *) calloc (MAX_QMF_BANDS, sizeof (float));
 		}
-		inPointers[i] = qmfInReal[i];
-		(qmfInImag);
+		input_pointers[band] = qmf_real[band];
+		(qmf_imag);
 	}
 #else
-	for (i = 0; i < MAX_INPUT_CHANNELS; i++) {
-		qmfInReal[i] = (float **) calloc(MAX_TIME_SLOTS, sizeof(float*));
-		qmfInImag[i] = (float **) calloc(MAX_TIME_SLOTS, sizeof(float*));
-		for (j = 0; j < MAX_TIME_SLOTS; j++) {
-			qmfInReal[i][j] = (float *) calloc(MAX_QMF_BANDS, sizeof(float));
-			qmfInImag[i][j] = (float *) calloc(MAX_QMF_BANDS, sizeof(float));
+	for (int band = 0; band < MAX_INPUT_CHANNELS; band++) {
+		qmf_real[band] = (float **) calloc(MAX_TIME_SLOTS, sizeof(float*));
+		qmf_imag[band] = (float **) calloc(MAX_TIME_SLOTS, sizeof(float*));
+		for (int timeslot = 0; timeslot < MAX_TIME_SLOTS; timeslot++) {
+			qmf_real[band][timeslot] = (float *) calloc(MAX_QMF_BANDS,
+					sizeof(float));
+			qmf_imag[band][timeslot] = (float *) calloc(MAX_QMF_BANDS,
+					sizeof(float));
 		}
-		inPointers[2 * i] = qmfInReal[i];
-		inPointers[2 * i + 1] = qmfInImag[i];
+		input_pointers[2 * band] = qmf_real[band];
+		input_pointers[2 * band + 1] = qmf_imag[band];
 	}
 #endif
 	if (setjmp(g_JmpBuf) == 0) {
 	} else {
-		exit(-1);
+		return "error because of buffer jumper";
 	}
-
-	if (pcmInFile)
-		pcmIn = AFopnRead(pcmInFile, &nSamples, &nChannels, &sampleFreq, 0);
-	if (bitstreamSource == BS_FILE) {
-		fileReader = FileReaderOpen(spatialBitstreamFile);
-		bitstream = FileReaderGetByteReader(fileReader);
-	}
-
-	if (sampleFreq < 27713.0) {
-		qmfBands = 32;
-	} else if (sampleFreq >= 55426.0) {
-		qmfBands = 128;
+	if (fs < 27713.0) {
+		qmfbands = 32;
+	} else if (fs >= 55426.0) {
+		qmfbands = 128;
 	} else {
-		qmfBands = 64;
+		qmfbands = 64;
 	}
-
-	if (bitstreamSource == BS_BURIED) {
-		float header[BD_HEADER_LENGTH * MAX_INPUT_CHANNELS];
-		int headerSamples = BD_HEADER_LENGTH * nChannels;
-		int samplesToRead;
-
-		bdReader = BdReaderOpen(qmfBands);
-		bitstream = BdReaderGetByteReader(bdReader);
-
-		bdBuffer.channels = nChannels;
-		bdBuffer.sampleFormat = pcmIn->Format;
-		bdBuffer.bitsPerSample = pcmIn->NbS;
-		bdBuffer.data = header;
-
-		offset += (samplesRead = AFfReadData(pcmIn, offset, header,
-				headerSamples));
-		if (samplesRead != headerSamples)
+	// Decoding
+	if (bitstream_type == BS_BURIED) {
+		float input_header[BD_HEADER_LENGTH * MAX_INPUT_CHANNELS];
+		int input_header_samples = BD_HEADER_LENGTH * input_channels;
+		int samples_remaining;
+		bdreader = BdReaderOpen(qmfbands);
+		bitstream = BdReaderGetByteReader(bdreader);
+		input_buffer.channels = input_channels;
+		input_buffer.sampleFormat = input->Format;
+		input_buffer.bitsPerSample = input->NbS;
+		input_buffer.data = input_header;
+		offset += (samples_read = AFfReadData(input, offset, input_header,
+				input_header_samples));
+		if (samples_read != input_header_samples) {
 			done = 1;
-
-		if (BdReaderGetFrameSize(bdReader, &bdBuffer, &nTimeSlots) != 0)
+		}
+		if (BdReaderGetFrameSize(bdreader, &input_buffer, &timeslots) != 0) {
 			done = 1;
-
-		samplesToReadPerCall = nChannels * qmfBands * nTimeSlots;
-		inSamples = (float*) calloc(sizeof(float), samplesToReadPerCall);
-
-		bdBuffer.data = inSamples;
-
-		memcpy(inSamples, header, sizeof(float) * headerSamples);
-		samplesToRead = samplesToReadPerCall - headerSamples;
-
-		offset += (samplesRead = AFfReadData(pcmIn, offset,
-				&inSamples[headerSamples], samplesToRead));
-		if (samplesRead == samplesToRead) {
-			if (BdReaderParseFrame(bdReader, &bdBuffer) != 0)
+		}
+		samplespercall = input_channels * qmfbands * timeslots;
+		input_samples = (float*) calloc(sizeof(float), samplespercall);
+		input_buffer.data = input_samples;
+		memcpy(input_samples, input_header,
+				sizeof(float) * input_header_samples);
+		samples_remaining = samplespercall - input_header_samples;
+		offset += (samples_read = AFfReadData(input, offset,
+				&input_samples[input_header_samples], samples_remaining));
+		if (samples_read == samples_remaining) {
+			if (BdReaderParseFrame(bdreader, &input_buffer) != 0) {
 				done = 1;
-		} else
+			}
+        } else {
 			done = 1;
+        }
 	}
-
 #ifdef HRTF_DYNAMIC_UPDATE
-	if (hrtfModel == 3) {
-		hrtfReader = HrtfReaderOpen(hrtfSourceFileName);
-		hrtfSource = HrtfReaderGetHrtfSource(hrtfReader);
+	if (hrtfmodel == 3) {
+		hrtf_reader = HrtfReaderOpen(hrtf_sourceFileName);
+		hrtf_source = HrtfReaderGetHrtfSource(hrtf_reader);
 	}
 #endif
-
-	ourDec = SpatialDecOpen(bitstream, spatialPcmOutFile, (int) sampleFreq,
-			(int) nChannels, &nTimeSlots, qmfBands, decType, upmixType,
-			hrtfModel,
+    decoder = SpatialDecOpen(bitstream, output_filename, (int) fs,
+			(int) input_channels, &timeslots, qmfbands, decodingtype, upmixtype,
+			hrtfmodel,
 #ifdef HRTF_DYNAMIC_UPDATE
-			hrtfSource,
+			hrtf_source,
 #endif
-			binauralQuality);
-
-	SacDecInitAnaFilterbank(NULL, qmfBands);
-	for (channel = 0; channel < nChannels; channel++)
+			binauralquality);
+	SacDecInitAnaFilterbank(NULL, qmfbands);
+	for (int channel = 0; channel < input_channels; channel++) {
 		SacDecOpenAnaFilterbank(&filterbank[channel]);
-
-	inSamplesDeinterleaved = (float*) calloc(sizeof(float), qmfBands);
-
-	if (bitstreamSource != BS_BURIED) {
-		samplesToReadPerCall = nChannels * qmfBands * nTimeSlots;
-		inSamples = (float*) calloc(sizeof(float), samplesToReadPerCall);
 	}
-
+	input_interleaved = (float*) calloc(sizeof(float), qmfbands);
+	if (bitstream_type != BS_BURIED) {
+		samplespercall = input_channels * qmfbands * timeslots;
+		input_samples = (float*) calloc(sizeof(float), samplespercall);
+	}
 	while (!done) {
-
-		if ((bitstreamSource != BS_BURIED) || (frameCounter > 0)) {
-			offset += (samplesRead = AFfReadData(pcmIn, offset, inSamples,
-					samplesToReadPerCall));
-			if (samplesRead == samplesToReadPerCall) {
-				if (bitstreamSource == BS_BURIED) {
-					if (BdReaderParseFrame(bdReader, &bdBuffer) != 0)
+		if ((bitstream_type != BS_BURIED) || (frameCounter > 0)) {
+			offset += (samples_read = AFfReadData(input, offset, input_samples,
+					samplespercall));
+			if (samples_read == samplespercall) {
+				if (bitstream_type == BS_BURIED) {
+					if (BdReaderParseFrame(bdreader, &input_buffer) != 0) {
 						done = 1;
-					if (BdReaderEndOfStream(bdReader))
+					}
+					if (BdReaderEndOfStream(bdreader)) {
 						done = 1;
+					}
 				}
 			} else
 				done = 1;
 		}
-
-		if ((bitstreamSource == BS_FILE) && FileReaderEof(fileReader))
+		if ((bitstream_type == BS_FILE) && FileReaderEof(bitstream_reader)) {
 			done = 1;
-
+		}
 #ifdef HRTF_DYNAMIC_UPDATE
-		if ((hrtfModel == 3) && HrtfReaderEof(hrtfReader)) done = 1;
+		if ((hrtfModel == 3) && HrtfReaderEof(hrtf_reader)) {
+			done = 1;
+		}
 #endif
-
 		if ((!done) && (setjmp(g_JmpBuf) == 0)) {
-
-			if (upmixType != 1) {
-				SpatialDecParseFrame(ourDec);
+			if (upmixtype != 1) {
+				SpatialDecParseFrame(decoder);
 			}
-
 #ifdef DMX_GAIN_FIX
-			BinauralDoParallelReverb(ourDec, inSamples, 32768.0f);
+			BinauralDoParallelReverb(decoder, input_samples, 32768.0f);
 #else
 			BinauralDoParallelReverb(ourDec, inSamples,
 					32768.0f * SpatialGetClipProtectGain(ourDec));
 #endif
-
-			for (channel = 0; channel < nChannels; channel++) {
-
-				for (ts = 0; ts < nTimeSlots; ts++) {
-					for (i = 0; i < qmfBands; i++) {
+			for (int channel = 0; channel < input_channels; channel++) {
+				for (int timeslot = 0; timeslot < timeslots; timeslot++) {
+					for (int band = 0; band < qmfbands; band++) {
 #ifdef DMX_GAIN_FIX
-						if (upmixType == 2 || upmixType == 3)
-						inSamplesDeinterleaved[i] = inSamples[nChannels* (ts*qmfBands+i)+channel] * 32768.0f;
-						else
+						if (upmixtype == 2 || upmixtype == 3) {
+							input_interleaved[band] = input_samples[input_channels* (timeslot*qmfbands+band)+channel] * 32768.0f;
+						} else {
 #endif
-						inSamplesDeinterleaved[i] = inSamples[nChannels
-								* (ts * qmfBands + i) + channel] * 32768.0f
-								* SpatialGetClipProtectGain(ourDec);
-					}
-
+                            input_interleaved[band] = input_samples[input_channels
+                                    * (timeslot * qmfbands + band) + channel]
+                                    * 32768.0f * SpatialGetClipProtectGain(decoder);
+                        }
+                    }
 #ifdef PARTIALLY_COMPLEX
-					SacCalculateAnaFilterbank( filterbank[channel],
-							inSamplesDeinterleaved,
-							inPointers[channel][ts],
-							NULL );
+                    SacCalculateAnaFilterbank( filterbank[channel],
+                            inSamplesDeinterleaved,
+                            inPointers[channel][ts],
+                            NULL );
 #else
-					SacDecCalculateAnaFilterbank(filterbank[channel],
-							inSamplesDeinterleaved, inPointers[2 * channel][ts],
-							inPointers[2 * channel + 1][ts]);
+                    SacDecCalculateAnaFilterbank(filterbank[channel],
+                            input_interleaved,
+                            input_pointers[2 * channel][timeslot],
+                            input_pointers[2 * channel + 1][timeslot]);
 #endif
-				}
-			}
-			SpatialDecApplyFrame(ourDec, nTimeSlots, inPointers);
-
-			frameCounter++;
-
-		} else {
-			break;
-		}
-	}
-
-	if (inSamples != NULL)
-		free(inSamples);
-	if (inSamplesDeinterleaved != NULL)
-		free(inSamplesDeinterleaved);
-
-	for (channel = 0; channel < nChannels; channel++)
-		SacDecCloseAnaFilterbank(filterbank[channel]);
-
-	SpatialDecClose(ourDec);
-	if (bitstreamSource == BS_FILE)
-		FileReaderClose(fileReader);
-	if (bitstreamSource == BS_BURIED)
-		BdReaderClose(bdReader);
+                }
+            }
+            SpatialDecApplyFrame(decoder, timeslots, input_pointers);
+            frameCounter++;
+        }
+        else {
+            break;
+        }
+    }
+    // Closing
+    if (input_samples != NULL) {
+        free(input_samples);
+    }
+    if (input_interleaved != NULL) {
+        free(input_interleaved);
+    }
+    for (int channel = 0; channel < input_channels; channel++) {
+        SacDecCloseAnaFilterbank(filterbank[channel]);
+    }
+        SpatialDecClose( decoder);
+    if (bitstream_type == BS_FILE) {
+        FileReaderClose(bitstream_reader);
+    }
+    if (bitstream_type == BS_BURIED) {
+        BdReaderClose(bdreader);
+    }
 #ifdef HRTF_DYNAMIC_UPDATE
-	if (hrtfModel == 3) HrtfReaderClose(hrtfReader);
+    if (hrtfModel == 3) {
+        HrtfReaderClose(hrtf_reader);
+    }
 #endif
-	AFclose(pcmIn);
-
+    AFclose( input);
 #ifdef PARTIALLY_COMPLEX
-	for (i=0; i < MAX_INPUT_CHANNELS; i++) {
-		for (j=0; j < MAX_TIME_SLOTS; j++) {
-			if (qmfInReal[i][j] != NULL) free(qmfInReal[i][j]);
-		}
-		if (qmfInReal[i] != NULL) free(qmfInReal[i]);
-	}
+    for (i=0; i < MAX_INPUT_CHANNELS; i++) {
+        for (j=0; j < MAX_TIME_SLOTS; j++) {
+            if (qmfInReal[i][j] != NULL) {
+                free(qmfInReal[i][j]);
+            }
+        }
+        if (qmfInReal[i] != NULL) {
+            free(qmfInReal[i]);
+        }
+    }
 #else
-	for (i = 0; i < MAX_INPUT_CHANNELS; i++) {
-		for (j = 0; j < MAX_TIME_SLOTS; j++) {
-			if (qmfInReal[i][j] != NULL)
-				free(qmfInReal[i][j]);
-			if (qmfInImag[i][j] != NULL)
-				free(qmfInImag[i][j]);
-		}
-		if (qmfInReal[i] != NULL)
-			free(qmfInReal[i]);
-		if (qmfInImag[i] != NULL)
-			free(qmfInImag[i]);
-	}
+    for (int band = 0; band < MAX_INPUT_CHANNELS; band++) {
+        for (int timeslot = 0; timeslot < MAX_TIME_SLOTS; timeslot++) {
+            if (qmf_real[band][timeslot] != NULL) {
+                free(qmf_real[band][timeslot]);
+            }
+            if (qmf_imag[band][timeslot] != NULL) {
+                free(qmf_imag[band][timeslot]);
+            }
+        }
+        if (qmf_real[band] != NULL) {
+            free(qmf_real[band]);
+        }
+        if (qmf_imag[band] != NULL) {
+            free(qmf_imag[band]);
+        }
+    }
 #endif
-	return 0;
+    if (strcmp(error,"")==0) {
+        return NULL;
+    } else {
+        return error;
+    }
 }

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['clear',['clear',['../class_audio_signal.html#a69279f3fee0a4fe11d3e9a8361615a96',1,'AudioSignal']]],
-  ['consolelog',['consolelog',['../_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4',1,'consolelog(std::string source, LogType::logtype logtype, std::string message):&#160;Logger.cpp'],['../_logger_8h.html#af8ed2de67925ca161726cfd305ea9f56',1,'consolelog(std::string, LogType::logtype logtype, std::string):&#160;Logger.cpp']]]
+  ['bypass',['bypass',['../class_channel.html#a2574d67b3f0d3f90c04a6154b96e303a',1,'Channel::bypass()'],['../class_channels_list.html#a95eca3eefbcf94fa4c7a3d3af3941319',1,'ChannelsList::bypass()']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../class_object_input.html#ac6266e907b131712a115b26032d81cef',1,'ObjectInput']]],
-  ['number',['number',['../class_objects_configuration.html#af8d0828cb4115b839f6aff7fa8c7cc57',1,'ObjectsConfiguration']]],
-  ['numchannels',['numchannels',['../struct_audio_file_1_1format.html#a41bbdc930eb8f5335f1321cb887a9c01',1,'AudioFile::format']]]
+  ['magenta',['magenta',['../_logger_8cpp.html#a9c3c2560b6f423f7902776457532fdba',1,'Logger.cpp']]],
+  ['mutecheckbox',['mutecheckbox',['../class_channel.html#a0e7f90da49f291a7bac498e11e886fbd',1,'Channel']]],
+  ['muted',['muted',['../class_channel.html#ada7e3a050c346ad283ad302745f03f3c',1,'Channel']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['objectinput',['ObjectInput',['../class_object_input.html#a41ae8c9036dadb08409df68e72443599',1,'ObjectInput']]],
-  ['objects',['Objects',['../class_objects.html#a40edba78775a3ace51b6abaa0dcb4dbe',1,'Objects']]],
-  ['objectsconfiguration',['ObjectsConfiguration',['../class_objects_configuration.html#a55b2626a1dad78f1bce0642d01bef78a',1,'ObjectsConfiguration']]]
+  ['load',['load',['../class_decoder.html#ad32433f2a55000f14bb1cbb77d7fee55',1,'Decoder::load()'],['../class_encoder.html#a876b53dd1557eb0b6a5a391576ca4ef5',1,'Encoder::load()']]],
+  ['loadfile',['loadFile',['../class_channels_configuration.html#abb883ec9d2ea3da104ec23f4cfc907cc',1,'ChannelsConfiguration::loadFile()'],['../class_channels_configuration.html#abb883ec9d2ea3da104ec23f4cfc907cc',1,'ChannelsConfiguration::loadFile()']]]
 ];

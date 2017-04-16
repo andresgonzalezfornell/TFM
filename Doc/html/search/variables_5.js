@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['file',['file',['../class_audio_file.html#a196738e4aae34f32bba1678db8872032',1,'AudioFile::file()'],['../class_object_input.html#afbd4115e9b77a0a9786a0dd158520356',1,'ObjectInput::file()']]],
-  ['fileprogress',['fileprogress',['../class_object_input.html#a29b905408aada2adbcc26963289dc288',1,'ObjectInput']]],
-  ['format',['format',['../struct_audio_file_1_1format.html#a178cb64b0407ddaab3be164321d9f26b',1,'AudioFile::format::format()'],['../class_device.html#a1dcabb204ddcd88d1112545ca10ab383',1,'Device::format()']]],
-  ['framework',['framework',['../class_device.html#a48ab92af2ead9b7823d466fe5fb60f86',1,'Device::framework()'],['../class_objects_configuration.html#a91e0b8faaf19f2adf49114ab83de5744',1,'ObjectsConfiguration::framework()']]],
-  ['fromdevice',['fromdevice',['../class_object_input.html#a455ab2cf1c651b7e5e005771c59d017d',1,'ObjectInput']]],
-  ['fromdevicecheckbox',['fromdevicecheckbox',['../class_object_input.html#aad60c68795a7e2137aceda2417a8790d',1,'ObjectInput']]],
-  ['fs',['fs',['../class_audio_object.html#ae5178fb64a7b2beb4b0c795bf017e529',1,'AudioObject::fs()'],['../class_audio_signal.html#ab3ee0f4ec0f5a5c9e92084ee0d831710',1,'AudioSignal::fs()'],['../class_device.html#a56f45fe4b4abc121d5fd69ec5a6e72d3',1,'Device::fs()'],['../class_volumeter.html#a720da160dfde0c5f187b8a924e0bd52e',1,'Volumeter::fs()']]]
+  ['file',['file',['../class_audio_file.html#a196738e4aae34f32bba1678db8872032',1,'AudioFile::file()'],['../class_audio_info.html#aa80fed8d29570e2d7ecf804c92d465d8',1,'AudioInfo::file()'],['../class_configuration_channel.html#a0ec521549ae0b01048f5ad11580c6969',1,'ConfigurationChannel::file()'],['../class_channel.html#a0f1ebba6259b861c5a50f9d09aa6b662',1,'Channel::file()']]],
+  ['format',['format',['../struct_w_a_v_file_1_1_header.html#aa3a54e23ce34d6f9cba9e9853915e30c',1,'WAVFile::Header']]],
+  ['framework',['framework',['../class_channels_configuration.html#a333132ec2558ed4c3c9f690e903caf89',1,'ChannelsConfiguration::framework()'],['../class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5',1,'ChannelsList::framework()']]],
+  ['fs',['fs',['../class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45',1,'AudioStream::fs()'],['../class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9',1,'AudioSignal::fs()'],['../class_channels_configuration.html#a8948fc2ef94ddc24e3cbaa15db118284',1,'ChannelsConfiguration::fs()'],['../class_channels_configuration.html#ac840fa482649e46cc653aee5028b7041',1,'ChannelsConfiguration::fs()'],['../class_channels_list.html#ab5b3fd699a6c96a59d237ff4e23fa3fa',1,'ChannelsList::fs()'],['../class_decoder.html#a6eb8fb1c23eb0b8dd1254420961726dc',1,'Decoder::fs()'],['../class_encoder.html#aa0549b597ab8fda7191f2e659a56044b',1,'Encoder::fs()'],['../class_volumeter.html#a7afcd98abd8e156aab69751761218497',1,'Volumeter::fs()']]]
 ];

@@ -81,7 +81,6 @@ $(document).ready(function(){initNavTree('class_audio_info.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_audio_info-members.html">List of all members</a>  </div>
@@ -90,7 +89,10 @@ $(document).ready(function(){initNavTree('class_audio_info.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="audioinput_8h_source.html">audioinput.h</a>&gt;</code></p>
+<p>Audio object info dialog class.  
+ <a href="class_audio_info.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_audio_info_8h_source.html">AudioInfo.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AudioInfo:</div>
 <div class="dyncontent">
@@ -100,67 +102,53 @@ Inheritance diagram for AudioInfo:</div>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:ac34dcfd4324a0d169c1007e0ef9c0dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#ac34dcfd4324a0d169c1007e0ef9c0dee">update</a> ()</td></tr>
-<tr class="separator:ac34dcfd4324a0d169c1007e0ef9c0dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a32faddefce07b74842824d502ebcc8e2"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a32faddefce07b74842824d502ebcc8e2">level</a> () const</td></tr>
-<tr class="separator:a32faddefce07b74842824d502ebcc8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">audioinput.cpp</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>System input audio devices class.</p>
-<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
-</div></td></tr>
-<tr class="memitem:a38af9b97c291fb0ca043b497f2e9a52f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a38af9b97c291fb0ca043b497f2e9a52f">AudioInfo</a> (const QAudioFormat &amp;format, QObject *parent)</td></tr>
-<tr class="separator:a38af9b97c291fb0ca043b497f2e9a52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24c69ecc331c48790cdf2886c721132"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#ad24c69ecc331c48790cdf2886c721132">AudioInfo</a> (QWidget *parent=0)</td></tr>
+<tr class="memdesc:ad24c69ecc331c48790cdf2886c721132"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_info.html" title="Audio object info dialog class. ">AudioInfo</a> constructor.  <a href="#ad24c69ecc331c48790cdf2886c721132">More...</a><br /></td></tr>
+<tr class="separator:ad24c69ecc331c48790cdf2886c721132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b316306b98617ceda7624bb04138fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#ae6b316306b98617ceda7624bb04138fd">~AudioInfo</a> ()</td></tr>
+<tr class="memdesc:ae6b316306b98617ceda7624bb04138fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_info.html" title="Audio object info dialog class. ">AudioInfo</a> destructor.  <a href="#ae6b316306b98617ceda7624bb04138fd">More...</a><br /></td></tr>
 <tr class="separator:ae6b316306b98617ceda7624bb04138fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c39e274bab04bdbd610e0bc03ad5db1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a3c39e274bab04bdbd610e0bc03ad5db1">start</a> ()</td></tr>
-<tr class="separator:a3c39e274bab04bdbd610e0bc03ad5db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24be66ee2d6869d06e343b1eae51e07e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a24be66ee2d6869d06e343b1eae51e07e">stop</a> ()</td></tr>
-<tr class="separator:a24be66ee2d6869d06e343b1eae51e07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a849c1a1d85830c81d33fc3157a0e730d"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a849c1a1d85830c81d33fc3157a0e730d">readData</a> (char *data, qint64 maxlen)</td></tr>
-<tr class="separator:a849c1a1d85830c81d33fc3157a0e730d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976574d79ff06293430263ef298f8458"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a976574d79ff06293430263ef298f8458">writeData</a> (const char *data, qint64 len)</td></tr>
-<tr class="separator:a976574d79ff06293430263ef298f8458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d05a12b4191202227e17afc5e57f349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a2d05a12b4191202227e17afc5e57f349">setFile</a> (<a class="el" href="class_w_a_v_file.html">WAVFile</a> *<a class="el" href="class_audio_info.html#aa80fed8d29570e2d7ecf804c92d465d8">file</a>)</td></tr>
+<tr class="separator:a2d05a12b4191202227e17afc5e57f349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a44bcc7762ceaad0c99d819d9a7b2bfad"><td class="memItemLeft" align="right" valign="top">const QAudioFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a44bcc7762ceaad0c99d819d9a7b2bfad">m_format</a></td></tr>
-<tr class="separator:a44bcc7762ceaad0c99d819d9a7b2bfad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4542b858497bcd28c45a57446c7b1b"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a2a4542b858497bcd28c45a57446c7b1b">m_maxAmplitude</a></td></tr>
-<tr class="separator:a2a4542b858497bcd28c45a57446c7b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b66f2914f91eb7d6f8c431f479ca0a"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a40b66f2914f91eb7d6f8c431f479ca0a">m_level</a></td></tr>
-<tr class="separator:a40b66f2914f91eb7d6f8c431f479ca0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a21dbc93b654da1ef6de938372fdfb"><td class="memItemLeft" align="right" valign="top">Ui::AudioInfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#a44a21dbc93b654da1ef6de938372fdfb">ui</a></td></tr>
+<tr class="separator:a44a21dbc93b654da1ef6de938372fdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80fed8d29570e2d7ecf804c92d465d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_w_a_v_file.html">WAVFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_info.html#aa80fed8d29570e2d7ecf804c92d465d8">file</a></td></tr>
+<tr class="separator:aa80fed8d29570e2d7ecf804c92d465d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a38af9b97c291fb0ca043b497f2e9a52f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38af9b97c291fb0ca043b497f2e9a52f">&#9670;&nbsp;</a></span>AudioInfo()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Audio object info dialog class. </p>
+<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad24c69ecc331c48790cdf2886c721132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24c69ecc331c48790cdf2886c721132">&#9670;&nbsp;</a></span>AudioInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AudioInfo::AudioInfo </td>
           <td>(</td>
-          <td class="paramtype">const QAudioFormat &amp;&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_audio_info.html" title="Audio object info dialog class. ">AudioInfo</a> constructor. </p>
 
 </div>
 </div>
@@ -179,143 +167,23 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_audio_info.html" title="Audio object info dialog class. ">AudioInfo</a> destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a32faddefce07b74842824d502ebcc8e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32faddefce07b74842824d502ebcc8e2">&#9670;&nbsp;</a></span>level()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">qreal AudioInfo::level </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a849c1a1d85830c81d33fc3157a0e730d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a849c1a1d85830c81d33fc3157a0e730d">&#9670;&nbsp;</a></span>readData()</h2>
+<a id="a2d05a12b4191202227e17afc5e57f349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d05a12b4191202227e17afc5e57f349">&#9670;&nbsp;</a></span>setFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">qint64 AudioInfo::readData </td>
+          <td class="memname">void AudioInfo::setFile </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_w_a_v_file.html">WAVFile</a> *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">qint64&#160;</td>
-          <td class="paramname"><em>maxlen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3c39e274bab04bdbd610e0bc03ad5db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c39e274bab04bdbd610e0bc03ad5db1">&#9670;&nbsp;</a></span>start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioInfo::start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a24be66ee2d6869d06e343b1eae51e07e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24be66ee2d6869d06e343b1eae51e07e">&#9670;&nbsp;</a></span>stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioInfo::stop </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac34dcfd4324a0d169c1007e0ef9c0dee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac34dcfd4324a0d169c1007e0ef9c0dee">&#9670;&nbsp;</a></span>update</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioInfo::update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a976574d79ff06293430263ef298f8458"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a976574d79ff06293430263ef298f8458">&#9670;&nbsp;</a></span>writeData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">qint64 AudioInfo::writeData </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">qint64&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -323,8 +191,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a44bcc7762ceaad0c99d819d9a7b2bfad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44bcc7762ceaad0c99d819d9a7b2bfad">&#9670;&nbsp;</a></span>m_format</h2>
+<a id="aa80fed8d29570e2d7ecf804c92d465d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80fed8d29570e2d7ecf804c92d465d8">&#9670;&nbsp;</a></span>file</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +201,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const QAudioFormat AudioInfo::m_format</td>
+          <td class="memname"><a class="el" href="class_w_a_v_file.html">WAVFile</a> AudioInfo::file</td>
         </tr>
       </table>
   </td>
@@ -345,8 +213,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a40b66f2914f91eb7d6f8c431f479ca0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40b66f2914f91eb7d6f8c431f479ca0a">&#9670;&nbsp;</a></span>m_level</h2>
+<a id="a44a21dbc93b654da1ef6de938372fdfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44a21dbc93b654da1ef6de938372fdfb">&#9670;&nbsp;</a></span>ui</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,29 +223,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">qreal AudioInfo::m_level</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2a4542b858497bcd28c45a57446c7b1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a4542b858497bcd28c45a57446c7b1b">&#9670;&nbsp;</a></span>m_maxAmplitude</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">quint32 AudioInfo::m_maxAmplitude</td>
+          <td class="memname">Ui::AudioInfo* AudioInfo::ui</td>
         </tr>
       </table>
   </td>
@@ -390,8 +236,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/interface/<a class="el" href="audioinput_8h_source.html">audioinput.h</a></li>
-<li>src/interface/<a class="el" href="audioinput_8cpp.html">audioinput.cpp</a></li>
+<li>src/interface/<a class="el" href="_audio_info_8h_source.html">AudioInfo.h</a></li>
+<li>src/interface/<a class="el" href="_audio_info_8cpp.html">AudioInfo.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

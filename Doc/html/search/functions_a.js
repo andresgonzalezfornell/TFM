@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['readdata',['readData',['../class_audio_file.html#abe96ce701468e1f961166bb747bbb404',1,'AudioFile::readData()'],['../class_device_channel.html#a213266f38fb587526ec024d2bbe543ad',1,'DeviceChannel::readData()'],['../class_object_input.html#a5996b671db752aa7a1b6a93bcc208bb7',1,'ObjectInput::readData()']]],
-  ['receivedevice',['receiveDevice',['../class_objects.html#a2917914f542011fe2c7bd484ca36e379',1,'Objects']]]
+  ['openinfo',['openInfo',['../class_configuration_channel.html#a22c8b7b1e0fc1d3d9373e987f9e1a991',1,'ConfigurationChannel::openInfo()'],['../class_channels_configuration.html#af8dbdfc8828d401acef31fe2f6e83a6c',1,'ChannelsConfiguration::openInfo()'],['../class_channel.html#afcebecd0b71056176aa1a260eb68e472',1,'Channel::openInfo()'],['../class_channels_configuration.html#af8dbdfc8828d401acef31fe2f6e83a6c',1,'ChannelsConfiguration::openInfo()'],['../class_decoder.html#afefc1a58a3cd10a1d2ed59ae11035b52',1,'Decoder::openInfo()']]]
 ];

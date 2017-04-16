@@ -8,36 +8,49 @@ var dir_650ee533936399e683a30afb9473a469 =
     [ "AudioFile.cpp", "_audio_file_8cpp.html", null ],
     [ "AudioFile.h", "_audio_file_8h.html", [
       [ "AudioFile", "class_audio_file.html", "class_audio_file" ],
-      [ "format", "struct_audio_file_1_1format.html", "struct_audio_file_1_1format" ]
+      [ "WAVFile", "class_w_a_v_file.html", "class_w_a_v_file" ],
+      [ "Endianess", "struct_w_a_v_file_1_1_endianess.html", "struct_w_a_v_file_1_1_endianess" ],
+      [ "Header", "struct_w_a_v_file_1_1_header.html", "struct_w_a_v_file_1_1_header" ]
     ] ],
-    [ "AudioObject.cpp", "_audio_object_8cpp.html", null ],
+    [ "AudioInfo.cpp", "_audio_info_8cpp.html", null ],
+    [ "AudioInfo.h", "_audio_info_8h.html", [
+      [ "AudioInfo", "class_audio_info.html", "class_audio_info" ]
+    ] ],
     [ "AudioObject.h", "_audio_object_8h.html", [
-      [ "AudioObject", "class_audio_object.html", "class_audio_object" ],
-      [ "TimeSlot", "struct_audio_object_1_1_time_slot.html", "struct_audio_object_1_1_time_slot" ]
+      [ "AudioStream", "class_audio_stream.html", "class_audio_stream" ],
+      [ "TimeSlot", "struct_audio_stream_1_1_time_slot.html", "struct_audio_stream_1_1_time_slot" ]
     ] ],
     [ "AudioSignal.cpp", "_audio_signal_8cpp.html", "_audio_signal_8cpp" ],
     [ "AudioSignal.h", "_audio_signal_8h.html", [
       [ "AudioSignal", "class_audio_signal.html", "class_audio_signal" ]
     ] ],
-    [ "Device.cpp", "_device_8cpp.html", null ],
-    [ "device.h", "device_8h.html", [
-      [ "DeviceChannel", "class_device_channel.html", "class_device_channel" ],
-      [ "Device", "class_device.html", "class_device" ]
+    [ "ChannelsConfiguration.cpp", "_channels_configuration_8cpp.html", null ],
+    [ "ChannelsConfiguration.h", "_channels_configuration_8h.html", [
+      [ "ConfigurationChannel", "class_configuration_channel.html", "class_configuration_channel" ],
+      [ "ChannelsConfiguration", "class_channels_configuration.html", "class_channels_configuration" ]
     ] ],
-    [ "DeviceChannel.cpp", "_device_channel_8cpp.html", null ],
+    [ "ChannelsConfiguration_copy.h", "_channels_configuration__copy_8h.html", [
+      [ "Channel", "class_channel.html", "class_channel" ],
+      [ "ChannelsConfiguration", "class_channels_configuration.html", "class_channels_configuration" ]
+    ] ],
+    [ "ChannelsList.cpp", "_channels_list_8cpp.html", null ],
+    [ "ChannelsList.h", "_channels_list_8h.html", [
+      [ "Channel", "class_channel.html", "class_channel" ],
+      [ "ChannelsList", "class_channels_list.html", "class_channels_list" ]
+    ] ],
+    [ "Decoder.cpp", "_decoder_8cpp.html", null ],
+    [ "Decoder.h", "_decoder_8h.html", [
+      [ "UpmixType", "struct_upmix_type.html", "struct_upmix_type" ],
+      [ "DecodingType", "struct_decoding_type.html", "struct_decoding_type" ],
+      [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
+      [ "HRTFModel", "struct_h_r_t_f_model.html", "struct_h_r_t_f_model" ],
+      [ "Decoder", "class_decoder.html", "class_decoder" ]
+    ] ],
+    [ "Encoder.cpp", "_encoder_8cpp.html", null ],
+    [ "Encoder.h", "_encoder_8h.html", [
+      [ "Encoder", "class_encoder.html", "class_encoder" ]
+    ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "MainWindow.cpp", "_main_window_8cpp.html", null ],
-    [ "mainwindow.h", "mainwindow_8h.html", [
-      [ "MainWindow", "class_main_window.html", "class_main_window" ]
-    ] ],
-    [ "ObjectInput.cpp", "_object_input_8cpp.html", null ],
-    [ "Objects.cpp", "_objects_8cpp.html", null ],
-    [ "objects.h", "objects_8h.html", [
-      [ "ObjectInput", "class_object_input.html", "class_object_input" ],
-      [ "ObjectsConfiguration", "class_objects_configuration.html", "class_objects_configuration" ],
-      [ "Objects", "class_objects.html", "class_objects" ]
-    ] ],
-    [ "ObjectsConfiguration.cpp", "_objects_configuration_8cpp.html", null ],
     [ "Volumeter.cpp", "_volumeter_8cpp.html", null ],
     [ "Volumeter.h", "_volumeter_8h.html", [
       [ "Volumeter", "class_volumeter.html", "class_volumeter" ]

@@ -50,7 +50,6 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../src/interface/main.cpp \
 		../src/interface/Decoder.cpp \
-		../src/interface/Coder.cpp \
 		../src/interface/ChannelsList.cpp \
 		../src/interface/ChannelsConfiguration.cpp \
 		../src/interface/AudioSignal.cpp \
@@ -61,17 +60,17 @@ SOURCES       = ../src/interface/main.cpp \
 		../src/tools/AudioStream.cpp \
 		../src/sac/sac_decoder.c \
 		../src/tools/Logger.cpp \
-		../src/sac/sac_encoder.c qrc_media.cpp \
+		../src/sac/sac_encoder.c \
+		../src/interface/Encoder.cpp qrc_media.cpp \
 		moc_Decoder.cpp \
-		moc_Coder.cpp \
 		moc_ChannelsList.cpp \
 		moc_ChannelsConfiguration.cpp \
 		moc_AudioInfo.cpp \
 		moc_AudioChart.cpp \
-		moc_Volumeter.cpp
+		moc_Volumeter.cpp \
+		moc_Encoder.cpp
 OBJECTS       = main.o \
 		Decoder.o \
-		Coder.o \
 		ChannelsList.o \
 		ChannelsConfiguration.o \
 		AudioSignal.o \
@@ -83,14 +82,15 @@ OBJECTS       = main.o \
 		sac_decoder.o \
 		Logger.o \
 		sac_encoder.o \
+		Encoder.o \
 		qrc_media.o \
 		moc_Decoder.o \
-		moc_Coder.o \
 		moc_ChannelsList.o \
 		moc_ChannelsConfiguration.o \
 		moc_AudioInfo.o \
 		moc_AudioChart.o \
-		moc_Volumeter.o
+		moc_Volumeter.o \
+		moc_Encoder.o
 DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/qdevice.pri \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/device_config.prf \
@@ -264,7 +264,6 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/yacc.prf \
 		/Applications/Qt/5.8/clang_64/mkspecs/features/lex.prf \
 		../../TFM.pro ../src/interface/Decoder.h \
-		../src/interface/Coder.h \
 		../src/interface/ChannelsList.h \
 		../src/interface/ChannelsConfiguration.h \
 		../src/interface/AudioSignal.h \
@@ -276,9 +275,9 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../src/tools/Logger.h \
 		../src/sac/sac_decoder.h \
 		../lib/QtLibraries/src/qtlibraries.h \
-		../src/sac/sac_encoder.h ../src/interface/main.cpp \
+		../src/sac/sac_encoder.h \
+		../src/interface/Encoder.h ../src/interface/main.cpp \
 		../src/interface/Decoder.cpp \
-		../src/interface/Coder.cpp \
 		../src/interface/ChannelsList.cpp \
 		../src/interface/ChannelsConfiguration.cpp \
 		../src/interface/AudioSignal.cpp \
@@ -289,7 +288,8 @@ DIST          = /Applications/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../src/tools/AudioStream.cpp \
 		../src/sac/sac_decoder.c \
 		../src/tools/Logger.cpp \
-		../src/sac/sac_encoder.c
+		../src/sac/sac_encoder.c \
+		../src/interface/Encoder.cpp
 QMAKE_TARGET  = TFM
 DESTDIR       = 
 TARGET        = TFM.app/Contents/MacOS/TFM
@@ -298,7 +298,7 @@ TARGET        = TFM.app/Contents/MacOS/TFM
 first: all
 ####### Build rules
 
-$(TARGET): /usr/local/lib/libfftw3.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/lib/libtsp.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/lib/libsac_enc.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/lib/libsac_dec.a ui_AudioInfo.h ui_Coder.h ui_Decoder.h $(OBJECTS)  
+$(TARGET): /usr/local/lib/libfftw3.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/lib/libtsp.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/lib/libsac_enc.a /Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/lib/libsac_dec.a ui_AudioInfo.h ui_Decoder.h ui_Encoder.h $(OBJECTS)  
 	@test -d TFM.app/Contents/MacOS/ || mkdir -p TFM.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -716,9 +716,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/interface/media.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Applications/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/Decoder.h ../src/interface/Coder.h ../src/interface/ChannelsList.h ../src/interface/ChannelsConfiguration.h ../src/interface/AudioSignal.h ../src/interface/AudioFile.h ../src/interface/AudioInfo.h ../src/interface/AudioChart.h ../src/interface/Volumeter.h ../src/tools/AudioStream.h ../src/tools/Logger.h ../src/sac/sac_decoder.h ../lib/QtLibraries/src/qtlibraries.h ../src/sac/sac_encoder.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/main.cpp ../src/interface/Decoder.cpp ../src/interface/Coder.cpp ../src/interface/ChannelsList.cpp ../src/interface/ChannelsConfiguration.cpp ../src/interface/AudioSignal.cpp ../src/interface/AudioFile.cpp ../src/interface/AudioInfo.cpp ../src/interface/AudioChart.cpp ../src/interface/Volumeter.cpp ../src/tools/AudioStream.cpp ../src/sac/sac_decoder.c ../src/tools/Logger.cpp ../src/sac/sac_encoder.c $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/interface/AudioInfo.ui ../src/interface/Coder.ui ../src/interface/Decoder.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/Decoder.h ../src/interface/ChannelsList.h ../src/interface/ChannelsConfiguration.h ../src/interface/AudioSignal.h ../src/interface/AudioFile.h ../src/interface/AudioInfo.h ../src/interface/AudioChart.h ../src/interface/Volumeter.h ../src/tools/AudioStream.h ../src/tools/Logger.h ../src/sac/sac_decoder.h ../lib/QtLibraries/src/qtlibraries.h ../src/sac/sac_encoder.h ../src/interface/Encoder.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/main.cpp ../src/interface/Decoder.cpp ../src/interface/ChannelsList.cpp ../src/interface/ChannelsConfiguration.cpp ../src/interface/AudioSignal.cpp ../src/interface/AudioFile.cpp ../src/interface/AudioInfo.cpp ../src/interface/AudioChart.cpp ../src/interface/Volumeter.cpp ../src/tools/AudioStream.cpp ../src/sac/sac_decoder.c ../src/tools/Logger.cpp ../src/sac/sac_encoder.c ../src/interface/Encoder.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/interface/AudioInfo.ui ../src/interface/Decoder.ui ../src/interface/Encoder.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -760,14 +760,14 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Applications/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -O2 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /Applications/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_Decoder.cpp moc_Coder.cpp moc_ChannelsList.cpp moc_ChannelsConfiguration.cpp moc_AudioInfo.cpp moc_AudioChart.cpp moc_Volumeter.cpp
+compiler_moc_header_make_all: moc_Decoder.cpp moc_ChannelsList.cpp moc_ChannelsConfiguration.cpp moc_AudioInfo.cpp moc_AudioChart.cpp moc_Volumeter.cpp moc_Encoder.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_Decoder.cpp moc_Coder.cpp moc_ChannelsList.cpp moc_ChannelsConfiguration.cpp moc_AudioInfo.cpp moc_AudioChart.cpp moc_Volumeter.cpp
+	-$(DEL_FILE) moc_Decoder.cpp moc_ChannelsList.cpp moc_ChannelsConfiguration.cpp moc_AudioInfo.cpp moc_AudioChart.cpp moc_Volumeter.cpp moc_Encoder.cpp
 moc_Decoder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../src/interface/Coder.h \
+		../src/interface/Encoder.h \
 		ui_Coder.h \
 		../src/interface/AudioChart.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
@@ -879,117 +879,6 @@ moc_Decoder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/Q
 		moc_predefs.h \
 		/Applications/Qt/5.8/clang_64/bin/moc
 	/Applications/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/andresgonzalezfornell/Documents/Workspace/TFM -I/usr/local/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/include -I/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQuick.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXmlPatterns.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScript.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScriptTools.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtDBus.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Applications/Qt/5.8/clang_64/lib ../src/interface/Decoder.h -o moc_Decoder.cpp
-
-moc_Coder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_Coder.h \
-		../src/interface/AudioChart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/QtCharts \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPointF \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpoint.h \
-		../src/interface/AudioSignal.h \
-		/usr/local/include/fftw3.h \
-		../src/tools/Logger.h \
-		../src/interface/ChannelsConfiguration.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLayout \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLineEdit \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QComboBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCheckBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QIcon \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qicon.h \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QVector \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qvector.h \
-		../src/interface/AudioFile.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QByteArray \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qbytearray.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../src/interface/AudioInfo.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
-		../src/tools/AudioStream.h \
-		../src/sac/sac_encoder.h \
-		../src/interface/Coder.h \
-		moc_predefs.h \
-		/Applications/Qt/5.8/clang_64/bin/moc
-	/Applications/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/andresgonzalezfornell/Documents/Workspace/TFM -I/usr/local/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/include -I/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQuick.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXmlPatterns.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScript.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScriptTools.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtDBus.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Applications/Qt/5.8/clang_64/lib ../src/interface/Coder.h -o moc_Coder.cpp
 
 moc_ChannelsList.cpp: /Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
 		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qobject.h \
@@ -1277,22 +1166,133 @@ moc_Volumeter.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers
 		/Applications/Qt/5.8/clang_64/bin/moc
 	/Applications/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/andresgonzalezfornell/Documents/Workspace/TFM -I/usr/local/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/include -I/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQuick.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXmlPatterns.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScript.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScriptTools.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtDBus.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Applications/Qt/5.8/clang_64/lib ../src/interface/Volumeter.h -o moc_Volumeter.cpp
 
+moc_Encoder.cpp: /Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_Coder.h \
+		../src/interface/AudioChart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/QtCharts \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPointF \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpoint.h \
+		../src/interface/AudioSignal.h \
+		/usr/local/include/fftw3.h \
+		../src/tools/Logger.h \
+		../src/interface/ChannelsConfiguration.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLayout \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLineEdit \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QComboBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCheckBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QIcon \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qicon.h \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../src/interface/AudioFile.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QByteArray \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qbytearray.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../src/interface/AudioInfo.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
+		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h \
+		../src/interface/Encoder.h \
+		moc_predefs.h \
+		/Applications/Qt/5.8/clang_64/bin/moc
+	/Applications/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Applications/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/andresgonzalezfornell/Documents/Workspace/TFM -I/usr/local/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/AFsp/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_enc/include -I/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/include -I/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQuick.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtQml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXmlPatterns.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScript.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtScriptTools.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtDBus.framework/Headers -I/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Applications/Qt/5.8/clang_64/lib ../src/interface/Encoder.h -o moc_Encoder.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_AudioInfo.h ui_Coder.h ui_Decoder.h
+compiler_uic_make_all: ui_AudioInfo.h ui_Decoder.h ui_Encoder.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_AudioInfo.h ui_Coder.h ui_Decoder.h
+	-$(DEL_FILE) ui_AudioInfo.h ui_Decoder.h ui_Encoder.h
 ui_AudioInfo.h: ../src/interface/AudioInfo.ui \
 		/Applications/Qt/5.8/clang_64/bin/uic
 	/Applications/Qt/5.8/clang_64/bin/uic ../src/interface/AudioInfo.ui -o ui_AudioInfo.h
 
-ui_Coder.h: ../src/interface/Coder.ui \
-		/Applications/Qt/5.8/clang_64/bin/uic
-	/Applications/Qt/5.8/clang_64/bin/uic ../src/interface/Coder.ui -o ui_Coder.h
-
 ui_Decoder.h: ../src/interface/Decoder.ui \
 		/Applications/Qt/5.8/clang_64/bin/uic
 	/Applications/Qt/5.8/clang_64/bin/uic ../src/interface/Decoder.ui -o ui_Decoder.h
+
+ui_Encoder.h: ../src/interface/Encoder.ui \
+		/Applications/Qt/5.8/clang_64/bin/uic
+	/Applications/Qt/5.8/clang_64/bin/uic ../src/interface/Encoder.ui -o ui_Encoder.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -1310,7 +1310,7 @@ main.o: ../src/interface/main.cpp /Applications/Qt/5.8/clang_64/lib/QtWidgets.fr
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../src/interface/Coder.h \
+		../src/interface/Encoder.h \
 		ui_Coder.h \
 		../src/interface/AudioChart.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
@@ -1426,7 +1426,7 @@ Decoder.o: ../src/interface/Decoder.cpp ../src/interface/Decoder.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../src/interface/Coder.h \
+		../src/interface/Encoder.h \
 		ui_Coder.h \
 		../src/interface/AudioChart.h \
 		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
@@ -1536,115 +1536,6 @@ Decoder.o: ../src/interface/Decoder.cpp ../src/interface/Decoder.h \
 		../src/sac/sac_decoder.h \
 		ui_Decoder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Decoder.o ../src/interface/Decoder.cpp
-
-Coder.o: ../src/interface/Coder.cpp ../src/interface/Coder.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_Coder.h \
-		../src/interface/AudioChart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/QtCharts \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPointF \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpoint.h \
-		../src/interface/AudioSignal.h \
-		/usr/local/include/fftw3.h \
-		../src/tools/Logger.h \
-		../src/interface/ChannelsConfiguration.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLayout \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLineEdit \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QComboBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCheckBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QIcon \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qicon.h \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap \
-		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QVector \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qvector.h \
-		../src/interface/AudioFile.h \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QByteArray \
-		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qbytearray.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../src/interface/AudioInfo.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
-		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
-		../src/tools/AudioStream.h \
-		../src/sac/sac_encoder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Coder.o ../src/interface/Coder.cpp
 
 ChannelsList.o: ../src/interface/ChannelsList.cpp ../src/interface/ChannelsList.h \
 		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
@@ -1974,14 +1865,120 @@ sac_encoder.o: ../src/sac/sac_encoder.c ../src/sac/sac_encoder.h \
 		../lib/SAC/sac_enc/include/sac_bd_embedder.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o sac_encoder.o ../src/sac/sac_encoder.c
 
+Encoder.o: ../src/interface/Encoder.cpp ../src/interface/Encoder.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_Coder.h \
+		../src/interface/AudioChart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QObject \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/QtCharts \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPointF \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpoint.h \
+		../src/interface/AudioSignal.h \
+		/usr/local/include/fftw3.h \
+		../src/tools/Logger.h \
+		../src/interface/ChannelsConfiguration.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLayout \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLineEdit \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QComboBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCheckBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QIcon \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qicon.h \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		/Applications/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../src/interface/AudioFile.h \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QByteArray \
+		/Applications/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qbytearray.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../src/interface/AudioInfo.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QTableView \
+		/Applications/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
+		../src/tools/AudioStream.h \
+		../src/sac/sac_encoder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Encoder.o ../src/interface/Encoder.cpp
+
 qrc_media.o: qrc_media.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_media.o qrc_media.cpp
 
 moc_Decoder.o: moc_Decoder.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Decoder.o moc_Decoder.cpp
-
-moc_Coder.o: moc_Coder.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Coder.o moc_Coder.cpp
 
 moc_ChannelsList.o: moc_ChannelsList.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ChannelsList.o moc_ChannelsList.cpp
@@ -1997,6 +1994,9 @@ moc_AudioChart.o: moc_AudioChart.cpp
 
 moc_Volumeter.o: moc_Volumeter.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Volumeter.o moc_Volumeter.cpp
+
+moc_Encoder.o: moc_Encoder.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Encoder.o moc_Encoder.cpp
 
 ####### Install
 

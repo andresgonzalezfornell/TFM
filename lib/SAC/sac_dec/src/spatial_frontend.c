@@ -96,7 +96,7 @@ char* hrtfSourceFileName=0;
 
 int decType   = 0; 
 
-int upmixType = 0;
+int upmixtype = 0;
 int hrtfModel = 0;
 int binauralQuality = 0;
 Twiddle *twiddleExtern = NULL;
@@ -252,7 +252,7 @@ main(int argc, char *argv[])
                           &nTimeSlots,
                           qmfBands,
                           decType,
-                          upmixType,
+                          upmixtype,
                           hrtfModel,
 #ifdef HRTF_DYNAMIC_UPDATE
                           hrtfSource,
@@ -293,7 +293,7 @@ main(int argc, char *argv[])
 
     if ((!done) && (setjmp(g_JmpBuf)==0)) {
 
-      if (upmixType != 1) {
+      if (upmixtype != 1) {
         SpatialDecParseFrame(ourDec);
       }
 
@@ -309,7 +309,7 @@ main(int argc, char *argv[])
         for (ts=0; ts< nTimeSlots; ts++) {
           for (i=0; i< qmfBands; i++) {
 #ifdef DMX_GAIN_FIX
-            if (upmixType == 2 || upmixType == 3)
+            if (upmixtype == 2 || upmixtype == 3)
               inSamplesDeinterleaved[i] = inSamples[nChannels* (ts*qmfBands+i)+channel] * 32768.0f;
             else
 #endif
@@ -485,11 +485,11 @@ parse_cmdline(int argc, char *argv[])
   if(argc < 1){
     usage(cmd);
   }
-  upmixType = atoi(argv[0]);
-  if ((upmixType!=0)&&(upmixType!=1)&&(upmixType!=2)&&(upmixType!=3)){
+  upmixtype = atoi(argv[0]);
+  if ((upmixtype!=0)&&(upmixtype!=1)&&(upmixtype!=2)&&(upmixtype!=3)){
     usage(cmd);
   }
-  if (upmixType == 1){
+  if (upmixtype == 1){
     bitstreamSource = BS_NONE;
   }
   if (bitstreamSource == BS_FILE){

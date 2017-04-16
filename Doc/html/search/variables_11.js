@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['view',['view',['../class_audio_chart.html#a7e959c71c9933dd17918bacd8befcf49',1,'AudioChart']]],
-  ['volumeter',['volumeter',['../class_device.html#a613197bfcc2bfa673053d33441fe2e60',1,'Device::volumeter()'],['../class_object_input.html#a69ccfe1517e1517bf26bc561f5601626',1,'ObjectInput::volumeter()'],['../class_objects_configuration.html#a23f1ddb53c54c430155b7f3b6e76a271',1,'ObjectsConfiguration::volumeter()']]],
-  ['volumeterwidget',['volumeterwidget',['../class_object_input.html#acc676bb9c8449735a29d88f1b018c417',1,'ObjectInput']]]
+  ['ui',['ui',['../class_audio_info.html#a44a21dbc93b654da1ef6de938372fdfb',1,'AudioInfo::ui()'],['../class_decoder.html#a8e962746ed0bc9f65777cb37b7df6712',1,'Decoder::ui()'],['../class_encoder.html#a7d3a28662bdddfc72e1180fd72f7506f',1,'Encoder::ui()']]],
+  ['upmixtype',['upmixtype',['../class_decoder.html#a0f4963d539e017969bed5c3cec368fc1',1,'Decoder']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volumeter',['Volumeter',['../class_volumeter.html',1,'']]]
+  ['upmixtype',['UpmixType',['../struct_upmix_type.html',1,'']]]
 ];

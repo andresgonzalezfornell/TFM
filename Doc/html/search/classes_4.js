@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logtype',['LogType',['../struct_log_type.html',1,'']]]
+  ['encoder',['Encoder',['../class_encoder.html',1,'']]],
+  ['endianess',['Endianess',['../struct_w_a_v_file_1_1_endianess.html',1,'WAVFile']]]
 ];

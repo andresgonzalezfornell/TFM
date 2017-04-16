@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['name',['name',['../class_object_input.html#ac6266e907b131712a115b26032d81cef',1,'ObjectInput']]],
-  ['newdata',['newData',['../class_device_channel.html#a426f67d53fab40051b905cd17936b287',1,'DeviceChannel::newData()'],['../class_device.html#adaaea433f5bd3dd4f61094a653f15f54',1,'Device::newData()']]],
-  ['number',['number',['../class_objects_configuration.html#af8d0828cb4115b839f6aff7fa8c7cc57',1,'ObjectsConfiguration']]],
-  ['numchannels',['numchannels',['../struct_audio_file_1_1format.html#a41bbdc930eb8f5335f1321cb887a9c01',1,'AudioFile::format']]]
+  ['label',['label',['../class_configuration_channel.html#a728c64398a2b734e6f19beddfbbaf817',1,'ConfigurationChannel::label()'],['../class_channel.html#ab9cf5783baae30960bcdec120184518e',1,'Channel::label()']]],
+  ['labelx',['labelX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a3d5390c398d2dffe459abc0e5904ce5c',1,'AudioChart::ChartOptions']]],
+  ['labelxy',['labelXY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ad664eeb9abfbc6fe36fd10267d9055bd',1,'AudioChart::ChartOptions']]],
+  ['labely',['labelY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a678a633cc4abb19484fb6c798df343b4',1,'AudioChart::ChartOptions']]],
+  ['lastvalue',['lastvalue',['../class_channel.html#a1a1096f8cf65a27a27722a063afd3886',1,'Channel']]],
+  ['layout',['layout',['../class_channels_configuration.html#abb6ce5a8beb22f5c901ae52e4de9a2c6',1,'ChannelsConfiguration::layout()'],['../class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62',1,'ChannelsList::layout()']]],
+  ['legend',['legend',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ac406fef06cda8e5148dc87023bc93af9',1,'AudioChart::ChartOptions']]],
+  ['level',['level',['../class_configuration_channel.html#a565c38db0c6f842935609e0f0eb09ff9',1,'ConfigurationChannel::level()'],['../class_channel.html#a1af0bb5c5c9a2b7f1bf07d9112fd1b31',1,'Channel::level()'],['../class_volumeter.html#adf7109e2c42ba90322e887c54c4edd4d',1,'Volumeter::level()']]],
+  ['levelslider',['levelslider',['../class_configuration_channel.html#a6811fb511d544c43320c2aa9608285b2',1,'ConfigurationChannel::levelslider()'],['../class_channel.html#a62482529ce4f5644600b7f1f5e2713f8',1,'Channel::levelslider()']]],
+  ['list',['list',['../class_channels_configuration.html#a06a3de81ee00194a0e1649c851a90e5b',1,'ChannelsConfiguration::list()'],['../class_channels_list.html#af244814d3119fa1a7526b1c2ee3da1a7',1,'ChannelsList::list()']]],
+  ['littleendian',['littleendian',['../struct_w_a_v_file_1_1_endianess.html#a6cd5c3b9ebc645b47a80094d1774c612a97dd1e368a41a5a195d9cc9e44d6b993',1,'WAVFile::Endianess']]],
+  ['load',['load',['../class_decoder.html#ad32433f2a55000f14bb1cbb77d7fee55',1,'Decoder::load()'],['../class_encoder.html#a876b53dd1557eb0b6a5a391576ca4ef5',1,'Encoder::load()']]],
+  ['loadfile',['loadFile',['../class_channels_configuration.html#abb883ec9d2ea3da104ec23f4cfc907cc',1,'ChannelsConfiguration::loadFile()'],['../class_channels_configuration.html#abb883ec9d2ea3da104ec23f4cfc907cc',1,'ChannelsConfiguration::loadFile()'],['../class_configuration_channel.html#a8d9f8f411f15459f95f6476e1915a6f4',1,'ConfigurationChannel::loadfile()'],['../class_channel.html#ae78944aad2745a1a3000ddb2b922bea0',1,'Channel::loadfile()']]],
+  ['logger_2ecpp',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
+  ['logger_2eh',['Logger.h',['../_logger_8h.html',1,'']]],
+  ['logtype',['LogType',['../struct_log_type.html',1,'LogType'],['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType::logtype()']]],
+  ['logx',['logX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ad87d045c5f1eeefed9cf643b9c45c833',1,'AudioChart::ChartOptions']]],
+  ['logxy',['logXY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a79142857b35b457a0f81ab500305d54c',1,'AudioChart::ChartOptions']]],
+  ['logy',['logY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ab2b18374bbf667f63a425a711ca1a90c',1,'AudioChart::ChartOptions']]],
+  ['low',['low',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822a1c83062a65b39a734cfb6393fa679425',1,'DecodingType']]]
 ];

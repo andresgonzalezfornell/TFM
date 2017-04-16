@@ -1,7 +1,7 @@
 var class_audio_signal =
 [
-    [ "AudioSignal", "class_audio_signal.html#aba89a8bb83b6a7f06b7119e6b38c3613", null ],
-    [ "AudioSignal", "class_audio_signal.html#acdbf981b45c57a032f5f71f950ece248", null ],
+    [ "AudioSignal", "class_audio_signal.html#a72df7e0c092777d7b829ee7229d5d6f8", null ],
+    [ "AudioSignal", "class_audio_signal.html#a755ad45352e2b260a2ee7fde2440a486", null ],
     [ "~AudioSignal", "class_audio_signal.html#afb379d0c192ec109f8469a118c81b5f5", null ],
     [ "addSample", "class_audio_signal.html#a94c974f752e3045190944860bd8b0ad8", null ],
     [ "clear", "class_audio_signal.html#a69279f3fee0a4fe11d3e9a8361615a96", null ],
@@ -14,7 +14,7 @@ var class_audio_signal =
     [ "getTimes", "class_audio_signal.html#afff46a70335800ba93ae513bdea7e4c9", null ],
     [ "setSample", "class_audio_signal.html#aeef099025639235c7f062294470a691f", null ],
     [ "setSignal", "class_audio_signal.html#a90eda59db04d3b18bd1949b8fa9e9c81", null ],
-    [ "fs", "class_audio_signal.html#ab3ee0f4ec0f5a5c9e92084ee0d831710", null ],
+    [ "fs", "class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9", null ],
     [ "signal", "class_audio_signal.html#acd6f3fc199a736b66a2efba59e8683b8", null ],
     [ "size", "class_audio_signal.html#a44e595328705720f380613f1675dbdd1", null ]
 ];

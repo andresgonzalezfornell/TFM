@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['readdata',['readData',['../class_audio_file.html#abe96ce701468e1f961166bb747bbb404',1,'AudioFile::readData()'],['../class_device_channel.html#a213266f38fb587526ec024d2bbe543ad',1,'DeviceChannel::readData()'],['../class_object_input.html#a5996b671db752aa7a1b6a93bcc208bb7',1,'ObjectInput::readData()']]],
-  ['real',['real',['../_audio_signal_8cpp.html#a5f5a64ef503db0fc824df8320929b126',1,'AudioSignal.cpp']]],
-  ['receivedevice',['receiveDevice',['../class_objects.html#a2917914f542011fe2c7bd484ca36e379',1,'Objects']]],
-  ['red',['red',['../_logger_8cpp.html#acb5d1f5a5f86e947972f13be5e9bc5c8',1,'Logger.cpp']]],
-  ['refreshperiod',['refreshperiod',['../class_volumeter.html#a1f5e517e5a6db925b83cb3e9f36c54e6',1,'Volumeter']]],
-  ['reset',['reset',['../_logger_8cpp.html#a6ea20d23dc6f0e5681125ae9108d61e9',1,'Logger.cpp']]]
+  ['openinfo',['openInfo',['../class_configuration_channel.html#a22c8b7b1e0fc1d3d9373e987f9e1a991',1,'ConfigurationChannel::openInfo()'],['../class_channels_configuration.html#af8dbdfc8828d401acef31fe2f6e83a6c',1,'ChannelsConfiguration::openInfo()'],['../class_channel.html#afcebecd0b71056176aa1a260eb68e472',1,'Channel::openInfo()'],['../class_channels_configuration.html#af8dbdfc8828d401acef31fe2f6e83a6c',1,'ChannelsConfiguration::openInfo()'],['../class_decoder.html#afefc1a58a3cd10a1d2ed59ae11035b52',1,'Decoder::openInfo()']]],
+  ['options',['Options',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3',1,'AudioChart::ChartOptions']]],
+  ['output',['output',['../class_encoder.html#af965ae39f3e590c9c2408a7726a69b7d',1,'Encoder']]]
 ];

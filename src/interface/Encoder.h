@@ -10,7 +10,7 @@
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
-#include "ui_Coder.h"
+#include "ui_Encoder.h"
 #include "AudioChart.h"
 #include "ChannelsConfiguration.h"
 #include "../tools/Logger.h"
@@ -19,29 +19,30 @@ extern "C" {
 }
 
 namespace Ui {
-class Coder;
+class Encoder;
 }
 
 /**
- * @class	Coder
+ * @class	Encoder
  * @author	Andrés González Fornell
- * @brief	Coder window interface.
+ * @brief	Encoder window interface.
  */
-class Coder : public QDialog
+class Encoder : public QDialog
 {
     Q_OBJECT
 public:
+    int fs;                             /**< signal sampling frequency [Hz] */
     WAVFile *input;                     /**< input file object */
     AudioFile *output;                  /**< output file object */
-    Coder(QWidget *parent = 0);
-    ~Coder();
-    void setInput(std::string filepath);
-    void setOutput(std::string filepath);
+    QFile *bitstream;                   /**< output bit stream file object */
+    Encoder(QWidget *parent = 0);
+    ~Encoder();
+    void setInput(std::string filename);
+    void setOutput(std::string filename);
     void setTree(int tree);
 private:
-    Ui::Coder *ui;                      /**< user interface object */
+    Ui::Encoder *ui;                    /**< user interface object */
     ChannelsConfiguration *channels;    /**< channels panel object */
-    int fs;                             /**< signal sampling frequency */
     int tree;                           /**< SAC encoder parameter */
 private slots:
     // Configuration

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['format',['format',['../struct_audio_file_1_1format.html',1,'AudioFile']]]
+  ['decoder',['Decoder',['../class_decoder.html',1,'']]],
+  ['decodingtype',['DecodingType',['../struct_decoding_type.html',1,'']]]
 ];
