@@ -30,12 +30,11 @@ void myexit(char *s) {
  * @param   decodingtype        decoding type           0: low          1: high
  * @param   binauralquality     binaural upmix quality  0: parametric   1: filtering
  * @param   hrtfmodel           HRTF model              0: kemar        1: vast         2: mps_vt
- * @param   debuggermode        debugger mode           0: off          1: on
  * @return  error message (NULL if the decoding has succeded)
  */
 char *sac_decode(const char *input_filename, const char *output_filename,
-		const char *bitstream_filename, double fs, int upmixtype,
-		int decodingtype, int binauralquality, int hrtfmodel, int debuggermode) {
+        const char *bitstream_filename, double fs, int upmixtype,
+        int decodingtype, int binauralquality, int hrtfmodel) {
 	// Arguments
 	int buried = strcmp(bitstream_filename, "buried") == 0;
 	BITSTREAM_SOURCE bitstream_type;
@@ -75,7 +74,7 @@ char *sac_decode(const char *input_filename, const char *output_filename,
 	if (bitstream_type == BS_FILE) {
 		bitstream_reader = FileReaderOpen(bitstream_filename);
 		bitstream = FileReaderGetByteReader(bitstream_reader);
-	}
+    }
 	// QMF bands
 #ifdef PARTIALLY_COMPLEX
 	for (int band=0; band < MAX_INPUT_CHANNELS; band++) {

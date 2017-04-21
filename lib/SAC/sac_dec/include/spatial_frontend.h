@@ -33,7 +33,7 @@ typedef enum {
 char* hrtfSourceFileName=0;
 #endif
 Twiddle *twiddleExtern = NULL;
-int              debug[256];
+int debug[256];
 long frameCounter =0;
 jmp_buf g_JmpBuf;
 

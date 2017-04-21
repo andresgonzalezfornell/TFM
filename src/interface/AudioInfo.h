@@ -24,12 +24,12 @@ class AudioInfo : public QDialog
 {
     Q_OBJECT
 public:
-    explicit AudioInfo(QWidget *parent = 0);
+    AudioInfo(QWidget *parent = 0);
     ~AudioInfo();
     void setFile(WAVFile *file);
 private:
-    Ui::AudioInfo *ui;
-    WAVFile file;
+    Ui::AudioInfo *ui;  /**< user interface object */
+    WAVFile file;       /**< audio file object */
 };
 
 #endif // AUDIOINFO_H

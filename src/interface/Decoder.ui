@@ -139,6 +139,20 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="bitstream_label">
+              <property name="text">
+               <string>Bitstream</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="bitstream_filename">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item row="2" column="0">
              <widget class="QLabel" name="input_label">
               <property name="sizePolicy">
@@ -160,20 +174,6 @@
             </item>
             <item row="2" column="1">
              <widget class="QLineEdit" name="input_filename">
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="bitstream_label">
-              <property name="text">
-               <string>Bitstream</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLineEdit" name="bitstream_filename">
               <property name="readOnly">
                <bool>true</bool>
               </property>
@@ -207,7 +207,7 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
-         <widget class="QWidget" name="input_channel_list">
+         <widget class="QWidget" name="input_channels_list">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -393,7 +393,7 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
-         <widget class="QWidget" name="output_list">
+         <widget class="QWidget" name="output_channels_list">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -402,7 +402,7 @@
             <height>153</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="output_list_layout">
+          <layout class="QVBoxLayout" name="output_channels_layout">
            <property name="spacing">
             <number>5</number>
            </property>
@@ -532,7 +532,6 @@
     <addaction name="menu_decodingtype"/>
     <addaction name="menu_binauralquality"/>
     <addaction name="menu_hrtfmodel"/>
-    <addaction name="menu_debuggermode"/>
    </widget>
    <widget class="QMenu" name="menu_input">
     <property name="title">
@@ -547,10 +546,23 @@
     <addaction name="menu_load_bitstream"/>
     <addaction name="menu_bitstream_buried"/>
    </widget>
+   <widget class="QMenu" name="menu_effect">
+    <property name="title">
+     <string>Effect</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_output">
+    <property name="title">
+     <string>Output</string>
+    </property>
+    <addaction name="menu_test"/>
+   </widget>
    <addaction name="menu_source"/>
    <addaction name="menu_bitstream"/>
    <addaction name="menu_decoder"/>
    <addaction name="menu_input"/>
+   <addaction name="menu_effect"/>
+   <addaction name="menu_output"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -723,6 +735,16 @@
    </property>
    <property name="text">
     <string>Buried</string>
+   </property>
+  </action>
+  <action name="actiond">
+   <property name="text">
+    <string>d</string>
+   </property>
+  </action>
+  <action name="menu_test">
+   <property name="text">
+    <string>Test audio device</string>
    </property>
   </action>
  </widget>

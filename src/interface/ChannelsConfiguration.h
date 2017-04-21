@@ -22,8 +22,8 @@
 // Classes and local files
 #include "AudioFile.h"
 #include "AudioInfo.h"
-#include "AudioSignal.h"
 #include "AudioChart.h"
+#include "../tools/AudioSignal.h"
 #include "../tools/AudioStream.h"
 #include "../tools/Logger.h"
 

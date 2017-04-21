@@ -18,39 +18,42 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += src/interface/main.cpp\
     src/interface/Decoder.cpp \
+    src/interface/Encoder.cpp \
     src/interface/ChannelsList.cpp \
     src/interface/ChannelsConfiguration.cpp \
-    src/interface/AudioSignal.cpp \
-    src/interface/AudioFile.cpp \
+    src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
+    src/interface/AudioFile.cpp \
     src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
-    src/tools/AudioStream.cpp \
     src/sac/sac_decoder.c \
-    src/tools/Logger.cpp \
     src/sac/sac_encoder.c \
-    src/interface/Encoder.cpp
+    src/tools/AudioSignal.cpp \
+    src/tools/AudioStream.cpp \
+    src/tools/Logger.cpp
 
 HEADERS  += \
     src/interface/Decoder.h \
+    src/interface/Encoder.h \
     src/interface/ChannelsList.h \
     src/interface/ChannelsConfiguration.h \
-    src/interface/AudioSignal.h \
-    src/interface/AudioFile.h \
+    src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
+    src/interface/AudioFile.h \
     src/interface/AudioChart.h \
     src/interface/Volumeter.h \
+    src/sac/sac_decoder.h \
+    src/sac/sac_encoder.h \
+    src/tools/AudioSignal.h \
     src/tools/AudioStream.h \
     src/tools/Logger.h \
-    src/sac/sac_decoder.h \
-    lib/QtLibraries/src/qtlibraries.h \
-    src/sac/sac_encoder.h \
-    src/interface/Encoder.h
+    lib/QtLibraries/src/qtlibraries.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \
     src/interface/Decoder.ui \
-    src/interface/Encoder.ui
+    src/interface/Encoder.ui \
+    src/interface/AudioTest.ui
 
 RESOURCES += \
     src/interface/media.qrc

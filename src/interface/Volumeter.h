@@ -30,7 +30,7 @@ private:
     float energy;                       /**< current energy of given samples */
     int samples;                        /**< current number of given samples for the current level */
     QPixmap pixmap;                     /**< pixmap */
-    int fs;                           /**< signal sampling frequency [Hz] */
+    int fs;                             /**< signal sampling frequency [Hz] */
     const float refreshperiod = 0.2;    /**< period of volumeter refreshing [s] */
 };
 

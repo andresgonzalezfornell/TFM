@@ -14,7 +14,7 @@
 
 /**
  * @brief	AudioSignal constructor (empty signal vector).
- * @param   fs          signal sampling frequency [Hz]
+ * @param   fs              signal sampling frequency [Hz]
  */
 AudioSignal::AudioSignal(int fs) {
     this->signal = std::vector<float>();
@@ -24,8 +24,8 @@ AudioSignal::AudioSignal(int fs) {
 
 /**
  * @brief	AudioSignal constructor.
- * @param   signal      vector of signal samples
- * @param   fs          signal sampling frequency [Hz]
+ * @param   signal          vector of signal samples
+ * @param   fs              signal sampling frequency [Hz]
  */
 AudioSignal::AudioSignal(std::vector<float> signal, int fs) {
 	this->signal = signal;
@@ -49,6 +49,19 @@ float AudioSignal::getSample(int index) {
 }
 
 /**
+ * @brief	It gets samples from a specific range.
+ * @param   start           first index of the range (included)
+ * @param   end             last index of the range (included)
+ * @return  subsignal object
+ */
+AudioSignal AudioSignal::getSample(int start, int end) {
+    std::vector<float>::const_iterator first = this->signal.begin() + start;
+    std::vector<float>::const_iterator last = this->signal.begin() + end;
+    std::vector<float> subsignal = std::vector<float>(first, last + 1);
+    return AudioSignal(subsignal,this->fs);
+}
+
+/**
  * @brief	It sets a sample in the selected index.
  * @param   index
  * @param   sample
@@ -68,11 +81,30 @@ void AudioSignal::setSample(int index, float sample) {
  */
 void AudioSignal::addSample(float sample) {
 	this->signal.push_back(sample);
-	this->size += 1;
+    this->size++;
     // delete afterwards
     if(this->size > 100000) {
         this->clear();
     }
+}
+
+/**
+ * @brief   It deletes a sample at a selected position
+ * @param   index           sample position index
+ */
+void AudioSignal::deleteSample(int index) {
+    this->signal.erase(this->signal.begin()+index);
+    this->size--;
+}
+
+/**
+ * @brief   It deletes a range of samples.
+ * @param   start           first index of the range (included)
+ * @param   end             last index of the range (included)
+ */
+void AudioSignal::deleteSample(int start, int end) {
+    this->signal.erase(this->signal.begin()+start, this->signal.begin()+end+1);
+    this->size -= end - start + 1;
 }
 
 /**
@@ -92,7 +124,7 @@ void AudioSignal::setSignal(std::vector<float> signal) {
 }
 
 /**
- * @brief   It gets time [s] axis as a vector
+ * @brief   It gets time [s] axis as a vector beggining at time t = 0 s
  * @return  time vector
  */
 std::vector<float> AudioSignal::getTimes() {
@@ -100,6 +132,20 @@ std::vector<float> AudioSignal::getTimes() {
     std::vector<float> times = std::vector<float>(N);
     for (int n = 0; n<N; n++) {
         times[n] = n/this->fs;
+    }
+    return times;
+}
+
+/**
+ * @brief   It gets time [s] axis as a vector beggining at a specific initial time
+ * @param   initialtime     initial time [s]
+ * @return  time vector
+ */
+std::vector<float> AudioSignal::getTimes(float initialtime) {
+    int N = this->size;
+    std::vector<float> times = std::vector<float>(N);
+    for (int n = 0; n<N; n++) {
+        times[n] = n/this->fs + initialtime;
     }
     return times;
 }
@@ -131,7 +177,7 @@ std::vector<float> AudioSignal::getSpectrum() {
 
 /**
  * @brief	It gets the signal spectral density.
- * @param   bands       number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
+ * @param   bands           number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
  * @return  signal spectral density
  */
 std::vector<float> AudioSignal::getSpectrum(int bands) {
@@ -177,7 +223,7 @@ std::vector<float> AudioSignal::getFrequencies() {
 
 /**
  * @brief   It gets frequencies [Hz] axis as a vector
- * @param   bands       number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
+ * @param   bands           number of frequency bands of the signal spectral density (if higher number than available has been requested, it returns as the highest number of frequency as possible)
  * @return  frequencies vector
  */
 std::vector<float> AudioSignal::getFrequencies(int bands) {

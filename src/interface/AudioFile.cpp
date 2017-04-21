@@ -70,6 +70,7 @@ void WAVFile::readHeader() {
     this->header.chunkID = QString(this->readData(4)).toStdString();
     this->header.chunksize = this->readDataNumber(4,Endianess::littleendian);
     this->header.format = QString(this->readData(4)).toStdString();
+    // Subchunk 1
     this->header.subchunk1ID = QString(this->readData(4)).toStdString();
     this->header.subchunk1size = this->readDataNumber(4,Endianess::littleendian);
     this->header.audioformat = this->readDataNumber(2,Endianess::littleendian);
@@ -78,6 +79,10 @@ void WAVFile::readHeader() {
     this->header.byterate = this->readDataNumber(4,Endianess::littleendian);
     this->header.blockalign = this->readDataNumber(2,Endianess::littleendian);
     this->header.bitspersample = this->readDataNumber(2,Endianess::littleendian);
+    if(this->header.subchunk1size>16) {
+        this->readDataNumber(this->header.subchunk1size-16,Endianess::bigendian);
+    }
+    // Subchunk 2
     this->header.subchunk2ID = QString(this->readData(4)).toStdString();
     this->header.subchunk2size = this->readDataNumber(4,Endianess::littleendian);
     // Attributes
@@ -89,7 +94,7 @@ void WAVFile::readHeader() {
         incorrect = true;
         incorrectfields += "\n\tchunk ID = " + this->header.chunkID;
     }
-    if(this->header.chunksize != (20+this->header.subchunk1size + this->header.subchunk2size)) {
+    if(this->header.chunksize < (20+this->header.subchunk1size + this->header.subchunk2size)) {
         incorrect = true;
         incorrectfields += "\n\tchunk size = " + std::to_string(this->header.chunksize);
     }
@@ -101,13 +106,13 @@ void WAVFile::readHeader() {
         incorrect = true;
         incorrectfields += "\n\tsubchunk 1 ID = " + this->header.subchunk1ID;
     }
-    if(this->header.subchunk1size != 16) {
+    if(this->header.subchunk1size < 16) {
         incorrect = true;
-        incorrectfields += "\n\tsubchunk 1 size = " + std::to_string(this->header.subchunk1size);
+        incorrectfields += "\n\tsubchunk 1 size lower than 16 = " + std::to_string(this->header.subchunk1size);
     }
     if(this->header.audioformat != 1) {
         incorrect = true;
-        incorrectfields += "\n\taudio format = " + std::to_string(this->header.audioformat);
+        incorrectfields += "\n\taudio format is not PCM (audioformat = " + std::to_string(this->header.audioformat) + ")";
     }
     if(this->header.numchannels < 1) {
         incorrect = true;

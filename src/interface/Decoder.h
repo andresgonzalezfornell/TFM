@@ -13,7 +13,9 @@
 // Classes and local files
 #include "Encoder.h"
 #include "ChannelsList.h"
+#include "AudioOutput.h"
 #include "AudioFile.h"
+#include "AudioChart.h"
 #include "../tools/Logger.h"
 extern "C" {
 #include "../sac/sac_decoder.h"
@@ -73,7 +75,7 @@ class Decoder : public QMainWindow
     Q_OBJECT
 public:
     const int fs = 44100;                               /**< signal sampling frequency [Hz] */
-    explicit Decoder(QWidget *parent = 0);
+    explicit Decoder(QWidget *framework = 0);
     ~Decoder();
     void play();
     void pause();
@@ -90,20 +92,22 @@ public:
     void setHRTFModel(HRTFModel::hrtfmodel hrtfmodel);
 private:
     Ui::Decoder *ui;                                    /**< user interface object */
+    AudioChart *chart;                                  /**< chart object */
     ChannelsList *channels_input;                       /**< input channels list */
-    AudioFile *source;                                  /**< encoded source file object */
+    ChannelsList *channels_output;                      /**< output channels list */
+    WAVFile *source;                                    /**< encoded source file object */
     QFile *bitstream;                                   /**< encoded bit stream file object */
-    AudioFile *input;                                   /**< decoded input file object */
+    WAVFile *input;                                     /**< decoded input file object */
     bool buried;                                        /**< SAC decoder parameter */
     DecodingType::decodingtype decodingtype;            /**< SAC decoder parameter */
     UpmixType::upmixtype upmixtype;                     /**< SAC decoder parameter */
     BinauralQuality::binauralquality binauralquality;   /**< SAC decoder parameter */
     HRTFModel::hrtfmodel hrtfmodel;                     /**< SAC decoder parameter */
-    bool debuggermode;                                  /**< SAC decoder parameter */
 private slots:
     // Input & output
     void setPlayback(bool state);
     void openInfo();
+    void test();
     // Decoder
     void load();
     void encode();
@@ -113,7 +117,6 @@ private slots:
     void toggleDecodingType(QAction *item);
     void toggleBinauralQuality(QAction *item);
     void toggleHRTFModel(QAction *item);
-    void setDebuggerMode(bool state);
 };
 
 #endif // DECODER_H

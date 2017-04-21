@@ -3,41 +3,49 @@
 #include "ui_Decoder.h"
 
 int ChannelsList::fs;
+int ChannelsList::samplesize;
 
 /**
  * @brief	Decoder constructor.
+ * @param   framework           Decoder user interface object
  */
-Decoder::Decoder(QWidget *parent) :
-    QMainWindow(parent),
+Decoder::Decoder(QWidget *framework) :
+    QMainWindow(framework),
     ui(new Ui::Decoder)
 {
+    // Initialization
     ui->setupUi(this);
-    this->channels_input = new ChannelsList(ui->input_channels,3);
+    ChannelsList::fs = 44100;
+    ChannelsList::samplesize = 32;
+    this->channels_input = new ChannelsList(ui->input_channels,0,false);
+    this->channels_output = new ChannelsList(ui->output_channels,2,true);
     this->source = NULL;
     this->input = NULL;
     this->bitstream = NULL;
     this->setSource("");
     this->reset();
-    // Channels
-    ChannelsList::fs = this->fs;
+    float range[2][2] = {{0,(float)this->fs},{-1,1}};
+    this->chart = new AudioChart(ui->input_chart,range,"",AudioChart::ChartOptions::logX);
     // Signals
     QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->output_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->input_info,SIGNAL(released()),this,SLOT(openInfo()));
-    // Menu
-    // Actions
+    // Menu - Source
     QObject::connect(ui->menu_encode,SIGNAL(triggered(bool)),this,SLOT(encode()));
-    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
-    // Arguments
     QObject::connect(ui->menu_load_source,SIGNAL(triggered(bool)),this,SLOT(load()));
+    // Menu - Bitstream
     QObject::connect(ui->menu_load_bitstream,SIGNAL(triggered(bool)),this,SLOT(load()));
-    // Decoder parameters
+    // Menu - Decoder
     QObject::connect(ui->menu_bitstream_buried,SIGNAL(toggled(bool)),this,SLOT(setBuried(bool)));;
     QObject::connect(ui->menu_upmixtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleUpmixType(QAction*)));
     QObject::connect(ui->menu_decodingtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleDecodingType(QAction*)));
     QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
     QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
-    QObject::connect(ui->menu_debuggermode,SIGNAL(toggled(bool)),this,SLOT(setDebuggerMode(bool)));
+    // Menu - Input
+    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
+    // Menu - Effect
+    // Menu - Output
+    QObject::connect(ui->menu_test,SIGNAL(triggered(bool)),this,SLOT(test()));
     consolelog("Decoder", LogType::progress, "Decoder object is created");
 }
 
@@ -69,7 +77,6 @@ void Decoder::pause() {
  * @brief   It mutes output playback.
  */
 void Decoder::mute() {
-
 }
 
 /**
@@ -92,7 +99,6 @@ void Decoder::reset() {
     this->setDecodingType(DecodingType::low);
     this->setBinauralQuality(BinauralQuality::parametric);
     this->setHRTFModel(HRTFModel::kemar);
-    this->setDebuggerMode(false);
     consolelog("Decoder",LogType::interaction,"all decoding parameters has been reset as default");
 }
 
@@ -173,6 +179,10 @@ void Decoder::setBitstream(std::string filename) {
 void Decoder::setInput(std::string filename) {
     if(filename != "") {
         this->input = new WAVFile(filename);
+        ChannelsList::fs = this->input->header.samplerate;
+        ChannelsList::samplesize = this->input->header.bitspersample;
+        this->channels_input->setChannelsNumber(this->input->header.numchannels);
+        this->channels_output->setChannelsNumber(this->input->header.numchannels);
     }
     bool loaded = this->input->exists();
     if(loaded && filename != "") {
@@ -288,8 +298,8 @@ void Decoder::setHRTFModel(HRTFModel::hrtfmodel hrtfmodel) {
 }
 
 /**
- * @name    Decoder menu bar interface slots
- * @brief   User interface control functions of decoder menu bar.
+ * @name    Audio menu bar interface slots
+ * @brief   User interface functions for audio control.
  * @{
  */
 
@@ -359,8 +369,7 @@ void Decoder::decode() {
         consolelog("Decoder",LogType::info,"decoding type:\t " + std::to_string(this->decodingtype));
         consolelog("Decoder",LogType::info,"binaural quality:\t " + std::to_string(this->binauralquality));
         consolelog("Decoder",LogType::info,"HRTF model type:\t " + std::to_string(this->hrtfmodel));
-        consolelog("Decoder",LogType::info,"debugger mode:\t " + std::to_string(this->debuggermode));
-        char *error = sac_decode(input_char, output_char, bitstream_char, (double)this->fs, this->upmixtype, this->decodingtype, this->binauralquality, this->hrtfmodel, this->debuggermode);
+        char *error = sac_decode(input_char, output_char, bitstream_char, (double)this->fs, this->upmixtype, this->decodingtype, this->binauralquality, this->hrtfmodel);
         if(error == NULL) {
             this->setInput(output_str);
             consolelog("sac_decoder",LogType::progress,"decoding was completed successfully");
@@ -385,9 +394,11 @@ void Decoder::setPlayback(bool state) {
         }
     } else if (module == "output") {
         if (state) {
-            consolelog("Decoder",LogType::interaction,"output is now unmuted");
+            consolelog("Decoder",LogType::interaction,"unmuting output");
+//            this->audiooutput->unmute();
         } else {
-            consolelog("Decoder",LogType::interaction,"input is now muted");
+            consolelog("Decoder",LogType::interaction,"muting output");
+//            this->audiooutput->mute();
         }
     }
     QObject::sender()->blockSignals(false);
@@ -406,11 +417,22 @@ void Decoder::openInfo() {
     QObject::sender()->blockSignals(false);
 }
 
+/**
+ * @brief   It plays a test to a selected output audio device.
+ */
+void Decoder::test() {
+    QObject::sender()->blockSignals(true);
+    AudioTest audiotest;
+    audiotest.exec();
+    consolelog("Decoder",LogType::interaction,"showing audio output device test");
+    QObject::sender()->blockSignals(false);
+}
+
 /**< @} */
 
 /**
  * @name    Decoder menu bar interface slots
- * @brief   User interface control functions of decoder menu bar.
+ * @brief   User interface control functions for SAC decoder parameters.
  * @{
  */
 
@@ -509,19 +531,6 @@ void Decoder::toggleHRTFModel(QAction *item) {
     }
     consolelog("Decoder",LogType::interaction,"HRTF model set to " + type);
     QObject::sender()->blockSignals(false);
-}
-
-/**
- * @brief   It sets SAC parameter debugger mode
- * @param   state               true to set the debugger mode to on
- */
-void Decoder::setDebuggerMode(bool state) {
-    this->debuggermode = state;
-    if(state) {
-        consolelog("Decoder",LogType::interaction,"debugger mode activated");
-    } else {
-        consolelog("Decoder",LogType::interaction,"debugger mode deactivated");
-    }
 }
 
 /** @} */
