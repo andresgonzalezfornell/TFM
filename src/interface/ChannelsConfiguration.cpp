@@ -306,11 +306,11 @@ float ConfigurationChannel::readData() {
         switch (bytespersample) {
         case 2:
         default:
-            data_16 = (qint16)this->file->readDataNumber(bytespersample,WAVFile::Endianess::littleendian);
+            data_16 = (qint16)this->file->readValue(bytespersample,WAVFile::Endianess::littleendian);
             value = (float)data_16/(float)amplitude;
             break;
         case 4:
-            data_32 = (qint32)this->file->readDataNumber(bytespersample,WAVFile::Endianess::littleendian);
+            data_32 = (qint32)this->file->readValue(bytespersample,WAVFile::Endianess::littleendian);
             value = data_32/amplitude;
             break;
         }

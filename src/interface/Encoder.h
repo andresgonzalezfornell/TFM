@@ -33,8 +33,8 @@ class Encoder : public QDialog
 public:
     int fs;                             /**< signal sampling frequency [Hz] */
     WAVFile *input;                     /**< input file object */
-    AudioFile *output;                  /**< output file object */
-    QFile *bitstream;                   /**< output bit stream file object */
+    WAVFile *output;                    /**< output file object */
+    File *bitstream;                    /**< output bit stream file object */
     Encoder(QWidget *parent = 0);
     ~Encoder();
     void setInput(std::string filename);

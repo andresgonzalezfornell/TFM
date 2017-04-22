@@ -16,8 +16,8 @@
 #include "AudioOutput.h"
 #include "AudioChart.h"
 #include "Volumeter.h"
-#include "../tools/AudioSignal.h"
-#include "../tools/AudioStream.h"
+#include "../process/AudioSignal.h"
+#include "../process/AudioStream.h"
 #include "../tools/Logger.h"
 
 /**

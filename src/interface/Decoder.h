@@ -14,12 +14,10 @@
 #include "Encoder.h"
 #include "ChannelsList.h"
 #include "AudioOutput.h"
-#include "AudioFile.h"
+#include "../process/File.h"
 #include "AudioChart.h"
+#include "../process/ProcessManager.h"
 #include "../tools/Logger.h"
-extern "C" {
-#include "../sac/sac_decoder.h"
-}
 
 /**
  * @brief   SAC decoder parameter upmix type
@@ -91,12 +89,13 @@ public:
     void setBinauralQuality(BinauralQuality::binauralquality binauralquality);
     void setHRTFModel(HRTFModel::hrtfmodel hrtfmodel);
 private:
+    ProcessManager *process;                            /**< process manager object */
     Ui::Decoder *ui;                                    /**< user interface object */
     AudioChart *chart;                                  /**< chart object */
     ChannelsList *channels_input;                       /**< input channels list */
     ChannelsList *channels_output;                      /**< output channels list */
     WAVFile *source;                                    /**< encoded source file object */
-    QFile *bitstream;                                   /**< encoded bit stream file object */
+    File *bitstream;                                    /**< encoded bit stream file object */
     WAVFile *input;                                     /**< decoded input file object */
     bool buried;                                        /**< SAC decoder parameter */
     DecodingType::decodingtype decodingtype;            /**< SAC decoder parameter */

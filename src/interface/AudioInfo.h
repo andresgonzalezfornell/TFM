@@ -8,7 +8,7 @@
 #include "QTableView"
 #include "QVector"
 // Classes and local files
-#include "AudioFile.h"
+#include "../process/File.h"
 #include "../tools/Logger.h"
 
 namespace Ui {

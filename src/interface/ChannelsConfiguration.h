@@ -20,11 +20,11 @@
 #include "QPixmap"
 #include "QVector"
 // Classes and local files
-#include "AudioFile.h"
+#include "../process/File.h"
 #include "AudioInfo.h"
 #include "AudioChart.h"
-#include "../tools/AudioSignal.h"
-#include "../tools/AudioStream.h"
+#include "../process/AudioSignal.h"
+#include "../process/AudioStream.h"
 #include "../tools/Logger.h"
 
 /**

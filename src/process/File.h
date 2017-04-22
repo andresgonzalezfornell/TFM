@@ -3,10 +3,7 @@
 
 // System libraries
 #include "stdlib.h"
-// Qt libraries
-#include "QFile"
-#include "QByteArray"
-#include "QMessageBox"
+#include "fstream"
 // Classes and local files
 #include "../tools/Logger.h"
 
@@ -15,22 +12,7 @@
  * @author	Andrés González Fornell
  * @brief	Audio file class.
  */
-class AudioFile {
-public:
-    QFile *file;                            /**< file object */
-    AudioFile();
-    AudioFile(std::string filepath);
-    ~AudioFile();
-    std::string getFilepath();
-    bool exists();
-};
-
-/**
- * @class	WAVFile
- * @author	Andrés González Fornell
- * @brief	Audio file as WAV format class.
- */
-class WAVFile : public AudioFile {
+class File {
 public:
     /**
      * @name    Endianess
@@ -42,6 +24,27 @@ public:
             bigendian                       /**< big endian */
         };
     };
+    std::fstream *file;                     /**< file object */
+    std::string filename;                   /**< file path name */
+    int cursor;                             /**< audio file reading cursor [Bytes] */
+    File();
+    File(std::string filename);
+    ~File();
+    void setFilename(std::string filename);
+    std::string getFilename();
+    void setCursor(int cursor);
+    bool exists();
+    std::string readData(int length);
+    unsigned long readValue(int length,Endianess::endianess endianess);
+};
+
+/**
+ * @class	WAVFile
+ * @author	Andrés González Fornell
+ * @brief	Audio file as WAV format class.
+ */
+class WAVFile : public File {
+public:
     /**
      * @brief   Audio file header struct.
      */
@@ -79,12 +82,9 @@ public:
         /** @} */
     };
     Header header;                          /**< audio file header */
-    int cursor;                             /**< audio file reading cursor [Bytes] */
     float duration;                         /**< audio file duration [s] */
     WAVFile();
-    WAVFile(std::string filepath);
-    QByteArray readData(int length);
-    unsigned long readDataNumber(int length,Endianess::endianess endianess);
+    WAVFile(std::string filename);
     void readHeader();                      /**< file object */
 };
 

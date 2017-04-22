@@ -17,7 +17,7 @@
 #include "QComboBox"
 #include "QDoubleSpinBox"
 // Classes and local files
-#include "../tools/AudioSignal.h"
+#include "../process/AudioSignal.h"
 #include "../tools/Logger.h"
 
 namespace Ui {

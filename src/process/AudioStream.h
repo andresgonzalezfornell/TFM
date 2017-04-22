@@ -7,7 +7,7 @@
 #include "vector"
 // Qt libraries
 // Classes and local files
-#include "../tools/AudioSignal.h"
+#include "../process/AudioSignal.h"
 #include "../tools/Logger.h"
 
 /**

@@ -23,14 +23,16 @@ SOURCES += src/interface/main.cpp\
     src/interface/ChannelsConfiguration.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
-    src/interface/AudioFile.cpp \
     src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
-    src/sac/sac_decoder.c \
+    src/process/ProcessManager.cpp \
+    src/process/AudioStream.cpp \
+    src/process/AudioSignal.cpp \
     src/sac/sac_encoder.c \
-    src/tools/AudioSignal.cpp \
-    src/tools/AudioStream.cpp \
-    src/tools/Logger.cpp
+    src/sac/sac_decoder.c \
+    src/effects/Effect.cpp \
+    src/tools/Logger.cpp \
+    src/process/File.cpp
 
 HEADERS  += \
     src/interface/Decoder.h \
@@ -39,15 +41,17 @@ HEADERS  += \
     src/interface/ChannelsConfiguration.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
-    src/interface/AudioFile.h \
     src/interface/AudioChart.h \
     src/interface/Volumeter.h \
-    src/sac/sac_decoder.h \
+    src/process/ProcessManager.h \
+    src/process/AudioStream.h \
+    src/process/AudioSignal.h \
     src/sac/sac_encoder.h \
-    src/tools/AudioSignal.h \
-    src/tools/AudioStream.h \
+    src/sac/sac_decoder.h \
+    src/effects/Effect.h \
     src/tools/Logger.h \
-    lib/QtLibraries/src/qtlibraries.h
+    lib/QtLibraries/src/qtlibraries.h \
+    src/process/File.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \

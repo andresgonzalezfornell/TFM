@@ -52,7 +52,7 @@ void Encoder::setInput(std::string filename) {
         ui->input_filename->setText(QString::fromStdString(filename));
         consolelog("Encoder",LogType::progress,"selected \"" + filename + "\" as input audio file");
     } else if(loaded && filename == "") {
-        ui->input_filename->setText(QString::fromStdString(this->input->getFilepath()));
+        ui->input_filename->setText(QString::fromStdString(this->input->getFilename()));
         consolelog("Encoder",LogType::interaction,"input file selection was cancelled");
     } else {
         ui->input_filename->setText(QString::fromStdString("please load a file"));
@@ -80,7 +80,7 @@ void Encoder::setOutput(std::string filename) {
         ui->output_filename->setText(QString::fromStdString(filename));
         consolelog("Encoder",LogType::progress,"selected \"" + filename + "\" as output audio file");
     } else if(loaded && filename == "") {
-        ui->output_filename->setText(QString::fromStdString(this->output->getFilepath()));
+        ui->output_filename->setText(QString::fromStdString(this->output->getFilename()));
         consolelog("Encoder",LogType::interaction,"output file selection was cancelled");
     } else {
         ui->output_filename->setText(QString::fromStdString("please load a file"));
@@ -190,7 +190,7 @@ void Encoder::reset() {
 void Encoder::apply() {
     QObject::sender()->blockSignals(true);
     consolelog("Encoder",LogType::interaction,"encoding");
-    std::string input_str = this->input->getFilepath();
+    std::string input_str = this->input->getFilename();
     std::string output_str = QFileDialog::getSaveFileName(NULL, "Save output file for encoder","","*.wav").toStdString();
     std::string bitstream_str = output_str.substr(0,output_str.find_last_of("/")+1);
     if(output_str != "") {
@@ -202,12 +202,12 @@ void Encoder::apply() {
             bitstream_str += ui->bitstream_filename->text().toStdString();
         }
         const char *input_char = input_str.c_str();
-        const char *output_char = output_str.c_str();
         const char *bitstream_char = bitstream_str.c_str();
+        const char *output_char = output_str.c_str();
         int timeslots = this->input->header.bitspersample;
         consolelog("Encoder",LogType::info,"input file:\t " + input_str);
-        consolelog("Encoder",LogType::info,"output file:\t " + output_str);
         consolelog("Encoder",LogType::info,"bitstream file:\t " + bitstream_str);
+        consolelog("Encoder",LogType::info,"output file:\t " + output_str);
         consolelog("Encoder",LogType::info,"sampling frequency:\t " + std::to_string(this->fs) + "Hz");
         consolelog("Encoder",LogType::info,"tree configuration:\t " + std::to_string(this->tree));
         consolelog("Encoder",LogType::info,"time slots:\t " + std::to_string(timeslots) + "bits");
@@ -217,7 +217,7 @@ void Encoder::apply() {
             if(bitstream_str == "buried") {
                 this->bitstream = NULL;
             } else {
-                this->bitstream = new QFile(QString::fromStdString(bitstream_str));
+                this->bitstream = new File(bitstream_str);
             }
             consolelog("sac_encoder",LogType::progress,"encoding was completed successfully");
         } else {

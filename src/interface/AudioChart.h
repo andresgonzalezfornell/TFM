@@ -10,7 +10,7 @@
 #include "QtCharts"
 #include "QPointF"
 // Classes and local files
-#include "../tools/AudioSignal.h"
+#include "../process/AudioSignal.h"
 #include "../tools/Logger.h"
 
 using namespace QtCharts;

@@ -24,18 +24,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += src/test.cpp \
-    src/tools/AudioSignal.cpp \
-    src/tools/AudioStream.cpp \
+    src/process/AudioSignal.cpp \
+    src/process/AudioStream.cpp \
     src/tools/Logger.cpp \
     src/sac/sac_decoder.c \
-    src/sac/sac_encoder.c
+    src/sac/sac_encoder.c \
+    src/process/ProcessManager.cpp
 
 HEADERS  += \
     src/sac/sac_decoder.h \
     src/sac/sac_encoder.h \
-    src/tools/AudioSignal.h \
-    src/tools/AudioStream.h \
-    src/tools/Logger.h
+    src/process/AudioSignal.h \
+    src/process/AudioStream.h \
+    src/tools/Logger.h \
+    src/process/ProcessManager.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
 

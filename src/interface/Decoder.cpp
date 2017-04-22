@@ -17,6 +17,7 @@ Decoder::Decoder(QWidget *framework) :
     ui->setupUi(this);
     ChannelsList::fs = 44100;
     ChannelsList::samplesize = 32;
+    this->process = new ProcessManager(ChannelsList::fs, 3);
     this->channels_input = new ChannelsList(ui->input_channels,0,false);
     this->channels_output = new ChannelsList(ui->output_channels,2,true);
     this->source = NULL;
@@ -112,7 +113,7 @@ void Decoder::updateControls() {
     // Bitstream
     ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Decoder
-    ui->menu_decode->setEnabled(this->source->exists() && this->bitstream);
+    ui->menu_decode->setEnabled(this->source->exists() && this->bitstream->exists());
 }
 
 /**
@@ -128,7 +129,7 @@ void Decoder::setSource(std::string filename) {
         ui->source_filename->setText(QString::fromStdString(filename));
         consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as source file");
     } else if(loaded && filename == "") {
-        ui->source_filename->setText(QString::fromStdString(this->source->getFilepath()));
+        ui->source_filename->setText(QString::fromStdString(this->source->getFilename()));
         consolelog("Decoder",LogType::interaction,"source file selection was cancelled");
     } else {
         ui->source_filename->setText(QString::fromStdString("please load a file"));
@@ -148,7 +149,7 @@ void Decoder::setSource(std::string filename) {
  */
 void Decoder::setBitstream(std::string filename) {
     if(filename != "") {
-        this->bitstream = new QFile(QString::fromStdString(filename));
+        this->bitstream = new File(filename);
     }
     bool loaded = this->bitstream;
     if (this->buried) {
@@ -158,7 +159,7 @@ void Decoder::setBitstream(std::string filename) {
             ui->bitstream_filename->setText(QString::fromStdString(filename));
             consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as bitstream file");
         } else if(loaded && filename == "") {
-            ui->bitstream_filename->setText(this->bitstream->fileName());
+            ui->bitstream_filename->setText(QString::fromStdString(this->bitstream->getFilename()));
         } else {
             ui->bitstream_filename->setText(QString::fromStdString("please load a file"));
             consolelog("Decoder",LogType::warning,"bitstream file is empty");
@@ -189,7 +190,7 @@ void Decoder::setInput(std::string filename) {
         ui->input_filename->setText(QString::fromStdString(filename));
         consolelog("Decoder",LogType::progress,"selected \"" + filename + "\" as input file");
     } else if(loaded && filename == "") {
-        ui->input_filename->setText(QString::fromStdString(this->input->getFilepath()));
+        ui->input_filename->setText(QString::fromStdString(this->input->getFilename()));
         consolelog("Decoder",LogType::interaction,"input file selection was cancelled");
     } else {
         this->channels_input->setChannelsNumber(0);
@@ -332,10 +333,11 @@ void Decoder::encode() {
     encoder->fs = this->fs;
     encoder->exec();
     if (encoder->output) {
-        this->setSource(encoder->output->getFilepath());
-        this->setBitstream(encoder->bitstream->fileName().toStdString());
-        this->reset();
-        this->decode();
+        this->setSource(encoder->output->getFilename());
+        if(encoder->bitstream->exists()) {
+            this->setBitstream(encoder->bitstream->getFilename());
+        }
+        this->setBuried(!encoder->bitstream->exists());
     } else {
         this->setSource("");
     }
@@ -346,35 +348,20 @@ void Decoder::encode() {
  */
 void Decoder::decode() {
     consolelog("Decoder",LogType::interaction,"decoding");
-    std::string input_str = this->source->getFilepath();
-    std::string output_str = QFileDialog::getSaveFileName(NULL, "Save decoded input file","","*.wav").toStdString();
-    std::string bitstream_str;
-    if(output_str != "") {
+    std::string source = this->source->getFilename();
+    std::string input = QFileDialog::getSaveFileName(NULL, "Save decoded input file","","*.wav").toStdString();
+    std::string bitstream;
+    if (this->buried) {
+        bitstream = "buried";
+    } else {
+        bitstream = this->bitstream->getFilename();
+    }
+    if(input != "") {
         // SAC decoding
         consolelog("Decoder",LogType::progress,"proceeding to SAC decoder");
-        if(this->bitstream == NULL) {
-            bitstream_str = "buried";
-        } else {
-            bitstream_str = this->bitstream->fileName().toStdString();
-        }
-        const char *input_char = input_str.c_str();
-        const char *output_char = output_str.c_str();
-        const char *bitstream_char = bitstream_str.c_str();
-        consolelog("Decoder",LogType::info,"input file:\t " + input_str);
-        consolelog("Decoder",LogType::info,"output file:\t " + output_str);
-        consolelog("Decoder",LogType::info,"bitstream file:\t " + bitstream_str);
-        consolelog("Decoder",LogType::info,"upmix type:\t " + std::to_string(upmixtype));
-        consolelog("Encoder",LogType::info,"sampling frequency:\t " + std::to_string(this->fs) + "Hz");
-        consolelog("Decoder",LogType::info,"upmix type:\t " + std::to_string(this->upmixtype));
-        consolelog("Decoder",LogType::info,"decoding type:\t " + std::to_string(this->decodingtype));
-        consolelog("Decoder",LogType::info,"binaural quality:\t " + std::to_string(this->binauralquality));
-        consolelog("Decoder",LogType::info,"HRTF model type:\t " + std::to_string(this->hrtfmodel));
-        char *error = sac_decode(input_char, output_char, bitstream_char, (double)this->fs, this->upmixtype, this->decodingtype, this->binauralquality, this->hrtfmodel);
-        if(error == NULL) {
-            this->setInput(output_str);
-            consolelog("sac_decoder",LogType::progress,"decoding was completed successfully");
-        } else {
-            consolelog("sac_decoder",LogType::error,std::string(error));
+        bool successful = this->process->decode(source,bitstream, input, this->decodingtype, this->upmixtype, this->binauralquality, this->hrtfmodel);
+        if (successful) {
+            this->setInput(input);
         }
     }
 }

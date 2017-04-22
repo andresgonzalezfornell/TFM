@@ -121,6 +121,7 @@ std::vector<float> AudioSignal::getSignal() {
  */
 void AudioSignal::setSignal(std::vector<float> signal) {
 	this->signal = signal;
+    this->size = signal.size();
 }
 
 /**
