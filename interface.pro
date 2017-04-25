@@ -2,7 +2,7 @@ QT       += widgets charts qml quick network opengl sql script scripttools svg x
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TFM
+TARGET = "SAC Effects"
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -20,7 +20,6 @@ SOURCES += src/interface/main.cpp\
     src/interface/Decoder.cpp \
     src/interface/Encoder.cpp \
     src/interface/ChannelsList.cpp \
-    src/interface/ChannelsConfiguration.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
     src/interface/AudioChart.cpp \
@@ -38,7 +37,6 @@ HEADERS  += \
     src/interface/Decoder.h \
     src/interface/Encoder.h \
     src/interface/ChannelsList.h \
-    src/interface/ChannelsConfiguration.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
     src/interface/AudioChart.h \

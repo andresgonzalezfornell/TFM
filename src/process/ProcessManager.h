@@ -5,6 +5,7 @@
 #include "stdlib.h"
 // Classes and local files
 #include "../process/AudioStream.h"
+#include "../process/File.h"
 #include "../effects/Effect.h"
 #include "../tools/Logger.h"
 extern "C" {
@@ -18,17 +19,23 @@ extern "C" {
  */
 class ProcessManager {
 public:
-    std::vector<AudioStream> input;     /**< vector of input channels stream */
-    std::vector<AudioStream> output;    /**< vector of input channels stream */
+    float **input;          /**< vector of input channels stream (sample = input[channel][sample index]) */
+    float **output;         /**< vector of input channels stream (sample = output[channel][sample index]) */
+    int samples;            /**< number of samples in each channel */
+    int channels;           /**< number of channels */
+    int realtime;           /**< pointer to current sample index when executing real time  process*/
     ProcessManager(int fs, int chunksize);
     ~ProcessManager();
-    void setInput(/*AudioFile file*/);
-    void setOutput(int channels);
-    bool decode(std::string input, std::string bitstream, std::string output, int decodingtype, int upmixtype, int binauralquality, int hrtfmodel);
+    void setInput(std::string filename);
+    void setOutput(std::string filename);
+    bool decode(std::string input, std::string bitstream, std::string output, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel);
     bool applyEffect(std::vector<bool> channels, Effect effect);
+    void clear();
 private:
-    int fs;                             /**< signal sampling frequency */
-    int chunksize;                      /**< number of samples in a chunk */
+    WAVFile *inputfile;     /**< audio input file object */
+    WAVFile *outputfile;    /**< audio output file object */
+    int fs;                 /**< signal sampling frequency */
+    int chunksize;          /**< number of samples in a chunk */
 };
 
 #endif // PROCESSMANAGER_H

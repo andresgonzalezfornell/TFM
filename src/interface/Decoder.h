@@ -14,9 +14,10 @@
 #include "Encoder.h"
 #include "ChannelsList.h"
 #include "AudioOutput.h"
-#include "../process/File.h"
+#include "AudioInfo.h"
 #include "AudioChart.h"
 #include "../process/ProcessManager.h"
+#include "../process/File.h"
 #include "../tools/Logger.h"
 
 /**

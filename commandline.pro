@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Test
+TARGET = "saceffects"
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -23,21 +23,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += src/test.cpp \
-    src/process/AudioSignal.cpp \
+SOURCES += \
+    src/main.cpp \
+    src/process/ProcessManager.cpp \
+    src/process/File.cpp \
     src/process/AudioStream.cpp \
-    src/tools/Logger.cpp \
+    src/process/AudioSignal.cpp \
     src/sac/sac_decoder.c \
     src/sac/sac_encoder.c \
-    src/process/ProcessManager.cpp
+    src/effects/Effect.cpp \
+    src/tools/Logger.cpp
 
 HEADERS  += \
+    src/process/ProcessManager.h \
+    src/process/AudioStream.h \
+    src/process/File.h \
+    src/process/AudioSignal.h \
     src/sac/sac_decoder.h \
     src/sac/sac_encoder.h \
-    src/process/AudioSignal.h \
-    src/process/AudioStream.h \
-    src/tools/Logger.h \
-    src/process/ProcessManager.h
+    src/effects/Effect.h \
+    src/tools/Logger.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
 

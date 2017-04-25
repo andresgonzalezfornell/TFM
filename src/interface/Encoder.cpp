@@ -45,7 +45,7 @@ Encoder::~Encoder()
  */
 void Encoder::setInput(std::string filename) {
     if(filename != "") {
-        this->input = new WAVFile(filename);
+        this->input = new WAVFile(filename, false);
     }
     bool loaded = this->input->exists();
     if(loaded && filename != "") {
@@ -73,7 +73,7 @@ void Encoder::setInput(std::string filename) {
  */
 void Encoder::setOutput(std::string filename) {
     if(filename != "") {
-        this->output = new WAVFile(filename);
+        this->output = new WAVFile(filename, false);
     }
     bool loaded = this->output->exists();
     if(loaded && filename != "") {
@@ -217,7 +217,7 @@ void Encoder::apply() {
             if(bitstream_str == "buried") {
                 this->bitstream = NULL;
             } else {
-                this->bitstream = new File(bitstream_str);
+                this->bitstream = new File(bitstream_str, false);
             }
             consolelog("sac_encoder",LogType::progress,"encoding was completed successfully");
         } else {

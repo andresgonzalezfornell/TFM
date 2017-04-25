@@ -5,14 +5,14 @@
 #include "stdio.h"
 #include "string.h"
 #include "stdlib.h"
-#include "math.h"
+#include "cmath"
 // Qt libraries
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
 #include "ui_Encoder.h"
 #include "AudioChart.h"
-#include "ChannelsConfiguration.h"
+#include "../process/File.h"
 #include "../tools/Logger.h"
 extern "C" {
 #include "../sac/sac_encoder.h"
@@ -42,7 +42,6 @@ public:
     void setTree(int tree);
 private:
     Ui::Encoder *ui;                    /**< user interface object */
-    ChannelsConfiguration *channels;    /**< channels panel object */
     int tree;                           /**< SAC encoder parameter */
 private slots:
     // Configuration

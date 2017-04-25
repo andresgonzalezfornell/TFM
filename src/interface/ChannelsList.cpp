@@ -276,7 +276,3 @@ void Channel::setVolume(int volume) {
     }
     this->volumeslider->setValue(volume);
 }
-
-void Channel::setStream(AudioStream *stream) {
-
-}

@@ -122,7 +122,8 @@ void Decoder::updateControls() {
  */
 void Decoder::setSource(std::string filename) {
     if(filename != "") {
-        this->source = new WAVFile(filename);
+        this->source = new WAVFile(filename,false);
+        this->reset();
     }
     bool loaded = this->source->exists();
     if(loaded && filename != "") {
@@ -149,7 +150,7 @@ void Decoder::setSource(std::string filename) {
  */
 void Decoder::setBitstream(std::string filename) {
     if(filename != "") {
-        this->bitstream = new File(filename);
+        this->bitstream = new File(filename, false);
     }
     bool loaded = this->bitstream;
     if (this->buried) {
@@ -179,7 +180,7 @@ void Decoder::setBitstream(std::string filename) {
  */
 void Decoder::setInput(std::string filename) {
     if(filename != "") {
-        this->input = new WAVFile(filename);
+        this->input = new WAVFile(filename, false);
         ChannelsList::fs = this->input->header.samplerate;
         ChannelsList::samplesize = this->input->header.bitspersample;
         this->channels_input->setChannelsNumber(this->input->header.numchannels);
@@ -317,9 +318,6 @@ void Decoder::load() {
     std::string filename = QFileDialog::getOpenFileName(NULL, QString::fromStdString("Load " + file + " file"),"",QString::fromStdString(format)).toStdString();
     if(file=="source") {
         this->setSource(filename);
-        if(filename!="") {
-            this->reset();
-        }
     } else if(file=="bitstream") {
         this->setBitstream(filename);
     }
@@ -359,7 +357,7 @@ void Decoder::decode() {
     if(input != "") {
         // SAC decoding
         consolelog("Decoder",LogType::progress,"proceeding to SAC decoder");
-        bool successful = this->process->decode(source,bitstream, input, this->decodingtype, this->upmixtype, this->binauralquality, this->hrtfmodel);
+        bool successful = this->process->decode(source,bitstream, input, this->upmixtype, this->decodingtype, this->binauralquality, this->hrtfmodel);
         if (successful) {
             this->setInput(input);
         }

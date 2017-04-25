@@ -3,7 +3,7 @@
 
 // System libraries
 #include "vector"
-#include "math.h"
+#include "cmath"
 // External libraries
 #include "fftw3.h"
 // Classes and local files

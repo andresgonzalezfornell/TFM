@@ -16,11 +16,11 @@
  * @brief	Main function
  */
 int main(int argc, char *argv[]) {
-    consolelog("main", LogType::progress, "running program");
+    consolelog("main", LogType::progress, "application program");
     QApplication app(argc, argv);
     Decoder decoder;
     consolelog("main", LogType::progress, "showing Decoder");
     decoder.show();
-    consolelog("main", LogType::progress, "program was completed");
+    consolelog("main", LogType::progress, "application was completed");
     return app.exec();
 }

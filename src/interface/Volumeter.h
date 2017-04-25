@@ -2,7 +2,7 @@
 #define VOLUMETER_H
 
 // System libraries
-#include "math.h"
+#include "cmath"
 #include "stdlib.h"
 // Qt libraries
 #include "QWidget"

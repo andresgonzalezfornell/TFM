@@ -8,14 +8,12 @@ AudioStream::AudioStream(int fs) : signal(fs) {
     this->fs = fs;
     this->range.start = 0;
     this->range.end = -1;
-    consolelog("AudioStream", LogType::progress, "AudioStream object is created");
 }
 
 /**
  * @brief	AudioStream destructor.
  */
 AudioStream::~AudioStream() {
-    consolelog("AudioStream", LogType::progress, "AudioInput object is deleted");
 }
 
 /**

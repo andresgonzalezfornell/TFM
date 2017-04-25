@@ -4,11 +4,12 @@
 /**
  * @brief   ProcessManager constructor.
  * @param   fs                  signal sampling frequency
- * @param   chunksize           number of samples in a chunk
+ * @param   chunksize           number of samples in a chunk to apply effect step by step (if 0 then chunk size is the number of samples and effect is applied at once)
  */
 ProcessManager::ProcessManager(int fs, int chunksize) {
     this->fs = fs;
     this->chunksize = chunksize;
+    this->clear();
     consolelog("ProcessManager",LogType::progress,"ProgressManager object is created");
 }
 
@@ -16,6 +17,7 @@ ProcessManager::ProcessManager(int fs, int chunksize) {
  * @brief   ProcessManager destructor.
  */
 ProcessManager::~ProcessManager() {
+    this->clear();
     consolelog("ProcessManager",LogType::progress,"ProgressManager object is deleted");
 }
 
@@ -23,19 +25,36 @@ ProcessManager::~ProcessManager() {
  * @brief   It sets input variable.
  * @param   file                file object to extract input variable
  */
-void ProcessManager::setInput() {
-    this->input.clear();
+void ProcessManager::setInput(std::string filename) {
+    this->clear();
+    this->inputfile = new WAVFile(filename, false);
+    if((int)this->inputfile->header.samplerate != this->fs) {
+        this->clear();
+        consolelog("ProcessManager",LogType::error, "input file sampling frequency is not valid (it is " + std::to_string(this->inputfile->header.samplerate) + "Hz and it should be " + std::to_string(this->fs) + "Hz)");
+    } else {
+        this->inputfile->setCursor(0);
+        this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
+        this->channels = this->inputfile->header.numchannels;
+        this->input = new float*[this->samples];
+        this->output = new float*[this->samples];
+        for (int sample = 0; sample < this->samples; sample++) {
+            this->input[sample] = new float[channels];
+            this->output[sample] = new float[channels];
+            for (int channel = 0; channel < this->channels; channel++) {
+                this->input[sample][channel] = this->inputfile->readValue();
+            }
+        }
+        consolelog("ProcessManager",LogType::progress, "input file has been loaded");
+    }
 }
 
 /**
- * @brief   It sets an empty output variable.
- * @param   channels            number of channels of the output variable
+ * @brief   It sets an output file from the existing output variable
+ * @param   filename            audio output file name
  */
-void ProcessManager::setOutput(int channels) {
-    this->output.clear();
-    for (int channel = 0; channel < this->input.size(); channel++) {
-        this->output.push_back(AudioStream(fs));
-    }
+void ProcessManager::setOutput(std::string filename) {
+    this->outputfile = new WAVFile(filename,this->channels,this->fs,this->inputfile->header.bitspersample);
+    consolelog("ProcessManager",LogType::progress, "output file has been created");
 }
 
 /**
@@ -43,9 +62,10 @@ void ProcessManager::setOutput(int channels) {
  * @param   input               filename of the multichannel input audio file
  * @param   outpu               filename of the downmix output audio file (it will be automatically created)
  * @param   bitstream           filename of the bitstream output file or "buried" (it will be automatically created)
- * @param   fs                  audio sampling frequency [Hz]
- * @param   tree                tree config: 5151 (mono), 5152 (mono), 525 (stereo) (5151 by default)
- * @param   timeslots           times slots: 16 or 32 (32 by default)
+ * @param   upmixtype           upmix type              0: normal       1: blind        2: binaural     3: stereo
+ * @param   decodingtype        decoding type           0: low          1: high
+ * @param   binauralquality     binaural upmix quality  0: parametric   1: filtering
+ * @param   hrtfmodel           HRTF model              0: kemar        1: vast         2: mps_vt
  * @return  true if it was successful
  */
 bool ProcessManager::decode(std::string input, std::string bitstream, std::string output, int decodingtype, int upmixtype, int binauralquality, int hrtfmodel) {
@@ -67,6 +87,7 @@ bool ProcessManager::decode(std::string input, std::string bitstream, std::strin
     } else {
         consolelog("ProcessManager",LogType::error,std::string(error));
     }
+    this->setInput(output);
     return (error == NULL);
 }
 
@@ -76,12 +97,42 @@ bool ProcessManager::decode(std::string input, std::string bitstream, std::strin
  * @param   effect              effect object (it includes all parameters)
  * @return  true if it was successful
  */
-bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
-    for (int channel = 0; channel < channels.size(); channel++) {
-        if (channels[channel]) {
-
+bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {   
+    float value;
+    if ((int)channels.size() == this->channels) {
+        int n, N;
+        if (this->chunksize == 0) {
+            n = 0;
+            N = this->samples;
         } else {
-            this->output[channel] = this->input[channel];
+            n = this->realtime;
+            N = n + this->chunksize;
         }
+        for (n; n < N; n++) {
+            for (int channel = 0; channel < this->channels; channel++) {
+                if (channels[channel]) {
+                    value = 0;
+                } else {
+                    value = this->input[n][channel];
+                }
+                this->output[n][channel] = value;
+                this->outputfile->writeValue(value);
+            }
+        }
+        this->realtime += this->chunksize;
+        return false;
+    } else {
+        consolelog("ProcessManager",LogType::error,"channels boolean vector (from effect argument) = " + std::to_string(channels.size()) + " does not correspond to number of channels = " + std::to_string(this->channels));
+        return false;
     }
+}
+
+/**
+ * @brief   It clears all variables and resets the process.
+ */
+void ProcessManager::clear() {
+    this->channels = 0;
+    this->realtime = 0;
+    this->inputfile = NULL;
+    this->outputfile = NULL;
 }

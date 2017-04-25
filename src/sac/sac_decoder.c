@@ -70,7 +70,9 @@ char *sac_decode(const char *input_filename, const char *output_filename,
 	AFILE* input = 0;
 	if (input_filename) {
 		input = AFopnRead(input_filename, &samples, &input_channels, &fs, 0);
-	}
+    } else {
+        return "input file name was not given";
+    }
 	if (bitstream_type == BS_FILE) {
 		bitstream_reader = FileReaderOpen(bitstream_filename);
 		bitstream = FileReaderGetByteReader(bitstream_reader);

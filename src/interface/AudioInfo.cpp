@@ -6,7 +6,8 @@
  */
 AudioInfo::AudioInfo(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::AudioInfo)
+    ui(new Ui::AudioInfo),
+    file(false)
 {
     ui->setupUi(this);
     consolelog("AudioInfo",LogType::progress,"AudioInfo object is created");

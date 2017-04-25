@@ -2,7 +2,7 @@
 #define AUDIOSTREAM_H
 
 // System libraries
-#include "math.h"
+#include "cmath"
 #include "stdlib.h"
 #include "vector"
 // Qt libraries

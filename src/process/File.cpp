@@ -1,31 +1,31 @@
 #include "File.h"
 
 /**
- * @brief	AudioFile constructor.
+ * @brief	File constructor.
  */
-File::File() {
-    this->setCursor(0);
-    consolelog("AudioFile",LogType::progress,"AudioFile object is created");
+File::File(bool writepermission) {
+    this->cursor = 0;
+    this->writepermission = writepermission;
+    consolelog("File",LogType::progress,"File object is created");
 }
 
 /**
- * @brief	AudioFile constructor.
+ * @brief	File constructor.
  * @param   filepath        file path
  */
-File::File(std::string filename) {
+File::File(std::string filename, bool writepermission) : File::File(writepermission) {
     this->setFilename(filename);
     this->setCursor(0);
-    consolelog("AudioFile",LogType::progress,"AudioFile object is created");
 }
 
 /**
- * @brief	AudioFile destructor.
+ * @brief	File destructor.
  */
 File::~File() {
     if(this->exists()) {
         this->file->close();
     }
-    consolelog("AudioFile",LogType::progress,"AudioFile object is deleted");
+    consolelog("File",LogType::progress,"File object is deleted");
 }
 
 /**
@@ -34,8 +34,12 @@ File::~File() {
  */
 void File::setFilename(std::string filename) {
     this->filename = filename;
-    this->file = new std::fstream(filename, std::ios::in | std::ios::binary | std::ios::ate);
-    consolelog("AudioFile",LogType::progress,"file name set to \"" + filename + "\"");
+    if (this->writepermission) {
+        this->file = new std::fstream(filename, std::ios::binary | std::ios::in | std::ios::out | std::ios::trunc);
+    } else {
+        this->file = new std::fstream(filename, std::ios::binary | std::ios::in);
+    }
+    consolelog("File",LogType::progress,"file name set to \"" + filename + "\"");
 }
 
 /**
@@ -56,6 +60,28 @@ void File::setCursor(int cursor) {
 }
 
 /**
+ * @brief   It gets the current file reading cursor.
+ * @return  cursor [Bytes] from the beginning of the file
+ */
+int File::getCursor() {
+    return this->cursor;
+}
+
+/**
+ * @brief   It gets the total file size.
+ * @return  file size [Bytes]
+ */
+int File::size() {
+    struct stat::stat fileinfo;
+    if (stat(this->filename.c_str(), &fileinfo) == 0) {
+        return fileinfo.st_size;
+    } else {
+        consolelog("File",LogType::error,"error while getting file size");
+        return 0;
+    }
+}
+
+/**
  * @brief   It indicates if the file object exists.
  * @return  true if the file object exists
  */
@@ -68,48 +94,76 @@ bool File::exists() {
 }
 
 /**
- * @brief   It reads data from the file.
- * @param   length          data length in bytes
+ * @brief   It reads binary from the file.
+ * @param   length          data length [Bytes]
  * @return  data
  */
-std::string File::readData(int length) {
+char *File::read(int length) {
     if(this->exists()) {
-        std::string data = "";
-        for(int byte = 0; byte < length; byte++) {
-            char *datapointer = new char[1];
-            file->read(datapointer, 1);
-            if(std::string(datapointer)=="") {
-                data += '\0';
-            } else {
-                data += std::string(datapointer);
-            }
-            delete[] datapointer;
+        if(this->cursor + length <= this->size()) {
+            char *data = new char[length];
+            this->file->read(data, length);
+            this->cursor += length;
+            return data;
+        } else {
+            consolelog("File",LogType::error, "file \"" + this->getFilename() + "\" does not contain more data");
+            return NULL;
         }
-        this->cursor += length;
-        return data;
     } else {
-        consolelog("AudioFile",LogType::error,"error while reading data from file \"" + this->getFilename() + "\"");
+        consolelog("File",LogType::error,"error while reading data from file \"" + this->getFilename() + "\"");
         return NULL;
     }
 }
 
 /**
+ * @brief   It reads data from the file.
+ * @param   length          data length [Bytes]
+ * @return  data
+ */
+std::string File::readData(int length) {
+    std::string data = "";
+    char *datapointer = this->read(length);
+    if (datapointer != NULL) {
+        for(int byte = 0; byte < length; byte++) {
+            data += *(datapointer+byte);
+        }
+        return data;
+    } else {
+        return NULL;
+    }
+}
+
+/**
+ * @brief   It writes data on the file.
+ * @param   data
+ */
+void File::writeData(std::string data) {
+    if (this->writepermission) {
+        const char *datapointer = data.c_str();
+        this->file->write(datapointer, data.size());
+        this->cursor += data.length();
+    } else {
+        consolelog("File",LogType::error,"file has not write permission");
+    }
+}
+
+/**
  * @brief   It reads a data number from the file
- * @param   length          data length in bytes
+ * @param   length          data length [Bytes]
  * @param   endianess       data order (big endian or little endian)
  * @return  data
  */
-unsigned long int File::readValue(int length,Endianess::endianess endianess) {
-    std::string data = this->readData(length);
-    unsigned long int value = 0;
+unsigned int File::readNumber(int length,Endianess::endianess endianess) {
+    char *data = this->read(length);
+    unsigned int value = 0;
     for (int byte = 0; byte < length; byte++) {
         switch (endianess) {
         case Endianess::bigendian:
         default:
-            value |= (unsigned char)data[byte] << (8*(length-byte-1));
+            value |= (unsigned char)*(data+byte) << (8*(length-byte-1));
             break;
         case Endianess::littleendian:
-            value |= (unsigned char)data[byte] << (8*byte);
+            value |= (unsigned char)*(data+byte) << (8*byte);
             break;
         }
     }
@@ -117,18 +171,91 @@ unsigned long int File::readValue(int length,Endianess::endianess endianess) {
 }
 
 /**
- * @brief	WAVFile constructor.
+ * @brief   It writes a data number on the file
+ * @param   value
+ * @param   length          data length [Bytes]
+ * @param   endianess       data order (big endian or little endian)
  */
-WAVFile::WAVFile() : File::File() {
-    this->cursor = 0;
+void File::writeNumber(unsigned int value, int length, Endianess::endianess endianess) {
+    std::string data = "";
+    char number = 0;
+    for (int byte = 0; byte<length; byte++) {
+        switch (endianess) {
+        case Endianess::bigendian:
+        default:
+            number = value >> (8*(length-byte-1));
+            break;
+        case Endianess::littleendian:
+            number = value >> (8*byte);
+            break;
+        }
+        data += std::string(1,number);
+    }
+    this->writeData(data);
+}
+
+/**
+ * @brief	WAVFile constructor.
+ * @param   writepermission file write permission (true if it is allowed)
+ */
+WAVFile::WAVFile(bool writepermission) : File::File(writepermission) {
 }
 
 /**
  * @brief	WAVFile constructor.
  * @param   filepath        file path
+ * @param   writepermission file write permission (true if it is allowed)
  */
-WAVFile::WAVFile(std::string filename) : File::File(filename) {
+WAVFile::WAVFile(std::string filename, bool writepermission) : File::File(filename, writepermission) {
     this->readHeader();
+}
+
+/**
+ * @brief   WAVFile constructor. Write file is allowed.
+ * @param   filename        file path
+ * @param   channels        number of channels
+ * @param   samplerate      sample rate
+ * @param   sampleformat    number of bits of a sample
+ */
+WAVFile::WAVFile(std::string filename, int channels, int fs, int sampleformat) : File::File(filename,true) {
+    this->header.chunkID = "RIFF";
+    this->header.chunksize = 36;
+    this->header.format = "WAVE";
+    this->header.subchunk1ID = "fmt ";
+    this->header.subchunk1size = 16;
+    this->header.audioformat = 1;
+    this->header.numchannels = channels;
+    this->header.samplerate = fs;
+    this->header.byterate = (int)fs*channels*sampleformat/8;
+    this->header.blockalign = (int)channels*sampleformat/8;
+    this->header.bitspersample = sampleformat;
+    this->header.subchunk2ID = "data";
+    this->header.subchunk2size = 0;
+    this->writeHeader();
+}
+
+/**
+ * @brief   It sets the signal reading cursor to keep on reading from another position.
+ * @param   cursor          new cursor position in samples (instead of bytes) from the beginning of the signal (instead of the file)
+ */
+void WAVFile::setCursor(int cursor) {
+    File::setCursor((int)cursor*this->header.bitspersample/8 + this->header.size());
+}
+
+/**
+ * @brief   It gets the current signal reading cursor.
+ * @return  cursor [Bytes] from the beginning of the signal (instead of the file)
+ */
+int WAVFile::getCursor() {
+    return (int)(File::getCursor() - this->header.size())/(this->header.bitspersample/8);
+}
+
+/**
+ * @brief   It gets the number of audio samples.
+ * @return  number of audio samples
+ */
+int WAVFile::samples() {
+    return this->header.subchunk2size / (this->header.bitspersample / 8);
 }
 
 /**
@@ -137,25 +264,24 @@ WAVFile::WAVFile(std::string filename) : File::File(filename) {
 void WAVFile::readHeader() {
     // Format header
     this->header.chunkID = this->readData(4);
-    this->header.chunksize = this->readValue(4,Endianess::littleendian);
+    this->header.chunksize = this->readNumber(4,Endianess::littleendian);
     this->header.format = this->readData(4);
     // Subchunk 1
     this->header.subchunk1ID = this->readData(4);
-    this->header.subchunk1size = this->readValue(4,Endianess::littleendian);
-    this->header.audioformat = this->readValue(2,Endianess::littleendian);
-    this->header.numchannels = this->readValue(2,Endianess::littleendian);
-    this->header.samplerate = this->readValue(4,Endianess::littleendian);
-    this->header.byterate = this->readValue(4,Endianess::littleendian);
-    this->header.blockalign = this->readValue(2,Endianess::littleendian);
-    this->header.bitspersample = this->readValue(2,Endianess::littleendian);
-    if(this->header.subchunk1size>16) {
-        this->readValue(this->header.subchunk1size-16,Endianess::bigendian);
-    }
+    this->header.subchunk1size = this->readNumber(4,Endianess::littleendian);
+    this->header.audioformat = this->readNumber(2,Endianess::littleendian);
+    this->header.numchannels = this->readNumber(2,Endianess::littleendian);
+    this->header.samplerate = this->readNumber(4,Endianess::littleendian);
+    this->header.byterate = this->readNumber(4,Endianess::littleendian);
+    this->header.blockalign = this->readNumber(2,Endianess::littleendian);
+    this->header.bitspersample = this->readNumber(2,Endianess::littleendian);
+    File::setCursor(File::getCursor()+this->header.subchunk1size-16);
     // Subchunk 2
     this->header.subchunk2ID = this->readData(4);
-    this->header.subchunk2size = this->readValue(4,Endianess::littleendian);
+    this->header.subchunk2size = this->readNumber(4,Endianess::littleendian);
     // Attributes
     this->duration = this->header.subchunk2size / this->header.byterate;
+    this->amplitude = std::pow(2, this->header.bitspersample - 1);
     // Format analyzer
     bool incorrect = false;
     std::string incorrectfields = "";
@@ -212,8 +338,71 @@ void WAVFile::readHeader() {
         incorrectfields += "\n\tsubchunk 2 size = " + std::to_string(this->header.subchunk2size);
     }
     if (incorrect) {
-        consolelog("AudioFile",LogType::warning,"audio file incorret format:" + incorrectfields);
+        consolelog("File",LogType::warning,"audio file incorret format:" + incorrectfields);
     } else {
-        consolelog("AudioFile",LogType::progress,"audio file format correctly loaded");
+        consolelog("File",LogType::progress,"audio file format correctly loaded");
+    }
+}
+
+/**
+ * @brief   It writes the header on the file from the audio file object header.
+ */
+void WAVFile::writeHeader() {
+    File::setCursor(0);
+    this->writeData(this->header.chunkID);
+    this->writeNumber(this->header.chunksize,4,Endianess::littleendian);
+    this->writeData(this->header.format);
+    this->writeData(this->header.subchunk1ID);
+    this->writeNumber(this->header.subchunk1size,4,Endianess::littleendian);
+    this->writeNumber(this->header.audioformat,2,Endianess::littleendian);
+    this->writeNumber(this->header.numchannels,2,Endianess::littleendian);
+    this->writeNumber(this->header.samplerate,4,Endianess::littleendian);
+    this->writeNumber(this->header.byterate,4,Endianess::littleendian);
+    this->writeNumber(this->header.blockalign,2,Endianess::littleendian);
+    this->writeNumber(this->header.bitspersample,2,Endianess::littleendian);
+    this->writeData(this->header.subchunk2ID);
+    this->writeNumber(this->header.subchunk2size,4,Endianess::littleendian);
+    consolelog("File", LogType::progress, "audio file header was written on the file");
+}
+
+/**
+ * @brief   It reads a sample from the audio file.
+ */
+float WAVFile::readValue() {
+    int value = this->readNumber(this->header.bitspersample/8,Endianess::littleendian);
+    unsigned int signmask = this->amplitude;
+    unsigned int valuemask = signmask - 1;
+    bool negative = (value & signmask) != 0;
+    if(negative) {
+        value = (~value) & valuemask;   // inverting bits
+        value += 1;                     // 2's complement
+        value *= -1;                    // sign
+    }
+    return (float)value / this->amplitude;
+}
+
+/**
+ * @brief   It writes a sample on the audio file.
+ * @param   value           sample value
+ */
+void WAVFile::writeValue(float value) {
+    int amplitude = std::pow(2, this->header.bitspersample - 1);
+    unsigned int data = value*amplitude;
+    if(data == amplitude && value > 0) {
+        data--;
+    }
+    this->writeNumber(data, (int)this->header.bitspersample/8, Endianess::littleendian);
+    // header size increment
+    int cursor = this->getCursor();
+    if (cursor > 0) {
+        // chunksize
+        File::setCursor(4);
+        this->header.chunksize = this->size();
+        this->writeNumber(this->header.chunksize, 4, Endianess::littleendian);
+        // subchunk2size
+        File::setCursor(40);
+        this->header.subchunk2size = this->header.chunksize - this->header.size();
+        this->writeNumber(this->header.subchunk2size, 4, Endianess::littleendian);
+        this->setCursor(cursor);
     }
 }

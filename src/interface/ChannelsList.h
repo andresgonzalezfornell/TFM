@@ -3,7 +3,7 @@
 
 // System libraries
 #include "string"
-#include "math.h"
+#include "cmath"
 #include "stdlib.h"
 // Qt libraries
 #include "QObject"
@@ -47,7 +47,6 @@ public:
     ~Channel();
     int getIndex();
     void setIndex(int index);
-    void setStream(AudioStream *stream);
     void setLabel(std::string label);
     void setVolume(int volume);
     void mute(bool state);

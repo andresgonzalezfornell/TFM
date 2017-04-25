@@ -1,7 +1,7 @@
 #ifndef AUDIOOUTPUT_H
 #define AUDIOOUTPUT_H
 
-#include <math.h>
+#include <cmath>
 #include "QtMath"
 
 // C libraries
@@ -15,7 +15,6 @@
 #include "QAudioDeviceInfo"
 #include "QAudioOutput"
 #include "QComboBox"
-#include "QDoubleSpinBox"
 // Classes and local files
 #include "../process/AudioSignal.h"
 #include "../tools/Logger.h"
@@ -91,7 +90,7 @@ public:
     ~AudioTest();
 private:
     Ui::AudioTest *ui;                  /**< user interface object */
-    AudioOutput *audiooutput;            /**< audio output object */
+    AudioOutput *audiooutput;           /**< audio output object */
     int getSampleSize();
     int getFS();
     void start();
