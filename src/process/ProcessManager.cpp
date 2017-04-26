@@ -22,8 +22,8 @@ ProcessManager::~ProcessManager() {
 }
 
 /**
- * @brief   It sets input variable.
- * @param   file                file object to extract input variable
+ * @brief   It sets input variable from the existing input file.
+ * @param   filename            audio input file name
  */
 void ProcessManager::setInput(std::string filename) {
     this->clear();
@@ -33,15 +33,19 @@ void ProcessManager::setInput(std::string filename) {
         consolelog("ProcessManager",LogType::error, "input file sampling frequency is not valid (it is " + std::to_string(this->inputfile->header.samplerate) + "Hz and it should be " + std::to_string(this->fs) + "Hz)");
     } else {
         this->inputfile->setCursor(0);
-        this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
         this->channels = this->inputfile->header.numchannels;
-        this->input = new float*[this->samples];
-        this->output = new float*[this->samples];
+        this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
+        // Variables creation
+        this->input = new float*[this->channels];
+        this->output = new float*[this->channels];
+        for (int channel = 0; channel < this->channels; channel++) {
+            this->input[channel] = new float[this->samples];
+            this->output[channel] = new float[this->samples];
+        }
+        // Input reading
         for (int sample = 0; sample < this->samples; sample++) {
-            this->input[sample] = new float[channels];
-            this->output[sample] = new float[channels];
             for (int channel = 0; channel < this->channels; channel++) {
-                this->input[sample][channel] = this->inputfile->readValue();
+                this->input[channel][sample] = this->inputfile->readValue();
             }
         }
         consolelog("ProcessManager",LogType::progress, "input file has been loaded");
@@ -54,6 +58,12 @@ void ProcessManager::setInput(std::string filename) {
  */
 void ProcessManager::setOutput(std::string filename) {
     this->outputfile = new WAVFile(filename,this->channels,this->fs,this->inputfile->header.bitspersample);
+    for (int sample = 0; sample < this->samples; sample++) {
+        for (int channel = 0; channel < this->channels; channel++) {
+            this->outputfile->writeValue(this->output[channel][sample]);
+        }
+    }
+    this->outputfile->writeHeader(); // Updating output file header
     consolelog("ProcessManager",LogType::progress, "output file has been created");
 }
 
@@ -98,7 +108,6 @@ bool ProcessManager::decode(std::string input, std::string bitstream, std::strin
  * @return  true if it was successful
  */
 bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {   
-    float value;
     if ((int)channels.size() == this->channels) {
         int n, N;
         if (this->chunksize == 0) {
@@ -106,17 +115,15 @@ bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
             N = this->samples;
         } else {
             n = this->realtime;
-            N = n + this->chunksize;
+            N = this->chunksize;
         }
-        for (n; n < N; n++) {
-            for (int channel = 0; channel < this->channels; channel++) {
-                if (channels[channel]) {
-                    value = 0;
-                } else {
-                    value = this->input[n][channel];
+        for (int channel = 0; channel < this->channels; channel++) {
+            if (channels[channel]) {
+                effect.apply(input[channel]+n, output[channel]+n, N);
+            } else {
+                for(int sample = n; sample < (n+N); sample++) {
+                    this->output[channel][sample] = this->input[channel][sample];
                 }
-                this->output[n][channel] = value;
-                this->outputfile->writeValue(value);
             }
         }
         this->realtime += this->chunksize;

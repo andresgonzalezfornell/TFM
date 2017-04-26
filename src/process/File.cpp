@@ -281,7 +281,6 @@ void WAVFile::readHeader() {
     this->header.subchunk2size = this->readNumber(4,Endianess::littleendian);
     // Attributes
     this->duration = this->header.subchunk2size / this->header.byterate;
-    this->amplitude = std::pow(2, this->header.bitspersample - 1);
     // Format analyzer
     bool incorrect = false;
     std::string incorrectfields = "";
@@ -348,6 +347,7 @@ void WAVFile::readHeader() {
  * @brief   It writes the header on the file from the audio file object header.
  */
 void WAVFile::writeHeader() {
+    int cursor = File::getCursor();
     File::setCursor(0);
     this->writeData(this->header.chunkID);
     this->writeNumber(this->header.chunksize,4,Endianess::littleendian);
@@ -362,15 +362,20 @@ void WAVFile::writeHeader() {
     this->writeNumber(this->header.bitspersample,2,Endianess::littleendian);
     this->writeData(this->header.subchunk2ID);
     this->writeNumber(this->header.subchunk2size,4,Endianess::littleendian);
+    if (cursor > this->header.size()) {
+        File::setCursor(cursor);
+    }
     consolelog("File", LogType::progress, "audio file header was written on the file");
 }
 
 /**
  * @brief   It reads a sample from the audio file.
+ * @return  sample value (from -1 to 1)
  */
 float WAVFile::readValue() {
+    int amplitude = 0x1 << (this->header.bitspersample - 1);
     int value = this->readNumber(this->header.bitspersample/8,Endianess::littleendian);
-    unsigned int signmask = this->amplitude;
+    unsigned int signmask = amplitude;
     unsigned int valuemask = signmask - 1;
     bool negative = (value & signmask) != 0;
     if(negative) {
@@ -378,31 +383,25 @@ float WAVFile::readValue() {
         value += 1;                     // 2's complement
         value *= -1;                    // sign
     }
-    return (float)value / this->amplitude;
+    return (float)value / amplitude;
 }
 
 /**
  * @brief   It writes a sample on the audio file.
- * @param   value           sample value
+ * @param   value           sample value (from -1 to 1)
  */
 void WAVFile::writeValue(float value) {
-    int amplitude = std::pow(2, this->header.bitspersample - 1);
+    int amplitude = 0x1 << (this->header.bitspersample - 1);
     unsigned int data = value*amplitude;
+    // Solving value according to preccision
     if(data == amplitude && value > 0) {
         data--;
     }
     this->writeNumber(data, (int)this->header.bitspersample/8, Endianess::littleendian);
-    // header size increment
+    // Updating audio file header
     int cursor = this->getCursor();
     if (cursor > 0) {
-        // chunksize
-        File::setCursor(4);
-        this->header.chunksize = this->size();
-        this->writeNumber(this->header.chunksize, 4, Endianess::littleendian);
-        // subchunk2size
-        File::setCursor(40);
+        this->header.chunksize = this->size()-8;
         this->header.subchunk2size = this->header.chunksize - this->header.size();
-        this->writeNumber(this->header.subchunk2size, 4, Endianess::littleendian);
-        this->setCursor(cursor);
     }
 }

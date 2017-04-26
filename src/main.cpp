@@ -204,10 +204,12 @@ int main(int argc, char *argv[]) {
     // Decoding
     process->decode(source,bitstream,input,upmixtype,decodingtype,binauralquality,hrtfmodel);
     // Effects
-    process->setOutput(output);
-    Effect effect = Effect();
-    std::vector<bool> channels = std::vector<bool>(process->channels,false);
+    std::string effectparams = "";
+    Effect effect = Effect(Effect::Compressor,effectparams);
+    std::vector<bool> channels = std::vector<bool>(process->channels,true);
     process->applyEffect(channels, effect);
+    // Output
+    process->setOutput(output);
     // End
     consolelog("main", LogType::progress, "application was completed");
     return 0;

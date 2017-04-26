@@ -32,7 +32,8 @@ SOURCES += \
     src/sac/sac_decoder.c \
     src/sac/sac_encoder.c \
     src/effects/Effect.cpp \
-    src/tools/Logger.cpp
+    src/tools/Logger.cpp \
+    src/effects/Compressor.cpp
 
 HEADERS  += \
     src/process/ProcessManager.h \
@@ -42,7 +43,8 @@ HEADERS  += \
     src/sac/sac_decoder.h \
     src/sac/sac_encoder.h \
     src/effects/Effect.h \
-    src/tools/Logger.h
+    src/tools/Logger.h \
+    src/effects/Compressor.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
 
@@ -60,13 +62,13 @@ DEPENDPATH += $$PWD/lib/SAC/sac_dec/include
 win32:!win32-g++: PRE_TARGETDEPS += $$PWD/lib/SAC/sac_dec/lib/sac_dec.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/lib/SAC/sac_dec/lib/libsac_dec.a
 
-unix|win32: LIBS += -L$$PWD/../../../../../usr/local/lib/ -lfftw3
+unix|win32: LIBS += -L/usr/local/lib/ -lfftw3
 
-INCLUDEPATH += $$PWD/../../../../../usr/local/include
-DEPENDPATH += $$PWD/../../../../../usr/local/include
+INCLUDEPATH += /usr/local/include
+DEPENDPATH += /usr/local/include
 
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../usr/local/lib/fftw3.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../usr/local/lib/libfftw3.a
+win32:!win32-g++: PRE_TARGETDEPS += /usr/local/lib/fftw3.lib
+else:unix|win32-g++: PRE_TARGETDEPS += /usr/local/lib/libfftw3.a
 
 unix|win32: LIBS += -L$$PWD/lib/AFsp/lib/ -ltsp
 

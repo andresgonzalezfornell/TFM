@@ -104,8 +104,6 @@ public:
     void writeHeader();
     float readValue();
     void writeValue(float value);
-private:
-    int amplitude;                      /**< max value of a signal sample */
 };
 
 #endif // FILE_H

@@ -31,7 +31,8 @@ SOURCES += src/interface/main.cpp\
     src/sac/sac_decoder.c \
     src/effects/Effect.cpp \
     src/tools/Logger.cpp \
-    src/process/File.cpp
+    src/process/File.cpp \
+    src/effects/Compressor.cpp
 
 HEADERS  += \
     src/interface/Decoder.h \
@@ -49,7 +50,8 @@ HEADERS  += \
     src/effects/Effect.h \
     src/tools/Logger.h \
     lib/QtLibraries/src/qtlibraries.h \
-    src/process/File.h
+    src/process/File.h \
+    src/effects/Compressor.h
 
 FORMS    += \
     src/interface/AudioInfo.ui \
