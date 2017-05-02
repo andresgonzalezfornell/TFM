@@ -95,9 +95,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1efe95896d527718ed12c338bbcbb2a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sac__decoder_8c.html#a1efe95896d527718ed12c338bbcbb2a7">myexit</a> (char *s)</td></tr>
 <tr class="memdesc:a1efe95896d527718ed12c338bbcbb2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds a char string to the char string variable error to s.  <a href="#a1efe95896d527718ed12c338bbcbb2a7">More...</a><br /></td></tr>
 <tr class="separator:a1efe95896d527718ed12c338bbcbb2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ff6bde12bab23512bfddf278c0b7ba"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sac__decoder_8c.html#ac2ff6bde12bab23512bfddf278c0b7ba">sac_decode</a> (const char *input_filename, const char *output_filename, const char *bitstream_filename, double fs, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel, int debuggermode)</td></tr>
-<tr class="memdesc:ac2ff6bde12bab23512bfddf278c0b7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the SAC decoder.  <a href="#ac2ff6bde12bab23512bfddf278c0b7ba">More...</a><br /></td></tr>
-<tr class="separator:ac2ff6bde12bab23512bfddf278c0b7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe6677b920cf674fb45b8f9229f3460"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sac__decoder_8c.html#a4fe6677b920cf674fb45b8f9229f3460">sac_decode</a> (const char *input_filename, const char *output_filename, const char *bitstream_filename, double fs, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)</td></tr>
+<tr class="memdesc:a4fe6677b920cf674fb45b8f9229f3460"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the SAC decoder.  <a href="#a4fe6677b920cf674fb45b8f9229f3460">More...</a><br /></td></tr>
+<tr class="separator:a4fe6677b920cf674fb45b8f9229f3460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4886878a85e5c08aa353bdec90d702db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sac__decoder_8c.html#a4886878a85e5c08aa353bdec90d702db">if</a> (input_samples !=NULL)</td></tr>
 <tr class="separator:a4886878a85e5c08aa353bdec90d702db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16c12acc93abe028863508fe88aa1f53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sac__decoder_8c.html#a16c12acc93abe028863508fe88aa1f53">if</a> (input_interleaved !=NULL)</td></tr>
@@ -254,8 +254,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2ff6bde12bab23512bfddf278c0b7ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2ff6bde12bab23512bfddf278c0b7ba">&#9670;&nbsp;</a></span>sac_decode()</h2>
+<a id="a4fe6677b920cf674fb45b8f9229f3460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe6677b920cf674fb45b8f9229f3460">&#9670;&nbsp;</a></span>sac_decode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,13 +306,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>hrtfmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>debuggermode</em>&#160;</td>
+          <td class="paramname"><em>hrtfmodel</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -333,7 +327,6 @@ Variables</h2></td></tr>
     <tr><td class="paramname">decodingtype</td><td>decoding type 0: low 1: high </td></tr>
     <tr><td class="paramname">binauralquality</td><td>binaural upmix quality 0: parametric 1: filtering </td></tr>
     <tr><td class="paramname">hrtfmodel</td><td>HRTF model 0: kemar 1: vast 2: mps_vt </td></tr>
-    <tr><td class="paramname">debuggermode</td><td>debugger mode 0: off 1: on </td></tr>
   </table>
   </dd>
 </dl>

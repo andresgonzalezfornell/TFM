@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['endianess',['endianess',['../struct_w_a_v_file_1_1_endianess.html#a6cd5c3b9ebc645b47a80094d1774c612',1,'WAVFile::Endianess']]]
+  ['effectid',['effectID',['../class_effect.html#a6422fe21e9e452943fbc3344884a6fed',1,'Effect']]],
+  ['endianess',['endianess',['../struct_file_1_1_endianess.html#ac80818ac42fdd0c9aa29d424e65fa37e',1,'File::Endianess']]]
 ];

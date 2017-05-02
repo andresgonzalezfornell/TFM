@@ -2,7 +2,6 @@
 #define SAC_ENCODER_H
 
 // System libraries
-#include "string.h"
 #include "math.h"
 #include "stdlib.h"
 

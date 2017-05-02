@@ -109,12 +109,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a92006cf482c9c576ec5597e0433174fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a92006cf482c9c576ec5597e0433174fc">getSample</a> (int index)</td></tr>
 <tr class="memdesc:a92006cf482c9c576ec5597e0433174fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets a sample from the selected index.  <a href="#a92006cf482c9c576ec5597e0433174fc">More...</a><br /></td></tr>
 <tr class="separator:a92006cf482c9c576ec5597e0433174fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_signal.html">AudioSignal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">getSample</a> (int start, int end)</td></tr>
+<tr class="memdesc:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets samples from a specific range.  <a href="#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">More...</a><br /></td></tr>
+<tr class="separator:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef099025639235c7f062294470a691f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#aeef099025639235c7f062294470a691f">setSample</a> (int index, float sample)</td></tr>
 <tr class="memdesc:aeef099025639235c7f062294470a691f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a sample in the selected index.  <a href="#aeef099025639235c7f062294470a691f">More...</a><br /></td></tr>
 <tr class="separator:aeef099025639235c7f062294470a691f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94c974f752e3045190944860bd8b0ad8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a94c974f752e3045190944860bd8b0ad8">addSample</a> (float sample)</td></tr>
 <tr class="memdesc:a94c974f752e3045190944860bd8b0ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds a sample to the end of the signal.  <a href="#a94c974f752e3045190944860bd8b0ad8">More...</a><br /></td></tr>
 <tr class="separator:a94c974f752e3045190944860bd8b0ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1c34bc8bfcf31fdbac847e67cbea7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#aac1c34bc8bfcf31fdbac847e67cbea7f">deleteSample</a> (int index)</td></tr>
+<tr class="memdesc:aac1c34bc8bfcf31fdbac847e67cbea7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It deletes a sample at a selected position.  <a href="#aac1c34bc8bfcf31fdbac847e67cbea7f">More...</a><br /></td></tr>
+<tr class="separator:aac1c34bc8bfcf31fdbac847e67cbea7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c12f9dab81440c887138f8308d5f3b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a0c12f9dab81440c887138f8308d5f3b6">deleteSample</a> (int start, int end)</td></tr>
+<tr class="memdesc:a0c12f9dab81440c887138f8308d5f3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">It deletes a range of samples.  <a href="#a0c12f9dab81440c887138f8308d5f3b6">More...</a><br /></td></tr>
+<tr class="separator:a0c12f9dab81440c887138f8308d5f3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa86d766d3fe58e23a852751bbe2ecc78"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#aa86d766d3fe58e23a852751bbe2ecc78">getSignal</a> ()</td></tr>
 <tr class="memdesc:aa86d766d3fe58e23a852751bbe2ecc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the entire signal.  <a href="#aa86d766d3fe58e23a852751bbe2ecc78">More...</a><br /></td></tr>
 <tr class="separator:aa86d766d3fe58e23a852751bbe2ecc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,8 +131,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a90eda59db04d3b18bd1949b8fa9e9c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the entire signal.  <a href="#a90eda59db04d3b18bd1949b8fa9e9c81">More...</a><br /></td></tr>
 <tr class="separator:a90eda59db04d3b18bd1949b8fa9e9c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff46a70335800ba93ae513bdea7e4c9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#afff46a70335800ba93ae513bdea7e4c9">getTimes</a> ()</td></tr>
-<tr class="memdesc:afff46a70335800ba93ae513bdea7e4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets time [s] axis as a vector.  <a href="#afff46a70335800ba93ae513bdea7e4c9">More...</a><br /></td></tr>
+<tr class="memdesc:afff46a70335800ba93ae513bdea7e4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets time [s] axis as a vector beggining at time t = 0 s.  <a href="#afff46a70335800ba93ae513bdea7e4c9">More...</a><br /></td></tr>
 <tr class="separator:afff46a70335800ba93ae513bdea7e4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04d6fcd3219f4bb8d77916c60d85ad2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#aa04d6fcd3219f4bb8d77916c60d85ad2">getTimes</a> (float initialtime)</td></tr>
+<tr class="memdesc:aa04d6fcd3219f4bb8d77916c60d85ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets time [s] axis as a vector beggining at a specific initial time.  <a href="#aa04d6fcd3219f4bb8d77916c60d85ad2">More...</a><br /></td></tr>
+<tr class="separator:aa04d6fcd3219f4bb8d77916c60d85ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1330b11b635cfafe2edb75fd0d2e70"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a1c1330b11b635cfafe2edb75fd0d2e70">getSpectrum</a> ()</td></tr>
 <tr class="memdesc:a1c1330b11b635cfafe2edb75fd0d2e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the signal spectral density.  <a href="#a1c1330b11b635cfafe2edb75fd0d2e70">More...</a><br /></td></tr>
 <tr class="separator:a1c1330b11b635cfafe2edb75fd0d2e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,6 +304,69 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aac1c34bc8bfcf31fdbac847e67cbea7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1c34bc8bfcf31fdbac847e67cbea7f">&#9670;&nbsp;</a></span>deleteSample() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioSignal::deleteSample </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It deletes a sample at a selected position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>sample position index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c12f9dab81440c887138f8308d5f3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c12f9dab81440c887138f8308d5f3b6">&#9670;&nbsp;</a></span>deleteSample() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioSignal::deleteSample </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It deletes a range of samples. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>first index of the range (included) </td></tr>
+    <tr><td class="paramname">end</td><td>last index of the range (included) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4e45a4b1adc16a9cbd65501efafb6ded"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e45a4b1adc16a9cbd65501efafb6ded">&#9670;&nbsp;</a></span>getFrequencies() <span class="overload">[1/2]</span></h2>
 
@@ -340,7 +415,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a92006cf482c9c576ec5597e0433174fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92006cf482c9c576ec5597e0433174fc">&#9670;&nbsp;</a></span>getSample()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a92006cf482c9c576ec5597e0433174fc">&#9670;&nbsp;</a></span>getSample() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,6 +438,44 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sample </dd></dl>
+
+</div>
+</div>
+<a id="adfa4565e6ff0d8dc6bcbf87dbf6d01d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">&#9670;&nbsp;</a></span>getSample() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_audio_signal.html">AudioSignal</a> AudioSignal::getSample </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets samples from a specific range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>first index of the range (included) </td></tr>
+    <tr><td class="paramname">end</td><td>last index of the range (included) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>subsignal object </dd></dl>
 
 </div>
 </div>
@@ -434,7 +547,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="afff46a70335800ba93ae513bdea7e4c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff46a70335800ba93ae513bdea7e4c9">&#9670;&nbsp;</a></span>getTimes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afff46a70335800ba93ae513bdea7e4c9">&#9670;&nbsp;</a></span>getTimes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,7 +561,34 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>It gets time [s] axis as a vector. </p>
+<p>It gets time [s] axis as a vector beggining at time t = 0 s. </p>
+<dl class="section return"><dt>Returns</dt><dd>time vector </dd></dl>
+
+</div>
+</div>
+<a id="aa04d6fcd3219f4bb8d77916c60d85ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04d6fcd3219f4bb8d77916c60d85ad2">&#9670;&nbsp;</a></span>getTimes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; float &gt; AudioSignal::getTimes </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>initialtime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets time [s] axis as a vector beggining at a specific initial time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialtime</td><td>initial time [s] </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>time vector </dd></dl>
 
 </div>
@@ -571,8 +711,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/interface/<a class="el" href="_audio_signal_8h_source.html">AudioSignal.h</a></li>
-<li>src/interface/<a class="el" href="_audio_signal_8cpp.html">AudioSignal.cpp</a></li>
+<li>src/process/<a class="el" href="_audio_signal_8h_source.html">AudioSignal.h</a></li>
+<li>src/process/<a class="el" href="_audio_signal_8cpp.html">AudioSignal.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['real',['real',['../_audio_signal_8cpp.html#a5f5a64ef503db0fc824df8320929b126',1,'AudioSignal.cpp']]]
+  ['classes',['CLASSES',['../_effects_module_8h.html#aa6df04fbcd3d2e5765447931df2c3d19',1,'EffectsModule.h']]]
 ];

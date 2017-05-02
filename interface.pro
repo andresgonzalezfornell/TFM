@@ -19,30 +19,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += src/interface/main.cpp\
     src/interface/Decoder.cpp \
     src/interface/Encoder.cpp \
+    src/interface/EffectsMonitor.cpp \
     src/interface/ChannelsList.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
     src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
     src/process/ProcessManager.cpp \
+    src/process/File.cpp \
     src/process/AudioStream.cpp \
     src/process/AudioSignal.cpp \
     src/sac/sac_encoder.c \
     src/sac/sac_decoder.c \
-    src/effects/Effect.cpp \
     src/tools/Logger.cpp \
-    src/process/File.cpp \
-    src/effects/Compressor.cpp
+    src/effects/Effect.cpp \
+    src/effects/Compressor.cpp \
+    src/effects/Equalizer.cpp
 
 HEADERS  += \
     src/interface/Decoder.h \
     src/interface/Encoder.h \
+    src/interface/EffectsMonitor.h \
     src/interface/ChannelsList.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
     src/interface/AudioChart.h \
     src/interface/Volumeter.h \
     src/process/ProcessManager.h \
+    src/process/File.h \
     src/process/AudioStream.h \
     src/process/AudioSignal.h \
     src/sac/sac_encoder.h \
@@ -50,14 +54,16 @@ HEADERS  += \
     src/effects/Effect.h \
     src/tools/Logger.h \
     lib/QtLibraries/src/qtlibraries.h \
-    src/process/File.h \
-    src/effects/Compressor.h
+    src/effects/EffectBase.h \
+    src/effects/EffectsModule.h \
+    src/effects/Compressor.h \
+    src/effects/Equalizer.h
 
 FORMS    += \
-    src/interface/AudioInfo.ui \
     src/interface/Decoder.ui \
     src/interface/Encoder.ui \
-    src/interface/AudioTest.ui
+    src/interface/AudioTest.ui \
+    src/interface/AudioInfo.ui
 
 RESOURCES += \
     src/interface/media.qrc

@@ -6,4 +6,8 @@
         <file alias="preview_unmute">media/icon_preview_unmute.png</file>
         <file alias="preview_mute">media/icon_preview_mute.png</file>
     </qresource>
+    <qresource prefix="/imports">
+        <file>effects/Compressor.xml</file>
+        <file>effects/Reverb.xml</file>
+    </qresource>
 </RCC>

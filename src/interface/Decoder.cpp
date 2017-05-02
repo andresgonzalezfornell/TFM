@@ -17,9 +17,23 @@ Decoder::Decoder(QWidget *framework) :
     ui->setupUi(this);
     ChannelsList::fs = 44100;
     ChannelsList::samplesize = 32;
-    this->process = new ProcessManager(ChannelsList::fs, 3);
+    int chunksize = 100;
+    this->process = new ProcessManager(ChannelsList::fs, chunksize);
+    // Effects
+    this->effectsmonitor = new EffectsMonitor(ui->effect_monitor_list);
+    std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
+    for (std::map<std::string, Effect::effectID>::iterator iterator = effects.begin(); iterator != effects.end(); iterator++) {
+        QAction *effect = new QAction(this);
+        effect->setObjectName(ui->menu_effect->objectName() + QString::fromStdString("_" + iterator->first));
+        effect->setText(QString::fromStdString(iterator->first));
+        effect->setCheckable(true);
+        ui->menu_effect->addAction(effect);
+        QObject::connect(effect,SIGNAL(triggered(bool)),this,SLOT(toggleEffect()));
+    }
+    this->setEffect(effects.begin()->first);
+    // Input & Output
     this->channels_input = new ChannelsList(ui->input_channels,0,false);
-    this->channels_output = new ChannelsList(ui->output_channels,2,true);
+    this->channels_output = new ChannelsList(ui->output_channels,0,true);
     this->source = NULL;
     this->input = NULL;
     this->bitstream = NULL;
@@ -45,6 +59,7 @@ Decoder::Decoder(QWidget *framework) :
     // Menu - Input
     QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
     // Menu - Effect
+
     // Menu - Output
     QObject::connect(ui->menu_test,SIGNAL(triggered(bool)),this,SLOT(test()));
     consolelog("Decoder", LogType::progress, "Decoder object is created");
@@ -114,6 +129,19 @@ void Decoder::updateControls() {
     ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Decoder
     ui->menu_decode->setEnabled(this->source->exists() && this->bitstream->exists());
+}
+
+/**
+ * @brief   It sets an effect for the effect monitor.
+ * @param   effect              selected effect
+ */
+void Decoder::setEffect(std::string effect) {
+    this->effectsmonitor->setEffect(effect);
+    std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
+    for (std::map<std::string, Effect::effectID>::iterator iterator = effects.begin(); iterator != effects.end(); iterator++) {
+        QAction* action = this->findChild<QAction *>(ui->menu_effect->objectName() + QString::fromStdString("_" + iterator->first));
+        action->setChecked(iterator->first == effect);
+    }
 }
 
 /**
@@ -515,6 +543,25 @@ void Decoder::toggleHRTFModel(QAction *item) {
         this->setHRTFModel(HRTFModel::kemar);
     }
     consolelog("Decoder",LogType::interaction,"HRTF model set to " + type);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Slot action for menu effect items
+ */
+void Decoder::toggleEffect() {
+    QObject::sender()->blockSignals(true);
+    std::string effect = QObject::sender()->objectName().toStdString().substr(QObject::sender()->objectName().toStdString().find(ui->menu_effect->objectName().toStdString() + "_") + ui->menu_effect->objectName().toStdString().length() + 1);
+    std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
+    for (std::map<std::string, Effect::effectID>::iterator iterator = effects.begin(); iterator != effects.end(); iterator++) {
+        if (iterator->first == effect) {
+            this->setEffect(iterator->first);
+            consolelog("Decoder",LogType::interaction, "selecting effect \"" + iterator->first + "\"");
+            QObject::sender()->blockSignals(false);
+            return;
+        }
+    }
+    consolelog("Decoder",LogType::error,"effect \"" + effect + "\" is not available");
     QObject::sender()->blockSignals(false);
 }
 

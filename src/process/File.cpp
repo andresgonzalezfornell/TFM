@@ -11,7 +11,8 @@ File::File(bool writepermission) {
 
 /**
  * @brief	File constructor.
- * @param   filepath        file path
+ * @param   filename            file path
+ * @param   writepermission     file write permission (true if it is allowed)
  */
 File::File(std::string filename, bool writepermission) : File::File(writepermission) {
     this->setFilename(filename);
@@ -30,7 +31,7 @@ File::~File() {
 
 /**
  * @brief   It sets the file path name
- * @param   filename        file path name
+ * @param   filename            file path name
  */
 void File::setFilename(std::string filename) {
     this->filename = filename;
@@ -52,7 +53,7 @@ std::string File::getFilename() {
 
 /**
  * @brief   It sets the file reading cursor to keep on reading from another position.
- * @param   cursor          new cursor position [Bytes] from the beginning of the file
+ * @param   cursor              new cursor position [Bytes] from the beginning of the file
  */
 void File::setCursor(int cursor) {
     this->cursor = cursor;
@@ -95,7 +96,7 @@ bool File::exists() {
 
 /**
  * @brief   It reads binary from the file.
- * @param   length          data length [Bytes]
+ * @param   length              data length [Bytes]
  * @return  data
  */
 char *File::read(int length) {
@@ -117,13 +118,16 @@ char *File::read(int length) {
 
 /**
  * @brief   It reads data from the file.
- * @param   length          data length [Bytes]
+ * @param   length              data length [Bytes] (if length = 0 function returns all available data from the file)
  * @return  data
  */
 std::string File::readData(int length) {
+    if (length <= 0) {
+        length = this->size() - this->cursor;
+    }
     std::string data = "";
     char *datapointer = this->read(length);
-    if (datapointer != NULL) {
+    if (datapointer != NULL || length > 0) {
         for(int byte = 0; byte < length; byte++) {
             data += *(datapointer+byte);
         }
@@ -149,8 +153,8 @@ void File::writeData(std::string data) {
 
 /**
  * @brief   It reads a data number from the file
- * @param   length          data length [Bytes]
- * @param   endianess       data order (big endian or little endian)
+ * @param   length              data length [Bytes]
+ * @param   endianess           data order (big endian or little endian)
  * @return  data
  */
 unsigned int File::readNumber(int length,Endianess::endianess endianess) {
@@ -173,8 +177,8 @@ unsigned int File::readNumber(int length,Endianess::endianess endianess) {
 /**
  * @brief   It writes a data number on the file
  * @param   value
- * @param   length          data length [Bytes]
- * @param   endianess       data order (big endian or little endian)
+ * @param   length              data length [Bytes]
+ * @param   endianess           data order (big endian or little endian)
  */
 void File::writeNumber(unsigned int value, int length, Endianess::endianess endianess) {
     std::string data = "";
@@ -203,8 +207,8 @@ WAVFile::WAVFile(bool writepermission) : File::File(writepermission) {
 
 /**
  * @brief	WAVFile constructor.
- * @param   filepath        file path
- * @param   writepermission file write permission (true if it is allowed)
+ * @param   filename            file path
+ * @param   writepermission     file write permission (true if it is allowed)
  */
 WAVFile::WAVFile(std::string filename, bool writepermission) : File::File(filename, writepermission) {
     this->readHeader();
@@ -212,10 +216,10 @@ WAVFile::WAVFile(std::string filename, bool writepermission) : File::File(filena
 
 /**
  * @brief   WAVFile constructor. Write file is allowed.
- * @param   filename        file path
- * @param   channels        number of channels
- * @param   samplerate      sample rate
- * @param   sampleformat    number of bits of a sample
+ * @param   filename            file path
+ * @param   channels            number of channels
+ * @param   fs                  signal sample rate
+ * @param   sampleformat        number of bits of a sample
  */
 WAVFile::WAVFile(std::string filename, int channels, int fs, int sampleformat) : File::File(filename,true) {
     this->header.chunkID = "RIFF";
@@ -236,7 +240,7 @@ WAVFile::WAVFile(std::string filename, int channels, int fs, int sampleformat) :
 
 /**
  * @brief   It sets the signal reading cursor to keep on reading from another position.
- * @param   cursor          new cursor position in samples (instead of bytes) from the beginning of the signal (instead of the file)
+ * @param   cursor              new cursor position in samples (instead of bytes) from the beginning of the signal (instead of the file)
  */
 void WAVFile::setCursor(int cursor) {
     File::setCursor((int)cursor*this->header.bitspersample/8 + this->header.size());
@@ -388,7 +392,7 @@ float WAVFile::readValue() {
 
 /**
  * @brief   It writes a sample on the audio file.
- * @param   value           sample value (from -1 to 1)
+ * @param   value               sample value (from -1 to 1)
  */
 void WAVFile::writeValue(float value) {
     int amplitude = 0x1 << (this->header.bitspersample - 1);

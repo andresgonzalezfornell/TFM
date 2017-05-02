@@ -212,7 +212,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>217</width>
+            <width>216</width>
             <height>94</height>
            </rect>
           </property>
@@ -335,6 +335,63 @@
       <property name="title">
        <string>Effect</string>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="effect_monitor">
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="effect_monitor_list">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>215</width>
+            <height>477</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <layout class="QFormLayout" name="effect_monitor_layout">
+           <property name="horizontalSpacing">
+            <number>5</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
@@ -398,7 +455,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>217</width>
+            <width>216</width>
             <height>153</height>
            </rect>
           </property>
@@ -573,46 +630,6 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="channels_fs_0">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>8000 Hz</string>
-   </property>
-  </action>
-  <action name="channels_fs_1">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>11025 Hz</string>
-   </property>
-  </action>
-  <action name="channels_fs_2">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>22050 Hz</string>
-   </property>
-  </action>
-  <action name="channels_fs_3">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>32000 Hz</string>
-   </property>
-  </action>
-  <action name="channels_fs_4">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>44100 Hz</string>
-   </property>
-  </action>
   <action name="menu_load_source">
    <property name="text">
     <string>Load from file</string>
@@ -621,14 +638,6 @@
   <action name="menu_encode">
    <property name="text">
     <string>Load from encoder</string>
-   </property>
-  </action>
-  <action name="menu_debuggermode">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Debugger mode</string>
    </property>
   </action>
   <action name="menu_upmixtype_normal">
@@ -735,11 +744,6 @@
    </property>
    <property name="text">
     <string>Buried</string>
-   </property>
-  </action>
-  <action name="actiond">
-   <property name="text">
-    <string>d</string>
    </property>
   </action>
   <action name="menu_test">

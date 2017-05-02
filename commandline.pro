@@ -33,7 +33,8 @@ SOURCES += \
     src/sac/sac_encoder.c \
     src/effects/Effect.cpp \
     src/tools/Logger.cpp \
-    src/effects/Compressor.cpp
+    src/effects/Compressor.cpp \
+    src/effects/Equalizer.cpp
 
 HEADERS  += \
     src/process/ProcessManager.h \
@@ -42,9 +43,11 @@ HEADERS  += \
     src/process/AudioSignal.h \
     src/sac/sac_decoder.h \
     src/sac/sac_encoder.h \
-    src/effects/Effect.h \
     src/tools/Logger.h \
-    src/effects/Compressor.h
+    src/effects/Compressor.h \
+    src/effects/EffectBase.h \
+    src/effects/Effect.h \
+    src/effects/Equalizer.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
 

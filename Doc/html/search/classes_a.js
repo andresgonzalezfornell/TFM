@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wavfile',['WAVFile',['../class_w_a_v_file.html',1,'']]]
+  ['signalrange',['SignalRange',['../struct_audio_stream_1_1_signal_range.html',1,'AudioStream']]]
 ];

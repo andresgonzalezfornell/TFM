@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['magenta',['magenta',['../_logger_8cpp.html#aec378d18c614bc816f159b45a6e11f14',1,'Logger.cpp']]]
+  ['list',['LIST',['../_effect_8h.html#aed0a8f83088c41d721066cd5b3b9a00c',1,'Effect.h']]]
 ];

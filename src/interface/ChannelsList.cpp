@@ -94,7 +94,7 @@ void ChannelsList::setLabel(QString label) {
 
 /**
  * @brief   Slots for setting the channel level.
- * @param   level           integer number from 0 to 100
+* @param   	volume           integer number from 0 to 100
  */
 void ChannelsList::setVolume(int volume) {
     QObject::sender()->blockSignals(true);
@@ -159,7 +159,7 @@ void ChannelsList::setDevice(int device) {
  * @param   framework       channel user interface framework
  * @param   prefix          prefix of objects name of channel user interface
  * @param   index           channel index
- * @param   showdevices     true to create device selector to send audio to the system audio output devices
+ * @param   isoutput     	true to create device selector to send audio to the system audio output devices
  */
 Channel::Channel(QLayout *framework, std::string prefix, int index, bool isoutput) {
     // Elements creation

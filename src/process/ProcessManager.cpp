@@ -70,7 +70,7 @@ void ProcessManager::setOutput(std::string filename) {
 /**
  * @brief   It performs the SAC encoder.
  * @param   input               filename of the multichannel input audio file
- * @param   outpu               filename of the downmix output audio file (it will be automatically created)
+ * @param   output              filename of the downmix output audio file (it will be automatically created)
  * @param   bitstream           filename of the bitstream output file or "buried" (it will be automatically created)
  * @param   upmixtype           upmix type              0: normal       1: blind        2: binaural     3: stereo
  * @param   decodingtype        decoding type           0: low          1: high
@@ -107,7 +107,7 @@ bool ProcessManager::decode(std::string input, std::string bitstream, std::strin
  * @param   effect              effect object (it includes all parameters)
  * @return  true if it was successful
  */
-bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {   
+bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
     if ((int)channels.size() == this->channels) {
         int n, N;
         if (this->chunksize == 0) {

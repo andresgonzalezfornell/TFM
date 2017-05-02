@@ -5,13 +5,6 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "AudioChart", "class_audio_chart.html", "class_audio_chart" ],
       [ "ChartOptions", "struct_audio_chart_1_1_chart_options.html", "struct_audio_chart_1_1_chart_options" ]
     ] ],
-    [ "AudioFile.cpp", "_audio_file_8cpp.html", null ],
-    [ "AudioFile.h", "_audio_file_8h.html", [
-      [ "AudioFile", "class_audio_file.html", "class_audio_file" ],
-      [ "WAVFile", "class_w_a_v_file.html", "class_w_a_v_file" ],
-      [ "Endianess", "struct_w_a_v_file_1_1_endianess.html", "struct_w_a_v_file_1_1_endianess" ],
-      [ "Header", "struct_w_a_v_file_1_1_header.html", "struct_w_a_v_file_1_1_header" ]
-    ] ],
     [ "AudioInfo.cpp", "_audio_info_8cpp.html", null ],
     [ "AudioInfo.h", "_audio_info_8h.html", [
       [ "AudioInfo", "class_audio_info.html", "class_audio_info" ]
@@ -20,18 +13,11 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "AudioStream", "class_audio_stream.html", "class_audio_stream" ],
       [ "TimeSlot", "struct_audio_stream_1_1_time_slot.html", "struct_audio_stream_1_1_time_slot" ]
     ] ],
-    [ "AudioSignal.cpp", "_audio_signal_8cpp.html", "_audio_signal_8cpp" ],
-    [ "AudioSignal.h", "_audio_signal_8h.html", [
-      [ "AudioSignal", "class_audio_signal.html", "class_audio_signal" ]
-    ] ],
-    [ "ChannelsConfiguration.cpp", "_channels_configuration_8cpp.html", null ],
-    [ "ChannelsConfiguration.h", "_channels_configuration_8h.html", [
-      [ "ConfigurationChannel", "class_configuration_channel.html", "class_configuration_channel" ],
-      [ "ChannelsConfiguration", "class_channels_configuration.html", "class_channels_configuration" ]
-    ] ],
-    [ "ChannelsConfiguration_copy.h", "_channels_configuration__copy_8h.html", [
-      [ "Channel", "class_channel.html", "class_channel" ],
-      [ "ChannelsConfiguration", "class_channels_configuration.html", "class_channels_configuration" ]
+    [ "AudioOutput.cpp", "_audio_output_8cpp.html", "_audio_output_8cpp" ],
+    [ "AudioOutput.h", "_audio_output_8h.html", [
+      [ "OutputDevice", "class_output_device.html", "class_output_device" ],
+      [ "AudioOutput", "class_audio_output.html", "class_audio_output" ],
+      [ "AudioTest", "class_audio_test.html", "class_audio_test" ]
     ] ],
     [ "ChannelsList.cpp", "_channels_list_8cpp.html", null ],
     [ "ChannelsList.h", "_channels_list_8h.html", [
@@ -46,11 +32,15 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "HRTFModel", "struct_h_r_t_f_model.html", "struct_h_r_t_f_model" ],
       [ "Decoder", "class_decoder.html", "class_decoder" ]
     ] ],
+    [ "EffectsMonitor.cpp", "_effects_monitor_8cpp.html", null ],
+    [ "EffectsMonitor.h", "_effects_monitor_8h.html", [
+      [ "EffectsMonitor", "class_effects_monitor.html", "class_effects_monitor" ]
+    ] ],
     [ "Encoder.cpp", "_encoder_8cpp.html", null ],
     [ "Encoder.h", "_encoder_8h.html", [
       [ "Encoder", "class_encoder.html", "class_encoder" ]
     ] ],
-    [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "main.cpp", "interface_2main_8cpp.html", "interface_2main_8cpp" ],
     [ "Volumeter.cpp", "_volumeter_8cpp.html", null ],
     [ "Volumeter.h", "_volumeter_8h.html", [
       [ "Volumeter", "class_volumeter.html", "class_volumeter" ]

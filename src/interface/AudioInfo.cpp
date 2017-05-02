@@ -28,7 +28,6 @@ void AudioInfo::setFile(WAVFile *file) {
     QStringList labels;
     int columns = 2;
     int rows = 13;
-
     labels << "Chunk ID" << "Chunk size" << "Format";
     labels << "Subchunk 1 ID" << "Subchunk 1 size" << "Audio format" << "Number of channels" << "Sample rate" << "Byte rate" << "Block align" << "Bits per sample";
     labels << "Subchunk 2 ID" << "Subchunk 2 size";

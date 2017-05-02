@@ -1,14 +1,17 @@
 #ifndef COMPRESSOR_H
 #define COMPRESSOR_H
 
+// Effect base header
+#include "EffectBase.h"
+
 /**
  * @class	Compressor
  * @author	Andrés González Fornell
  * @brief	Audio compressor.
  */
-class Compressor {
+class Compressor AS_EFFECT {
 public:
-    Compressor();
+    Compressor(std::string params);
     void apply(float *input, float *output, int samples);
 };
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upmixtype',['UpmixType',['../struct_upmix_type.html',1,'']]]
+  ['outputdevice',['OutputDevice',['../class_output_device.html',1,'']]]
 ];

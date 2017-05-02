@@ -3,8 +3,7 @@
 
 // System libraries
 #include "iostream"
-#include "stdio.h"
-#include "string"
+#include "stdlib.h"
 
 /**
  * @name    LogType

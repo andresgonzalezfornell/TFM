@@ -83,26 +83,16 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>active
-: <a class="el" href="class_channel.html#a1f56d8af226da204ee85121712197acf">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a19773738334c95d7a3833d2c8e3ff64a">ConfigurationChannel</a>
-</li>
-<li>activecheckbox
-: <a class="el" href="class_channel.html#abcd0e82d4318c6200a1e50c89c6cc61a">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a42ce2966d65074dac8b29d4ad8f1c2d0">ConfigurationChannel</a>
+<li>amplitude
+: <a class="el" href="class_output_device.html#a5f91d32d6e37acbf28651793f68eaa8c">OutputDevice</a>
 </li>
 <li>audioformat
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#ab0894c64452a0a14c3e2483c396c2707">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#a6d16652e388f953230b0275301c87d2f">WAVFile::Header</a>
 </li>
-<li>audioprogress
-: <a class="el" href="class_channel.html#ad74c4870cd5269a75835bda7b1206605">Channel</a>
-</li>
-<li>audiostream
-: <a class="el" href="class_channel.html#a3b3701546120781dce4617db156bc9e9">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a75404cd2ff5a5fa13eec7b040fbe79c6">ConfigurationChannel</a>
-</li>
-<li>audiotime
-: <a class="el" href="class_channel.html#a154c5f975618320e9e23fb2fe4cb56ee">Channel</a>
+<li>audiooutput
+: <a class="el" href="class_audio_output.html#a05a990352ae483be08231b218e00c394">AudioOutput</a>
+, <a class="el" href="class_audio_test.html#ab0651b1358e3a2f699ad98c6a68312c5">AudioTest</a>
+, <a class="el" href="class_channel.html#a7c8a0b25848ab487c39a803785f7ed21">Channel</a>
 </li>
 </ul>
 
@@ -112,14 +102,18 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_decoder.html#a8d24c9cba852936e421cbc8bd2074220">Decoder</a>
 </li>
 <li>bitspersample
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#a0ff29953b3f162c4c270c3c1f2ce00b1">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#ad731c9ced0b22903be0b24f6528ec061">WAVFile::Header</a>
 </li>
 <li>bitstream
-: <a class="el" href="class_decoder.html#acef0a712c871015c9a86e5bf4d5345a7">Decoder</a>
-, <a class="el" href="class_encoder.html#a0fc911d3859136c57fbe2c9808945b87">Encoder</a>
+: <a class="el" href="class_decoder.html#a970aa38ff296a1dc57781080887a6daf">Decoder</a>
+, <a class="el" href="class_encoder.html#a8cd18343fe80007dba58b4d716227544">Encoder</a>
 </li>
 <li>blockalign
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#a0999b3bdb1c8292c2c6e2c608007d819">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#a5c212f5f08c59f8487ccc3d066753892">WAVFile::Header</a>
+</li>
+<li>buffer
+: <a class="el" href="class_audio_output.html#aedbe798467a975b01a853b1d939e1414">AudioOutput</a>
+, <a class="el" href="class_output_device.html#ad7ad0b4d4146455cc19c08f094659bf5">OutputDevice</a>
 </li>
 <li>buried
 : <a class="el" href="class_decoder.html#a41dbe04054e3e9f5e78a9ed9989901dd">Decoder</a>
@@ -131,46 +125,56 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_channel.html#a94507945240717f2570e3baadd02d08a">Channel</a>
 </li>
 <li>byterate
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#a848d93a4ac848947323a8e521c6a64af">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#ac6e4c7534bfdd6e9cbd4b73079438e7f">WAVFile::Header</a>
 </li>
 </ul>
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>channels
-: <a class="el" href="class_channels_configuration.html#abfd5caa882f4353f51bc090ce16f5f30">ChannelsConfiguration</a>
-, <a class="el" href="class_channels_list.html#a4d9defbfdd7e32cc82269531befc2f78">ChannelsList</a>
-, <a class="el" href="class_encoder.html#adaf3fb9ace25ce7eb2b50780ec9248f3">Encoder</a>
+: <a class="el" href="class_channels_list.html#a4d9defbfdd7e32cc82269531befc2f78">ChannelsList</a>
+, <a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">ProcessManager</a>
 </li>
 <li>channels_input
 : <a class="el" href="class_decoder.html#a08b73e6ec6f11d022765b9f8472ba155">Decoder</a>
 </li>
+<li>channels_output
+: <a class="el" href="class_decoder.html#a902dc0c0332247340a8411b8a06958d2">Decoder</a>
+</li>
 <li>chart
 : <a class="el" href="class_audio_chart.html#a8e2ec258d63b2b979191e47db2f67ee3">AudioChart</a>
 , <a class="el" href="class_channel.html#afa593c5dffbc7f004f7663dbac1d967e">Channel</a>
+, <a class="el" href="class_decoder.html#a85b414d4812cca1a186a70de30f30cd3">Decoder</a>
+</li>
+<li>chartwidget
+: <a class="el" href="class_channel.html#ac3bb602c135ac7bc2e9f7bcdd61a238b">Channel</a>
 </li>
 <li>chunkID
 : <a class="el" href="struct_w_a_v_file_1_1_header.html#a796a84d05ba0ddeb837804dff90b730b">WAVFile::Header</a>
 </li>
 <li>chunksize
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#a6b5188e2f0d0889652ba2ecff24a585e">WAVFile::Header</a>
-</li>
-<li>currentsource
-: <a class="el" href="class_channel.html#a7d9d934c2a01d19189c88df88011fc91">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a9477233c3217f689a83a6c953ad592fd">ConfigurationChannel</a>
+: <a class="el" href="class_process_manager.html#a09d599d29e49011dbd1e205756782690">ProcessManager</a>
+, <a class="el" href="struct_w_a_v_file_1_1_header.html#aee17e466b00a8b1d274be731f58d5fc0">WAVFile::Header</a>
 </li>
 <li>cursor
-: <a class="el" href="class_w_a_v_file.html#a5ba8a40bab6e76d47250868f252448f2">WAVFile</a>
+: <a class="el" href="class_file.html#aef76708f72e6c9b07fc7883a3fdacb2a">File</a>
+, <a class="el" href="class_output_device.html#a68bb8871a72b43f93623907b0cf829f5">OutputDevice</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
-<li>debuggermode
-: <a class="el" href="class_decoder.html#a08cd17a1d6050f9a88ec94487d3270f9">Decoder</a>
-</li>
 <li>decodingtype
 : <a class="el" href="class_decoder.html#af23cd86d80d1eb0b2c7cacc1838d416b">Decoder</a>
+</li>
+<li>device
+: <a class="el" href="class_audio_output.html#afe431392e1f107dfe9e33dc59fb857b0">AudioOutput</a>
+</li>
+<li>devices
+: <a class="el" href="class_audio_output.html#a7b380c191677c4732e8d5e8f06c65eeb">AudioOutput</a>
+</li>
+<li>deviceselector
+: <a class="el" href="class_channel.html#a9dcb50dc41866fbe60424553f1b910fa">Channel</a>
 </li>
 <li>duration
 : <a class="el" href="class_w_a_v_file.html#a81e30fcaeaa79ecbd94c332d1458d064">WAVFile</a>
@@ -179,8 +183,21 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
+<li>effect
+: <a class="el" href="class_effect.html#a06ffa21833022dcc29b2dd4ed73de918">Effect</a>
+, <a class="el" href="class_effects_monitor.html#a9775a59c03e1d402b81b176041ff198d">EffectsMonitor</a>
+</li>
+<li>effectname
+: <a class="el" href="class_effects_monitor.html#a16e2ccbf45cc7edbe4247487a1785b86">EffectsMonitor</a>
+</li>
+<li>effects
+: <a class="el" href="class_effects_monitor.html#a98ff202aae8be5ba0e272887fe7c2341">EffectsMonitor</a>
+</li>
+<li>effectsmonitor
+: <a class="el" href="class_decoder.html#a50466c9dbe45bb6a0edfff93b81643d8">Decoder</a>
+</li>
 <li>end
-: <a class="el" href="struct_audio_stream_1_1_time_range.html#a5d6cab1d8e9738014eee481fc7250de6">AudioStream::TimeRange</a>
+: <a class="el" href="struct_audio_stream_1_1_signal_range.html#a30a9b8873379f89d7c176af6ad5689a9">AudioStream::SignalRange</a>
 , <a class="el" href="struct_audio_stream_1_1_time_slot.html#a8e20d0e50a37bade2849f0c09f1034cc">AudioStream::TimeSlot</a>
 </li>
 <li>energy
@@ -191,25 +208,35 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>file
-: <a class="el" href="class_audio_file.html#a196738e4aae34f32bba1678db8872032">AudioFile</a>
-, <a class="el" href="class_audio_info.html#aa80fed8d29570e2d7ecf804c92d465d8">AudioInfo</a>
-, <a class="el" href="class_channel.html#a0f1ebba6259b861c5a50f9d09aa6b662">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a0ec521549ae0b01048f5ad11580c6969">ConfigurationChannel</a>
+: <a class="el" href="class_audio_info.html#aa80fed8d29570e2d7ecf804c92d465d8">AudioInfo</a>
+, <a class="el" href="class_file.html#a9fdd827019632755a0f8bcfdb86aad28">File</a>
+</li>
+<li>filename
+: <a class="el" href="class_file.html#a0cea8d01ab6c2653a95d75fc556e88dc">File</a>
+</li>
+<li>files
+: <a class="el" href="class_effects_monitor.html#a12c1863956b66ee4958b31a855f3e4c0">EffectsMonitor</a>
+</li>
+<li>folder
+: <a class="el" href="class_effects_monitor.html#a11dece06091fc81a76474e12abda62cc">EffectsMonitor</a>
 </li>
 <li>format
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#aa3a54e23ce34d6f9cba9e9853915e30c">WAVFile::Header</a>
+: <a class="el" href="class_audio_output.html#a2905b4cc065c76e54da2a5287c2d038b">AudioOutput</a>
+, <a class="el" href="class_output_device.html#a80fa36f98b5f99c7dab4b1197e8ea136">OutputDevice</a>
+, <a class="el" href="struct_w_a_v_file_1_1_header.html#aa3a54e23ce34d6f9cba9e9853915e30c">WAVFile::Header</a>
 </li>
 <li>framework
-: <a class="el" href="class_channels_configuration.html#a333132ec2558ed4c3c9f690e903caf89">ChannelsConfiguration</a>
-, <a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">ChannelsList</a>
+: <a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">ChannelsList</a>
+, <a class="el" href="class_effects_monitor.html#a2a95d542a26e21f0bbcfd4b7b6f85144">EffectsMonitor</a>
 </li>
 <li>fs
-: <a class="el" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9">AudioSignal</a>
+: <a class="el" href="class_audio_output.html#ac2a46ded8a978627b8af81458a714ef3">AudioOutput</a>
+, <a class="el" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9">AudioSignal</a>
 , <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">AudioStream</a>
-, <a class="el" href="class_channels_configuration.html#a8948fc2ef94ddc24e3cbaa15db118284">ChannelsConfiguration</a>
 , <a class="el" href="class_channels_list.html#ab5b3fd699a6c96a59d237ff4e23fa3fa">ChannelsList</a>
 , <a class="el" href="class_decoder.html#a6eb8fb1c23eb0b8dd1254420961726dc">Decoder</a>
 , <a class="el" href="class_encoder.html#aa0549b597ab8fda7191f2e659a56044b">Encoder</a>
+, <a class="el" href="class_process_manager.html#ae7ce9ead957c4f78d74206baf1837a59">ProcessManager</a>
 , <a class="el" href="class_volumeter.html#a7afcd98abd8e156aab69751761218497">Volumeter</a>
 </li>
 </ul>
@@ -217,8 +244,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>groupbox
-: <a class="el" href="class_channel.html#aa775cb927af28fd9b7c57c587b57e0f2">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a54936188f014020fb2d2b28900f05f28">ConfigurationChannel</a>
+: <a class="el" href="class_channel.html#a99287738754d9e20c0ca639d6d26f28c">Channel</a>
 </li>
 </ul>
 
@@ -236,47 +262,31 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>index
 : <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">Channel</a>
-, <a class="el" href="class_configuration_channel.html#ade95ce20ee8f5e07b0edf92cee21ff94">ConfigurationChannel</a>
-</li>
-<li>info
-: <a class="el" href="class_channel.html#a1a0cc3de6f6caf2096a3bcf1ccb3e84c">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a4c9c0675fe3c376b4d6677faf5f0e479">ConfigurationChannel</a>
 </li>
 <li>input
-: <a class="el" href="class_decoder.html#a20abaa0e71352b9f90e59beed0c309bb">Decoder</a>
+: <a class="el" href="class_decoder.html#add2f357299ef80b1a119071d0e797430">Decoder</a>
 , <a class="el" href="class_encoder.html#aa851a11113fd12d5cfa04a4a72013157">Encoder</a>
+, <a class="el" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b">ProcessManager</a>
+</li>
+<li>inputfile
+: <a class="el" href="class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40">ProcessManager</a>
+</li>
+<li>isoutput
+: <a class="el" href="class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b">Channel</a>
 </li>
 </ul>
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>label
-: <a class="el" href="class_channel.html#ab9cf5783baae30960bcdec120184518e">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a728c64398a2b734e6f19beddfbbaf817">ConfigurationChannel</a>
-</li>
-<li>lastvalue
-: <a class="el" href="class_channel.html#a1a1096f8cf65a27a27722a063afd3886">Channel</a>
+: <a class="el" href="class_channel.html#a66a7e30d0b8c6ee9c0b0d537b59bd695">Channel</a>
 </li>
 <li>layout
-: <a class="el" href="class_channels_configuration.html#abb6ce5a8beb22f5c901ae52e4de9a2c6">ChannelsConfiguration</a>
-, <a class="el" href="class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62">ChannelsList</a>
+: <a class="el" href="class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62">ChannelsList</a>
+, <a class="el" href="class_effects_monitor.html#a267bd44e97f74c2b60993fc52b3c6ed1">EffectsMonitor</a>
 </li>
 <li>level
-: <a class="el" href="class_channel.html#a1af0bb5c5c9a2b7f1bf07d9112fd1b31">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a565c38db0c6f842935609e0f0eb09ff9">ConfigurationChannel</a>
-, <a class="el" href="class_volumeter.html#adf7109e2c42ba90322e887c54c4edd4d">Volumeter</a>
-</li>
-<li>levelslider
-: <a class="el" href="class_channel.html#a62482529ce4f5644600b7f1f5e2713f8">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a6811fb511d544c43320c2aa9608285b2">ConfigurationChannel</a>
-</li>
-<li>list
-: <a class="el" href="class_channels_configuration.html#a06a3de81ee00194a0e1649c851a90e5b">ChannelsConfiguration</a>
-, <a class="el" href="class_channels_list.html#af244814d3119fa1a7526b1c2ee3da1a7">ChannelsList</a>
-</li>
-<li>loadfile
-: <a class="el" href="class_channel.html#ae78944aad2745a1a3000ddb2b922bea0">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a8d9f8f411f15459f95f6476e1915a6f4">ConfigurationChannel</a>
+: <a class="el" href="class_volumeter.html#adf7109e2c42ba90322e887c54c4edd4d">Volumeter</a>
 </li>
 </ul>
 
@@ -294,49 +304,56 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <h3><a id="index_n"></a>- n -</h3><ul>
 <li>name
 : <a class="el" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a6c4af59de223364e5ae3008f3be4b518">ConfigurationChannel</a>
-</li>
-<li>number
-: <a class="el" href="class_channels_configuration.html#a9854fb51f85f6eb4d16ed32978880ba6">ChannelsConfiguration</a>
 </li>
 <li>numchannels
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#ad8151177251ab4bea51afbd2e895c2cd">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#a1636a3deffe4e61b7ab8e8b8168a7b18">WAVFile::Header</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>offset
+: <a class="el" href="class_output_device.html#a784c815c3f04113ebcdc2d4842a5d49a">OutputDevice</a>
+</li>
 <li>output
-: <a class="el" href="class_encoder.html#af965ae39f3e590c9c2408a7726a69b7d">Encoder</a>
+: <a class="el" href="class_encoder.html#ac4d4774d75750c1fdddd3740b7f30985">Encoder</a>
+, <a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">ProcessManager</a>
+</li>
+<li>outputdevice
+: <a class="el" href="class_audio_output.html#aa3e000199604f972e59242fb15a6707e">AudioOutput</a>
+</li>
+<li>outputfile
+: <a class="el" href="class_process_manager.html#af6611aa1fb921606bec95f6366ce3b07">ProcessManager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>paused
-: <a class="el" href="class_channel.html#ad94e46ee1741382f32c86af4fbd46091">Channel</a>
+<li>params
+: <a class="el" href="class_effect.html#aafb8bbe85b15d73168ff4fdf2738f72b">Effect</a>
+, <a class="el" href="class_effect_base.html#a10e5f1c8be40ea0e1aef1ecc2a2cf518">EffectBase</a>
 </li>
 <li>pixmap
 : <a class="el" href="class_volumeter.html#ab959af13b0d661cac584cbc4871bb022">Volumeter</a>
 </li>
-<li>playpause
-: <a class="el" href="class_channel.html#a7018bd845eb79f09b5a75ff83333578f">Channel</a>
-, <a class="el" href="class_configuration_channel.html#a518cb559657a2d2649d403d8d4c2c37e">ConfigurationChannel</a>
-</li>
 <li>prefix
 : <a class="el" href="class_channel.html#ac13acc069e61428aca057f9c84bc7338">Channel</a>
 , <a class="el" href="class_channels_list.html#a452e6090d13b327758ae0e3992ed620c">ChannelsList</a>
+, <a class="el" href="class_effects_monitor.html#ad6136c72c400d193ef36c2101b0e1a19">EffectsMonitor</a>
 </li>
-<li>preview
-: <a class="el" href="class_channel.html#a69ccbd917e1e32011d272ea9c80a2bad">Channel</a>
-</li>
-<li>previewbutton
-: <a class="el" href="class_channel.html#a94c2e2d751cbd30b5f55de68e2f166e9">Channel</a>
+<li>process
+: <a class="el" href="class_decoder.html#a5b67e5a6fdf415b3e5df73892352ade6">Decoder</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>range
+: <a class="el" href="class_audio_stream.html#a9720bf635cb419c7823ec7c990aee294">AudioStream</a>
+</li>
+<li>realtime
+: <a class="el" href="class_process_manager.html#a43743a818b95cd4232e0fc8678a75bd7">ProcessManager</a>
+</li>
 <li>refreshperiod
 : <a class="el" href="class_volumeter.html#a1f5e517e5a6db925b83cb3e9f36c54e6">Volumeter</a>
 </li>
@@ -345,26 +362,38 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>samplerate
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#ac21b9aac0a1cfce8f06028beab50c91b">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#a271b0090295f7276b1d91683bc2a0f74">WAVFile::Header</a>
 </li>
 <li>samples
-: <a class="el" href="class_audio_stream.html#a56fbc92d66c20cc07fa94966feaee7c9">AudioStream</a>
+: <a class="el" href="class_audio_stream.html#ac64fd676a85ecf3809ba31f16084596e">AudioStream</a>
+, <a class="el" href="class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a">ProcessManager</a>
 , <a class="el" href="class_volumeter.html#a02b5e1c6892a8aea92098df4f76dbd2c">Volumeter</a>
+</li>
+<li>samplesize
+: <a class="el" href="class_audio_output.html#aac9c297a839bb25c1232fc5adcce6cab">AudioOutput</a>
+, <a class="el" href="class_channels_list.html#ac9208b24e03fac37e06e9664ed26b13b">ChannelsList</a>
+</li>
+<li>selector
+: <a class="el" href="class_audio_output.html#a52eb3989d7c470fefb780d9fe9b08141">AudioOutput</a>
 </li>
 <li>series
 : <a class="el" href="class_audio_chart.html#a446bb53284f9970030b71ea560c6fa40">AudioChart</a>
 </li>
+<li>showdevices
+: <a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">ChannelsList</a>
+</li>
 <li>signal
 : <a class="el" href="class_audio_signal.html#acd6f3fc199a736b66a2efba59e8683b8">AudioSignal</a>
+, <a class="el" href="class_audio_stream.html#a3a743a4c2b87b810b3da5bcb5292cdc9">AudioStream</a>
 </li>
 <li>size
 : <a class="el" href="class_audio_signal.html#a44e595328705720f380613f1675dbdd1">AudioSignal</a>
 </li>
 <li>source
-: <a class="el" href="class_decoder.html#a54bf131e9e9550f394c472c97e58c113">Decoder</a>
+: <a class="el" href="class_decoder.html#a7b0703f929dbbe23e4b5ad681a54a853">Decoder</a>
 </li>
 <li>start
-: <a class="el" href="struct_audio_stream_1_1_time_range.html#a89c3abecb56f7784e5e3f909bb3645d0">AudioStream::TimeRange</a>
+: <a class="el" href="struct_audio_stream_1_1_signal_range.html#adcc0ad306363b02e7f6ba671eae5d511">AudioStream::SignalRange</a>
 , <a class="el" href="struct_audio_stream_1_1_time_slot.html#ae5191a76f4255eec3ea4fb6f7c3a5246">AudioStream::TimeSlot</a>
 </li>
 <li>stream
@@ -374,21 +403,18 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="struct_w_a_v_file_1_1_header.html#ae52803bdbed54de73d48d2c0bf45099d">WAVFile::Header</a>
 </li>
 <li>subchunk1size
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#aea8e9b81354bf1f8c9af0ae203fa337d">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#ae4e68dc34f2431942bbe6a5586a3ec55">WAVFile::Header</a>
 </li>
 <li>subchunk2ID
 : <a class="el" href="struct_w_a_v_file_1_1_header.html#a8623063c7d187207e3bca18930adacb2">WAVFile::Header</a>
 </li>
 <li>subchunk2size
-: <a class="el" href="struct_w_a_v_file_1_1_header.html#a283772efe26ffe3aa5db7c04d6991977">WAVFile::Header</a>
+: <a class="el" href="struct_w_a_v_file_1_1_header.html#ad5ed192e56a65a330d7320769f49c5bc">WAVFile::Header</a>
 </li>
 </ul>
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
-<li>timerange
-: <a class="el" href="class_audio_stream.html#a3a0c88bdbe80880a8b7472d4c33f405f">AudioStream</a>
-</li>
 <li>timestamp
 : <a class="el" href="class_audio_stream.html#aeee7107c25a1ab45b8076e422864a518">AudioStream</a>
 </li>
@@ -401,6 +427,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>ui
 : <a class="el" href="class_audio_info.html#a44a21dbc93b654da1ef6de938372fdfb">AudioInfo</a>
+, <a class="el" href="class_audio_test.html#aea101783b757891d369f4c0b45bc76b0">AudioTest</a>
 , <a class="el" href="class_decoder.html#a8e962746ed0bc9f65777cb37b7df6712">Decoder</a>
 , <a class="el" href="class_encoder.html#a7d3a28662bdddfc72e1180fd72f7506f">Encoder</a>
 </li>
@@ -414,13 +441,19 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>view
 : <a class="el" href="class_audio_chart.html#a7e959c71c9933dd17918bacd8befcf49">AudioChart</a>
 </li>
+<li>volume
+: <a class="el" href="class_audio_output.html#a16937c9086904959b06b77326032aa72">AudioOutput</a>
+, <a class="el" href="class_channel.html#a01aa0f6ab113bcc8a11125bb735fd399">Channel</a>
+</li>
+<li>volumeslider
+: <a class="el" href="class_channel.html#acbcbfb33558a69224daa176372eb8be3">Channel</a>
+</li>
 <li>volumeter
-: <a class="el" href="class_channel.html#a6fae59539254c2f2916b22ca7767d20d">Channel</a>
-, <a class="el" href="class_channels_configuration.html#ae1c7644cf53a6d242df98bfb30ee17bb">ChannelsConfiguration</a>
+: <a class="el" href="class_channel.html#ae159a51df34e4f6a3ca23975ca2462c4">Channel</a>
 , <a class="el" href="class_channels_list.html#a1c21f38b7f12f60f9cb6827cf4009a38">ChannelsList</a>
 </li>
 <li>volumeterwidget
-: <a class="el" href="class_channel.html#a649c9d8c94a766902fbc0d97fcc746f9">Channel</a>
+: <a class="el" href="class_channel.html#a81103158aadd1e93977a0d8cd744e7bc">Channel</a>
 </li>
 </ul>
 
@@ -428,6 +461,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <h3><a id="index_w"></a>- w -</h3><ul>
 <li>width
 : <a class="el" href="class_volumeter.html#a9c1293ed0f2065e106c3839a0fa8df9e">Volumeter</a>
+</li>
+<li>writepermission
+: <a class="el" href="class_file.html#a23e019a55df89545e84f34bf15b717d3">File</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -2,12 +2,10 @@
 #define CHANNELSLIST_H
 
 // System libraries
-#include "string"
 #include "cmath"
 #include "stdlib.h"
 // Qt libraries
 #include "QObject"
-#include "QFile"
 #include "QWidget"
 #include "QLayout"
 #include "QLabel"
@@ -67,8 +65,7 @@ private:
  * @author  Andrés González Fornell
  * @brief   Channels list class. It shows information about channels signals.
  */
-class ChannelsList : public QObject
-{
+class ChannelsList : public QObject {
     Q_OBJECT
 public:
     static int fs;                  /**< signal sampling frequency */

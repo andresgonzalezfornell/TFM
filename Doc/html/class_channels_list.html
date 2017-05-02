@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('class_channels_list.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_channels.html" title="Single-object input configuration class. ">Channels</a> list class. It shows information about channels signals.  
+<p>Channels list class. It shows information about channels signals.  
  <a href="class_channels_list.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>&gt;</code></p>
@@ -106,9 +106,9 @@ Inheritance diagram for ChannelsList:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae344e330ad5cc985e54931bf4403851f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ae344e330ad5cc985e54931bf4403851f">ChannelsList</a> (QWidget *<a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">framework</a>, int number)</td></tr>
-<tr class="memdesc:ae344e330ad5cc985e54931bf4403851f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_channels_list.html" title="Channels list class. It shows information about channels signals. ">ChannelsList</a> constructor.  <a href="#ae344e330ad5cc985e54931bf4403851f">More...</a><br /></td></tr>
-<tr class="separator:ae344e330ad5cc985e54931bf4403851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be2b5b850d9841fc90208afc7c6f112"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a2be2b5b850d9841fc90208afc7c6f112">ChannelsList</a> (QWidget *<a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">framework</a>, int number, bool <a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">showdevices</a>)</td></tr>
+<tr class="memdesc:a2be2b5b850d9841fc90208afc7c6f112"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_channels_list.html" title="Channels list class. It shows information about channels signals. ">ChannelsList</a> constructor.  <a href="#a2be2b5b850d9841fc90208afc7c6f112">More...</a><br /></td></tr>
+<tr class="separator:a2be2b5b850d9841fc90208afc7c6f112"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a264a8cdd2dc552462b1de06ec02729ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a264a8cdd2dc552462b1de06ec02729ec">~ChannelsList</a> ()</td></tr>
 <tr class="memdesc:a264a8cdd2dc552462b1de06ec02729ec"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_channels_list.html" title="Channels list class. It shows information about channels signals. ">ChannelsList</a> destructor.  <a href="#a264a8cdd2dc552462b1de06ec02729ec">More...</a><br /></td></tr>
 <tr class="separator:a264a8cdd2dc552462b1de06ec02729ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,6 +126,8 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ab5b3fd699a6c96a59d237ff4e23fa3fa"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ab5b3fd699a6c96a59d237ff4e23fa3fa">fs</a></td></tr>
 <tr class="separator:ab5b3fd699a6c96a59d237ff4e23fa3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9208b24e03fac37e06e9664ed26b13b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ac9208b24e03fac37e06e9664ed26b13b">samplesize</a></td></tr>
+<tr class="separator:ac9208b24e03fac37e06e9664ed26b13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
@@ -135,15 +137,18 @@ Private Slots</h2></td></tr>
 <tr class="memitem:adc787dbb51d4e2d2c733d53f4ee293fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#adc787dbb51d4e2d2c733d53f4ee293fa">setLabel</a> (QString label)</td></tr>
 <tr class="memdesc:adc787dbb51d4e2d2c733d53f4ee293fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for setting the channel label.  <a href="#adc787dbb51d4e2d2c733d53f4ee293fa">More...</a><br /></td></tr>
 <tr class="separator:adc787dbb51d4e2d2c733d53f4ee293fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43db2170bacc9e99e051e56d576ded6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a43db2170bacc9e99e051e56d576ded6e">setLevel</a> (int level)</td></tr>
-<tr class="memdesc:a43db2170bacc9e99e051e56d576ded6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots for setting the channel level.  <a href="#a43db2170bacc9e99e051e56d576ded6e">More...</a><br /></td></tr>
-<tr class="separator:a43db2170bacc9e99e051e56d576ded6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc31fe3486c8a6aa3302a1c226ca60a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#adbc31fe3486c8a6aa3302a1c226ca60a">setVolume</a> (int volume)</td></tr>
+<tr class="memdesc:adbc31fe3486c8a6aa3302a1c226ca60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots for setting the channel level.  <a href="#adbc31fe3486c8a6aa3302a1c226ca60a">More...</a><br /></td></tr>
+<tr class="separator:adbc31fe3486c8a6aa3302a1c226ca60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeed14dbeece6de23be83bfb6e7ab680"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#adeed14dbeece6de23be83bfb6e7ab680">mute</a> (bool state)</td></tr>
 <tr class="memdesc:adeed14dbeece6de23be83bfb6e7ab680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots when muted checkbox has been changed.  <a href="#adeed14dbeece6de23be83bfb6e7ab680">More...</a><br /></td></tr>
 <tr class="separator:adeed14dbeece6de23be83bfb6e7ab680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95eca3eefbcf94fa4c7a3d3af3941319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a95eca3eefbcf94fa4c7a3d3af3941319">bypass</a> (bool state)</td></tr>
 <tr class="memdesc:a95eca3eefbcf94fa4c7a3d3af3941319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots when muted checkbox has been changed.  <a href="#a95eca3eefbcf94fa4c7a3d3af3941319">More...</a><br /></td></tr>
 <tr class="separator:a95eca3eefbcf94fa4c7a3d3af3941319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1edf65c94deca2a3911d11a9b96cd8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ae1edf65c94deca2a3911d11a9b96cd8e">setDevice</a> (int device)</td></tr>
+<tr class="memdesc:ae1edf65c94deca2a3911d11a9b96cd8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots for setting an audio output device.  <a href="#ae1edf65c94deca2a3911d11a9b96cd8e">More...</a><br /></td></tr>
+<tr class="separator:ae1edf65c94deca2a3911d11a9b96cd8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -157,21 +162,21 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4d9defbfdd7e32cc82269531befc2f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452e6090d13b327758ae0e3992ed620c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a452e6090d13b327758ae0e3992ed620c">prefix</a></td></tr>
 <tr class="separator:a452e6090d13b327758ae0e3992ed620c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5467a8384f559129cc71c31a6c95972"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">showdevices</a></td></tr>
+<tr class="separator:ac5467a8384f559129cc71c31a6c95972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ce83d3108c23dacd899ff33e43e6f5"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">framework</a></td></tr>
 <tr class="separator:a95ce83d3108c23dacd899ff33e43e6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeb9c603ac2216dd014b723a326f0c62"><td class="memItemLeft" align="right" valign="top">QLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62">layout</a></td></tr>
 <tr class="separator:adeb9c603ac2216dd014b723a326f0c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c21f38b7f12f60f9cb6827cf4009a38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_volumeter.html">Volumeter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a1c21f38b7f12f60f9cb6827cf4009a38">volumeter</a></td></tr>
 <tr class="separator:a1c21f38b7f12f60f9cb6827cf4009a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af244814d3119fa1a7526b1c2ee3da1a7"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_channel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#af244814d3119fa1a7526b1c2ee3da1a7">list</a></td></tr>
-<tr class="separator:af244814d3119fa1a7526b1c2ee3da1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_channels.html" title="Single-object input configuration class. ">Channels</a> list class. It shows information about channels signals. </p>
+<div class="textblock"><p>Channels list class. It shows information about channels signals. </p>
 <dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae344e330ad5cc985e54931bf4403851f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae344e330ad5cc985e54931bf4403851f">&#9670;&nbsp;</a></span>ChannelsList()</h2>
+<a id="a2be2b5b850d9841fc90208afc7c6f112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be2b5b850d9841fc90208afc7c6f112">&#9670;&nbsp;</a></span>ChannelsList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +191,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>number</em>&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>showdevices</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,6 +212,7 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">framework</td><td>user interface framework of channels list </td></tr>
     <tr><td class="paramname">number</td><td>number of channels </td></tr>
+    <tr><td class="paramname">showdevices</td><td>true to create device selector to send audio to the system audio output devices </td></tr>
   </table>
   </dd>
 </dl>
@@ -409,6 +421,40 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae1edf65c94deca2a3911d11a9b96cd8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1edf65c94deca2a3911d11a9b96cd8e">&#9670;&nbsp;</a></span>setDevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChannelsList::setDevice </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slots for setting an audio output device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>device index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adc787dbb51d4e2d2c733d53f4ee293fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc787dbb51d4e2d2c733d53f4ee293fa">&#9670;&nbsp;</a></span>setLabel</h2>
 
@@ -443,8 +489,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a43db2170bacc9e99e051e56d576ded6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43db2170bacc9e99e051e56d576ded6e">&#9670;&nbsp;</a></span>setLevel</h2>
+<a id="adbc31fe3486c8a6aa3302a1c226ca60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc31fe3486c8a6aa3302a1c226ca60a">&#9670;&nbsp;</a></span>setVolume</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,10 +499,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ChannelsList::setLevel </td>
+          <td class="memname">void ChannelsList::setVolume </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>level</em></td><td>)</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -470,7 +516,7 @@ Private Attributes</h2></td></tr>
 <p>Slots for setting the channel level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td>from 0 to 100 </td></tr>
+    <tr><td class="paramname">volume</td><td>integer number from 0 to 100 </td></tr>
   </table>
   </dd>
 </dl>
@@ -570,28 +616,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af244814d3119fa1a7526b1c2ee3da1a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af244814d3119fa1a7526b1c2ee3da1a7">&#9670;&nbsp;</a></span>list</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_channel.html">Channel</a> *&gt; ChannelsList::list</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a452e6090d13b327758ae0e3992ed620c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a452e6090d13b327758ae0e3992ed620c">&#9670;&nbsp;</a></span>prefix</h2>
 
@@ -612,6 +636,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>user interface prefix </p>
+
+</div>
+</div>
+<a id="ac9208b24e03fac37e06e9664ed26b13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9208b24e03fac37e06e9664ed26b13b">&#9670;&nbsp;</a></span>samplesize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ChannelsList::samplesize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>signal sample size [bits] </p>
+
+</div>
+</div>
+<a id="ac5467a8384f559129cc71c31a6c95972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5467a8384f559129cc71c31a6c95972">&#9670;&nbsp;</a></span>showdevices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChannelsList::showdevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>true to show audio output device selector (in case of sending channels to speakers or other audio output system devices) </p>
 
 </div>
 </div>

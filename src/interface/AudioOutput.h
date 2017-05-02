@@ -9,7 +9,6 @@
 // Qt libraries
 #include "QIODevice"
 #include "QDialog"
-#include "QtGlobal"
 #include "QtEndian"
 #include "QList"
 #include "QAudioDeviceInfo"

@@ -3,16 +3,15 @@
 
 // C libraries
 #include "iostream"
-#include "stdio.h"
 #include "stdlib.h"
-#include "setjmp.h"
-#include "string.h"
+#include "map"
 // Qt libraries
 #include "QApplication"
 #include "QMainWindow"
 // Classes and local files
 #include "Encoder.h"
 #include "ChannelsList.h"
+#include "EffectsMonitor.h"
 #include "AudioOutput.h"
 #include "AudioInfo.h"
 #include "AudioChart.h"
@@ -82,6 +81,7 @@ public:
     void unmute();
     void reset();
     void updateControls();
+    void setEffect(std::string effect);
     void setSource(std::string filename);
     void setBitstream(std::string filename);
     void setInput(std::string filename);
@@ -95,6 +95,7 @@ private:
     AudioChart *chart;                                  /**< chart object */
     ChannelsList *channels_input;                       /**< input channels list */
     ChannelsList *channels_output;                      /**< output channels list */
+    EffectsMonitor *effectsmonitor;                     /**< effects monitor object */
     WAVFile *source;                                    /**< encoded source file object */
     File *bitstream;                                    /**< encoded bit stream file object */
     WAVFile *input;                                     /**< decoded input file object */
@@ -117,6 +118,8 @@ private slots:
     void toggleDecodingType(QAction *item);
     void toggleBinauralQuality(QAction *item);
     void toggleHRTFModel(QAction *item);
+    // Effects
+    void toggleEffect();
 };
 
 #endif // DECODER_H

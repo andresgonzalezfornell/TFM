@@ -16,7 +16,7 @@
 void printHelp(std::string app) {
     std::string message = "\n";
     std::string separator = "";
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 130; i++) {
         separator += "-";
     }
     // Application information
@@ -32,14 +32,14 @@ void printHelp(std::string app) {
     usage.push_back({"-bs","filename","bitstream file that contains all needed data to decode source file (if it is not indicated then decoding will use \"buried\" bitstream)"});
     usage.push_back({"-ds","filename","file name where decoded source file will be created"});
     usage.push_back({"-o","filename","file name where output file (including effects) will be created"});
-    usage.push_back({"-ut","upmix type\t","0: normal (by default if it is not indicated)\t\t1: blind\t\t2: binaural\t\t3: stereo"});
-    usage.push_back({"-dt","decoding type","0: low (by default if it is not indicated)\t\t1: high"});
-    usage.push_back({"-bq","binaural quality","0: parametric (by defualt if it is not indicated)\t1: filtering"});
-    usage.push_back({"-hm","HRTF model\t","0: kemar (by default if it is not indicated)\t\t1: vast\t\t2: MPS VT"});
+    usage.push_back({"-ut","upmix type","0: normal (by default if it is not indicated)\t\t1: blind\t2: binaural\t3: stereo"});
+    usage.push_back({"-dt","dec type","0: low (by default if it is not indicated)\t\t1: high"});
+    usage.push_back({"-bq","binaural q.","0: parametric (by defualt if it is not indicated)\t1: filtering"});
+    usage.push_back({"-hm","HRTF model","0: kemar (by default if it is not indicated)\t\t1: vast\t\t2: MPS VT"});
     usage.push_back({"-fx","filename","effects parameters file"});
     usage.push_back({"-h","","it shows usage help"});
-    for (int row = 0; row < usage.size(); row++) {
-        for (int column = 0; column < usage[0].size(); column++) {
+    for (int row = 0; row < (int)usage.size(); row++) {
+        for (int column = 0; column < (int)usage[0].size(); column++) {
             message += usage[row][column] + "\t";
         }
         message += "\n";
@@ -55,15 +55,15 @@ void printHelp(std::string app) {
 int main(int argc, char *argv[]) {
     // Arguments
     std::string app = std::string(argv[0]);
-    std::string source;
+    std::string source = "";
     std::string bitstream = "buried";
-    std::string input;
-    std::string output;
+    std::string input = "";
+    std::string output = "";
     int upmixtype = 0;
     int decodingtype = 0;
     int binauralquality = 0;
     int hrtfmodel = 0;
-    std::string effects;
+    std::string effect;
     for(int arg = 1; arg < argc; arg++) {
         if(std::strncmp(argv[arg],"-s",2)==0) {
             arg++;
@@ -135,12 +135,17 @@ int main(int argc, char *argv[]) {
                 printHelp(app);
                 return 1;
             } else {
-                effects = argv[arg];
+                effect = argv[arg];
             }
         } else if(std::strncmp(argv[arg],"-h",2)==0) {
             printHelp(app);
             return 0;
         }
+    }
+    if (source.empty() || input.empty() || output.empty()) {
+        std::cout << "\nusage error\n";
+        printHelp(app);
+        return 1;
     }
     std::string message = "\nPARAMETERS\n";
     message += "Source:\t\t" + source + "\n";
@@ -196,7 +201,7 @@ int main(int argc, char *argv[]) {
         break;
     }
     message += "\n";
-    message += "Effects:\t\t" + effects + "\n";
+    message += "Effects:\t\t" + effect + "\n";
     std::cout << message << "\n";
     // Application
     consolelog("main", LogType::progress, "running application");
@@ -204,10 +209,14 @@ int main(int argc, char *argv[]) {
     // Decoding
     process->decode(source,bitstream,input,upmixtype,decodingtype,binauralquality,hrtfmodel);
     // Effects
-    std::string effectparams = "";
-    Effect effect = Effect(Effect::Compressor,effectparams);
+    File effectinfo = File(effect,false);
+    std::string info = effectinfo.readData(0);
+    std::string effectname = Effect::readInfo(info,"effect");
+    std::string params = Effect::readInfo(info,"params");
+    Effect::effectID effectID = Effect::getEffect(effectname);
+    Effect fx = Effect(effectID,params);
     std::vector<bool> channels = std::vector<bool>(process->channels,true);
-    process->applyEffect(channels, effect);
+    process->applyEffect(channels, fx);
     // Output
     process->setOutput(output);
     // End

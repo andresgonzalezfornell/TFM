@@ -81,6 +81,7 @@ $(document).ready(function(){initNavTree('struct_w_a_v_file_1_1_header.html','')
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="struct_w_a_v_file_1_1_header-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WAVFile::Header Struct Reference</div>  </div>
@@ -90,8 +91,13 @@ $(document).ready(function(){initNavTree('struct_w_a_v_file_1_1_header.html','')
 <p>Audio file header struct.  
  <a href="struct_w_a_v_file_1_1_header.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_audio_file_8h_source.html">AudioFile.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_file_8h_source.html">File.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa725ada977810d575cad1a55b0030514"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#aa725ada977810d575cad1a55b0030514">size</a> ()</td></tr>
+<tr class="separator:aa725ada977810d575cad1a55b0030514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Chunk header</div></td></tr>
@@ -99,8 +105,8 @@ Public Attributes</h2></td></tr>
 </div></td></tr>
 <tr class="memitem:a796a84d05ba0ddeb837804dff90b730b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a796a84d05ba0ddeb837804dff90b730b">chunkID</a></td></tr>
 <tr class="separator:a796a84d05ba0ddeb837804dff90b730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b5188e2f0d0889652ba2ecff24a585e"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a6b5188e2f0d0889652ba2ecff24a585e">chunksize</a></td></tr>
-<tr class="separator:a6b5188e2f0d0889652ba2ecff24a585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee17e466b00a8b1d274be731f58d5fc0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#aee17e466b00a8b1d274be731f58d5fc0">chunksize</a></td></tr>
+<tr class="separator:aee17e466b00a8b1d274be731f58d5fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3a54e23ce34d6f9cba9e9853915e30c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#aa3a54e23ce34d6f9cba9e9853915e30c">format</a></td></tr>
 <tr class="separator:aa3a54e23ce34d6f9cba9e9853915e30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Subshunk 1 header</div></td></tr>
@@ -108,39 +114,65 @@ Public Attributes</h2></td></tr>
 </div></td></tr>
 <tr class="memitem:ae52803bdbed54de73d48d2c0bf45099d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ae52803bdbed54de73d48d2c0bf45099d">subchunk1ID</a></td></tr>
 <tr class="separator:ae52803bdbed54de73d48d2c0bf45099d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8e9b81354bf1f8c9af0ae203fa337d"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#aea8e9b81354bf1f8c9af0ae203fa337d">subchunk1size</a></td></tr>
-<tr class="separator:aea8e9b81354bf1f8c9af0ae203fa337d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0894c64452a0a14c3e2483c396c2707"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ab0894c64452a0a14c3e2483c396c2707">audioformat</a></td></tr>
-<tr class="separator:ab0894c64452a0a14c3e2483c396c2707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8151177251ab4bea51afbd2e895c2cd"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ad8151177251ab4bea51afbd2e895c2cd">numchannels</a></td></tr>
-<tr class="separator:ad8151177251ab4bea51afbd2e895c2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac21b9aac0a1cfce8f06028beab50c91b"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ac21b9aac0a1cfce8f06028beab50c91b">samplerate</a></td></tr>
-<tr class="separator:ac21b9aac0a1cfce8f06028beab50c91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848d93a4ac848947323a8e521c6a64af"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a848d93a4ac848947323a8e521c6a64af">byterate</a></td></tr>
-<tr class="separator:a848d93a4ac848947323a8e521c6a64af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0999b3bdb1c8292c2c6e2c608007d819"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a0999b3bdb1c8292c2c6e2c608007d819">blockalign</a></td></tr>
-<tr class="separator:a0999b3bdb1c8292c2c6e2c608007d819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff29953b3f162c4c270c3c1f2ce00b1"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a0ff29953b3f162c4c270c3c1f2ce00b1">bitspersample</a></td></tr>
-<tr class="separator:a0ff29953b3f162c4c270c3c1f2ce00b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e68dc34f2431942bbe6a5586a3ec55"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ae4e68dc34f2431942bbe6a5586a3ec55">subchunk1size</a></td></tr>
+<tr class="separator:ae4e68dc34f2431942bbe6a5586a3ec55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d16652e388f953230b0275301c87d2f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a6d16652e388f953230b0275301c87d2f">audioformat</a></td></tr>
+<tr class="separator:a6d16652e388f953230b0275301c87d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1636a3deffe4e61b7ab8e8b8168a7b18"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a1636a3deffe4e61b7ab8e8b8168a7b18">numchannels</a></td></tr>
+<tr class="separator:a1636a3deffe4e61b7ab8e8b8168a7b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271b0090295f7276b1d91683bc2a0f74"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a271b0090295f7276b1d91683bc2a0f74">samplerate</a></td></tr>
+<tr class="separator:a271b0090295f7276b1d91683bc2a0f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e4c7534bfdd6e9cbd4b73079438e7f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ac6e4c7534bfdd6e9cbd4b73079438e7f">byterate</a></td></tr>
+<tr class="separator:ac6e4c7534bfdd6e9cbd4b73079438e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c212f5f08c59f8487ccc3d066753892"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a5c212f5f08c59f8487ccc3d066753892">blockalign</a></td></tr>
+<tr class="separator:a5c212f5f08c59f8487ccc3d066753892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad731c9ced0b22903be0b24f6528ec061"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ad731c9ced0b22903be0b24f6528ec061">bitspersample</a></td></tr>
+<tr class="separator:ad731c9ced0b22903be0b24f6528ec061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Subshunk 2 header</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>It indicates the size of the sound information. </p>
 </div></td></tr>
 <tr class="memitem:a8623063c7d187207e3bca18930adacb2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a8623063c7d187207e3bca18930adacb2">subchunk2ID</a></td></tr>
 <tr class="separator:a8623063c7d187207e3bca18930adacb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a283772efe26ffe3aa5db7c04d6991977"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#a283772efe26ffe3aa5db7c04d6991977">subchunk2size</a></td></tr>
-<tr class="separator:a283772efe26ffe3aa5db7c04d6991977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ed192e56a65a330d7320769f49c5bc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_a_v_file_1_1_header.html#ad5ed192e56a65a330d7320769f49c5bc">subchunk2size</a></td></tr>
+<tr class="separator:ad5ed192e56a65a330d7320769f49c5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Audio file header struct. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab0894c64452a0a14c3e2483c396c2707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0894c64452a0a14c3e2483c396c2707">&#9670;&nbsp;</a></span>audioformat</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa725ada977810d575cad1a55b0030514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa725ada977810d575cad1a55b0030514">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WAVFile::Header::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6d16652e388f953230b0275301c87d2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d16652e388f953230b0275301c87d2f">&#9670;&nbsp;</a></span>audioformat</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::audioformat</td>
+          <td class="memname">unsigned int WAVFile::Header::audioformat</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -148,14 +180,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ff29953b3f162c4c270c3c1f2ce00b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff29953b3f162c4c270c3c1f2ce00b1">&#9670;&nbsp;</a></span>bitspersample</h2>
+<a id="ad731c9ced0b22903be0b24f6528ec061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad731c9ced0b22903be0b24f6528ec061">&#9670;&nbsp;</a></span>bitspersample</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::bitspersample</td>
+          <td class="memname">unsigned int WAVFile::Header::bitspersample</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,14 +195,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0999b3bdb1c8292c2c6e2c608007d819"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0999b3bdb1c8292c2c6e2c608007d819">&#9670;&nbsp;</a></span>blockalign</h2>
+<a id="a5c212f5f08c59f8487ccc3d066753892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c212f5f08c59f8487ccc3d066753892">&#9670;&nbsp;</a></span>blockalign</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::blockalign</td>
+          <td class="memname">unsigned int WAVFile::Header::blockalign</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,14 +210,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a848d93a4ac848947323a8e521c6a64af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a848d93a4ac848947323a8e521c6a64af">&#9670;&nbsp;</a></span>byterate</h2>
+<a id="ac6e4c7534bfdd6e9cbd4b73079438e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e4c7534bfdd6e9cbd4b73079438e7f">&#9670;&nbsp;</a></span>byterate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::byterate</td>
+          <td class="memname">unsigned int WAVFile::Header::byterate</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -208,14 +240,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b5188e2f0d0889652ba2ecff24a585e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b5188e2f0d0889652ba2ecff24a585e">&#9670;&nbsp;</a></span>chunksize</h2>
+<a id="aee17e466b00a8b1d274be731f58d5fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee17e466b00a8b1d274be731f58d5fc0">&#9670;&nbsp;</a></span>chunksize</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::chunksize</td>
+          <td class="memname">unsigned int WAVFile::Header::chunksize</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,14 +270,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad8151177251ab4bea51afbd2e895c2cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8151177251ab4bea51afbd2e895c2cd">&#9670;&nbsp;</a></span>numchannels</h2>
+<a id="a1636a3deffe4e61b7ab8e8b8168a7b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1636a3deffe4e61b7ab8e8b8168a7b18">&#9670;&nbsp;</a></span>numchannels</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::numchannels</td>
+          <td class="memname">unsigned int WAVFile::Header::numchannels</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -253,14 +285,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac21b9aac0a1cfce8f06028beab50c91b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac21b9aac0a1cfce8f06028beab50c91b">&#9670;&nbsp;</a></span>samplerate</h2>
+<a id="a271b0090295f7276b1d91683bc2a0f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271b0090295f7276b1d91683bc2a0f74">&#9670;&nbsp;</a></span>samplerate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::samplerate</td>
+          <td class="memname">unsigned int WAVFile::Header::samplerate</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -283,14 +315,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aea8e9b81354bf1f8c9af0ae203fa337d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea8e9b81354bf1f8c9af0ae203fa337d">&#9670;&nbsp;</a></span>subchunk1size</h2>
+<a id="ae4e68dc34f2431942bbe6a5586a3ec55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e68dc34f2431942bbe6a5586a3ec55">&#9670;&nbsp;</a></span>subchunk1size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::subchunk1size</td>
+          <td class="memname">unsigned int WAVFile::Header::subchunk1size</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -313,14 +345,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a283772efe26ffe3aa5db7c04d6991977"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a283772efe26ffe3aa5db7c04d6991977">&#9670;&nbsp;</a></span>subchunk2size</h2>
+<a id="ad5ed192e56a65a330d7320769f49c5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ed192e56a65a330d7320769f49c5bc">&#9670;&nbsp;</a></span>subchunk2size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long int WAVFile::Header::subchunk2size</td>
+          <td class="memname">unsigned int WAVFile::Header::subchunk2size</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -329,7 +361,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/interface/<a class="el" href="_audio_file_8h_source.html">AudioFile.h</a></li>
+<li>src/process/<a class="el" href="_file_8h_source.html">File.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
