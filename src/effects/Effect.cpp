@@ -6,17 +6,32 @@
  * @param   effect          effect ID
  * @param   params          string of effect parameters
  */
-Effect::Effect(Effect::effectID effect, std::string params) : INITIALIZERS {
-    this->params = params;
+Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> params) : INITIALIZERS {
+    // Deleting banned characters for param
+    for (std::map<std::string, std::string>::iterator iterator = params.begin(); iterator != params.end(); iterator++) {
+        std::string param = "";
+        for (int character = 0; character < (int)iterator->first.size(); character++) {
+            bool valid = false;
+            if (character > 0) {
+                valid += (0x30 <= iterator->first[character] && iterator->first[character] <= 0x39); // numbers
+            }
+            valid += (0x41 <= iterator->first[character] && iterator->first[character] <= 0x5A); // uppercase letters
+            valid += (0x61 <= iterator->first[character] && iterator->first[character] <= 0x7A); // lowercase letters
+            if (valid) {
+                param += iterator->first[character];
+            } else {
+                consolelog("Effect", LogType::warning, "character \"" + iterator->first.substr(character,1) + "\" is not allowed as parameter name in \"" + iterator->first + "\" and it will be removed");
+            }
+        }
+        this->params.insert(std::pair<std::string, std::string>(param, iterator->second));
+    }
     this->effect = effect;
-    consolelog("Effect",LogType::progress,"Effect object is created");
 }
 
 /**
  * @brief   Effect destructor.
  */
 Effect::~Effect() {
-    consolelog("Effect",LogType::progress,"Effect object is deleted");
 }
 
 /**
@@ -95,39 +110,6 @@ Effect::effectID Effect::getEffect(std::string effectname) {
  * @brief   EffectBase constructor.
  * @param   params          string of effect parameters
  */
-EffectBase::EffectBase(std::string params) {
+EffectBase::EffectBase(std::map<std::string, std::string> params) {
     this->params = params;
-}
-
-/**
- * @brief   It gets a parameter from the parameters effect string.
- * @param   name            parameter name
- * @return  parameter value
- */
-double EffectBase::getParam(std::string name) {
-    std::string data = this->params;
-    int start = 0;
-    if (data.find(name + " = ") < data.size()) {
-        start = data.find(name + " = ") + name.size() + 3;
-    } else if (data.find(name + " =") < data.size()) {
-        start = data.find(name + " =") + name.size() + 2;
-    } else if (data.find(name + "= ") < data.size()) {
-        start = data.find(name + "= ") + name.size() + 2;
-    } else if (data.find(name + "=") < data.size()){
-        start = data.find(name + "=") + name.size() + 1;
-    } else {
-        consolelog("EffectBase", LogType::error, "parameter \"" + name + "\" could not be found");
-        return 0;
-    }
-    data = data.substr(start);
-    int length = data.find(" ");
-    if ((int)data.find("\n") < length) {
-        length = data.find("\n");
-    }
-    if ((int)data.find("\n") < length) {
-        length = data.find("\t");
-    }
-    data = data.substr(0,length);
-    double value = atof(data.c_str());
-    return value;
 }

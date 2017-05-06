@@ -9,19 +9,55 @@ int ChannelsList::samplesize;
  * @brief	Decoder constructor.
  * @param   framework           Decoder user interface object
  */
-Decoder::Decoder(QWidget *framework) :
-    QMainWindow(framework),
-    ui(new Ui::Decoder)
-{
+Decoder::Decoder(QWidget *framework) : QMainWindow(framework), ui(new Ui::Decoder) {
     // Initialization
     ui->setupUi(this);
-    ChannelsList::fs = 44100;
+    ChannelsList::fs = this->fs;
     ChannelsList::samplesize = 32;
-    int chunksize = 100;
-    this->process = new ProcessManager(ChannelsList::fs, chunksize);
+    this->chunksize = 4410;
+    this->process = new ProcessManager(this->fs, chunksize);
+    this->chart_input = new AudioChart(ui->input_chart);
+    this->chart_output = new AudioChart(ui->output_chart);
+    // Clock
+    this->clock = new QTimer(this);
+    double period = (double)chunksize/this->fs;
+    this->clock->setInterval((int)period*1000);
+    QObject::connect(this->clock, SIGNAL(timeout()),this,SLOT(applyEffect()));
+    QObject::connect(this->clock, SIGNAL(timeout()),this,SLOT(plotInput()));
+    QObject::connect(this->clock, SIGNAL(timeout()),this,SLOT(plotOutput()));
+    QObject::connect(this->clock, SIGNAL(timeout()),this,SLOT(setTimer()));
+    this->stop();
     // Effects
     this->effectsmonitor = new EffectsMonitor(ui->effect_monitor_list);
     std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
+    // Input & Output
+    this->channels_input = new ChannelsList(ui->input_channels,0,false);
+    this->channels_output = new ChannelsList(ui->output_channels,0,true);
+    this->source = NULL;
+    this->input = NULL;
+    this->bitstream = NULL;
+    this->setSource("");
+    this->reset();
+    // Signals - Source
+    QObject::connect(ui->menu_encode,SIGNAL(triggered(bool)),this,SLOT(encode()));
+    QObject::connect(ui->menu_load_source,SIGNAL(triggered(bool)),this,SLOT(load()));
+    // Signals - Bitstream
+    QObject::connect(ui->menu_load_bitstream,SIGNAL(triggered(bool)),this,SLOT(load()));
+    // Signals - Decoder
+    QObject::connect(ui->menu_bitstream_buried,SIGNAL(toggled(bool)),this,SLOT(setBuried(bool)));;
+    QObject::connect(ui->menu_upmixtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleUpmixType(QAction*)));
+    QObject::connect(ui->menu_decodingtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleDecodingType(QAction*)));
+    QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
+    QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
+    // Signals - Input
+    QObject::connect(this->channels_input,SIGNAL(namechanged()),this,SLOT(updateInputChannels()));
+    QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
+    QObject::connect(ui->input_stop,SIGNAL(clicked(bool)),this,SLOT(stop()));
+    QObject::connect(ui->input_info,SIGNAL(released()),this,SLOT(openInfo()));
+    QObject::connect(ui->input_timer,SIGNAL(timeChanged(QTime)),this,SLOT(setTimer(QTime)));
+    QObject::connect(ui->output_timer,SIGNAL(timeChanged(QTime)),this,SLOT(setTimer(QTime)));
+    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
+    // Signals - Effect
     for (std::map<std::string, Effect::effectID>::iterator iterator = effects.begin(); iterator != effects.end(); iterator++) {
         QAction *effect = new QAction(this);
         effect->setObjectName(ui->menu_effect->objectName() + QString::fromStdString("_" + iterator->first));
@@ -31,36 +67,9 @@ Decoder::Decoder(QWidget *framework) :
         QObject::connect(effect,SIGNAL(triggered(bool)),this,SLOT(toggleEffect()));
     }
     this->setEffect(effects.begin()->first);
-    // Input & Output
-    this->channels_input = new ChannelsList(ui->input_channels,0,false);
-    this->channels_output = new ChannelsList(ui->output_channels,0,true);
-    this->source = NULL;
-    this->input = NULL;
-    this->bitstream = NULL;
-    this->setSource("");
-    this->reset();
-    float range[2][2] = {{0,(float)this->fs},{-1,1}};
-    this->chart = new AudioChart(ui->input_chart,range,"",AudioChart::ChartOptions::logX);
-    // Signals
-    QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
+    // Signals - Output
+    QObject::connect(this->channels_output,SIGNAL(namechanged()),this,SLOT(updateOutputChannels()));
     QObject::connect(ui->output_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
-    QObject::connect(ui->input_info,SIGNAL(released()),this,SLOT(openInfo()));
-    // Menu - Source
-    QObject::connect(ui->menu_encode,SIGNAL(triggered(bool)),this,SLOT(encode()));
-    QObject::connect(ui->menu_load_source,SIGNAL(triggered(bool)),this,SLOT(load()));
-    // Menu - Bitstream
-    QObject::connect(ui->menu_load_bitstream,SIGNAL(triggered(bool)),this,SLOT(load()));
-    // Menu - Decoder
-    QObject::connect(ui->menu_bitstream_buried,SIGNAL(toggled(bool)),this,SLOT(setBuried(bool)));;
-    QObject::connect(ui->menu_upmixtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleUpmixType(QAction*)));
-    QObject::connect(ui->menu_decodingtype,SIGNAL(triggered(QAction *)),this,SLOT(toggleDecodingType(QAction*)));
-    QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
-    QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
-    // Menu - Input
-    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
-    // Menu - Effect
-
-    // Menu - Output
     QObject::connect(ui->menu_test,SIGNAL(triggered(bool)),this,SLOT(test()));
     consolelog("Decoder", LogType::progress, "Decoder object is created");
 }
@@ -69,8 +78,7 @@ Decoder::Decoder(QWidget *framework) :
  * @brief	Decoder destructor.
  *
  */
-Decoder::~Decoder()
-{
+Decoder::~Decoder() {
     delete ui;
     consolelog("Decoder", LogType::progress, "Decoder object is deleted");
 }
@@ -79,14 +87,29 @@ Decoder::~Decoder()
  * @brief   It starts playing input.
  */
 void Decoder::play() {
-
+    this->clock->start();
+    ui->input_playback->setChecked(true);
+    ui->input_timer->setReadOnly(true);
 }
 
 /**
  * @brief   It pauses input playback.
  */
 void Decoder::pause() {
+    this->clock->stop();
+    ui->input_playback->setChecked(false);
+    ui->input_timer->setReadOnly(false);
+}
 
+/**
+ * @brief   It stops input playback
+ */
+void Decoder::stop() {
+    this->pause();
+    this->process->cursor = 0;
+    this->setTimer();
+    this->chart_input->clear();
+    this->chart_output->clear();
 }
 
 /**
@@ -106,6 +129,7 @@ void Decoder::unmute() {
  * @brief   It resets all decoding parameters, including input file.
  */
 void Decoder::reset() {
+    this->stop();
     this->bitstream = NULL;
     this->input = NULL;
     this->setBitstream("");
@@ -122,13 +146,29 @@ void Decoder::reset() {
  * @brief   It updates enability of user interface controls according to the current parameters state.
  */
 void Decoder::updateControls() {
-    // Input controls
-    ui->input_playback->setEnabled(this->input->exists());
-    ui->input_info->setEnabled(this->input->exists());
-    // Bitstream
-    ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Decoder
     ui->menu_decode->setEnabled(this->source->exists() && this->bitstream->exists());
+    // Bitstream
+    ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
+    // Input & output controls
+    ui->input_playback->setEnabled(this->input->exists());
+    ui->output_playback->setEnabled(this->input->exists());
+    ui->input_stop->setEnabled(this->input->exists());
+    ui->input_info->setEnabled(this->input->exists());
+    ui->input_timer->setEnabled(this->input->exists());
+    ui->output_timer->setEnabled(this->input->exists());
+    if (this->input->exists()) {
+        double time = 1000 * this->input->duration; // current playback time [ms]
+        int h = (int) std::floor(time / 1000 / 60 / 60);
+        int m = (int) std::floor(time / 1000 / 60) % 60;
+        int s = (int) std::floor(time / 1000) % 60;
+        int ms = (int) std::round(time) % 1000;
+        ui->input_timer->setMaximumTime(QTime(h,m,s,ms));
+        ui->output_timer->setMaximumTime(QTime(h,m,s,ms));
+    } else {
+        ui->input_timer->setTime(QTime(0,0,0,0));
+        ui->output_timer->setTime(QTime(0,0,0,0));
+    }
 }
 
 /**
@@ -211,8 +251,8 @@ void Decoder::setInput(std::string filename) {
         this->input = new WAVFile(filename, false);
         ChannelsList::fs = this->input->header.samplerate;
         ChannelsList::samplesize = this->input->header.bitspersample;
-        this->channels_input->setChannelsNumber(this->input->header.numchannels);
-        this->channels_output->setChannelsNumber(this->input->header.numchannels);
+        this->channels_input->setSize(this->input->header.numchannels);
+        this->channels_output->setSize(this->input->header.numchannels);
     }
     bool loaded = this->input->exists();
     if(loaded && filename != "") {
@@ -222,7 +262,7 @@ void Decoder::setInput(std::string filename) {
         ui->input_filename->setText(QString::fromStdString(this->input->getFilename()));
         consolelog("Decoder",LogType::interaction,"input file selection was cancelled");
     } else {
-        this->channels_input->setChannelsNumber(0);
+        this->channels_input->setSize(0);
         ui->input_filename->setText(QString::fromStdString("please decode source"));
         consolelog("Decoder",LogType::warning,"input file is empty");
     }
@@ -231,6 +271,8 @@ void Decoder::setInput(std::string filename) {
     font.setItalic(!loaded);
     ui->input_filename->setFont(font);
     // Controls update
+    this->updateInputChannels();
+    this->updateOutputChannels();
     this->updateControls();
 }
 
@@ -328,6 +370,197 @@ void Decoder::setHRTFModel(HRTFModel::hrtfmodel hrtfmodel) {
 }
 
 /**
+ * @brief   It plots current input signal on the input chart.
+ */
+void Decoder::plotInput() {
+    QVector<QPointF> points;
+    int N; // number of samples to be plotted
+    int n; // first sample to be plotted
+    if (this->chunksize == 0) {
+        N = this->process->samples;
+        n = 0;
+    } else {
+        N = this->chunksize;
+        n = this->process->cursor - N;
+        if (n+N >= this->process->samples) {
+            N = this->process->samples - n - 1;
+        }
+    }
+    int channel = ui->input_chart_selector->currentIndex() / 2;
+    int remainder = ui->input_chart_selector->currentIndex() % 2;
+    std::vector<float> vector = std::vector<float>(process->input[channel] + n, process->input[channel] + n + N);
+    AudioSignal signal = AudioSignal(vector,this->fs);
+    // Signal plot
+    if (remainder == 0) {
+        float range[2][2] = {{0,(float)(N-1)/this->fs},{-1,1}};
+        this->chart_input->setRange(range);
+        this->chart_input->setOptions(AudioChart::ChartOptions::labelX);
+        for (int sample = 0; sample < N; sample++) {
+            points.push_back(QPointF((float)sample/this->fs, signal[sample]));
+        }
+    // Spectrum plot
+    } else if (remainder == 1) {
+        float range[2][2] = {{0,(float)this->fs/2},{0,1}};
+        this->chart_input->setRange(range);
+        this->chart_input->setOptions(AudioChart::ChartOptions::labelX);
+        std::vector<float> spectrum = signal.getSpectrum();
+        for (int frequency = 0; frequency < std::ceil((double)N/2); frequency++) {
+            points.push_back(QPointF((float)frequency*this->fs/N, spectrum[frequency]));
+        }
+    }
+    this->chart_input->setPoints(points);
+}
+
+/**
+ * @brief   It plots current output signal on the output chart.
+ */
+void Decoder::plotOutput() {
+    QVector<QPointF> points;
+    int N; // number of samples to be plotted
+    int n; // first sample to be plotted
+    if (this->chunksize == 0) {
+        N = this->process->samples;
+        n = 0;
+    } else {
+        N = this->chunksize;
+        n = this->process->cursor - N;
+        if (n+N >= this->process->samples) {
+            N = this->process->samples - n - 1;
+        }
+    }
+    int channel = ui->output_chart_selector->currentIndex() / 2;
+    int remainder = ui->output_chart_selector->currentIndex() % 2;
+    std::vector<float> vector = std::vector<float>(process->output[channel] + n, process->output[channel] + n + N);
+    AudioSignal signal = AudioSignal(vector,this->fs);
+    // Signal plot
+    if (remainder == 0) {
+        float range[2][2] = {{0,(float)(N-1)/this->fs},{-1,1}};
+        this->chart_output->setRange(range);
+        this->chart_output->setOptions(AudioChart::ChartOptions::labelX);
+        for (int sample = 0; sample < N; sample++) {
+            points.push_back(QPointF((float)sample/this->fs, signal[sample]));
+        }
+    // Spectrum plot
+    } else if (remainder == 1) {
+        float range[2][2] = {{0,(float)this->fs/2},{0,1}};
+        this->chart_output->setRange(range);
+        this->chart_output->setOptions(AudioChart::ChartOptions::labelX);
+        std::vector<float> spectrum = signal.getSpectrum();
+        for (int frequency = 0; frequency < std::ceil((double)N/2); frequency++) {
+            points.push_back(QPointF((float)frequency*this->fs/N, spectrum[frequency]));
+        }
+    }
+    this->chart_output->setPoints(points);
+}
+
+/**
+ * @brief   It loads current input channels name on chart selector.
+ */
+void Decoder::updateInputChannels() {
+    ui->input_chart_selector->clear();
+    std::vector<std::string> names = this->channels_input->getNames();
+    for (int index = 0; index < this->channels_input->getSize(); index++) {
+        ui->input_chart_selector->addItem(QString::fromStdString(names[index] + " - Signal"));
+        ui->input_chart_selector->addItem(QString::fromStdString(names[index] + " - Spectrum"));
+    }
+}
+
+/**
+ * @brief   It loads current output channels name on chart selector.
+ */
+void Decoder::updateOutputChannels() {
+    ui->output_chart_selector->clear();
+    std::vector<std::string> names = this->channels_output->getNames();
+    for (int index = 0; index < this->channels_output->getSize(); index++) {
+        ui->output_chart_selector->addItem(QString::fromStdString(names[index]) + " - Signal");
+        ui->output_chart_selector->addItem(QString::fromStdString(names[index]) + " - Spectrum");
+    }
+}
+
+/**
+ * @name    Playback controls slots
+ * @brief   User interface functions for audio playback control.
+ * @{
+ */
+
+/**
+ * @brief   It controls the input and output playback.
+ * @param   state               true to play and false to pause
+ */
+void Decoder::setPlayback(bool state) {
+    QObject::sender()->blockSignals(true);
+    std::string module = QObject::sender()->objectName().toStdString().substr(0,QObject::sender()->objectName().toStdString().find("_"));
+    if (module == "input") {
+        if (state) {
+            this->play();
+            consolelog("Decoder",LogType::interaction,"input is now playing");
+        } else {
+            this->pause();
+            consolelog("Decoder",LogType::interaction,"input is now paused");
+        }
+    } else if (module == "output") {
+        if (state) {
+            consolelog("Decoder",LogType::interaction,"unmuting output");
+//            this->audiooutput->unmute();
+        } else {
+            consolelog("Decoder",LogType::interaction,"muting output");
+//            this->audiooutput->mute();
+        }
+    }
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   It opens audio file info dialog.
+ */
+void Decoder::openInfo() {
+    QObject::sender()->blockSignals(true);
+    AudioInfo info;
+    info.setFile(this->input);
+    info.setWindowTitle("Input file info");
+    info.exec();
+    consolelog("Decoder",LogType::interaction,"showing input info dialog");
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   It sets audio playback time from the cursor.
+ */
+void Decoder::setTimer() {
+    if (this->process->cursor < this->process->samples) {
+        double time = (double) 1000 * this->process->cursor / this->fs; // current playback time [ms]
+        int h = (int) std::floor(time / 1000 / 60 / 60);
+        int m = (int) std::floor(time / 1000 / 60) % 60;
+        int s = (int) std::floor(time / 1000) % 60;
+        int ms = (int) std::round(time) % 1000;
+        ui->input_timer->setTime(QTime(h,m,s,ms));
+        ui->output_timer->setTime(QTime(h,m,s,ms));
+    } else {
+        this->stop();
+    }
+}
+
+/**
+ * @brief   It sets audio playback time from a specific time selected by user.
+ * @param   time
+ */
+void Decoder::setTimer(QTime time) {
+    QObject::sender()->blockSignals(true);
+    long int ms = 0;
+    ms += 1000 * 60 * 60 * time.hour();
+    ms += 1000 * 60 * time.minute();
+    ms += 1000 * time.second();
+    ms += time.msec();
+    this->process->cursor = std::floor((double) ms / 1000 * this->fs);
+    ui->input_timer->setTime((time));
+    ui->output_timer->setTime((time));
+    QObject::sender()->blockSignals(false);
+    consolelog("Decoder", LogType::interaction, "audio playback time set to " + std::to_string(time.hour()) + "h " + std::to_string(time.minute()) + "m " + std::to_string(time.second()) + "." + std::to_string(time.msec()) + "s");
+}
+
+/** @} */
+
+/**
  * @name    Audio menu bar interface slots
  * @brief   User interface functions for audio control.
  * @{
@@ -390,44 +623,6 @@ void Decoder::decode() {
             this->setInput(input);
         }
     }
-}
-
-/**
- * @brief   It controls the input and output playback.
- * @param   state               true to play and false to pause
- */
-void Decoder::setPlayback(bool state) {
-    QObject::sender()->blockSignals(true);
-    std::string module = QObject::sender()->objectName().toStdString().substr(0,QObject::sender()->objectName().toStdString().find("_"));
-    if (module == "input") {
-        if (state) {
-            consolelog("Decoder",LogType::interaction,"input is now playing");
-        } else {
-            consolelog("Decoder",LogType::interaction,"input is now paused");
-        }
-    } else if (module == "output") {
-        if (state) {
-            consolelog("Decoder",LogType::interaction,"unmuting output");
-//            this->audiooutput->unmute();
-        } else {
-            consolelog("Decoder",LogType::interaction,"muting output");
-//            this->audiooutput->mute();
-        }
-    }
-    QObject::sender()->blockSignals(false);
-}
-
-/**
- * @brief   It opens audio file info dialog.
- */
-void Decoder::openInfo() {
-    QObject::sender()->blockSignals(true);
-    AudioInfo info;
-    info.setFile(this->input);
-    info.setWindowTitle("Input file info");
-    info.exec();
-    consolelog("Decoder",LogType::interaction,"showing input info");
-    QObject::sender()->blockSignals(false);
 }
 
 /**
@@ -566,3 +761,15 @@ void Decoder::toggleEffect() {
 }
 
 /** @} */
+
+/**
+ * @brief   It applies the selected effect to the input signal.
+ */
+void Decoder::applyEffect() {
+    std::vector<bool> channels;
+    for (int index = 0; index < (int)this->channels_input->getSize(); index++) {
+        channels.push_back(!this->channels_input->getChannel(index)->bypassed);
+    }
+    Effect effect = Effect(this->effectsmonitor->effect.second,this->effectsmonitor->parameters);
+    this->process->applyEffect(channels,effect);
+}

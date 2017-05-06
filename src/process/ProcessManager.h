@@ -23,7 +23,7 @@ public:
     float **output;         /**< vector of input channels stream (sample = output[channel][sample index]) */
     int samples;            /**< number of samples in each channel */
     int channels;           /**< number of channels */
-    int realtime;           /**< pointer to current sample index when executing real time  process*/
+    int cursor;             /**< pointer to current sample index when executing real time process*/
     ProcessManager(int fs, int chunksize);
     ~ProcessManager();
     void setInput(std::string filename);

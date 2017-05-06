@@ -8,6 +8,7 @@
 // Qt libraries
 #include "QApplication"
 #include "QMainWindow"
+#include "QTimer"
 // Classes and local files
 #include "Encoder.h"
 #include "ChannelsList.h"
@@ -91,14 +92,17 @@ public:
     void setHRTFModel(HRTFModel::hrtfmodel hrtfmodel);
 private:
     ProcessManager *process;                            /**< process manager object */
+    QTimer *clock;                                      /**< application clock to call effect in proccess periodically*/
     Ui::Decoder *ui;                                    /**< user interface object */
-    AudioChart *chart;                                  /**< chart object */
+    AudioChart *chart_input;                            /**< input chart object */
+    AudioChart *chart_output;                           /**< output chart object */
     ChannelsList *channels_input;                       /**< input channels list */
     ChannelsList *channels_output;                      /**< output channels list */
     EffectsMonitor *effectsmonitor;                     /**< effects monitor object */
     WAVFile *source;                                    /**< encoded source file object */
     File *bitstream;                                    /**< encoded bit stream file object */
     WAVFile *input;                                     /**< decoded input file object */
+    int chunksize;                                      /**< number of samples in a chunk */
     bool buried;                                        /**< SAC decoder parameter */
     DecodingType::decodingtype decodingtype;            /**< SAC decoder parameter */
     UpmixType::upmixtype upmixtype;                     /**< SAC decoder parameter */
@@ -106,8 +110,15 @@ private:
     HRTFModel::hrtfmodel hrtfmodel;                     /**< SAC decoder parameter */
 private slots:
     // Input & output
+    void plotInput();
+    void plotOutput();
+    void updateInputChannels();
+    void updateOutputChannels();
     void setPlayback(bool state);
+    void stop();
     void openInfo();
+    void setTimer();
+    void setTimer(QTime time);
     void test();
     // Decoder
     void load();
@@ -120,6 +131,7 @@ private slots:
     void toggleHRTFModel(QAction *item);
     // Effects
     void toggleEffect();
+    void applyEffect();
 };
 
 #endif // DECODER_H

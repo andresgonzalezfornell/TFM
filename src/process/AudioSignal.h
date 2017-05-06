@@ -20,8 +20,8 @@ public:
     int fs;                         /**< signal sampling frequency [Hz] */
     AudioSignal(int fs);
     AudioSignal(std::vector<float> signal, int fs);
-	virtual ~AudioSignal();
-    float getSample(int index);
+    ~AudioSignal();
+    float operator[](int index);
     AudioSignal getSample(int start, int end);
     void setSample(int index, float sample);
     void addSample(float sample);

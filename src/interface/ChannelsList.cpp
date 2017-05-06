@@ -7,12 +7,11 @@
  * @param   showdevices     true to create device selector to send audio to the system audio output devices
  */
 ChannelsList::ChannelsList(QWidget *framework, int number, bool showdevices) {
-    this->channels = QList<Channel *>();
     this->prefix = framework->objectName().toStdString() + "_";
     this->framework = framework;
     this->layout = framework->findChild<QLayout *>(QString::fromStdString(prefix + "layout"));
     this->showdevices = showdevices;
-    this->setChannelsNumber(number);
+    this->setSize(number);
     consolelog("Channels",LogType::progress,"ChannelsList object is created");
 }
 
@@ -38,17 +37,25 @@ Channel *ChannelsList::getChannel(int index) {
  */
 void ChannelsList::deleteChannel(int index) {
     delete this->framework->findChild<QGroupBox *>(QString::fromStdString(this->prefix) + QString("channels_%1").arg(index));
-    this->channels.removeAt(index);
+    this->channels.erase(this->channels.begin() + index);
     consolelog("ChannelsList",LogType::progress,"Channels object is deleted");
+}
+
+/**
+ * @brief   It gets the number of channels.
+ * @return  number of channels
+ */
+int ChannelsList::getSize() {
+    return this->channels.size();
 }
 
 /**
  * @brief   It sets a number of channels up.
  * @param   number          number of channels
  */
-void ChannelsList::setChannelsNumber(int number) {
-    if (this->channels.size()<number) {
-        for (int index = this->channels.size(); index < number;index++) {
+void ChannelsList::setSize(int size) {
+    if ((int)this->channels.size()<size) {
+        for (int index = (int)this->channels.size(); index < size;index++) {
             Channel *channel = new Channel(this->layout, this->prefix, index, this->showdevices);
             QObject::connect(channel->label,SIGNAL(textChanged(QString)),this,SLOT(setLabel(QString)));
             QObject::connect(channel->volumeslider,SIGNAL(valueChanged(int)),this,SLOT(setVolume(int)));
@@ -56,13 +63,13 @@ void ChannelsList::setChannelsNumber(int number) {
             QObject::connect(channel->bypasscheckbox,SIGNAL(clicked(bool)),this,SLOT(bypass(bool)));
             this->channels.push_back(channel);
         }
-    } else if (this->channels.size()>number) {
-        for (int index = this->channels.size()-1; index >= number;index--) {
+    } else if ((int)this->channels.size()>size) {
+        for (int index = (int)this->channels.size()-1; index >= size;index--) {
             this->deleteChannel(index);
             consolelog("ChannelsList",LogType::progress,"channel " + std::to_string(index) + " is deleted");
         }
     }
-    consolelog("ChannelsList",LogType::interaction,"number of channels has been changed to " + std::to_string(number));
+    consolelog("ChannelsList",LogType::interaction,"number of channels has been changed to " + std::to_string(size));
 }
 
 /**
@@ -70,8 +77,20 @@ void ChannelsList::setChannelsNumber(int number) {
  * @param   element         user interface element
  * @return  index
  */
-int ChannelsList::getChannelIndex(QObject *element) {
+int ChannelsList::getIndex(QObject *element) {
     return std::stoi(element->objectName().toStdString().substr(element->objectName().toStdString().find(this->prefix) + this->prefix.length(),1));
+}
+
+/**
+ * @brief   It gets all channels names.
+ * @return  list of channels names
+ */
+std::vector<std::string> ChannelsList::getNames() {
+    std::vector<std::string> names;
+    for (int index = 0; index < this->getSize(); index++) {
+        names.push_back(this->channels[index]->name);
+    }
+    return names;
 }
 
 /**
@@ -86,10 +105,11 @@ int ChannelsList::getChannelIndex(QObject *element) {
  */
 void ChannelsList::setLabel(QString label) {
     QObject::sender()->blockSignals(true);
-    int index = this->getChannelIndex(QObject::sender());
+    int index = this->getIndex(QObject::sender());
     this->channels[index]->setLabel(label.toStdString());
     consolelog("ChannelsList",LogType::interaction,"label of channel " + std::to_string(index) + " has been changed to \"" + label.toStdString() + "\"");
     QObject::sender()->blockSignals(false);
+    emit namechanged();
 }
 
 /**
@@ -98,7 +118,7 @@ void ChannelsList::setLabel(QString label) {
  */
 void ChannelsList::setVolume(int volume) {
     QObject::sender()->blockSignals(true);
-    int index = this->getChannelIndex(QObject::sender());
+    int index = this->getIndex(QObject::sender());
     consolelog("ChannelsList",LogType::interaction,"changing volume level of object " + std::to_string(index) + " to " + std::to_string(volume) + "%");
     this->channels[index]->setVolume(volume);
     QObject::sender()->blockSignals(false);
@@ -110,7 +130,7 @@ void ChannelsList::setVolume(int volume) {
  */
 void ChannelsList::mute(bool state) {
     QObject::sender()->blockSignals(true);
-    int index = this->getChannelIndex(QObject::sender());
+    int index = this->getIndex(QObject::sender());
     this->channels[index]->mute(state);
     std::string message = "channel " + std::to_string(index) + " has been changed to ";
     if(state) {
@@ -128,7 +148,7 @@ void ChannelsList::mute(bool state) {
  */
 void ChannelsList::bypass(bool state) {
     QObject::sender()->blockSignals(true);
-    int index = this->getChannelIndex(QObject::sender());
+    int index = this->getIndex(QObject::sender());
     this->channels[index]->bypass(state);
     std::string message = "channel " + std::to_string(index) + " has been changed to ";
     if(state) {
@@ -146,7 +166,7 @@ void ChannelsList::bypass(bool state) {
  */
 void ChannelsList::setDevice(int device) {
     QObject::sender()->blockSignals(true);
-    int index = this->getChannelIndex(QObject::sender());
+    int index = this->getIndex(QObject::sender());
     consolelog("ChannelsList",LogType::interaction,"changing audio output device of object " + std::to_string(index) + " to #" + std::to_string(device));
 //    this->channels[index]->audiooutput->setDevice(index);
     QObject::sender()->blockSignals(false);
@@ -171,7 +191,6 @@ Channel::Channel(QLayout *framework, std::string prefix, int index, bool isoutpu
     this->volumeterwidget = new QWidget();
     this->bypasscheckbox = new QCheckBox();
     this->deviceselector = new QComboBox();
-    this->chartwidget = new QWidget();
     if (isoutput) {
         this->audiooutput = new AudioOutput(this->deviceselector, ChannelsList::fs, ChannelsList::samplesize);
     }
@@ -184,8 +203,6 @@ Channel::Channel(QLayout *framework, std::string prefix, int index, bool isoutpu
     this->setLabel(this->name);
     this->volumeter = new Volumeter(this->volumeterwidget,ChannelsList::fs);
     this->setVolume(70);
-    float range[2][2] = {{0,(float)ChannelsList::fs / 2},{-1,1}};
-    this->chart = new AudioChart(this->chartwidget,range,"",AudioChart::ChartOptions::logX);
     // Elements attributes
     int layout_height = 150; // height of channel configuration interface
     this->groupbox->setMinimumSize(200,0);
@@ -205,9 +222,6 @@ Channel::Channel(QLayout *framework, std::string prefix, int index, bool isoutpu
     layout->addWidget(this->volumeterwidget,2,0);
     if (isoutput) {
         layout->addWidget(this->deviceselector,3,0,2,0,Qt::AlignLeft);
-        layout->addWidget(this->chartwidget,4,0,2,0,Qt::AlignHCenter);
-    } else {
-        layout->addWidget(this->chartwidget,3,0,2,0,Qt::AlignHCenter);
     }
     layout->setMargin(10);
     framework->addWidget(this->groupbox);
@@ -243,6 +257,7 @@ void Channel::setIndex(int index) {
  * @param   label
  */
 void Channel::setLabel(std::string label) {
+    this->name = label;
     this->groupbox->setTitle("#" + QString::number(this->index) + " " + QString::fromStdString(label));
     this->label->setText(QString::fromStdString(label));
 }

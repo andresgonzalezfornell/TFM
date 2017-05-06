@@ -114,8 +114,11 @@ bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
             n = 0;
             N = this->samples;
         } else {
-            n = this->realtime;
+            n = this->cursor;
             N = this->chunksize;
+            if (n+N >= this->samples) {
+                N = this->samples - n - 1;
+            }
         }
         for (int channel = 0; channel < this->channels; channel++) {
             if (channels[channel]) {
@@ -126,7 +129,7 @@ bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
                 }
             }
         }
-        this->realtime += this->chunksize;
+        this->cursor += this->chunksize;
         return false;
     } else {
         consolelog("ProcessManager",LogType::error,"channels boolean vector (from effect argument) = " + std::to_string(channels.size()) + " does not correspond to number of channels = " + std::to_string(this->channels));
@@ -139,7 +142,7 @@ bool ProcessManager::applyEffect(std::vector<bool> channels, Effect effect) {
  */
 void ProcessManager::clear() {
     this->channels = 0;
-    this->realtime = 0;
+    this->cursor = 0;
     this->inputfile = NULL;
     this->outputfile = NULL;
 }

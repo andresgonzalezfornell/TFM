@@ -34,7 +34,7 @@ public:
     void push(AudioSignal sample);
     float pop();
     AudioSignal pop(int n);
-    float getSample(int index);
+    float operator[](int index);
     void setSample(int index, float sample);
     int size();
     bool isAvailable(int index);

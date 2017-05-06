@@ -47,7 +47,7 @@ void AudioStream::push(float sample) {
  */
 void AudioStream::push(AudioSignal samples) {
     for(int index = 0; index < samples.size; index++) {
-        this->push(samples.getSample(index));
+        this->push(samples[index]);
     }
 }
 
@@ -60,7 +60,7 @@ float AudioStream::pop() {
         consolelog("AudioStream",LogType::error,"audio stream object is empty so zero value is returned");
         return 0;
     } else {
-        float sample = this->signal.getSample(0);
+        float sample = this->signal[0];
         this->signal.deleteSample(0);
         this->range.start++;
         return sample;
@@ -88,9 +88,9 @@ AudioSignal AudioStream::pop(int n) {
  * @param   index
  * @return	sample
  */
-float AudioStream::getSample(int index) {
+float AudioStream::operator[](int index) {
     if (this->isAvailable(index)) {
-        return this->signal.getSample(index);
+        return this->signal[index];
     } else {
         consolelog("AudioStream", LogType::error,
                 "the selected index (" + std::to_string(index) + ") is not available in the audio object stream");

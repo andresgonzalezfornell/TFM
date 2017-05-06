@@ -49,6 +49,7 @@ void EffectsMonitor::setEffect(std::string effect) {
  * @brief   It clears the user interface framework.
  */
 void EffectsMonitor::clear() {
+    this->parameters.clear();
     QObjectList elements = this->framework->children();
     for (int index = 0; index < elements.size(); index++) {
         if (elements[index]->objectName().toStdString() != this->framework->objectName().toStdString().substr(0,this->framework->objectName().toStdString().find("_list")) + "_layout") {
@@ -140,6 +141,22 @@ void EffectsMonitor::loadField(std::string element) {
     std::string tag = element.substr(1,element.find(" ")-1);
     // Attributes
     std::string param = this->getAttribute(element,"param");
+    // Deleting banned characters for param
+    std::string newparam = "";
+    for (int character = 0; character < (int)param.size(); character++) {
+        bool valid = false;
+        if (character > 0) {
+            valid += (0x30 <= param[character] && param[character] <= 0x39); // numbers
+        }
+        valid += (0x41 <= param[character] && param[character] <= 0x5A); // uppercase letters
+        valid += (0x61 <= param[character] && param[character] <= 0x7A); // lowercase letters
+        if (valid) {
+            newparam += param[character];
+        } else {
+            consolelog("EffectsMonitor", LogType::warning, "character \"" + param.substr(character,1) + "\" is not allowed as parameter name in \"" + param + "\" and it will be removed");
+        }
+    }
+    param = newparam;
     std::string text = this->getAttribute(element,"text");
     std::string value = this->getAttribute(element,"value");
     std::string suffix = this->getAttribute(element,"suffix");
@@ -153,19 +170,9 @@ void EffectsMonitor::loadField(std::string element) {
     if (length <= 0 || length > 100) {
         length = 100;
     }
+    this->parameters.insert(std::pair<std::string, std::string>(param, value));
     // User interface
-    if(tag == "double") {
-        QDoubleSpinBox *field = new QDoubleSpinBox();
-        field->setMinimumWidth(width);
-        field->setObjectName(QString::fromStdString(prefix + param));
-        field->setSuffix(QString::fromStdString(suffix));
-        field->setMinimum(min);
-        field->setMaximum(max);
-        field->setValue(std::atof(value.c_str()));
-        field->setSingleStep(step);
-        this->layout->addRow(QString::fromStdString(text),field);
-        QObject::connect(field,SIGNAL(valueChanged(double)),this,SLOT(updateParameters()));
-    } else if(tag == "int") {
+    if(tag == "int") {
         QSpinBox *field = new QSpinBox();
         field->setMinimumWidth(width);
         field->setObjectName(QString::fromStdString(prefix + param));
@@ -175,7 +182,18 @@ void EffectsMonitor::loadField(std::string element) {
         field->setValue(std::atoi(value.c_str()));
         field->setSingleStep(step);
         this->layout->addRow(QString::fromStdString(text),field);
-        QObject::connect(field,SIGNAL(valueChanged(int)),this,SLOT(updateParameters()));
+        QObject::connect(field,SIGNAL(valueChanged(int)),this,SLOT(updateParameter(int)));
+    } else if(tag == "double") {
+        QDoubleSpinBox *field = new QDoubleSpinBox();
+        field->setMinimumWidth(width);
+        field->setObjectName(QString::fromStdString(prefix + param));
+        field->setSuffix(QString::fromStdString(suffix));
+        field->setMinimum(min);
+        field->setMaximum(max);
+        field->setValue(std::atof(value.c_str()));
+        field->setSingleStep(step);
+        this->layout->addRow(QString::fromStdString(text),field);
+        QObject::connect(field,SIGNAL(valueChanged(double)),this,SLOT(updateParameter(double)));
     } else if(tag == "string") {
         QLineEdit *field = new QLineEdit();
         field->setMinimumWidth(width);
@@ -183,18 +201,19 @@ void EffectsMonitor::loadField(std::string element) {
         field->setText(QString::fromStdString(value));
         field->setMaxLength(length);
         this->layout->addRow(QString::fromStdString(text),field);
-        QObject::connect(field,SIGNAL(textChanged(QString)),this,SLOT(updateParameters()));
+        QObject::connect(field,SIGNAL(textChanged(QString)),this,SLOT(updateParameter(QString)));
     } else if(tag == "bool") {
         QCheckBox *field = new QCheckBox();
         field->setMinimumWidth(width);
         field->setObjectName(QString::fromStdString(prefix + param));
         field->setChecked(value=="true" || value=="True" || value=="TRUE" || value=="1");
         this->layout->addRow(QString::fromStdString(text),field);
-        QObject::connect(field,SIGNAL(toggled(bool)),this,SLOT(updateParameters()));
+        QObject::connect(field,SIGNAL(toggled(bool)),this,SLOT(updateParameter(bool)));
     } else if(tag == "enum") {
         QGroupBox *field = new QGroupBox();
         QVBoxLayout *list = new QVBoxLayout();
         field->setMinimumWidth(width);
+        field->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         field->setObjectName(QString::fromStdString(prefix + param));
         list->setObjectName(QString::fromStdString(prefix + param + "_layout"));
         field->setLayout(list);
@@ -218,10 +237,11 @@ void EffectsMonitor::loadField(std::string element) {
             consolelog("EffectsMonitor", LogType::error, "option tag is not appended from any enum element");
         } else {
             QRadioButton *option = new QRadioButton();
+            option->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
             option->setObjectName(QString::fromStdString(prefix + param + "_" + value));
             option->setText(QString::fromStdString(text));
             group->layout()->addWidget(option);
-            QObject::connect(option,SIGNAL(toggled(bool)),this,SLOT(updateParameters()));
+            QObject::connect(option,SIGNAL(toggled(bool)),this,SLOT(updateParameter(bool)));
         }
     } else {
         consolelog("EffectsMonitor", LogType::error, "tag \"" + tag + "\" is not recognised as a valid tag");
@@ -243,6 +263,71 @@ std::string EffectsMonitor::getAttribute(std::string element, std::string attrib
     return value;
 }
 
-void EffectsMonitor::updateParameters() {
-    consolelog("EffectsMonitor",LogType::interaction, QObject::sender()->objectName().toStdString() + " has been changed");
+/**
+ * @brief   It sets a parameter from the parameter user interface object.
+ * @param   key                 parameter name
+ * @param   value               new parameter value
+ */
+void EffectsMonitor::setParameter(std::string parameter, std::string value) {
+    if (this->parameters.find(parameter) != this->parameters.end()) {
+        this->parameters[parameter] = value;
+        consolelog("EffectsMonitor",LogType::interaction, "parameter \"" + parameter + "\" has been changed to \"" + value + "\"");
+    } else {
+        consolelog("EffectsMonitor", LogType::error, "parameter \"" + parameter + "\" was not found in the parameters list");
+    }
 }
+
+/**
+ * @name    Parameters slots
+ * @brief   User interface functions for effect parameters control.
+ * @{
+ */
+
+/**
+ * @brief   Slot for updating parameters parameters of type int when one of them is changed.
+ * @param   value               changed value
+ */
+void EffectsMonitor::updateParameter(int value) {
+    this->setParameter(QObject::sender()->objectName().toStdString().substr(prefix.size()), std::to_string(value));
+}
+
+/**
+ * @brief   Slot for updating parameters parameters of type double when one of them is changed.
+ * @param   value               changed value
+ */
+void EffectsMonitor::updateParameter(double value) {
+    this->setParameter(QObject::sender()->objectName().toStdString().substr(prefix.size()), std::to_string(value));
+}
+
+/**
+ * @brief   Slot for updating parameters of type string when one of them is changed.
+ * @param   value               changed value
+ */
+void EffectsMonitor::updateParameter(QString value) {
+    this->setParameter(QObject::sender()->objectName().toStdString().substr(prefix.size()), value.toStdString());
+}
+
+/**
+ * @brief   Slot for updating parameters parameters of type bool and enum when one of them is changed.
+ * @param   value               changed value
+ */
+void EffectsMonitor::updateParameter(bool value) {
+    std::string element = QObject::sender()->objectName().toStdString().substr(prefix.size());
+    if (element.find("_") < element.size()) { // enum
+        if (value) {
+            std::string parameter = element.substr(0, element.find("_"));
+            std::string option = element.substr(element.find("_") + 1);
+            this->setParameter(parameter, option);
+        }
+    } else { // bool
+        std::string text = "";
+        if (value) {
+            text = "true";
+        } else {
+            text = "false";
+        }
+        this->setParameter(element, text);
+    }
+}
+
+/** @} */

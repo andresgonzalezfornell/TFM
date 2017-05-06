@@ -1,5 +1,7 @@
 // Header
 #include "sac_encoder.h"
+// System libraries
+#include "string.h"
 // SAC libraries
 #include "libtsp.h"
 #include "sac_enc.h"

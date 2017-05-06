@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>779</width>
+    <width>722</width>
     <height>571</height>
    </rect>
   </property>
@@ -212,8 +212,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>216</width>
-            <height>94</height>
+            <width>217</width>
+            <height>82</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="input_channels_layout">
@@ -237,7 +237,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="input_chart_selector"/>
+       </item>
+       <item>
         <widget class="QWidget" name="input_chart" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>200</width>
@@ -256,14 +265,11 @@
         </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="input_controls">
-         <property name="spacing">
-          <number>5</number>
-         </property>
+        <layout class="QGridLayout" name="input_controls">
          <property name="sizeConstraint">
           <enum>QLayout::SetDefaultConstraint</enum>
          </property>
-         <item>
+         <item row="0" column="0">
           <widget class="QPushButton" name="input_playback">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -296,7 +302,34 @@
            </property>
           </widget>
          </item>
-         <item>
+         <item row="1" column="0" colspan="3">
+          <widget class="QDateTimeEdit" name="input_timer">
+           <property name="currentSection">
+            <enum>QDateTimeEdit::SecondSection</enum>
+           </property>
+           <property name="displayFormat">
+            <string>hh:mm:ss.zzz</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="input_stop">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/stop</normaloff>:/icons/stop</iconset>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
           <widget class="QPushButton" name="input_info">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -361,7 +394,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>215</width>
+            <width>158</width>
             <height>477</height>
            </rect>
           </property>
@@ -455,8 +488,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>216</width>
-            <height>153</height>
+            <width>217</width>
+            <height>140</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="output_channels_layout">
@@ -480,6 +513,9 @@
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="output_chart_selector"/>
+       </item>
+       <item>
         <widget class="QWidget" name="output_chart" native="true">
          <property name="minimumSize">
           <size>
@@ -496,8 +532,8 @@
         </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="output_controls">
-         <item>
+        <layout class="QGridLayout" name="output_controls">
+         <item row="0" column="0">
           <widget class="QPushButton" name="output_playback">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -527,6 +563,25 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QDateTimeEdit" name="output_timer">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="currentSection">
+            <enum>QDateTimeEdit::SecondSection</enum>
+           </property>
+           <property name="displayFormat">
+            <string>hh:mm:ss.zzz</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
@@ -539,7 +594,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>779</width>
+     <width>722</width>
      <height>22</height>
     </rect>
    </property>
@@ -749,6 +804,16 @@
   <action name="menu_test">
    <property name="text">
     <string>Test audio device</string>
+   </property>
+  </action>
+  <action name="menu_channelsplot_input">
+   <property name="text">
+    <string>Compare channels</string>
+   </property>
+  </action>
+  <action name="menu_channelsplot_output">
+   <property name="text">
+    <string>Compare channels</string>
    </property>
   </action>
  </widget>

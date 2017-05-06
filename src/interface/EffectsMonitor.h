@@ -35,13 +35,18 @@ public:
     std::pair<std::string, Effect::effectID> effect;    /**< current selected effect */
     std::map<std::string, Effect::effectID> effects;    /**< list of all available effects */
     std::map<std::string, std::string> files;           /**< list of all available effects template files */
+    std::map<std::string, std::string> parameters;      /**< list of the current effect parameters and their values */
     EffectsMonitor(QWidget *framework);
     EffectsMonitor(QWidget *framework, std::string effect);
     ~EffectsMonitor();
     void setEffect(std::string effect);
     void clear();
+    void setParameter(std::string key, std::string value);
 public slots:
-    void updateParameters();
+    void updateParameter(int value); // int
+    void updateParameter(double value); // double
+    void updateParameter(QString value); // string
+    void updateParameter(bool value); // bool & enum
 private:
     QWidget *framework;                                 /**< effects monitor framework */
     QFormLayout *layout;                                /**< form layout of effect parameters */

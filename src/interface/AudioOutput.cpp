@@ -181,7 +181,7 @@ void OutputDevice::send(AudioSignal signal) {
     unsigned char *datapointer = reinterpret_cast<unsigned char *>(buffer.data());
     double value;
     for (int sample = 0; sample < samples; sample++) {
-        value = (offset + signal.getSample(sample))*amplitude;
+        value = (offset + signal[sample])*amplitude;
         if (this->format.sampleType() == QAudioFormat::UnSignedInt) {
             value /= 2;
         }
@@ -403,6 +403,7 @@ int AudioTest::getSampleSize() {
     } else {
         consolelog("AudioTest",LogType::error,"invalid sample format has been selected");
         this->close();
+        return 0;
     }
 }
 
@@ -418,6 +419,7 @@ int AudioTest::getFS() {
     } else {
         consolelog("AudioTest",LogType::error,"invalid sample format has been selected");
         this->close();
+        return 0;
     }
 }
 

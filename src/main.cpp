@@ -4,6 +4,8 @@
  * @brief	Test Unit file.
  */
 
+// System libraries
+#include "cstring"
 // Classes and local files
 #include "process/ProcessManager.h"
 #include "effects/Effect.h"
@@ -212,9 +214,47 @@ int main(int argc, char *argv[]) {
     File effectinfo = File(effect,false);
     std::string info = effectinfo.readData(0);
     std::string effectname = Effect::readInfo(info,"effect");
-    std::string params = Effect::readInfo(info,"params");
+    std::string parameters = Effect::readInfo(info,"params");
+    std::map<std::string, std::string> params;
+    while((int)parameters.size() > 0) {
+        std::string line = parameters.substr(0,parameters.find(";"));
+        if (parameters.find(";") < parameters.size()) {
+            parameters = parameters.substr(parameters.find(";") + 1);
+        } else {
+            parameters = "";
+        }
+        // Control characters deletion
+        std::string newline = "";
+        for (int character = 0; character < (int)line.size(); character++) {
+            if (line[character] >= 0x20) {
+                newline += line[character];
+            }
+        }
+        line = newline;
+        if (line.find("=") < line.size()) {
+            // Key
+            std::string key = line.substr(0, line.find("="));
+            while(key[0] == ' ') {
+                key = key.substr(1);
+            }
+            while(key[key.size()-1] == ' ') {
+                key = key.substr(0, key.size() - 1);
+            }
+            // Value
+            std::string value = line.substr(line.find("=") + 1, line.find(";") - line.find("="));
+            while(value[0] == ' ') {
+                value = value.substr(1);
+            }
+            while(value[value.size()-1] == ' ') {
+                value = value.substr(0, value.size() - 1);
+            }
+            params.insert(std::pair<std::string, std::string>(key, value));
+        } else {
+            consolelog("main", LogType::error, "syntax error in \"" + line + "\" (\"=\" is missed)");
+        }
+    }
     Effect::effectID effectID = Effect::getEffect(effectname);
-    Effect fx = Effect(effectID,params);
+    Effect fx = Effect(effectID, params);
     std::vector<bool> channels = std::vector<bool>(process->channels,true);
     process->applyEffect(channels, fx);
     // Output

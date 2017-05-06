@@ -44,7 +44,7 @@ AudioSignal::~AudioSignal() {
  * @param   index
  * @return  sample
  */
-float AudioSignal::getSample(int index) {
+float AudioSignal::operator[](int index) {
 	return this->signal[index];
 }
 
@@ -171,7 +171,7 @@ std::vector<float> AudioSignal::getSpectrum() {
 	fftw_cleanup();
     std::vector<float> spectrum = std::vector<float>(F);
     for (int f = 0; f < F; f++) {
-        spectrum[f] = (pow(x_f[f][real], 2) + pow(x_f[f][imag], 2)) / (this->size * this->fs);
+        spectrum[f] = (pow(x_f[f][real], 2) + pow(x_f[f][imag], 2)) / this->size;
 	}
 	return spectrum;
 }

@@ -20,8 +20,7 @@ class AudioInfo;
  * @author	Andrés González Fornell
  * @brief	Audio object info dialog class.
  */
-class AudioInfo : public QDialog
-{
+class AudioInfo : public QDialog {
     Q_OBJECT
 public:
     AudioInfo(QWidget *parent = 0);

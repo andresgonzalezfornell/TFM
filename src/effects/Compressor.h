@@ -11,7 +11,7 @@
  */
 class Compressor AS_EFFECT {
 public:
-    Compressor(std::string params);
+    Compressor(std::map<std::string, std::string> params);
     void apply(float *input, float *output, int samples);
 };
 

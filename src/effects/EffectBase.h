@@ -18,10 +18,9 @@
  */
 class EffectBase {
 public:
-    EffectBase(std::string param);
-    double getParam(std::string name);
+    EffectBase(std::map<std::string, std::string> param);
 private:
-    std::string params;     /**< string of effect parameters */
+    std::map<std::string, std::string> params;      /**< string of effect parameters */
 };
 
 #endif // EFFECTBASE_H

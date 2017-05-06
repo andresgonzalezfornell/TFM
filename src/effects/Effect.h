@@ -49,10 +49,10 @@
 class Effect : INHERITANCE {
 public:
     #define EFFECT(ID,NAME) ID,
-    enum effectID {LIST};       /**< available effects enumeration */
-    effectID effect;            /**< selected effect id */
-    std::string params;         /**< string of effect parameters */
-    Effect(Effect::effectID effect, std::string params);
+    enum effectID {LIST};                           /**< available effects enumeration */
+    effectID effect;                                /**< selected effect id */
+    std::map<std::string, std::string> params;      /**< string of effect parameters */
+    Effect(Effect::effectID effect, std::map<std::string, std::string> params);
     ~Effect();
     bool apply(float *input, float *output, int samples);
     static std::map<std::string,Effect::effectID> getEffects();

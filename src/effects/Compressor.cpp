@@ -4,7 +4,7 @@
  * @brief   Compressor constructor.
  * @param   params          string of effect parameters
  */
-Compressor::Compressor(std::string params) EFFECT_CONSTRUCTOR {
+Compressor::Compressor(std::map<std::string, std::string> params) EFFECT_CONSTRUCTOR {
 }
 
 /**
