@@ -31,7 +31,6 @@ SACEffects::SACEffects(QWidget *framework) :
                                                std::to_string(period).find(".") + 4) + " s");
     this->clock->setInterval(period * 1000);
     QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(applyEffect()));
-    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(sendInput()));
     QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(sendOutput()));
     QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(setTimer()));
     // Effects
@@ -115,6 +114,7 @@ void SACEffects::pause() {
     this->clock->stop();
     ui->input_playback->setChecked(false);
     ui->input_timer->setReadOnly(false);
+    this->plot();
 }
 
 /**
@@ -424,55 +424,9 @@ void SACEffects::setHRTFModel(HRTFModel::hrtfmodel hrtfmodel) {
 }
 
 /**
- * @brief   It plots the current input signal on the input chart.
- */
-void SACEffects::sendInput() {
-    QVector < QPointF > points;
-    int N; // number of samples to be plotted
-    int n; // first sample to be plotted
-    if (this->chunksize == 0) {
-        N = this->process->samples;
-        n = 0;
-    } else {
-        N = this->chunksize;
-        n = this->process->cursor - N;
-        if (n + N >= this->process->samples) {
-            N = this->process->samples - n - 1;
-        }
-    }
-    int channel = std::floor(ui->input_chart_selector->currentIndex() / 2);
-    int remainder = ui->input_chart_selector->currentIndex() % 2;
-    std::vector<float> vector = std::vector<float>(process->input[channel] + n,
-                                                   process->input[channel] + n + N);
-    AudioSignal signal = AudioSignal(vector, this->fs);
-    // Signal plot
-    if (remainder == 0) {
-        float range[2][2] = { { 0, (float) (N - 1) / this->fs }, { -1, 1 } };
-        this->chart_input->setRange(range);
-        this->chart_input->setOptions(AudioChart::ChartOptions::labelX);
-        for (int sample = 0; sample < N; sample++) {
-            points.push_back(QPointF((float) sample / this->fs, signal[sample]));
-        }
-        // Spectrum plot
-    } else if (remainder == 1) {
-        float range[2][2] = { { 0, (float) this->fs / 2 }, { 0, 1 } };
-        this->chart_input->setRange(range);
-        this->chart_input->setOptions(AudioChart::ChartOptions::labelX);
-        std::vector<float> spectrum = signal.getSpectrum();
-        for (int frequency = 0; frequency < std::ceil((double) N / 2);
-             frequency++) {
-            points.push_back(
-                        QPointF((float) frequency * this->fs / N, spectrum[frequency]));
-        }
-    }
-    this->chart_input->setPoints(points);
-}
-
-/**
  * @brief   It sends the current output signal to the output device and plots on the output chart.
  */
 void SACEffects::sendOutput() {
-    QVector < QPointF > points;
     int N; // number of samples to be plotted
     int n; // first sample to be plotted
     if (this->chunksize == 0) {
@@ -486,41 +440,68 @@ void SACEffects::sendOutput() {
         }
     }
     for (int channel = 0; channel < this->channels_output->getSize(); channel++) {
-        std::vector<float> vector = std::vector<float>(process->output[channel] + n,
-                                                       process->output[channel] + n + N);
-        AudioSignal signal = AudioSignal(vector, this->fs);
-        // Sending signal to device
         if (!muted) {
-            this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(
-                        signal);
+            this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(process->output[channel] + n, N);
         }
-        // Plotting signal on audio chart
-        if (channel == std::floor(ui->output_chart_selector->currentIndex() / 2)) {
-            int remainder = ui->output_chart_selector->currentIndex() % 2;
+    }
+}
+
+/**
+ * @brief   It plots the current input and ouput signals.
+ */
+void SACEffects::plot() {
+    AudioChart *chart;
+    QVector < QPointF > points;
+    float *samples;
+    int n = 0;
+    int N = 0;
+    int remainder = 0;
+    float range[2][2];
+    for (int plot = 0; plot < 2; plot++) {
+        switch (plot) {
+        case 0:
+            // Input
+            samples = this->process->input[(int)std::floor(ui->input_chart_selector->currentIndex() / 2)];
+            remainder = (int)ui->input_chart_selector->currentIndex() % 2;
+            chart = this->chart_input;
+            break;
+        case 1:
+            // Output
+            samples = this->process->output[(int)std::floor(ui->output_chart_selector->currentIndex() / 2)];
+            remainder = (int)ui->output_chart_selector->currentIndex() % 2;
+            chart = this->chart_output;
+            break;
+        }
+        switch (remainder) {
+        case 0:
             // Signal plot
-            if (remainder == 0) {
-                float range[2][2] = { { 0, (float) (N - 1) / this->fs }, { -1, 1 } };
-                this->chart_output->setRange(range);
-                this->chart_output->setOptions(AudioChart::ChartOptions::labelX);
-                for (int sample = 0; sample < N; sample++) {
-                    points.push_back(
-                                QPointF((float) sample / this->fs, signal[sample]));
-                }
-                // Spectrum plot
-            } else if (remainder == 1) {
-                float range[2][2] = { { 0, (float) this->fs / 2 }, { 0, 1 } };
-                this->chart_output->setRange(range);
-                this->chart_output->setOptions(AudioChart::ChartOptions::labelX);
-                std::vector<float> spectrum = signal.getSpectrum();
-                for (int frequency = 0; frequency < std::ceil((double) N / 2);
-                     frequency++) {
-                    points.push_back(
-                                QPointF((float) frequency * this->fs / N,
-                                        spectrum[frequency]));
-                }
+            range[0][0] = 0;
+            range[0][1] = (float) (N - 1) / this->fs ;
+            range[1][0] = -1;
+            range[1][1] = 1;
+            chart->setOptions(AudioChart::ChartOptions::labelX);
+            for (int sample = 0; sample < N; sample++) {
+                points.push_back(QPointF((float) sample / this->fs, samples[n + sample]));
             }
-            this->chart_output->setPoints(points);
+            break;
+        case 1:
+            // Spectrum plot
+            std::vector<float> vector = std::vector<float>(samples[n], samples[n + N]);;
+            AudioSignal signal = AudioSignal(vector, this->fs);
+            range[0][0] = 0;
+            range[0][1] = (float) this->fs / 2;
+            range[1][0] = 0;
+            range[1][1] = 1;
+            chart->setOptions(AudioChart::ChartOptions::labelX);
+            std::vector<float> spectrum = signal.getSpectrum();
+            for (int frequency = 0; frequency < std::ceil((double) N / 2); frequency++) {
+                points.push_back(QPointF((float) frequency * this->fs / N, spectrum[frequency]));
+            }
+            break;
         }
+        chart->clear();
+        chart->setRange(range);
+        chart->setPoints(points);
     }
 }
 

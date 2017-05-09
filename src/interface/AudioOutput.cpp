@@ -180,8 +180,7 @@ OutputDevice::~OutputDevice() {
  * @brief   It sends an audio signal to the buffer to be sent to the audio output device.
  * @param   signal
  */
-void OutputDevice::send(AudioSignal signal) {
-    int samples = signal.size; // number of samples to be sent
+void OutputDevice::send(float *signal, int samples) {
     int sample_bytes = this->format.sampleSize() / 8; // sample size [Bytes]
     int bytes = samples * sample_bytes; // number of bytes to be sent [Bytes]
     double value = 0;
@@ -273,11 +272,11 @@ void OutputDevice::clear() {
 void OutputDevice::test(double amplitude, double frequency, float duration) {
     int fs = this->format.sampleRate();
     long int N = std::floor(fs * duration);
-    AudioSignal x = AudioSignal(fs);
+    float x[N];
     for (int n = 0; n < N; n++) {
-        x.addSample(std::sin(2 * M_PI * frequency / fs * n) * amplitude);
+        x[n] = std::sin(2 * M_PI * frequency / fs * n) * amplitude;
     }
-    this->send(x);
+    this->send(x, N);
 }
 
 /**
