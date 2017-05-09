@@ -12,5 +12,7 @@ var class_audio_test =
     [ "setSampleFormat", "class_audio_test.html#ac734b0b67338a4a94c097de46d460d74", null ],
     [ "start", "class_audio_test.html#a77654e9df697a3c23d3374162c535b29", null ],
     [ "audiooutput", "class_audio_test.html#ab0651b1358e3a2f699ad98c6a68312c5", null ],
+    [ "clock", "class_audio_test.html#af6eaf40c86a4b34c544ad2a05137eb25", null ],
+    [ "period", "class_audio_test.html#ae10d6702eb1038eff31a9f33e690a376", null ],
     [ "ui", "class_audio_test.html#aea101783b757891d369f4c0b45bc76b0", null ]
 ];

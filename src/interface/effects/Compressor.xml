@@ -1,9 +1,10 @@
-<!DOCTYPE fxtemplate SYSTEM "Compressor, Equalizer">
-<string param="1*az_%AZ09<" text="Frequency" value="Insert frequency" suffix="Hz" length="20"></string>
+<!DOCTYPE fxtemplate SYSTEM "Compressor">
+<double param="level" text="Level" value="1"></double>
 <enum param="enum" text="Andrés está:" value="option2">
 	<option param="enum" text="to bueno" value="option0"></option>
 	<option param="enum" text="pa comérselo" value="option1"></option>
-	<option param="enum" text="irresistible, voy a arrancarle ya la ropa" value="option2"></option>
+	<option param="enum" text="irresistible, voy a arrancarle ya la ropa"
+		value="option2"></option>
 </enum>
 <bool param="calla" text="Monoquetecalles" value="false"></bool>
-<bool param = "boolean" text="Sonia esta to buena" value="true"></bool>
+<bool param="boolean" text="Sonia esta to buena" value="true"></bool>

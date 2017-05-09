@@ -20,15 +20,15 @@ class AudioInfo;
  * @author	Andrés González Fornell
  * @brief	Audio object info dialog class.
  */
-class AudioInfo : public QDialog {
+class AudioInfo: public QDialog {
     Q_OBJECT
 public:
     AudioInfo(QWidget *parent = 0);
     ~AudioInfo();
     void setFile(WAVFile *file);
 private:
-    Ui::AudioInfo *ui;  /**< user interface object */
-    WAVFile file;       /**< audio file object */
+    Ui::AudioInfo *ui; /**< user interface object */
+    WAVFile *file; /**< audio file object */
 };
 
 #endif // AUDIOINFO_H

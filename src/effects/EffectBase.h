@@ -19,8 +19,12 @@
 class EffectBase {
 public:
     EffectBase(std::map<std::string, std::string> param);
+    static int getInt(std::string param);
+    static double getDouble(std::string param);
+    static std::string getString(std::string param);
+    static bool getBool(std::string param);
 private:
-    std::map<std::string, std::string> params;      /**< string of effect parameters */
+	std::map<std::string, std::string> params; /**< string of effect parameters */
 };
 
 #endif // EFFECTBASE_H

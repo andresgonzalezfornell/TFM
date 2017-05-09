@@ -1,8 +1,6 @@
 #include "AudioOutput.h"
 #include "ui_AudioTest.h"
 
-const int buffersize = 32768;
-
 /**
  * @brief   AudioOuput constructor.
  * @param   selector            user interface combo box to select audio device
@@ -14,25 +12,26 @@ AudioOutput::AudioOutput(QComboBox *selector, int fs, int samplesize) {
     this->samplesize = samplesize;
     this->device = QAudioDeviceInfo::defaultOutputDevice();
     this->outputdevice = NULL;
-    this->buffer = QByteArray(buffersize, 0);
     this->selector = selector;
     QObject::connect(this->selector,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
     this->setDevices();
-    consolelog("AudioOutput",LogType::progress,"AudioOutput object is created");
+    consolelog("AudioOutput", LogType::progress,
+               "AudioOutput object is created");
 }
 
 /**
  * @brief   AudioOutput destructor.
  */
 AudioOutput::~AudioOutput() {
-    consolelog("AudioOutput",LogType::progress,"AudioOutput object is deleted");
+    consolelog("AudioOutput", LogType::progress,
+               "AudioOutput object is deleted");
 }
 
 /**
  * @brief   It initializes output audio device.
  */
 void AudioOutput::initialize() {
-    if(this->outputdevice) {
+    if (this->outputdevice) {
         this->stop();
     }
     this->format = QAudioFormat();
@@ -44,7 +43,8 @@ void AudioOutput::initialize() {
     this->format.setSampleType(QAudioFormat::SignedInt);
     QAudioDeviceInfo info = QAudioDeviceInfo(this->device);
     if (!info.isFormatSupported(format)) {
-        consolelog("AudioOutput",LogType::warning,"default format not supported - trying to use nearest");
+        consolelog("AudioOutput", LogType::warning,
+                   "default format not supported - trying to use nearest");
         format = info.nearestFormat(format);
     }
     this->outputdevice = new OutputDevice(format);
@@ -58,18 +58,21 @@ void AudioOutput::initialize() {
 void AudioOutput::start() {
     this->outputdevice->open(QIODevice::ReadOnly);
     this->audiooutput->start(this->outputdevice);
-    consolelog("AudioOutput",LogType::progress,"audio output device has been started playing through " + device.deviceName().toStdString());
+    consolelog("AudioOutput", LogType::progress,
+               "audio output device has been started playing through "
+               + device.deviceName().toStdString());
 }
 
 /**
  * @brief   It stops audio output playback.
  */
 void AudioOutput::stop() {
-    this->outputdevice->cursor = 0;
     this->outputdevice->close();
+    this->outputdevice->clear();
     this->audiooutput->stop();
-    this->audiooutput->disconnect(this);
-    consolelog("AudioOutput",LogType::progress,"audio output device has been stopped playing through " + device.deviceName().toStdString());
+    consolelog("AudioOutput", LogType::progress,
+               "audio output device has been stopped playing through "
+               + device.deviceName().toStdString());
 }
 
 /**
@@ -86,12 +89,14 @@ void AudioOutput::setDevices() {
 void AudioOutput::setDevices(QList<QAudioDeviceInfo> devices) {
     this->devices = devices;
     QStringList list = QStringList();
-    for (int index = 0; index < devices.size();index++) {
+    for (int index = 0; index < devices.size(); index++) {
         list.push_back(this->devices[index].deviceName());
         if (this->devices[index] == QAudioDeviceInfo::defaultOutputDevice()) {
             this->setDevice(index);
         }
-        consolelog("AudioOutput",LogType::info,"Output device #" + std::to_string(index) + " : " + devices[index].deviceName().toStdString());
+        consolelog("AudioOutput", LogType::info,
+                   "Output device #" + std::to_string(index) + " : "
+                   + devices[index].deviceName().toStdString());
     }
     QObject::disconnect(this->selector,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
     this->selector->clear();
@@ -125,7 +130,9 @@ void AudioOutput::setDevice(int index) {
     this->device = this->devices[index];
     this->selector->setCurrentIndex(index);
     this->initialize();
-    consolelog("AudioOutput",LogType::interaction,"selected output device set to #" + std::to_string(index) + " : " + this->devices[index].deviceName().toStdString());
+    consolelog("AudioOutput", LogType::interaction,
+               "selected output device set to #" + std::to_string(index) + " : "
+               + this->devices[index].deviceName().toStdString());
 }
 
 /** @} */
@@ -134,11 +141,14 @@ void AudioOutput::setDevice(int index) {
  * @brief   OutputDevice constructor
  * @param   format          audio format object
  */
-OutputDevice::OutputDevice(const QAudioFormat format) : QIODevice() {
-    this->cursor = 0;
+OutputDevice::OutputDevice(const QAudioFormat format) :
+    QIODevice() {
     if (format.isValid()) {
         this->format = format;
-        // setting amplitude and offset parameters
+        this->buffersize = (this->format.sampleSize() / 8)
+                * AudioSignal::maxsamples;
+        this->clear();
+        // Setting amplitude and offset parameters
         int sign = 0;
         switch (format.sampleType()) {
         case QAudioFormat::UnSignedInt:
@@ -151,10 +161,11 @@ OutputDevice::OutputDevice(const QAudioFormat format) : QIODevice() {
             this->offset = 0;
             break;
         }
-        this->amplitude = std::pow(2,format.sampleSize()-sign);
-        consolelog("OutputDevice",LogType::progress,"OutputDevice object is created");
+        this->amplitude = std::pow(2, format.sampleSize() - sign);
+        consolelog("OutputDevice", LogType::progress,
+                   "OutputDevice object is created");
     } else {
-        consolelog("OutputDevice",LogType::error,"out audio format is not valid");
+        consolelog("OutputDevice", LogType::error, "out audio format is not valid");
     }
 }
 
@@ -162,7 +173,7 @@ OutputDevice::OutputDevice(const QAudioFormat format) : QIODevice() {
  * @brief   OutputDevice destructor.
  */
 OutputDevice::~OutputDevice() {
-    consolelog("OutputDevice",LogType::progress,"OutputDevice object is deleted");
+    consolelog("OutputDevice", LogType::progress, "OutputDevice object is deleted");
 }
 
 /**
@@ -170,96 +181,31 @@ OutputDevice::~OutputDevice() {
  * @param   signal
  */
 void OutputDevice::send(AudioSignal signal) {
-    quint8 data8;
-    quint16 data16;
-    quint32 data32;
-    int channels = this->format.channelCount();
-    int sample_bytes = this->format.sampleSize() / 8;
-    long int samples = signal.size;
-    long int length = samples * channels * sample_bytes;
-    buffer.resize(length);
-    unsigned char *datapointer = reinterpret_cast<unsigned char *>(buffer.data());
-    double value;
+    int samples = signal.size; // number of samples to be sent
+    int sample_bytes = this->format.sampleSize() / 8; // sample size [Bytes]
+    int bytes = samples * sample_bytes; // number of bytes to be sent [Bytes]
+    double value = 0;
+    char data;
     for (int sample = 0; sample < samples; sample++) {
-        value = (offset + signal[sample])*amplitude;
+        value = (offset + signal[sample]) * amplitude;
         if (this->format.sampleType() == QAudioFormat::UnSignedInt) {
             value /= 2;
         }
-        for (int channel=0; channel<channels; ++channel) {
-            switch (this->format.sampleSize()) {
-            case 8:
-                switch (this->format.sampleType()) {
-                case QAudioFormat::UnSignedInt:
-                    data8 = static_cast<quint8>(value);
-                    break;
-                case QAudioFormat::SignedInt:
-                default:
-                    data8 = static_cast<qint8>(value);
-                    break;
-                }
-                *reinterpret_cast<quint8*>(datapointer) = data8;
+        for (int byte = 0; byte < sample_bytes; byte++) {
+            switch (this->format.byteOrder()) {
+            case QAudioFormat::LittleEndian:
+                data = (int) value >> byte * 8;
                 break;
-            case 16:
+            case QAudioFormat::BigEndian:
             default:
-                switch (this->format.sampleType()) {
-                case QAudioFormat::UnSignedInt:
-                    data16 = static_cast<quint16>(value);
-                    break;
-                case QAudioFormat::SignedInt:
-                default:
-                    data16 = static_cast<qint16>(value);
-                    break;
-                }
-                switch (this->format.byteOrder()) {
-                case QAudioFormat::LittleEndian:
-                    qToLittleEndian<quint16>(data16, datapointer);
-                    break;
-                case QAudioFormat::BigEndian:
-                default:
-                    qToBigEndian<quint16>(data16, datapointer);
-                    break;
-                }
-                break;
-            case 32:
-                switch (this->format.sampleType()) {
-                case QAudioFormat::UnSignedInt:
-                    data32 = static_cast<quint32>(value);
-                    break;
-                case QAudioFormat::SignedInt:
-                default:
-                    data32 = static_cast<qint32>(value);
-                    break;
-                }
-                switch (this->format.byteOrder()) {
-                case QAudioFormat::LittleEndian:
-                    qToLittleEndian<quint32>(data32, datapointer);
-                    break;
-                case QAudioFormat::BigEndian:
-                default:
-                    qToBigEndian<quint32>(data32, datapointer);
-                    break;
-                }
+                data = (int) value >> (sample_bytes - byte - 1) * 8;
                 break;
             }
-            datapointer += sample_bytes;
+            this->buffer[(this->cursor_write + sample * sample_bytes + byte)
+                    % this->buffersize] = data;
         }
     }
-}
-
-/**
- * @brief   It plays an audio test by generating a tone.
- * @param   amplitude           tone amplitude (from 0 to 1)
- * @param   frequency           tone frequency [Hz]
- * @param   duration            test duration [s]
- */
-void OutputDevice::test(double amplitude, double frequency, float duration) {
-    int fs = this->format.sampleRate();
-    long int N = std::floor(fs * duration);
-    AudioSignal x = AudioSignal(fs);
-    for (int n = 0; n < N; n++) {
-        x.addSample(std::sin(2*M_PI*frequency/fs*n)*amplitude);
-    }
-    this->send(x);
+    this->cursor_write = (this->cursor_write + bytes) % this->buffersize;
 }
 
 /**
@@ -269,16 +215,24 @@ void OutputDevice::test(double amplitude, double frequency, float duration) {
  * @return
  */
 qint64 OutputDevice::readData(char *data, qint64 length) {
-    qint64 total = 0;
-    if (!buffer.isEmpty()) {
-        while (length - total > 0) {
-            const qint64 chunk = qMin((buffer.size() - cursor), length - total);
-            memcpy(data + total, buffer.constData() + cursor, chunk);
-            cursor = (cursor + chunk) % buffer.size();
-            total += chunk;
+    int chunk = 0;
+    if (this->cursor_read < this->cursor_write) {
+        chunk = std::min((int) length, this->cursor_write - this->cursor_read);
+        std::memcpy(data, this->buffer + this->cursor_read, chunk);
+    } else if (this->cursor_read > this->cursor_write) {
+        chunk = std::min((int) length,
+                         this->cursor_write - this->cursor_read + this->buffersize);
+        if (this->cursor_read + chunk <= this->buffersize) {
+            std::memcpy(data, this->buffer + this->cursor_read, chunk);
+        } else {
+            std::memcpy(data, this->buffer + this->cursor_read,
+                        this->buffersize - this->cursor_read); // until the buffer end
+            std::memcpy(data, this->buffer,
+                        chunk - (this->buffersize - this->cursor_read)); // until the buffer cursor
         }
     }
-    return total;
+    this->cursor_read = (this->cursor_read + chunk) % this->buffersize;
+    return chunk;
 }
 
 /**
@@ -298,7 +252,32 @@ qint64 OutputDevice::writeData(const char *data, qint64 length) {
  * @return
  */
 qint64 OutputDevice::bytesAvailable() const {
-    return buffer.size() + QIODevice::bytesAvailable();
+    return QIODevice::bytesAvailable() + (this->cursor_write - this->cursor_read);
+}
+
+/**
+ * @brief   It clears output buffer.
+ */
+void OutputDevice::clear() {
+    this->buffer = new char[this->buffersize];
+    this->cursor_read = 0;
+    this->cursor_write = 0;
+}
+
+/**
+ * @brief   It plays an audio test by generating a tone.
+ * @param   amplitude           tone amplitude (from 0 to 1)
+ * @param   frequency           tone frequency [Hz]
+ * @param   duration            test duration [s]
+ */
+void OutputDevice::test(double amplitude, double frequency, float duration) {
+    int fs = this->format.sampleRate();
+    long int N = std::floor(fs * duration);
+    AudioSignal x = AudioSignal(fs);
+    for (int n = 0; n < N; n++) {
+        x.addSample(std::sin(2 * M_PI * frequency / fs * n) * amplitude);
+    }
+    this->send(x);
 }
 
 /**
@@ -306,10 +285,12 @@ qint64 OutputDevice::bytesAvailable() const {
  * @param   parent              window parent
  */
 AudioTest::AudioTest(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AudioTest),
-    audiooutput(0)
-{
+    QDialog(parent), ui(new Ui::AudioTest), audiooutput(0) {
+    // Clock
+    this->clock = new QTimer(this);
+    this->clock->setInterval((int) this->period * 1000);
+    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(play()));
+    // User interface
     ui->setupUi(this);
     QStringList sampleformats = QStringList();
     sampleformats << "8 bits" << "16 bits" << "32 bits";
@@ -327,8 +308,9 @@ AudioTest::AudioTest(QWidget *parent) :
     QObject::connect(ui->fs,SIGNAL(currentIndexChanged(int)),this,SLOT(setFS(int)));
     QObject::connect(ui->frequency,SIGNAL(valueChanged(double)),this,SLOT(setFrequency(double)));
     QObject::connect(ui->amplitude,SIGNAL(valueChanged(int)),this,SLOT(setAmplitude(int)));
-    consolelog("AudioTest",LogType::progress,"AudioTest object is created");
+    consolelog("AudioTest", LogType::progress, "AudioTest object is created");
     this->start();
+    this->clock->start();
 }
 
 /**
@@ -336,9 +318,10 @@ AudioTest::AudioTest(QWidget *parent) :
  */
 AudioTest::~AudioTest() {
     if (this->audiooutput) {
+        delete this->clock;
         delete this->audiooutput;
     }
-    consolelog("AudioTest",LogType::progress,"AudioTest object is deleted");
+    consolelog("AudioTest", LogType::progress, "AudioTest object is deleted");
 }
 
 /**
@@ -352,8 +335,9 @@ AudioTest::~AudioTest() {
  * @param   index               device index from the combo box
  */
 void AudioTest::setDevice(int index) {
-    consolelog("AudioTest",LogType::interaction,"device set to #" + std::to_string(index) + " : " + ui->device->currentText().toStdString());
-    this->play();
+    consolelog("AudioTest", LogType::interaction,
+               "device set to #" + std::to_string(index) + " : "
+               + ui->device->currentText().toStdString());
 }
 
 /**
@@ -361,7 +345,9 @@ void AudioTest::setDevice(int index) {
  * @param   index               sample format index from the combo box
  */
 void AudioTest::setSampleFormat(int index) {
-    consolelog("AudioTest",LogType::interaction,"sample format set to #" + std::to_string(index) + " : " + ui->sampleformat->currentText().toStdString());
+    consolelog("AudioTest", LogType::interaction,
+               "sample format set to #" + std::to_string(index) + " : "
+               + ui->sampleformat->currentText().toStdString());
     this->start();
 }
 
@@ -369,7 +355,9 @@ void AudioTest::setSampleFormat(int index) {
  * @brief   It sets a sampling frequency
  */
 void AudioTest::setFS(int index) {
-    consolelog("AudioTest",LogType::interaction,"sampling frequency set to #" + std::to_string(index) + " = " + ui->fs->currentText().toStdString());
+    consolelog("AudioTest", LogType::interaction,
+               "sampling frequency set to #" + std::to_string(index) + " = "
+               + ui->fs->currentText().toStdString());
     this->start();
 }
 
@@ -377,7 +365,8 @@ void AudioTest::setFS(int index) {
  * @brief   It sets an amplitude
  */
 void AudioTest::setAmplitude(int amplitude) {
-    consolelog("AudioTest",LogType::interaction,"amplitude set to " + std::to_string((float)amplitude/100));
+    consolelog("AudioTest", LogType::interaction,
+               "amplitude set to " + std::to_string((float) amplitude / 100));
     this->start();
 }
 
@@ -385,7 +374,8 @@ void AudioTest::setAmplitude(int amplitude) {
  * @brief   It sets a tone frequency
  */
 void AudioTest::setFrequency(double frequency) {
-    consolelog("AudioTest",LogType::interaction,"tone frequency set to " + std::to_string(frequency) + " Hz");
+    consolelog("AudioTest", LogType::interaction,
+               "tone frequency set to " + std::to_string(frequency) + " Hz");
     this->start();
 }
 
@@ -397,11 +387,14 @@ void AudioTest::setFrequency(double frequency) {
  */
 int AudioTest::getSampleSize() {
     std::string sufix = " bits";
-    int samplesize = std::stoi(ui->sampleformat->currentText().toStdString().substr(0,ui->sampleformat->currentText().toStdString().find(sufix)));
+    int samplesize = std::stoi(
+                ui->sampleformat->currentText().toStdString().substr(0,
+                                                                     ui->sampleformat->currentText().toStdString().find(sufix)));
     if (samplesize >= 0) {
         return samplesize;
     } else {
-        consolelog("AudioTest",LogType::error,"invalid sample format has been selected");
+        consolelog("AudioTest", LogType::error,
+                   "invalid sample format has been selected");
         this->close();
         return 0;
     }
@@ -413,11 +406,14 @@ int AudioTest::getSampleSize() {
  */
 int AudioTest::getFS() {
     std::string sufix = " Hz";
-    int fs = std::stoi(ui->fs->currentText().toStdString().substr(0,ui->fs->currentText().toStdString().find(sufix)));
+    int fs = std::stoi(
+                ui->fs->currentText().toStdString().substr(0,
+                                                           ui->fs->currentText().toStdString().find(sufix)));
     if (fs >= 0) {
         return fs;
     } else {
-        consolelog("AudioTest",LogType::error,"invalid sample format has been selected");
+        consolelog("AudioTest", LogType::error,
+                   "invalid sample format has been selected");
         this->close();
         return 0;
     }
@@ -432,7 +428,8 @@ void AudioTest::start() {
         delete this->audiooutput;
     }
     QObject::disconnect(ui->device,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
-    this->audiooutput = new AudioOutput(ui->device,this->getFS(),this->getSampleSize());
+    this->audiooutput = new AudioOutput(ui->device, this->getFS(),
+                                        this->getSampleSize());
     QObject::connect(ui->device,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
     this->play();
 }
@@ -441,6 +438,6 @@ void AudioTest::start() {
  * @brief   It plays audio test.
  */
 void AudioTest::play() {
-    this->audiooutput->outputdevice->test((float)(ui->amplitude->value())/100,ui->frequency->value(),1);
-    consolelog("AudioTest",LogType::progress,"playing test");
+    this->audiooutput->outputdevice->test((float) (ui->amplitude->value()) / 100,
+                                          ui->frequency->value(), this->period);
 }

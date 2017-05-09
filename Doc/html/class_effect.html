@@ -112,9 +112,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abe71e1a9d26d7a90d7a9fade78b33882"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#abe71e1a9d26d7a90d7a9fade78b33882">Effect</a> (<a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> <a class="el" href="class_effect.html#a06ffa21833022dcc29b2dd4ed73de918">effect</a>, std::string <a class="el" href="class_effect.html#aafb8bbe85b15d73168ff4fdf2738f72b">params</a>)</td></tr>
-<tr class="memdesc:abe71e1a9d26d7a90d7a9fade78b33882"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effect.html" title="Effect class. It contains (by inheritance) all effects classes. ">Effect</a> constructor.  <a href="#abe71e1a9d26d7a90d7a9fade78b33882">More...</a><br /></td></tr>
-<tr class="separator:abe71e1a9d26d7a90d7a9fade78b33882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897022b823156f781496320bdbd5614c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a897022b823156f781496320bdbd5614c">Effect</a> (<a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> <a class="el" href="class_effect.html#a06ffa21833022dcc29b2dd4ed73de918">effect</a>, std::map&lt; std::string, std::string &gt; <a class="el" href="class_effect.html#af683bd39ff03444c6b3b04380a8335a7">params</a>)</td></tr>
+<tr class="memdesc:a897022b823156f781496320bdbd5614c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effect.html" title="Effect class. It contains (by inheritance) all effects classes. ">Effect</a> constructor.  <a href="#a897022b823156f781496320bdbd5614c">More...</a><br /></td></tr>
+<tr class="separator:a897022b823156f781496320bdbd5614c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac26c0a394247e14c9081f875522b5b66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ac26c0a394247e14c9081f875522b5b66">~Effect</a> ()</td></tr>
 <tr class="separator:ac26c0a394247e14c9081f875522b5b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a68f816d95f9a7383cd0df18d22e3e1ed">apply</a> (float *input, float *output, int samples)</td></tr>
@@ -123,24 +123,31 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad25130203a7f8f6a7bd945158a54cc30"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ad25130203a7f8f6a7bd945158a54cc30">getEffectsNames</a> ()</td></tr>
-<tr class="memdesc:ad25130203a7f8f6a7bd945158a54cc30"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the list of available effects names.  <a href="#ad25130203a7f8f6a7bd945158a54cc30">More...</a><br /></td></tr>
-<tr class="separator:ad25130203a7f8f6a7bd945158a54cc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b62a9a02d6d3a0429eacc1b4731b88d"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a7b62a9a02d6d3a0429eacc1b4731b88d">getEffects</a> ()</td></tr>
-<tr class="memdesc:a7b62a9a02d6d3a0429eacc1b4731b88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the list of available effects.  <a href="#a7b62a9a02d6d3a0429eacc1b4731b88d">More...</a><br /></td></tr>
-<tr class="separator:a7b62a9a02d6d3a0429eacc1b4731b88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b9557dafa951e9cf0916afa4ef5ec9"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#af0b9557dafa951e9cf0916afa4ef5ec9">getEffects</a> ()</td></tr>
+<tr class="memdesc:af0b9557dafa951e9cf0916afa4ef5ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the list of available effects.  <a href="#af0b9557dafa951e9cf0916afa4ef5ec9">More...</a><br /></td></tr>
+<tr class="separator:af0b9557dafa951e9cf0916afa4ef5ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32185d446a9dc77963a322b64d2f9e27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">effectID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a32185d446a9dc77963a322b64d2f9e27">getEffect</a> (std::string effectname)</td></tr>
+<tr class="memdesc:a32185d446a9dc77963a322b64d2f9e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get effects type from the effect name.  <a href="#a32185d446a9dc77963a322b64d2f9e27">More...</a><br /></td></tr>
 <tr class="separator:a32185d446a9dc77963a322b64d2f9e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce099a2221d232b7fc7dd113075399f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#afce099a2221d232b7fc7dd113075399f">readInfo</a> (std::string info, std::string tag)</td></tr>
-<tr class="memdesc:afce099a2221d232b7fc7dd113075399f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It extracts a field from a effect information file (.fx) text.  <a href="#afce099a2221d232b7fc7dd113075399f">More...</a><br /></td></tr>
-<tr class="separator:afce099a2221d232b7fc7dd113075399f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac322ae94a6b15b2d81053a55ce7542e2"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ac322ae94a6b15b2d81053a55ce7542e2">getParams</a> (std::string configuration)</td></tr>
+<tr class="memdesc:ac322ae94a6b15b2d81053a55ce7542e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get params from parameters string.  <a href="#ac322ae94a6b15b2d81053a55ce7542e2">More...</a><br /></td></tr>
+<tr class="separator:ac322ae94a6b15b2d81053a55ce7542e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae108c1645f18162929cd5c272a30f74e"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ae108c1645f18162929cd5c272a30f74e">getChannels</a> (std::string configuration, int size)</td></tr>
+<tr class="memdesc:ae108c1645f18162929cd5c272a30f74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get channels vector from channels string.  <a href="#ae108c1645f18162929cd5c272a30f74e">More...</a><br /></td></tr>
+<tr class="separator:ae108c1645f18162929cd5c272a30f74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f19e11abff1f815c8b3b36b1f28c92"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ad0f19e11abff1f815c8b3b36b1f28c92">getLevels</a> (std::string configuration, int size)</td></tr>
+<tr class="memdesc:ad0f19e11abff1f815c8b3b36b1f28c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get levels vector from levels string.  <a href="#ad0f19e11abff1f815c8b3b36b1f28c92">More...</a><br /></td></tr>
+<tr class="separator:ad0f19e11abff1f815c8b3b36b1f28c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8523ed0a47445186d3653979f47d525"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#aa8523ed0a47445186d3653979f47d525">readConfiguration</a> (std::string configuration, std::string tag)</td></tr>
+<tr class="memdesc:aa8523ed0a47445186d3653979f47d525"><td class="mdescLeft">&#160;</td><td class="mdescRight">It extracts a field from a effect configuration file (.fx) text.  <a href="#aa8523ed0a47445186d3653979f47d525">More...</a><br /></td></tr>
+<tr class="separator:aa8523ed0a47445186d3653979f47d525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a06ffa21833022dcc29b2dd4ed73de918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">effectID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a06ffa21833022dcc29b2dd4ed73de918">effect</a></td></tr>
 <tr class="separator:a06ffa21833022dcc29b2dd4ed73de918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafb8bbe85b15d73168ff4fdf2738f72b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#aafb8bbe85b15d73168ff4fdf2738f72b">params</a></td></tr>
-<tr class="separator:aafb8bbe85b15d73168ff4fdf2738f72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af683bd39ff03444c6b3b04380a8335a7"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#af683bd39ff03444c6b3b04380a8335a7">params</a></td></tr>
+<tr class="separator:af683bd39ff03444c6b3b04380a8335a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_effect.html" title="Effect class. It contains (by inheritance) all effects classes. ">Effect</a> class. It contains (by inheritance) all effects classes. </p>
@@ -164,8 +171,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abe71e1a9d26d7a90d7a9fade78b33882"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe71e1a9d26d7a90d7a9fade78b33882">&#9670;&nbsp;</a></span>Effect()</h2>
+<a id="a897022b823156f781496320bdbd5614c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897022b823156f781496320bdbd5614c">&#9670;&nbsp;</a></span>Effect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +186,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, std::string &gt;&#160;</td>
           <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
@@ -264,6 +271,52 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae108c1645f18162929cd5c272a30f74e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae108c1645f18162929cd5c272a30f74e">&#9670;&nbsp;</a></span>getChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; bool &gt; Effect::getChannels </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It get channels vector from channels string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configuration</td><td>string of channels configuration </td></tr>
+    <tr><td class="paramname">size</td><td>number of channels </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>channels boolean vector to select channels when applying effects </dd></dl>
+
+</div>
+</div>
 <a id="a32185d446a9dc77963a322b64d2f9e27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32185d446a9dc77963a322b64d2f9e27">&#9670;&nbsp;</a></span>getEffect()</h2>
 
@@ -288,10 +341,19 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>It get effects type from the effect name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">effectname</td><td>effect name string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>effect type <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">effectID</a> </dd></dl>
+
 </div>
 </div>
-<a id="a7b62a9a02d6d3a0429eacc1b4731b88d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b62a9a02d6d3a0429eacc1b4731b88d">&#9670;&nbsp;</a></span>getEffects()</h2>
+<a id="af0b9557dafa951e9cf0916afa4ef5ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b9557dafa951e9cf0916afa4ef5ec9">&#9670;&nbsp;</a></span>getEffects()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +362,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt; Effect::getEffects </td>
+          <td class="memname">std::map&lt; std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt; Effect::getEffects </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -314,12 +376,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>It gets the list of available effects. </p>
-<dl class="section return"><dt>Returns</dt><dd>vector of available effects </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>map of available effects </dd></dl>
 
 </div>
 </div>
-<a id="ad25130203a7f8f6a7bd945158a54cc30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad25130203a7f8f6a7bd945158a54cc30">&#9670;&nbsp;</a></span>getEffectsNames()</h2>
+<a id="ad0f19e11abff1f815c8b3b36b1f28c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f19e11abff1f815c8b3b36b1f28c92">&#9670;&nbsp;</a></span>getLevels()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,9 +390,56 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; Effect::getEffectsNames </td>
+          <td class="memname">std::vector&lt; double &gt; Effect::getLevels </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It get levels vector from levels string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configuration</td><td>string of input levels configuration </td></tr>
+    <tr><td class="paramname">size</td><td>number of channels </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>levels vector of input channels before applying effects </dd></dl>
+
+</div>
+</div>
+<a id="ac322ae94a6b15b2d81053a55ce7542e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac322ae94a6b15b2d81053a55ce7542e2">&#9670;&nbsp;</a></span>getParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, std::string &gt; Effect::getParams </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>configuration</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -341,13 +450,19 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>It gets the list of available effects names. </p>
-<dl class="section return"><dt>Returns</dt><dd>vector of available effects names </dd></dl>
+<p>It get params from parameters string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configuration</td><td>string of parameters configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>parameters map variable valid to apply effects </dd></dl>
 
 </div>
 </div>
-<a id="afce099a2221d232b7fc7dd113075399f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce099a2221d232b7fc7dd113075399f">&#9670;&nbsp;</a></span>readInfo()</h2>
+<a id="aa8523ed0a47445186d3653979f47d525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8523ed0a47445186d3653979f47d525">&#9670;&nbsp;</a></span>readConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,10 +471,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Effect::readInfo </td>
+          <td class="memname">std::string Effect::readConfiguration </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>info</em>, </td>
+          <td class="paramname"><em>configuration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -380,10 +495,10 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>It extracts a field from a effect information file (.fx) text. </p>
+<p>It extracts a field from a effect configuration file (.fx) text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">info</td><td>containned text of a effect information file (.fx) </td></tr>
+    <tr><td class="paramname">configuration</td><td>containned text of a effect configuration file (.fx) </td></tr>
     <tr><td class="paramname">tag</td><td>tag name of the requested field </td></tr>
   </table>
   </dd>
@@ -408,14 +523,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aafb8bbe85b15d73168ff4fdf2738f72b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafb8bbe85b15d73168ff4fdf2738f72b">&#9670;&nbsp;</a></span>params</h2>
+<a id="af683bd39ff03444c6b3b04380a8335a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af683bd39ff03444c6b3b04380a8335a7">&#9670;&nbsp;</a></span>params</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Effect::params</td>
+          <td class="memname">std::map&lt;std::string, std::string&gt; Effect::params</td>
         </tr>
       </table>
 </div><div class="memdoc">

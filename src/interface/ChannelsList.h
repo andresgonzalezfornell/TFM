@@ -31,37 +31,36 @@ class ChannelsPlot;
  */
 class Channel {
 public:
-    int index;                          /**< channel index */
-    std::string name;                   /**< channel name */
-    float volume;                       /**< current audio volume level */
-    bool muted;                         /**< it indicates if channel is muted */
-    bool bypassed;                      /**< it tells channel to bypass effects or apply them */
-    AudioOutput *audiooutput;           /**< system audio output devices object */
-    /**
-     * @brief   user interface elements
-     * @{
-     */
-    QGroupBox *groupbox;                /**< channel group box */
-    QLineEdit *label;                   /**< field to change the channel label */
-    QSlider *volumeslider;              /**< volume level slider */
-    QCheckBox *mutecheckbox;            /**< muted checkbox object */
-    QWidget *volumeterwidget;           /**< volumeter framework */
-    QCheckBox *bypasscheckbox;          /**< checkbox object to bypass effect */
-    QComboBox *deviceselector;          /**< audio output device selector object */
-    /** @} */
-    Channel(QLayout *framework, std::string prefix, int index, bool isoutput);
-    ~Channel();
-    int getIndex();
-    void setIndex(int index);
-    void setLabel(std::string label);
+	int index; /**< channel index */
+	std::string name; /**< channel name */
+	double volume; /**< current audio volume level */
+	bool muted; /**< it indicates if channel is muted */
+	bool bypassed; /**< it tells channel to bypass effects or apply them */
+	AudioOutput *audiooutput; /**< system audio output devices object */
+	/**
+	 * @brief   user interface elements
+	 * @{
+	 */
+	QGroupBox *groupbox; /**< channel group box */
+	QLineEdit *label; /**< field to change the channel label */
+	QSlider *volumeslider; /**< volume level slider */
+	QCheckBox *mutecheckbox; /**< muted checkbox object */
+	QWidget *volumeterwidget; /**< volumeter framework */
+	QCheckBox *bypasscheckbox; /**< checkbox object to bypass effect */
+	QComboBox *deviceselector; /**< audio output device selector object */
+	/** @} */
+	Channel(QLayout *framework, std::string prefix, int index, bool isoutput);
+	~Channel();
+	int getIndex();
+	void setIndex(int index);
+	void setLabel(std::string label);
     void setVolume(int volume);
-    void mute(bool state);
-    void bypass(bool state);
+	void mute(bool state);
+	void bypass(bool state);
 private:
-    AudioStream *stream;                /**< channel audio stream object */
-    std::string prefix;                 /**< user interface prefix */
-    bool isoutput;                      /**< true to show audio output device selector (in case of sending channel to speakers or other audio output system device) */
-    Volumeter *volumeter;               /**< volumeter object */
+	std::string prefix; /**< user interface prefix */
+	bool isoutput; /**< true to show audio output device selector (in case of sending channel to speakers or other audio output system device) */
+	Volumeter *volumeter; /**< volumeter object */
 };
 
 /**
@@ -69,34 +68,32 @@ private:
  * @author  Andrés González Fornell
  * @brief   Channels list class. It shows information about channels signals.
  */
-class ChannelsList : public QObject {
-    Q_OBJECT
+class ChannelsList: public QObject {
+	Q_OBJECT
 public:
-    static int fs;                      /**< signal sampling frequency */
-    static int samplesize;              /**< signal sample size [bits] */
-    ChannelsList(QWidget *framework, int number, bool showdevices);
-    ~ChannelsList();
-    Channel *getChannel(int index);
-    void deleteChannel(int index);
-    int getSize();
-    void setSize(int size);
-    std::vector<std::string> getNames();
+	static int fs; /**< signal sampling frequency */
+	static int samplesize; /**< signal sample size [bits] */
+	ChannelsList(QWidget *framework, int number, bool showdevices);
+	~ChannelsList();
+	Channel *getChannel(int index);
+	void deleteChannel(int index);
+	int getSize();
+	void setSize(int size);
+	std::vector<std::string> getNames();
 private:
-    std::vector<Channel *> channels;    /**< list of channels */
-    std::string prefix;                 /**< user interface prefix */
-    bool showdevices;                   /**< true to show audio output device selector (in case of sending channels to speakers or other audio output system devices) */
-    QWidget *framework;                 /**< user interface framework of channels list */
-    QLayout *layout;                    /**< user interface layout of channels list */
-    Volumeter *volumeter;               /**< volumeter object */
-    int getIndex(QObject *element);
-private slots:
-    void setLabel(QString label);
-    void setVolume(int volume);
-    void mute(bool state);
-    void bypass(bool state);
-    void setDevice(int device);
-signals:
-    void namechanged();
+	std::vector<Channel *> channels; /**< list of channels */
+	std::string prefix; /**< user interface prefix */
+	bool showdevices; /**< true to show audio output device selector (in case of sending channels to speakers or other audio output system devices) */
+	QWidget *framework; /**< user interface framework of channels list */
+	QLayout *layout; /**< user interface layout of channels list */
+	Volumeter *volumeter; /**< volumeter object */
+	int getIndex(QObject *element);private slots:
+	void setLabel(QString label);
+	void setVolume(int volume);
+	void mute(bool state);
+	void bypass(bool state);
+	void setDevice(int device);signals:
+	void namechanged();
 };
 
 #endif // CHANNELSLIST_H

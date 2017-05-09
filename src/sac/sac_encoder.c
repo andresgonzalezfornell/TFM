@@ -42,7 +42,7 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
     Stream bitstream;
     long int input_channels;
     long int samples;
-    InitStream(&bitstream, bitstream_filename, STREAM_WRITE);
+    InitStream(&bitstream, (char *)bitstream_filename, STREAM_WRITE);
     input = AFopnRead(input_filename, &samples, &input_channels, &fs, NULL);
     if(input_channels != 6) {
         return "input audio file must have 6 channels";
@@ -95,7 +95,7 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
         AFclose(input);
     }
     if(output != NULL) {
-      AFclose(output);
+        AFclose(output);
     }
-	return NULL;
+    return NULL;
 }

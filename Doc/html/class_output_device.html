@@ -111,6 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10111574a055eee12fb86934f049a6b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a10111574a055eee12fb86934f049a6b4">~OutputDevice</a> ()</td></tr>
 <tr class="memdesc:a10111574a055eee12fb86934f049a6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_output_device.html" title="Audio output device class (QIODevice extension). ">OutputDevice</a> destructor.  <a href="#a10111574a055eee12fb86934f049a6b4">More...</a><br /></td></tr>
 <tr class="separator:a10111574a055eee12fb86934f049a6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf950a2070d63d3636173c06c29e42e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#acdf950a2070d63d3636173c06c29e42e">send</a> (<a class="el" href="class_audio_signal.html">AudioSignal</a> signal)</td></tr>
+<tr class="memdesc:acdf950a2070d63d3636173c06c29e42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends an audio signal to the buffer to be sent to the audio output device.  <a href="#acdf950a2070d63d3636173c06c29e42e">More...</a><br /></td></tr>
+<tr class="separator:acdf950a2070d63d3636173c06c29e42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f455a9fdaa26664957b54b7806a1b7d"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a5f455a9fdaa26664957b54b7806a1b7d">readData</a> (char *data, qint64 length)</td></tr>
 <tr class="memdesc:a5f455a9fdaa26664957b54b7806a1b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets data from the audio output device.  <a href="#a5f455a9fdaa26664957b54b7806a1b7d">More...</a><br /></td></tr>
 <tr class="separator:a5f455a9fdaa26664957b54b7806a1b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,24 +123,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae15675354b4b09ca3ff02a24be102c4d"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#ae15675354b4b09ca3ff02a24be102c4d">bytesAvailable</a> () const</td></tr>
 <tr class="memdesc:ae15675354b4b09ca3ff02a24be102c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets available bytes to be read by the audio output device.  <a href="#ae15675354b4b09ca3ff02a24be102c4d">More...</a><br /></td></tr>
 <tr class="separator:ae15675354b4b09ca3ff02a24be102c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdf950a2070d63d3636173c06c29e42e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#acdf950a2070d63d3636173c06c29e42e">send</a> (<a class="el" href="class_audio_signal.html">AudioSignal</a> signal)</td></tr>
-<tr class="memdesc:acdf950a2070d63d3636173c06c29e42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends an audio signal to the buffer to be sent to the audio output device.  <a href="#acdf950a2070d63d3636173c06c29e42e">More...</a><br /></td></tr>
-<tr class="separator:acdf950a2070d63d3636173c06c29e42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78e2163a6f7051d49d3483234003d684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a78e2163a6f7051d49d3483234003d684">test</a> (double <a class="el" href="class_output_device.html#a5f91d32d6e37acbf28651793f68eaa8c">amplitude</a>, double frequency, float duration)</td></tr>
 <tr class="memdesc:a78e2163a6f7051d49d3483234003d684"><td class="mdescLeft">&#160;</td><td class="mdescRight">It plays an audio test by generating a tone.  <a href="#a78e2163a6f7051d49d3483234003d684">More...</a><br /></td></tr>
 <tr class="separator:a78e2163a6f7051d49d3483234003d684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3515a8c1812a08bd74d87389554767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a9c3515a8c1812a08bd74d87389554767">clear</a> ()</td></tr>
+<tr class="memdesc:a9c3515a8c1812a08bd74d87389554767"><td class="mdescLeft">&#160;</td><td class="mdescRight">It clears output buffer.  <a href="#a9c3515a8c1812a08bd74d87389554767">More...</a><br /></td></tr>
+<tr class="separator:a9c3515a8c1812a08bd74d87389554767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a68bb8871a72b43f93623907b0cf829f5"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a68bb8871a72b43f93623907b0cf829f5">cursor</a></td></tr>
-<tr class="separator:a68bb8871a72b43f93623907b0cf829f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf56f9d3e97d766a2e2b04c7bc743ee2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#adf56f9d3e97d766a2e2b04c7bc743ee2">buffer</a></td></tr>
+<tr class="separator:adf56f9d3e97d766a2e2b04c7bc743ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49ebf067d9b6f15f2305d5028cde85e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#ab49ebf067d9b6f15f2305d5028cde85e">cursor_read</a></td></tr>
+<tr class="separator:ab49ebf067d9b6f15f2305d5028cde85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad770c7e5e833ccd9030382e16691f331"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#ad770c7e5e833ccd9030382e16691f331">cursor_write</a></td></tr>
+<tr class="separator:ad770c7e5e833ccd9030382e16691f331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e2fe4f9b7a15bf6993144d49f29461"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a04e2fe4f9b7a15bf6993144d49f29461">buffersize</a></td></tr>
+<tr class="separator:a04e2fe4f9b7a15bf6993144d49f29461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a80fa36f98b5f99c7dab4b1197e8ea136"><td class="memItemLeft" align="right" valign="top">QAudioFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a80fa36f98b5f99c7dab4b1197e8ea136">format</a></td></tr>
 <tr class="separator:a80fa36f98b5f99c7dab4b1197e8ea136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ad0b4d4146455cc19c08f094659bf5"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#ad7ad0b4d4146455cc19c08f094659bf5">buffer</a></td></tr>
-<tr class="separator:ad7ad0b4d4146455cc19c08f094659bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f91d32d6e37acbf28651793f68eaa8c"><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a5f91d32d6e37acbf28651793f68eaa8c">amplitude</a></td></tr>
 <tr class="separator:a5f91d32d6e37acbf28651793f68eaa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a784c815c3f04113ebcdc2d4842a5d49a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_device.html#a784c815c3f04113ebcdc2d4842a5d49a">offset</a></td></tr>
@@ -210,6 +217,25 @@ Private Attributes</h2></td></tr>
 
 <p>It gets available bytes to be read by the audio output device. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9c3515a8c1812a08bd74d87389554767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3515a8c1812a08bd74d87389554767">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputDevice::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It clears output buffer. </p>
 
 </div>
 </div>
@@ -383,40 +409,63 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7ad0b4d4146455cc19c08f094659bf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7ad0b4d4146455cc19c08f094659bf5">&#9670;&nbsp;</a></span>buffer</h2>
+<a id="adf56f9d3e97d766a2e2b04c7bc743ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf56f9d3e97d766a2e2b04c7bc743ee2">&#9670;&nbsp;</a></span>buffer</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QByteArray OutputDevice::buffer</td>
+          <td class="memname">char* OutputDevice::buffer</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>audio output data buffer </p>
 
 </div>
 </div>
-<a id="a68bb8871a72b43f93623907b0cf829f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68bb8871a72b43f93623907b0cf829f5">&#9670;&nbsp;</a></span>cursor</h2>
+<a id="a04e2fe4f9b7a15bf6993144d49f29461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e2fe4f9b7a15bf6993144d49f29461">&#9670;&nbsp;</a></span>buffersize</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">qint64 OutputDevice::cursor</td>
+          <td class="memname">int OutputDevice::buffersize</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>total size of buffer [Bytes] </p>
+
+</div>
+</div>
+<a id="ab49ebf067d9b6f15f2305d5028cde85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49ebf067d9b6f15f2305d5028cde85e">&#9670;&nbsp;</a></span>cursor_read</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputDevice::cursor_read</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cursor of read audio output data in buffer </p>
+
+</div>
+</div>
+<a id="ad770c7e5e833ccd9030382e16691f331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad770c7e5e833ccd9030382e16691f331">&#9670;&nbsp;</a></span>cursor_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputDevice::cursor_write</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cursor of pendient audio output data in buffer </p>
 
 </div>
 </div>

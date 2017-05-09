@@ -4,7 +4,8 @@
  * @brief	AudioStream constructor.
  * @param   fs          signal sampling frequency [Hz]
  */
-AudioStream::AudioStream(int fs) : signal(fs) {
+AudioStream::AudioStream(int fs) :
+    signal(fs) {
     this->fs = fs;
     this->range.start = 0;
     this->range.end = -1;
@@ -46,7 +47,7 @@ void AudioStream::push(float sample) {
  * @param   samples
  */
 void AudioStream::push(AudioSignal samples) {
-    for(int index = 0; index < samples.size; index++) {
+    for (int index = 0; index < samples.size; index++) {
         this->push(samples[index]);
     }
 }
@@ -57,7 +58,8 @@ void AudioStream::push(AudioSignal samples) {
  */
 float AudioStream::pop() {
     if (this->size() == 0) {
-        consolelog("AudioStream",LogType::error,"audio stream object is empty so zero value is returned");
+        consolelog("AudioStream", LogType::error,
+                   "audio stream object is empty so zero value is returned");
         return 0;
     } else {
         float sample = this->signal[0];
@@ -75,10 +77,12 @@ float AudioStream::pop() {
 AudioSignal AudioStream::pop(int n) {
     if (n > this->size()) {
         n = this->size();
-        consolelog("AudioStream",LogType::warning,"not enough available samples so all samples (" + std::to_string(n) + ") are taken");
+        consolelog("AudioStream", LogType::warning,
+                   "not enough available samples so all samples ("
+                   + std::to_string(n) + ") are taken");
     }
-    AudioSignal subsignal = this->signal.getSample(0,n-1);
-    this->signal.deleteSample(0,n-1);
+    AudioSignal subsignal = this->signal.getSample(0, n - 1);
+    this->signal.deleteSample(0, n - 1);
     this->range.start += n;
     return subsignal;
 }
@@ -93,7 +97,8 @@ float AudioStream::operator[](int index) {
         return this->signal[index];
     } else {
         consolelog("AudioStream", LogType::error,
-                "the selected index (" + std::to_string(index) + ") is not available in the audio object stream");
+                   "the selected index (" + std::to_string(index)
+                   + ") is not available in the audio object stream");
         return 0;
     }
 }
@@ -105,11 +110,12 @@ float AudioStream::operator[](int index) {
  */
 void AudioStream::setSample(int index, float sample) {
     if (this->isAvailable(index)) {
-        this->signal.setSample(sample,index);
-	} else {
+        this->signal.setSample(sample, index);
+    } else {
         consolelog("AudioStream", LogType::error,
-                "the selected index (" + std::to_string(index) + ") is not available in the audio object stream");
-	}
+                   "the selected index (" + std::to_string(index)
+                   + ") is not available in the audio object stream");
+    }
 }
 
 /**
@@ -119,7 +125,9 @@ void AudioStream::setSample(int index, float sample) {
 int AudioStream::size() {
     if (this->range.end - this->range.start + 1 < 0) {
         this->range.end = this->range.start - 1;
-        consolelog("AudioStream",LogType::warning,"samples range is invalid so it has been fixed by changing end index to " + std::to_string(this->range.end));
+        consolelog("AudioStream", LogType::warning,
+                   "samples range is invalid so it has been fixed by changing end index to "
+                   + std::to_string(this->range.end));
     }
     return this->range.end - this->range.start + 1;
 }

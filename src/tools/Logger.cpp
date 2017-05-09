@@ -31,14 +31,14 @@ const std::string white = "\033[37m";
  * @param	tab_max		Maximum number of tabulations
  */
 std::string tab(std::string content, const int tab_max) {
-	const int spacespertab = 8;
-	int tab_number = 0;
+    const int spacespertab = 8;
+    int tab_number = 0;
     std::string tab = "";
-	tab_number = tab_max - int(content.length() / spacespertab);
-	for (int i = 1; i <= tab_number; i++) {
-		tab = tab + "\t";
-	}
-	return tab;
+    tab_number = tab_max - int(content.length() / spacespertab);
+    for (int i = 1; i <= tab_number; i++) {
+        tab = tab + "\t";
+    }
+    return tab;
 }
 
 /**
@@ -48,45 +48,47 @@ std::string tab(std::string content, const int tab_max) {
  * @param	message		message
  * @return	void
  */
-void consolelog(std::string source, LogType::logtype logtype, std::string message) {
-	const int tab_max = 2;
-	const int spacespertab = 8;
-	// Source
-	if (source.length() >= tab_max * spacespertab) {
-		source = source.substr(0, 15);
-	}
-	// Log type
+void consolelog(std::string source, LogType::logtype logtype,
+                std::string message) {
+    const int tab_max = 2;
+    const int spacespertab = 8;
+    // Source
+    if (source.length() >= tab_max * spacespertab) {
+        source = source.substr(0, 15);
+    }
+    // Log type
     std::string type_name = "";
     std::string type_style = "";
     switch (logtype) {
     case LogType::info:
-		type_name = "info";
-		type_style = blue;
-		break;
+        type_name = "info";
+        type_style = blue;
+        break;
     case LogType::warning:
-		type_name = "warning";
-		type_style = yellow;
-		break;
+        type_name = "warning";
+        type_style = yellow;
+        break;
     case LogType::error:
-		type_name = "error";
-		type_style = red;
-		break;
+        type_name = "error";
+        type_style = red;
+        break;
     case LogType::progress:
-		type_name = "progress";
-		type_style = green;
-		break;
+        type_name = "progress";
+        type_style = green;
+        break;
     case LogType::interaction:
-		type_name = "user action";
-		type_style = magenta;
-		break;
-	default:
-		type_name = "general";
-		type_style = cyan;
-		break;
-	}
-	// Log
+        type_name = "user action";
+        type_style = magenta;
+        break;
+    default:
+        type_name = "general";
+        type_style = cyan;
+        break;
+    }
+    // Log
     std::cout << white << "Log message ";
     std::cout << "from " << italic << source << tab(source, tab_max) << reset;
-    std::cout << bold << type_style << type_name << tab(type_name, tab_max) << reset;
+    std::cout << bold << type_style << type_name << tab(type_name, tab_max)
+              << reset;
     std::cout << message << reset << std::endl;
 }

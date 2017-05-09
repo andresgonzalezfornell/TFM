@@ -9,18 +9,17 @@
 #include "QMainWindow"
 // Classes and local files
 #include "Encoder.h"
-#include "Decoder.h"
+#include "SACEffects.h"
 #include "../tools/Logger.h"
 
 /**
  * @brief	Main function
  */
 int main(int argc, char *argv[]) {
-    consolelog("main", LogType::progress, "application program");
+    consolelog("main", LogType::progress, "starting SAC Effects");
     QApplication app(argc, argv);
-    Decoder decoder;
-    consolelog("main", LogType::progress, "showing Decoder");
-    decoder.show();
-    consolelog("main", LogType::progress, "application was completed");
+    SACEffects window;
+    consolelog("main", LogType::progress, "showing SAC Effects");
+    window.show();
     return app.exec();
 }

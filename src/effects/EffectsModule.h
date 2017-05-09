@@ -13,10 +13,10 @@
  * @author	Andrés González Fornell
  * @brief	It contains (by inheritance) all effects classes.
  */
-class EffectsModule : public Compressor {
+class EffectsModule: public Compressor {
 public:
-    EffectsModule();
-    ~EffectsModule();
+	EffectsModule();
+	~EffectsModule();
 };
 
 #endif // EFFECTSMODULE_H

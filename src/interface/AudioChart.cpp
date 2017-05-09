@@ -7,26 +7,30 @@
  */
 AudioChart::AudioChart(QWidget *framework) {
     this->chart = new QChart();
-    this->view = new QChartView(chart,framework);
-    this->view->setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
-    this->view->setMinimumSize(250,180);
+    this->view = new QChartView(chart, framework);
+    this->view->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+    this->view->setMinimumSize(250, 180);
     this->series = new QLineSeries();
     this->chart->addSeries(series);
     this->xlabel = "x";
     this->ylabel = "y";
     this->setOptions(0);
-    consolelog("AudioChart",LogType::progress,"AudioChart object is created");
+    consolelog("AudioChart", LogType::progress, "AudioChart object is created");
 }
 
 /**
  * @brief	AudioChart constructor.
  * @param   framework   user interface framework of chart
- * @param   range       axis range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
+ * @param   range       axes range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
  * @param   title       chart title (it will be impress on the chart)
+ * @param   xlabel      label for horizontal (x) axis
+ * @param   ylabel      label for vertical (y) axis
  * @param   options
  * @ref     ChartOptions
  */
-AudioChart::AudioChart(QWidget *framework, float range[2][2], std::string title, std::string xlabel, std::string ylabel, int options) : AudioChart::AudioChart(framework) {
+AudioChart::AudioChart(QWidget *framework, float range[2][2], std::string title,
+std::string xlabel, std::string ylabel, int options) :
+    AudioChart::AudioChart(framework) {
     this->setRange(range);
     this->setTitle(title);
     this->xlabel = xlabel;
@@ -38,7 +42,7 @@ AudioChart::AudioChart(QWidget *framework, float range[2][2], std::string title,
  * @brief	AudioChart destructor.
  */
 AudioChart::~AudioChart() {
-    consolelog("AudioChart",LogType::progress,"AudioChart object is deleted");
+    consolelog("AudioChart", LogType::progress, "AudioChart object is deleted");
 }
 
 /**
@@ -62,8 +66,8 @@ QVector<QPointF> AudioChart::getPoints() {
  * @param   range       axis range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
  */
 void AudioChart::setRange(float range[2][2]) {
-    this->chart->axisX(this->series)->setRange(range[0][0],range[0][1]);
-    this->chart->axisY(this->series)->setRange(range[1][0],range[1][1]);
+    this->chart->axisX(this->series)->setRange(range[0][0], range[0][1]);
+    this->chart->axisY(this->series)->setRange(range[1][0], range[1][1]);
 }
 
 /**
@@ -99,8 +103,8 @@ void AudioChart::setOptions(int options) {
     if (!(options & ChartOptions::labelY)) {
         y_axis->hide();
     }
-    chart->setAxisX(x_axis,this->series);
-    chart->setAxisY(y_axis,this->series);
+    chart->setAxisX(x_axis, this->series);
+    chart->setAxisY(y_axis, this->series);
     if (!(options & ChartOptions::legend)) {
         this->chart->legend()->hide();
     }

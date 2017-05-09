@@ -12,7 +12,7 @@
 class Equalizer AS_EFFECT {
 public:
     Equalizer(std::map<std::string, std::string> params);
-    void apply(float *input, float *output, int samples);
+	void apply(float *input, float *output, int samples);
 };
 
 #endif // EQUALIZER_H

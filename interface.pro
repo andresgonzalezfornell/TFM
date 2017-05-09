@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += src/interface/main.cpp\
-    src/interface/Decoder.cpp \
     src/interface/Encoder.cpp \
     src/interface/EffectsMonitor.cpp \
     src/interface/ChannelsList.cpp \
@@ -34,10 +33,10 @@ SOURCES += src/interface/main.cpp\
     src/tools/Logger.cpp \
     src/effects/Effect.cpp \
     src/effects/Compressor.cpp \
-    src/effects/Equalizer.cpp
+    src/effects/Equalizer.cpp \
+    src/interface/SACEffects.cpp
 
 HEADERS  += \
-    src/interface/Decoder.h \
     src/interface/Encoder.h \
     src/interface/EffectsMonitor.h \
     src/interface/ChannelsList.h \
@@ -57,13 +56,14 @@ HEADERS  += \
     src/effects/EffectBase.h \
     src/effects/EffectsModule.h \
     src/effects/Compressor.h \
-    src/effects/Equalizer.h
+    src/effects/Equalizer.h \
+    src/interface/SACEffects.h
 
 FORMS    += \
-    src/interface/Decoder.ui \
     src/interface/Encoder.ui \
     src/interface/AudioTest.ui \
-    src/interface/AudioInfo.ui
+    src/interface/AudioInfo.ui \
+    src/interface/SACEffects.ui
 
 RESOURCES += \
     src/interface/media.qrc

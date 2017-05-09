@@ -25,33 +25,32 @@ class Encoder;
  * @author	Andrés González Fornell
  * @brief	Encoder window interface.
  */
-class Encoder : public QDialog
-{
-    Q_OBJECT
+class Encoder: public QDialog {
+	Q_OBJECT
 public:
-    int fs;                             /**< signal sampling frequency [Hz] */
-    WAVFile *input;                     /**< input file object */
-    WAVFile *output;                    /**< output file object */
-    File *bitstream;                    /**< output bit stream file object */
-    Encoder(QWidget *parent = 0);
-    ~Encoder();
-    void setInput(std::string filename);
-    void setOutput(std::string filename);
-    void setTree(int tree);
+	int fs; /**< signal sampling frequency [Hz] */
+	WAVFile *input; /**< input file object */
+	WAVFile *output; /**< output file object */
+	File *bitstream; /**< output bit stream file object */
+	Encoder(QWidget *parent = 0);
+	~Encoder();
+	void setInput(std::string filename);
+	void setOutput(std::string filename);
+	void setTree(int tree);
 private:
-    Ui::Encoder *ui;                    /**< user interface object */
-    int tree;                           /**< SAC encoder parameter */
+	Ui::Encoder *ui; /**< user interface object */
+	int tree; /**< SAC encoder parameter */
 private slots:
-    // Configuration
-    void setBitstream();
-    void setBuried(bool state);
-    void toggleTree();
-    // Buttons
-    void load();
-    void reset();
-    void apply();
-    void cancel();
-    void submit();
+	// Configuration
+	void setBitstream();
+	void setBuried(bool state);
+	void toggleTree();
+	// Buttons
+	void load();
+	void reset();
+	void apply();
+	void cancel();
+	void submit();
 };
 
 #endif // CODER_H

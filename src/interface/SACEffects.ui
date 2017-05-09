@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Decoder</class>
- <widget class="QMainWindow" name="Decoder">
+ <class>SACEffects</class>
+ <widget class="QMainWindow" name="SACEffects">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>722</width>
+    <width>735</width>
     <height>571</height>
    </rect>
   </property>
@@ -17,10 +17,25 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Decoder</string>
+   <string>Spatial Audio Coding - Effects platform</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
     <item>
      <widget class="QGroupBox" name="input_group">
       <property name="minimumSize">
@@ -91,6 +106,12 @@
             </property>
             <property name="formAlignment">
              <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            </property>
+            <property name="horizontalSpacing">
+             <number>5</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>10</number>
             </property>
             <property name="leftMargin">
              <number>5</number>
@@ -213,7 +234,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>82</height>
+            <height>83</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="input_channels_layout">
@@ -269,6 +290,59 @@
          <property name="sizeConstraint">
           <enum>QLayout::SetDefaultConstraint</enum>
          </property>
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="input_stop">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/stop</normaloff>:/icons/stop</iconset>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="input_duration">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="input_info">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="media.qrc">
+             <normaloff>:/icons/info</normaloff>:/icons/info</iconset>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0">
           <widget class="QPushButton" name="input_playback">
            <property name="sizePolicy">
@@ -302,59 +376,16 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0" colspan="3">
+         <item row="1" column="0" colspan="2">
           <widget class="QDateTimeEdit" name="input_timer">
            <property name="currentSection">
-            <enum>QDateTimeEdit::SecondSection</enum>
+            <enum>QDateTimeEdit::HourSection</enum>
            </property>
            <property name="displayFormat">
             <string>hh:mm:ss.zzz</string>
            </property>
            <property name="calendarPopup">
             <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="input_stop">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="media.qrc">
-             <normaloff>:/icons/stop</normaloff>:/icons/stop</iconset>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QPushButton" name="input_info">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="media.qrc">
-             <normaloff>:/icons/info</normaloff>:/icons/info</iconset>
            </property>
           </widget>
          </item>
@@ -394,8 +425,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>158</width>
-            <height>477</height>
+            <width>187</width>
+            <height>479</height>
            </rect>
           </property>
           <property name="autoFillBackground">
@@ -489,7 +520,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>140</height>
+            <height>141</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="output_channels_layout">
@@ -533,7 +564,36 @@
        </item>
        <item>
         <layout class="QGridLayout" name="output_controls">
-         <item row="0" column="0">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <item row="1" column="0">
+          <widget class="QDateTimeEdit" name="output_timer">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="currentSection">
+            <enum>QDateTimeEdit::HourSection</enum>
+           </property>
+           <property name="displayFormat">
+            <string>hh:mm:ss.zzz</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="output_duration">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
           <widget class="QPushButton" name="output_playback">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -563,25 +623,6 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QDateTimeEdit" name="output_timer">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="currentSection">
-            <enum>QDateTimeEdit::SecondSection</enum>
-           </property>
-           <property name="displayFormat">
-            <string>hh:mm:ss.zzz</string>
-           </property>
-           <property name="calendarPopup">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
       </layout>
@@ -594,7 +635,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>722</width>
+     <width>735</width>
      <height>22</height>
     </rect>
    </property>
@@ -668,6 +709,7 @@
      <string>Output</string>
     </property>
     <addaction name="menu_test"/>
+    <addaction name="menu_export"/>
    </widget>
    <addaction name="menu_source"/>
    <addaction name="menu_bitstream"/>
@@ -806,14 +848,9 @@
     <string>Test audio device</string>
    </property>
   </action>
-  <action name="menu_channelsplot_input">
+  <action name="menu_export">
    <property name="text">
-    <string>Compare channels</string>
-   </property>
-  </action>
-  <action name="menu_channelsplot_output">
-   <property name="text">
-    <string>Compare channels</string>
+    <string>Export as file</string>
    </property>
   </action>
  </widget>

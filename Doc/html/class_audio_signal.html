@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_audio_signal.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_audio_signal-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -103,12 +104,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a755ad45352e2b260a2ee7fde2440a486"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a755ad45352e2b260a2ee7fde2440a486">AudioSignal</a> (std::vector&lt; float &gt; <a class="el" href="class_audio_signal.html#acd6f3fc199a736b66a2efba59e8683b8">signal</a>, int <a class="el" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9">fs</a>)</td></tr>
 <tr class="memdesc:a755ad45352e2b260a2ee7fde2440a486"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_signal.html" title="TODO AudioSignal.cpp description. ">AudioSignal</a> constructor.  <a href="#a755ad45352e2b260a2ee7fde2440a486">More...</a><br /></td></tr>
 <tr class="separator:a755ad45352e2b260a2ee7fde2440a486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb379d0c192ec109f8469a118c81b5f5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#afb379d0c192ec109f8469a118c81b5f5">~AudioSignal</a> ()</td></tr>
+<tr class="memitem:afb379d0c192ec109f8469a118c81b5f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#afb379d0c192ec109f8469a118c81b5f5">~AudioSignal</a> ()</td></tr>
 <tr class="memdesc:afb379d0c192ec109f8469a118c81b5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_signal.html" title="TODO AudioSignal.cpp description. ">AudioSignal</a> destructor.  <a href="#afb379d0c192ec109f8469a118c81b5f5">More...</a><br /></td></tr>
 <tr class="separator:afb379d0c192ec109f8469a118c81b5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92006cf482c9c576ec5597e0433174fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a92006cf482c9c576ec5597e0433174fc">getSample</a> (int index)</td></tr>
-<tr class="memdesc:a92006cf482c9c576ec5597e0433174fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets a sample from the selected index.  <a href="#a92006cf482c9c576ec5597e0433174fc">More...</a><br /></td></tr>
-<tr class="separator:a92006cf482c9c576ec5597e0433174fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f6f979d43fe72d965e17b86dd82e79"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a92f6f979d43fe72d965e17b86dd82e79">operator[]</a> (int index)</td></tr>
+<tr class="memdesc:a92f6f979d43fe72d965e17b86dd82e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets a sample from the selected index.  <a href="#a92f6f979d43fe72d965e17b86dd82e79">More...</a><br /></td></tr>
+<tr class="separator:a92f6f979d43fe72d965e17b86dd82e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_signal.html">AudioSignal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">getSample</a> (int start, int end)</td></tr>
 <tr class="memdesc:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets samples from a specific range.  <a href="#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">More...</a><br /></td></tr>
 <tr class="separator:adfa4565e6ff0d8dc6bcbf87dbf6d01d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +159,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a44e595328705720f380613f1675dbdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc2dc31d0dc3ca222df68a88c00cf2c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9">fs</a></td></tr>
 <tr class="separator:acc2dc31d0dc3ca222df68a88c00cf2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a5d68faf1ab7f19197b93cc2cc0a7e645"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_signal.html#a5d68faf1ab7f19197b93cc2cc0a7e645">maxsamples</a> = 0xFFFFFF</td></tr>
+<tr class="separator:a5d68faf1ab7f19197b93cc2cc0a7e645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -236,9 +242,6 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AudioSignal::~AudioSignal </td>
@@ -247,11 +250,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_audio_signal.html" title="TODO AudioSignal.cpp description. ">AudioSignal</a> destructor. </p>
@@ -414,35 +412,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a92006cf482c9c576ec5597e0433174fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92006cf482c9c576ec5597e0433174fc">&#9670;&nbsp;</a></span>getSample() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AudioSignal::getSample </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets a sample from the selected index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>sample </dd></dl>
-
-</div>
-</div>
 <a id="adfa4565e6ff0d8dc6bcbf87dbf6d01d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">&#9670;&nbsp;</a></span>getSample() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa4565e6ff0d8dc6bcbf87dbf6d01d1">&#9670;&nbsp;</a></span>getSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,6 +564,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a92f6f979d43fe72d965e17b86dd82e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f6f979d43fe72d965e17b86dd82e79">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AudioSignal::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets a sample from the selected index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>sample </dd></dl>
+
+</div>
+</div>
 <a id="aeef099025639235c7f062294470a691f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeef099025639235c7f062294470a691f">&#9670;&nbsp;</a></span>setSample()</h2>
 
@@ -669,6 +667,29 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>signal sampling frequency [Hz] </p>
+
+</div>
+</div>
+<a id="a5d68faf1ab7f19197b93cc2cc0a7e645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d68faf1ab7f19197b93cc2cc0a7e645">&#9670;&nbsp;</a></span>maxsamples</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int AudioSignal::maxsamples = 0xFFFFFF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>maximum number of samples </p>
 
 </div>
 </div>

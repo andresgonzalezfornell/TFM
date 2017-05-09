@@ -96,24 +96,21 @@ $(document).ready(function(){initNavTree('class_effect_base.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a71127b4db6f016533afdcc63d425d895"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect_base.html#a71127b4db6f016533afdcc63d425d895">EffectBase</a> (std::string param)</td></tr>
-<tr class="memdesc:a71127b4db6f016533afdcc63d425d895"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effect_base.html" title="Effect base class. ">EffectBase</a> constructor.  <a href="#a71127b4db6f016533afdcc63d425d895">More...</a><br /></td></tr>
-<tr class="separator:a71127b4db6f016533afdcc63d425d895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea6acfaa877b56536e30a4b8b6f30fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect_base.html#a8ea6acfaa877b56536e30a4b8b6f30fc">getParam</a> (std::string name)</td></tr>
-<tr class="memdesc:a8ea6acfaa877b56536e30a4b8b6f30fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets a parameter from the parameters effect string.  <a href="#a8ea6acfaa877b56536e30a4b8b6f30fc">More...</a><br /></td></tr>
-<tr class="separator:a8ea6acfaa877b56536e30a4b8b6f30fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb96f5a4d369bc5c72db97fd95a547d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect_base.html#a7bb96f5a4d369bc5c72db97fd95a547d">EffectBase</a> (std::map&lt; std::string, std::string &gt; param)</td></tr>
+<tr class="memdesc:a7bb96f5a4d369bc5c72db97fd95a547d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effect_base.html" title="Effect base class. ">EffectBase</a> constructor.  <a href="#a7bb96f5a4d369bc5c72db97fd95a547d">More...</a><br /></td></tr>
+<tr class="separator:a7bb96f5a4d369bc5c72db97fd95a547d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a10e5f1c8be40ea0e1aef1ecc2a2cf518"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect_base.html#a10e5f1c8be40ea0e1aef1ecc2a2cf518">params</a></td></tr>
-<tr class="separator:a10e5f1c8be40ea0e1aef1ecc2a2cf518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb0ac88ffa2ed94f000dd0d40620a3f"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect_base.html#abeb0ac88ffa2ed94f000dd0d40620a3f">params</a></td></tr>
+<tr class="separator:abeb0ac88ffa2ed94f000dd0d40620a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_effect.html" title="Effect class. It contains (by inheritance) all effects classes. ">Effect</a> base class. </p>
 <dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a71127b4db6f016533afdcc63d425d895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71127b4db6f016533afdcc63d425d895">&#9670;&nbsp;</a></span>EffectBase()</h2>
+<a id="a7bb96f5a4d369bc5c72db97fd95a547d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb96f5a4d369bc5c72db97fd95a547d">&#9670;&nbsp;</a></span>EffectBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,7 +118,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">EffectBase::EffectBase </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, std::string &gt;&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>
@@ -138,37 +135,9 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8ea6acfaa877b56536e30a4b8b6f30fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ea6acfaa877b56536e30a4b8b6f30fc">&#9670;&nbsp;</a></span>getParam()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double EffectBase::getParam </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets a parameter from the parameters effect string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>parameter name </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>parameter value </dd></dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a10e5f1c8be40ea0e1aef1ecc2a2cf518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e5f1c8be40ea0e1aef1ecc2a2cf518">&#9670;&nbsp;</a></span>params</h2>
+<a id="abeb0ac88ffa2ed94f000dd0d40620a3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb0ac88ffa2ed94f000dd0d40620a3f">&#9670;&nbsp;</a></span>params</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +146,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string EffectBase::params</td>
+          <td class="memname">std::map&lt;std::string, std::string&gt; EffectBase::params</td>
         </tr>
       </table>
   </td>

@@ -46,18 +46,23 @@
  * @author	Andrés González Fornell
  * @brief	Effect class. It contains (by inheritance) all effects classes.
  */
-class Effect : INHERITANCE {
+class Effect: INHERITANCE {
 public:
-    #define EFFECT(ID,NAME) ID,
-    enum effectID {LIST};                           /**< available effects enumeration */
-    effectID effect;                                /**< selected effect id */
-    std::map<std::string, std::string> params;      /**< string of effect parameters */
+#define EFFECT(ID,NAME) ID,
+    enum effectID {
+        LIST
+    }; /**< available effects enumeration */
+    effectID effect; /**< selected effect id */
+    std::map<std::string, std::string> params; /**< string of effect parameters */
     Effect(Effect::effectID effect, std::map<std::string, std::string> params);
     ~Effect();
     bool apply(float *input, float *output, int samples);
-    static std::map<std::string,Effect::effectID> getEffects();
+    static std::map<std::string, Effect::effectID> getEffects();
     static effectID getEffect(std::string effectname);
-    static std::string readInfo(std::string info, std::string tag);
+    static std::map<std::string, std::string> getParams(std::string configuration);
+    static std::vector<bool> getChannels(std::string configuration, int size);
+    static std::vector<double> getLevels(std::string configuration, int size);
+    static std::string readTag(std::string configuration, std::string tag);
 };
 
 #endif // EFFECT_H

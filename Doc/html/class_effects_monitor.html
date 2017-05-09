@@ -81,7 +81,6 @@ $(document).ready(function(){initNavTree('class_effects_monitor.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -107,34 +106,53 @@ Inheritance diagram for EffectsMonitor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a68f69fe7f0708d6326ca4c6ed69ebded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a68f69fe7f0708d6326ca4c6ed69ebded">updateParameters</a> ()</td></tr>
-<tr class="separator:a68f69fe7f0708d6326ca4c6ed69ebded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Parameters slots</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>User interface functions for effect parameters control. </p>
+</div></td></tr>
+<tr class="memitem:ae2cc992b9bb457da2a0cdab854a414ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#ae2cc992b9bb457da2a0cdab854a414ea">updateParameter</a> (int value)</td></tr>
+<tr class="memdesc:ae2cc992b9bb457da2a0cdab854a414ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for updating parameters parameters of type int when one of them is changed.  <a href="#ae2cc992b9bb457da2a0cdab854a414ea">More...</a><br /></td></tr>
+<tr class="separator:ae2cc992b9bb457da2a0cdab854a414ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32c90185185305770ad5ab911641e17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aa32c90185185305770ad5ab911641e17">updateParameter</a> (double value)</td></tr>
+<tr class="memdesc:aa32c90185185305770ad5ab911641e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for updating parameters parameters of type double when one of them is changed.  <a href="#aa32c90185185305770ad5ab911641e17">More...</a><br /></td></tr>
+<tr class="separator:aa32c90185185305770ad5ab911641e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2be23fba9628432cacdfc83cc75e9f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#ab2be23fba9628432cacdfc83cc75e9f4">updateParameter</a> (QString value)</td></tr>
+<tr class="memdesc:ab2be23fba9628432cacdfc83cc75e9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for updating parameters of type string when one of them is changed.  <a href="#ab2be23fba9628432cacdfc83cc75e9f4">More...</a><br /></td></tr>
+<tr class="separator:ab2be23fba9628432cacdfc83cc75e9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3488d6ae49a81de79fe6913a7bebcafe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a3488d6ae49a81de79fe6913a7bebcafe">updateParameter</a> (bool value)</td></tr>
+<tr class="memdesc:a3488d6ae49a81de79fe6913a7bebcafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for updating parameters parameters of type bool and enum when one of them is changed.  <a href="#a3488d6ae49a81de79fe6913a7bebcafe">More...</a><br /></td></tr>
+<tr class="separator:a3488d6ae49a81de79fe6913a7bebcafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a484d2e47c270b1a9f608dd7c2c7e3994"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a484d2e47c270b1a9f608dd7c2c7e3994">EffectsMonitor</a> (QWidget *<a class="el" href="class_effects_monitor.html#a2a95d542a26e21f0bbcfd4b7b6f85144">framework</a>)</td></tr>
 <tr class="memdesc:a484d2e47c270b1a9f608dd7c2c7e3994"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effects_monitor.html" title="Class for managing effects parameters. ">EffectsMonitor</a> constructor.  <a href="#a484d2e47c270b1a9f608dd7c2c7e3994">More...</a><br /></td></tr>
 <tr class="separator:a484d2e47c270b1a9f608dd7c2c7e3994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68a0448d301dd773669a28125ee8222"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aa68a0448d301dd773669a28125ee8222">EffectsMonitor</a> (QWidget *<a class="el" href="class_effects_monitor.html#a2a95d542a26e21f0bbcfd4b7b6f85144">framework</a>, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> <a class="el" href="class_effects_monitor.html#a9775a59c03e1d402b81b176041ff198d">effect</a>)</td></tr>
-<tr class="memdesc:aa68a0448d301dd773669a28125ee8222"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effects_monitor.html" title="Class for managing effects parameters. ">EffectsMonitor</a> constructor.  <a href="#aa68a0448d301dd773669a28125ee8222">More...</a><br /></td></tr>
-<tr class="separator:aa68a0448d301dd773669a28125ee8222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b17fcfdbfa19be2075ac87db414d87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a38b17fcfdbfa19be2075ac87db414d87">EffectsMonitor</a> (QWidget *<a class="el" href="class_effects_monitor.html#a2a95d542a26e21f0bbcfd4b7b6f85144">framework</a>, std::string <a class="el" href="class_effects_monitor.html#a8a4c7b2f10bf066fb7a43f39f79ef88d">effect</a>)</td></tr>
+<tr class="memdesc:a38b17fcfdbfa19be2075ac87db414d87"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effects_monitor.html" title="Class for managing effects parameters. ">EffectsMonitor</a> constructor.  <a href="#a38b17fcfdbfa19be2075ac87db414d87">More...</a><br /></td></tr>
+<tr class="separator:a38b17fcfdbfa19be2075ac87db414d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb3a098669694d424d02c3ed8294d923"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aeb3a098669694d424d02c3ed8294d923">~EffectsMonitor</a> ()</td></tr>
 <tr class="memdesc:aeb3a098669694d424d02c3ed8294d923"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_effects_monitor.html" title="Class for managing effects parameters. ">EffectsMonitor</a> destructor.  <a href="#aeb3a098669694d424d02c3ed8294d923">More...</a><br /></td></tr>
 <tr class="separator:aeb3a098669694d424d02c3ed8294d923"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2b3efd8eee12f0de1ff5d9cae48738e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aa2b3efd8eee12f0de1ff5d9cae48738e">setEffect</a> (<a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> <a class="el" href="class_effects_monitor.html#a9775a59c03e1d402b81b176041ff198d">effect</a>)</td></tr>
-<tr class="memdesc:aa2b3efd8eee12f0de1ff5d9cae48738e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It selects an effect.  <a href="#aa2b3efd8eee12f0de1ff5d9cae48738e">More...</a><br /></td></tr>
-<tr class="separator:aa2b3efd8eee12f0de1ff5d9cae48738e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58eb66f567f9db858d98c1b49d599e25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a58eb66f567f9db858d98c1b49d599e25">setEffect</a> (std::string <a class="el" href="class_effects_monitor.html#a8a4c7b2f10bf066fb7a43f39f79ef88d">effect</a>)</td></tr>
+<tr class="memdesc:a58eb66f567f9db858d98c1b49d599e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">It selects an effect.  <a href="#a58eb66f567f9db858d98c1b49d599e25">More...</a><br /></td></tr>
+<tr class="separator:a58eb66f567f9db858d98c1b49d599e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ad01ab2de7ca57a57e5fb71c2f85d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#ad6ad01ab2de7ca57a57e5fb71c2f85d9">clear</a> ()</td></tr>
+<tr class="memdesc:ad6ad01ab2de7ca57a57e5fb71c2f85d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It clears the user interface framework.  <a href="#ad6ad01ab2de7ca57a57e5fb71c2f85d9">More...</a><br /></td></tr>
+<tr class="separator:ad6ad01ab2de7ca57a57e5fb71c2f85d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ff58c6076dd68e03aea26896b69d78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a96ff58c6076dd68e03aea26896b69d78">setParameter</a> (std::string key, std::string value)</td></tr>
+<tr class="memdesc:a96ff58c6076dd68e03aea26896b69d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a parameter from the parameter user interface object.  <a href="#a96ff58c6076dd68e03aea26896b69d78">More...</a><br /></td></tr>
+<tr class="separator:a96ff58c6076dd68e03aea26896b69d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a9775a59c03e1d402b81b176041ff198d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a9775a59c03e1d402b81b176041ff198d">effect</a></td></tr>
-<tr class="separator:a9775a59c03e1d402b81b176041ff198d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e2ccbf45cc7edbe4247487a1785b86"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a16e2ccbf45cc7edbe4247487a1785b86">effectname</a></td></tr>
-<tr class="separator:a16e2ccbf45cc7edbe4247487a1785b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ff202aae8be5ba0e272887fe7c2341"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a98ff202aae8be5ba0e272887fe7c2341">effects</a></td></tr>
-<tr class="separator:a98ff202aae8be5ba0e272887fe7c2341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c1863956b66ee4958b31a855f3e4c0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a12c1863956b66ee4958b31a855f3e4c0">files</a></td></tr>
-<tr class="separator:a12c1863956b66ee4958b31a855f3e4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4c7b2f10bf066fb7a43f39f79ef88d"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a8a4c7b2f10bf066fb7a43f39f79ef88d">effect</a></td></tr>
+<tr class="separator:a8a4c7b2f10bf066fb7a43f39f79ef88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69186e4749d1a5a806c2f7870b258b41"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a69186e4749d1a5a806c2f7870b258b41">effects</a></td></tr>
+<tr class="separator:a69186e4749d1a5a806c2f7870b258b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb813ecffb6993fb92881c7c1f1db586"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aeb813ecffb6993fb92881c7c1f1db586">files</a></td></tr>
+<tr class="separator:aeb813ecffb6993fb92881c7c1f1db586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2cb43d0ee0c182eca7309c561071ba"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#aae2cb43d0ee0c182eca7309c561071ba">parameters</a></td></tr>
+<tr class="separator:aae2cb43d0ee0c182eca7309c561071ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -157,10 +175,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2a95d542a26e21f0bbcfd4b7b6f85144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a267bd44e97f74c2b60993fc52b3c6ed1"><td class="memItemLeft" align="right" valign="top">QFormLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a267bd44e97f74c2b60993fc52b3c6ed1">layout</a></td></tr>
 <tr class="separator:a267bd44e97f74c2b60993fc52b3c6ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6136c72c400d193ef36c2101b0e1a19"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#ad6136c72c400d193ef36c2101b0e1a19">prefix</a> = &quot;effect_&quot;</td></tr>
-<tr class="separator:ad6136c72c400d193ef36c2101b0e1a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11dece06091fc81a76474e12abda62cc"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effects_monitor.html#a11dece06091fc81a76474e12abda62cc">folder</a> = &quot;:/imports/<a class="el" href="class_effects_monitor.html#a98ff202aae8be5ba0e272887fe7c2341">effects</a>/&quot;</td></tr>
-<tr class="separator:a11dece06091fc81a76474e12abda62cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for managing effects parameters. </p>
@@ -192,8 +206,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa68a0448d301dd773669a28125ee8222"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa68a0448d301dd773669a28125ee8222">&#9670;&nbsp;</a></span>EffectsMonitor() <span class="overload">[2/2]</span></h2>
+<a id="a38b17fcfdbfa19be2075ac87db414d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b17fcfdbfa19be2075ac87db414d87">&#9670;&nbsp;</a></span>EffectsMonitor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +221,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>effect</em>&#160;</td>
         </tr>
         <tr>
@@ -249,6 +263,25 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad6ad01ab2de7ca57a57e5fb71c2f85d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ad01ab2de7ca57a57e5fb71c2f85d9">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EffectsMonitor::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It clears the user interface framework. </p>
+
+</div>
+</div>
 <a id="af8d00220f20116b5ccb18110612dba03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8d00220f20116b5ccb18110612dba03">&#9670;&nbsp;</a></span>getAttribute()</h2>
 
@@ -383,8 +416,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2b3efd8eee12f0de1ff5d9cae48738e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2b3efd8eee12f0de1ff5d9cae48738e">&#9670;&nbsp;</a></span>setEffect()</h2>
+<a id="a58eb66f567f9db858d98c1b49d599e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58eb66f567f9db858d98c1b49d599e25">&#9670;&nbsp;</a></span>setEffect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +425,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void EffectsMonitor::setEffect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>effect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -409,8 +442,45 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a68f69fe7f0708d6326ca4c6ed69ebded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68f69fe7f0708d6326ca4c6ed69ebded">&#9670;&nbsp;</a></span>updateParameters</h2>
+<a id="a96ff58c6076dd68e03aea26896b69d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ff58c6076dd68e03aea26896b69d78">&#9670;&nbsp;</a></span>setParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EffectsMonitor::setParameter </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>parameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It sets a parameter from the parameter user interface object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameter</td><td>parameter name </td></tr>
+    <tr><td class="paramname">value</td><td>new parameter value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae2cc992b9bb457da2a0cdab854a414ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cc992b9bb457da2a0cdab854a414ea">&#9670;&nbsp;</a></span>updateParameter <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,9 +489,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void EffectsMonitor::updateParameters </td>
+          <td class="memname">void EffectsMonitor::updateParameter </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -432,71 +503,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9775a59c03e1d402b81b176041ff198d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9775a59c03e1d402b81b176041ff198d">&#9670;&nbsp;</a></span>effect</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> EffectsMonitor::effect</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>current selected effect </p>
+<p>Slot for updating parameters parameters of type int when one of them is changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>changed value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a16e2ccbf45cc7edbe4247487a1785b86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16e2ccbf45cc7edbe4247487a1785b86">&#9670;&nbsp;</a></span>effectname</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string EffectsMonitor::effectname</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>name of the current selected effect </p>
-
-</div>
-</div>
-<a id="a98ff202aae8be5ba0e272887fe7c2341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98ff202aae8be5ba0e272887fe7c2341">&#9670;&nbsp;</a></span>effects</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; EffectsMonitor::effects</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>list of all available effects </p>
-
-</div>
-</div>
-<a id="a12c1863956b66ee4958b31a855f3e4c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c1863956b66ee4958b31a855f3e4c0">&#9670;&nbsp;</a></span>files</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; EffectsMonitor::files</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>list of all available effects template files </p>
-
-</div>
-</div>
-<a id="a11dece06091fc81a76474e12abda62cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11dece06091fc81a76474e12abda62cc">&#9670;&nbsp;</a></span>folder</h2>
+<a id="aa32c90185185305770ad5ab911641e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32c90185185305770ad5ab911641e17">&#9670;&nbsp;</a></span>updateParameter <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,16 +523,141 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string EffectsMonitor::folder = &quot;:/imports/<a class="el" href="class_effects_monitor.html#a98ff202aae8be5ba0e272887fe7c2341">effects</a>/&quot;</td>
+          <td class="memname">void EffectsMonitor::updateParameter </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>folder path to effects template files </p>
+
+<p>Slot for updating parameters parameters of type double when one of them is changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>changed value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2be23fba9628432cacdfc83cc75e9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2be23fba9628432cacdfc83cc75e9f4">&#9670;&nbsp;</a></span>updateParameter <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EffectsMonitor::updateParameter </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for updating parameters of type string when one of them is changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>changed value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3488d6ae49a81de79fe6913a7bebcafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3488d6ae49a81de79fe6913a7bebcafe">&#9670;&nbsp;</a></span>updateParameter <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EffectsMonitor::updateParameter </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for updating parameters parameters of type bool and enum when one of them is changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>changed value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8a4c7b2f10bf066fb7a43f39f79ef88d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4c7b2f10bf066fb7a43f39f79ef88d">&#9670;&nbsp;</a></span>effect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&gt; EffectsMonitor::effect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>current selected effect </p>
+
+</div>
+</div>
+<a id="a69186e4749d1a5a806c2f7870b258b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69186e4749d1a5a806c2f7870b258b41">&#9670;&nbsp;</a></span>effects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&gt; EffectsMonitor::effects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>list of all available effects </p>
+
+</div>
+</div>
+<a id="aeb813ecffb6993fb92881c7c1f1db586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb813ecffb6993fb92881c7c1f1db586">&#9670;&nbsp;</a></span>files</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::string&gt; EffectsMonitor::files</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>list of all available effects template files </p>
 
 </div>
 </div>
@@ -564,25 +707,18 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad6136c72c400d193ef36c2101b0e1a19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6136c72c400d193ef36c2101b0e1a19">&#9670;&nbsp;</a></span>prefix</h2>
+<a id="aae2cb43d0ee0c182eca7309c561071ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2cb43d0ee0c182eca7309c561071ba">&#9670;&nbsp;</a></span>parameters</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string EffectsMonitor::prefix = &quot;effect_&quot;</td>
+          <td class="memname">std::map&lt;std::string, std::string&gt; EffectsMonitor::parameters</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<p>list of the current effect parameters and their values </p>
 
 </div>
 </div>

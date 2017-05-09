@@ -16,8 +16,9 @@
  */
 class AudioSignal {
 public:
-    int size;                       /**< number of samples */
-    int fs;                         /**< signal sampling frequency [Hz] */
+    int size; /**< number of samples */
+    int fs; /**< signal sampling frequency [Hz] */
+    static const unsigned int maxsamples = 0xFFFFFF; /**< maximum number of samples */
     AudioSignal(int fs);
     AudioSignal(std::vector<float> signal, int fs);
     ~AudioSignal();
@@ -37,7 +38,7 @@ public:
     std::vector<float> getFrequencies(int bands);
     void clear();
 private:
-    std::vector<float> signal;      /**< signal data vector */
+    std::vector<float> signal; /**< signal data vector */
 };
 
 #endif /* SRC_MODULE_AUDIOSIGNAL_H_ */

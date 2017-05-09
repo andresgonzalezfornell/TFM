@@ -112,9 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad882d23c995a27ac064826412b5127a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#ad882d23c995a27ac064826412b5127a8">decode</a> (std::string <a class="el" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b">input</a>, std::string bitstream, std::string <a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">output</a>, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)</td></tr>
 <tr class="memdesc:ad882d23c995a27ac064826412b5127a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the SAC encoder.  <a href="#ad882d23c995a27ac064826412b5127a8">More...</a><br /></td></tr>
 <tr class="separator:ad882d23c995a27ac064826412b5127a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7385f511e6162eaaab77a7b680f6c5fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a7385f511e6162eaaab77a7b680f6c5fb">applyEffect</a> (std::vector&lt; bool &gt; <a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">channels</a>, <a class="el" href="class_effect.html">Effect</a> effect)</td></tr>
-<tr class="memdesc:a7385f511e6162eaaab77a7b680f6c5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applys the selected effect to the input stream.  <a href="#a7385f511e6162eaaab77a7b680f6c5fb">More...</a><br /></td></tr>
-<tr class="separator:a7385f511e6162eaaab77a7b680f6c5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a33d989ffa2120361d2501d0ab997d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a17a33d989ffa2120361d2501d0ab997d">applyEffect</a> (<a class="el" href="class_effect.html">Effect</a> effect, std::vector&lt; bool &gt; <a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">channels</a>, std::vector&lt; double &gt; levels)</td></tr>
+<tr class="memdesc:a17a33d989ffa2120361d2501d0ab997d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applys the selected effect to the input stream.  <a href="#a17a33d989ffa2120361d2501d0ab997d">More...</a><br /></td></tr>
+<tr class="separator:a17a33d989ffa2120361d2501d0ab997d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a9c807d64f58ca890b9b4acde3f1c1bb2">clear</a> ()</td></tr>
 <tr class="memdesc:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It clears all variables and resets the process.  <a href="#a9c807d64f58ca890b9b4acde3f1c1bb2">More...</a><br /></td></tr>
 <tr class="separator:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,12 +125,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aafb2937f6a2f261b1581917ba872ba9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a135c866f06b0042c2835cd9ecefa05f3"><td class="memItemLeft" align="right" valign="top">float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">output</a></td></tr>
 <tr class="separator:a135c866f06b0042c2835cd9ecefa05f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9c5dea3ac0ed72df1f6f780c62010a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a">samples</a></td></tr>
-<tr class="separator:aac9c5dea3ac0ed72df1f6f780c62010a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a325109138cabf342e5beacf7af67480b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">channels</a></td></tr>
 <tr class="separator:a325109138cabf342e5beacf7af67480b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43743a818b95cd4232e0fc8678a75bd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a43743a818b95cd4232e0fc8678a75bd7">realtime</a></td></tr>
-<tr class="separator:a43743a818b95cd4232e0fc8678a75bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9c5dea3ac0ed72df1f6f780c62010a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a">samples</a></td></tr>
+<tr class="separator:aac9c5dea3ac0ed72df1f6f780c62010a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337af1b32b2f6bf94ed98ef98e6d1226"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a337af1b32b2f6bf94ed98ef98e6d1226">cursor</a></td></tr>
+<tr class="separator:a337af1b32b2f6bf94ed98ef98e6d1226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf97b9835a8dfb0d55e37069663cda9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#abcf97b9835a8dfb0d55e37069663cda9">total</a></td></tr>
+<tr class="separator:abcf97b9835a8dfb0d55e37069663cda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -204,8 +206,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7385f511e6162eaaab77a7b680f6c5fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7385f511e6162eaaab77a7b680f6c5fb">&#9670;&nbsp;</a></span>applyEffect()</h2>
+<a id="a17a33d989ffa2120361d2501d0ab997d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a33d989ffa2120361d2501d0ab997d">&#9670;&nbsp;</a></span>applyEffect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,14 +215,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool ProcessManager::applyEffect </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_effect.html">Effect</a>&#160;</td>
+          <td class="paramname"><em>effect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; bool &gt;&#160;</td>
           <td class="paramname"><em>channels</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_effect.html">Effect</a>&#160;</td>
-          <td class="paramname"><em>effect</em>&#160;</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>levels</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -233,8 +241,9 @@ Private Attributes</h2></td></tr>
 <p>It applys the selected effect to the input stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">channels</td><td>boolean vector where true means to apply effect to that channel </td></tr>
     <tr><td class="paramname">effect</td><td>effect object (it includes all parameters) </td></tr>
+    <tr><td class="paramname">channels</td><td>boolean vector where true means to apply effect to that channel </td></tr>
+    <tr><td class="paramname">levels</td><td>vector of input levels (&gt;=0) for each channel </td></tr>
   </table>
   </dd>
 </dl>
@@ -425,6 +434,21 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a337af1b32b2f6bf94ed98ef98e6d1226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337af1b32b2f6bf94ed98ef98e6d1226">&#9670;&nbsp;</a></span>cursor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProcessManager::cursor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pointer to current sample index when executing real time process </p>
+
+</div>
+</div>
 <a id="ae7ce9ead957c4f78d74206baf1837a59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7ce9ead957c4f78d74206baf1837a59">&#9670;&nbsp;</a></span>fs</h2>
 
@@ -524,21 +548,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a43743a818b95cd4232e0fc8678a75bd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43743a818b95cd4232e0fc8678a75bd7">&#9670;&nbsp;</a></span>realtime</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ProcessManager::realtime</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>pointer to current sample index when executing real time process </p>
-
-</div>
-</div>
 <a id="aac9c5dea3ac0ed72df1f6f780c62010a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac9c5dea3ac0ed72df1f6f780c62010a">&#9670;&nbsp;</a></span>samples</h2>
 
@@ -551,6 +560,21 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>number of samples in each channel </p>
+
+</div>
+</div>
+<a id="abcf97b9835a8dfb0d55e37069663cda9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf97b9835a8dfb0d55e37069663cda9">&#9670;&nbsp;</a></span>total</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProcessManager::total</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>number of available output samples </p>
 
 </div>
 </div>

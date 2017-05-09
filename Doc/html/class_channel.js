@@ -11,8 +11,6 @@ var class_channel =
     [ "audiooutput", "class_channel.html#a7c8a0b25848ab487c39a803785f7ed21", null ],
     [ "bypasscheckbox", "class_channel.html#a285eab1752d5e9407e1bc1e75353df34", null ],
     [ "bypassed", "class_channel.html#a94507945240717f2570e3baadd02d08a", null ],
-    [ "chart", "class_channel.html#afa593c5dffbc7f004f7663dbac1d967e", null ],
-    [ "chartwidget", "class_channel.html#ac3bb602c135ac7bc2e9f7bcdd61a238b", null ],
     [ "deviceselector", "class_channel.html#a9dcb50dc41866fbe60424553f1b910fa", null ],
     [ "groupbox", "class_channel.html#a99287738754d9e20c0ca639d6d26f28c", null ],
     [ "index", "class_channel.html#a992b8f195f395a64b4e966886bb41f00", null ],
@@ -22,8 +20,7 @@ var class_channel =
     [ "muted", "class_channel.html#ada7e3a050c346ad283ad302745f03f3c", null ],
     [ "name", "class_channel.html#ae080e1afd52f3b70e04c62fea46447aa", null ],
     [ "prefix", "class_channel.html#ac13acc069e61428aca057f9c84bc7338", null ],
-    [ "stream", "class_channel.html#abfcc652298dc56e4d0f4304d3dd0accf", null ],
-    [ "volume", "class_channel.html#a01aa0f6ab113bcc8a11125bb735fd399", null ],
+    [ "volume", "class_channel.html#aa8977e4605932b2201b03ebf3aa14ffd", null ],
     [ "volumeslider", "class_channel.html#acbcbfb33558a69224daa176372eb8be3", null ],
     [ "volumeter", "class_channel.html#ae159a51df34e4f6a3ca23975ca2462c4", null ],
     [ "volumeterwidget", "class_channel.html#a81103158aadd1e93977a0d8cd744e7bc", null ]

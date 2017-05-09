@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('class_audio_test.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_audio_test-members.html">List of all members</a>  </div>
@@ -114,6 +115,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
+<tr class="memitem:add3394b989f124cd9a7152464d3ba90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#add3394b989f124cd9a7152464d3ba90c">play</a> ()</td></tr>
+<tr class="memdesc:add3394b989f124cd9a7152464d3ba90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It plays audio test.  <a href="#add3394b989f124cd9a7152464d3ba90c">More...</a><br /></td></tr>
+<tr class="separator:add3394b989f124cd9a7152464d3ba90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">User interface slots</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>They are called when a user interface element is being changed. </p>
 </div></td></tr>
@@ -144,9 +148,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a77654e9df697a3c23d3374162c535b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#a77654e9df697a3c23d3374162c535b29">start</a> ()</td></tr>
 <tr class="memdesc:a77654e9df697a3c23d3374162c535b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">It starts playing the test.  <a href="#a77654e9df697a3c23d3374162c535b29">More...</a><br /></td></tr>
 <tr class="separator:a77654e9df697a3c23d3374162c535b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add3394b989f124cd9a7152464d3ba90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#add3394b989f124cd9a7152464d3ba90c">play</a> ()</td></tr>
-<tr class="memdesc:add3394b989f124cd9a7152464d3ba90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It plays audio test.  <a href="#add3394b989f124cd9a7152464d3ba90c">More...</a><br /></td></tr>
-<tr class="separator:add3394b989f124cd9a7152464d3ba90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -154,6 +155,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aea101783b757891d369f4c0b45bc76b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0651b1358e3a2f699ad98c6a68312c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_output.html">AudioOutput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#ab0651b1358e3a2f699ad98c6a68312c5">audiooutput</a></td></tr>
 <tr class="separator:ab0651b1358e3a2f699ad98c6a68312c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6eaf40c86a4b34c544ad2a05137eb25"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#af6eaf40c86a4b34c544ad2a05137eb25">clock</a></td></tr>
+<tr class="separator:af6eaf40c86a4b34c544ad2a05137eb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10d6702eb1038eff31a9f33e690a376"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_test.html#ae10d6702eb1038eff31a9f33e690a376">period</a> = 1</td></tr>
+<tr class="separator:ae10d6702eb1038eff31a9f33e690a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Audio output test class. </p>
@@ -262,7 +267,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="add3394b989f124cd9a7152464d3ba90c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add3394b989f124cd9a7152464d3ba90c">&#9670;&nbsp;</a></span>play()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#add3394b989f124cd9a7152464d3ba90c">&#9670;&nbsp;</a></span>play</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +284,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -488,6 +493,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>audio output object </p>
+
+</div>
+</div>
+<a id="af6eaf40c86a4b34c544ad2a05137eb25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6eaf40c86a4b34c544ad2a05137eb25">&#9670;&nbsp;</a></span>clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* AudioTest::clock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>test clock to send test signal periodically </p>
+
+</div>
+</div>
+<a id="ae10d6702eb1038eff31a9f33e690a376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10d6702eb1038eff31a9f33e690a376">&#9670;&nbsp;</a></span>period</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double AudioTest::period = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>clock period to send new data [s] </p>
 
 </div>
 </div>

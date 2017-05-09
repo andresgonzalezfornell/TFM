@@ -7,7 +7,7 @@ var searchData=
   ['inheritance',['INHERITANCE',['../_effect_8h.html#adb682ae52063604d1f6a6b0adf393d02',1,'Effect.h']]],
   ['initialize',['initialize',['../class_audio_output.html#ab9bd7ed5d3dec7dfe35644db41fe0677',1,'AudioOutput']]],
   ['initializers',['INITIALIZERS',['../_effect_8h.html#ae5a2452559f46007aaff64cc1d14dd4e',1,'INITIALIZERS():&#160;Effect.h'],['../_effects_module_8h.html#ae5a2452559f46007aaff64cc1d14dd4e',1,'INITIALIZERS():&#160;EffectsModule.h']]],
-  ['input',['input',['../class_decoder.html#add2f357299ef80b1a119071d0e797430',1,'Decoder::input()'],['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
+  ['input',['input',['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938',1,'SACEffects::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
   ['inputfile',['inputfile',['../class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40',1,'ProcessManager']]],
   ['interaction',['interaction',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c',1,'LogType']]],
   ['isavailable',['isAvailable',['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream::isAvailable(int time)'],['../class_audio_stream.html#ad0fea4f8aedcda463e508ae648576790',1,'AudioStream::isAvailable(int index)']]],

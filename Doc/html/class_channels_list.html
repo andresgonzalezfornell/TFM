@@ -81,6 +81,7 @@ $(document).ready(function(){initNavTree('class_channels_list.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -104,6 +105,11 @@ Inheritance diagram for ChannelsList:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:adc48f2ede02ed26d2e8786f22f39424d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#adc48f2ede02ed26d2e8786f22f39424d">namechanged</a> ()</td></tr>
+<tr class="separator:adc48f2ede02ed26d2e8786f22f39424d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2be2b5b850d9841fc90208afc7c6f112"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a2be2b5b850d9841fc90208afc7c6f112">ChannelsList</a> (QWidget *<a class="el" href="class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5">framework</a>, int number, bool <a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">showdevices</a>)</td></tr>
@@ -118,9 +124,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72dfd281e40fd29624354254ad3fa791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a72dfd281e40fd29624354254ad3fa791">deleteChannel</a> (int index)</td></tr>
 <tr class="memdesc:a72dfd281e40fd29624354254ad3fa791"><td class="mdescLeft">&#160;</td><td class="mdescRight">It deletes a channel.  <a href="#a72dfd281e40fd29624354254ad3fa791">More...</a><br /></td></tr>
 <tr class="separator:a72dfd281e40fd29624354254ad3fa791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af23a40423f2d11ab251c5d792f85aed2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#af23a40423f2d11ab251c5d792f85aed2">setChannelsNumber</a> (int number)</td></tr>
-<tr class="memdesc:af23a40423f2d11ab251c5d792f85aed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a number of channels up.  <a href="#af23a40423f2d11ab251c5d792f85aed2">More...</a><br /></td></tr>
-<tr class="separator:af23a40423f2d11ab251c5d792f85aed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaeb08c6bf8aa1a48b5cc52c56505408"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#aeaeb08c6bf8aa1a48b5cc52c56505408">getSize</a> ()</td></tr>
+<tr class="memdesc:aeaeb08c6bf8aa1a48b5cc52c56505408"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the number of channels.  <a href="#aeaeb08c6bf8aa1a48b5cc52c56505408">More...</a><br /></td></tr>
+<tr class="separator:aeaeb08c6bf8aa1a48b5cc52c56505408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac059e3c89763f50705ce1e2633ee3d3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ac059e3c89763f50705ce1e2633ee3d3d">setSize</a> (int size)</td></tr>
+<tr class="memdesc:ac059e3c89763f50705ce1e2633ee3d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a number of channels up.  <a href="#ac059e3c89763f50705ce1e2633ee3d3d">More...</a><br /></td></tr>
+<tr class="separator:ac059e3c89763f50705ce1e2633ee3d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17482d918a0dbbd4bf0fc2a22ee67668"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a17482d918a0dbbd4bf0fc2a22ee67668">getNames</a> ()</td></tr>
+<tr class="memdesc:a17482d918a0dbbd4bf0fc2a22ee67668"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets all channels names.  <a href="#a17482d918a0dbbd4bf0fc2a22ee67668">More...</a><br /></td></tr>
+<tr class="separator:a17482d918a0dbbd4bf0fc2a22ee67668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -152,14 +164,14 @@ Private Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a5439da5aad71e4ea868d7ead4f9da3ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a5439da5aad71e4ea868d7ead4f9da3ca">getChannelIndex</a> (QObject *element)</td></tr>
-<tr class="memdesc:a5439da5aad71e4ea868d7ead4f9da3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the channel index of a user interface element.  <a href="#a5439da5aad71e4ea868d7ead4f9da3ca">More...</a><br /></td></tr>
-<tr class="separator:a5439da5aad71e4ea868d7ead4f9da3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e6b8432656134624e311f6a16da67d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a47e6b8432656134624e311f6a16da67d">getIndex</a> (QObject *element)</td></tr>
+<tr class="memdesc:a47e6b8432656134624e311f6a16da67d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the channel index of a user interface element.  <a href="#a47e6b8432656134624e311f6a16da67d">More...</a><br /></td></tr>
+<tr class="separator:a47e6b8432656134624e311f6a16da67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4d9defbfdd7e32cc82269531befc2f78"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_channel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a4d9defbfdd7e32cc82269531befc2f78">channels</a></td></tr>
-<tr class="separator:a4d9defbfdd7e32cc82269531befc2f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada1aa2e93c00e98776ca02f4ba37807"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_channel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#aada1aa2e93c00e98776ca02f4ba37807">channels</a></td></tr>
+<tr class="separator:aada1aa2e93c00e98776ca02f4ba37807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452e6090d13b327758ae0e3992ed620c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#a452e6090d13b327758ae0e3992ed620c">prefix</a></td></tr>
 <tr class="separator:a452e6090d13b327758ae0e3992ed620c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5467a8384f559129cc71c31a6c95972"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">showdevices</a></td></tr>
@@ -326,8 +338,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5439da5aad71e4ea868d7ead4f9da3ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5439da5aad71e4ea868d7ead4f9da3ca">&#9670;&nbsp;</a></span>getChannelIndex()</h2>
+<a id="a47e6b8432656134624e311f6a16da67d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e6b8432656134624e311f6a16da67d">&#9670;&nbsp;</a></span>getIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +348,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ChannelsList::getChannelIndex </td>
+          <td class="memname">int ChannelsList::getIndex </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
@@ -358,6 +370,46 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
+
+</div>
+</div>
+<a id="a17482d918a0dbbd4bf0fc2a22ee67668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17482d918a0dbbd4bf0fc2a22ee67668">&#9670;&nbsp;</a></span>getNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; ChannelsList::getNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets all channels names. </p>
+<dl class="section return"><dt>Returns</dt><dd>list of channels names </dd></dl>
+
+</div>
+</div>
+<a id="aeaeb08c6bf8aa1a48b5cc52c56505408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaeb08c6bf8aa1a48b5cc52c56505408">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ChannelsList::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It gets the number of channels. </p>
+<dl class="section return"><dt>Returns</dt><dd>number of channels </dd></dl>
 
 </div>
 </div>
@@ -395,29 +447,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af23a40423f2d11ab251c5d792f85aed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af23a40423f2d11ab251c5d792f85aed2">&#9670;&nbsp;</a></span>setChannelsNumber()</h2>
+<a id="adc48f2ede02ed26d2e8786f22f39424d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc48f2ede02ed26d2e8786f22f39424d">&#9670;&nbsp;</a></span>namechanged</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ChannelsList::setChannelsNumber </td>
+          <td class="memname">void ChannelsList::namechanged </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>number</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>It sets a number of channels up. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">number</td><td>number of channels </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -489,6 +540,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac059e3c89763f50705ce1e2633ee3d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac059e3c89763f50705ce1e2633ee3d3d">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChannelsList::setSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It sets a number of channels up. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>number of channels </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adbc31fe3486c8a6aa3302a1c226ca60a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbc31fe3486c8a6aa3302a1c226ca60a">&#9670;&nbsp;</a></span>setVolume</h2>
 
@@ -524,8 +601,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4d9defbfdd7e32cc82269531befc2f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d9defbfdd7e32cc82269531befc2f78">&#9670;&nbsp;</a></span>channels</h2>
+<a id="aada1aa2e93c00e98776ca02f4ba37807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aada1aa2e93c00e98776ca02f4ba37807">&#9670;&nbsp;</a></span>channels</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -534,7 +611,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_channel.html">Channel</a> *&gt; ChannelsList::channels</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_channel.html">Channel</a> *&gt; ChannelsList::channels</td>
         </tr>
       </table>
   </td>
@@ -711,7 +788,7 @@ Private Attributes</h2></td></tr>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/interface/<a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a></li>
 <li>src/interface/<a class="el" href="_channels_list_8cpp.html">ChannelsList.cpp</a></li>
-<li>src/interface/<a class="el" href="_decoder_8cpp.html">Decoder.cpp</a></li>
+<li>src/interface/<a class="el" href="_s_a_c_effects_8cpp.html">SACEffects.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

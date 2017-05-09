@@ -11,7 +11,6 @@ var annotated_dup =
     [ "Channel", "class_channel.html", "class_channel" ],
     [ "ChannelsList", "class_channels_list.html", "class_channels_list" ],
     [ "Compressor", "class_compressor.html", null ],
-    [ "Decoder", "class_decoder.html", "class_decoder" ],
     [ "DecodingType", "struct_decoding_type.html", "struct_decoding_type" ],
     [ "Effect", "class_effect.html", "class_effect" ],
     [ "EffectBase", "class_effect_base.html", "class_effect_base" ],
@@ -25,6 +24,7 @@ var annotated_dup =
     [ "LogType", "struct_log_type.html", "struct_log_type" ],
     [ "OutputDevice", "class_output_device.html", "class_output_device" ],
     [ "ProcessManager", "class_process_manager.html", "class_process_manager" ],
+    [ "SACEffects", "class_s_a_c_effects.html", "class_s_a_c_effects" ],
     [ "UpmixType", "struct_upmix_type.html", "struct_upmix_type" ],
     [ "Volumeter", "class_volumeter.html", "class_volumeter" ],
     [ "WAVFile", "class_w_a_v_file.html", "class_w_a_v_file" ]

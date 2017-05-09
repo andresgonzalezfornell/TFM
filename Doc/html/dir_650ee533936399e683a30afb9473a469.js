@@ -13,7 +13,7 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "AudioStream", "class_audio_stream.html", "class_audio_stream" ],
       [ "TimeSlot", "struct_audio_stream_1_1_time_slot.html", "struct_audio_stream_1_1_time_slot" ]
     ] ],
-    [ "AudioOutput.cpp", "_audio_output_8cpp.html", "_audio_output_8cpp" ],
+    [ "AudioOutput.cpp", "_audio_output_8cpp.html", null ],
     [ "AudioOutput.h", "_audio_output_8h.html", [
       [ "OutputDevice", "class_output_device.html", "class_output_device" ],
       [ "AudioOutput", "class_audio_output.html", "class_audio_output" ],
@@ -24,15 +24,7 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "Channel", "class_channel.html", "class_channel" ],
       [ "ChannelsList", "class_channels_list.html", "class_channels_list" ]
     ] ],
-    [ "Decoder.cpp", "_decoder_8cpp.html", null ],
-    [ "Decoder.h", "_decoder_8h.html", [
-      [ "UpmixType", "struct_upmix_type.html", "struct_upmix_type" ],
-      [ "DecodingType", "struct_decoding_type.html", "struct_decoding_type" ],
-      [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
-      [ "HRTFModel", "struct_h_r_t_f_model.html", "struct_h_r_t_f_model" ],
-      [ "Decoder", "class_decoder.html", "class_decoder" ]
-    ] ],
-    [ "EffectsMonitor.cpp", "_effects_monitor_8cpp.html", null ],
+    [ "EffectsMonitor.cpp", "_effects_monitor_8cpp.html", "_effects_monitor_8cpp" ],
     [ "EffectsMonitor.h", "_effects_monitor_8h.html", [
       [ "EffectsMonitor", "class_effects_monitor.html", "class_effects_monitor" ]
     ] ],
@@ -41,6 +33,14 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "Encoder", "class_encoder.html", "class_encoder" ]
     ] ],
     [ "main.cpp", "interface_2main_8cpp.html", "interface_2main_8cpp" ],
+    [ "SACEffects.cpp", "_s_a_c_effects_8cpp.html", null ],
+    [ "SACEffects.h", "_s_a_c_effects_8h.html", [
+      [ "UpmixType", "struct_upmix_type.html", "struct_upmix_type" ],
+      [ "DecodingType", "struct_decoding_type.html", "struct_decoding_type" ],
+      [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
+      [ "HRTFModel", "struct_h_r_t_f_model.html", "struct_h_r_t_f_model" ],
+      [ "SACEffects", "class_s_a_c_effects.html", "class_s_a_c_effects" ]
+    ] ],
     [ "Volumeter.cpp", "_volumeter_8cpp.html", null ],
     [ "Volumeter.h", "_volumeter_8h.html", [
       [ "Volumeter", "class_volumeter.html", "class_volumeter" ]

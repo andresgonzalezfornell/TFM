@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.2.1, 2017-05-06T20:48:28. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-09T20:43:20. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -246,7 +246,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/andresgonzalezfornell/Documents/Workspace/TFM/commandline.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-s ~/Desktop/Test/source.wav -bs ~/Desktop/Test/bitstream.bs -ds ~/Desktop/Test/input.wav -o ~/Desktop/Test/output.wav -ut 0 -dt 0 -hm 0 -fx ~/Desktop/Test/effect.fx</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-s ~/Desktop/Tests/Levels/source.wav -bs ~/Desktop/Tests/Levels/bitstream.bs -ds ~/Desktop/Tests/Levels/input.wav -o ~/Desktop/Tests/Levels/output.wav -ut 0 -dt 0 -hm 0 -fx ~/Desktop/Tests/configuration.fx</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">commandline.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>

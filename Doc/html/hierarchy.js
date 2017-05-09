@@ -33,7 +33,7 @@ var hierarchy =
       [ "OutputDevice", "class_output_device.html", null ]
     ] ],
     [ "QMainWindow", null, [
-      [ "Decoder", "class_decoder.html", null ]
+      [ "SACEffects", "class_s_a_c_effects.html", null ]
     ] ],
     [ "QObject", null, [
       [ "AudioOutput", "class_audio_output.html", null ],

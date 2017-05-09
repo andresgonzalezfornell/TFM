@@ -21,11 +21,11 @@ public:
      * @brief   index range.
      */
     struct SignalRange {
-        int start;                  /**< start index of the audio stream */
-        int end;                    /**< end index of the audio stream */
+        int start; /**< start index of the audio stream */
+        int end; /**< end index of the audio stream */
     };
-    SignalRange range;              /**< index range of the audio stream */
-    AudioSignal signal;             /**< signal object */
+    SignalRange range; /**< index range of the audio stream */
+    AudioSignal signal; /**< signal object */
     AudioStream(int fs);
     ~AudioStream();
     int getfs();
@@ -40,7 +40,7 @@ public:
     bool isAvailable(int index);
 
 private:
-    int fs;                         /**< audio sampling frequency [Hz] */
+    int fs; /**< audio sampling frequency [Hz] */
 };
 
 #endif // AUDIOSTREAM_H
