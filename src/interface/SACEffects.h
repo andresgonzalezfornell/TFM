@@ -95,7 +95,7 @@ private:
 	AudioChart *chart_input; /**< input chart object */
 	AudioChart *chart_output; /**< output chart object */
 	EffectsMonitor *effectsmonitor; /**< effects monitor object */
-	int chunksize; /**< number of samples in a chunk */
+    int chunksize; /**< number of samples in a chunk */
 	bool muted; /**< it indicates if output playback is muted (true) or not (false) */
 	bool buried; /**< SAC decoder parameter */
 	DecodingType::decodingtype decodingtype; /**< SAC decoder parameter */
@@ -104,7 +104,7 @@ private:
 	HRTFModel::hrtfmodel hrtfmodel; /**< SAC decoder parameter */
 private slots:
 	// Input & output
-	void sendInput();
+	void plot();
 	void sendOutput();
 	void updateInputChannels();
 	void updateOutputChannels();

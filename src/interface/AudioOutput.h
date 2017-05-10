@@ -37,7 +37,7 @@ public:
 	int buffersize; /**< total size of buffer [Bytes] */
 	OutputDevice(QAudioFormat format);
 	~OutputDevice();
-	void send(AudioSignal signal);
+    void send(float *signal, int samples);
 	qint64 readData(char *data, qint64 length);
 	qint64 writeData(const char *data, qint64 length);
 	qint64 bytesAvailable() const;
