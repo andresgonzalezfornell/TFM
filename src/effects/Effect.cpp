@@ -106,13 +106,76 @@ Effect::effectID Effect::getEffect(std::string effectname) {
 }
 
 /**
+ * @brief   It get channels vector from a effect configuration file (.fx) text.
+ * @param   configuration       contained text of a effect configuration file (.fx)
+ * @param   size                number of channels
+ * @return  channels boolean vector to select channels when applying effects
+ */
+std::vector<bool> Effect::getChannels(std::string configuration, int size) {
+    std::map<std::string, std::string> map = Effect::getTagMap(configuration, "channels");
+    std::vector<bool> channels = std::vector<bool>(size, false);
+    for (int index = 0; index < (int) channels.size(); index++) {
+        std::string value = map["ch" + std::to_string(index)];
+        channels[index] = EffectBase::getBool(value);
+    }
+    return channels;
+}
+
+/**
+ * @brief   It get levels vector from a effect configuration file (.fx) text.
+ * @param   configuration       contained text of a effect configuration file (.fx)
+ * @param   size                number of channels
+ * @return  levels vector of input channels before applying effects
+ */
+std::vector<double> Effect::getLevels(std::string configuration, int size) {
+    std::map<std::string, std::string> map = Effect::getTagMap(configuration, "levels");
+    std::vector<double> levels = std::vector<double>(size, 1);
+    for (std::map<std::string, std::string>::iterator iterator = map.begin();
+        iterator != map.end(); iterator++) {
+        if (iterator->first.find("ch") != 0 || iterator->first[2] < 0x30 || iterator->first[2] > 0x39) {
+            consolelog("Effect", LogType::error, "syntax error in \"" + iterator->first + "\"");
+            return levels;
+        }
+    }
+    for (int index = 0; index < (int) levels.size(); index++) {
+        std::string value = map["ch" + std::to_string(index)];
+        levels[index] = std::atof(value.c_str());
+    }
+    return levels;
+}
+
+/**
  * @brief   It get params from a effect configuration file (.fx) text.
  * @param   configuration       contained text of a effect configuration file (.fx)
  * @return  parameters map variable valid to apply effects
  */
 std::map<std::string, std::string> Effect::getParams(std::string configuration) {
-    configuration = Effect::readTag(configuration, "params");
-    std::map<std::string, std::string> params;
+    std::map<std::string, std::string> params = Effect::getTagMap(configuration, "params");
+    return params;
+}
+
+/**
+ * @brief   It extracts the value in a tag from a effect configuration file (.fx) text.
+ * @param   configuration       contained text of a effect configuration file (.fx)
+ * @param   tag                 tag name of the requested field
+ * @return  contained value in the tag
+ */
+std::string Effect::getTag(std::string configuration, std::string tag) {
+    int start = configuration.find("<" + tag + ">") + tag.size() + 2;
+    int length = configuration.find("</" + tag + ">") - start;
+    return configuration.substr(start, length);
+    consolelog("Effect", LogType::progress, "Effect object is created");
+}
+
+/**
+ * @brief   It extracts the map of values in a map-structured tag from a effect configuration file (.fx) text.
+ * @param   configuration       contained text of a effect configuration file (.fx)
+ * @param   tag                 tag name of the requested field
+ * @return  contained map of values in the tag
+ */
+std::map<std::string, std::string> Effect::getTagMap(std::string configuration, std::string tag) {
+    configuration = Effect::getTag(configuration, tag);
+    std::map<std::string, std::string> map;
     while ((int) configuration.size() > 0) {
         std::string line = configuration.substr(0, configuration.find(";"));
         if (configuration.find(";") < configuration.size()) {
@@ -147,67 +210,12 @@ std::map<std::string, std::string> Effect::getParams(std::string configuration) 
             while (value[value.size() - 1] == ' ') {
                 value = value.substr(0, value.size() - 1);
             }
-            params.insert(std::pair<std::string, std::string>(key, value));
+            map.insert(std::pair<std::string, std::string>(key, value));
         } else if (line != "") {
             consolelog("Effect", LogType::error, "syntax error in \"" + line + "\" (\"=\" is missed)");
         }
     }
-    return params;
-}
-
-/**
- * @brief   It get channels vector from a effect configuration file (.fx) text.
- * @param   configuration       contained text of a effect configuration file (.fx)
- * @param   size                number of channels
- * @return  channels boolean vector to select channels when applying effects
- */
-std::vector<bool> Effect::getChannels(std::string configuration, int size) {
-    configuration = Effect::readTag(configuration, "params");
-    std::map<std::string, std::string> map = Effect::getParams(configuration);
-    std::vector<bool> channels = std::vector<bool>(size, false);
-    for (int index = 0; index < (int) channels.size(); index++) {
-        std::string value = map["ch" + std::to_string(index)];
-        channels[index] = EffectBase::getBool(value);
-    }
-    return channels;
-}
-
-/**
- * @brief   It get levels vector from a effect configuration file (.fx) text.
- * @param   configuration       contained text of a effect configuration file (.fx)
- * @param   size                number of channels
- * @return  levels vector of input channels before applying effects
- */
-std::vector<double> Effect::getLevels(std::string configuration, int size) {
-    configuration = Effect::readTag(configuration, "params");
-    std::map<std::string, std::string> map = Effect::getParams(configuration);
-    std::vector<double> levels = std::vector<double>(size, 1);
-    for (std::map<std::string, std::string>::iterator iterator = map.begin();
-        iterator != map.end(); iterator++) {
-        std::string key = iterator->first;
-        if (iterator->first.find("ch") != 0 || iterator->first[2] < 0x30 || iterator->first[2] > 0x39) {
-            consolelog("Effect", LogType::error, "syntax error in \"" + iterator->first + "\"");
-            return levels;
-        }
-    }
-    for (int index = 0; index < (int) levels.size(); index++) {
-        std::string value = map["ch" + std::to_string(index)];
-        levels[index] = std::atof(value.c_str());
-    }
-    return levels;
-}
-
-/**
- * @brief   It extracts the value in a tag from a effect configuration file (.fx) text.
- * @param   configuration       contained text of a effect configuration file (.fx)
- * @param   tag                 tag name of the requested field
- * @return  contained value in the tag
- */
-std::string Effect::readTag(std::string configuration, std::string tag) {
-    int start = configuration.find("<" + tag + ">") + tag.size() + 2;
-    int length = configuration.find("</" + tag + ">") - start;
-    return configuration.substr(start, length);
-    consolelog("Effect", LogType::progress, "Effect object is created");
+    return map;
 }
 
 /**

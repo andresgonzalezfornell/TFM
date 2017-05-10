@@ -98,9 +98,9 @@ bool File::exists() {
 }
 
 /**
- * @brief   It reads binary from the file.
+ * @brief   It reads data from the file.
  * @param   length              data length [Bytes]
- * @return  data
+ * @return  data pointer
  */
 char *File::read(int length) {
     if (this->exists()) {
@@ -124,11 +124,25 @@ char *File::read(int length) {
 }
 
 /**
- * @brief   It reads data from the file.
- * @param   length              data length [Bytes] (if length = 0 function returns all available data from the file)
- * @return  data
+ * @brief   It writes data on the file.
+ * @param   data                data pointer
+ * @param   length              data length [Bytes]
  */
-std::string File::readData(int length) {
+void File::write(const char *data, int length) {
+    if (this->writepermission) {
+        this->file->write(data, length);
+        this->cursor += length;
+    } else {
+        consolelog("File", LogType::error, "file has not write permission");
+    }
+}
+
+/**
+ * @brief   It reads text data from the file.
+ * @param   length              data length [Bytes] (if length = 0 function returns all available data from the file)
+ * @return  string of data
+ */
+std::string File::readText(int length) {
     if (length <= 0) {
         length = this->size() - this->cursor;
     }
@@ -145,24 +159,18 @@ std::string File::readData(int length) {
 }
 
 /**
- * @brief   It writes data on the file.
- * @param   data
+ * @brief   It writes text data on the file.
+ * @param   data                string of data
  */
-void File::writeData(std::string data) {
-    if (this->writepermission) {
-        const char *datapointer = data.c_str();
-        this->file->write(datapointer, data.size());
-        this->cursor += data.length();
-    } else {
-        consolelog("File", LogType::error, "file has not write permission");
-    }
+void File::writeText(std::string data) {
+    this->write(data.c_str(), data.length());
 }
 
 /**
  * @brief   It reads a data number from the file
  * @param   length              data length [Bytes]
  * @param   endianess           data order (big endian or little endian)
- * @return  data
+ * @return  value of data number
  */
 unsigned int File::readNumber(int length, Endianess::endianess endianess) {
     char *data = this->read(length);
@@ -184,27 +192,25 @@ unsigned int File::readNumber(int length, Endianess::endianess endianess) {
 
 /**
  * @brief   It writes a data number on the file
- * @param   value
+ * @param   value               value of data number
  * @param   length              data length [Bytes]
  * @param   endianess           data order (big endian or little endian)
  */
 void File::writeNumber(unsigned int value, int length,
                        Endianess::endianess endianess) {
-    std::string data = "";
-    char number = 0;
+    char data[length];
     for (int byte = 0; byte < length; byte++) {
         switch (endianess) {
         case Endianess::bigendian:
         default:
-            number = value >> (8 * (length - byte - 1));
+            data[byte] = value >> (8 * (length - byte - 1));
             break;
         case Endianess::littleendian:
-            number = value >> (8 * byte);
+            data[byte] = value >> (8 * byte);
             break;
         }
-        data += std::string(1, number);
     }
-    this->writeData(data);
+    this->write(data, length);
 }
 
 /**
@@ -288,11 +294,11 @@ int WAVFile::samples() {
  */
 void WAVFile::readHeader() {
     // Format header
-    this->header.chunkID = this->readData(4);
+    this->header.chunkID = this->readText(4);
     this->header.chunksize = this->readNumber(4, Endianess::littleendian);
-    this->header.format = this->readData(4);
+    this->header.format = this->readText(4);
     // Subchunk 1
-    this->header.subchunk1ID = this->readData(4);
+    this->header.subchunk1ID = this->readText(4);
     this->header.subchunk1size = this->readNumber(4, Endianess::littleendian);
     this->header.audioformat = this->readNumber(2, Endianess::littleendian);
     this->header.numchannels = this->readNumber(2, Endianess::littleendian);
@@ -302,7 +308,7 @@ void WAVFile::readHeader() {
     this->header.bitspersample = this->readNumber(2, Endianess::littleendian);
     File::setCursor(File::getCursor() + this->header.subchunk1size - 16);
     // Subchunk 2
-    this->header.subchunk2ID = this->readData(4);
+    this->header.subchunk2ID = this->readText(4);
     this->header.subchunk2size = this->readNumber(4, Endianess::littleendian);
     // Attributes
     this->duration = (double) this->header.subchunk2size
@@ -390,10 +396,10 @@ void WAVFile::readHeader() {
 void WAVFile::writeHeader() {
     int cursor = File::getCursor();
     File::setCursor(0);
-    this->writeData(this->header.chunkID);
+    this->writeText(this->header.chunkID);
     this->writeNumber(this->header.chunksize, 4, Endianess::littleendian);
-    this->writeData(this->header.format);
-    this->writeData(this->header.subchunk1ID);
+    this->writeText(this->header.format);
+    this->writeText(this->header.subchunk1ID);
     this->writeNumber(this->header.subchunk1size, 4, Endianess::littleendian);
     this->writeNumber(this->header.audioformat, 2, Endianess::littleendian);
     this->writeNumber(this->header.numchannels, 2, Endianess::littleendian);
@@ -401,7 +407,7 @@ void WAVFile::writeHeader() {
     this->writeNumber(this->header.byterate, 4, Endianess::littleendian);
     this->writeNumber(this->header.blockalign, 2, Endianess::littleendian);
     this->writeNumber(this->header.bitspersample, 2, Endianess::littleendian);
-    this->writeData(this->header.subchunk2ID);
+    this->writeText(this->header.subchunk2ID);
     this->writeNumber(this->header.subchunk2size, 4, Endianess::littleendian);
     if (cursor > this->header.size()) {
         File::setCursor(cursor);
@@ -411,42 +417,84 @@ void WAVFile::writeHeader() {
 }
 
 /**
- * @brief   It reads a sample from the audio file.
- * @return  sample value (from -1 to 1)
+ * @brief   It reads an array of samples from the audio file.
+ * @param   samples             number of samples
+ * @return  two dimensional array ([channel][sample]) of samples (from -1 to 1)
  */
-float WAVFile::readValue() {
-    int amplitude = 0x1 << (this->header.bitspersample - 1);
-    int value = this->readNumber(this->header.bitspersample / 8,
-                                 Endianess::littleendian);
-    unsigned int signmask = amplitude;
-    unsigned int valuemask = signmask - 1;
-    bool negative = (value & signmask) != 0;
-    if (negative) {
-        value = (~value) & valuemask;   // inverting bits
-        value += 1;                     // 2's complement
-        value *= -1;                    // sign
+float **WAVFile::readSamples(int samples) {
+    if (samples > 0) {
+        int bytes = this->header.bitspersample / 8;
+        int channels = this->header.numchannels;
+        float **array = (float **)std::malloc(channels * sizeof(float *));
+        for(int channel = 0; channel < channels; channel++) {
+            array[channel] = (float *)std::malloc(samples * sizeof(float));
+        }
+        unsigned int amplitude = 0x1 << (this->header.bitspersample - 1);
+        unsigned int signmask = amplitude;
+        unsigned int valuemask = signmask - 1;
+        unsigned int number = 0;
+        int value = 0;
+        char *data = this->read(bytes * channels * samples);
+        for(int sample = 0; sample < samples; sample++) {
+            for (int channel = 0; channel < channels; channel++) {
+                number = 0;
+                for (int byte = 0; byte < bytes; byte++) {
+                    number |= (unsigned char) data[byte + bytes*(channel + channels*sample)] << (8 * byte);
+                }
+                bool negative = (number & signmask) != 0;
+                if (negative) {
+                    value = (~number) & valuemask; // inverting bits
+                    value += 1; // 2's complement
+                    value *= -1; // sign
+                } else {
+                    value = number & valuemask;
+                }
+                array[channel][sample] = (float) value / amplitude;
+            }
+        }
+        return array;
+    } else {
+        consolelog("WAVFile", LogType::error, "number of samples to read (" + std::to_string(samples) + ")should be greater than 0");
+        return NULL;
     }
-    return (float) value / amplitude;
 }
 
 /**
- * @brief   It writes a sample on the audio file.
- * @param   value               sample value (from -1 to 1)
+ * @brief   It writes an array of samples on the audio file.
+ * @param   array               two dimensional array ([channel][sample]) of samples (from -1 to 1)
+ * @param   samples             number of samples
  */
-void WAVFile::writeValue(float value) {
-    unsigned int amplitude = 0x1 << (this->header.bitspersample - 1);
-    unsigned int data = value * amplitude;
-    // Solving value according to preccision
-    if (data == amplitude && value > 0) {
-        data--;
-    }
-    this->writeNumber(data, (int) this->header.bitspersample / 8,
-                      Endianess::littleendian);
-    // Updating audio file header
-    int cursor = this->getCursor();
-    if (cursor > 0) {
-        this->header.chunksize = this->size() - 8;
-        this->header.subchunk2size = this->header.chunksize
-                - this->header.size();
+void WAVFile::writeSamples(float **array, int samples) {
+    if (samples > 0) {
+        int bytes = this->header.bitspersample / 8;
+        int channels = this->header.numchannels;
+        char *data = (char *)std::malloc(channels * samples * bytes);
+        unsigned int amplitude = 0x1 << (this->header.bitspersample - 1);
+        int value = 0;
+        for(int sample = 0; sample < samples; sample++) {
+            for (int channel = 0; channel < channels; channel++) {
+                value = array[channel][sample] * amplitude;
+                // Solving value according to preccision
+                if ((unsigned int)value >= amplitude && array[channel][sample] > 0) {
+                    value = amplitude - 1;
+                } else if (array[channel][sample] < -1) {
+                    value = - amplitude;
+                }
+                for (int byte = 0; byte < bytes; byte++) {
+                    data[byte + bytes*(channel + channels*sample)] = value >> (8 * byte);
+                }
+            }
+        }
+        this->write(data, channels * samples * bytes);
+        // Updating audio file header
+        int cursor = this->getCursor();
+        if (cursor > 0) {
+            this->header.chunksize = this->size() - 8;
+            this->header.subchunk2size = this->header.chunksize
+                    - this->header.size();
+            this->writeHeader();
+        }
+    } else {
+        consolelog("WAVFile", LogType::error, "number of samples to read (" + std::to_string(samples) + ")should be greater than 0");
     }
 }

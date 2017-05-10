@@ -36,8 +36,9 @@ public:
     int size();
     bool exists();
     char *read(int length);
-    std::string readData(int length);
-    void writeData(std::string data);
+    void write(const char *data, int length);
+    std::string readText(int length);
+    void writeText(std::string data);
     unsigned readNumber(int length, Endianess::endianess endianess);
     void writeNumber(unsigned int data, int length, Endianess::endianess endianess);
 private:
@@ -105,8 +106,8 @@ public:
     int samples();
     void readHeader();
     void writeHeader();
-    float readValue();
-    void writeValue(float value);
+    float **readSamples(int samples);
+    void writeSamples(float **array, int samples);
 };
 
 #endif // FILE_H

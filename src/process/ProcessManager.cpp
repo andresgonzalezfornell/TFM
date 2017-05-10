@@ -7,6 +7,7 @@
  * @param   chunksize           number of samples in a chunk to apply effect step by step (if 0 then chunk size is the number of samples and effect is applied at once)
  */
 ProcessManager::ProcessManager(int fs, int chunksize) {
+    this->allocated = false;
     this->fs = fs;
     this->chunksize = chunksize;
     this->clear();
@@ -31,32 +32,24 @@ void ProcessManager::setInput(std::string filename) {
     this->clear();
     this->inputfile = new WAVFile(filename, false);
     if ((int) this->inputfile->header.samplerate != this->fs) {
-        this->clear();
         consolelog("ProcessManager", LogType::error,
                    "input file sampling frequency is not valid (it is "
                    + std::to_string(this->inputfile->header.samplerate)
                    + "Hz and it should be " + std::to_string(this->fs)
                    + "Hz)");
     } else {
-        this->inputfile->setCursor(0);
         this->channels = this->inputfile->header.numchannels;
-        this->samples = this->inputfile->samples()
-                / this->inputfile->header.numchannels;
-        // Variables creation
-        this->input = new float*[this->channels];
-        this->output = new float*[this->channels];
-        for (int channel = 0; channel < this->channels; channel++) {
-            this->input[channel] = new float[this->samples];
-            this->output[channel] = new float[this->samples];
-        }
+        this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
         // Input reading
-        for (int sample = 0; sample < this->samples; sample++) {
-            for (int channel = 0; channel < this->channels; channel++) {
-                this->input[channel][sample] = this->inputfile->readValue();
-            }
+        this->inputfile->setCursor(0);
+        this->input = this->inputfile->readSamples(this->samples);
+        // Output initialization
+        this->output = (float **)std::malloc(this->channels * sizeof(float *));
+        for (int channel = 0; channel < this->channels; channel++) {
+            this->output[channel] = (float *)std::malloc(this->samples * sizeof(float));
         }
-        consolelog("ProcessManager", LogType::progress,
-                   "input file has been loaded");
+        this->allocated = true;
+        consolelog("ProcessManager", LogType::progress, "input file has been loaded");
     }
 }
 
@@ -67,12 +60,7 @@ void ProcessManager::setInput(std::string filename) {
 void ProcessManager::setOutput(std::string filename) {
     this->outputfile = new WAVFile(filename, this->channels, this->fs,
                                    this->inputfile->header.bitspersample);
-    for (int sample = 0; sample < this->total; sample++) {
-        for (int channel = 0; channel < this->channels; channel++) {
-            this->outputfile->writeValue(this->output[channel][sample]);
-        }
-    }
-    this->outputfile->writeHeader(); // Updating output file header
+    this->outputfile->writeSamples(this->output, this->samples);
     consolelog("ProcessManager", LogType::progress,
                "output file has been created");
 }
@@ -145,19 +133,23 @@ bool ProcessManager::applyEffect(Effect effect, std::vector<bool> channels,
             }
         }
         for (int channel = 0; channel < this->channels; channel++) {
-            if (channels[channel]) {
-                for (int sample = n; sample < (n + N); sample++) {
-                    this->input[channel][sample] *= levels[channel];
-                    if (input[channel][sample] > 1) {
-                        input[channel][sample] = 1;
-                    } else if (input[channel][sample] < -1) {
-                        input[channel][sample] = -1;
-                    }
+            // Levels
+            for (int sample = n; sample < (n + N); sample++) {
+                this->input[channel][sample] *= levels[channel];
+                if (input[channel][sample] > 1) {
+                    input[channel][sample] = 1;
+                } else if (input[channel][sample] < -1) {
+                    input[channel][sample] = -1;
                 }
+            }
+            // Channels selection
+            if (channels[channel]) {
+                // Effect
                 effect.apply(input[channel] + n, output[channel] + n, N);
             } else {
-                std::memcpy(this->output[channel] + n, this->input[channel] + n,
-                            N);
+                for (int sample = n; sample < N; sample++) {
+                    this->output[channel][sample] = input[channel][sample];
+                }
             }
         }
         this->cursor += N;
@@ -183,6 +175,11 @@ void ProcessManager::clear() {
     this->samples = 0;
     this->cursor = 0;
     this->total = 0;
+    if (this->allocated) {
+        std::free(this->input);
+        std::free(this->output);
+        this->allocated = false;
+    }
     this->inputfile = NULL;
     this->outputfile = NULL;
 }

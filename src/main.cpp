@@ -231,8 +231,8 @@ int main(int argc, char *argv[]) {
 			binauralquality, hrtfmodel);
 	// Effects
 	File *effectinfo = new File(effect, false);
-	std::string info = effectinfo->readData(0);
-    Effect::effectID effectID = Effect::getEffect(Effect::readTag(info, "effect"));
+    std::string info = effectinfo->readText(0);
+    Effect::effectID effectID = Effect::getEffect(Effect::getTag(info, "effect"));
     std::map<std::string, std::string> parameters = Effect::getParams(info);
     std::vector<bool> channels = Effect::getChannels(info, process->channels);
     std::vector<double> levels = Effect::getLevels(info, process->channels);

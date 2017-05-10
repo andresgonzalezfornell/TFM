@@ -62,7 +62,8 @@ public:
     static std::map<std::string, std::string> getParams(std::string configuration);
     static std::vector<bool> getChannels(std::string configuration, int size);
     static std::vector<double> getLevels(std::string configuration, int size);
-    static std::string readTag(std::string configuration, std::string tag);
+    static std::string getTag(std::string configuration, std::string tag);
+    static std::map<std::string, std::string> getTagMap(std::string configuration, std::string tag);
 };
 
 #endif // EFFECT_H

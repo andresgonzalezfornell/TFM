@@ -15,6 +15,7 @@ Compressor::Compressor(std::map<std::string, std::string> params) EFFECT_CONSTRU
  */
 void Compressor::apply(float *input, float *output, int samples) {
     for (int sample = 0; sample < samples; sample++) {
-        output[sample] = input[sample];
+        float value = input[sample];
+        output[sample] = value;
     }
 }
