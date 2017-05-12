@@ -32,8 +32,8 @@ public:
 	bool decode(std::string input, std::string bitstream, std::string output,
 			int upmixtype, int decodingtype, int binauralquality,
 			int hrtfmodel);
-	bool applyEffect(Effect effect, std::vector<bool> channels,
-			std::vector<double> levels);
+    bool applyEffect(Effect *effect, std::vector<bool> channels,
+            std::vector<double> levels);
 	void clear();
 private:
     WAVFile *inputfile;     /**< audio input file object */

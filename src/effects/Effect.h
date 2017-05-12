@@ -29,17 +29,6 @@
 #define INHERITANCE \
     public Compressor, \
     public Equalizer
-// ----------------------------------------------------------------------
-// 4. DEFAULT CONSTRUCTOR
-// Add:         EffectClassName::EffectClassName(params)
-// Description: It defines the defautl constructor from:
-//                  Effect::Effect(std::string params)
-//              Every line needs to have a backslash at the end except of
-//              the last one.
-// Example:     Compressor::Compressor(params)
-#define INITIALIZERS \
-    Compressor::Compressor(params), \
-    Equalizer::Equalizer(params)
 
 /**
  * @class	Effect
@@ -52,13 +41,14 @@ public:
     enum effectID {
         LIST
     }; /**< available effects enumeration */
-    effectID effect; /**< selected effect id */
-    std::map<std::string, std::string> params; /**< string of effect parameters */
+    std::pair<Effect::effectID, std::string> effect; /**< selected effect name and id */
+    Effect(Effect::effectID effect);
     Effect(Effect::effectID effect, std::map<std::string, std::string> params);
     ~Effect();
+    void setParams(std::map<std::string, std::string> params);
     bool apply(float *input, float *output, int samples);
-    static std::map<std::string, Effect::effectID> getEffects();
-    static effectID getEffect(std::string effectname);
+    static std::map<Effect::effectID, std::string> getEffects();
+    static Effect::effectID getEffect(std::string effectname);
     static std::map<std::string, std::string> getParams(std::string configuration);
     static std::vector<bool> getChannels(std::string configuration, int size);
     static std::vector<double> getLevels(std::string configuration, int size);

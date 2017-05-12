@@ -1,10 +1,12 @@
 <!DOCTYPE fxtemplate SYSTEM "Compressor">
-<double param="level" text="Level" value="1"></double>
-<enum param="enum" text="Andrés está:" value="option2">
-	<option param="enum" text="to bueno" value="option0"></option>
-	<option param="enum" text="pa comérselo" value="option1"></option>
-	<option param="enum" text="irresistible, voy a arrancarle ya la ropa"
-		value="option2"></option>
+<double id="threshold" text="Threshold" value="-10" suffix="dB" min="-50" max="0" step="10"></double>
+<double id="ratio" text="Ratio" value="2" min="1" max="50" step="1"></double>
+<double id="attack" text="Attack time" value="100" suffix="ms" min="10" max="1000" step="10"></double>
+<double id="release" text="Release time" value="100" suffix="ms" min="10" max="1000" step="10"></double>
+<enum id="type" text="Compression type" value="upward">
+	<option id="type" text="Downward compression" value="downward"></option>
+	<option id="type" text="Upward compression" value="upward"></option>
 </enum>
-<bool param="calla" text="Monoquetecalles" value="false"></bool>
-<bool param="boolean" text="Sonia esta to buena" value="true"></bool>
+<chart id="compressor" text="Compression function" xmin="-50" xmax="0"
+	ymin="-50" ymax="0" xlabel="Input [dB]" ylabel="Output [dB]" xscale="linear"
+	yscale="linear"></chart>

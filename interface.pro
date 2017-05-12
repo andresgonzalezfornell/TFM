@@ -22,7 +22,6 @@ SOURCES += src/interface/main.cpp\
     src/interface/ChannelsList.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
-    src/interface/AudioChart.cpp \
     src/interface/Volumeter.cpp \
     src/process/ProcessManager.cpp \
     src/process/File.cpp \
@@ -34,7 +33,8 @@ SOURCES += src/interface/main.cpp\
     src/effects/Effect.cpp \
     src/effects/Compressor.cpp \
     src/effects/Equalizer.cpp \
-    src/interface/SACEffects.cpp
+    src/interface/SACEffects.cpp \
+    src/interface/Chart2D.cpp
 
 HEADERS  += \
     src/interface/Encoder.h \
@@ -42,7 +42,6 @@ HEADERS  += \
     src/interface/ChannelsList.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
-    src/interface/AudioChart.h \
     src/interface/Volumeter.h \
     src/process/ProcessManager.h \
     src/process/File.h \
@@ -57,7 +56,8 @@ HEADERS  += \
     src/effects/EffectsModule.h \
     src/effects/Compressor.h \
     src/effects/Equalizer.h \
-    src/interface/SACEffects.h
+    src/interface/SACEffects.h \
+    src/interface/Chart2D.h
 
 FORMS    += \
     src/interface/Encoder.ui \

@@ -15,7 +15,7 @@
 #include "EffectsMonitor.h"
 #include "AudioOutput.h"
 #include "AudioInfo.h"
-#include "AudioChart.h"
+#include "Chart2D.h"
 #include "../process/ProcessManager.h"
 #include "../process/File.h"
 #include "../tools/Logger.h"
@@ -72,7 +72,7 @@ public:
 	void pause();
     void reset();
 	void updateControls();
-	void setEffect(std::string effect);
+    void setEffect(Effect::effectID effect);
 	void setSource(std::string filename);
 	void setBitstream(std::string filename);
 	void setInput(std::string filename);
@@ -90,10 +90,11 @@ private:
 	WAVFile *source; /**< encoded source file object */
 	File *bitstream; /**< encoded bit stream file object */
 	WAVFile *input; /**< decoded input file object */
+    Effect *effect; /**< effect object */
 	ChannelsList *channels_input; /**< input channels list */
 	ChannelsList *channels_output; /**< output channels list */
-	AudioChart *chart_input; /**< input chart object */
-	AudioChart *chart_output; /**< output chart object */
+	Chart2D *chart_input; /**< input chart object */
+	Chart2D *chart_output; /**< output chart object */
 	EffectsMonitor *effectsmonitor; /**< effects monitor object */
     int chunksize; /**< number of samples in a chunk */
 	bool muted; /**< it indicates if output playback is muted (true) or not (false) */

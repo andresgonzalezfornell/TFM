@@ -220,7 +220,7 @@ void Encoder::apply() {
     std::string output_str = QFileDialog::getSaveFileName(NULL,
                                                           "Save output file for encoder", "", "*.wav").toStdString();
     std::string bitstream_str = output_str.substr(0,
-                                                  output_str.find_last_of("/") + 1);
+                                                  output_str.rfind("/") + 1);
     if (output_str != "") {
         // SAC encoding
         consolelog("Encoder", LogType::progress, "proceeding to SAC encoder");

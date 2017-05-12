@@ -1,5 +1,5 @@
-#ifndef AUDIOCHART_H
-#define AUDIOCHART_H
+#ifndef CHART2D_H
+#define CHART2D_H
 
 // System libraries
 #include "cmath"
@@ -15,11 +15,11 @@
 using namespace QtCharts;
 
 /**
- * @class	AudioChart
+ * @class	Chart2D
  * @author	Andrés González Fornell
- * @brief	Chart class for audio signals.
+ * @brief	Class for plotting two-dimensional charts.
  */
-class AudioChart: public QWidget {
+class Chart2D: public QWidget {
     Q_OBJECT
 public:
     /**
@@ -36,12 +36,12 @@ public:
     };
     std::string xlabel; /**< horizontal (x) axis label */
     std::string ylabel; /**< vertical (y) axis label */
-    AudioChart(QWidget *framework);
-    AudioChart(QWidget *framework, float range[2][2], std::string title, std::string xlabel, std::string ylabel, int options);
-    ~AudioChart();
+    Chart2D(QWidget *framework);
+    Chart2D(QWidget *framework, double range[2][2], std::string title, std::string xlabel, std::string ylabel, int options);
+    ~Chart2D();
     void setPoints(QVector<QPointF> points);
     QVector<QPointF> getPoints();
-    void setRange(float range[2][2]);
+    void setRange(double range[2][2]);
     void setTitle(std::string title);
     void setOptions(int options);
     void clear();
@@ -51,4 +51,4 @@ private:
     QLineSeries *series; /**< series object from chart */
 };
 
-#endif // AUDIOCHART_H
+#endif // CHART2D_H

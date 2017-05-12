@@ -1,12 +1,40 @@
 #include "Effect.h"
 #include "EffectBase.h"
 
+std::map<std::string, std::string> EffectBase::params;
+
 /**
  * @brief   Effect constructor.
  * @param   effect              effect ID
- * @param   params              string of effect parameters
  */
-Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> params) : INITIALIZERS {
+Effect::Effect(Effect::effectID effect) {
+    std::map<Effect::effectID, std::string> effects = Effect::getEffects();
+    this->effect = std::pair<Effect::effectID, std::string>(effect, effects[effect]);
+}
+
+/**
+ * @brief   Effect constructor.
+ * @param   effect              effect ID
+ * @param   params              map of effect parameters
+ */
+Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> params) : Effect::Effect(effect) {
+    std::map<Effect::effectID, std::string> effects = Effect::getEffects();
+    this->effect = std::pair<Effect::effectID, std::string>(effect, effects[effect]);
+    this->setParams(params);
+}
+
+/**
+ * @brief   Effect destructor.
+ */
+Effect::~Effect() {
+}
+
+/**
+ * @brief   It sets params.
+ * @param   params
+ */
+void Effect::setParams(std::map<std::string, std::string> params) {
+    this->params.clear();
     // Deleting banned characters for param
     for (std::map<std::string, std::string>::iterator iterator = params.begin(); iterator != params.end(); iterator++) {
         std::string param = "";
@@ -25,13 +53,6 @@ Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> param
         }
         this->params.insert(std::pair<std::string, std::string>(param, iterator->second));
     }
-    this->effect = effect;
-}
-
-/**
- * @brief   Effect destructor.
- */
-Effect::~Effect() {
 }
 
 /**
@@ -42,7 +63,7 @@ Effect::~Effect() {
  * @return  true if it was successful
  */
 bool Effect::apply(float *input, float *output, int samples) {
-    switch (this->effect) {
+    switch (this->effect.first) {
     case effectID::Compressor:
         Compressor::apply(input, output, samples);
         break;
@@ -64,15 +85,15 @@ bool Effect::apply(float *input, float *output, int samples) {
  * @brief   It gets the list of available effects.
  * @return  map of available effects
  */
-std::map<std::string, Effect::effectID> Effect::getEffects() {
-    std::map<std::string, Effect::effectID> effects;
+std::map<Effect::effectID, std::string> Effect::getEffects() {
+    std::map<Effect::effectID, std::string> effects;
 #define EFFECT(ID,NAME) ID,
-    std::vector<Effect::effectID> values = { LIST };
+    std::vector<Effect::effectID> keys = { LIST };
 #define EFFECT(ID,NAME) NAME,
-    std::vector<std::string> keys = { LIST };
+    std::vector<std::string> values = { LIST };
     if (values.size() == keys.size()) {
         for (int index = 0; index < (int) values.size(); index++) {
-            effects.insert(std::pair<std::string, Effect::effectID>(keys[index], values[index]));
+            effects.insert(std::pair<Effect::effectID, std::string>(keys[index], values[index]));
         }
         return effects;
     } else {
@@ -80,7 +101,7 @@ std::map<std::string, Effect::effectID> Effect::getEffects() {
                    "the number of effect names (" + std::to_string(keys.size())
                    + ") does not match the number of effects ("
                    + std::to_string(values.size()) + ")");
-        return std::map<std::string, Effect::effectID>();
+        return std::map<Effect::effectID, std::string>();
     }
 }
 
@@ -222,8 +243,7 @@ std::map<std::string, std::string> Effect::getTagMap(std::string configuration, 
  * @brief   EffectBase constructor.
  * @param   params              string of effect parameters
  */
-EffectBase::EffectBase(std::map<std::string, std::string> params) {
-    this->params = params;
+EffectBase::EffectBase() {
 }
 
 /**
@@ -263,6 +283,7 @@ std::string EffectBase::getString(std::string param) {
 /**
  * @brief   It parse a parameter value to bool
  * @param   param               parameter value
+ * @return  boolean value (false by default)
  */
 bool EffectBase::getBool(std::string param) {
     if (param == "true" || param == "TRUE" || param == "True" || param == "1") {

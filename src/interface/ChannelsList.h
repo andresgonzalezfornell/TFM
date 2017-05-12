@@ -10,11 +10,12 @@
 #include "QObject"
 #include "QWidget"
 #include "QLayout"
+#include "QGroupBox"
 #include "QLabel"
+#include "QLineEdit"
 #include "QCheckBox"
 // Classes and local files
 #include "AudioOutput.h"
-#include "AudioChart.h"
 #include "Volumeter.h"
 #include "../process/AudioSignal.h"
 #include "../process/AudioStream.h"

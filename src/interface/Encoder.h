@@ -7,9 +7,10 @@
 // Qt libraries
 #include "QApplication"
 #include "QMainWindow"
+#include "QFileDialog"
+#include "QPushButton"
 // Classes and local files
 #include "ui_Encoder.h"
-#include "AudioChart.h"
 #include "../process/File.h"
 #include "../tools/Logger.h"
 extern "C" {

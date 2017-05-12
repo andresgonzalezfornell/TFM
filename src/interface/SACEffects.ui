@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>735</width>
-    <height>571</height>
+    <width>889</width>
+    <height>544</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -234,7 +234,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>83</height>
+            <height>76</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="input_channels_layout">
@@ -263,15 +263,15 @@
        <item>
         <widget class="QWidget" name="input_chart" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>200</width>
-           <height>150</height>
+           <width>250</width>
+           <height>160</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -425,8 +425,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>187</width>
-            <height>479</height>
+            <width>341</width>
+            <height>452</height>
            </rect>
           </property>
           <property name="autoFillBackground">
@@ -520,7 +520,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>141</height>
+            <height>123</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="output_channels_layout">
@@ -550,8 +550,8 @@
         <widget class="QWidget" name="output_chart" native="true">
          <property name="minimumSize">
           <size>
-           <width>200</width>
-           <height>150</height>
+           <width>250</width>
+           <height>160</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -635,7 +635,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>735</width>
+     <width>889</width>
      <height>22</height>
     </rect>
    </property>

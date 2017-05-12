@@ -118,51 +118,56 @@ bool ProcessManager::decode(std::string input, std::string bitstream,
  * @param   levels              vector of input levels (>=0) for each channel
  * @return  true if it was successful
  */
-bool ProcessManager::applyEffect(Effect effect, std::vector<bool> channels,
+bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                                  std::vector<double> levels) {
-    if ((int) channels.size() == this->channels) {
-        int n, N;
-        if (this->chunksize == 0) {
-            n = 0;
-            N = this->samples;
-        } else {
-            n = this->cursor;
-            N = this->chunksize;
-            if (n + N >= this->samples) {
-                N = this->samples - n - 1;
-            }
-        }
-        for (int channel = 0; channel < this->channels; channel++) {
-            // Levels
-            for (int sample = n; sample < (n + N); sample++) {
-                this->input[channel][sample] *= levels[channel];
-                if (input[channel][sample] > 1) {
-                    input[channel][sample] = 1;
-                } else if (input[channel][sample] < -1) {
-                    input[channel][sample] = -1;
-                }
-            }
-            // Channels selection
-            if (channels[channel]) {
-                // Effect
-                effect.apply(input[channel] + n, output[channel] + n, N);
+    if (this->cursor < this->samples) {
+        if ((int) channels.size() == this->channels) {
+            int n, N;
+            if (this->chunksize == 0) {
+                n = 0;
+                N = this->samples;
             } else {
-                for (int sample = n; sample < N; sample++) {
-                    this->output[channel][sample] = input[channel][sample];
+                n = this->cursor;
+                N = this->chunksize;
+                if (n + N >= this->samples) {
+                    N = this->samples - n;
                 }
             }
+            for (int channel = 0; channel < this->channels; channel++) {
+                // Levels
+                for (int sample = n; sample < (n + N); sample++) {
+                    this->input[channel][sample] *= levels[channel];
+                    if (input[channel][sample] > 1) {
+                        input[channel][sample] = 1;
+                    } else if (input[channel][sample] < -1) {
+                        input[channel][sample] = -1;
+                    }
+                }
+                // Channels selection
+                if (channels[channel]) {
+                    // Effect
+                    effect->apply(input[channel] + n, output[channel] + n, N);
+                } else {
+                    for (int sample = n; sample < N; sample++) {
+                        this->output[channel][sample] = input[channel][sample];
+                    }
+                }
+            }
+            this->cursor += N;
+            if (this->cursor > this->total) {
+                this->total = this->cursor;
+            }
+            return false;
+        } else {
+            consolelog("ProcessManager", LogType::error,
+                       "channels boolean vector (from effect argument) = "
+                       + std::to_string(channels.size())
+                       + " does not correspond to number of channels = "
+                       + std::to_string(this->channels));
+            return false;
         }
-        this->cursor += N;
-        if (this->cursor > this->total) {
-            this->total = this->cursor;
-        }
-        return false;
     } else {
-        consolelog("ProcessManager", LogType::error,
-                   "channels boolean vector (from effect argument) = "
-                   + std::to_string(channels.size())
-                   + " does not correspond to number of channels = "
-                   + std::to_string(this->channels));
+        consolelog("ProcessManager", LogType::error, "there is no more available samples (samples = " + std::to_string(this->samples) + ")");
         return false;
     }
 }

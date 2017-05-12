@@ -20,8 +20,8 @@ SACEffects::SACEffects(QWidget *framework) :
                "signal process chunk = " + std::to_string(this->chunksize)
                + " samples");
     this->process = new ProcessManager(this->fs, chunksize);
-    this->chart_input = new AudioChart(ui->input_chart);
-    this->chart_output = new AudioChart(ui->output_chart);
+    this->chart_input = new Chart2D(ui->input_chart);
+    this->chart_output = new Chart2D(ui->output_chart);
     // Clock
     this->clock = new QTimer(this);
     double period = (double) chunksize / this->fs;
@@ -35,7 +35,7 @@ SACEffects::SACEffects(QWidget *framework) :
     QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(setTimer()));
     // Effects
     this->effectsmonitor = new EffectsMonitor(ui->effect_monitor_list);
-    std::map<std::string, Effect::effectID> effects =
+    std::map<Effect::effectID, std::string> effects =
             this->effectsmonitor->effects;
     // Input & Output
     this->channels_input = new ChannelsList(ui->input_channels, 0, false);
@@ -68,13 +68,13 @@ SACEffects::SACEffects(QWidget *framework) :
                      SLOT(setTimer(QTime)));
     QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
     // Signals - Effect
-    for (std::map<std::string, Effect::effectID>::iterator iterator =
+    for (std::map<Effect::effectID, std::string>::iterator iterator =
          effects.begin(); iterator != effects.end(); iterator++) {
         QAction *effect = new QAction(this);
         effect->setObjectName(
                     ui->menu_effect->objectName()
-                    + QString::fromStdString("_" + iterator->first));
-        effect->setText(QString::fromStdString(iterator->first));
+                    + QString::fromStdString("_" + iterator->second));
+        effect->setText(QString::fromStdString(iterator->second));
         effect->setCheckable(true);
         ui->menu_effect->addAction(effect);
         QObject::connect(effect,SIGNAL(triggered(bool)),this,SLOT(toggleEffect()));
@@ -181,14 +181,16 @@ void SACEffects::updateControls() {
  * @brief   It sets an effect for the effect monitor.
  * @param   effect              selected effect
  */
-void SACEffects::setEffect(std::string effect) {
-    this->effectsmonitor->setEffect(effect);
-    std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
-    for (std::map<std::string, Effect::effectID>::iterator iterator =
-         effects.begin(); iterator != effects.end(); iterator++) {
+void SACEffects::setEffect(Effect::effectID effect) {
+    delete this->effect;
+    this->effect = new Effect(effect);
+    this->effectsmonitor->setEffect(this->effect);
+    std::map<Effect::effectID, std::string> effects = this->effectsmonitor->effects;
+    for (std::map<Effect::effectID, std::string>::iterator iterator =
+        effects.begin(); iterator != effects.end(); iterator++) {
         QAction* action = this->findChild<QAction *>(
                     ui->menu_effect->objectName()
-                    + QString::fromStdString("_" + iterator->first));
+                    + QString::fromStdString("_" + iterator->second));
         action->setChecked(iterator->first == effect);
     }
 }
@@ -444,19 +446,20 @@ void SACEffects::sendOutput() {
             this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(process->output[channel] + n, N);
         }
     }
+    this->plot();
 }
 
 /**
  * @brief   It plots the current input and ouput signals.
  */
 void SACEffects::plot() {
-    AudioChart *chart;
+    Chart2D *chart;
     QVector < QPointF > points;
     float *samples;
     int n = 0;
     int N = 0;
     int remainder = 0;
-    float range[2][2];
+    double range[2][2];
     for (int plot = 0; plot < 2; plot++) {
         switch (plot) {
         case 0:
@@ -476,10 +479,10 @@ void SACEffects::plot() {
         case 0:
             // Signal plot
             range[0][0] = 0;
-            range[0][1] = (float) (N - 1) / this->fs ;
+            range[0][1] = (double) (N - 1) / this->fs ;
             range[1][0] = -1;
             range[1][1] = 1;
-            chart->setOptions(AudioChart::ChartOptions::labelX);
+            chart->setOptions(Chart2D::ChartOptions::labelX);
             for (int sample = 0; sample < N; sample++) {
                 points.push_back(QPointF((float) sample / this->fs, samples[n + sample]));
             }
@@ -489,10 +492,10 @@ void SACEffects::plot() {
             std::vector<float> vector = std::vector<float>(samples[n], samples[n + N]);;
             AudioSignal signal = AudioSignal(vector, this->fs);
             range[0][0] = 0;
-            range[0][1] = (float) this->fs / 2;
+            range[0][1] = (double) this->fs / 2;
             range[1][0] = 0;
             range[1][1] = 1;
-            chart->setOptions(AudioChart::ChartOptions::labelX);
+            chart->setOptions(Chart2D::ChartOptions::labelX);
             std::vector<float> spectrum = signal.getSpectrum();
             for (int frequency = 0; frequency < std::ceil((double) N / 2); frequency++) {
                 points.push_back(QPointF((float) frequency * this->fs / N, spectrum[frequency]));
@@ -846,13 +849,13 @@ void SACEffects::toggleEffect() {
                 QObject::sender()->objectName().toStdString().find(
                     ui->menu_effect->objectName().toStdString() + "_")
                 + ui->menu_effect->objectName().toStdString().length() + 1);
-    std::map<std::string, Effect::effectID> effects = this->effectsmonitor->effects;
-    for (std::map<std::string, Effect::effectID>::iterator iterator =
+    std::map<Effect::effectID, std::string> effects = this->effectsmonitor->effects;
+    for (std::map<Effect::effectID, std::string>::iterator iterator =
          effects.begin(); iterator != effects.end(); iterator++) {
-        if (iterator->first == effect) {
+        if (iterator->second == effect) {
             this->setEffect(iterator->first);
             consolelog("SACEffects", LogType::interaction,
-                       "selecting effect \"" + iterator->first + "\"");
+                       "selecting effect \"" + iterator->second + "\"");
             QObject::sender()->blockSignals(false);
             return;
         }
@@ -874,7 +877,5 @@ void SACEffects::applyEffect() {
         channels.push_back(!this->channels_input->getChannel(index)->bypassed);
         levels.push_back(this->channels_input->getChannel(index)->volume);
     }
-    Effect effect = Effect(this->effectsmonitor->effect.second,
-                           this->effectsmonitor->parameters);
-    this->process->applyEffect(effect, channels, levels);
+    this->process->applyEffect(this->effect, channels, levels);
 }

@@ -236,7 +236,7 @@ int main(int argc, char *argv[]) {
     std::map<std::string, std::string> parameters = Effect::getParams(info);
     std::vector<bool> channels = Effect::getChannels(info, process->channels);
     std::vector<double> levels = Effect::getLevels(info, process->channels);
-	Effect fx = Effect(effectID, parameters);
+    Effect *fx = new Effect(effectID, parameters);
 	process->applyEffect(fx, channels, levels);
 	// Output
 	process->setOutput(output);

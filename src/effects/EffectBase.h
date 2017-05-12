@@ -6,10 +6,11 @@
 #include "vector"
 #include "map"
 // Classes and local files
+#include "../process/AudioSignal.h"
 #include "../tools/Logger.h"
 
 #define AS_EFFECT : public EffectBase
-#define EFFECT_CONSTRUCTOR : EffectBase::EffectBase(params)
+#define AS_EFFECT_CONSTRUCTOR : EffectBase::EffectBase()
 
 /**
  * @class	EffectBase
@@ -18,13 +19,13 @@
  */
 class EffectBase {
 public:
-    EffectBase(std::map<std::string, std::string> param);
+    static std::map<std::string, std::string> params; /**< string of effect parameters */
+    EffectBase();
     static int getInt(std::string param);
     static double getDouble(std::string param);
     static std::string getString(std::string param);
     static bool getBool(std::string param);
 private:
-	std::map<std::string, std::string> params; /**< string of effect parameters */
 };
 
 #endif // EFFECTBASE_H

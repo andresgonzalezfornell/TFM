@@ -20,7 +20,7 @@ EffectsMonitor::EffectsMonitor(QWidget *framework) {
  * @param	framework			user interface framework
  * @param   effect              selected effect to be load
  */
-EffectsMonitor::EffectsMonitor(QWidget *framework, std::string effect) :
+EffectsMonitor::EffectsMonitor(QWidget *framework, Effect *effect) :
     EffectsMonitor::EffectsMonitor(framework) {
     this->setEffect(effect);
 }
@@ -37,20 +37,12 @@ EffectsMonitor::~EffectsMonitor() {
  * @brief   It selects an effect.
  * @param   effect              selected effect
  */
-void EffectsMonitor::setEffect(std::string effect) {
-    if (this->effects.find(effect) != this->effects.end()) {
-        this->effect = std::pair<std::string, Effect::effectID>(effect,
-                                                                this->effects[effect]);
-        consolelog("EffectsMonitor", LogType::progress,
-                   "effect \"" + effect + "\" has been loaded");
-    } else {
-        this->effect = std::pair<std::string, Effect::effectID>(
-                    this->effects.begin()->first, this->effects.begin()->second);
-        consolelog("EffectsMonitor", LogType::error,
-                   "effect \"" + effect
-                   + "\" is not available so the default effect has been loaded instead");
-    }
+void EffectsMonitor::setEffect(Effect *effect) {
+    this->effect = effect;
     this->loadTemplate();
+    this->effect->setParams(this->parameters);
+    this->plotChart();
+    consolelog("EffectsMonitor", LogType::progress, "effect \"" + effect->effect.second + "\" has been loaded");
 }
 
 /**
@@ -58,6 +50,7 @@ void EffectsMonitor::setEffect(std::string effect) {
  */
 void EffectsMonitor::clear() {
     this->parameters.clear();
+    this->charts.clear();
     QObjectList elements = this->framework->children();
     for (int index = 0; index < elements.size(); index++) {
         if (elements[index]->objectName().toStdString()
@@ -75,7 +68,7 @@ void EffectsMonitor::clear() {
 void EffectsMonitor::loadFiles() {
     this->effects.clear();
     this->files.clear();
-    std::map<std::string, Effect::effectID> effects = Effect::getEffects();
+    std::map<Effect::effectID, std::string> effects = Effect::getEffects();
     QStringList files = QDir(QString::fromStdString(folder)).entryList(
                 QStringList("*.xml"));
     for (int index = 0; index < files.size(); index++) {
@@ -90,7 +83,7 @@ void EffectsMonitor::loadFiles() {
                             xml.find(descriptor) + descriptor.size());
                 reference = reference.substr(0, reference.find("\""));
                 while (reference.size() > 0) {
-                    std::string effect = reference.substr(0,
+                    std::string effectname = reference.substr(0,
                                                           reference.find(","));
                     if (reference.find(",") < reference.size()) {
                         reference = reference.substr(reference.find(",") + 1);
@@ -100,21 +93,22 @@ void EffectsMonitor::loadFiles() {
                     while (reference[0] == ' ') {
                         reference = reference.substr(1);
                     }
+                    Effect::effectID effect = Effect::getEffect(effectname);
                     if (this->effects.find(effect) == this->effects.end()) {
                         this->effects.insert(
-                                    std::pair<std::string, Effect::effectID>(effect,
+                                    std::pair<Effect::effectID, std::string>(effect,
                                                                              effects[effect]));
                         this->files.insert(
-                                    std::pair<std::string, std::string>(effect,
+                                    std::pair<Effect::effectID, std::string>(effect,
                                                                         file->fileName().toStdString()));
                         consolelog("EffectsMonitor", LogType::info,
-                                   "available effect \"" + effect
+                                   "available effect \"" + effectname
                                    + "\" was found in \""
                                    + file->fileName().toStdString()
                                    + "\"");
                     } else {
                         consolelog("EffectsMonitor", LogType::warning,
-                                   "available effect \"" + effect
+                                   "available effect \"" + effectname
                                    + "\" was found again in \""
                                    + file->fileName().toStdString()
                                    + "\" so this last reference will be ignored");
@@ -138,7 +132,7 @@ void EffectsMonitor::loadFiles() {
 void EffectsMonitor::loadTemplate() {
     this->clear();
     QFile *file = new QFile(
-                QString::fromStdString(this->files[this->effect.first]));
+                QString::fromStdString(this->files[this->effect->effect.first]));
     QTextStream *in = new QTextStream(file);
     if (file->open(QFile::ReadOnly | QFile::Text)) {
         std::string xml = in->readAll().toStdString();
@@ -174,29 +168,30 @@ void EffectsMonitor::loadField(std::string element) {
     const int width = 100;
     std::string tag = element.substr(1, element.find(" ") - 1);
     // Attributes
-    std::string param = this->getAttribute(element, "param");
-    // Deleting banned characters for param
-    std::string newparam = "";
-    for (int character = 0; character < (int) param.size(); character++) {
+    std::string id = this->getAttribute(element, "id");
+    // Deleting banned characters for id
+    std::string newid = "";
+    for (int character = 0; character < (int) id.size(); character++) {
         bool valid = false;
         if (character > 0) {
-            valid += (0x30 <= param[character] && param[character] <= 0x39); // numbers
+            valid += (0x30 <= id[character] && id[character] <= 0x39); // numbers
         }
-        valid += (0x41 <= param[character] && param[character] <= 0x5A); // uppercase letters
-        valid += (0x61 <= param[character] && param[character] <= 0x7A); // lowercase letters
+        valid += (0x41 <= id[character] && id[character] <= 0x5A); // uppercase letters
+        valid += (0x61 <= id[character] && id[character] <= 0x7A); // lowercase letters
         if (valid) {
-            newparam += param[character];
+            newid += id[character];
         } else {
             consolelog("EffectsMonitor", LogType::warning,
-                       "character \"" + param.substr(character, 1)
+                       "character \"" + id.substr(character, 1)
                        + "\" is not allowed as parameter name in \""
-                       + param + "\" and it will be removed");
+                       + id + "\" and it will be removed");
         }
     }
-    param = newparam;
+    id = newid;
     std::string text = this->getAttribute(element, "text");
     std::string value = this->getAttribute(element, "value");
     std::string suffix = this->getAttribute(element, "suffix");
+    bool readonly = Effect::getBool(this->getAttribute(element, "readonly"));
     double min = atof(this->getAttribute(element, "min").c_str());
     double max = std::atof(this->getAttribute(element, "max").c_str());
     double step = std::atof(this->getAttribute(element, "step").c_str());
@@ -207,12 +202,20 @@ void EffectsMonitor::loadField(std::string element) {
     if (length <= 0 || length > 100) {
         length = 100;
     }
-    this->parameters.insert(std::pair<std::string, std::string>(param, value));
+    // Contain
+    std::string contain = element.substr(element.find(">") + 1);
+    if (contain.rfind("<")==0) {
+        contain = "";
+    } else {
+        contain = contain.substr(0,contain.rfind("<"));
+    }
     // User interface
     if (tag == "int") {
-        QSpinBox *field = new QSpinBox();
+        QSpinBox *field = new QSpinBox(this->framework);
         field->setMinimumWidth(width);
-        field->setObjectName(QString::fromStdString(prefix + param));
+        field->setObjectName(QString::fromStdString(prefix + id));
+        this->parameters.insert(std::pair<std::string, std::string>(id, value));
+        field->setReadOnly(readonly);
         field->setSuffix(QString::fromStdString(suffix));
         field->setMinimum(min);
         field->setMaximum(max);
@@ -221,9 +224,11 @@ void EffectsMonitor::loadField(std::string element) {
         this->layout->addRow(QString::fromStdString(text), field);
         QObject::connect(field,SIGNAL(valueChanged(int)),this,SLOT(updateParameter(int)));
     } else if (tag == "double") {
-        QDoubleSpinBox *field = new QDoubleSpinBox();
+        QDoubleSpinBox *field = new QDoubleSpinBox(this->framework);
         field->setMinimumWidth(width);
-        field->setObjectName(QString::fromStdString(prefix + param));
+        field->setObjectName(QString::fromStdString(prefix + id));
+        this->parameters.insert(std::pair<std::string, std::string>(id, value));
+        field->setReadOnly(readonly);
         field->setSuffix(QString::fromStdString(suffix));
         field->setMinimum(min);
         field->setMaximum(max);
@@ -232,63 +237,101 @@ void EffectsMonitor::loadField(std::string element) {
         this->layout->addRow(QString::fromStdString(text), field);
         QObject::connect(field,SIGNAL(valueChanged(double)),this,SLOT(updateParameter(double)));
     } else if (tag == "string") {
-        QLineEdit *field = new QLineEdit();
+        QLineEdit *field = new QLineEdit(this->framework);
         field->setMinimumWidth(width);
-        field->setObjectName(QString::fromStdString(prefix + param));
+        field->setObjectName(QString::fromStdString(prefix + id));
+        this->parameters.insert(std::pair<std::string, std::string>(id, value));
         field->setText(QString::fromStdString(value));
+        field->setReadOnly(readonly);
         field->setMaxLength(length);
         this->layout->addRow(QString::fromStdString(text), field);
         QObject::connect(field, SIGNAL(textChanged(QString)), this,
                          SLOT(updateParameter(QString)));
     } else if (tag == "bool") {
-        QCheckBox *field = new QCheckBox();
+        QCheckBox *field = new QCheckBox(this->framework);
         field->setMinimumWidth(width);
-        field->setObjectName(QString::fromStdString(prefix + param));
+        field->setObjectName(QString::fromStdString(prefix + id));
+        this->parameters.insert(std::pair<std::string, std::string>(id, value));
         field->setChecked(
                     value == "true" || value == "True" || value == "TRUE" || value == "1");
+        field->setEnabled(!readonly);
         this->layout->addRow(QString::fromStdString(text), field);
         QObject::connect(field,SIGNAL(toggled(bool)),this,SLOT(updateParameter(bool)));
     } else if (tag == "enum") {
         QGroupBox *field = new QGroupBox();
-        QVBoxLayout *list = new QVBoxLayout();
+        QVBoxLayout *list = new QVBoxLayout(this->framework);
         field->setMinimumWidth(width);
         field->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        field->setObjectName(QString::fromStdString(prefix + param));
-        list->setObjectName(QString::fromStdString(prefix + param + "_layout"));
+        field->setObjectName(QString::fromStdString(prefix + id));
+        list->setObjectName(QString::fromStdString(prefix + id + "_layout"));
         field->setLayout(list);
+        this->parameters.insert(std::pair<std::string, std::string>(id, value));
         this->layout->addRow(QString::fromStdString(text), field);
-        std::string options = element.substr(element.find(">") + 1);
-        options = options.substr(0, options.find("</" + tag + ">"));
-        while (options.find("<option ") < options.size()) {
-            std::string option = options.substr(options.find("<option"));
+        while (contain.find("<option ") < contain.size()) {
+            std::string option = contain.substr(contain.find("<option"));
+            if (readonly) {
+                option = option.substr(0, 8) + "readonly=\"true\" " + option.substr(8);
+            }
             option = option.substr(0, option.find("</option>") + 9);
             this->loadField(option);
-            if (options.find("<option>") + option.size() < options.size()) {
-                options = options.substr(options.find("</option>") + 9);
+            if (contain.find("<option>") + option.size() < contain.size()) {
+                contain = contain.substr(contain.find("</option>") + 9);
             } else {
-                options = "";
+                contain = "";
             }
         }
-        this->framework->findChild<QRadioButton *>(
-                    QString::fromStdString(prefix + param + "_" + value))->setChecked(true);
+        this->framework->findChild<QRadioButton *>(QString::fromStdString(prefix + id + "_" + value))->setChecked(true);
     } else if (tag == "option") {
         QGroupBox *group = this->framework->findChild<QGroupBox *>(
-                    QString::fromStdString(prefix + param));
+                    QString::fromStdString(prefix + id));
         if (group == NULL) {
             consolelog("EffectsMonitor", LogType::error,
                        "option tag is not appended from any enum element");
         } else {
-            QRadioButton *option = new QRadioButton();
+            QRadioButton *option = new QRadioButton(group);
             option->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-            option->setObjectName(QString::fromStdString(prefix + param + "_" + value));
+            option->setObjectName(QString::fromStdString(prefix + id + "_" + value));
             option->setText(QString::fromStdString(text));
+            option->setEnabled(!readonly);
             group->layout()->addWidget(option);
             QObject::connect(option,SIGNAL(toggled(bool)),this,SLOT(updateParameter(bool)));
         }
+    } else if (tag == "label") {
+        QLabel *field = new QLabel(this->framework);
+        field->setObjectName(QString::fromStdString(prefix + id));
+        field->setText(QString::fromStdString(text));
+        this->layout->addRow(field);
+    } else if (tag == "chart") {
+        QWidget *field = new QWidget(this->framework);
+        field->setMinimumSize(300, 225);
+        field->setObjectName(QString::fromStdString(prefix + id));
+        double range[2][2] = {{Effect::getDouble(this->getAttribute(element, "xmin")),
+                             Effect::getDouble(this->getAttribute(element, "xmax"))},{
+                             Effect::getDouble(this->getAttribute(element, "ymin")),
+                             Effect::getDouble(this->getAttribute(element, "ymax"))}};
+        std::string xlabel = this->getAttribute(element, "xlabel");
+        std::string ylabel = this->getAttribute(element, "ylabel");
+        int options = 0;
+        if (xlabel != "") {
+            options |= Chart2D::ChartOptions::labelX;
+        }
+        if (ylabel != "") {
+            options |= Chart2D::ChartOptions::labelY;
+        }
+        if (this->getAttribute(element, "xscale") == "log") {
+            options |= Chart2D::ChartOptions::logX;
+        }
+        if (this->getAttribute(element, "ylabel") == "log") {
+            options |= Chart2D::ChartOptions::logY;
+        }
+        Chart2D *chart = new Chart2D(field, range, text, xlabel, ylabel, options);
+        charts.insert(std::pair<std::string, Chart2D *>(id, chart));
+        this->layout->addRow(field);
     } else {
         consolelog("EffectsMonitor", LogType::error,
                    "tag \"" + tag + "\" is not recognised as a valid tag");
     }
+    consolelog("EffectsMonitor", LogType::progress, "element \"" + id + "\" of type \"" + tag + "\" was created");
 }
 
 /**
@@ -320,6 +363,22 @@ void EffectsMonitor::setParameter(std::string parameter, std::string value) {
     } else {
         consolelog("EffectsMonitor", LogType::error,
                    "parameter \"" + parameter + "\" was not found in the parameters list");
+    }
+    this->effect->setParams(this->parameters);
+    this->plotChart();
+}
+
+/**
+ * @brief   It plots every chart on the effects monitor.
+ */
+void EffectsMonitor::plotChart() {
+    for (std::map<std::string, Chart2D *>::iterator chart = this->charts.begin(); chart != this->charts.end(); chart++) {
+        std::vector<std::vector<double>> vector = this->effect->plot(chart->first);
+        QVector<QPointF> points;
+        for (int n = 0; n < (int)vector[0].size(); n++) {
+            points.push_back(QPointF(vector[0][n], vector[1][n]));
+        }
+        chart->second->setPoints(points);
     }
 }
 
@@ -366,13 +425,7 @@ void EffectsMonitor::updateParameter(QString value) {
 void EffectsMonitor::updateParameter(bool value) {
     std::string element = QObject::sender()->objectName().toStdString().substr(
                 prefix.size());
-    if (element.find("_") < element.size()) { // enum
-        if (value) {
-            std::string parameter = element.substr(0, element.find("_"));
-            std::string option = element.substr(element.find("_") + 1);
-            this->setParameter(parameter, option);
-        }
-    } else { // bool
+    if (element.find("_") == element.size()) { // bool
         std::string text = "";
         if (value) {
             text = "true";
@@ -380,6 +433,12 @@ void EffectsMonitor::updateParameter(bool value) {
             text = "false";
         }
         this->setParameter(element, text);
+    } else { // enum
+        if (value) {
+            std::string parameter = element.substr(0, element.find("_"));
+            std::string option = element.substr(element.find("_") + 1);
+            this->setParameter(parameter, option);
+        }
     }
 }
 

@@ -4,7 +4,7 @@
  * @brief	Equalizer constructor.
  * @param   params          string of effect parameters
  */
-Equalizer::Equalizer(std::map<std::string, std::string> params) EFFECT_CONSTRUCTOR {
+Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
 
 }
 

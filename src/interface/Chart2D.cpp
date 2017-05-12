@@ -1,25 +1,25 @@
 // Class libraries
-#include "AudioChart.h"
+#include "Chart2D.h"
 
 /**
- * @brief	AudioChart constructor.
+ * @brief	Chart constructor.
  * @param   framework   user interface framework of chart
  */
-AudioChart::AudioChart(QWidget *framework) {
+Chart2D::Chart2D(QWidget *framework) {
     this->chart = new QChart();
     this->view = new QChartView(chart, framework);
     this->view->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
-    this->view->setMinimumSize(250, 180);
+    this->view->setMinimumSize(framework->size());
     this->series = new QLineSeries();
     this->chart->addSeries(series);
     this->xlabel = "x";
     this->ylabel = "y";
     this->setOptions(0);
-    consolelog("AudioChart", LogType::progress, "AudioChart object is created");
+    consolelog("Chart", LogType::progress, "Chart object is created");
 }
 
 /**
- * @brief	AudioChart constructor.
+ * @brief	Chart constructor.
  * @param   framework   user interface framework of chart
  * @param   range       axes range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
  * @param   title       chart title (it will be impress on the chart)
@@ -28,9 +28,9 @@ AudioChart::AudioChart(QWidget *framework) {
  * @param   options
  * @ref     ChartOptions
  */
-AudioChart::AudioChart(QWidget *framework, float range[2][2], std::string title,
+Chart2D::Chart2D(QWidget *framework, double range[2][2], std::string title,
 std::string xlabel, std::string ylabel, int options) :
-    AudioChart::AudioChart(framework) {
+    Chart2D::Chart2D(framework) {
     this->setRange(range);
     this->setTitle(title);
     this->xlabel = xlabel;
@@ -39,17 +39,17 @@ std::string xlabel, std::string ylabel, int options) :
 }
 
 /**
- * @brief	AudioChart destructor.
+ * @brief	Chart destructor.
  */
-AudioChart::~AudioChart() {
-    consolelog("AudioChart", LogType::progress, "AudioChart object is deleted");
+Chart2D::~Chart2D() {
+    consolelog("Chart", LogType::progress, "Chart object is deleted");
 }
 
 /**
  * @brief	It sets the points to the chart serie.
  * @param   points
  */
-void AudioChart::setPoints(QVector<QPointF> points) {
+void Chart2D::setPoints(QVector<QPointF> points) {
     this->series->replace(points);
 }
 
@@ -57,7 +57,7 @@ void AudioChart::setPoints(QVector<QPointF> points) {
  * @brief	It gets the points from the chart serie.
  * @return  points
  */
-QVector<QPointF> AudioChart::getPoints() {
+QVector<QPointF> Chart2D::getPoints() {
     return series->pointsVector();
 }
 
@@ -65,7 +65,7 @@ QVector<QPointF> AudioChart::getPoints() {
  * @brief   It sets the axis range.
  * @param   range       axis range matrix (range[0][0] = x_min, range[0][1] = x_max, range[1][0] = y_min, range[1][1] = y_max)
  */
-void AudioChart::setRange(float range[2][2]) {
+void Chart2D::setRange(double range[2][2]) {
     this->chart->axisX(this->series)->setRange(range[0][0], range[0][1]);
     this->chart->axisY(this->series)->setRange(range[1][0], range[1][1]);
 }
@@ -74,7 +74,7 @@ void AudioChart::setRange(float range[2][2]) {
  * @brief   It sets chart title.
  * @param   title
  */
-void AudioChart::setTitle(std::string title) {
+void Chart2D::setTitle(std::string title) {
     this->chart->setTitle(QString::fromStdString(title));
 }
 
@@ -82,7 +82,7 @@ void AudioChart::setTitle(std::string title) {
  * @brief   It sets chart options.
  * @param   options
  */
-void AudioChart::setOptions(int options) {
+void Chart2D::setOptions(int options) {
     QAbstractAxis *x_axis;
     QAbstractAxis *y_axis;
     if (options & ChartOptions::logX) {
@@ -113,6 +113,6 @@ void AudioChart::setOptions(int options) {
 /**
  * @brief   It clears the chart.
  */
-void AudioChart::clear() {
+void Chart2D::clear() {
     this->series->clear();
 }

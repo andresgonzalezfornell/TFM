@@ -11,8 +11,21 @@
  */
 class Compressor AS_EFFECT {
 public:
-    Compressor(std::map<std::string, std::string> params);
+    Compressor();
     void apply(float *input, float *output, int samples);
+    std::vector<std::vector<double> > plot(std::string chart);
+    void update();
+private:
+    enum compressiontype {
+        downward, /**< downward compression (reduces loud sounds over a certain threshold while quiet sounds remain unaffected) */
+        upward /**< upward compression (increases the loudness of sounds below a certain threshold while leaving louder sounds unaffected) */
+    };
+    Compressor::compressiontype type;
+    double threshold; /**< input level threshold for compressing [dB] */
+    double ratio; /**< compression ratio */
+    double attack; /**< attack time [s] */
+    double release; /**< release time [s] */
+    double gain(double inputlevel);
 };
 
 #endif // COMPRESSOR_H

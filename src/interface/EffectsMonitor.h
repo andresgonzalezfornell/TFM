@@ -20,6 +20,7 @@
 #include "QGroupBox"
 #include "QRadioButton"
 // Classes and local files
+#include "Chart2D.h"
 #include "../effects/Effect.h"
 #include "../process/File.h"
 #include "../tools/Logger.h"
@@ -32,16 +33,19 @@
 class EffectsMonitor: public QObject {
 	Q_OBJECT
 public:
-	std::pair<std::string, Effect::effectID> effect; /**< current selected effect */
-	std::map<std::string, Effect::effectID> effects; /**< list of all available effects */
-	std::map<std::string, std::string> files; /**< list of all available effects template files */
-	std::map<std::string, std::string> parameters; /**< list of the current effect parameters and their values */
+    Effect *effect; /**< pointer to current selected effect */
+    std::map<Effect::effectID, std::string> effects;    /**< list of all available effects */
+    std::map<Effect::effectID, std::string> files;           /**< list of all available effects template files */
+    std::map<std::string, std::string> parameters; /**< list of the current effect parameters and their values */
+    std::map<std::string, Chart2D *> charts; /**< list of charts of effect monitoring */
 	EffectsMonitor(QWidget *framework);
-	EffectsMonitor(QWidget *framework, std::string effect);
+    EffectsMonitor(QWidget *framework, Effect *effect);
 	~EffectsMonitor();
-	void setEffect(std::string effect);
+    void setEffect(Effect *effect);
     void clear();
-	void setParameter(std::string key, std::string value);public slots:
+    void setParameter(std::string key, std::string value);
+    void plotChart();
+public slots:
 	void updateParameter(int value); // int
 	void updateParameter(double value); // double
 	void updateParameter(QString value); // string
