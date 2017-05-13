@@ -14,10 +14,17 @@ Compressor::Compressor() AS_EFFECT_CONSTRUCTOR {
  * @param 	samples			number of samples
  */
 void Compressor::apply(float *input, float *output, int samples) {
+    const int chunksize = 20;
     this->update();
+    double level = 0;
+    double meanlevel = 0;
     for (int sample = 0; sample < samples; sample++) {
-        float value = input[sample];
-        output[sample] = value;
+        level += std::pow(input[sample], 2) / chunksize;
+        if (sample % chunksize == chunksize - 1) {
+            meanlevel = 10*std::log10(level);
+            level = 0;
+        }
+        output[sample] = input[sample]*std::pow(10, gain(meanlevel) / 20);
     }
 }
 
@@ -47,12 +54,15 @@ std::vector<std::vector<double>> Compressor::plot(std::string chart) {
 void Compressor::update() {
     this->threshold = getDouble(params["threshold"]);
     this->ratio = getDouble(params["ratio"]);
-    this->attack = getDouble(params["attack"]);
-    this->release = getDouble(params["release"]);
     if (params["type"] == "upward") {
         this->type = Compressor::upward;
     } else {
         this->type = Compressor::downward;
+    }
+    if (params["function"] == "expansion") {
+        this->function = Compressor::expansion;
+    } else {
+        this->function = Compressor::compression;
     }
 }
 
@@ -62,18 +72,28 @@ void Compressor::update() {
  * @return  compressor gain [dB]
  */
 double Compressor::gain(double inputlevel) {
-    switch(this->type) {
+    double slope = 1;
+    switch (function) {
+    case Compressor::compression:
+    default:
+        slope = 1/ratio;
+        break;
+    case Compressor::expansion:
+        slope = ratio;
+        break;
+    }
+    switch(type) {
     case Compressor::downward:
     default:
         if (inputlevel < threshold) {
             return 0;
         } else {
-            return (1/ratio - 1) * (inputlevel - threshold);
+            return (slope - 1) * (inputlevel - threshold);
         }
         break;
     case Compressor::upward:
         if (inputlevel < threshold) {
-            return (1/ratio - 1) * (inputlevel - threshold);
+            return (slope - 1) * (inputlevel - threshold);
         } else {
             return 0;
         }

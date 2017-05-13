@@ -5,7 +5,7 @@ var class_output_device =
     [ "bytesAvailable", "class_output_device.html#ae15675354b4b09ca3ff02a24be102c4d", null ],
     [ "clear", "class_output_device.html#a9c3515a8c1812a08bd74d87389554767", null ],
     [ "readData", "class_output_device.html#a5f455a9fdaa26664957b54b7806a1b7d", null ],
-    [ "send", "class_output_device.html#acdf950a2070d63d3636173c06c29e42e", null ],
+    [ "send", "class_output_device.html#aa4906f742ed51716dfc9a7602014efcc", null ],
     [ "test", "class_output_device.html#a78e2163a6f7051d49d3483234003d684", null ],
     [ "writeData", "class_output_device.html#ab616ad1f0080ce753b511c08360bdde8", null ],
     [ "amplitude", "class_output_device.html#a5f91d32d6e37acbf28651793f68eaa8c", null ],

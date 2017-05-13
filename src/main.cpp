@@ -11,6 +11,8 @@
 #include "effects/Effect.h"
 #include "tools/Logger.h"
 
+const int fs = 44100; // audio signal sampling [Hz]
+
 /**
  * @brief   It prints help.
  * @param   app             application name
@@ -225,7 +227,7 @@ int main(int argc, char *argv[]) {
 	std::cout << message << "\n";
 	// Application
 	consolelog("main", LogType::progress, "running application");
-	ProcessManager *process = new ProcessManager(44100, 0);
+    ProcessManager *process = new ProcessManager(fs, 0);
 	// Decoding
 	process->decode(source, bitstream, input, upmixtype, decodingtype,
 			binauralquality, hrtfmodel);
@@ -236,7 +238,7 @@ int main(int argc, char *argv[]) {
     std::map<std::string, std::string> parameters = Effect::getParams(info);
     std::vector<bool> channels = Effect::getChannels(info, process->channels);
     std::vector<double> levels = Effect::getLevels(info, process->channels);
-    Effect *fx = new Effect(effectID, parameters);
+    Effect *fx = new Effect(effectID, parameters, fs);
 	process->applyEffect(fx, channels, levels);
 	// Output
 	process->setOutput(output);

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['options',['Options',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3',1,'AudioChart::ChartOptions']]]
+  ['logtype',['logtype',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType']]]
 ];

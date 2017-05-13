@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xlabel',['xlabel',['../class_audio_chart.html#a1870b323097b0183bc9150c79c750601',1,'AudioChart']]]
+  ['xlabel',['xlabel',['../class_chart2_d.html#af463dc0d42e747ab4a208a44db003bd7',1,'Chart2D']]]
 ];

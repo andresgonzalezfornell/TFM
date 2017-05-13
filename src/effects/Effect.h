@@ -42,8 +42,8 @@ public:
         LIST
     }; /**< available effects enumeration */
     std::pair<Effect::effectID, std::string> effect; /**< selected effect name and id */
-    Effect(Effect::effectID effect);
-    Effect(Effect::effectID effect, std::map<std::string, std::string> params);
+    Effect(Effect::effectID effect, int fs);
+    Effect(Effect::effectID effect, std::map<std::string, std::string> params, int fs);
     ~Effect();
     void setParams(std::map<std::string, std::string> params);
     bool apply(float *input, float *output, int samples);

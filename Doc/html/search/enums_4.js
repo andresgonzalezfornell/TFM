@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logtype',['logtype',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType']]]
+  ['hrtfmodel',['hrtfmodel',['../struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82',1,'HRTFModel']]]
 ];

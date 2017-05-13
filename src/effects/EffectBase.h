@@ -19,6 +19,7 @@
  */
 class EffectBase {
 public:
+    static int fs; /**< signal sampling frequency [Hz] */
     static std::map<std::string, std::string> params; /**< string of effect parameters */
     EffectBase();
     static int getInt(std::string param);

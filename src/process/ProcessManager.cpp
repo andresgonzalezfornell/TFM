@@ -133,26 +133,29 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                     N = this->samples - n;
                 }
             }
+            float *input_effect = (float *) std::malloc(N * sizeof(float));
             for (int channel = 0; channel < this->channels; channel++) {
                 // Levels
                 for (int sample = n; sample < (n + N); sample++) {
-                    this->input[channel][sample] *= levels[channel];
-                    if (input[channel][sample] > 1) {
-                        input[channel][sample] = 1;
-                    } else if (input[channel][sample] < -1) {
-                        input[channel][sample] = -1;
+                    if (levels[channel] * input[channel][sample] > 1) {
+                        input_effect[sample - n] = 1;
+                    } else if (levels[channel] * input[channel][sample] < -1) {
+                        input_effect[sample - n] = -1;
+                    } else {
+                        input_effect[sample - n] = levels[channel] * this->input[channel][sample];
                     }
                 }
                 // Channels selection
                 if (channels[channel]) {
                     // Effect
-                    effect->apply(input[channel] + n, output[channel] + n, N);
+                    effect->apply(input_effect, output[channel] + n, N);
                 } else {
-                    for (int sample = n; sample < N; sample++) {
-                        this->output[channel][sample] = input[channel][sample];
+                    for (int sample = n; sample < (n + N); sample++) {
+                        this->output[channel][sample] = input_effect[sample - n];
                     }
                 }
             }
+            std::free(input_effect);
             this->cursor += N;
             if (this->cursor > this->total) {
                 this->total = this->cursor;

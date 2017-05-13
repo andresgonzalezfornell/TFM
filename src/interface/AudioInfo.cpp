@@ -3,6 +3,7 @@
 
 /**
  * @brief   AudioInfo constructor.
+ * @param   parent          user interface parent object
  */
 AudioInfo::AudioInfo(QWidget *parent) :
     QDialog(parent), ui(new Ui::AudioInfo) {
@@ -15,11 +16,13 @@ AudioInfo::AudioInfo(QWidget *parent) :
  * @brief   AudioInfo destructor.
  */
 AudioInfo::~AudioInfo() {
-    delete this->file;
-    delete ui;
     consolelog("AudioInfo", LogType::progress, "AudioInfo object is deleted");
 }
 
+/**
+ * @brief   It sets a audio file.
+ * @param   file            audio file object
+ */
 void AudioInfo::setFile(WAVFile *file) {
     QTableWidget *table = ui->infotable;
     QStringList labels;

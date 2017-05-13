@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('class_s_a_c_effects.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_s_a_c_effects-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -124,9 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab4eb7a1cfb54e995a43967843e0c4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aab4eb7a1cfb54e995a43967843e0c4b7">updateControls</a> ()</td></tr>
 <tr class="memdesc:aab4eb7a1cfb54e995a43967843e0c4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">It updates enability of user interface controls according to the current parameters state.  <a href="#aab4eb7a1cfb54e995a43967843e0c4b7">More...</a><br /></td></tr>
 <tr class="separator:aab4eb7a1cfb54e995a43967843e0c4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9638f2d20ae616f1cced15ab841aa95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aa9638f2d20ae616f1cced15ab841aa95">setEffect</a> (std::string effect)</td></tr>
-<tr class="memdesc:aa9638f2d20ae616f1cced15ab841aa95"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets an effect for the effect monitor.  <a href="#aa9638f2d20ae616f1cced15ab841aa95">More...</a><br /></td></tr>
-<tr class="separator:aa9638f2d20ae616f1cced15ab841aa95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57fa3b5c11bafba4c2e471a80964c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ab57fa3b5c11bafba4c2e471a80964c14">setEffect</a> (<a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a> <a class="el" href="class_s_a_c_effects.html#a0cf7534fffd03b9a242eacf3a9da3432">effect</a>)</td></tr>
+<tr class="memdesc:ab57fa3b5c11bafba4c2e471a80964c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets an effect for the effect monitor.  <a href="#ab57fa3b5c11bafba4c2e471a80964c14">More...</a><br /></td></tr>
+<tr class="separator:ab57fa3b5c11bafba4c2e471a80964c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa9092eb132a8fe2b0560b3a600747b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5">setSource</a> (std::string filename)</td></tr>
 <tr class="memdesc:aaa9092eb132a8fe2b0560b3a600747b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the source audio file.  <a href="#aaa9092eb132a8fe2b0560b3a600747b5">More...</a><br /></td></tr>
 <tr class="separator:aaa9092eb132a8fe2b0560b3a600747b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,39 +162,12 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
-<tr class="memitem:a099f5f735ac8a5a8f84d980a2abbffd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a099f5f735ac8a5a8f84d980a2abbffd4">sendInput</a> ()</td></tr>
-<tr class="memdesc:a099f5f735ac8a5a8f84d980a2abbffd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">It plots the current input signal on the input chart.  <a href="#a099f5f735ac8a5a8f84d980a2abbffd4">More...</a><br /></td></tr>
-<tr class="separator:a099f5f735ac8a5a8f84d980a2abbffd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a324b9316d9f9546132eb239942e3cea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a324b9316d9f9546132eb239942e3cea8">sendOutput</a> ()</td></tr>
-<tr class="memdesc:a324b9316d9f9546132eb239942e3cea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends the current output signal to the output device and plots on the output chart.  <a href="#a324b9316d9f9546132eb239942e3cea8">More...</a><br /></td></tr>
-<tr class="separator:a324b9316d9f9546132eb239942e3cea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac80ea8642b5ed51edbc4b6f165529adb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ac80ea8642b5ed51edbc4b6f165529adb">updateInputChannels</a> ()</td></tr>
-<tr class="memdesc:ac80ea8642b5ed51edbc4b6f165529adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">It loads current input channels name on chart selector.  <a href="#ac80ea8642b5ed51edbc4b6f165529adb">More...</a><br /></td></tr>
-<tr class="separator:ac80ea8642b5ed51edbc4b6f165529adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8bc4850e92fde167180a4d895a30910"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ad8bc4850e92fde167180a4d895a30910">updateOutputChannels</a> ()</td></tr>
-<tr class="memdesc:ad8bc4850e92fde167180a4d895a30910"><td class="mdescLeft">&#160;</td><td class="mdescRight">It loads current output channels name on chart selector.  <a href="#ad8bc4850e92fde167180a4d895a30910">More...</a><br /></td></tr>
-<tr class="separator:ad8bc4850e92fde167180a4d895a30910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac52d8ae24e023f2d7d9c72dff88ff420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ac52d8ae24e023f2d7d9c72dff88ff420">stop</a> ()</td></tr>
 <tr class="memdesc:ac52d8ae24e023f2d7d9c72dff88ff420"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stops input playback.  <a href="#ac52d8ae24e023f2d7d9c72dff88ff420">More...</a><br /></td></tr>
 <tr class="separator:ac52d8ae24e023f2d7d9c72dff88ff420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ab370b936145bcfe0cdc36836e6d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a99ab370b936145bcfe0cdc36836e6d86">applyEffect</a> ()</td></tr>
 <tr class="memdesc:a99ab370b936145bcfe0cdc36836e6d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applies the selected effect to the input signal.  <a href="#a99ab370b936145bcfe0cdc36836e6d86">More...</a><br /></td></tr>
 <tr class="separator:a99ab370b936145bcfe0cdc36836e6d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Playback controls slots</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>User interface functions for audio playback control. </p>
-</div></td></tr>
-<tr class="memitem:aa831f464a6675ee7db0b841f1c230426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aa831f464a6675ee7db0b841f1c230426">setPlayback</a> (bool state)</td></tr>
-<tr class="memdesc:aa831f464a6675ee7db0b841f1c230426"><td class="mdescLeft">&#160;</td><td class="mdescRight">It controls the input and output playback.  <a href="#aa831f464a6675ee7db0b841f1c230426">More...</a><br /></td></tr>
-<tr class="separator:aa831f464a6675ee7db0b841f1c230426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a083d44f0c8cc244fd462ba63f671e857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a083d44f0c8cc244fd462ba63f671e857">openInfo</a> ()</td></tr>
-<tr class="memdesc:a083d44f0c8cc244fd462ba63f671e857"><td class="mdescLeft">&#160;</td><td class="mdescRight">It opens audio file info dialog.  <a href="#a083d44f0c8cc244fd462ba63f671e857">More...</a><br /></td></tr>
-<tr class="separator:a083d44f0c8cc244fd462ba63f671e857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a974bd5613ea507ae0a840d116867e303"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a974bd5613ea507ae0a840d116867e303">setTimer</a> ()</td></tr>
-<tr class="memdesc:a974bd5613ea507ae0a840d116867e303"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets audio playback time from the cursor.  <a href="#a974bd5613ea507ae0a840d116867e303">More...</a><br /></td></tr>
-<tr class="separator:a974bd5613ea507ae0a840d116867e303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36b90fa67dd3a418188b986b68ce885d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a36b90fa67dd3a418188b986b68ce885d">setTimer</a> (QTime time)</td></tr>
-<tr class="memdesc:a36b90fa67dd3a418188b986b68ce885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets audio playback time from a specific time selected by user.  <a href="#a36b90fa67dd3a418188b986b68ce885d">More...</a><br /></td></tr>
-<tr class="separator:a36b90fa67dd3a418188b986b68ce885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Audio menu bar interface slots</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>User interface functions for audio control. </p>
 </div></td></tr>
@@ -203,6 +177,9 @@ Private Slots</h2></td></tr>
 <tr class="memitem:ab1ba346d1db2268416d944d373d480fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ab1ba346d1db2268416d944d373d480fe">exportOutput</a> ()</td></tr>
 <tr class="memdesc:ab1ba346d1db2268416d944d373d480fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">It exports generated output singal as audio file.  <a href="#ab1ba346d1db2268416d944d373d480fe">More...</a><br /></td></tr>
 <tr class="separator:ab1ba346d1db2268416d944d373d480fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e8fbb737842ec52c4bcd318ae518fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a20e8fbb737842ec52c4bcd318ae518fa">openChannelsCharts</a> ()</td></tr>
+<tr class="memdesc:a20e8fbb737842ec52c4bcd318ae518fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">It opens audio file info dialog.  <a href="#a20e8fbb737842ec52c4bcd318ae518fa">More...</a><br /></td></tr>
+<tr class="separator:a20e8fbb737842ec52c4bcd318ae518fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae360818918fb3dacb0f14af7a72176b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ae360818918fb3dacb0f14af7a72176b5">test</a> ()</td></tr>
 <tr class="memdesc:ae360818918fb3dacb0f14af7a72176b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It plays a test to a selected output audio device.  <a href="#ae360818918fb3dacb0f14af7a72176b5">More...</a><br /></td></tr>
 <tr class="separator:ae360818918fb3dacb0f14af7a72176b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,6 +211,12 @@ Private Slots</h2></td></tr>
 <tr class="memdesc:a03facc29d6f6c445a380afbc1336362b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot action for menu effect items.  <a href="#a03facc29d6f6c445a380afbc1336362b">More...</a><br /></td></tr>
 <tr class="separator:a03facc29d6f6c445a380afbc1336362b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a324b9316d9f9546132eb239942e3cea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a324b9316d9f9546132eb239942e3cea8">sendOutput</a> ()</td></tr>
+<tr class="memdesc:a324b9316d9f9546132eb239942e3cea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends the current output signal to the output device and plots on the output chart.  <a href="#a324b9316d9f9546132eb239942e3cea8">More...</a><br /></td></tr>
+<tr class="separator:a324b9316d9f9546132eb239942e3cea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a71dd85e0b586e93854e747c5fd9459b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_process_manager.html">ProcessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a71dd85e0b586e93854e747c5fd9459b3">process</a></td></tr>
@@ -250,14 +233,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a13428146c31d3fda1ed30773a35795bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcfd19153f333c1a87d6fca5a25dd938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_w_a_v_file.html">WAVFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938">input</a></td></tr>
 <tr class="separator:abcfd19153f333c1a87d6fca5a25dd938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf7534fffd03b9a242eacf3a9da3432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_effect.html">Effect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a0cf7534fffd03b9a242eacf3a9da3432">effect</a></td></tr>
+<tr class="separator:a0cf7534fffd03b9a242eacf3a9da3432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab722cb425379e8f4ca55b0c37c5371ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_channels_list.html">ChannelsList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#ab722cb425379e8f4ca55b0c37c5371ef">channels_input</a></td></tr>
 <tr class="separator:ab722cb425379e8f4ca55b0c37c5371ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b5e9de7451cf915a3a781ee05e9abd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_channels_list.html">ChannelsList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a0b5e9de7451cf915a3a781ee05e9abd1">channels_output</a></td></tr>
 <tr class="separator:a0b5e9de7451cf915a3a781ee05e9abd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb84a5d00407426f8767b527e08a08d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_chart.html">AudioChart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#adb84a5d00407426f8767b527e08a08d2">chart_input</a></td></tr>
-<tr class="separator:adb84a5d00407426f8767b527e08a08d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa6b7700eef98ea2d5e06da3dbd654eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_chart.html">AudioChart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aaa6b7700eef98ea2d5e06da3dbd654eb">chart_output</a></td></tr>
-<tr class="separator:aaa6b7700eef98ea2d5e06da3dbd654eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ebc2edc9b6f2876c3a758434bce3ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_effects_monitor.html">EffectsMonitor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a57ebc2edc9b6f2876c3a758434bce3ee">effectsmonitor</a></td></tr>
 <tr class="separator:a57ebc2edc9b6f2876c3a758434bce3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3973fe799887416bf9dbb61891f670a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a3973fe799887416bf9dbb61891f670a6">chunksize</a></td></tr>
@@ -274,6 +255,23 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6d7c19e0a689b69f8a05ca0a81129634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd3b67132aaebdf9131c5be0b63c977e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82">HRTFModel::hrtfmodel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#afd3b67132aaebdf9131c5be0b63c977e">hrtfmodel</a></td></tr>
 <tr class="separator:afd3b67132aaebdf9131c5be0b63c977e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Playback controls slots</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpb7c9ff1b989d29a886bef165f85fa537"></a>User interface functions for audio playback control. </p>
+</td></tr>
+<tr class="memitem:a974bd5613ea507ae0a840d116867e303"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a974bd5613ea507ae0a840d116867e303">setTimer</a> ()</td></tr>
+<tr class="memdesc:a974bd5613ea507ae0a840d116867e303"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets audio playback time from the cursor.  <a href="#a974bd5613ea507ae0a840d116867e303">More...</a><br /></td></tr>
+<tr class="separator:a974bd5613ea507ae0a840d116867e303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa831f464a6675ee7db0b841f1c230426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#aa831f464a6675ee7db0b841f1c230426">setPlayback</a> (bool state)</td></tr>
+<tr class="memdesc:aa831f464a6675ee7db0b841f1c230426"><td class="mdescLeft">&#160;</td><td class="mdescRight">It controls the input and output playback.  <a href="#aa831f464a6675ee7db0b841f1c230426">More...</a><br /></td></tr>
+<tr class="separator:aa831f464a6675ee7db0b841f1c230426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083d44f0c8cc244fd462ba63f671e857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a083d44f0c8cc244fd462ba63f671e857">openInfo</a> ()</td></tr>
+<tr class="memdesc:a083d44f0c8cc244fd462ba63f671e857"><td class="mdescLeft">&#160;</td><td class="mdescRight">It opens audio file info dialog.  <a href="#a083d44f0c8cc244fd462ba63f671e857">More...</a><br /></td></tr>
+<tr class="separator:a083d44f0c8cc244fd462ba63f671e857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b90fa67dd3a418188b986b68ce885d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_effects.html#a36b90fa67dd3a418188b986b68ce885d">setTimer</a> (QTime time)</td></tr>
+<tr class="memdesc:a36b90fa67dd3a418188b986b68ce885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets audio playback time from a specific time selected by user.  <a href="#a36b90fa67dd3a418188b986b68ce885d">More...</a><br /></td></tr>
+<tr class="separator:a36b90fa67dd3a418188b986b68ce885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_s_a_c_effects.html" title="SACEffects window interface. ">SACEffects</a> window interface. </p>
@@ -486,6 +484,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a20e8fbb737842ec52c4bcd318ae518fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e8fbb737842ec52c4bcd318ae518fa">&#9670;&nbsp;</a></span>openChannelsCharts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SACEffects::openChannelsCharts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It opens audio file info dialog. </p>
+
+</div>
+</div>
 <a id="a083d44f0c8cc244fd462ba63f671e857"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a083d44f0c8cc244fd462ba63f671e857">&#9670;&nbsp;</a></span>openInfo</h2>
 
@@ -570,35 +595,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a099f5f735ac8a5a8f84d980a2abbffd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a099f5f735ac8a5a8f84d980a2abbffd4">&#9670;&nbsp;</a></span>sendInput</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SACEffects::sendInput </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>It plots the current input signal on the input chart. </p>
-
-</div>
-</div>
 <a id="a324b9316d9f9546132eb239942e3cea8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a324b9316d9f9546132eb239942e3cea8">&#9670;&nbsp;</a></span>sendOutput</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a324b9316d9f9546132eb239942e3cea8">&#9670;&nbsp;</a></span>sendOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -615,7 +613,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -773,8 +771,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9638f2d20ae616f1cced15ab841aa95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9638f2d20ae616f1cced15ab841aa95">&#9670;&nbsp;</a></span>setEffect()</h2>
+<a id="ab57fa3b5c11bafba4c2e471a80964c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57fa3b5c11bafba4c2e471a80964c14">&#9670;&nbsp;</a></span>setEffect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +780,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void SACEffects::setEffect </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="class_effect.html#a6422fe21e9e452943fbc3344884a6fed">Effect::effectID</a>&#160;</td>
           <td class="paramname"><em>effect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -912,7 +910,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a974bd5613ea507ae0a840d116867e303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a974bd5613ea507ae0a840d116867e303">&#9670;&nbsp;</a></span>setTimer <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a974bd5613ea507ae0a840d116867e303">&#9670;&nbsp;</a></span>setTimer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -929,7 +927,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1234,60 +1232,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac80ea8642b5ed51edbc4b6f165529adb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac80ea8642b5ed51edbc4b6f165529adb">&#9670;&nbsp;</a></span>updateInputChannels</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SACEffects::updateInputChannels </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>It loads current input channels name on chart selector. </p>
-
-</div>
-</div>
-<a id="ad8bc4850e92fde167180a4d895a30910"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8bc4850e92fde167180a4d895a30910">&#9670;&nbsp;</a></span>updateOutputChannels</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SACEffects::updateOutputChannels </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>It loads current output channels name on chart selector. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6d7c19e0a689b69f8a05ca0a81129634"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d7c19e0a689b69f8a05ca0a81129634">&#9670;&nbsp;</a></span>binauralquality</h2>
@@ -1404,52 +1348,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adb84a5d00407426f8767b527e08a08d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb84a5d00407426f8767b527e08a08d2">&#9670;&nbsp;</a></span>chart_input</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_audio_chart.html">AudioChart</a>* SACEffects::chart_input</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>input chart object </p>
-
-</div>
-</div>
-<a id="aaa6b7700eef98ea2d5e06da3dbd654eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa6b7700eef98ea2d5e06da3dbd654eb">&#9670;&nbsp;</a></span>chart_output</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_audio_chart.html">AudioChart</a>* SACEffects::chart_output</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>output chart object </p>
-
-</div>
-</div>
 <a id="a3973fe799887416bf9dbb61891f670a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3973fe799887416bf9dbb61891f670a6">&#9670;&nbsp;</a></span>chunksize</h2>
 
@@ -1516,6 +1414,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>SAC decoder parameter </p>
+
+</div>
+</div>
+<a id="a0cf7534fffd03b9a242eacf3a9da3432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf7534fffd03b9a242eacf3a9da3432">&#9670;&nbsp;</a></span>effect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_effect.html">Effect</a>* SACEffects::effect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>effect object </p>
 
 </div>
 </div>

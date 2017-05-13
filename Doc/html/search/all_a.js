@@ -1,10 +1,10 @@
 var searchData=
 [
   ['label',['label',['../class_channel.html#a66a7e30d0b8c6ee9c0b0d537b59bd695',1,'Channel']]],
-  ['labelx',['labelX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a3d5390c398d2dffe459abc0e5904ce5c',1,'AudioChart::ChartOptions']]],
-  ['labely',['labelY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3a678a633cc4abb19484fb6c798df343b4',1,'AudioChart::ChartOptions']]],
+  ['labelx',['labelX',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69a20ef332f00d99607527d9ca2a24a7ce9',1,'Chart2D::ChartOptions']]],
+  ['labely',['labelY',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69a003f8c6d93caf26f4d3160cfdf9e7f76',1,'Chart2D::ChartOptions']]],
   ['layout',['layout',['../class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62',1,'ChannelsList::layout()'],['../class_effects_monitor.html#a267bd44e97f74c2b60993fc52b3c6ed1',1,'EffectsMonitor::layout()']]],
-  ['legend',['legend',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ac406fef06cda8e5148dc87023bc93af9',1,'AudioChart::ChartOptions']]],
+  ['legend',['legend',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69abe6091aa82c65558fdb1cadaa45aec39',1,'Chart2D::ChartOptions']]],
   ['level',['level',['../class_volumeter.html#adf7109e2c42ba90322e887c54c4edd4d',1,'Volumeter']]],
   ['list',['LIST',['../class_effect.html#a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a',1,'Effect::LIST()'],['../_effect_8h.html#aed0a8f83088c41d721066cd5b3b9a00c',1,'LIST():&#160;Effect.h']]],
   ['littleendian',['littleendian',['../struct_file_1_1_endianess.html#ac80818ac42fdd0c9aa29d424e65fa37ea3cb0abec70bab3c0e492ef9b57d4f4da',1,'File::Endianess']]],
@@ -15,7 +15,7 @@ var searchData=
   ['logger_2ecpp',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
   ['logger_2eh',['Logger.h',['../_logger_8h.html',1,'']]],
   ['logtype',['LogType',['../struct_log_type.html',1,'LogType'],['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType::logtype()']]],
-  ['logx',['logX',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ad87d045c5f1eeefed9cf643b9c45c833',1,'AudioChart::ChartOptions']]],
-  ['logy',['logY',['../struct_audio_chart_1_1_chart_options.html#a061bb098e577997369a9af29a418a1d3ab2b18374bbf667f63a425a711ca1a90c',1,'AudioChart::ChartOptions']]],
+  ['logx',['logX',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69ac51488678d517feb63825d59ab9acfb1',1,'Chart2D::ChartOptions']]],
+  ['logy',['logY',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69af9bd258ed39b48502e9bbd0df9c6316c',1,'Chart2D::ChartOptions']]],
   ['low',['low',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822a1c83062a65b39a734cfb6393fa679425',1,'DecodingType']]]
 ];

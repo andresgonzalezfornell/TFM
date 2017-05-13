@@ -17,6 +17,7 @@
 // Classes and local files
 #include "AudioOutput.h"
 #include "Volumeter.h"
+#include "Chart2D.h"
 #include "../process/AudioSignal.h"
 #include "../process/AudioStream.h"
 #include "../tools/Logger.h"
@@ -95,6 +96,34 @@ private:
 	void bypass(bool state);
 	void setDevice(int device);signals:
 	void namechanged();
+};
+
+namespace Ui {
+class ChannelsCharts;
+}
+
+class ChannelsCharts : public QDialog {
+    Q_OBJECT
+public:
+    ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, int fs, QWidget *parent = 0);
+    ~ChannelsCharts();
+private:
+    Ui::ChannelsCharts *ui; /**< user interface object */
+    int fs; /**< audio signal sampling [Hz] */
+    float **input; /**< input signal pointer */
+    float **output; /**< output signal pointer */
+    ChannelsList *input_channels; /**< input channels object */
+    ChannelsList *output_channels; /**< output channels object */
+    int samples; /**< number of samples each channel */
+    Chart2D *input_chart; /**< input chart object */
+    Chart2D *output_chart; /**< output chart object */
+    void updateSelectors();
+private slots:
+    void setTimeCursor(int sample);
+    int getTimeCursor();
+    void setScope(int time);
+    int getScope();
+    void plot();
 };
 
 #endif // CHANNELSLIST_H

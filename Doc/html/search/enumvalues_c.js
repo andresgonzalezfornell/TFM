@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning',['warning',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af479132e55c523158544cc5c059bc9be',1,'LogType']]]
+  ['stereo',['stereo',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa43533cc1c81e6c6faa432117de399809',1,'UpmixType']]]
 ];

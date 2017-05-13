@@ -1,10 +1,5 @@
 var dir_650ee533936399e683a30afb9473a469 =
 [
-    [ "AudioChart.cpp", "_audio_chart_8cpp.html", null ],
-    [ "AudioChart.h", "_audio_chart_8h.html", [
-      [ "AudioChart", "class_audio_chart.html", "class_audio_chart" ],
-      [ "ChartOptions", "struct_audio_chart_1_1_chart_options.html", "struct_audio_chart_1_1_chart_options" ]
-    ] ],
     [ "AudioInfo.cpp", "_audio_info_8cpp.html", null ],
     [ "AudioInfo.h", "_audio_info_8h.html", [
       [ "AudioInfo", "class_audio_info.html", "class_audio_info" ]
@@ -22,7 +17,13 @@ var dir_650ee533936399e683a30afb9473a469 =
     [ "ChannelsList.cpp", "_channels_list_8cpp.html", null ],
     [ "ChannelsList.h", "_channels_list_8h.html", [
       [ "Channel", "class_channel.html", "class_channel" ],
-      [ "ChannelsList", "class_channels_list.html", "class_channels_list" ]
+      [ "ChannelsList", "class_channels_list.html", "class_channels_list" ],
+      [ "ChannelsCharts", "class_channels_charts.html", "class_channels_charts" ]
+    ] ],
+    [ "Chart2D.cpp", "_chart2_d_8cpp.html", null ],
+    [ "Chart2D.h", "_chart2_d_8h.html", [
+      [ "Chart2D", "class_chart2_d.html", "class_chart2_d" ],
+      [ "ChartOptions", "struct_chart2_d_1_1_chart_options.html", "struct_chart2_d_1_1_chart_options" ]
     ] ],
     [ "EffectsMonitor.cpp", "_effects_monitor_8cpp.html", "_effects_monitor_8cpp" ],
     [ "EffectsMonitor.h", "_effects_monitor_8h.html", [

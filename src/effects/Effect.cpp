@@ -1,23 +1,27 @@
 #include "Effect.h"
 #include "EffectBase.h"
 
+int EffectBase::fs;
 std::map<std::string, std::string> EffectBase::params;
 
 /**
  * @brief   Effect constructor.
  * @param   effect              effect ID
+ * @param   fs                  signal sampling frequency
  */
-Effect::Effect(Effect::effectID effect) {
+Effect::Effect(Effect::effectID effect, int fs) {
     std::map<Effect::effectID, std::string> effects = Effect::getEffects();
     this->effect = std::pair<Effect::effectID, std::string>(effect, effects[effect]);
+    this->fs = fs;
 }
 
 /**
  * @brief   Effect constructor.
  * @param   effect              effect ID
  * @param   params              map of effect parameters
+ * @param   fs                  signal sampling frequency
  */
-Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> params) : Effect::Effect(effect) {
+Effect::Effect(Effect::effectID effect, std::map<std::string, std::string> params, int fs) : Effect::Effect(effect, fs) {
     std::map<Effect::effectID, std::string> effects = Effect::getEffects();
     this->effect = std::pair<Effect::effectID, std::string>(effect, effects[effect]);
     this->setParams(params);
@@ -241,7 +245,6 @@ std::map<std::string, std::string> Effect::getTagMap(std::string configuration, 
 
 /**
  * @brief   EffectBase constructor.
- * @param   params              string of effect parameters
  */
 EffectBase::EffectBase() {
 }

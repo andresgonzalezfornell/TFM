@@ -178,7 +178,8 @@ OutputDevice::~OutputDevice() {
 
 /**
  * @brief   It sends an audio signal to the buffer to be sent to the audio output device.
- * @param   signal
+ * @param   signal          audio signal pointer
+ * @param   samples         number of samples
  */
 void OutputDevice::send(float *signal, int samples) {
     int sample_bytes = this->format.sampleSize() / 8; // sample size [Bytes]

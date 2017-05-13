@@ -63,7 +63,8 @@ FORMS    += \
     src/interface/Encoder.ui \
     src/interface/AudioTest.ui \
     src/interface/AudioInfo.ui \
-    src/interface/SACEffects.ui
+    src/interface/SACEffects.ui \
+    src/interface/ChannelsCharts.ui
 
 RESOURCES += \
     src/interface/media.qrc

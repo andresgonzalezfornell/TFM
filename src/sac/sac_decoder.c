@@ -14,10 +14,12 @@ void myexit(char *s) {
     error = (char *) malloc(1 + strlen(error) + strlen("\n"));
     strcpy(error, error);
     strcat(error, "\n");
+    free(error);
     // Message
     error = (char *) malloc(1 + strlen(error) + strlen(s));
     strcpy(error, error);
     strcat(error, s);
+    free(error);
 }
 
 /**

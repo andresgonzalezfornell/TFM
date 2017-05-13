@@ -1,7 +1,9 @@
 var searchData=
 [
   ['index',['index',['../class_channel.html#a992b8f195f395a64b4e966886bb41f00',1,'Channel']]],
-  ['input',['input',['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938',1,'SACEffects::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
+  ['input',['input',['../class_channels_charts.html#ab3a9a79fe459610f67633438f496b18b',1,'ChannelsCharts::input()'],['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938',1,'SACEffects::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
+  ['input_5fchannels',['input_channels',['../class_channels_charts.html#af3c81ffd63585ea7967c6b2221b5e588',1,'ChannelsCharts']]],
+  ['input_5fchart',['input_chart',['../class_channels_charts.html#a87ae986ae562c146145eca33fa85b36e',1,'ChannelsCharts']]],
   ['inputfile',['inputfile',['../class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40',1,'ProcessManager']]],
   ['isoutput',['isoutput',['../class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b',1,'Channel']]],
   ['italic',['italic',['../_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b',1,'Logger.cpp']]]

@@ -83,6 +83,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
+<li>allocated
+: <a class="el" href="class_process_manager.html#ae845668d01f7402bb2a7ce667dd347c4">ProcessManager</a>
+</li>
 <li>amplitude
 : <a class="el" href="class_output_device.html#a5f91d32d6e37acbf28651793f68eaa8c">OutputDevice</a>
 </li>
@@ -144,13 +147,10 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_s_a_c_effects.html#a0b5e9de7451cf915a3a781ee05e9abd1">SACEffects</a>
 </li>
 <li>chart
-: <a class="el" href="class_audio_chart.html#a8e2ec258d63b2b979191e47db2f67ee3">AudioChart</a>
+: <a class="el" href="class_chart2_d.html#ac795067359d934a6bfd747ae89ffcba8">Chart2D</a>
 </li>
-<li>chart_input
-: <a class="el" href="class_s_a_c_effects.html#adb84a5d00407426f8767b527e08a08d2">SACEffects</a>
-</li>
-<li>chart_output
-: <a class="el" href="class_s_a_c_effects.html#aaa6b7700eef98ea2d5e06da3dbd654eb">SACEffects</a>
+<li>charts
+: <a class="el" href="class_effects_monitor.html#a2b5f5373404adac3f94bdab2f423d958">EffectsMonitor</a>
 </li>
 <li>chunkID
 : <a class="el" href="struct_w_a_v_file_1_1_header.html#a796a84d05ba0ddeb837804dff90b730b">WAVFile::Header</a>
@@ -198,11 +198,12 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>effect
-: <a class="el" href="class_effect.html#a06ffa21833022dcc29b2dd4ed73de918">Effect</a>
-, <a class="el" href="class_effects_monitor.html#a8a4c7b2f10bf066fb7a43f39f79ef88d">EffectsMonitor</a>
+: <a class="el" href="class_effect.html#ae23ae4e48c344fa374730a9ae24e7ad3">Effect</a>
+, <a class="el" href="class_effects_monitor.html#a4ec98ceedd0d8bea006da1fc97f02124">EffectsMonitor</a>
+, <a class="el" href="class_s_a_c_effects.html#a0cf7534fffd03b9a242eacf3a9da3432">SACEffects</a>
 </li>
 <li>effects
-: <a class="el" href="class_effects_monitor.html#a69186e4749d1a5a806c2f7870b258b41">EffectsMonitor</a>
+: <a class="el" href="class_effects_monitor.html#abf43aed9b7bcc0dee032f5e2e6a3e438">EffectsMonitor</a>
 </li>
 <li>effectsmonitor
 : <a class="el" href="class_s_a_c_effects.html#a57ebc2edc9b6f2876c3a758434bce3ee">SACEffects</a>
@@ -226,7 +227,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_file.html#a0cea8d01ab6c2653a95d75fc556e88dc">File</a>
 </li>
 <li>files
-: <a class="el" href="class_effects_monitor.html#aeb813ecffb6993fb92881c7c1f1db586">EffectsMonitor</a>
+: <a class="el" href="class_effects_monitor.html#a88dbd80c419f86e09919761011c2a152">EffectsMonitor</a>
 </li>
 <li>format
 : <a class="el" href="class_audio_output.html#a2905b4cc065c76e54da2a5287c2d038b">AudioOutput</a>
@@ -241,11 +242,16 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_audio_output.html#ac2a46ded8a978627b8af81458a714ef3">AudioOutput</a>
 , <a class="el" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9">AudioSignal</a>
 , <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">AudioStream</a>
+, <a class="el" href="class_channels_charts.html#ad5a542fef3ae5846989894ded4d843dc">ChannelsCharts</a>
 , <a class="el" href="class_channels_list.html#ab5b3fd699a6c96a59d237ff4e23fa3fa">ChannelsList</a>
+, <a class="el" href="class_effect_base.html#a18021994da076630edfe26d69fd1384f">EffectBase</a>
 , <a class="el" href="class_encoder.html#aa0549b597ab8fda7191f2e659a56044b">Encoder</a>
 , <a class="el" href="class_process_manager.html#ae7ce9ead957c4f78d74206baf1837a59">ProcessManager</a>
 , <a class="el" href="class_s_a_c_effects.html#af9b20759f91e969aaa55f47f5aeecb37">SACEffects</a>
 , <a class="el" href="class_volumeter.html#a7afcd98abd8e156aab69751761218497">Volumeter</a>
+</li>
+<li>function
+: <a class="el" href="class_a_s___e_f_f_e_c_t.html#a35ed5ab347d7ea615c91ea991d689f57">AS_EFFECT</a>
 </li>
 </ul>
 
@@ -272,9 +278,16 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">Channel</a>
 </li>
 <li>input
-: <a class="el" href="class_encoder.html#aa851a11113fd12d5cfa04a4a72013157">Encoder</a>
+: <a class="el" href="class_channels_charts.html#ab3a9a79fe459610f67633438f496b18b">ChannelsCharts</a>
+, <a class="el" href="class_encoder.html#aa851a11113fd12d5cfa04a4a72013157">Encoder</a>
 , <a class="el" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b">ProcessManager</a>
 , <a class="el" href="class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938">SACEffects</a>
+</li>
+<li>input_channels
+: <a class="el" href="class_channels_charts.html#af3c81ffd63585ea7967c6b2221b5e588">ChannelsCharts</a>
+</li>
+<li>input_chart
+: <a class="el" href="class_channels_charts.html#a87ae986ae562c146145eca33fa85b36e">ChannelsCharts</a>
 </li>
 <li>inputfile
 : <a class="el" href="class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40">ProcessManager</a>
@@ -328,8 +341,15 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_output_device.html#a784c815c3f04113ebcdc2d4842a5d49a">OutputDevice</a>
 </li>
 <li>output
-: <a class="el" href="class_encoder.html#ac4d4774d75750c1fdddd3740b7f30985">Encoder</a>
+: <a class="el" href="class_channels_charts.html#a096febbc8a690323771f5b28d475618c">ChannelsCharts</a>
+, <a class="el" href="class_encoder.html#ac4d4774d75750c1fdddd3740b7f30985">Encoder</a>
 , <a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">ProcessManager</a>
+</li>
+<li>output_channels
+: <a class="el" href="class_channels_charts.html#af855794903de833778562ac60220c78c">ChannelsCharts</a>
+</li>
+<li>output_chart
+: <a class="el" href="class_channels_charts.html#af7c7c248955d8814d7816dfc70331a27">ChannelsCharts</a>
 </li>
 <li>outputdevice
 : <a class="el" href="class_audio_output.html#aa3e000199604f972e59242fb15a6707e">AudioOutput</a>
@@ -345,8 +365,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_effects_monitor.html#aae2cb43d0ee0c182eca7309c561071ba">EffectsMonitor</a>
 </li>
 <li>params
-: <a class="el" href="class_effect.html#af683bd39ff03444c6b3b04380a8335a7">Effect</a>
-, <a class="el" href="class_effect_base.html#abeb0ac88ffa2ed94f000dd0d40620a3f">EffectBase</a>
+: <a class="el" href="class_effect_base.html#a593c207eb855ae1bc37069766da29c9a">EffectBase</a>
 </li>
 <li>period
 : <a class="el" href="class_audio_test.html#ae10d6702eb1038eff31a9f33e690a376">AudioTest</a>
@@ -368,6 +387,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>range
 : <a class="el" href="class_audio_stream.html#a9720bf635cb419c7823ec7c990aee294">AudioStream</a>
 </li>
+<li>ratio
+: <a class="el" href="class_a_s___e_f_f_e_c_t.html#a53a0ebc9c6ee46bbdb986196c3c7cd61">AS_EFFECT</a>
+</li>
 <li>refreshperiod
 : <a class="el" href="class_volumeter.html#a1f5e517e5a6db925b83cb3e9f36c54e6">Volumeter</a>
 </li>
@@ -380,6 +402,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>samples
 : <a class="el" href="class_audio_stream.html#ac64fd676a85ecf3809ba31f16084596e">AudioStream</a>
+, <a class="el" href="class_channels_charts.html#a7a9cfc48082a30a0192f9ae3245cc2b5">ChannelsCharts</a>
 , <a class="el" href="class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a">ProcessManager</a>
 , <a class="el" href="class_volumeter.html#a02b5e1c6892a8aea92098df4f76dbd2c">Volumeter</a>
 </li>
@@ -391,7 +414,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_audio_output.html#a52eb3989d7c470fefb780d9fe9b08141">AudioOutput</a>
 </li>
 <li>series
-: <a class="el" href="class_audio_chart.html#a446bb53284f9970030b71ea560c6fa40">AudioChart</a>
+: <a class="el" href="class_chart2_d.html#a903c9c4bf3496612d8b7d06c3800d8a0">Chart2D</a>
 </li>
 <li>showdevices
 : <a class="el" href="class_channels_list.html#ac5467a8384f559129cc71c31a6c95972">ChannelsList</a>
@@ -429,6 +452,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>threshold
+: <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae288a80c1f49857058057c9deec33985">AS_EFFECT</a>
+</li>
 <li>timestamp
 : <a class="el" href="class_audio_stream.html#aeee7107c25a1ab45b8076e422864a518">AudioStream</a>
 </li>
@@ -438,6 +464,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>tree
 : <a class="el" href="class_encoder.html#a63cddbd0a9a17e862351a14f6badf335">Encoder</a>
 </li>
+<li>type
+: <a class="el" href="class_a_s___e_f_f_e_c_t.html#a8a02b0d4a60f4dac5872bc28bf4597e5">AS_EFFECT</a>
+</li>
 </ul>
 
 
@@ -445,6 +474,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>ui
 : <a class="el" href="class_audio_info.html#a44a21dbc93b654da1ef6de938372fdfb">AudioInfo</a>
 , <a class="el" href="class_audio_test.html#aea101783b757891d369f4c0b45bc76b0">AudioTest</a>
+, <a class="el" href="class_channels_charts.html#ad59aa60cb9bbc2d55fb33e6c8d58f9e5">ChannelsCharts</a>
 , <a class="el" href="class_encoder.html#a7d3a28662bdddfc72e1180fd72f7506f">Encoder</a>
 , <a class="el" href="class_s_a_c_effects.html#a48e5583828dafdcd318c9be9bad72d87">SACEffects</a>
 </li>
@@ -456,7 +486,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>view
-: <a class="el" href="class_audio_chart.html#a7e959c71c9933dd17918bacd8befcf49">AudioChart</a>
+: <a class="el" href="class_chart2_d.html#aefd4e686c14c939b1a5e415d5149d712">Chart2D</a>
 </li>
 <li>volume
 : <a class="el" href="class_audio_output.html#a16937c9086904959b06b77326032aa72">AudioOutput</a>
@@ -487,14 +517,14 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_x"></a>- x -</h3><ul>
 <li>xlabel
-: <a class="el" href="class_audio_chart.html#a1870b323097b0183bc9150c79c750601">AudioChart</a>
+: <a class="el" href="class_chart2_d.html#af463dc0d42e747ab4a208a44db003bd7">Chart2D</a>
 </li>
 </ul>
 
 
 <h3><a id="index_y"></a>- y -</h3><ul>
 <li>ylabel
-: <a class="el" href="class_audio_chart.html#aa72be90dd40c1adb7f7fe48d14f86bbb">AudioChart</a>
+: <a class="el" href="class_chart2_d.html#afc4139568c9a63b3bcdc4eeefc0dd2e8">Chart2D</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kemar',['kemar',['../struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82ab2fb75879caf4bc494c4ef05c68296fa',1,'HRTFModel']]]
+  ['high',['high',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822a6184aedf8f82a070f5c054ead79d4d30',1,'DecodingType']]]
 ];

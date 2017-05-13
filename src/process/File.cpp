@@ -486,6 +486,7 @@ void WAVFile::writeSamples(float **array, int samples) {
             }
         }
         this->write(data, channels * samples * bytes);
+        std::free(data);
         // Updating audio file header
         int cursor = this->getCursor();
         if (cursor > 0) {

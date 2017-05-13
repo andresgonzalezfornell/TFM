@@ -1,7 +1,6 @@
 var annotated_dup =
 [
     [ "AS_EFFECT", "class_a_s___e_f_f_e_c_t.html", "class_a_s___e_f_f_e_c_t" ],
-    [ "AudioChart", "class_audio_chart.html", "class_audio_chart" ],
     [ "AudioInfo", "class_audio_info.html", "class_audio_info" ],
     [ "AudioOutput", "class_audio_output.html", "class_audio_output" ],
     [ "AudioSignal", "class_audio_signal.html", "class_audio_signal" ],
@@ -9,7 +8,9 @@ var annotated_dup =
     [ "AudioTest", "class_audio_test.html", "class_audio_test" ],
     [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
     [ "Channel", "class_channel.html", "class_channel" ],
+    [ "ChannelsCharts", "class_channels_charts.html", "class_channels_charts" ],
     [ "ChannelsList", "class_channels_list.html", "class_channels_list" ],
+    [ "Chart2D", "class_chart2_d.html", "class_chart2_d" ],
     [ "Compressor", "class_compressor.html", null ],
     [ "DecodingType", "struct_decoding_type.html", "struct_decoding_type" ],
     [ "Effect", "class_effect.html", "class_effect" ],

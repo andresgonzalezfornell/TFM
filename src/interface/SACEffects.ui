@@ -234,7 +234,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>76</height>
+            <height>159</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="input_channels_layout">
@@ -255,34 +255,6 @@
            </property>
           </layout>
          </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="input_chart_selector"/>
-       </item>
-       <item>
-        <widget class="QWidget" name="input_chart" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>250</width>
-           <height>160</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="toolTipDuration">
-          <number>-1</number>
-         </property>
         </widget>
        </item>
        <item>
@@ -520,7 +492,7 @@
             <x>0</x>
             <y>0</y>
             <width>217</width>
-            <height>123</height>
+            <height>218</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="output_channels_layout">
@@ -541,25 +513,6 @@
            </property>
           </layout>
          </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="output_chart_selector"/>
-       </item>
-       <item>
-        <widget class="QWidget" name="output_chart" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>250</width>
-           <height>160</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>150</height>
-          </size>
-         </property>
         </widget>
        </item>
        <item>
@@ -708,8 +661,9 @@
     <property name="title">
      <string>Output</string>
     </property>
-    <addaction name="menu_test"/>
     <addaction name="menu_export"/>
+    <addaction name="menu_channels"/>
+    <addaction name="menu_test"/>
    </widget>
    <addaction name="menu_source"/>
    <addaction name="menu_bitstream"/>
@@ -851,6 +805,11 @@
   <action name="menu_export">
    <property name="text">
     <string>Export as file</string>
+   </property>
+  </action>
+  <action name="menu_channels">
+   <property name="text">
+    <string>Show channels charts</string>
    </property>
   </action>
  </widget>

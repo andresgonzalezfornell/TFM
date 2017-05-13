@@ -1,11 +1,13 @@
 <!DOCTYPE fxtemplate SYSTEM "Compressor">
 <double id="threshold" text="Threshold" value="-10" suffix="dB" min="-50" max="0" step="10"></double>
-<double id="ratio" text="Ratio" value="2" min="1" max="50" step="1"></double>
-<double id="attack" text="Attack time" value="100" suffix="ms" min="10" max="1000" step="10"></double>
-<double id="release" text="Release time" value="100" suffix="ms" min="10" max="1000" step="10"></double>
-<enum id="type" text="Compression type" value="upward">
-	<option id="type" text="Downward compression" value="downward"></option>
-	<option id="type" text="Upward compression" value="upward"></option>
+<double id="ratio" text="Ratio" value="2" min="1" max="50" step="0.1"></double>
+<enum id="type" text="Compressor type" value="downward">
+	<option id="type" text="Downward compressor" value="downward"></option>
+	<option id="type" text="Upward compressor" value="upward"></option>
+</enum>
+<enum id="function" text="Function" value="compression">
+	<option id="function" text="Compression" value="compression"></option>
+	<option id="function" text="Expansion" value="expansion"></option>
 </enum>
 <chart id="compressor" text="Compression function" xmin="-50" xmax="0"
 	ymin="-50" ymax="0" xlabel="Input [dB]" ylabel="Output [dB]" xscale="linear"

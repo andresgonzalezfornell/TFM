@@ -112,9 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad882d23c995a27ac064826412b5127a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#ad882d23c995a27ac064826412b5127a8">decode</a> (std::string <a class="el" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b">input</a>, std::string bitstream, std::string <a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">output</a>, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)</td></tr>
 <tr class="memdesc:ad882d23c995a27ac064826412b5127a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the SAC encoder.  <a href="#ad882d23c995a27ac064826412b5127a8">More...</a><br /></td></tr>
 <tr class="separator:ad882d23c995a27ac064826412b5127a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a33d989ffa2120361d2501d0ab997d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a17a33d989ffa2120361d2501d0ab997d">applyEffect</a> (<a class="el" href="class_effect.html">Effect</a> effect, std::vector&lt; bool &gt; <a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">channels</a>, std::vector&lt; double &gt; levels)</td></tr>
-<tr class="memdesc:a17a33d989ffa2120361d2501d0ab997d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applys the selected effect to the input stream.  <a href="#a17a33d989ffa2120361d2501d0ab997d">More...</a><br /></td></tr>
-<tr class="separator:a17a33d989ffa2120361d2501d0ab997d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a8718847e535f297756fa8604dc8f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a91a8718847e535f297756fa8604dc8f4">applyEffect</a> (<a class="el" href="class_effect.html">Effect</a> *effect, std::vector&lt; bool &gt; <a class="el" href="class_process_manager.html#a325109138cabf342e5beacf7af67480b">channels</a>, std::vector&lt; double &gt; levels)</td></tr>
+<tr class="memdesc:a91a8718847e535f297756fa8604dc8f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applys the selected effect to the input stream.  <a href="#a91a8718847e535f297756fa8604dc8f4">More...</a><br /></td></tr>
+<tr class="separator:a91a8718847e535f297756fa8604dc8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a9c807d64f58ca890b9b4acde3f1c1bb2">clear</a> ()</td></tr>
 <tr class="memdesc:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It clears all variables and resets the process.  <a href="#a9c807d64f58ca890b9b4acde3f1c1bb2">More...</a><br /></td></tr>
 <tr class="separator:a9c807d64f58ca890b9b4acde3f1c1bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +140,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aa7c29a18734bf13e49e56184ca945c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6611aa1fb921606bec95f6366ce3b07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_w_a_v_file.html">WAVFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#af6611aa1fb921606bec95f6366ce3b07">outputfile</a></td></tr>
 <tr class="separator:af6611aa1fb921606bec95f6366ce3b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae845668d01f7402bb2a7ce667dd347c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#ae845668d01f7402bb2a7ce667dd347c4">allocated</a></td></tr>
+<tr class="separator:ae845668d01f7402bb2a7ce667dd347c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7ce9ead957c4f78d74206baf1837a59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#ae7ce9ead957c4f78d74206baf1837a59">fs</a></td></tr>
 <tr class="separator:ae7ce9ead957c4f78d74206baf1837a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d599d29e49011dbd1e205756782690"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a09d599d29e49011dbd1e205756782690">chunksize</a></td></tr>
@@ -206,8 +208,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a17a33d989ffa2120361d2501d0ab997d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a33d989ffa2120361d2501d0ab997d">&#9670;&nbsp;</a></span>applyEffect()</h2>
+<a id="a91a8718847e535f297756fa8604dc8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a8718847e535f297756fa8604dc8f4">&#9670;&nbsp;</a></span>applyEffect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +217,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool ProcessManager::applyEffect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_effect.html">Effect</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_effect.html">Effect</a> *&#160;</td>
           <td class="paramname"><em>effect</em>, </td>
         </tr>
         <tr>
@@ -396,6 +398,29 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae845668d01f7402bb2a7ce667dd347c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae845668d01f7402bb2a7ce667dd347c4">&#9670;&nbsp;</a></span>allocated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProcessManager::allocated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>true if input and output signals variables are currently allocated </p>
+
+</div>
+</div>
 <a id="a325109138cabf342e5beacf7af67480b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a325109138cabf342e5beacf7af67480b">&#9670;&nbsp;</a></span>channels</h2>
 

@@ -20,8 +20,6 @@ SACEffects::SACEffects(QWidget *framework) :
                "signal process chunk = " + std::to_string(this->chunksize)
                + " samples");
     this->process = new ProcessManager(this->fs, chunksize);
-    this->chart_input = new Chart2D(ui->input_chart);
-    this->chart_output = new Chart2D(ui->output_chart);
     // Clock
     this->clock = new QTimer(this);
     double period = (double) chunksize / this->fs;
@@ -31,8 +29,6 @@ SACEffects::SACEffects(QWidget *framework) :
                                                std::to_string(period).find(".") + 4) + " s");
     this->clock->setInterval(period * 1000);
     QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(applyEffect()));
-    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(sendOutput()));
-    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(setTimer()));
     // Effects
     this->effectsmonitor = new EffectsMonitor(ui->effect_monitor_list);
     std::map<Effect::effectID, std::string> effects =
@@ -56,8 +52,6 @@ SACEffects::SACEffects(QWidget *framework) :
     QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
     QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
     // Signals - Input
-    QObject::connect(this->channels_input, SIGNAL(namechanged()), this,
-                     SLOT(updateInputChannels()));
     QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->input_stop,SIGNAL(clicked(bool)),this,SLOT(stop()));
     QObject::connect(ui->input_info, SIGNAL(released()), this,
@@ -81,10 +75,9 @@ SACEffects::SACEffects(QWidget *framework) :
     }
     this->setEffect(effects.begin()->first);
     // Signals - Output
-    QObject::connect(this->channels_output, SIGNAL(namechanged()), this,
-                     SLOT(updateOutputChannels()));
     QObject::connect(ui->output_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->menu_export,SIGNAL(triggered(bool)),this,SLOT(exportOutput()));
+    QObject::connect(ui->menu_channels,SIGNAL(triggered(bool)),this,SLOT(openChannelsCharts()));
     QObject::connect(ui->menu_test,SIGNAL(triggered(bool)),this,SLOT(test()));
     consolelog("SACEffects", LogType::progress, "SACEffects object is created");
 }
@@ -114,7 +107,6 @@ void SACEffects::pause() {
     this->clock->stop();
     ui->input_playback->setChecked(false);
     ui->input_timer->setReadOnly(false);
-    this->plot();
 }
 
 /**
@@ -124,8 +116,6 @@ void SACEffects::stop() {
     this->pause();
     this->process->cursor = 0;
     this->setTimer();
-    this->chart_input->clear();
-    this->chart_output->clear();
 }
 
 /**
@@ -157,6 +147,7 @@ void SACEffects::updateControls() {
     ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Input & output controls
     ui->menu_export->setEnabled(this->input->exists());
+    ui->menu_channels->setEnabled(this->input->exists());
     ui->input_playback->setEnabled(this->input->exists());
     ui->output_playback->setEnabled(this->input->exists());
     ui->input_stop->setEnabled(this->input->exists());
@@ -183,7 +174,7 @@ void SACEffects::updateControls() {
  */
 void SACEffects::setEffect(Effect::effectID effect) {
     delete this->effect;
-    this->effect = new Effect(effect);
+    this->effect = new Effect(effect, this->fs);
     this->effectsmonitor->setEffect(this->effect);
     std::map<Effect::effectID, std::string> effects = this->effectsmonitor->effects;
     for (std::map<Effect::effectID, std::string>::iterator iterator =
@@ -293,8 +284,6 @@ void SACEffects::setInput(std::string filename) {
     font.setItalic(!loaded);
     ui->input_filename->setFont(font);
     // Controls update
-    this->updateInputChannels();
-    this->updateOutputChannels();
     this->updateControls();
 }
 
@@ -446,94 +435,7 @@ void SACEffects::sendOutput() {
             this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(process->output[channel] + n, N);
         }
     }
-    this->plot();
-}
-
-/**
- * @brief   It plots the current input and ouput signals.
- */
-void SACEffects::plot() {
-    Chart2D *chart;
-    QVector < QPointF > points;
-    float *samples;
-    int n = 0;
-    int N = 0;
-    int remainder = 0;
-    double range[2][2];
-    for (int plot = 0; plot < 2; plot++) {
-        switch (plot) {
-        case 0:
-            // Input
-            samples = this->process->input[(int)std::floor(ui->input_chart_selector->currentIndex() / 2)];
-            remainder = (int)ui->input_chart_selector->currentIndex() % 2;
-            chart = this->chart_input;
-            break;
-        case 1:
-            // Output
-            samples = this->process->output[(int)std::floor(ui->output_chart_selector->currentIndex() / 2)];
-            remainder = (int)ui->output_chart_selector->currentIndex() % 2;
-            chart = this->chart_output;
-            break;
-        }
-        switch (remainder) {
-        case 0:
-            // Signal plot
-            range[0][0] = 0;
-            range[0][1] = (double) (N - 1) / this->fs ;
-            range[1][0] = -1;
-            range[1][1] = 1;
-            chart->setOptions(Chart2D::ChartOptions::labelX);
-            for (int sample = 0; sample < N; sample++) {
-                points.push_back(QPointF((float) sample / this->fs, samples[n + sample]));
-            }
-            break;
-        case 1:
-            // Spectrum plot
-            std::vector<float> vector = std::vector<float>(samples[n], samples[n + N]);;
-            AudioSignal signal = AudioSignal(vector, this->fs);
-            range[0][0] = 0;
-            range[0][1] = (double) this->fs / 2;
-            range[1][0] = 0;
-            range[1][1] = 1;
-            chart->setOptions(Chart2D::ChartOptions::labelX);
-            std::vector<float> spectrum = signal.getSpectrum();
-            for (int frequency = 0; frequency < std::ceil((double) N / 2); frequency++) {
-                points.push_back(QPointF((float) frequency * this->fs / N, spectrum[frequency]));
-            }
-            break;
-        }
-        chart->clear();
-        chart->setRange(range);
-        chart->setPoints(points);
-    }
-}
-
-/**
- * @brief   It loads current input channels name on chart selector.
- */
-void SACEffects::updateInputChannels() {
-    ui->input_chart_selector->clear();
-    std::vector<std::string> names = this->channels_input->getNames();
-    for (int index = 0; index < this->channels_input->getSize(); index++) {
-        ui->input_chart_selector->addItem(
-                    QString::fromStdString(names[index] + " - Signal"));
-        ui->input_chart_selector->addItem(
-                    QString::fromStdString(names[index] + " - Spectrum"));
-    }
-}
-
-/**
- * @brief   It loads current output channels name on chart selector.
- */
-void SACEffects::updateOutputChannels() {
-    ui->output_chart_selector->clear();
-    std::vector<std::string> names = this->channels_output->getNames();
-    for (int index = 0; index < this->channels_output->getSize(); index++) {
-        ui->output_chart_selector->addItem(
-                    QString::fromStdString(names[index]) + " - Signal");
-        ui->output_chart_selector->addItem(
-                    QString::fromStdString(names[index]) + " - Spectrum");
-    }
+    this->setTimer();
 }
 
 /**
@@ -574,10 +476,11 @@ void SACEffects::setPlayback(bool state) {
  */
 void SACEffects::openInfo() {
     QObject::sender()->blockSignals(true);
-    AudioInfo info;
-    info.setFile(this->input);
-    info.setWindowTitle("Input file info");
-    info.exec();
+    AudioInfo *window = new AudioInfo();
+    window->setFile(this->input);
+    window->setWindowTitle("Input file info");
+    window->exec();
+    delete window;
     consolelog("SACEffects", LogType::interaction, "showing input info dialog");
     QObject::sender()->blockSignals(false);
 }
@@ -674,6 +577,19 @@ void SACEffects::exportOutput() {
         consolelog("SACEffects", LogType::interaction,
                    "output export was cancelled");
     }
+}
+
+/**
+ * @brief   It opens audio file info dialog.
+ */
+void SACEffects::openChannelsCharts() {
+    QObject::sender()->blockSignals(true);
+    ChannelsCharts *window = new ChannelsCharts(this->process->input, this->process->output, this->channels_input, this->channels_output, this->process->samples, this->fs);
+    window->setWindowTitle("Channels charts");
+    window->exec();
+    delete window;
+    consolelog("SACEffects", LogType::interaction, "showing channels charts dialog");
+    QObject::sender()->blockSignals(false);
 }
 
 /**
@@ -874,8 +790,14 @@ void SACEffects::applyEffect() {
     std::vector<bool> channels;
     std::vector<double> levels;
     for (int index = 0; index < (int) this->channels_input->getSize(); index++) {
-        channels.push_back(!this->channels_input->getChannel(index)->bypassed);
-        levels.push_back(this->channels_input->getChannel(index)->volume);
+        Channel *channel = this->channels_input->getChannel(index);
+        channels.push_back(!channel->bypassed);
+        if (channel->muted) {
+            levels.push_back(0);
+        } else {
+            levels.push_back(channel->volume);
+        }
     }
     this->process->applyEffect(this->effect, channels, levels);
+    this->sendOutput();
 }

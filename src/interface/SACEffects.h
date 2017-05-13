@@ -92,9 +92,7 @@ private:
 	WAVFile *input; /**< decoded input file object */
     Effect *effect; /**< effect object */
 	ChannelsList *channels_input; /**< input channels list */
-	ChannelsList *channels_output; /**< output channels list */
-	Chart2D *chart_input; /**< input chart object */
-	Chart2D *chart_output; /**< output chart object */
+    ChannelsList *channels_output; /**< output channels list */
 	EffectsMonitor *effectsmonitor; /**< effects monitor object */
     int chunksize; /**< number of samples in a chunk */
 	bool muted; /**< it indicates if output playback is muted (true) or not (false) */
@@ -103,19 +101,17 @@ private:
 	UpmixType::upmixtype upmixtype; /**< SAC decoder parameter */
 	BinauralQuality::binauralquality binauralquality; /**< SAC decoder parameter */
 	HRTFModel::hrtfmodel hrtfmodel; /**< SAC decoder parameter */
+    void sendOutput();
+    void setTimer();
 private slots:
-	// Input & output
-	void plot();
-	void sendOutput();
-	void updateInputChannels();
-	void updateOutputChannels();
+    // Input & output
 	void setPlayback(bool state);
 	void stop();
 	void openInfo();
-	void setTimer();
 	void setTimer(QTime time);
 	void load();
 	void exportOutput();
+    void openChannelsCharts();
 	void test();
 	// SACEffects
 	void encode();

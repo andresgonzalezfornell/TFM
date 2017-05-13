@@ -5,7 +5,7 @@ var hierarchy =
     [ "AudioStream", "class_audio_stream.html", null ],
     [ "BinauralQuality", "struct_binaural_quality.html", null ],
     [ "Channel", "class_channel.html", null ],
-    [ "AudioChart::ChartOptions", "struct_audio_chart_1_1_chart_options.html", null ],
+    [ "Chart2D::ChartOptions", "struct_chart2_d_1_1_chart_options.html", null ],
     [ "Compressor", "class_compressor.html", [
       [ "EffectsModule", "class_effects_module.html", null ]
     ] ],
@@ -27,6 +27,7 @@ var hierarchy =
     [ "QDialog", null, [
       [ "AudioInfo", "class_audio_info.html", null ],
       [ "AudioTest", "class_audio_test.html", null ],
+      [ "ChannelsCharts", "class_channels_charts.html", null ],
       [ "Encoder", "class_encoder.html", null ]
     ] ],
     [ "QIODevice", null, [
@@ -41,7 +42,7 @@ var hierarchy =
       [ "EffectsMonitor", "class_effects_monitor.html", null ]
     ] ],
     [ "QWidget", null, [
-      [ "AudioChart", "class_audio_chart.html", null ],
+      [ "Chart2D", "class_chart2_d.html", null ],
       [ "Volumeter", "class_volumeter.html", null ]
     ] ],
     [ "AudioStream::SignalRange", "struct_audio_stream_1_1_signal_range.html", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upmixtype',['upmixtype',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65daf',1,'UpmixType']]]
+  ['options',['Options',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69',1,'Chart2D::ChartOptions']]]
 ];

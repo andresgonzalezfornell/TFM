@@ -1,4 +1,5 @@
 #include "ChannelsList.h"
+#include "ui_ChannelsCharts.h"
 
 /**
  * @brief	ChannelsList constructor.
@@ -222,7 +223,9 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
     this->setIndex(index);
     this->setLabel(this->name);
     this->volumeter = new Volumeter(this->volumeterwidget, ChannelsList::fs);
-    this->setVolume(70);
+    this->mute(false);
+    this->bypass(false);
+    this->setVolume(100);
     // Elements attributes
     int layout_height = 150; // height of channel configuration interface
     this->groupbox->setMinimumSize(200, 0);
@@ -323,4 +326,200 @@ void Channel::setVolume(int volume) {
         this->audiooutput->setVolume(this->volume);
     }
     this->volumeslider->setValue(volume);
+}
+
+/**
+ * @brief   ChannelsCharts constructor.
+ * @param   parent          user inteface parent object
+ * @param   input           input signal pointer
+ * @param   output          output signal pointer
+ * @param   input_channels  input channels object
+ * @param   output_channels output channels object
+ * @param   samples         number of samples each channel
+ * @param   fs              audio signal sampling [Hz]
+ */
+ChannelsCharts::ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, int fs, QWidget *parent) : QDialog(parent), ui(new Ui::ChannelsCharts) {
+    ui->setupUi(this);
+    this->fs = fs;
+    this->input = input;
+    this->output = output;
+    this->input_channels = input_channels;
+    this->output_channels = output_channels;
+    this->samples = samples;
+    this->input_chart = new Chart2D(ui->input_chart);
+    this->output_chart = new Chart2D(ui->output_chart);
+    // Initialization
+    this->setTimeCursor(0);
+    this->setScope(100);
+    ui->scope->setMinimum(10);
+    ui->scope->setMaximum(std::floor(this->samples * 1000 / this->fs));
+    this->updateSelectors();
+    QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(setTimeCursor(int)));
+    QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(plot()));
+    QObject::connect(ui->scope, SIGNAL(valueChanged(int)), this, SLOT(setScope(int)));
+    QObject::connect(ui->scope, SIGNAL(valueChanged(int)), this, SLOT(plot()));
+    this->plot();
+}
+
+/**
+ * @brief   ChannelsCharts destructor.
+ */
+ChannelsCharts::~ChannelsCharts() {
+    consolelog("ChannelsCharts", LogType::progress, "ChannelsCharts object is deleted");
+}
+
+/**
+ * @brief   It sets the start time cursor.
+ * @param   sample          first sample of the chart
+ */
+void ChannelsCharts::setTimeCursor(int sample) {
+    QObject::blockSignals(true);
+    double duration = (double) sample / this->fs;
+    int h = (int) std::floor(duration / 60 / 60);
+    int m = (int) std::floor(duration / 60) % 60;
+    int s = (int) std::floor(duration) % 60;
+    int ms = (int) std::round(duration * 1000) % 1000;
+    std::string text = "";
+    if (h < 10) {
+        text += std::to_string(0);
+    }
+    text += std::to_string(h) + ":";
+    if (m < 10) {
+        text += std::to_string(0);
+    }
+    text += std::to_string(m) + ":";
+    if (s < 10) {
+        text += std::to_string(0);
+    }
+    text += std::to_string(s) + ".";
+    if (ms < 100) {
+        text += std::to_string(0);
+        if (ms < 10) {
+            text += std::to_string(0);
+        }
+    }
+    text += std::to_string(ms);
+    ui->cursor->setValue(sample);
+    ui->timer->setText(QString::fromStdString(text));
+    consolelog("ChannelsCharts", LogType::interaction, "start time cursor set to sample " + std::to_string(sample) + " (" + text + ")");
+    QObject::blockSignals(false);
+}
+
+/**
+ * @brief   It gets the start time cursor.
+ * @return  first sample of the chart
+ */
+int ChannelsCharts::getTimeCursor() {
+    return ui->cursor->value();
+}
+
+/**
+ * @brief   It sets the charts scope.
+ * @param   time            charts scope [ms]
+ */
+void ChannelsCharts::setScope(int time) {
+    QObject::blockSignals(true);
+    ui->scope->setValue(time);
+    int remainder = this->samples - std::floor((double) time / 1000 * this->fs);
+    if (remainder > 0) {
+        ui->cursor->setEnabled(true);
+        ui->cursor->setMaximum(remainder);
+    } else {
+        ui->cursor->setEnabled(false);
+    }
+    consolelog("ChannelsCharts", LogType::interaction, "scope time set to " + std::to_string(time) + " ms");
+    QObject::blockSignals(false);
+}
+
+/**
+ * @brief   It gets the charts scope.
+ * @return  number of sample of charts scope
+ */
+int ChannelsCharts::getScope() {
+    return std::floor(ui->scope->value() * this->fs / 1000);
+}
+
+/**
+ * @brief   It loads current channels names on chart selectors.
+ */
+void ChannelsCharts::updateSelectors() {
+    QObject::disconnect(ui->input_selector, SIGNAL(currentIndexChanged(int)), this, SLOT(plot()));
+    QObject::disconnect(ui->output_selector, SIGNAL(currentIndexChanged(int)), this, SLOT(plot()));
+    ui->input_selector->clear();
+    ui->output_selector->clear();
+    std::vector<std::string> input_names = this->input_channels->getNames();
+    std::vector<std::string> output_names = this->output_channels->getNames();
+    for (int index = 0; index < this->input_channels->getSize(); index++) {
+        ui->input_selector->addItem(
+                    QString::fromStdString(input_names[index] + " - Signal"));
+        ui->input_selector->addItem(
+                    QString::fromStdString(input_names[index] + " - Spectrum"));
+    }
+    for (int index = 0; index < this->input_channels->getSize(); index++) {
+        ui->output_selector->addItem(
+                    QString::fromStdString(output_names[index] + " - Signal"));
+        ui->output_selector->addItem(
+                    QString::fromStdString(output_names[index] + " - Spectrum"));
+    }
+    QObject::connect(ui->input_selector, SIGNAL(currentIndexChanged(int)), this, SLOT(plot()));
+    QObject::connect(ui->output_selector, SIGNAL(currentIndexChanged(int)), this, SLOT(plot()));
+}
+
+
+/**
+ * @brief   It plots the current input and ouput signals.
+ */
+void ChannelsCharts::plot() {
+    QVector < QPointF > points;
+    float *samples;
+    Chart2D *chart;
+    int remainder = 0;
+    double range[2][2];
+    for (int plot = 0; plot < 2; plot++) {
+        switch (plot) {
+        case 0:
+            // Input
+            samples = this->input[(int)std::floor(ui->input_selector->currentIndex() / 2)];
+            remainder = (int)ui->input_selector->currentIndex() % 2;
+            chart = this->input_chart;
+            break;
+        case 1:
+            // Output
+            samples = this->output[(int)std::floor(ui->output_selector->currentIndex() / 2)];
+            remainder = (int)ui->output_selector->currentIndex() % 2;
+            chart = this->output_chart;
+            break;
+        }
+        switch (remainder) {
+        case 0:
+            // Signal plot
+            range[0][0] = (double) this->getTimeCursor() / this->fs;
+            range[0][1] = (double) (this->getTimeCursor() + this->getScope() - 1) / this->fs ;
+            range[1][0] = -1;
+            range[1][1] = 1;
+            chart->setOptions(Chart2D::ChartOptions::labelX);
+            for (int sample = this->getTimeCursor(); sample < this->getTimeCursor() + this->getScope(); sample++) {
+                points.push_back(QPointF((float) sample / this->fs, samples[sample]));
+            }
+            break;
+        case 1:
+            // Spectrum plot
+            std::vector<float> vector = std::vector<float>(samples + this->getTimeCursor(), samples + this->getTimeCursor() + this->getScope());;
+            AudioSignal signal = AudioSignal(vector, this->fs);
+            range[0][0] = 0;
+            range[0][1] = (double) this->fs / 2;
+            range[1][0] = 0;
+            range[1][1] = 1;
+            chart->setOptions(Chart2D::ChartOptions::labelX);
+            std::vector<float> spectrum = signal.getSpectrum();
+            for (int frequency = 0; frequency < std::ceil((double) this->getScope() / 2); frequency++) {
+                points.push_back(QPointF((float) frequency * this->fs / this->getScope(), spectrum[frequency]));
+            }
+            break;
+        }
+        chart->clear();
+        chart->setRange(range);
+        chart->setPoints(points);
+        points.clear();
+    }
 }

@@ -342,12 +342,16 @@ void EffectsMonitor::loadField(std::string element) {
  */
 std::string EffectsMonitor::getAttribute(std::string element,
                                          std::string attribute) {
-    std::string value = element;
-    value = value.substr(value.find(attribute) + attribute.size());
-    value = value.substr(value.find("=") + 1);
-    value = value.substr(value.find("\"") + 1);
-    value = value.substr(0, value.find("\""));
-    return value;
+    if (element.find(attribute) < element.size()) {
+        std::string value = element;
+        value = value.substr(value.find(attribute) + attribute.size());
+        value = value.substr(value.find("=") + 1);
+        value = value.substr(value.find("\"") + 1);
+        value = value.substr(0, value.find("\""));
+        return value;
+    } else {
+        return "";
+    }
 }
 
 /**
