@@ -89,13 +89,16 @@ private:
 	QWidget *framework; /**< user interface framework of channels list */
 	QLayout *layout; /**< user interface layout of channels list */
 	Volumeter *volumeter; /**< volumeter object */
-	int getIndex(QObject *element);private slots:
+    int getIndex(QObject *element);
+private slots:
 	void setLabel(QString label);
+    void setLabel(QString label, int index);
 	void setVolume(int volume);
 	void mute(bool state);
 	void bypass(bool state);
-	void setDevice(int device);signals:
-	void namechanged();
+    void setDevice(int device);
+signals:
+    void namechanged(QString, int);
 };
 
 namespace Ui {

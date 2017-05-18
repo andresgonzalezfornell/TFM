@@ -27,8 +27,9 @@ ProcessManager::~ProcessManager() {
 /**
  * @brief   It sets input variable from the existing input file.
  * @param   filename            audio input file name
+ * @return  true if it was successful
  */
-void ProcessManager::setInput(std::string filename) {
+bool ProcessManager::setInput(std::string filename) {
     this->clear();
     this->inputfile = new WAVFile(filename, false);
     if ((int) this->inputfile->header.samplerate != this->fs) {
@@ -37,6 +38,7 @@ void ProcessManager::setInput(std::string filename) {
                    + std::to_string(this->inputfile->header.samplerate)
                    + "Hz and it should be " + std::to_string(this->fs)
                    + "Hz)");
+        return false;
     } else {
         this->channels = this->inputfile->header.numchannels;
         this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
@@ -50,19 +52,22 @@ void ProcessManager::setInput(std::string filename) {
         }
         this->allocated = true;
         consolelog("ProcessManager", LogType::progress, "input file has been loaded");
+        return true;
     }
 }
 
 /**
  * @brief   It sets an output file from the existing output variable
  * @param   filename            audio output file name
+ * @return  true if it was successful
  */
-void ProcessManager::setOutput(std::string filename) {
+bool ProcessManager::setOutput(std::string filename) {
     this->outputfile = new WAVFile(filename, this->channels, this->fs,
                                    this->inputfile->header.bitspersample);
     this->outputfile->writeSamples(this->output, this->samples);
     consolelog("ProcessManager", LogType::progress,
                "output file has been created");
+    return true;
 }
 
 /**
@@ -101,14 +106,19 @@ bool ProcessManager::decode(std::string input, std::string bitstream,
     char *error = sac_decode(input_char, output_char, bitstream_char,
                              (double) this->fs, upmixtype, decodingtype, binauralquality,
                              hrtfmodel);
-    if (error == NULL) {
+    if (error != NULL) {
+        consolelog("ProcessManager", LogType::error, std::string(error));
+        return false;
+    } else {
         consolelog("ProcessManager", LogType::progress,
                    "decoding was completed successfully");
-    } else {
-        consolelog("ProcessManager", LogType::error, std::string(error));
+        if (!this->setInput(output)) {
+            consolelog("ProcessManager", LogType::error, "error while writing on decoded input file");
+            return false;
+        } else {
+            return true;
+        }
     }
-    this->setInput(output);
-    return (error == NULL);
 }
 
 /**
@@ -160,7 +170,7 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
             if (this->cursor > this->total) {
                 this->total = this->cursor;
             }
-            return false;
+            return true;
         } else {
             consolelog("ProcessManager", LogType::error,
                        "channels boolean vector (from effect argument) = "

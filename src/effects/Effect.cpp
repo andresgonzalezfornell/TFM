@@ -86,6 +86,24 @@ bool Effect::apply(float *input, float *output, int samples) {
 }
 
 /**
+ * @brief   It sends some values to user interface charts.
+ * @param   chart           chart id
+ * @return  array of values as values[axis][sample]     axis: 0 = x (horizontal) and 1 = y (vertical)
+ */
+std::vector<std::vector<double>> Effect::plot(std::string chart) {
+    switch (this->effect.first) {
+    case effectID::Compressor:
+        return Compressor::plot(chart);
+    case effectID::Equalizer:
+        return Equalizer::plot(chart);
+    default:
+        consolelog("Effect", LogType::error,
+                   "selected effect is not available");
+        return std::vector<std::vector<double>>();
+    }
+}
+
+/**
  * @brief   It gets the list of available effects.
  * @return  map of available effects
  */

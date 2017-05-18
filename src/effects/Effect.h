@@ -47,6 +47,7 @@ public:
     ~Effect();
     void setParams(std::map<std::string, std::string> params);
     bool apply(float *input, float *output, int samples);
+    std::vector<std::vector<double> > plot(std::string chart);
     static std::map<Effect::effectID, std::string> getEffects();
     static Effect::effectID getEffect(std::string effectname);
     static std::map<std::string, std::string> getParams(std::string configuration);

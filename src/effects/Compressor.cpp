@@ -52,17 +52,17 @@ std::vector<std::vector<double>> Compressor::plot(std::string chart) {
  * @brief   It sets params from map of params.
  */
 void Compressor::update() {
-    this->threshold = getDouble(params["threshold"]);
-    this->ratio = getDouble(params["ratio"]);
+    threshold = getDouble(params["threshold"]);
+    ratio = getDouble(params["ratio"]);
     if (params["type"] == "upward") {
-        this->type = Compressor::upward;
+        type = Compressor::upward;
     } else {
-        this->type = Compressor::downward;
+        type = Compressor::downward;
     }
     if (params["function"] == "expansion") {
-        this->function = Compressor::expansion;
+        function = Compressor::expansion;
     } else {
-        this->function = Compressor::compression;
+        function = Compressor::compression;
     }
 }
 

@@ -27,8 +27,8 @@ public:
     int total;              /**< number of available output samples */
 	ProcessManager(int fs, int chunksize);
 	~ProcessManager();
-	void setInput(std::string filename);
-	void setOutput(std::string filename);
+    bool setInput(std::string filename);
+    bool setOutput(std::string filename);
 	bool decode(std::string input, std::string bitstream, std::string output,
 			int upmixtype, int decodingtype, int binauralquality,
 			int hrtfmodel);

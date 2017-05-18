@@ -229,8 +229,11 @@ int main(int argc, char *argv[]) {
 	consolelog("main", LogType::progress, "running application");
     ProcessManager *process = new ProcessManager(fs, 0);
 	// Decoding
-	process->decode(source, bitstream, input, upmixtype, decodingtype,
-			binauralquality, hrtfmodel);
+    if (!process->decode(source, bitstream, input, upmixtype, decodingtype,
+            binauralquality, hrtfmodel)) {
+        consolelog("main", LogType::error, "error while decoding source file");
+        return 1;
+    }
 	// Effects
 	File *effectinfo = new File(effect, false);
     std::string info = effectinfo->readText(0);
@@ -239,11 +242,17 @@ int main(int argc, char *argv[]) {
     std::vector<bool> channels = Effect::getChannels(info, process->channels);
     std::vector<double> levels = Effect::getLevels(info, process->channels);
     Effect *fx = new Effect(effectID, parameters, fs);
-	process->applyEffect(fx, channels, levels);
+    if (!process->applyEffect(fx, channels, levels)) {
+        consolelog("main", LogType::error, "error while applying effect");
+        return 1;
+    }
 	// Output
-	process->setOutput(output);
+    if (!process->setOutput(output)) {
+        consolelog("main", LogType::error, "error while writing output file");
+        return 1;
+    }
 	// End
 	delete effectinfo;
-	consolelog("main", LogType::progress, "application was completed");
+    consolelog("main", LogType::progress, "application was successful");
 	return 0;
 }

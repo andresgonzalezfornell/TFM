@@ -118,12 +118,21 @@ std::vector<std::string> ChannelsList::getNames() {
 void ChannelsList::setLabel(QString label) {
     QObject::sender()->blockSignals(true);
     int index = this->getIndex(QObject::sender());
+    this->setLabel(label, index);
+    emit namechanged(label, index);
+    QObject::sender()->blockSignals(false);
+}
+
+/**
+ * @brief   Slot for setting the channel label.
+ * @param   label
+ * @param   index           channel index
+ */
+void ChannelsList::setLabel(QString label, int index) {
     this->channels[index]->setLabel(label.toStdString());
     consolelog("ChannelsList", LogType::interaction,
                "label of channel " + std::to_string(index)
                + " has been changed to \"" + label.toStdString() + "\"");
-    QObject::sender()->blockSignals(false);
-    emit namechanged();
 }
 
 /**

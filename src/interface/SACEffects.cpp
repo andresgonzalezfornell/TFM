@@ -15,7 +15,7 @@ SACEffects::SACEffects(QWidget *framework) :
     ui->setupUi(this);
     ChannelsList::fs = this->fs;
     ChannelsList::samplesize = 32;
-    this->chunksize = 4410;
+    this->chunksize = 2205;
     consolelog("SACEffects", LogType::info,
                "signal process chunk = " + std::to_string(this->chunksize)
                + " samples");
@@ -52,6 +52,8 @@ SACEffects::SACEffects(QWidget *framework) :
     QObject::connect(ui->menu_binauralquality,SIGNAL(triggered(QAction *)),this,SLOT(toggleBinauralQuality(QAction*)));
     QObject::connect(ui->menu_hrtfmodel,SIGNAL(triggered(QAction *)),this,SLOT(toggleHRTFModel(QAction*)));
     // Signals - Input
+    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
+    QObject::connect(ui->menu_channels_input,SIGNAL(triggered(bool)),this,SLOT(openChannelsCharts()));
     QObject::connect(ui->input_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->input_stop,SIGNAL(clicked(bool)),this,SLOT(stop()));
     QObject::connect(ui->input_info, SIGNAL(released()), this,
@@ -60,7 +62,6 @@ SACEffects::SACEffects(QWidget *framework) :
                      SLOT(setTimer(QTime)));
     QObject::connect(ui->output_timer, SIGNAL(timeChanged(QTime)), this,
                      SLOT(setTimer(QTime)));
-    QObject::connect(ui->menu_decode,SIGNAL(triggered(bool)),this,SLOT(decode()));
     // Signals - Effect
     for (std::map<Effect::effectID, std::string>::iterator iterator =
          effects.begin(); iterator != effects.end(); iterator++) {
@@ -77,7 +78,7 @@ SACEffects::SACEffects(QWidget *framework) :
     // Signals - Output
     QObject::connect(ui->output_playback,SIGNAL(clicked(bool)),this,SLOT(setPlayback(bool)));
     QObject::connect(ui->menu_export,SIGNAL(triggered(bool)),this,SLOT(exportOutput()));
-    QObject::connect(ui->menu_channels,SIGNAL(triggered(bool)),this,SLOT(openChannelsCharts()));
+    QObject::connect(ui->menu_channels_output,SIGNAL(triggered(bool)),this,SLOT(openChannelsCharts()));
     QObject::connect(ui->menu_test,SIGNAL(triggered(bool)),this,SLOT(test()));
     consolelog("SACEffects", LogType::progress, "SACEffects object is created");
 }
@@ -147,7 +148,8 @@ void SACEffects::updateControls() {
     ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Input & output controls
     ui->menu_export->setEnabled(this->input->exists());
-    ui->menu_channels->setEnabled(this->input->exists());
+    ui->menu_channels_input->setEnabled(this->input->exists());
+    ui->menu_channels_output->setEnabled(this->input->exists());
     ui->input_playback->setEnabled(this->input->exists());
     ui->output_playback->setEnabled(this->input->exists());
     ui->input_stop->setEnabled(this->input->exists());
@@ -261,6 +263,10 @@ void SACEffects::setInput(std::string filename) {
         ChannelsList::samplesize = this->input->header.bitspersample;
         this->channels_input->setSize(this->input->header.numchannels);
         this->channels_output->setSize(this->input->header.numchannels);
+        QObject::connect(this->channels_input, SIGNAL(namechanged(QString, int)), this->channels_output,
+                         SLOT(setLabel(QString,int)));
+        QObject::connect(this->channels_output, SIGNAL(namechanged(QString, int)), this->channels_input,
+                         SLOT(setLabel(QString,int)));
     }
     bool loaded = this->input->exists();
     if (loaded && filename != "") {

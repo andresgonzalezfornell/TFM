@@ -644,6 +644,7 @@
      <string>Input</string>
     </property>
     <addaction name="menu_decode"/>
+    <addaction name="menu_channels_input"/>
    </widget>
    <widget class="QMenu" name="menu_bitstream">
     <property name="title">
@@ -662,7 +663,7 @@
      <string>Output</string>
     </property>
     <addaction name="menu_export"/>
-    <addaction name="menu_channels"/>
+    <addaction name="menu_channels_output"/>
     <addaction name="menu_test"/>
    </widget>
    <addaction name="menu_source"/>
@@ -807,9 +808,14 @@
     <string>Export as file</string>
    </property>
   </action>
-  <action name="menu_channels">
+  <action name="menu_channels_output">
    <property name="text">
     <string>Show channels charts</string>
+   </property>
+  </action>
+  <action name="menu_channels_input">
+   <property name="text">
+    <string>Show channels chart</string>
    </property>
   </action>
  </widget>

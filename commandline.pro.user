@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.2.1, 2017-05-13T16:19:18. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-18T15:05:20. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -241,12 +241,14 @@
      <value type="int">14</value>
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
-    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes">
+     <value type="QString">TESTNAME=Spectrum</value>
+    </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">commandline</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/andresgonzalezfornell/Documents/Workspace/TFM/commandline.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-s ~/Desktop/Tests/Levels/source.wav -bs ~/Desktop/Tests/Levels/bitstream.bs -ds ~/Desktop/Tests/Levels/input.wav -o ~/Desktop/Tests/Levels/output.wav -ut 0 -dt 0 -hm 0 -fx ~/Desktop/Tests/configuration.fx</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-s ~/Desktop/Tests/$TESTNAME/source.wav -bs ~/Desktop/Tests/$TESTNAME/bitstream.bs -ds ~/Desktop/Tests/$TESTNAME/input.wav -o ~/Desktop/Tests/$TESTNAME/output.wav -ut 0 -dt 0 -hm 0 -fx ~/Desktop/Tests/configuration.fx</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">commandline.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>

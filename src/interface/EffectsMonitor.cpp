@@ -379,8 +379,12 @@ void EffectsMonitor::plotChart() {
     for (std::map<std::string, Chart2D *>::iterator chart = this->charts.begin(); chart != this->charts.end(); chart++) {
         std::vector<std::vector<double>> vector = this->effect->plot(chart->first);
         QVector<QPointF> points;
-        for (int n = 0; n < (int)vector[0].size(); n++) {
-            points.push_back(QPointF(vector[0][n], vector[1][n]));
+        if (!vector.empty()) {
+            for (int n = 0; n < (int)vector[0].size(); n++) {
+                points.push_back(QPointF(vector[0][n], vector[1][n]));
+            }
+        } else {
+            consolelog("EffectsMonitor", LogType::error, "effect \"" + this->effect->effect.second + "\" has returned no values to chart \"" + chart->first + "\"");
         }
         chart->second->setPoints(points);
     }

@@ -1,4 +1,4 @@
-<!DOCTYPE fxtemplate SYSTEM "Equalizer, Reverb">
+<!DOCTYPE fxtemplate SYSTEM "Reverb">
 <double param="level" text="Level" value="1" suffix="" min="0"
 	max="1" step="0.1"></double>
 <double param="threshold" text="Threshold" value="-30" suffix="dB"
