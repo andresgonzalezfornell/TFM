@@ -14,6 +14,7 @@ var class_effect =
     [ "getParams", "class_effect.html#ac322ae94a6b15b2d81053a55ce7542e2", null ],
     [ "getTag", "class_effect.html#a607ab2a63d333137c1f07cf03611c4bf", null ],
     [ "getTagMap", "class_effect.html#a616281286b866f1f8f6c66715e54ee89", null ],
+    [ "plot", "class_effect.html#ac2c35ce7382d627f20879b44be0e8132", null ],
     [ "setParams", "class_effect.html#af0094495d423173463fd3e9cd40789af", null ],
     [ "effect", "class_effect.html#ae23ae4e48c344fa374730a9ae24e7ad3", null ]
 ];

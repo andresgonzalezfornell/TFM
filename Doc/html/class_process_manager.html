@@ -103,12 +103,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aed3cd2ca11d92395228b758d39030b5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#aed3cd2ca11d92395228b758d39030b5f">~ProcessManager</a> ()</td></tr>
 <tr class="memdesc:aed3cd2ca11d92395228b758d39030b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_process_manager.html" title="Process manager class. It contains all functions to perform the signal treatment process. ">ProcessManager</a> destructor.  <a href="#aed3cd2ca11d92395228b758d39030b5f">More...</a><br /></td></tr>
 <tr class="separator:aed3cd2ca11d92395228b758d39030b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c1aca2fb5a47150eacc5c7441394f16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a3c1aca2fb5a47150eacc5c7441394f16">setInput</a> (std::string filename)</td></tr>
-<tr class="memdesc:a3c1aca2fb5a47150eacc5c7441394f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets input variable from the existing input file.  <a href="#a3c1aca2fb5a47150eacc5c7441394f16">More...</a><br /></td></tr>
-<tr class="separator:a3c1aca2fb5a47150eacc5c7441394f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef34c55485665acb82fb8a086ae396e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#aef34c55485665acb82fb8a086ae396e7">setOutput</a> (std::string filename)</td></tr>
-<tr class="memdesc:aef34c55485665acb82fb8a086ae396e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets an output file from the existing output variable.  <a href="#aef34c55485665acb82fb8a086ae396e7">More...</a><br /></td></tr>
-<tr class="separator:aef34c55485665acb82fb8a086ae396e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830d46989b28e8c4b37f4bcf94dc76a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#a830d46989b28e8c4b37f4bcf94dc76a4">setInput</a> (std::string filename)</td></tr>
+<tr class="memdesc:a830d46989b28e8c4b37f4bcf94dc76a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets input variable from the existing input file.  <a href="#a830d46989b28e8c4b37f4bcf94dc76a4">More...</a><br /></td></tr>
+<tr class="separator:a830d46989b28e8c4b37f4bcf94dc76a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2deb4f60f83a490ed7520d2ce926626"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#aa2deb4f60f83a490ed7520d2ce926626">setOutput</a> (std::string filename)</td></tr>
+<tr class="memdesc:aa2deb4f60f83a490ed7520d2ce926626"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets an output file from the existing output variable.  <a href="#aa2deb4f60f83a490ed7520d2ce926626">More...</a><br /></td></tr>
+<tr class="separator:aa2deb4f60f83a490ed7520d2ce926626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad882d23c995a27ac064826412b5127a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process_manager.html#ad882d23c995a27ac064826412b5127a8">decode</a> (std::string <a class="el" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b">input</a>, std::string bitstream, std::string <a class="el" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3">output</a>, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)</td></tr>
 <tr class="memdesc:ad882d23c995a27ac064826412b5127a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the SAC encoder.  <a href="#ad882d23c995a27ac064826412b5127a8">More...</a><br /></td></tr>
 <tr class="separator:ad882d23c995a27ac064826412b5127a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,14 +345,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c1aca2fb5a47150eacc5c7441394f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c1aca2fb5a47150eacc5c7441394f16">&#9670;&nbsp;</a></span>setInput()</h2>
+<a id="a830d46989b28e8c4b37f4bcf94dc76a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830d46989b28e8c4b37f4bcf94dc76a4">&#9670;&nbsp;</a></span>setInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ProcessManager::setInput </td>
+          <td class="memname">bool ProcessManager::setInput </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -368,17 +368,18 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if it was successful </dd></dl>
 
 </div>
 </div>
-<a id="aef34c55485665acb82fb8a086ae396e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef34c55485665acb82fb8a086ae396e7">&#9670;&nbsp;</a></span>setOutput()</h2>
+<a id="aa2deb4f60f83a490ed7520d2ce926626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2deb4f60f83a490ed7520d2ce926626">&#9670;&nbsp;</a></span>setOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ProcessManager::setOutput </td>
+          <td class="memname">bool ProcessManager::setOutput </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -394,6 +395,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if it was successful </dd></dl>
 
 </div>
 </div>

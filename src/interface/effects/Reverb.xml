@@ -1,15 +1,8 @@
 <!DOCTYPE fxtemplate SYSTEM "Reverb">
-<double param="level" text="Level" value="1" suffix="" min="0"
-	max="1" step="0.1"></double>
-<double param="threshold" text="Threshold" value="-30" suffix="dB"
-	min="-100" max="0" step="10"></double>
-<int param="integer" text="Integer" value="3" suffix="Hz" min="-1"
-	max="4" step="2"></int>
-<string param="string" text="String" value="String value" suffix="Hz"
-	length="20"></string>
-<bool param="boolean" text="Boolean" value="true"></bool>
-<enum param="enum" text="Enumeration" value="option1">
-	<option param="enum" text="Option 0" value="option0"></option>
-	<option param="enum" text="Option 1" value="option1"></option>
-	<option param="enum" text="Option 2" value="option2"></option>
-</enum>
+<double id="dry" text="Dry" value="0.7" min="0" max="1" step="0.1"></double>
+<double id="damping" text="Damping" value="0.2" min="0" max="2" step ="0.1"></double>
+<double id="roomsize" text="Room size" value="0.84" min="0" max="2"  step="0.1"></double>
+<enum id="method" text="Method" value="JCRev">
+	<option id="method" text="JCRev" value="JCRev"></option>
+	<option id="method" text="Freeverb" value="freeverb"></option>
+</enum> 

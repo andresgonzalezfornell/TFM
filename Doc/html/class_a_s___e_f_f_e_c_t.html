@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_a_s___e_f_f_e_c_t.html','');});
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_a_s___e_f_f_e_c_t-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AS_EFFECT Class Reference</div>  </div>
@@ -107,6 +108,32 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a04fac13eb6e2a2264d8fbcc204dc92a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27035439a8a45f4efe51bdd6350b9e5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a27035439a8a45f4efe51bdd6350b9e5c">apply</a> (float *input, float *output, int samples)</td></tr>
 <tr class="separator:a27035439a8a45f4efe51bdd6350b9e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963d75afe6aa73059a8fb57e5ddd26f8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a963d75afe6aa73059a8fb57e5ddd26f8">plot</a> (std::string chart)</td></tr>
+<tr class="separator:a963d75afe6aa73059a8fb57e5ddd26f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d5a35837ff5fdd91f6fbb989b99c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#ac7d5a35837ff5fdd91f6fbb989b99c22">peakingFilter</a> (float *input, float *output, int samples, double f_0, double <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae29952b2bd61e59c62f95ac95160f82e">gain</a>, double Q, int order)</td></tr>
+<tr class="separator:ac7d5a35837ff5fdd91f6fbb989b99c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddd97ef8b9be2e5d5917f2168ecbac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a4ddd97ef8b9be2e5d5917f2168ecbac5">lowShelfFilter</a> (float *input, float *output, int samples, double f_0, double <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae29952b2bd61e59c62f95ac95160f82e">gain</a>, int order)</td></tr>
+<tr class="separator:a4ddd97ef8b9be2e5d5917f2168ecbac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b16d06bae51799e65684fc8ba86bf36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a4b16d06bae51799e65684fc8ba86bf36">highShelfFilter</a> (float *input, float *output, int samples, double f_0, double <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae29952b2bd61e59c62f95ac95160f82e">gain</a>, int order)</td></tr>
+<tr class="separator:a4b16d06bae51799e65684fc8ba86bf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82260b295d4c57548c6a1a98ba063b8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a82260b295d4c57548c6a1a98ba063b8c">filter</a> (float *x, float *y, int samples, float *a, float *b, int order)</td></tr>
+<tr class="separator:a82260b295d4c57548c6a1a98ba063b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6799870314266ba4615ba570a8305de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#aa6799870314266ba4615ba570a8305de">Reverb</a> ()</td></tr>
+<tr class="separator:aa6799870314266ba4615ba570a8305de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27035439a8a45f4efe51bdd6350b9e5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a27035439a8a45f4efe51bdd6350b9e5c">apply</a> (float *input, float *output, int samples)</td></tr>
+<tr class="separator:a27035439a8a45f4efe51bdd6350b9e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963d75afe6aa73059a8fb57e5ddd26f8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a963d75afe6aa73059a8fb57e5ddd26f8">plot</a> (std::string chart)</td></tr>
+<tr class="separator:a963d75afe6aa73059a8fb57e5ddd26f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605de080bb4f421f824a4becd02207b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a605de080bb4f421f824a4becd02207b2">schroederfilter</a> (float *input, float *output, int samples, bool addition, float <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae29952b2bd61e59c62f95ac95160f82e">gain</a>, int delay)</td></tr>
+<tr class="separator:a605de080bb4f421f824a4becd02207b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcefca9e566e491792369ff4adfe86ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#abcefca9e566e491792369ff4adfe86ec">schroederdiffusionfilter</a> (float *input, float *output, int samples, bool addition, float <a class="el" href="class_a_s___e_f_f_e_c_t.html#ae29952b2bd61e59c62f95ac95160f82e">gain</a>, int delay)</td></tr>
+<tr class="separator:abcefca9e566e491792369ff4adfe86ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512a780e9133f138c57627ff8bf12ec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a512a780e9133f138c57627ff8bf12ec9">feedforwardfilter</a> (float *input, float *output, int samples, bool addition, float original, int delay)</td></tr>
+<tr class="separator:a512a780e9133f138c57627ff8bf12ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f46ed839ca033f2e54c3dde113e7de6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a6f46ed839ca033f2e54c3dde113e7de6">lowpassfeedforwardfilter</a> (float *input, float *output, int samples, bool addition, float f, float d, int delay)</td></tr>
+<tr class="separator:a6f46ed839ca033f2e54c3dde113e7de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321c7ed4825c9d286d184ce7cd3cd829"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a321c7ed4825c9d286d184ce7cd3cd829">combfilter</a> (float *input, float *output, int samples, bool addition, float *a, float *b, int order, float a_delay, float b_delay, int delay)</td></tr>
+<tr class="separator:a321c7ed4825c9d286d184ce7cd3cd829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -134,6 +161,13 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae288a80c1f49857058057c9deec33985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a0ebc9c6ee46bbdb986196c3c7cd61"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a53a0ebc9c6ee46bbdb986196c3c7cd61">ratio</a></td></tr>
 <tr class="separator:a53a0ebc9c6ee46bbdb986196c3c7cd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe89c3adc1754aab1b0d429ce3d62723"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#abe89c3adc1754aab1b0d429ce3d62723">frequency</a> [<a class="el" href="class_a_s___e_f_f_e_c_t.html#a868fe290b664fe307bb13f961b7835fb">bands</a>]</td></tr>
+<tr class="separator:abe89c3adc1754aab1b0d429ce3d62723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a868fe290b664fe307bb13f961b7835fb"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s___e_f_f_e_c_t.html#a868fe290b664fe307bb13f961b7835fb">bands</a> = 10</td></tr>
+<tr class="separator:a868fe290b664fe307bb13f961b7835fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4ed78e44d982bb949709a87c60f22ea2"></a>
@@ -194,7 +228,7 @@ Private Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a27035439a8a45f4efe51bdd6350b9e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27035439a8a45f4efe51bdd6350b9e5c">&#9670;&nbsp;</a></span>apply() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a27035439a8a45f4efe51bdd6350b9e5c">&#9670;&nbsp;</a></span>apply() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +262,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a27035439a8a45f4efe51bdd6350b9e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27035439a8a45f4efe51bdd6350b9e5c">&#9670;&nbsp;</a></span>apply() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a27035439a8a45f4efe51bdd6350b9e5c">&#9670;&nbsp;</a></span>apply() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,6 +284,116 @@ Private Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>samples</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27035439a8a45f4efe51bdd6350b9e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27035439a8a45f4efe51bdd6350b9e5c">&#9670;&nbsp;</a></span>apply() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::apply </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a321c7ed4825c9d286d184ce7cd3cd829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321c7ed4825c9d286d184ce7cd3cd829">&#9670;&nbsp;</a></span>combfilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::combfilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -295,6 +439,110 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a512a780e9133f138c57627ff8bf12ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512a780e9133f138c57627ff8bf12ec9">&#9670;&nbsp;</a></span>feedforwardfilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::feedforwardfilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>original</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82260b295d4c57548c6a1a98ba063b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82260b295d4c57548c6a1a98ba063b8c">&#9670;&nbsp;</a></span>filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::filter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae29952b2bd61e59c62f95ac95160f82e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae29952b2bd61e59c62f95ac95160f82e">&#9670;&nbsp;</a></span>gain()</h2>
 
@@ -321,8 +569,228 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4b16d06bae51799e65684fc8ba86bf36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b16d06bae51799e65684fc8ba86bf36">&#9670;&nbsp;</a></span>highShelfFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::highShelfFilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f_0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f46ed839ca033f2e54c3dde113e7de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f46ed839ca033f2e54c3dde113e7de6">&#9670;&nbsp;</a></span>lowpassfeedforwardfilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::lowpassfeedforwardfilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ddd97ef8b9be2e5d5917f2168ecbac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddd97ef8b9be2e5d5917f2168ecbac5">&#9670;&nbsp;</a></span>lowShelfFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::lowShelfFilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f_0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7d5a35837ff5fdd91f6fbb989b99c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d5a35837ff5fdd91f6fbb989b99c22">&#9670;&nbsp;</a></span>peakingFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::peakingFilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f_0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a963d75afe6aa73059a8fb57e5ddd26f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a963d75afe6aa73059a8fb57e5ddd26f8">&#9670;&nbsp;</a></span>plot()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a963d75afe6aa73059a8fb57e5ddd26f8">&#9670;&nbsp;</a></span>plot() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,6 +801,163 @@ Private Attributes</h2></td></tr>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>chart</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a963d75afe6aa73059a8fb57e5ddd26f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963d75afe6aa73059a8fb57e5ddd26f8">&#9670;&nbsp;</a></span>plot() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; AS_EFFECT::plot </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>chart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a963d75afe6aa73059a8fb57e5ddd26f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963d75afe6aa73059a8fb57e5ddd26f8">&#9670;&nbsp;</a></span>plot() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; AS_EFFECT::plot </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>chart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6799870314266ba4615ba570a8305de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6799870314266ba4615ba570a8305de">&#9670;&nbsp;</a></span>Reverb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AS_EFFECT::Reverb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcefca9e566e491792369ff4adfe86ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcefca9e566e491792369ff4adfe86ec">&#9670;&nbsp;</a></span>schroederdiffusionfilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::schroederdiffusionfilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a605de080bb4f421f824a4becd02207b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605de080bb4f421f824a4becd02207b2">&#9670;&nbsp;</a></span>schroederfilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS_EFFECT::schroederfilter </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -357,6 +982,52 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a868fe290b664fe307bb13f961b7835fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868fe290b664fe307bb13f961b7835fb">&#9670;&nbsp;</a></span>bands</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int AS_EFFECT::bands = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>number of equalizer bands </p>
+
+</div>
+</div>
+<a id="abe89c3adc1754aab1b0d429ce3d62723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe89c3adc1754aab1b0d429ce3d62723">&#9670;&nbsp;</a></span>frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AS_EFFECT::frequency[<a class="el" href="class_a_s___e_f_f_e_c_t.html#a868fe290b664fe307bb13f961b7835fb">bands</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {31.25,</div><div class="line">                               62.5,</div><div class="line">                               125.0,</div><div class="line">                               250.0,</div><div class="line">                               500.0,</div><div class="line">                               1000.0,</div><div class="line">                               2000.0,</div><div class="line">                               4000.0,</div><div class="line">                               8000.0,</div><div class="line">                               16000.0}</div></div><!-- fragment --><p>center frequencies [Hz] </p>
+
+</div>
+</div>
 <a id="a35ed5ab347d7ea615c91ea991d689f57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35ed5ab347d7ea615c91ea991d689f57">&#9670;&nbsp;</a></span>function</h2>
 
@@ -452,6 +1123,7 @@ Private Attributes</h2></td></tr>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/effects/<a class="el" href="_compressor_8h_source.html">Compressor.h</a></li>
 <li>src/effects/<a class="el" href="_equalizer_8h_source.html">Equalizer.h</a></li>
+<li>src/effects/<a class="el" href="_reverb_8h_source.html">Reverb.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

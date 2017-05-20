@@ -11,5 +11,8 @@ var searchData=
   ['real',['real',['../_audio_signal_8cpp.html#a5f5a64ef503db0fc824df8320929b126',1,'AudioSignal.cpp']]],
   ['red',['red',['../_logger_8cpp.html#acb5d1f5a5f86e947972f13be5e9bc5c8',1,'Logger.cpp']]],
   ['refreshperiod',['refreshperiod',['../class_volumeter.html#a1f5e517e5a6db925b83cb3e9f36c54e6',1,'Volumeter']]],
-  ['reset',['reset',['../class_encoder.html#a8ad34a60288f78310ee465da3832b405',1,'Encoder::reset()'],['../class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3',1,'SACEffects::reset()'],['../_logger_8cpp.html#a6ea20d23dc6f0e5681125ae9108d61e9',1,'reset():&#160;Logger.cpp']]]
+  ['reset',['reset',['../class_encoder.html#a8ad34a60288f78310ee465da3832b405',1,'Encoder::reset()'],['../class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3',1,'SACEffects::reset()'],['../_logger_8cpp.html#a6ea20d23dc6f0e5681125ae9108d61e9',1,'reset():&#160;Logger.cpp']]],
+  ['reverb',['Reverb',['../class_reverb.html',1,'Reverb'],['../class_a_s___e_f_f_e_c_t.html#aa6799870314266ba4615ba570a8305de',1,'AS_EFFECT::Reverb()']]],
+  ['reverb_2ecpp',['Reverb.cpp',['../_reverb_8cpp.html',1,'']]],
+  ['reverb_2eh',['Reverb.h',['../_reverb_8h.html',1,'']]]
 ];

@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['read',['read',['../class_file.html#a917f13960e83613e5cb36d433b4cd833',1,'File']]],
-  ['readdata',['readData',['../class_output_device.html#a5f455a9fdaa26664957b54b7806a1b7d',1,'OutputDevice']]],
-  ['readheader',['readHeader',['../class_w_a_v_file.html#a040205c616651ffcefff3d417c72aa6c',1,'WAVFile']]],
-  ['readnumber',['readNumber',['../class_file.html#ab13f46c198a890f679351a2c9030e36d',1,'File']]],
-  ['readsamples',['readSamples',['../class_w_a_v_file.html#aa14a22c094f310cecc33cc573507378c',1,'WAVFile']]],
-  ['readtext',['readText',['../class_file.html#a01b5902198fefc46fe835f42386ce047',1,'File']]],
-  ['reset',['reset',['../class_encoder.html#a8ad34a60288f78310ee465da3832b405',1,'Encoder::reset()'],['../class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3',1,'SACEffects::reset()']]]
+  ['paintevent',['paintEvent',['../class_volumeter.html#a24fea36a102688596721c22b9025db5c',1,'Volumeter']]],
+  ['pause',['pause',['../class_s_a_c_effects.html#af9b8e4d685e5c0b687a3f8a17a70133d',1,'SACEffects']]],
+  ['peakingfilter',['peakingFilter',['../class_a_s___e_f_f_e_c_t.html#ac7d5a35837ff5fdd91f6fbb989b99c22',1,'AS_EFFECT']]],
+  ['play',['play',['../class_audio_test.html#add3394b989f124cd9a7152464d3ba90c',1,'AudioTest::play()'],['../class_s_a_c_effects.html#a951a42151be007375d03ccd9a1e2ad5b',1,'SACEffects::play()']]],
+  ['plot',['plot',['../class_a_s___e_f_f_e_c_t.html#a963d75afe6aa73059a8fb57e5ddd26f8',1,'AS_EFFECT::plot()'],['../class_effect.html#ac2c35ce7382d627f20879b44be0e8132',1,'Effect::plot()'],['../class_a_s___e_f_f_e_c_t.html#a963d75afe6aa73059a8fb57e5ddd26f8',1,'AS_EFFECT::plot(std::string chart)'],['../class_a_s___e_f_f_e_c_t.html#a963d75afe6aa73059a8fb57e5ddd26f8',1,'AS_EFFECT::plot(std::string chart)'],['../class_channels_charts.html#ab89ee4019f801400f7f965340f4970e5',1,'ChannelsCharts::plot()']]],
+  ['plotchart',['plotChart',['../class_effects_monitor.html#a50df1e2902fde1839b541b3429f8f02d',1,'EffectsMonitor']]],
+  ['pop',['pop',['../class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5',1,'AudioStream::pop()'],['../class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5',1,'AudioStream::pop()'],['../class_audio_stream.html#a819c67cecaa154dcc60ed986d18a1233',1,'AudioStream::pop(int n)']]],
+  ['printhelp',['printHelp',['../main_8cpp.html#a93ca5b3dfa32956bb4767126ef1e85bd',1,'main.cpp']]],
+  ['processmanager',['ProcessManager',['../class_process_manager.html#a633f908a2589cf47e7029bc798f4f6ba',1,'ProcessManager']]],
+  ['push',['push',['../class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83',1,'AudioStream::push(float sample)'],['../class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83',1,'AudioStream::push(float sample)'],['../class_audio_stream.html#af0fa149b636b94254d53ae8a98282542',1,'AudioStream::push(AudioSignal sample)']]]
 ];

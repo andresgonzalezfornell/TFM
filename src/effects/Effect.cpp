@@ -74,6 +74,9 @@ bool Effect::apply(float *input, float *output, int samples) {
     case effectID::Equalizer:
         Equalizer::apply(input, output, samples);
         break;
+    case effectID::Reverb:
+        Reverb::apply(input, output, samples);
+        break;
     default:
         consolelog("Effect", LogType::error,
                    "selected effect is not available");
@@ -96,6 +99,9 @@ std::vector<std::vector<double>> Effect::plot(std::string chart) {
         return Compressor::plot(chart);
     case effectID::Equalizer:
         return Equalizer::plot(chart);
+    case effectID::Reverb:
+        return Reverb::plot(chart);
+        break;
     default:
         consolelog("Effect", LogType::error,
                    "selected effect is not available");

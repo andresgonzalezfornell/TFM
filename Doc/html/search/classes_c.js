@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upmixtype',['UpmixType',['../struct_upmix_type.html',1,'']]]
+  ['timeslot',['TimeSlot',['../struct_audio_stream_1_1_time_slot.html',1,'AudioStream']]]
 ];

@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['update',['update',['../class_a_s___e_f_f_e_c_t.html#a64770d59c5b7548df8f07fef55ae8027',1,'AS_EFFECT']]],
-  ['updatecontrols',['updateControls',['../class_s_a_c_effects.html#aab4eb7a1cfb54e995a43967843e0c4b7',1,'SACEffects']]],
-  ['updateparameter',['updateParameter',['../class_effects_monitor.html#ae2cc992b9bb457da2a0cdab854a414ea',1,'EffectsMonitor::updateParameter(int value)'],['../class_effects_monitor.html#aa32c90185185305770ad5ab911641e17',1,'EffectsMonitor::updateParameter(double value)'],['../class_effects_monitor.html#ab2be23fba9628432cacdfc83cc75e9f4',1,'EffectsMonitor::updateParameter(QString value)'],['../class_effects_monitor.html#a3488d6ae49a81de79fe6913a7bebcafe',1,'EffectsMonitor::updateParameter(bool value)']]],
-  ['updateselectors',['updateSelectors',['../class_channels_charts.html#ad1f12b4e3c93f10341251a88ccbf2b08',1,'ChannelsCharts']]]
+  ['tab',['tab',['../_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd',1,'Logger.cpp']]],
+  ['test',['test',['../class_output_device.html#a78e2163a6f7051d49d3483234003d684',1,'OutputDevice::test()'],['../class_s_a_c_effects.html#ae360818918fb3dacb0f14af7a72176b5',1,'SACEffects::test()']]],
+  ['togglebinauralquality',['toggleBinauralQuality',['../class_s_a_c_effects.html#acf5677a7def710c99373d9220c7fb2c3',1,'SACEffects']]],
+  ['toggledecodingtype',['toggleDecodingType',['../class_s_a_c_effects.html#a81f51a42eb25d1a2d801c1a061a8990c',1,'SACEffects']]],
+  ['toggleeffect',['toggleEffect',['../class_s_a_c_effects.html#a03facc29d6f6c445a380afbc1336362b',1,'SACEffects']]],
+  ['togglehrtfmodel',['toggleHRTFModel',['../class_s_a_c_effects.html#a8f32dd5321aadfd16d1c305d9be85303',1,'SACEffects']]],
+  ['toggletree',['toggleTree',['../class_encoder.html#a3a727a4957a8d77b39a0a3c3519f4245',1,'Encoder']]],
+  ['toggleupmixtype',['toggleUpmixType',['../class_s_a_c_effects.html#ac993738225677b4d23adf05a4fdefac7',1,'SACEffects']]]
 ];

@@ -17,5 +17,7 @@ var searchData=
   ['logtype',['LogType',['../struct_log_type.html',1,'LogType'],['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217',1,'LogType::logtype()']]],
   ['logx',['logX',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69ac51488678d517feb63825d59ab9acfb1',1,'Chart2D::ChartOptions']]],
   ['logy',['logY',['../struct_chart2_d_1_1_chart_options.html#a796006d22e811fc736d9cf4fb38f6b69af9bd258ed39b48502e9bbd0df9c6316c',1,'Chart2D::ChartOptions']]],
-  ['low',['low',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822a1c83062a65b39a734cfb6393fa679425',1,'DecodingType']]]
+  ['low',['low',['../struct_decoding_type.html#a8b3854652406458753c9b7da2068b822a1c83062a65b39a734cfb6393fa679425',1,'DecodingType']]],
+  ['lowpassfeedforwardfilter',['lowpassfeedforwardfilter',['../class_a_s___e_f_f_e_c_t.html#a6f46ed839ca033f2e54c3dde113e7de6',1,'AS_EFFECT']]],
+  ['lowshelffilter',['lowShelfFilter',['../class_a_s___e_f_f_e_c_t.html#a4ddd97ef8b9be2e5d5917f2168ecbac5',1,'AS_EFFECT']]]
 ];

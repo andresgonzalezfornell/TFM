@@ -34,7 +34,8 @@ SOURCES += \
     src/effects/Effect.cpp \
     src/tools/Logger.cpp \
     src/effects/Compressor.cpp \
-    src/effects/Equalizer.cpp
+    src/effects/Equalizer.cpp \
+    src/effects/Reverb.cpp
 
 HEADERS  += \
     src/process/ProcessManager.h \
@@ -47,7 +48,8 @@ HEADERS  += \
     src/effects/Compressor.h \
     src/effects/EffectBase.h \
     src/effects/Effect.h \
-    src/effects/Equalizer.h
+    src/effects/Equalizer.h \
+    src/effects/Reverb.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc
 

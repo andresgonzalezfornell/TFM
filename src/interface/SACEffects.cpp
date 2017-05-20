@@ -438,7 +438,7 @@ void SACEffects::sendOutput() {
     }
     for (int channel = 0; channel < this->channels_output->getSize(); channel++) {
         if (!muted) {
-            this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(process->output[channel] + n, N);
+            this->channels_output->getChannel(channel)->audiooutput->outputdevice->send(this->process->output[channel] + n, N);
         }
     }
     this->setTimer();

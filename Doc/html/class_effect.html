@@ -127,6 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a68f816d95f9a7383cd0df18d22e3e1ed">apply</a> (float *input, float *output, int samples)</td></tr>
 <tr class="memdesc:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applies the selected effect to the input and sets the result into output variable.  <a href="#a68f816d95f9a7383cd0df18d22e3e1ed">More...</a><br /></td></tr>
 <tr class="separator:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c35ce7382d627f20879b44be0e8132"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ac2c35ce7382d627f20879b44be0e8132">plot</a> (std::string chart)</td></tr>
+<tr class="memdesc:ac2c35ce7382d627f20879b44be0e8132"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends some values to user interface charts.  <a href="#ac2c35ce7382d627f20879b44be0e8132">More...</a><br /></td></tr>
+<tr class="separator:ac2c35ce7382d627f20879b44be0e8132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -604,6 +607,33 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>contained map of values in the tag </dd></dl>
+
+</div>
+</div>
+<a id="ac2c35ce7382d627f20879b44be0e8132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c35ce7382d627f20879b44be0e8132">&#9670;&nbsp;</a></span>plot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; Effect::plot </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>chart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It sends some values to user interface charts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chart</td><td>chart id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array of values as values[axis][sample] axis: 0 = x (horizontal) and 1 = y (vertical) </dd></dl>
 
 </div>
 </div>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['bands',['bands',['../class_a_s___e_f_f_e_c_t.html#a868fe290b664fe307bb13f961b7835fb',1,'AS_EFFECT']]],
   ['binauralquality',['binauralquality',['../class_s_a_c_effects.html#a6d7c19e0a689b69f8a05ca0a81129634',1,'SACEffects']]],
   ['bitspersample',['bitspersample',['../struct_w_a_v_file_1_1_header.html#ad731c9ced0b22903be0b24f6528ec061',1,'WAVFile::Header']]],
   ['bitstream',['bitstream',['../class_encoder.html#a8cd18343fe80007dba58b4d716227544',1,'Encoder::bitstream()'],['../class_s_a_c_effects.html#a13428146c31d3fda1ed30773a35795bd',1,'SACEffects::bitstream()']]],

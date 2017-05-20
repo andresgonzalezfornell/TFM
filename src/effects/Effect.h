@@ -11,6 +11,7 @@
 // Example:     #include "Compressor.h"
 #include "Compressor.h"
 #include "Equalizer.h"
+#include "Reverb.h"
 // ----------------------------------------------------------------------
 // 2. LIST
 // Add:         EFFECT(EffectClassName, "EffectClassName")
@@ -19,7 +20,8 @@
 // Example:     EFFECT(Compressor, "Compressor")
 #define LIST \
     EFFECT(Compressor, "Compressor") \
-    EFFECT(Equalizer, "Equalizer")
+    EFFECT(Equalizer, "Equalizer") \
+    EFFECT(Reverb, "Reverb")
 // ----------------------------------------------------------------------
 // 3. INHERITANCE OF CLASSES
 // Add:         public EffectClassName
@@ -28,7 +30,8 @@
 // Example:     public Compressor
 #define INHERITANCE \
     public Compressor, \
-    public Equalizer
+    public Equalizer, \
+    public Reverb
 
 /**
  * @class	Effect

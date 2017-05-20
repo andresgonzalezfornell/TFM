@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['bands',['bands',['../class_a_s___e_f_f_e_c_t.html#a868fe290b664fe307bb13f961b7835fb',1,'AS_EFFECT']]],
   ['bigendian',['bigendian',['../struct_file_1_1_endianess.html#ac80818ac42fdd0c9aa29d424e65fa37ea7dcfb82e9bd382f1eab49a0d48993944',1,'File::Endianess']]],
   ['binaural',['binaural',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa91c847f68238d3c40b4d29e07dd47c44',1,'UpmixType']]],
   ['binauralquality',['BinauralQuality',['../struct_binaural_quality.html',1,'BinauralQuality'],['../struct_binaural_quality.html#a3a009a287684c778dbb5507226cf24e4',1,'BinauralQuality::binauralquality()'],['../class_s_a_c_effects.html#a6d7c19e0a689b69f8a05ca0a81129634',1,'SACEffects::binauralquality()']]],

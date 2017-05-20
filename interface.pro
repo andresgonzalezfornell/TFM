@@ -34,7 +34,8 @@ SOURCES += src/interface/main.cpp\
     src/effects/Compressor.cpp \
     src/effects/Equalizer.cpp \
     src/interface/SACEffects.cpp \
-    src/interface/Chart2D.cpp
+    src/interface/Chart2D.cpp \
+    src/effects/Reverb.cpp
 
 HEADERS  += \
     src/interface/Encoder.h \
@@ -53,11 +54,11 @@ HEADERS  += \
     src/tools/Logger.h \
     lib/QtLibraries/src/qtlibraries.h \
     src/effects/EffectBase.h \
-    src/effects/EffectsModule.h \
     src/effects/Compressor.h \
     src/effects/Equalizer.h \
     src/interface/SACEffects.h \
-    src/interface/Chart2D.h
+    src/interface/Chart2D.h \
+    src/effects/Reverb.h
 
 FORMS    += \
     src/interface/Encoder.ui \

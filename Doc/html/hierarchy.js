@@ -6,12 +6,9 @@ var hierarchy =
     [ "BinauralQuality", "struct_binaural_quality.html", null ],
     [ "Channel", "class_channel.html", null ],
     [ "Chart2D::ChartOptions", "struct_chart2_d_1_1_chart_options.html", null ],
-    [ "Compressor", "class_compressor.html", [
-      [ "EffectsModule", "class_effects_module.html", null ]
-    ] ],
+    [ "Compressor", "class_compressor.html", null ],
     [ "DecodingType", "struct_decoding_type.html", null ],
     [ "EffectBase", "class_effect_base.html", null ],
-    [ "EffectModule", "class_effect_module.html", null ],
     [ "File::Endianess", "struct_file_1_1_endianess.html", null ],
     [ "Equalizer", "class_equalizer.html", null ],
     [ "File", "class_file.html", [
@@ -45,6 +42,7 @@ var hierarchy =
       [ "Chart2D", "class_chart2_d.html", null ],
       [ "Volumeter", "class_volumeter.html", null ]
     ] ],
+    [ "Reverb", "class_reverb.html", null ],
     [ "AudioStream::SignalRange", "struct_audio_stream_1_1_signal_range.html", null ],
     [ "AudioStream::TimeSlot", "struct_audio_stream_1_1_time_slot.html", null ],
     [ "UpmixType", "struct_upmix_type.html", null ]

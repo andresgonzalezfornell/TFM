@@ -27,22 +27,24 @@ void Equalizer::apply(float *input, float *output, int samples) {
                                     {-1.67215539726301e-05,1.71012376991073e-05,-0.000439351192571039,0.00277020557181152,-0.00317997527179451,0.000925226024315485,-0.208403336941899,1.07944254655709,-0.189268015480721,0.00865146391755439},
                                     {8.21675861167529e-06,-1.33827217506060e-05,8.75424004692147e-06,-0.000438085935860196,0.00271779142944750,-0.00272026736573885,0.000212280546089003,-0.209482833335562,1.05310021990880,-0.109803397508004},
                                     {-1.04588368713643e-06,1.81124326392954e-06,3.37012587142700e-06,3.57765694705449e-05,-0.000370947922770962,0.000395303373362004,0.00218544052443248,0.0197161395759657,-0.154831224077047,1.08009144788505}};
-    double level[bands];
     // Initialization
+    double level[bands];
+    double gain[bands];
     for (int band = 0; band < bands; band++) {
-        level[band] = 0;
+        level[band] = getDouble(params["band" + std::to_string(band)]); // [dB]
+        gain[band] = 0;
     }
     // Effect
     for (int band = 0; band < bands; band++) {
         for (int i = 0; i < bands; i++) {
-            level[band] += C[band][i]*20*std::log10(pow(10,G[i] / 20));
+            gain[band] += C[band][i]*level[band]; // [dB]
         }
         if (band == 0) {
-            lowShelfFilter(input, output, samples, frequency[band], pow(10, level[band] / 20), order);;
+            lowShelfFilter(input, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
         } else if (band == bands) {
-            highShelfFilter(output, output, samples, frequency[band], pow(10, level[band] / 20), order);;
+            highShelfFilter(output, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
         } else {
-            peakingFilter(output, output, samples, frequency[band], pow(10, level[band] / 20), Q, order);
+            peakingFilter(output, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), Q, order);
         }
     }
 }
@@ -57,7 +59,7 @@ std::vector<std::vector<double>> Equalizer::plot(std::string chart) {
 }
 
 /**
- * @brief   It applies a peaking filter
+ * @brief   It applies a peaking filter.
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
@@ -65,7 +67,7 @@ std::vector<std::vector<double>> Equalizer::plot(std::string chart) {
  * @param   level           peak level (amplitude)
  * @param   Q               quality factor
  */
-void Equalizer::peakingFilter(float *input, float *output, int samples, double f_0, double level, double Q, int order) {
+void Equalizer::peakingFilter(float *input, float *output, int samples, double f_0, double gain, double Q, int order) {
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
@@ -73,12 +75,12 @@ void Equalizer::peakingFilter(float *input, float *output, int samples, double f
     const double pi = 3.1415926536;
     const double w_0 = 2*pi*f_0;
     // Coefficients
-    a[0] = std::sqrt(level) + std::tan(w_0/Q/2);
-    a[1] = -2*std::sqrt(level)*std::cos(w_0);
-    a[2] = std::sqrt(level) - std::tan(w_0/Q/2);
-    b[0] = std::sqrt(level) + level*std::tan(w_0/Q/2);
-    b[1] = -2*std::sqrt(level)*std::cos(w_0);
-    b[2] = std::sqrt(level) - level*std::tan(w_0/Q/2);
+    a[0] = std::sqrt(gain) + std::tan(w_0/Q/2);
+    a[1] = -2*std::sqrt(gain)*std::cos(w_0);
+    a[2] = std::sqrt(gain) - std::tan(w_0/Q/2);
+    b[0] = std::sqrt(gain) + gain*std::tan(w_0/Q/2);
+    b[1] = -2*std::sqrt(gain)*std::cos(w_0);
+    b[2] = std::sqrt(gain) - gain*std::tan(w_0/Q/2);
     // Filtering
     filter(input, output, samples, a, b, order);
     // Cleaning
@@ -88,14 +90,14 @@ void Equalizer::peakingFilter(float *input, float *output, int samples, double f
 
 
 /**
- * @brief   It applies a low shelf filter
+ * @brief   It applies a low shelf filter.
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  * @param   f_0             midpoint frequency (real frequency / sampling frequency)
  * @param   level           peak level (amplitude)
  */
-void Equalizer::lowShelfFilter(float *input, float *output, int samples, double f_0, double level, int order) {
+void Equalizer::lowShelfFilter(float *input, float *output, int samples, double f_0, double gain, int order) {
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
@@ -104,12 +106,12 @@ void Equalizer::lowShelfFilter(float *input, float *output, int samples, double 
     const double w_0 = 2*pi*f_0;
     const double w_c = w_0*1.4720;
     const double alpha = std::tan(w_c/2);
-    a[0] = std::sqrt(level) + std::sqrt(2)*alpha*std::pow(level,0.25) + std::pow(alpha,2);
-    a[1] = 2*(std::pow(alpha,2) - std::sqrt(level));
-    a[2] = std::sqrt(level) - std::sqrt(2)*alpha*std::pow(level,0.25) + std::pow(alpha,2);
-    b[0] = std::sqrt(level)*(std::sqrt(level)*std::pow(alpha,2) + std::sqrt(2)*alpha*std::pow(level,0.25) + 1);
-    b[1] = std::sqrt(level)*(2*(std::sqrt(level)*std::pow(alpha,2) - 1));
-    b[2] = std::sqrt(level)*(std::sqrt(level)*std::pow(alpha,2) - std::sqrt(2)*alpha*std::pow(level,0.25) + 1);
+    a[0] = std::sqrt(gain) + std::sqrt(2)*alpha*std::pow(gain,0.25) + std::pow(alpha,2);
+    a[1] = 2*(std::pow(alpha,2) - std::sqrt(gain));
+    a[2] = std::sqrt(gain) - std::sqrt(2)*alpha*std::pow(gain,0.25) + std::pow(alpha,2);
+    b[0] = std::sqrt(gain)*(std::sqrt(gain)*std::pow(alpha,2) + std::sqrt(2)*alpha*std::pow(gain,0.25) + 1);
+    b[1] = std::sqrt(gain)*(2*(std::sqrt(gain)*std::pow(alpha,2) - 1));
+    b[2] = std::sqrt(gain)*(std::sqrt(gain)*std::pow(alpha,2) - std::sqrt(2)*alpha*std::pow(gain,0.25) + 1);
     // Filtering
     filter(input, output, samples, a, b, order);
     // Cleaning
@@ -118,14 +120,14 @@ void Equalizer::lowShelfFilter(float *input, float *output, int samples, double 
 }
 
 /**
- * @brief   It applies a high shelf filter
+ * @brief   It applies a high shelf filter.
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  * @param   f_0             midpoint frequency (real frequency / sampling frequency)
  * @param   level           peak level (amplitude)
  */
-void Equalizer::highShelfFilter(float *input, float *output, int samples, double f_0, double level, int order) {
+void Equalizer::highShelfFilter(float *input, float *output, int samples, double f_0, double gain, int order) {
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
@@ -134,12 +136,12 @@ void Equalizer::highShelfFilter(float *input, float *output, int samples, double
     const double w_0 = 2*pi*f_0;
     const double w_c = w_0/1.4085;
     const double alpha = std::tan(w_c/2);
-    a[0] = std::sqrt(level)*std::pow(alpha,2) + std::sqrt(2)*alpha*std::pow(level,0.25) + 1;
-    a[1] = 2*(std::sqrt(level)*std::pow(alpha,2) - 1);
-    a[2] = std::sqrt(level)*std::pow(alpha,2) - std::sqrt(2)*alpha*std::pow(level,0.25) + 1;
-    b[0] = std::sqrt(level)*(std::sqrt(level) + std::sqrt(2)*alpha*std::pow(level,0.25) + std::pow(alpha,2));
-    b[1] = std::sqrt(level)*(2*(std::pow(alpha,2) - std::sqrt(level)));
-    b[2] = std::sqrt(level)*(std::sqrt(level) - std::sqrt(2)*alpha*std::pow(level,0.25) + std::pow(alpha,2));
+    a[0] = std::sqrt(gain)*std::pow(alpha,2) + std::sqrt(2)*alpha*std::pow(gain,0.25) + 1;
+    a[1] = 2*(std::sqrt(gain)*std::pow(alpha,2) - 1);
+    a[2] = std::sqrt(gain)*std::pow(alpha,2) - std::sqrt(2)*alpha*std::pow(gain,0.25) + 1;
+    b[0] = std::sqrt(gain)*(std::sqrt(gain) + std::sqrt(2)*alpha*std::pow(gain,0.25) + std::pow(alpha,2));
+    b[1] = std::sqrt(gain)*(2*(std::pow(alpha,2) - std::sqrt(gain)));
+    b[2] = std::sqrt(gain)*(std::sqrt(gain) - std::sqrt(2)*alpha*std::pow(gain,0.25) + std::pow(alpha,2));
     // Filtering
     filter(input, output, samples, a, b, order);
     // Cleaning
@@ -148,32 +150,38 @@ void Equalizer::highShelfFilter(float *input, float *output, int samples, double
 }
 
 /**
- * @brief   It applies a filter according to the transfer function H(z) = ( b[0] + b[1] * z^-1 + b[2] * z^-2 ) / ( a[0] + a[1] * z^-1 + a[2] * z^-2 )
+ * @brief   It applies a filter according to the transfer function H(z) = ( b[0] + b[1]·z^-1 + ... + b[order]·z^-order ) / ( a[0] + a[1]·z^-1 + ... + a[order]·z^-order ).
  * @param 	input           input signal pointer
  * @param 	output          output signal pointer
  * @param 	samples			number of samples
  * @param   a               y coefficients of transfer function
  * @param   b               x coefficients of transfer function
+ * @param   order           filter order (value of the highest exponent)
  */
 void Equalizer::filter(float *input, float *output, int samples, float *a, float *b, int order) {
-    float x[order + 1];
-    float y[order + 1];
-    for (int index = 0; index < order + 1; index++) {
-        x[index] = 0;
-        y[index] = 0;
-    }
-    for (int n = 0; n < samples; n++) {
-        // Memories update
-        for (int index = order; index > 0; index--) {
-            x[index] = x[index - 1];
-            y[index] = y[index - 1];
+    if (a[0] != 0) {
+        float *x = (float *)std::malloc((order + 1)*sizeof(float));
+        float *y = (float *)std::malloc((order + 1)*sizeof(float));
+        for (int index = 0; index < order + 1; index++) {
+            x[index] = 0;
+            y[index] = 0;
         }
-        x[0] = input[n];
-        // Filter
-        y[0] = 1.0/a[0] * (b[0] * x[0]);
-        for (int index = 1; index < order + 1; index++) {
-            y[0] += 1.0/a[0] * (b[index] * x[index] - a[index] * y[index]);
+        for (int n = 0; n < samples; n++) {
+            // Memories update
+            for (int index = order; index > 0; index--) {
+                x[index] = x[index - 1];
+                y[index] = y[index - 1];
+            }
+            x[0] = input[n];
+            // Filter
+            y[0] = b[0] * x[0];
+            for (int index = 1; index < order + 1; index++) {
+                y[0] += b[index] * x[index] - a[index] * y[index];
+            }
+            y[0] /= a[0];
+            output[n] = y[0];
         }
-        output[n] = y[0];
+        std::free(x);
+        std::free(y);
     }
 }

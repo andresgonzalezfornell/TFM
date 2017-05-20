@@ -6,7 +6,6 @@ var searchData=
   ['info',['info',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b',1,'LogType']]],
   ['inheritance',['INHERITANCE',['../_effect_8h.html#adb682ae52063604d1f6a6b0adf393d02',1,'Effect.h']]],
   ['initialize',['initialize',['../class_audio_output.html#ab9bd7ed5d3dec7dfe35644db41fe0677',1,'AudioOutput']]],
-  ['initializers',['INITIALIZERS',['../_effects_module_8h.html#ae5a2452559f46007aaff64cc1d14dd4e',1,'EffectsModule.h']]],
   ['input',['input',['../class_channels_charts.html#ab3a9a79fe459610f67633438f496b18b',1,'ChannelsCharts::input()'],['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938',1,'SACEffects::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
   ['input_5fchannels',['input_channels',['../class_channels_charts.html#af3c81ffd63585ea7967c6b2221b5e588',1,'ChannelsCharts']]],
   ['input_5fchart',['input_chart',['../class_channels_charts.html#a87ae986ae562c146145eca33fa85b36e',1,'ChannelsCharts']]],
