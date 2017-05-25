@@ -101,7 +101,6 @@ private:
 	UpmixType::upmixtype upmixtype; /**< SAC decoder parameter */
 	BinauralQuality::binauralquality binauralquality; /**< SAC decoder parameter */
 	HRTFModel::hrtfmodel hrtfmodel; /**< SAC decoder parameter */
-    void sendOutput();
     void setTimer();
 private slots:
     // Input & output
@@ -124,6 +123,7 @@ private slots:
 	// Effects
 	void toggleEffect();
 	void applyEffect();
+    void sendOutput();
 };
 
 #endif // SACEFFECTS_H

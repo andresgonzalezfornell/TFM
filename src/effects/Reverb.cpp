@@ -14,31 +14,32 @@ Reverb::Reverb() AS_EFFECT_CONSTRUCTOR {
  * @param 	samples			number of samples
  */
 void Reverb::apply(float *input, float *output, int samples) {
-    double dry = getDouble(params["dry"]);
+    double phase = getDouble(params["phase"]);
     double roomsize = getDouble(params["roomsize"]);
     double damping = getDouble(params["damping"]);
     std::string method = params["method"];
+    filterindex = 0;
     if (method == "JCRev") {
-        feedforwardfilter(input, output, samples, false, 0.742, 4799);
-        feedforwardfilter(input, output, samples, true, 0.733, 4999);
-        feedforwardfilter(input, output, samples, true, 0.715, 5399);
-        feedforwardfilter(input, output, samples, true, 0.697, 5899);
-        schroederfilter(output, output, samples, false, dry, 1051);
-        schroederfilter(output, output, samples, false, dry, 337);
-        schroederfilter(output, output, samples, false, dry, 113);
+        feedforwardfilter(input, output, samples, false, 0.25, 0.742, 4799);
+        feedforwardfilter(input, output, samples, true, 0.25, 0.733, 4999);
+        feedforwardfilter(input, output, samples, true, 0.25, 0.715, 5399);
+        feedforwardfilter(input, output, samples, true, 0.25, 0.697, 5899);
+        schroederfilter(input, output, samples, false, 1, phase, 1051);
+        schroederfilter(output, output, samples, false, 1, phase, 337);
+        schroederfilter(output, output, samples, false, 1, phase, 113);
     } else if (method == "freeverb") {
-        lowpassfeedforwardfilter(input, output, samples, false, roomsize, damping, 1557);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1617);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1491);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1422);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1277);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1356);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1188);
-        lowpassfeedforwardfilter(input, output, samples, true, roomsize, damping, 1116);
-        schroederdiffusionfilter(output, output, samples, false, dry, 225);
-        schroederdiffusionfilter(output, output, samples, false, dry, 556);
-        schroederdiffusionfilter(output, output, samples, false, dry, 441);
-        schroederdiffusionfilter(output, output, samples, false, dry, 341);
+        lowpassfeedbackfilter(input, output, samples, false, 0.125, roomsize, damping, 1557);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1617);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1491);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1422);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1277);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1356);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1188);
+        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1116);
+        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 225);
+        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 556);
+        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 441);
+        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 341);
     } else {
         consolelog("Reverb", LogType::error, "unkown method \"" + method + "\"");
     }
@@ -63,24 +64,25 @@ std::vector<std::vector<double>> Reverb::plot(std::string chart) {
 }
 
 /**
- * @brief   It applies a shcroeder all pass filter, according to the transfer function H(z) = (g + z^-delay) / (1 + g·z^-delay).
+ * @brief   It applies a shcroeder allpass filter, according to the transfer function H(z) = gain * (g + z^-delay) / (1 + g·z^-delay).
  * @param 	input           input signal pointer
  * @param 	output          output signal pointer
  * @param 	samples			number of samples
  * @param   addition        true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples)
- * @param   gain            all pass filter gain
+ * @param   gain            function transfer gain
+ * @param   g               all pass filter gain
  * @param   delay           number of samples to delay
  */
-void Reverb::schroederfilter(float *input, float *output, int samples, bool addition, float gain, int delay) {
+void Reverb::schroederfilter(float *input, float *output, int samples, bool addition, float gain, float g, int delay) {
     const int order = 0;
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
     // Coefficients
     a[0] = 1;
-    b[0] = gain;
-    float a_delay = gain;
-    float b_delay = 1;
+    b[0] = gain * g;
+    float a_delay = g;
+    float b_delay = gain;
     // Filtering
     combfilter(input, output, samples, addition, a, b, order, a_delay, b_delay, delay);
     // Cleaning
@@ -89,24 +91,25 @@ void Reverb::schroederfilter(float *input, float *output, int samples, bool addi
 }
 
 /**
- * @brief   It applies a schroeder diffusion filter, according to the transfer function H(z) = (-g + z^-delay) / (1 - g·z^-delay).
+ * @brief   It applies a schroeder diffusion allpass filter, according to the transfer function H(z) = gain * (-g + z^-delay) / (1 - g·z^-delay).
  * @param 	input           input signal pointer
  * @param 	output          output signal pointer
  * @param 	samples			number of samples
  * @param   addition        true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples)
- * @param   gain            all pass filter gain
+ * @param   gain            function transfer gain
+ * @param   g               all pass filter gain
  * @param   delay           number of samples to delay
  */
-void Reverb::schroederdiffusionfilter(float *input, float *output, int samples, bool addition, float gain, int delay) {
+void Reverb::schroederdiffusionfilter(float *input, float *output, int samples, bool addition, float gain, float g, int delay) {
     const int order = 0;
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
     // Coefficients
     a[0] = 1;
-    b[0] = -gain;
-    float a_delay = -gain;
-    float b_delay = 1;
+    b[0] = gain * (-g);
+    float a_delay = -g;
+    float b_delay = gain;
     // Filtering
     combfilter(input, output, samples, addition, a, b, order, a_delay, b_delay, delay);
     // Cleaning
@@ -115,24 +118,25 @@ void Reverb::schroederdiffusionfilter(float *input, float *output, int samples, 
 }
 
 /**
- * @brief   It applies a feed forward comb filter, according to the transfer function H(z) = g + z^-delay.
+ * @brief   It applies a feed forward comb filter, according to the transfer function H(z) = gain * (g + z^-delay).
  * @param 	input           input signal pointer
  * @param 	output          output signal pointer
  * @param 	samples			number of samples
  * @param   addition        true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples)
+ * @param   gain            function transfer gain
  * @param   original        gain of the original signal
  * @param   delay           number of samples to delay
  */
-void Reverb::feedforwardfilter(float *input, float *output, int samples, bool addition, float original, int delay) {
+void Reverb::feedforwardfilter(float *input, float *output, int samples, bool addition, float gain, float original, int delay) {
     const int order = 0;
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
     // Coefficients
     a[0] = 1;
-    b[0] = original;
+    b[0] = gain * original;
     float a_delay = 0;
-    float b_delay = 1;
+    float b_delay = gain;
     // Filtering
     combfilter(input, output, samples, addition, a, b, order, a_delay, b_delay, delay);
     // Cleaning
@@ -141,27 +145,28 @@ void Reverb::feedforwardfilter(float *input, float *output, int samples, bool ad
 }
 
 /**
- * @brief   It applies a low pass feed forward comb filter, according to the transfer function H(z) = 1 / (1 - f · (1-d) / (1-d·z^-1) · z*-N).
+ * @brief   It applies a Schroeder-Moorer low pass feedback comb filter, according to the transfer function H(z) = gain / (1 - f · (1-d) / (1-d·z^-1) · z*-N).
  * @param 	input           input signal pointer
  * @param 	output          output signal pointer
  * @param 	samples			number of samples
  * @param   addition        true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples)
- * @param   f               feed forward comb filter gain
+ * @param   gain            function transfer gain
+ * @param   rs              feed forward comb filter gain
  * @param   d               low pass filter gain
  * @param   delay           number of samples to delay
  */
-void Reverb::lowpassfeedforwardfilter(float *input, float *output, int samples, bool addition, float f, float d, int delay) {
+void Reverb::lowpassfeedbackfilter(float *input, float *output, int samples, bool addition, float gain, float rs, float d, int delay) {
     const int order = 1;
     // Initialization
     float *a = (float *)std::malloc((order+1)*sizeof(float));
     float *b = (float *)std::malloc((order+1)*sizeof(float));
     // Coefficients
     a[0] = 1;
-    a[1] = 0;
-    b[0] = 1;
-    b[1] = -d;
-    float a_delay = -d;
-    float b_delay = -f*(1-d);
+    a[1] = -d;
+    b[0] = gain;
+    b[1] = gain * (-d);
+    float a_delay = -rs*(1-d);
+    float b_delay = 0;
     // Filtering
     combfilter(input, output, samples, addition, a, b, order, a_delay, b_delay, delay);
     // Cleaning
@@ -190,32 +195,25 @@ void Reverb::combfilter(float *input, float *output, int samples, bool addition,
         } else {
             buffersize = order + 1;
         }
-        float *x = (float *)std::malloc(buffersize * sizeof(float)); // cyclic memory;
-        float *y = (float *)std::malloc(buffersize * sizeof(float)); // cyclic memory;
-        int pointer = 0; // pointer to the last element in memory
-        for (int index = 0; index < buffersize; index++) {
-            x[index] = 0;
-            y[index] = 0;
-        }
-        for (int n = 0; n < samples; n++) {
-            x[pointer] = input[n];
+        int n = pointer[filterindex];
+        for (int sample = 0; sample < samples; sample++) {
+            x[filterindex][n] = input[sample];
             // Filter
-            y[pointer] = b[0] * x[pointer];
+            y[filterindex][n] = b[0] * x[filterindex][n];
             for (int index = 1; index < order + 1; index++) {
-                y[pointer] += b[index] * x[(buffersize + pointer - delay) % buffersize] - a[index] * y[(buffersize + pointer - delay) % buffersize];
+                y[filterindex][n] += b[index] * x[filterindex][(buffersize + n - index) % buffersize] - a[index] * y[filterindex][(buffersize + n - index) % buffersize];
             }
-            y[pointer] += b_delay * x[(buffersize + pointer - delay) % buffersize] - a_delay * y[(buffersize + pointer - delay) % buffersize];
-            y[pointer] /= a[0];
+            y[filterindex][n] += b_delay * x[filterindex][(buffersize + n - delay) % buffersize] - a_delay * y[filterindex][(buffersize + n - delay) % buffersize];
+            y[filterindex][n] /= a[0];
             if (addition) {
-                output[n] += y[pointer];
+                output[sample] += y[filterindex][n];
             } else {
-                output[n] = y[pointer];
+                output[sample] = y[filterindex][n];
             }
             // Memories update
-            pointer = (pointer + 1) % buffersize;
+            n = (n + 1) % buffersize;
         }
-        // Cleaning
-        std::free(x);
-        std::free(y);
+        pointer[filterindex] = n;
     }
+    filterindex++;
 }

@@ -4,6 +4,8 @@
 // Effect base header
 #include "EffectBase.h"
 
+const int order = 2;
+
 /**
  * @class	Equalizer
  * @author	Andrés González Fornell
@@ -30,6 +32,9 @@ private:
                                4000.0,
                                8000.0,
                                16000.0}; /**< center frequencies [Hz] */
+
+    float x[order+1]; /**< filter buffer of input samples */
+    float y[order+1]; /**< filter buffer of output samples */
 };
 
 #endif // EQUALIZER_H

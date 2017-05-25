@@ -5,6 +5,10 @@
  * @param   params          string of effect parameters
  */
 Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
+    for (int n = 0; n < order + 1; n++) {
+        x[n] = 0;
+        y[n] = 0;
+    }
 }
 
 /**
@@ -14,7 +18,7 @@ Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
  * @param 	samples			number of samples
  */
 void Equalizer::apply(float *input, float *output, int samples) {
-    const int order = 2;
+
     const double Q = std::sqrt(2);
     // Gain-compensanting matrix
     const double C[bands][bands] = {{1.32220858046976,-0.312321455237198,0.0381733194898166,0.00472793396660785,0.000796727762724219,-0.000744140323074050,6.80405294875517e-05,7.36601688367619e-06,4.14703938689660e-06,-5.19536284602576e-07},
@@ -160,12 +164,6 @@ void Equalizer::highShelfFilter(float *input, float *output, int samples, double
  */
 void Equalizer::filter(float *input, float *output, int samples, float *a, float *b, int order) {
     if (a[0] != 0) {
-        float *x = (float *)std::malloc((order + 1)*sizeof(float));
-        float *y = (float *)std::malloc((order + 1)*sizeof(float));
-        for (int index = 0; index < order + 1; index++) {
-            x[index] = 0;
-            y[index] = 0;
-        }
         for (int n = 0; n < samples; n++) {
             // Memories update
             for (int index = order; index > 0; index--) {
@@ -181,7 +179,5 @@ void Equalizer::filter(float *input, float *output, int samples, float *a, float
             y[0] /= a[0];
             output[n] = y[0];
         }
-        std::free(x);
-        std::free(y);
     }
 }

@@ -16,6 +16,7 @@ SACEffects::SACEffects(QWidget *framework) :
     ChannelsList::fs = this->fs;
     ChannelsList::samplesize = 32;
     this->chunksize = 2205;
+//    this->chunksize = 88200;
     consolelog("SACEffects", LogType::info,
                "signal process chunk = " + std::to_string(this->chunksize)
                + " samples");
@@ -28,7 +29,7 @@ SACEffects::SACEffects(QWidget *framework) :
                + std::to_string(period).substr(0,
                                                std::to_string(period).find(".") + 4) + " s");
     this->clock->setInterval(period * 1000);
-    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(applyEffect()));
+    QObject::connect(this->clock, SIGNAL(timeout()), this, SLOT(sendOutput()));
     // Effects
     this->effectsmonitor = new EffectsMonitor(ui->effect_monitor_list);
     std::map<Effect::effectID, std::string> effects =
@@ -96,6 +97,7 @@ SACEffects::~SACEffects() {
  * @brief   It starts playing input.
  */
 void SACEffects::play() {
+    this->applyEffect();
     this->clock->start();
     ui->input_playback->setChecked(true);
     ui->input_timer->setReadOnly(true);
@@ -442,6 +444,7 @@ void SACEffects::sendOutput() {
         }
     }
     this->setTimer();
+    this->applyEffect();
 }
 
 /**
@@ -805,5 +808,4 @@ void SACEffects::applyEffect() {
         }
     }
     this->process->applyEffect(this->effect, channels, levels);
-    this->sendOutput();
 }

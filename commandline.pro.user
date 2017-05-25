@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.2.1, 2017-05-19T19:08:32. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-25T02:16:50. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -243,7 +243,7 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes">
      <value type="QString">EFFECT=Reverb</value>
-     <value type="QString">TEST=Real</value>
+     <value type="QString">TEST=Electronic</value>
     </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">commandline</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
