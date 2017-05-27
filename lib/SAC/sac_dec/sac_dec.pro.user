@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.2.1, 2017-04-24T15:55:27. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-27T14:41:32. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -186,7 +186,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/andresgonzalezfornell/Documents/Workspace/TFM/lib/SAC/sac_dec/sac_dec.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-D 0 ~/Desktop/downmix.wav ~/Desktop/bitstream.bs ~/Desktop/output.wav 0</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">0 ~/Desktop/Tests/Spectrum/source.wav ~/Desktop/Tests/Spectrum/bitstream.bs ~/Desktop/Tests/Spectrum/input.wav</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">sac_dec.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseTerminal">false</value>

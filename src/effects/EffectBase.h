@@ -3,10 +3,11 @@
 
 // System libraries
 #include "stdlib.h"
+#include "cmath"
 #include "vector"
 #include "map"
 // Classes and local files
-#include "../process/AudioSignal.h"
+#include "../sac/SACBitstream.h"
 #include "../tools/Logger.h"
 
 #define AS_EFFECT : public EffectBase

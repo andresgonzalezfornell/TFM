@@ -15,7 +15,7 @@ const int maxfilters = 12;
 class Reverb AS_EFFECT {
 public:
     Reverb();
-    void apply(float *input, float *output, int samples);
+    void apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel);
     std::vector<std::vector<double>> plot(std::string chart);
     void schroederfilter(float *input, float *output, int samples, bool addition, float gain, float g, int delay);
     void schroederdiffusionfilter(float *input, float *output, int samples, bool addition, float gain, float g, int delay);

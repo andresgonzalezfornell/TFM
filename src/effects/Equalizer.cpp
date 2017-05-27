@@ -17,8 +17,7 @@ Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  */
-void Equalizer::apply(float *input, float *output, int samples) {
-
+void Equalizer::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
     const double Q = std::sqrt(2);
     // Gain-compensanting matrix
     const double C[bands][bands] = {{1.32220858046976,-0.312321455237198,0.0381733194898166,0.00472793396660785,0.000796727762724219,-0.000744140323074050,6.80405294875517e-05,7.36601688367619e-06,4.14703938689660e-06,-5.19536284602576e-07},

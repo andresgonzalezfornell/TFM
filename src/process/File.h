@@ -3,7 +3,7 @@
 
 // System libraries
 #include "stdlib.h"
-#include "cmath"
+#include <cmath>
 #include "fstream"
 #include "sys/stat.h"
 // Classes and local files

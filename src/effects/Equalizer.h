@@ -14,7 +14,7 @@ const int order = 2;
 class Equalizer AS_EFFECT {
 public:
     Equalizer();
-    void apply(float *input, float *output, int samples);
+    void apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel);
     std::vector<std::vector<double>> plot(std::string chart);
     void peakingFilter(float *input, float *output, int samples, double f_0, double gain, double Q, int order);
     void lowShelfFilter(float *input, float *output, int samples, double f_0, double gain, int order);

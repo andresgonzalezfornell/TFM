@@ -13,7 +13,7 @@ Compressor::Compressor() AS_EFFECT_CONSTRUCTOR {
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  */
-void Compressor::apply(float *input, float *output, int samples) {
+void Compressor::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
     const int chunksize = 20;
     this->update();
     double level = 0;

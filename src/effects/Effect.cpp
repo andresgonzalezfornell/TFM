@@ -66,16 +66,16 @@ void Effect::setParams(std::map<std::string, std::string> params) {
  * @param   samples             number of samples
  * @return  true if it was successful
  */
-bool Effect::apply(float *input, float *output, int samples) {
+bool Effect::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
     switch (this->effect.first) {
     case effectID::Compressor:
-        Compressor::apply(input, output, samples);
+        Compressor::apply(input, output, samples, channel);
         break;
     case effectID::Equalizer:
-        Equalizer::apply(input, output, samples);
+        Equalizer::apply(input, output, samples, channel);
         break;
     case effectID::Reverb:
-        Reverb::apply(input, output, samples);
+        Reverb::apply(input, output, samples, channel);
         break;
     default:
         consolelog("Effect", LogType::error,

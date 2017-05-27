@@ -12,7 +12,7 @@
 class Compressor AS_EFFECT {
 public:
     Compressor();
-    void apply(float *input, float *output, int samples);
+    void apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel);
     std::vector<std::vector<double> > plot(std::string chart);
     void update();
 private:

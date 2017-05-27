@@ -13,7 +13,7 @@ Reverb::Reverb() AS_EFFECT_CONSTRUCTOR {
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  */
-void Reverb::apply(float *input, float *output, int samples) {
+void Reverb::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
     double phase = getDouble(params["phase"]);
     double roomsize = getDouble(params["roomsize"]);
     double damping = getDouble(params["damping"]);

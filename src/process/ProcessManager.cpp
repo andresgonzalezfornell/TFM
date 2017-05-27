@@ -112,6 +112,13 @@ bool ProcessManager::decode(std::string input, std::string bitstream,
     } else {
         consolelog("ProcessManager", LogType::progress,
                    "decoding was completed successfully");
+        // Bitstream
+        this->bitstream = new SACBitstream(bitstream);
+        if (this->bitstream->fs != this->fs) {
+            consolelog("ProcessManager", LogType::error, "frequency sampling of decoding (" + std::to_string(this->bitstream->fs) + " Hz) does not match specified frequency sampling (" + std::to_string(this->fs) + " Hz)");
+            return false;
+        }
+        // Input file
         if (!this->setInput(output)) {
             consolelog("ProcessManager", LogType::error, "error while writing on decoded input file");
             return false;
@@ -145,24 +152,48 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
             }
             float *input_effect = (float *) std::malloc(N * sizeof(float));
             for (int channel = 0; channel < this->channels; channel++) {
+                // Pre-amplifier
+                switch (this->bitstream->channel[channel]) {
+                case SACBitstream::ChannelType::Ls:
+                case SACBitstream::ChannelType::Lsr:
+                case SACBitstream::ChannelType::Rs:
+                case SACBitstream::ChannelType::Rsr:
+                    levels[channel] *= this->bitstream->gain_surround;
+                    break;
+                case SACBitstream::ChannelType::LFE:
+                    levels[channel] *= this->bitstream->gain_LFE;
+                    break;
+                }
                 // Levels
                 for (int sample = n; sample < (n + N); sample++) {
-                    if (levels[channel] * input[channel][sample] > 1) {
-                        input_effect[sample - n] = 1;
-                    } else if (levels[channel] * input[channel][sample] < -1) {
-                        input_effect[sample - n] = -1;
-                    } else {
-                        input_effect[sample - n] = levels[channel] * this->input[channel][sample];
-                    }
+                    input_effect[sample - n] = levels[channel] * this->input[channel][sample];
                 }
                 // Channels selection
                 if (channels[channel]) {
                     // Effect
-                    effect->apply(input_effect, output[channel] + n, N);
+                    effect->apply(input_effect, output[channel] + n, N, this->bitstream->channel[channel]);
                 } else {
                     for (int sample = n; sample < (n + N); sample++) {
                         this->output[channel][sample] = input_effect[sample - n];
                     }
+                }
+                // Post-amplifier
+                switch (this->bitstream->channel[channel]) {
+                case SACBitstream::ChannelType::Ls:
+                case SACBitstream::ChannelType::Lsr:
+                case SACBitstream::ChannelType::Rs:
+                case SACBitstream::ChannelType::Rsr:
+                    for (int sample = n; sample < (n + N); sample++) {
+                        levels[channel] /= this->bitstream->gain_surround;
+                        this->output[channel][sample] /= this->bitstream->gain_surround;
+                    }
+                    break;
+                case SACBitstream::ChannelType::LFE:
+                    for (int sample = n; sample < (n + N); sample++) {
+                        levels[channel] /= this->bitstream->gain_LFE;
+                        this->output[channel][sample] /= this->bitstream->gain_LFE;
+                    }
+                    break;
                 }
             }
             std::free(input_effect);
@@ -196,6 +227,7 @@ void ProcessManager::clear() {
     if (this->allocated) {
         std::free(this->input);
         std::free(this->output);
+        delete this->bitstream;
         this->allocated = false;
     }
     this->inputfile = NULL;

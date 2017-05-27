@@ -17,47 +17,49 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += src/interface/main.cpp\
+    src/interface/SACEffects.cpp \
     src/interface/Encoder.cpp \
     src/interface/EffectsMonitor.cpp \
     src/interface/ChannelsList.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
     src/interface/Volumeter.cpp \
+    src/interface/Chart2D.cpp \
     src/process/ProcessManager.cpp \
     src/process/File.cpp \
     src/process/AudioStream.cpp \
     src/process/AudioSignal.cpp \
+    src/sac/SACBitstream.cpp \
     src/sac/sac_encoder.c \
     src/sac/sac_decoder.c \
     src/tools/Logger.cpp \
     src/effects/Effect.cpp \
     src/effects/Compressor.cpp \
     src/effects/Equalizer.cpp \
-    src/interface/SACEffects.cpp \
-    src/interface/Chart2D.cpp \
     src/effects/Reverb.cpp
 
 HEADERS  += \
+    src/interface/SACEffects.h \
     src/interface/Encoder.h \
     src/interface/EffectsMonitor.h \
     src/interface/ChannelsList.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
     src/interface/Volumeter.h \
+    src/interface/Chart2D.h \
     src/process/ProcessManager.h \
     src/process/File.h \
     src/process/AudioStream.h \
     src/process/AudioSignal.h \
+    src/sac/SACBitstream.h \
     src/sac/sac_encoder.h \
     src/sac/sac_decoder.h \
-    src/effects/Effect.h \
     src/tools/Logger.h \
     lib/QtLibraries/src/qtlibraries.h \
+    src/effects/Effect.h \
     src/effects/EffectBase.h \
     src/effects/Compressor.h \
     src/effects/Equalizer.h \
-    src/interface/SACEffects.h \
-    src/interface/Chart2D.h \
     src/effects/Reverb.h
 
 FORMS    += \
