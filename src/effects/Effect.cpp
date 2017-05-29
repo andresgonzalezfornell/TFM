@@ -64,6 +64,7 @@ void Effect::setParams(std::map<std::string, std::string> params) {
  * @param   input               input data pointer
  * @param   output              output data pointer
  * @param   samples             number of samples
+ * @param   channel             type of channel
  * @return  true if it was successful
  */
 bool Effect::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {

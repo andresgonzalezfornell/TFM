@@ -1,14 +1,16 @@
 var searchData=
 [
+  ['c',['C',['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9a5c9b81e6c191dc59f0f4680421cafa72',1,'SACBitstream::ChannelType']]],
   ['cancel',['cancel',['../class_encoder.html#aa804c0901e17069b89eced2358aae058',1,'Encoder']]],
-  ['channel',['Channel',['../class_channel.html',1,'Channel'],['../class_channel.html#a3a5079024e870e5188f7af98772ae38c',1,'Channel::Channel()']]],
+  ['channel',['Channel',['../class_channel.html',1,'Channel'],['../class_s_a_c_bitstream.html#a4fa3fffab5ac8dc57bab6bbf64cf9a0d',1,'SACBitstream::channel()'],['../class_channel.html#a3a5079024e870e5188f7af98772ae38c',1,'Channel::Channel()']]],
   ['channels',['channels',['../class_channels_list.html#aada1aa2e93c00e98776ca02f4ba37807',1,'ChannelsList::channels()'],['../class_process_manager.html#a325109138cabf342e5beacf7af67480b',1,'ProcessManager::channels()']]],
   ['channels_5finput',['channels_input',['../class_s_a_c_effects.html#ab722cb425379e8f4ca55b0c37c5371ef',1,'SACEffects']]],
   ['channels_5foutput',['channels_output',['../class_s_a_c_effects.html#a0b5e9de7451cf915a3a781ee05e9abd1',1,'SACEffects']]],
-  ['channelscharts',['ChannelsCharts',['../class_channels_charts.html',1,'ChannelsCharts'],['../class_channels_charts.html#a0c0f20f31377a799da4eb47aafec5c65',1,'ChannelsCharts::ChannelsCharts()']]],
+  ['channelscharts',['ChannelsCharts',['../class_channels_charts.html',1,'ChannelsCharts'],['../class_channels_charts.html#a6fd985f15981dde4bca95c029ec3549f',1,'ChannelsCharts::ChannelsCharts()']]],
   ['channelslist',['ChannelsList',['../class_channels_list.html',1,'ChannelsList'],['../class_channels_list.html#a2be2b5b850d9841fc90208afc7c6f112',1,'ChannelsList::ChannelsList()']]],
   ['channelslist_2ecpp',['ChannelsList.cpp',['../_channels_list_8cpp.html',1,'']]],
   ['channelslist_2eh',['ChannelsList.h',['../_channels_list_8h.html',1,'']]],
+  ['channeltype',['ChannelType',['../struct_s_a_c_bitstream_1_1_channel_type.html',1,'SACBitstream::ChannelType'],['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9',1,'SACBitstream::ChannelType::channeltype()']]],
   ['chart',['chart',['../class_chart2_d.html#ac795067359d934a6bfd747ae89ffcba8',1,'Chart2D']]],
   ['chart2d',['Chart2D',['../class_chart2_d.html',1,'Chart2D'],['../class_chart2_d.html#a6883ce065d3a6a52f6f72efdf35d62aa',1,'Chart2D::Chart2D(QWidget *framework)'],['../class_chart2_d.html#a4d29e59bc8eafa3267c62034b51725b4',1,'Chart2D::Chart2D(QWidget *framework, double range[2][2], std::string title, std::string xlabel, std::string ylabel, int options)']]],
   ['chart2d_2ecpp',['Chart2D.cpp',['../_chart2_d_8cpp.html',1,'']]],

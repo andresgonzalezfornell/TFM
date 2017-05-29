@@ -4,11 +4,6 @@ var dir_c0cd66d8ddae4fc5bc5dc2f24e29763b =
     [ "AudioSignal.h", "_audio_signal_8h.html", [
       [ "AudioSignal", "class_audio_signal.html", "class_audio_signal" ]
     ] ],
-    [ "AudioStream.cpp", "_audio_stream_8cpp.html", null ],
-    [ "AudioStream.h", "_audio_stream_8h.html", [
-      [ "AudioStream", "class_audio_stream.html", "class_audio_stream" ],
-      [ "SignalRange", "struct_audio_stream_1_1_signal_range.html", "struct_audio_stream_1_1_signal_range" ]
-    ] ],
     [ "File.cpp", "_file_8cpp.html", null ],
     [ "File.h", "_file_8h.html", [
       [ "File", "class_file.html", "class_file" ],

@@ -12,7 +12,7 @@
 /**
  * @class	AudioSignal
  * @author	Andrés González Fornell
- * @brief	TODO AudioSignal.cpp description
+ * @brief	Audio signal class.
  */
 class AudioSignal {
 public:

@@ -6,6 +6,7 @@ var class_audio_output =
     [ "setDevice", "class_audio_output.html#a1bfc3c2ca0fa53a8e2962ef784014317", null ],
     [ "setDevices", "class_audio_output.html#a5b8fb2dfc8057c8195c192ae65820821", null ],
     [ "setDevices", "class_audio_output.html#a27ada29ff74a99f5c21d949caba261ee", null ],
+    [ "setFormat", "class_audio_output.html#a467f6e31cf89b89e9986caa05ec7fe62", null ],
     [ "setVolume", "class_audio_output.html#a97008d6a17c3dc03c64e421f563e04b8", null ],
     [ "start", "class_audio_output.html#a686dd972cb2043552063b34ae67eaadc", null ],
     [ "stop", "class_audio_output.html#a3f4858aa5c581613e32b30ee6c5339a6", null ],

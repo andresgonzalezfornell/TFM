@@ -16,10 +16,8 @@
 #include "QCheckBox"
 // Classes and local files
 #include "AudioOutput.h"
-#include "Volumeter.h"
 #include "Chart2D.h"
 #include "../process/AudioSignal.h"
-#include "../process/AudioStream.h"
 #include "../tools/Logger.h"
 
 namespace Ui {
@@ -47,7 +45,6 @@ public:
 	QLineEdit *label; /**< field to change the channel label */
 	QSlider *volumeslider; /**< volume level slider */
 	QCheckBox *mutecheckbox; /**< muted checkbox object */
-	QWidget *volumeterwidget; /**< volumeter framework */
 	QCheckBox *bypasscheckbox; /**< checkbox object to bypass effect */
 	QComboBox *deviceselector; /**< audio output device selector object */
 	/** @} */
@@ -62,7 +59,6 @@ public:
 private:
 	std::string prefix; /**< user interface prefix */
 	bool isoutput; /**< true to show audio output device selector (in case of sending channel to speakers or other audio output system device) */
-	Volumeter *volumeter; /**< volumeter object */
 };
 
 /**
@@ -73,9 +69,9 @@ private:
 class ChannelsList: public QObject {
 	Q_OBJECT
 public:
-	static int fs; /**< signal sampling frequency */
-	static int samplesize; /**< signal sample size [bits] */
-	ChannelsList(QWidget *framework, int number, bool showdevices);
+    static int fs; /**< signal sampling frequency */
+    static int samplesize; /**< signal sample size */
+    ChannelsList(QWidget *framework, int number, bool showdevices);
 	~ChannelsList();
 	Channel *getChannel(int index);
 	void deleteChannel(int index);
@@ -88,7 +84,6 @@ private:
 	bool showdevices; /**< true to show audio output device selector (in case of sending channels to speakers or other audio output system devices) */
 	QWidget *framework; /**< user interface framework of channels list */
 	QLayout *layout; /**< user interface layout of channels list */
-	Volumeter *volumeter; /**< volumeter object */
     int getIndex(QObject *element);
 private slots:
 	void setLabel(QString label);
@@ -108,11 +103,10 @@ class ChannelsCharts;
 class ChannelsCharts : public QDialog {
     Q_OBJECT
 public:
-    ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, int fs, QWidget *parent = 0);
+    ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, QWidget *parent = 0);
     ~ChannelsCharts();
 private:
     Ui::ChannelsCharts *ui; /**< user interface object */
-    int fs; /**< audio signal sampling [Hz] */
     float **input; /**< input signal pointer */
     float **output; /**< output signal pointer */
     ChannelsList *input_channels; /**< input channels object */

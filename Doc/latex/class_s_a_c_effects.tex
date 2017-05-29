@@ -1,0 +1,738 @@
+\section{S\+A\+C\+Effects Class Reference}
+\label{class_s_a_c_effects}\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+
+
+\doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} window interface.  
+
+
+
+
+{\ttfamily \#include $<$S\+A\+C\+Effects.\+h$>$}
+
+Inheritance diagram for S\+A\+C\+Effects\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_a_c_effects}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ S\+A\+C\+Effects} (Q\+Widget $\ast$framework=0)
+\begin{DoxyCompactList}\small\item\em \doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+S\+A\+C\+Effects} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} destructor. \end{DoxyCompactList}\item 
+void \textbf{ play} ()
+\begin{DoxyCompactList}\small\item\em It starts playing input. \end{DoxyCompactList}\item 
+void \textbf{ pause} ()
+\begin{DoxyCompactList}\small\item\em It pauses input playback. \end{DoxyCompactList}\item 
+void \textbf{ reset} ()
+\begin{DoxyCompactList}\small\item\em It resets all decoding parameters, including input file. \end{DoxyCompactList}\item 
+void \textbf{ update\+Controls} ()
+\begin{DoxyCompactList}\small\item\em It updates enability of user interface controls according to the current parameters state. \end{DoxyCompactList}\item 
+void \textbf{ set\+Effect} (\textbf{ Effect\+::effect\+ID} \textbf{ effect})
+\begin{DoxyCompactList}\small\item\em It sets an effect for the effect monitor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Source} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em It sets the source audio file. \end{DoxyCompactList}\item 
+void \textbf{ set\+Bitstream} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em It sets the bitstream audio file. \end{DoxyCompactList}\item 
+void \textbf{ set\+Input} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em It sets the input audio file. \end{DoxyCompactList}\item 
+void \textbf{ set\+Format} (int \textbf{ fs}, int samplesize)
+\begin{DoxyCompactList}\small\item\em It sets audio output format. \end{DoxyCompactList}\item 
+void \textbf{ set\+Duration} (Q\+Label $\ast$label, double duration)
+\begin{DoxyCompactList}\small\item\em It sets a duration indicator text on an user interface label object. \end{DoxyCompactList}\item 
+void \textbf{ get\+Duration} (Q\+Label label)
+\item 
+void \textbf{ set\+Upmix\+Type} (\textbf{ Upmix\+Type\+::upmixtype} \textbf{ upmixtype})
+\begin{DoxyCompactList}\small\item\em It sets S\+AC parameter upmix type. \end{DoxyCompactList}\item 
+void \textbf{ set\+Decoding\+Type} (\textbf{ Decoding\+Type\+::decodingtype} \textbf{ decodingtype})
+\begin{DoxyCompactList}\small\item\em It sets S\+AC parameter decoding type. \end{DoxyCompactList}\item 
+void \textbf{ set\+Binaural\+Quality} (\textbf{ Binaural\+Quality\+::binauralquality} \textbf{ binauralquality})
+\begin{DoxyCompactList}\small\item\em It sets S\+AC parameter binaural quality. \end{DoxyCompactList}\item 
+void \textbf{ set\+H\+R\+T\+F\+Model} (\textbf{ H\+R\+T\+F\+Model\+::hrtfmodel} \textbf{ hrtfmodel})
+\begin{DoxyCompactList}\small\item\em It sets S\+AC parameter H\+R\+TF model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ fs} = 44100
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ stop} ()
+\begin{DoxyCompactList}\small\item\em It stops input playback. \end{DoxyCompactList}\item 
+void \textbf{ apply\+Effect} ()
+\begin{DoxyCompactList}\small\item\em It applies the selected effect to the input signal. \end{DoxyCompactList}\item 
+void \textbf{ send\+Output} ()
+\begin{DoxyCompactList}\small\item\em It sends the current output signal to the output device and plots on the output chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Audio menu bar interface slots}\par
+{\em User interface functions for audio control. }\begin{DoxyCompactItemize}
+\item 
+void \textbf{ load} ()
+\begin{DoxyCompactList}\small\item\em It loads a file as decoder input. \end{DoxyCompactList}\item 
+void \textbf{ export\+Output} ()
+\begin{DoxyCompactList}\small\item\em It exports generated output singal as audio file. \end{DoxyCompactList}\item 
+void \textbf{ open\+Channels\+Charts} ()
+\begin{DoxyCompactList}\small\item\em It opens audio file info dialog. \end{DoxyCompactList}\item 
+void \textbf{ test} ()
+\begin{DoxyCompactList}\small\item\em It plays a test to a selected output audio device. \end{DoxyCompactList}\item 
+void \textbf{ encode} ()
+\begin{DoxyCompactList}\small\item\em It encodes a new audio through Coder. \end{DoxyCompactList}\item 
+void \textbf{ decode} ()
+\begin{DoxyCompactList}\small\item\em It decodes the audio input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ S\+A\+C\+Effects menu bar interface slots}\par
+{\em User interface control functions for S\+AC decoder parameters. }\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Buried} (bool state)
+\begin{DoxyCompactList}\small\item\em It sets bitstream as buried or not. \end{DoxyCompactList}\item 
+void \textbf{ toggle\+Upmix\+Type} (Q\+Action $\ast$item)
+\begin{DoxyCompactList}\small\item\em Slot action for menu upmix type items. \end{DoxyCompactList}\item 
+void \textbf{ toggle\+Decoding\+Type} (Q\+Action $\ast$item)
+\begin{DoxyCompactList}\small\item\em Slot action for menu decoding type items. \end{DoxyCompactList}\item 
+void \textbf{ toggle\+Binaural\+Quality} (Q\+Action $\ast$item)
+\begin{DoxyCompactList}\small\item\em Slot action for menu binaural quality items. \end{DoxyCompactList}\item 
+void \textbf{ toggle\+H\+R\+T\+F\+Model} (Q\+Action $\ast$item)
+\begin{DoxyCompactList}\small\item\em Slot action for menu H\+R\+TF model items. \end{DoxyCompactList}\item 
+void \textbf{ toggle\+Effect} ()
+\begin{DoxyCompactList}\small\item\em Slot action for menu effect items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Process\+Manager} $\ast$ \textbf{ process}
+\item 
+Q\+Timer $\ast$ \textbf{ clock}
+\item 
+Ui\+::\+S\+A\+C\+Effects $\ast$ \textbf{ ui}
+\item 
+Q\+Status\+Bar $\ast$ \textbf{ status}
+\item 
+\textbf{ W\+A\+V\+File} $\ast$ \textbf{ source}
+\item 
+\textbf{ File} $\ast$ \textbf{ bitstream}
+\item 
+\textbf{ W\+A\+V\+File} $\ast$ \textbf{ input}
+\item 
+\textbf{ Effect} $\ast$ \textbf{ effect}
+\item 
+\textbf{ Channels\+List} $\ast$ \textbf{ channels\+\_\+input}
+\item 
+\textbf{ Channels\+List} $\ast$ \textbf{ channels\+\_\+output}
+\item 
+\textbf{ Effects\+Monitor} $\ast$ \textbf{ effectsmonitor}
+\item 
+int \textbf{ chunksize}
+\item 
+bool \textbf{ muted}
+\item 
+bool \textbf{ buried}
+\item 
+\textbf{ Decoding\+Type\+::decodingtype} \textbf{ decodingtype}
+\item 
+\textbf{ Upmix\+Type\+::upmixtype} \textbf{ upmixtype}
+\item 
+\textbf{ Binaural\+Quality\+::binauralquality} \textbf{ binauralquality}
+\item 
+\textbf{ H\+R\+T\+F\+Model\+::hrtfmodel} \textbf{ hrtfmodel}
+\end{DoxyCompactItemize}
+\subsection*{Playback controls slots}
+\label{_amgrpb7c9ff1b989d29a886bef165f85fa537}%
+User interface functions for audio playback control. \begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Timer} ()
+\begin{DoxyCompactList}\small\item\em It sets audio playback time from the cursor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Playback} (bool state)
+\begin{DoxyCompactList}\small\item\em It controls the input and output playback. \end{DoxyCompactList}\item 
+void \textbf{ open\+Info} ()
+\begin{DoxyCompactList}\small\item\em It opens audio file info dialog. \end{DoxyCompactList}\item 
+void \textbf{ set\+Timer} (Q\+Time time)
+\begin{DoxyCompactList}\small\item\em It sets audio playback time from a specific time selected by user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} window interface. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_s_a_c_effects_aad64fe6a36a53d1ffeae59bccbd8af33}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{S\+A\+C\+Effects()}
+{\footnotesize\ttfamily S\+A\+C\+Effects\+::\+S\+A\+C\+Effects (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em framework} & \doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} user interface object \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a623a31e247ad7e94b2c14a640d8e3440}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!````~S\+A\+C\+Effects@{$\sim$\+S\+A\+C\+Effects}}
+\index{````~S\+A\+C\+Effects@{$\sim$\+S\+A\+C\+Effects}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{$\sim$\+S\+A\+C\+Effects()}
+{\footnotesize\ttfamily S\+A\+C\+Effects\+::$\sim$\+S\+A\+C\+Effects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{S\+A\+C\+Effects}{p.}{class_s_a_c_effects} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_s_a_c_effects_a99ab370b936145bcfe0cdc36836e6d86}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!apply\+Effect@{apply\+Effect}}
+\index{apply\+Effect@{apply\+Effect}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{apply\+Effect}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::apply\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It applies the selected effect to the input signal. 
+
+\mbox{\label{class_s_a_c_effects_a62459d0e9dcf4cc92a076d680869e190}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!decode@{decode}}
+\index{decode@{decode}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{decode}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::decode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It decodes the audio input. 
+
+\mbox{\label{class_s_a_c_effects_acf62589806e5108078ab8f54ccacb3b0}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!encode@{encode}}
+\index{encode@{encode}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{encode}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::encode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It encodes a new audio through Coder. 
+
+\mbox{\label{class_s_a_c_effects_ab1ba346d1db2268416d944d373d480fe}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!export\+Output@{export\+Output}}
+\index{export\+Output@{export\+Output}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{export\+Output}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::export\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It exports generated output singal as audio file. 
+
+\mbox{\label{class_s_a_c_effects_ac446f6dfd009405c63a7ff702a7d9a6e}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{get\+Duration()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::get\+Duration (\begin{DoxyParamCaption}\item[{Q\+Label}]{label }\end{DoxyParamCaption})}
+
+\mbox{\label{class_s_a_c_effects_a4c4f25cc003cc4e514698de8ed0bf20b}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!load@{load}}
+\index{load@{load}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{load}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It loads a file as decoder input. 
+
+\mbox{\label{class_s_a_c_effects_a20e8fbb737842ec52c4bcd318ae518fa}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!open\+Channels\+Charts@{open\+Channels\+Charts}}
+\index{open\+Channels\+Charts@{open\+Channels\+Charts}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{open\+Channels\+Charts}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::open\+Channels\+Charts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It opens audio file info dialog. 
+
+\mbox{\label{class_s_a_c_effects_a083d44f0c8cc244fd462ba63f671e857}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!open\+Info@{open\+Info}}
+\index{open\+Info@{open\+Info}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{open\+Info}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::open\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It opens audio file info dialog. 
+
+\mbox{\label{class_s_a_c_effects_af9b8e4d685e5c0b687a3f8a17a70133d}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!pause@{pause}}
+\index{pause@{pause}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{pause()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It pauses input playback. 
+
+\mbox{\label{class_s_a_c_effects_a951a42151be007375d03ccd9a1e2ad5b}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!play@{play}}
+\index{play@{play}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{play()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It starts playing input. 
+
+\mbox{\label{class_s_a_c_effects_a4500b30a621d5eff4a108f1f8d0d59a3}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!reset@{reset}}
+\index{reset@{reset}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{reset()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It resets all decoding parameters, including input file. 
+
+\mbox{\label{class_s_a_c_effects_a324b9316d9f9546132eb239942e3cea8}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!send\+Output@{send\+Output}}
+\index{send\+Output@{send\+Output}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{send\+Output}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::send\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sends the current output signal to the output device and plots on the output chart. 
+
+\mbox{\label{class_s_a_c_effects_aa0b1fa3cd01ea58fd6ae155dd3b12566}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Binaural\+Quality@{set\+Binaural\+Quality}}
+\index{set\+Binaural\+Quality@{set\+Binaural\+Quality}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Binaural\+Quality()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Binaural\+Quality (\begin{DoxyParamCaption}\item[{\textbf{ Binaural\+Quality\+::binauralquality}}]{binauralquality }\end{DoxyParamCaption})}
+
+
+
+It sets S\+AC parameter binaural quality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binauralquality} & binaural quality \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a4ff113bcbd922362d8fcb9ef61d3641b}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Bitstream@{set\+Bitstream}}
+\index{set\+Bitstream@{set\+Bitstream}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Bitstream()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Bitstream (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+It sets the bitstream audio file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a16faf5ee664c5c56a514a78ff0dcbbda}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Buried@{set\+Buried}}
+\index{set\+Buried@{set\+Buried}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Buried}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Buried (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets bitstream as buried or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & true if bitstream is buried \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a07d9b0135f5811a7b6e2d5d98c26fafe}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Decoding\+Type@{set\+Decoding\+Type}}
+\index{set\+Decoding\+Type@{set\+Decoding\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Decoding\+Type()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Decoding\+Type (\begin{DoxyParamCaption}\item[{\textbf{ Decoding\+Type\+::decodingtype}}]{decodingtype }\end{DoxyParamCaption})}
+
+
+
+It sets S\+AC parameter decoding type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em decodingtype} & decoding type \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a69e964cefe25c40e7852cf7baeda28fd}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Duration@{set\+Duration}}
+\index{set\+Duration@{set\+Duration}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Duration()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Duration (\begin{DoxyParamCaption}\item[{Q\+Label $\ast$}]{label,  }\item[{double}]{duration }\end{DoxyParamCaption})}
+
+
+
+It sets a duration indicator text on an user interface label object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & user interface object where to indicate duration \\
+\hline
+{\em duration} & input audio file duration [s] \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_ab57fa3b5c11bafba4c2e471a80964c14}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Effect@{set\+Effect}}
+\index{set\+Effect@{set\+Effect}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Effect()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect\+::effect\+ID}}]{effect }\end{DoxyParamCaption})}
+
+
+
+It sets an effect for the effect monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & selected effect \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a3d06db323bc9a3a1bbfe810f2a30d10f}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Format@{set\+Format}}
+\index{set\+Format@{set\+Format}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Format()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Format (\begin{DoxyParamCaption}\item[{int}]{fs,  }\item[{int}]{samplesize }\end{DoxyParamCaption})}
+
+
+
+It sets audio output format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & signal sampling frequency \\
+\hline
+{\em samplesize} & signal sample size \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a9af83c6a63fcdf10e4bd849fa3c5973c}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+H\+R\+T\+F\+Model@{set\+H\+R\+T\+F\+Model}}
+\index{set\+H\+R\+T\+F\+Model@{set\+H\+R\+T\+F\+Model}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+H\+R\+T\+F\+Model()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+H\+R\+T\+F\+Model (\begin{DoxyParamCaption}\item[{\textbf{ H\+R\+T\+F\+Model\+::hrtfmodel}}]{hrtfmodel }\end{DoxyParamCaption})}
+
+
+
+It sets S\+AC parameter H\+R\+TF model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hrtfmodel} & H\+R\+TF model \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a5292df44aee2a4ec49c99e3136b5472e}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Input@{set\+Input}}
+\index{set\+Input@{set\+Input}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Input()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+It sets the input audio file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_aa831f464a6675ee7db0b841f1c230426}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Playback@{set\+Playback}}
+\index{set\+Playback@{set\+Playback}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Playback}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Playback (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It controls the input and output playback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & true to play and false to pause \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_aaa9092eb132a8fe2b0560b3a600747b5}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Source@{set\+Source}}
+\index{set\+Source@{set\+Source}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Source()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Source (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+It sets the source audio file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a974bd5613ea507ae0a840d116867e303}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Timer@{set\+Timer}}
+\index{set\+Timer@{set\+Timer}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Timer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It sets audio playback time from the cursor. 
+
+\mbox{\label{class_s_a_c_effects_a36b90fa67dd3a418188b986b68ce885d}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Timer@{set\+Timer}}
+\index{set\+Timer@{set\+Timer}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Timer\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Timer (\begin{DoxyParamCaption}\item[{Q\+Time}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets audio playback time from a specific time selected by user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_afd3f1f8b005595d4adf06d67c2bd556c}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Upmix\+Type@{set\+Upmix\+Type}}
+\index{set\+Upmix\+Type@{set\+Upmix\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{set\+Upmix\+Type()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::set\+Upmix\+Type (\begin{DoxyParamCaption}\item[{\textbf{ Upmix\+Type\+::upmixtype}}]{upmixtype }\end{DoxyParamCaption})}
+
+
+
+It sets S\+AC parameter upmix type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upmixtype} & upmix type \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_ac52d8ae24e023f2d7d9c72dff88ff420}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!stop@{stop}}
+\index{stop@{stop}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{stop}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It stops input playback. 
+
+\mbox{\label{class_s_a_c_effects_ae360818918fb3dacb0f14af7a72176b5}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!test@{test}}
+\index{test@{test}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{test}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It plays a test to a selected output audio device. 
+
+\mbox{\label{class_s_a_c_effects_acf5677a7def710c99373d9220c7fb2c3}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!toggle\+Binaural\+Quality@{toggle\+Binaural\+Quality}}
+\index{toggle\+Binaural\+Quality@{toggle\+Binaural\+Quality}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{toggle\+Binaural\+Quality}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::toggle\+Binaural\+Quality (\begin{DoxyParamCaption}\item[{Q\+Action $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot action for menu binaural quality items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & selected item \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a81f51a42eb25d1a2d801c1a061a8990c}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!toggle\+Decoding\+Type@{toggle\+Decoding\+Type}}
+\index{toggle\+Decoding\+Type@{toggle\+Decoding\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{toggle\+Decoding\+Type}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::toggle\+Decoding\+Type (\begin{DoxyParamCaption}\item[{Q\+Action $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot action for menu decoding type items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & selected item \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_a03facc29d6f6c445a380afbc1336362b}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!toggle\+Effect@{toggle\+Effect}}
+\index{toggle\+Effect@{toggle\+Effect}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{toggle\+Effect}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::toggle\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot action for menu effect items. 
+
+\mbox{\label{class_s_a_c_effects_a8f32dd5321aadfd16d1c305d9be85303}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!toggle\+H\+R\+T\+F\+Model@{toggle\+H\+R\+T\+F\+Model}}
+\index{toggle\+H\+R\+T\+F\+Model@{toggle\+H\+R\+T\+F\+Model}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{toggle\+H\+R\+T\+F\+Model}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::toggle\+H\+R\+T\+F\+Model (\begin{DoxyParamCaption}\item[{Q\+Action $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot action for menu H\+R\+TF model items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & selected item \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_ac993738225677b4d23adf05a4fdefac7}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!toggle\+Upmix\+Type@{toggle\+Upmix\+Type}}
+\index{toggle\+Upmix\+Type@{toggle\+Upmix\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{toggle\+Upmix\+Type}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::toggle\+Upmix\+Type (\begin{DoxyParamCaption}\item[{Q\+Action $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot action for menu upmix type items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & selected item \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_s_a_c_effects_aab4eb7a1cfb54e995a43967843e0c4b7}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!update\+Controls@{update\+Controls}}
+\index{update\+Controls@{update\+Controls}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{update\+Controls()}
+{\footnotesize\ttfamily void S\+A\+C\+Effects\+::update\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It updates enability of user interface controls according to the current parameters state. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_s_a_c_effects_a6d7c19e0a689b69f8a05ca0a81129634}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!binauralquality@{binauralquality}}
+\index{binauralquality@{binauralquality}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{binauralquality}
+{\footnotesize\ttfamily \textbf{ Binaural\+Quality\+::binauralquality} S\+A\+C\+Effects\+::binauralquality\hspace{0.3cm}{\ttfamily [private]}}
+
+S\+AC decoder parameter \mbox{\label{class_s_a_c_effects_a13428146c31d3fda1ed30773a35795bd}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!bitstream@{bitstream}}
+\index{bitstream@{bitstream}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{bitstream}
+{\footnotesize\ttfamily \textbf{ File}$\ast$ S\+A\+C\+Effects\+::bitstream\hspace{0.3cm}{\ttfamily [private]}}
+
+encoded bit stream file object \mbox{\label{class_s_a_c_effects_a18b4380c2ed63ac991c8b140f429f4eb}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!buried@{buried}}
+\index{buried@{buried}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{buried}
+{\footnotesize\ttfamily bool S\+A\+C\+Effects\+::buried\hspace{0.3cm}{\ttfamily [private]}}
+
+S\+AC decoder parameter \mbox{\label{class_s_a_c_effects_ab722cb425379e8f4ca55b0c37c5371ef}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!channels\+\_\+input@{channels\+\_\+input}}
+\index{channels\+\_\+input@{channels\+\_\+input}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{channels\+\_\+input}
+{\footnotesize\ttfamily \textbf{ Channels\+List}$\ast$ S\+A\+C\+Effects\+::channels\+\_\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+input channels list \mbox{\label{class_s_a_c_effects_a0b5e9de7451cf915a3a781ee05e9abd1}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!channels\+\_\+output@{channels\+\_\+output}}
+\index{channels\+\_\+output@{channels\+\_\+output}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{channels\+\_\+output}
+{\footnotesize\ttfamily \textbf{ Channels\+List}$\ast$ S\+A\+C\+Effects\+::channels\+\_\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+output channels list \mbox{\label{class_s_a_c_effects_a3973fe799887416bf9dbb61891f670a6}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!chunksize@{chunksize}}
+\index{chunksize@{chunksize}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{chunksize}
+{\footnotesize\ttfamily int S\+A\+C\+Effects\+::chunksize\hspace{0.3cm}{\ttfamily [private]}}
+
+number of samples in a chunk \mbox{\label{class_s_a_c_effects_ab9771e0c93c006b4377ceb76ed312229}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!clock@{clock}}
+\index{clock@{clock}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{clock}
+{\footnotesize\ttfamily Q\+Timer$\ast$ S\+A\+C\+Effects\+::clock\hspace{0.3cm}{\ttfamily [private]}}
+
+application clock to call effect in proccess periodically \mbox{\label{class_s_a_c_effects_af92639e4e906359e01244aeb64e1a421}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!decodingtype@{decodingtype}}
+\index{decodingtype@{decodingtype}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{decodingtype}
+{\footnotesize\ttfamily \textbf{ Decoding\+Type\+::decodingtype} S\+A\+C\+Effects\+::decodingtype\hspace{0.3cm}{\ttfamily [private]}}
+
+S\+AC decoder parameter \mbox{\label{class_s_a_c_effects_a0cf7534fffd03b9a242eacf3a9da3432}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!effect@{effect}}
+\index{effect@{effect}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{effect}
+{\footnotesize\ttfamily \textbf{ Effect}$\ast$ S\+A\+C\+Effects\+::effect\hspace{0.3cm}{\ttfamily [private]}}
+
+effect object \mbox{\label{class_s_a_c_effects_a57ebc2edc9b6f2876c3a758434bce3ee}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!effectsmonitor@{effectsmonitor}}
+\index{effectsmonitor@{effectsmonitor}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{effectsmonitor}
+{\footnotesize\ttfamily \textbf{ Effects\+Monitor}$\ast$ S\+A\+C\+Effects\+::effectsmonitor\hspace{0.3cm}{\ttfamily [private]}}
+
+effects monitor object \mbox{\label{class_s_a_c_effects_af9b20759f91e969aaa55f47f5aeecb37}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!fs@{fs}}
+\index{fs@{fs}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{fs}
+{\footnotesize\ttfamily const int S\+A\+C\+Effects\+::fs = 44100}
+
+signal sampling frequency [Hz] \mbox{\label{class_s_a_c_effects_afd3b67132aaebdf9131c5be0b63c977e}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!hrtfmodel@{hrtfmodel}}
+\index{hrtfmodel@{hrtfmodel}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{hrtfmodel}
+{\footnotesize\ttfamily \textbf{ H\+R\+T\+F\+Model\+::hrtfmodel} S\+A\+C\+Effects\+::hrtfmodel\hspace{0.3cm}{\ttfamily [private]}}
+
+S\+AC decoder parameter \mbox{\label{class_s_a_c_effects_abcfd19153f333c1a87d6fca5a25dd938}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!input@{input}}
+\index{input@{input}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{input}
+{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ S\+A\+C\+Effects\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+decoded input file object \mbox{\label{class_s_a_c_effects_a9486e28d0671ef8d53c0d6fa53018fdd}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!muted@{muted}}
+\index{muted@{muted}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{muted}
+{\footnotesize\ttfamily bool S\+A\+C\+Effects\+::muted\hspace{0.3cm}{\ttfamily [private]}}
+
+it indicates if output playback is muted (true) or not (false) \mbox{\label{class_s_a_c_effects_a71dd85e0b586e93854e747c5fd9459b3}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!process@{process}}
+\index{process@{process}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{process}
+{\footnotesize\ttfamily \textbf{ Process\+Manager}$\ast$ S\+A\+C\+Effects\+::process\hspace{0.3cm}{\ttfamily [private]}}
+
+process manager object \mbox{\label{class_s_a_c_effects_a8c07f9981e71682b09ca2541bd1c1516}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!source@{source}}
+\index{source@{source}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{source}
+{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ S\+A\+C\+Effects\+::source\hspace{0.3cm}{\ttfamily [private]}}
+
+encoded source file object \mbox{\label{class_s_a_c_effects_a70377d892874edff79f59708ce4d0f55}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!status@{status}}
+\index{status@{status}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{status}
+{\footnotesize\ttfamily Q\+Status\+Bar$\ast$ S\+A\+C\+Effects\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+user interface status bar object \mbox{\label{class_s_a_c_effects_a48e5583828dafdcd318c9be9bad72d87}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!ui@{ui}}
+\index{ui@{ui}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{ui}
+{\footnotesize\ttfamily Ui\+::\+S\+A\+C\+Effects$\ast$ S\+A\+C\+Effects\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+user interface object \mbox{\label{class_s_a_c_effects_a684a03d4e68d297220ea4f52936fe278}} 
+\index{S\+A\+C\+Effects@{S\+A\+C\+Effects}!upmixtype@{upmixtype}}
+\index{upmixtype@{upmixtype}!S\+A\+C\+Effects@{S\+A\+C\+Effects}}
+\subsubsection{upmixtype}
+{\footnotesize\ttfamily \textbf{ Upmix\+Type\+::upmixtype} S\+A\+C\+Effects\+::upmixtype\hspace{0.3cm}{\ttfamily [private]}}
+
+S\+AC decoder parameter 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interface/\textbf{ S\+A\+C\+Effects.\+h}\item 
+src/interface/\textbf{ S\+A\+C\+Effects.\+cpp}\end{DoxyCompactItemize}

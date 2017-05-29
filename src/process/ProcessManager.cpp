@@ -3,12 +3,10 @@
 
 /**
  * @brief   ProcessManager constructor.
- * @param   fs                  signal sampling frequency
  * @param   chunksize           number of samples in a chunk to apply effect step by step (if 0 then chunk size is the number of samples and effect is applied at once)
  */
-ProcessManager::ProcessManager(int fs, int chunksize) {
+ProcessManager::ProcessManager(int chunksize) {
     this->allocated = false;
-    this->fs = fs;
     this->chunksize = chunksize;
     this->clear();
     consolelog("ProcessManager", LogType::progress,
@@ -30,30 +28,24 @@ ProcessManager::~ProcessManager() {
  * @return  true if it was successful
  */
 bool ProcessManager::setInput(std::string filename) {
-    this->clear();
     this->inputfile = new WAVFile(filename, false);
-    if ((int) this->inputfile->header.samplerate != this->fs) {
-        consolelog("ProcessManager", LogType::error,
-                   "input file sampling frequency is not valid (it is "
-                   + std::to_string(this->inputfile->header.samplerate)
-                   + "Hz and it should be " + std::to_string(this->fs)
-                   + "Hz)");
+    this->channels = this->inputfile->header.numchannels;
+    this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
+    if (this->inputfile->header.samplerate != (unsigned int)this->fs) {
+        consolelog("ProcessManager", LogType::error, "frequency sampling of decoded file (" + std::to_string(this->inputfile->header.samplerate) + " Hz) does not match specified frequency sampling (" + std::to_string(this->fs) + " Hz)");
         return false;
-    } else {
-        this->channels = this->inputfile->header.numchannels;
-        this->samples = this->inputfile->samples() / this->inputfile->header.numchannels;
-        // Input reading
-        this->inputfile->setCursor(0);
-        this->input = this->inputfile->readSamples(this->samples);
-        // Output initialization
-        this->output = (float **)std::malloc(this->channels * sizeof(float *));
-        for (int channel = 0; channel < this->channels; channel++) {
-            this->output[channel] = (float *)std::malloc(this->samples * sizeof(float));
-        }
-        this->allocated = true;
-        consolelog("ProcessManager", LogType::progress, "input file has been loaded");
-        return true;
     }
+    // Input reading
+    this->inputfile->setCursor(0);
+    this->input = this->inputfile->readSamples(this->samples);
+    // Output initialization
+    this->output = (float **)std::malloc(this->channels * sizeof(float *));
+    for (int channel = 0; channel < this->channels; channel++) {
+        this->output[channel] = (float *)std::malloc(this->samples * sizeof(float));
+    }
+    this->allocated = true;
+    consolelog("ProcessManager", LogType::progress, "input file has been loaded");
+    return true;
 }
 
 /**
@@ -84,9 +76,12 @@ bool ProcessManager::setOutput(std::string filename) {
 bool ProcessManager::decode(std::string input, std::string bitstream,
                             std::string output, int decodingtype, int upmixtype,
                             int binauralquality, int hrtfmodel) {
+    this->clear();
     const char *input_char = input.c_str();
     const char *bitstream_char = bitstream.c_str();
     const char *output_char = output.c_str();
+    this->bitstream = new SACBitstream(bitstream);
+    this->fs = this->bitstream->fs;
     consolelog("ProcessManager", LogType::info, "input file:\t\t " + input);
     consolelog("ProcessManager", LogType::info,
                "bitstream file:\t " + bitstream);
@@ -112,12 +107,6 @@ bool ProcessManager::decode(std::string input, std::string bitstream,
     } else {
         consolelog("ProcessManager", LogType::progress,
                    "decoding was completed successfully");
-        // Bitstream
-        this->bitstream = new SACBitstream(bitstream);
-        if (this->bitstream->fs != this->fs) {
-            consolelog("ProcessManager", LogType::error, "frequency sampling of decoding (" + std::to_string(this->bitstream->fs) + " Hz) does not match specified frequency sampling (" + std::to_string(this->fs) + " Hz)");
-            return false;
-        }
         // Input file
         if (!this->setInput(output)) {
             consolelog("ProcessManager", LogType::error, "error while writing on decoded input file");
@@ -227,7 +216,6 @@ void ProcessManager::clear() {
     if (this->allocated) {
         std::free(this->input);
         std::free(this->output);
-        delete this->bitstream;
         this->allocated = false;
     }
     this->inputfile = NULL;

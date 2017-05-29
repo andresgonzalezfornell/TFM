@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['effect',['Effect',['../class_effect.html',1,'Effect'],['../class_effect.html#ae23ae4e48c344fa374730a9ae24e7ad3',1,'Effect::effect()'],['../class_effects_monitor.html#a4ec98ceedd0d8bea006da1fc97f02124',1,'EffectsMonitor::effect()'],['../class_s_a_c_effects.html#a0cf7534fffd03b9a242eacf3a9da3432',1,'SACEffects::effect()'],['../class_effect.html#a6ab7116f826b2607ada4630759f6afc5',1,'Effect::Effect(Effect::effectID effect, int fs)'],['../class_effect.html#a2fbf9d2526c65543157370f68cbed091',1,'Effect::Effect(Effect::effectID effect, std::map&lt; std::string, std::string &gt; params, int fs)'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8h.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.h']]],
+  ['effect',['Effect',['../class_effect.html',1,'Effect'],['../class_effect.html#a6ab7116f826b2607ada4630759f6afc5',1,'Effect::Effect(Effect::effectID effect, int fs)'],['../class_effect.html#a2fbf9d2526c65543157370f68cbed091',1,'Effect::Effect(Effect::effectID effect, std::map&lt; std::string, std::string &gt; params, int fs)'],['../class_effect.html#ae23ae4e48c344fa374730a9ae24e7ad3',1,'Effect::effect()'],['../class_effects_monitor.html#a4ec98ceedd0d8bea006da1fc97f02124',1,'EffectsMonitor::effect()'],['../class_s_a_c_effects.html#a0cf7534fffd03b9a242eacf3a9da3432',1,'SACEffects::effect()'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8cpp.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.cpp'],['../_effect_8h.html#a9240be8adb787561095bcda2f39fce9b',1,'EFFECT():&#160;Effect.h']]],
   ['effect_2ecpp',['Effect.cpp',['../_effect_8cpp.html',1,'']]],
   ['effect_2eh',['Effect.h',['../_effect_8h.html',1,'']]],
   ['effectbase',['EffectBase',['../class_effect_base.html',1,'EffectBase'],['../class_effect_base.html#afcb5e7c5f5a689d7dc00d30eeefe5045',1,'EffectBase::EffectBase()']]],
@@ -15,9 +15,8 @@ var searchData=
   ['encoder',['Encoder',['../class_encoder.html',1,'Encoder'],['../class_encoder.html#a0b084c3a7e670faafd9d651d6913d105',1,'Encoder::Encoder()']]],
   ['encoder_2ecpp',['Encoder.cpp',['../_encoder_8cpp.html',1,'']]],
   ['encoder_2eh',['Encoder.h',['../_encoder_8h.html',1,'']]],
-  ['end',['end',['../struct_audio_stream_1_1_time_slot.html#a8e20d0e50a37bade2849f0c09f1034cc',1,'AudioStream::TimeSlot::end()'],['../struct_audio_stream_1_1_signal_range.html#a30a9b8873379f89d7c176af6ad5689a9',1,'AudioStream::SignalRange::end()']]],
+  ['end',['end',['../struct_audio_stream_1_1_time_slot.html#a8e20d0e50a37bade2849f0c09f1034cc',1,'AudioStream::TimeSlot']]],
   ['endianess',['Endianess',['../struct_file_1_1_endianess.html',1,'File::Endianess'],['../struct_file_1_1_endianess.html#ac80818ac42fdd0c9aa29d424e65fa37e',1,'File::Endianess::endianess()']]],
-  ['energy',['energy',['../class_volumeter.html#ae1f657014d62a3de11920732682348f2',1,'Volumeter']]],
   ['equalizer',['Equalizer',['../class_equalizer.html',1,'Equalizer'],['../class_a_s___e_f_f_e_c_t.html#a04fac13eb6e2a2264d8fbcc204dc92a4',1,'AS_EFFECT::Equalizer()']]],
   ['equalizer_2ecpp',['Equalizer.cpp',['../_equalizer_8cpp.html',1,'']]],
   ['equalizer_2eh',['Equalizer.h',['../_equalizer_8h.html',1,'']]],

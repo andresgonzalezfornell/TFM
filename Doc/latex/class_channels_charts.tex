@@ -1,0 +1,230 @@
+\section{Channels\+Charts Class Reference}
+\label{class_channels_charts}\index{Channels\+Charts@{Channels\+Charts}}
+
+
+{\ttfamily \#include $<$Channels\+List.\+h$>$}
+
+Inheritance diagram for Channels\+Charts\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_channels_charts}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Channels\+Charts} (float $\ast$$\ast$\textbf{ input}, float $\ast$$\ast$\textbf{ output}, \textbf{ Channels\+List} $\ast$\textbf{ input\+\_\+channels}, \textbf{ Channels\+List} $\ast$\textbf{ output\+\_\+channels}, int \textbf{ samples}, Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \doxyref{Channels\+Charts}{p.}{class_channels_charts} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Channels\+Charts} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Channels\+Charts}{p.}{class_channels_charts} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Time\+Cursor} (int sample)
+\begin{DoxyCompactList}\small\item\em It sets the start time cursor. \end{DoxyCompactList}\item 
+int \textbf{ get\+Time\+Cursor} ()
+\begin{DoxyCompactList}\small\item\em It gets the start time cursor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Scope} (int time)
+\begin{DoxyCompactList}\small\item\em It sets the charts scope. \end{DoxyCompactList}\item 
+int \textbf{ get\+Scope} ()
+\begin{DoxyCompactList}\small\item\em It gets the charts scope. \end{DoxyCompactList}\item 
+void \textbf{ plot} ()
+\begin{DoxyCompactList}\small\item\em It plots the current input and ouput signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ update\+Selectors} ()
+\begin{DoxyCompactList}\small\item\em It loads current channels names on chart selectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Channels\+Charts $\ast$ \textbf{ ui}
+\item 
+float $\ast$$\ast$ \textbf{ input}
+\item 
+float $\ast$$\ast$ \textbf{ output}
+\item 
+\textbf{ Channels\+List} $\ast$ \textbf{ input\+\_\+channels}
+\item 
+\textbf{ Channels\+List} $\ast$ \textbf{ output\+\_\+channels}
+\item 
+int \textbf{ samples}
+\item 
+\textbf{ Chart2D} $\ast$ \textbf{ input\+\_\+chart}
+\item 
+\textbf{ Chart2D} $\ast$ \textbf{ output\+\_\+chart}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_channels_charts_a6fd985f15981dde4bca95c029ec3549f}} 
+\index{Channels\+Charts@{Channels\+Charts}!Channels\+Charts@{Channels\+Charts}}
+\index{Channels\+Charts@{Channels\+Charts}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{Channels\+Charts()}
+{\footnotesize\ttfamily Channels\+Charts\+::\+Channels\+Charts (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{\textbf{ Channels\+List} $\ast$}]{input\+\_\+channels,  }\item[{\textbf{ Channels\+List} $\ast$}]{output\+\_\+channels,  }\item[{int}]{samples,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Channels\+Charts}{p.}{class_channels_charts} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em input\+\_\+channels} & input channels object \\
+\hline
+{\em output\+\_\+channels} & output channels object \\
+\hline
+{\em samples} & number of samples each channel \\
+\hline
+{\em parent} & user inteface parent object \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_channels_charts_a459f485f41a6734fe486358502cb8cca}} 
+\index{Channels\+Charts@{Channels\+Charts}!````~Channels\+Charts@{$\sim$\+Channels\+Charts}}
+\index{````~Channels\+Charts@{$\sim$\+Channels\+Charts}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{$\sim$\+Channels\+Charts()}
+{\footnotesize\ttfamily Channels\+Charts\+::$\sim$\+Channels\+Charts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Channels\+Charts}{p.}{class_channels_charts} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_channels_charts_a7ff13f41cb1f81cb6458528c86cf7dee}} 
+\index{Channels\+Charts@{Channels\+Charts}!get\+Scope@{get\+Scope}}
+\index{get\+Scope@{get\+Scope}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{get\+Scope}
+{\footnotesize\ttfamily int Channels\+Charts\+::get\+Scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It gets the charts scope. 
+
+\begin{DoxyReturn}{Returns}
+number of sample of charts scope 
+\end{DoxyReturn}
+\mbox{\label{class_channels_charts_a576536e9799ff80e4680674bd0ac0d32}} 
+\index{Channels\+Charts@{Channels\+Charts}!get\+Time\+Cursor@{get\+Time\+Cursor}}
+\index{get\+Time\+Cursor@{get\+Time\+Cursor}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{get\+Time\+Cursor}
+{\footnotesize\ttfamily int Channels\+Charts\+::get\+Time\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It gets the start time cursor. 
+
+\begin{DoxyReturn}{Returns}
+first sample of the chart 
+\end{DoxyReturn}
+\mbox{\label{class_channels_charts_ab89ee4019f801400f7f965340f4970e5}} 
+\index{Channels\+Charts@{Channels\+Charts}!plot@{plot}}
+\index{plot@{plot}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{plot}
+{\footnotesize\ttfamily void Channels\+Charts\+::plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It plots the current input and ouput signals. 
+
+\mbox{\label{class_channels_charts_a15f23882901d1a57dc6bc3d24a2f6924}} 
+\index{Channels\+Charts@{Channels\+Charts}!set\+Scope@{set\+Scope}}
+\index{set\+Scope@{set\+Scope}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{set\+Scope}
+{\footnotesize\ttfamily void Channels\+Charts\+::set\+Scope (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets the charts scope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & charts scope [ms] \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_channels_charts_a2fbd3271e2cef600c24bf0f426a12ef0}} 
+\index{Channels\+Charts@{Channels\+Charts}!set\+Time\+Cursor@{set\+Time\+Cursor}}
+\index{set\+Time\+Cursor@{set\+Time\+Cursor}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{set\+Time\+Cursor}
+{\footnotesize\ttfamily void Channels\+Charts\+::set\+Time\+Cursor (\begin{DoxyParamCaption}\item[{int}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets the start time cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & first sample of the chart \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_channels_charts_ad1f12b4e3c93f10341251a88ccbf2b08}} 
+\index{Channels\+Charts@{Channels\+Charts}!update\+Selectors@{update\+Selectors}}
+\index{update\+Selectors@{update\+Selectors}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{update\+Selectors()}
+{\footnotesize\ttfamily void Channels\+Charts\+::update\+Selectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It loads current channels names on chart selectors. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_channels_charts_ab3a9a79fe459610f67633438f496b18b}} 
+\index{Channels\+Charts@{Channels\+Charts}!input@{input}}
+\index{input@{input}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{input}
+{\footnotesize\ttfamily float$\ast$$\ast$ Channels\+Charts\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+input signal pointer \mbox{\label{class_channels_charts_af3c81ffd63585ea7967c6b2221b5e588}} 
+\index{Channels\+Charts@{Channels\+Charts}!input\+\_\+channels@{input\+\_\+channels}}
+\index{input\+\_\+channels@{input\+\_\+channels}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{input\+\_\+channels}
+{\footnotesize\ttfamily \textbf{ Channels\+List}$\ast$ Channels\+Charts\+::input\+\_\+channels\hspace{0.3cm}{\ttfamily [private]}}
+
+input channels object \mbox{\label{class_channels_charts_a87ae986ae562c146145eca33fa85b36e}} 
+\index{Channels\+Charts@{Channels\+Charts}!input\+\_\+chart@{input\+\_\+chart}}
+\index{input\+\_\+chart@{input\+\_\+chart}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{input\+\_\+chart}
+{\footnotesize\ttfamily \textbf{ Chart2D}$\ast$ Channels\+Charts\+::input\+\_\+chart\hspace{0.3cm}{\ttfamily [private]}}
+
+input chart object \mbox{\label{class_channels_charts_a096febbc8a690323771f5b28d475618c}} 
+\index{Channels\+Charts@{Channels\+Charts}!output@{output}}
+\index{output@{output}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{output}
+{\footnotesize\ttfamily float$\ast$$\ast$ Channels\+Charts\+::output\hspace{0.3cm}{\ttfamily [private]}}
+
+output signal pointer \mbox{\label{class_channels_charts_af855794903de833778562ac60220c78c}} 
+\index{Channels\+Charts@{Channels\+Charts}!output\+\_\+channels@{output\+\_\+channels}}
+\index{output\+\_\+channels@{output\+\_\+channels}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{output\+\_\+channels}
+{\footnotesize\ttfamily \textbf{ Channels\+List}$\ast$ Channels\+Charts\+::output\+\_\+channels\hspace{0.3cm}{\ttfamily [private]}}
+
+output channels object \mbox{\label{class_channels_charts_af7c7c248955d8814d7816dfc70331a27}} 
+\index{Channels\+Charts@{Channels\+Charts}!output\+\_\+chart@{output\+\_\+chart}}
+\index{output\+\_\+chart@{output\+\_\+chart}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{output\+\_\+chart}
+{\footnotesize\ttfamily \textbf{ Chart2D}$\ast$ Channels\+Charts\+::output\+\_\+chart\hspace{0.3cm}{\ttfamily [private]}}
+
+output chart object \mbox{\label{class_channels_charts_a7a9cfc48082a30a0192f9ae3245cc2b5}} 
+\index{Channels\+Charts@{Channels\+Charts}!samples@{samples}}
+\index{samples@{samples}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{samples}
+{\footnotesize\ttfamily int Channels\+Charts\+::samples\hspace{0.3cm}{\ttfamily [private]}}
+
+number of samples each channel \mbox{\label{class_channels_charts_ad59aa60cb9bbc2d55fb33e6c8d58f9e5}} 
+\index{Channels\+Charts@{Channels\+Charts}!ui@{ui}}
+\index{ui@{ui}!Channels\+Charts@{Channels\+Charts}}
+\subsubsection{ui}
+{\footnotesize\ttfamily Ui\+::\+Channels\+Charts$\ast$ Channels\+Charts\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+user interface object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interface/\textbf{ Channels\+List.\+h}\item 
+src/interface/\textbf{ Channels\+List.\+cpp}\end{DoxyCompactItemize}

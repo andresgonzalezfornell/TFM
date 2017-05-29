@@ -127,6 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f4858aa5c581613e32b30ee6c5339a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_output.html#a3f4858aa5c581613e32b30ee6c5339a6">stop</a> ()</td></tr>
 <tr class="memdesc:a3f4858aa5c581613e32b30ee6c5339a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stops audio output playback.  <a href="#a3f4858aa5c581613e32b30ee6c5339a6">More...</a><br /></td></tr>
 <tr class="separator:a3f4858aa5c581613e32b30ee6c5339a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467f6e31cf89b89e9986caa05ec7fe62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_output.html#a467f6e31cf89b89e9986caa05ec7fe62">setFormat</a> (int <a class="el" href="class_audio_output.html#ac2a46ded8a978627b8af81458a714ef3">fs</a>, int <a class="el" href="class_audio_output.html#aac9c297a839bb25c1232fc5adcce6cab">samplesize</a>)</td></tr>
+<tr class="memdesc:a467f6e31cf89b89e9986caa05ec7fe62"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets signal sampling frequency.  <a href="#a467f6e31cf89b89e9986caa05ec7fe62">More...</a><br /></td></tr>
+<tr class="separator:a467f6e31cf89b89e9986caa05ec7fe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8fb2dfc8057c8195c192ae65820821"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_output.html#a5b8fb2dfc8057c8195c192ae65820821">setDevices</a> ()</td></tr>
 <tr class="memdesc:a5b8fb2dfc8057c8195c192ae65820821"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets all available audio output devices.  <a href="#a5b8fb2dfc8057c8195c192ae65820821">More...</a><br /></td></tr>
 <tr class="separator:a5b8fb2dfc8057c8195c192ae65820821"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,6 +338,43 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">devices</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a467f6e31cf89b89e9986caa05ec7fe62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467f6e31cf89b89e9986caa05ec7fe62">&#9670;&nbsp;</a></span>setFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioOutput::setFormat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samplesize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It sets signal sampling frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>signal sampling frequency. </td></tr>
+    <tr><td class="paramname">samplesize</td><td>signal sample size </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,0 +1,248 @@
+\section{W\+A\+V\+File Class Reference}
+\label{class_w_a_v_file}\index{W\+A\+V\+File@{W\+A\+V\+File}}
+
+
+Audio file as W\+AV format class.  
+
+
+
+
+{\ttfamily \#include $<$File.\+h$>$}
+
+Inheritance diagram for W\+A\+V\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_w_a_v_file}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Header}
+\begin{DoxyCompactList}\small\item\em Audio file header struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ W\+A\+V\+File} (bool \textbf{ writepermission})
+\begin{DoxyCompactList}\small\item\em \doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. \end{DoxyCompactList}\item 
+\textbf{ W\+A\+V\+File} (std\+::string \textbf{ filename}, bool \textbf{ writepermission})
+\begin{DoxyCompactList}\small\item\em \doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. \end{DoxyCompactList}\item 
+\textbf{ W\+A\+V\+File} (std\+::string \textbf{ filename}, int channels, int \textbf{ fs}, int sampleformat)
+\begin{DoxyCompactList}\small\item\em \doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. Write file is allowed. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+W\+A\+V\+File} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} destructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Cursor} (int \textbf{ cursor})
+\begin{DoxyCompactList}\small\item\em It sets the signal reading cursor to keep on reading from another position. \end{DoxyCompactList}\item 
+int \textbf{ get\+Cursor} ()
+\begin{DoxyCompactList}\small\item\em It gets the current signal reading cursor. \end{DoxyCompactList}\item 
+int \textbf{ samples} ()
+\begin{DoxyCompactList}\small\item\em It gets the number of audio samples. \end{DoxyCompactList}\item 
+void \textbf{ read\+Header} ()
+\begin{DoxyCompactList}\small\item\em It reads the file header and sets the format header into the audio file object. \end{DoxyCompactList}\item 
+void \textbf{ write\+Header} ()
+\begin{DoxyCompactList}\small\item\em It writes the header on the file from the audio file object header. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \textbf{ read\+Samples} (int \textbf{ samples})
+\begin{DoxyCompactList}\small\item\em It reads an array of samples from the audio file. \end{DoxyCompactList}\item 
+void \textbf{ write\+Samples} (float $\ast$$\ast$array, int \textbf{ samples})
+\begin{DoxyCompactList}\small\item\em It writes an array of samples on the audio file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Header} \textbf{ header}
+\item 
+double \textbf{ duration}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Audio file as W\+AV format class. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_w_a_v_file_a135707a98d9667622ce5056b68ed9abe}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{W\+A\+V\+File()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily W\+A\+V\+File\+::\+W\+A\+V\+File (\begin{DoxyParamCaption}\item[{bool}]{writepermission }\end{DoxyParamCaption})}
+
+
+
+\doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em writepermission} & file write permission (true if it is allowed) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_w_a_v_file_adc5bd36228dd18df58f2467546f367ef}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{W\+A\+V\+File()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily W\+A\+V\+File\+::\+W\+A\+V\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{bool}]{writepermission }\end{DoxyParamCaption})}
+
+
+
+\doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+{\em writepermission} & file write permission (true if it is allowed) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_w_a_v_file_a01baafcc33b738c26163b46bd05dde1d}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\index{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{W\+A\+V\+File()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily W\+A\+V\+File\+::\+W\+A\+V\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{int}]{channels,  }\item[{int}]{fs,  }\item[{int}]{sampleformat }\end{DoxyParamCaption})}
+
+
+
+\doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} constructor. Write file is allowed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+{\em channels} & number of channels \\
+\hline
+{\em fs} & signal sample rate \\
+\hline
+{\em sampleformat} & number of bits of a sample \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_w_a_v_file_aae62931f83eaf70983372845dea3e205}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!````~W\+A\+V\+File@{$\sim$\+W\+A\+V\+File}}
+\index{````~W\+A\+V\+File@{$\sim$\+W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{$\sim$\+W\+A\+V\+File()}
+{\footnotesize\ttfamily W\+A\+V\+File\+::$\sim$\+W\+A\+V\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{W\+A\+V\+File}{p.}{class_w_a_v_file} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_w_a_v_file_a09b0c9107c31966537eaef404abbe0c6}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!get\+Cursor@{get\+Cursor}}
+\index{get\+Cursor@{get\+Cursor}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{get\+Cursor()}
+{\footnotesize\ttfamily int W\+A\+V\+File\+::get\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the current signal reading cursor. 
+
+\begin{DoxyReturn}{Returns}
+cursor [Bytes] from the beginning of the signal (instead of the file) 
+\end{DoxyReturn}
+\mbox{\label{class_w_a_v_file_a040205c616651ffcefff3d417c72aa6c}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!read\+Header@{read\+Header}}
+\index{read\+Header@{read\+Header}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{read\+Header()}
+{\footnotesize\ttfamily void W\+A\+V\+File\+::read\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It reads the file header and sets the format header into the audio file object. 
+
+\mbox{\label{class_w_a_v_file_aa14a22c094f310cecc33cc573507378c}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!read\+Samples@{read\+Samples}}
+\index{read\+Samples@{read\+Samples}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{read\+Samples()}
+{\footnotesize\ttfamily float $\ast$$\ast$ W\+A\+V\+File\+::read\+Samples (\begin{DoxyParamCaption}\item[{int}]{samples }\end{DoxyParamCaption})}
+
+
+
+It reads an array of samples from the audio file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & number of samples \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+two dimensional array ([channel][sample]) of samples (from -\/1 to 1) 
+\end{DoxyReturn}
+\mbox{\label{class_w_a_v_file_a9ca294afee7e0c17ac00cd37b56dafd6}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!samples@{samples}}
+\index{samples@{samples}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{samples()}
+{\footnotesize\ttfamily int W\+A\+V\+File\+::samples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the number of audio samples. 
+
+\begin{DoxyReturn}{Returns}
+number of audio samples 
+\end{DoxyReturn}
+\mbox{\label{class_w_a_v_file_af9ffb0dd3ec2746708dd25546b2e7afd}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!set\+Cursor@{set\+Cursor}}
+\index{set\+Cursor@{set\+Cursor}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{set\+Cursor()}
+{\footnotesize\ttfamily void W\+A\+V\+File\+::set\+Cursor (\begin{DoxyParamCaption}\item[{int}]{cursor }\end{DoxyParamCaption})}
+
+
+
+It sets the signal reading cursor to keep on reading from another position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & new cursor position in samples (instead of bytes) from the beginning of the signal (instead of the file) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_w_a_v_file_a1ae7240dbf26d73ad9bb712bbbd4d124}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!write\+Header@{write\+Header}}
+\index{write\+Header@{write\+Header}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{write\+Header()}
+{\footnotesize\ttfamily void W\+A\+V\+File\+::write\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It writes the header on the file from the audio file object header. 
+
+\mbox{\label{class_w_a_v_file_aa0f1b604b4ff5c00ee84dfd4851ad2f9}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!write\+Samples@{write\+Samples}}
+\index{write\+Samples@{write\+Samples}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{write\+Samples()}
+{\footnotesize\ttfamily void W\+A\+V\+File\+::write\+Samples (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{array,  }\item[{int}]{samples }\end{DoxyParamCaption})}
+
+
+
+It writes an array of samples on the audio file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & two dimensional array ([channel][sample]) of samples (from -\/1 to 1) \\
+\hline
+{\em samples} & number of samples \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_w_a_v_file_a4435a31465f66b639ad5f403c38ee093}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!duration@{duration}}
+\index{duration@{duration}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{duration}
+{\footnotesize\ttfamily double W\+A\+V\+File\+::duration}
+
+audio file duration [s] \mbox{\label{class_w_a_v_file_a2060260682e854baa148ebef76d81aae}} 
+\index{W\+A\+V\+File@{W\+A\+V\+File}!header@{header}}
+\index{header@{header}!W\+A\+V\+File@{W\+A\+V\+File}}
+\subsubsection{header}
+{\footnotesize\ttfamily \textbf{ Header} W\+A\+V\+File\+::header}
+
+audio file header 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\textbf{ File.\+h}\item 
+src/process/\textbf{ File.\+cpp}\end{DoxyCompactItemize}

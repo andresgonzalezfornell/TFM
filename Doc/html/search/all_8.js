@@ -11,7 +11,7 @@ var searchData=
   ['input_5fchart',['input_chart',['../class_channels_charts.html#a87ae986ae562c146145eca33fa85b36e',1,'ChannelsCharts']]],
   ['inputfile',['inputfile',['../class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40',1,'ProcessManager']]],
   ['interaction',['interaction',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c',1,'LogType']]],
-  ['isavailable',['isAvailable',['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream::isAvailable(int time)'],['../class_audio_stream.html#ad0fea4f8aedcda463e508ae648576790',1,'AudioStream::isAvailable(int index)']]],
+  ['isavailable',['isAvailable',['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream']]],
   ['isoutput',['isoutput',['../class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b',1,'Channel']]],
   ['italic',['italic',['../_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b',1,'Logger.cpp']]]
 ];

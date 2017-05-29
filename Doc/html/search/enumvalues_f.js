@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning',['warning',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af479132e55c523158544cc5c059bc9be',1,'LogType']]]
+  ['vast',['vast',['../struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82a3c1d54f796975db036c93d624e6f2730',1,'HRTFModel']]]
 ];

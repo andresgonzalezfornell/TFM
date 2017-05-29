@@ -3,7 +3,7 @@ var searchData=
   ['_7eaudioinfo',['~AudioInfo',['../class_audio_info.html#ae6b316306b98617ceda7624bb04138fd',1,'AudioInfo']]],
   ['_7eaudiooutput',['~AudioOutput',['../class_audio_output.html#a95719dfdce3899ee2847e20dc403e25e',1,'AudioOutput']]],
   ['_7eaudiosignal',['~AudioSignal',['../class_audio_signal.html#afb379d0c192ec109f8469a118c81b5f5',1,'AudioSignal']]],
-  ['_7eaudiostream',['~AudioStream',['../class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449',1,'AudioStream::~AudioStream()'],['../class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449',1,'AudioStream::~AudioStream()']]],
+  ['_7eaudiostream',['~AudioStream',['../class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449',1,'AudioStream']]],
   ['_7eaudiotest',['~AudioTest',['../class_audio_test.html#ae37879db71b1540d84aa37a093978192',1,'AudioTest']]],
   ['_7echannel',['~Channel',['../class_channel.html#a5f15ebd302464069f1a9e3f0ded14482',1,'Channel']]],
   ['_7echannelscharts',['~ChannelsCharts',['../class_channels_charts.html#a459f485f41a6734fe486358502cb8cca',1,'ChannelsCharts']]],
@@ -15,6 +15,7 @@ var searchData=
   ['_7efile',['~File',['../class_file.html#ac704ebdf5f57d7a1c5ddf409d797fb69',1,'File']]],
   ['_7eoutputdevice',['~OutputDevice',['../class_output_device.html#a10111574a055eee12fb86934f049a6b4',1,'OutputDevice']]],
   ['_7eprocessmanager',['~ProcessManager',['../class_process_manager.html#aed3cd2ca11d92395228b758d39030b5f',1,'ProcessManager']]],
+  ['_7esacbitstream',['~SACBitstream',['../class_s_a_c_bitstream.html#a4a416e485fb3a14a7bafb0a5542d7945',1,'SACBitstream']]],
   ['_7esaceffects',['~SACEffects',['../class_s_a_c_effects.html#a623a31e247ad7e94b2c14a640d8e3440',1,'SACEffects']]],
   ['_7ewavfile',['~WAVFile',['../class_w_a_v_file.html#aae62931f83eaf70983372845dea3e205',1,'WAVFile']]]
 ];

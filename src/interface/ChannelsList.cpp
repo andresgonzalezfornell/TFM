@@ -41,6 +41,7 @@ void ChannelsList::deleteChannel(int index) {
     delete this->framework->findChild<QGroupBox *>(
                 QString::fromStdString(this->prefix)
                 + QString("channels_%1").arg(index));
+    delete this->getChannel(index);
     this->channels.erase(this->channels.begin() + index);
     consolelog("ChannelsList", LogType::progress, "Channels object is deleted");
 }
@@ -58,8 +59,8 @@ int ChannelsList::getSize() {
  * @param   size            number of channels
  */
 void ChannelsList::setSize(int size) {
-    if ((int) this->channels.size() < size) {
-        for (int index = (int) this->channels.size(); index < size; index++) {
+    if ((int) this->getSize() < size) {
+        for (int index = (int) this->getSize(); index < size; index++) {
             Channel *channel = new Channel(this->layout, this->prefix, index,
                                            this->showdevices);
             QObject::connect(channel->label, SIGNAL(textChanged(QString)), this,
@@ -69,9 +70,8 @@ void ChannelsList::setSize(int size) {
             QObject::connect(channel->bypasscheckbox,SIGNAL(clicked(bool)),this,SLOT(bypass(bool)));
             this->channels.push_back(channel);
         }
-    } else if ((int) this->channels.size() > size) {
-        for (int index = (int) this->channels.size() - 1; index >= size;
-             index--) {
+    } else if ((int) this->getSize() > size) {
+        for (int index = (int) this->getSize() - 1; index >= size; index--) {
             this->deleteChannel(index);
             consolelog("ChannelsList", LogType::progress,
                        "channel " + std::to_string(index) + " is deleted");
@@ -218,7 +218,6 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
     this->label = new QLineEdit();
     this->volumeslider = new QSlider(Qt::Horizontal);
     this->mutecheckbox = new QCheckBox();
-    this->volumeterwidget = new QWidget();
     this->bypasscheckbox = new QCheckBox();
     this->deviceselector = new QComboBox();
     if (isoutput) {
@@ -231,12 +230,11 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
     this->isoutput = isoutput;
     this->setIndex(index);
     this->setLabel(this->name);
-    this->volumeter = new Volumeter(this->volumeterwidget, ChannelsList::fs);
     this->mute(false);
     this->bypass(false);
     this->setVolume(100);
     // Elements attributes
-    int layout_height = 150; // height of channel configuration interface
+    int layout_height = 120; // height of channel configuration interface
     this->groupbox->setMinimumSize(200, 0);
     this->groupbox->setMaximumSize(QWIDGETSIZE_MAX, layout_height);
     layout->setSpacing(8);
@@ -251,9 +249,8 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
     layout->addWidget(this->volumeslider, 1, 0);
     layout->addWidget(this->mutecheckbox, 1, 1);
     layout->addWidget(this->bypasscheckbox, 2, 1);
-    layout->addWidget(this->volumeterwidget, 2, 0);
     if (isoutput) {
-        layout->addWidget(this->deviceselector, 3, 0, 2, 0, Qt::AlignLeft);
+        layout->addWidget(this->deviceselector, 2, 0);
     }
     layout->setMargin(10);
     framework->addWidget(this->groupbox);
@@ -264,6 +261,7 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
  * @brief	Channels desctructor.
  */
 Channel::~Channel() {
+    delete this->groupbox;
 }
 
 /**
@@ -290,9 +288,6 @@ void Channel::setIndex(int index) {
     this->bypasscheckbox->setObjectName(
                 QString::fromStdString(this->prefix) + QString::number(index)
                 + "bypass");
-    this->volumeterwidget->setObjectName(
-                QString::fromStdString(this->prefix) + QString::number(index)
-                + "volumeter");
 }
 
 /**
@@ -339,17 +334,15 @@ void Channel::setVolume(int volume) {
 
 /**
  * @brief   ChannelsCharts constructor.
- * @param   parent          user inteface parent object
  * @param   input           input signal pointer
  * @param   output          output signal pointer
  * @param   input_channels  input channels object
  * @param   output_channels output channels object
  * @param   samples         number of samples each channel
- * @param   fs              audio signal sampling [Hz]
+ * @param   parent          user inteface parent object
  */
-ChannelsCharts::ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, int fs, QWidget *parent) : QDialog(parent), ui(new Ui::ChannelsCharts) {
+ChannelsCharts::ChannelsCharts(float **input, float **output, ChannelsList *input_channels, ChannelsList *output_channels, int samples, QWidget *parent) : QDialog(parent), ui(new Ui::ChannelsCharts) {
     ui->setupUi(this);
-    this->fs = fs;
     this->input = input;
     this->output = output;
     this->input_channels = input_channels;
@@ -361,7 +354,7 @@ ChannelsCharts::ChannelsCharts(float **input, float **output, ChannelsList *inpu
     this->setTimeCursor(0);
     this->setScope(100);
     ui->scope->setMinimum(10);
-    ui->scope->setMaximum(std::floor(this->samples * 1000 / this->fs));
+    ui->scope->setMaximum(std::floor(this->samples * 1000 / ChannelsList::fs));
     this->updateSelectors();
     QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(setTimeCursor(int)));
     QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(plot()));
@@ -383,7 +376,7 @@ ChannelsCharts::~ChannelsCharts() {
  */
 void ChannelsCharts::setTimeCursor(int sample) {
     QObject::blockSignals(true);
-    double duration = (double) sample / this->fs;
+    double duration = (double) sample / ChannelsList::fs;
     int h = (int) std::floor(duration / 60 / 60);
     int m = (int) std::floor(duration / 60) % 60;
     int s = (int) std::floor(duration) % 60;
@@ -429,7 +422,7 @@ int ChannelsCharts::getTimeCursor() {
 void ChannelsCharts::setScope(int time) {
     QObject::blockSignals(true);
     ui->scope->setValue(time);
-    int remainder = this->samples - std::floor((double) time / 1000 * this->fs);
+    int remainder = this->samples - std::floor((double) time / 1000 * ChannelsList::fs);
     if (remainder > 0) {
         ui->cursor->setEnabled(true);
         ui->cursor->setMaximum(remainder);
@@ -445,7 +438,7 @@ void ChannelsCharts::setScope(int time) {
  * @return  number of sample of charts scope
  */
 int ChannelsCharts::getScope() {
-    return std::floor(ui->scope->value() * this->fs / 1000);
+    return std::floor(ui->scope->value() * ChannelsList::fs / 1000);
 }
 
 /**
@@ -502,27 +495,27 @@ void ChannelsCharts::plot() {
         switch (remainder) {
         case 0:
             // Signal plot
-            range[0][0] = (double) this->getTimeCursor() / this->fs;
-            range[0][1] = (double) (this->getTimeCursor() + this->getScope() - 1) / this->fs ;
+            range[0][0] = (double) this->getTimeCursor() / ChannelsList::fs;
+            range[0][1] = (double) (this->getTimeCursor() + this->getScope() - 1) / ChannelsList::fs ;
             range[1][0] = -1;
             range[1][1] = 1;
             chart->setOptions(Chart2D::ChartOptions::labelX);
             for (int sample = this->getTimeCursor(); sample < this->getTimeCursor() + this->getScope(); sample++) {
-                points.push_back(QPointF((float) sample / this->fs, samples[sample]));
+                points.push_back(QPointF((float) sample / ChannelsList::fs, samples[sample]));
             }
             break;
         case 1:
             // Spectrum plot
             std::vector<float> vector = std::vector<float>(samples + this->getTimeCursor(), samples + this->getTimeCursor() + this->getScope());;
-            AudioSignal signal = AudioSignal(vector, this->fs);
+            AudioSignal signal = AudioSignal(vector, ChannelsList::fs);
             range[0][0] = 0;
-            range[0][1] = (double) this->fs / 2;
+            range[0][1] = (double) ChannelsList::fs / 2;
             range[1][0] = 0;
             range[1][1] = 1;
             chart->setOptions(Chart2D::ChartOptions::labelX);
             std::vector<float> spectrum = signal.getSpectrum();
             for (int frequency = 0; frequency < std::ceil((double) this->getScope() / 2); frequency++) {
-                points.push_back(QPointF((float) frequency * this->fs / this->getScope(), spectrum[frequency]));
+                points.push_back(QPointF((float) frequency * ChannelsList::fs / this->getScope(), spectrum[frequency]));
             }
             break;
         }

@@ -21,7 +21,5 @@ var class_channel =
     [ "name", "class_channel.html#ae080e1afd52f3b70e04c62fea46447aa", null ],
     [ "prefix", "class_channel.html#ac13acc069e61428aca057f9c84bc7338", null ],
     [ "volume", "class_channel.html#aa8977e4605932b2201b03ebf3aa14ffd", null ],
-    [ "volumeslider", "class_channel.html#acbcbfb33558a69224daa176372eb8be3", null ],
-    [ "volumeter", "class_channel.html#ae159a51df34e4f6a3ca23975ca2462c4", null ],
-    [ "volumeterwidget", "class_channel.html#a81103158aadd1e93977a0d8cd744e7bc", null ]
+    [ "volumeslider", "class_channel.html#acbcbfb33558a69224daa176372eb8be3", null ]
 ];

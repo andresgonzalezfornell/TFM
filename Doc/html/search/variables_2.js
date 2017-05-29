@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['channel',['channel',['../class_s_a_c_bitstream.html#a4fa3fffab5ac8dc57bab6bbf64cf9a0d',1,'SACBitstream']]],
   ['channels',['channels',['../class_channels_list.html#aada1aa2e93c00e98776ca02f4ba37807',1,'ChannelsList::channels()'],['../class_process_manager.html#a325109138cabf342e5beacf7af67480b',1,'ProcessManager::channels()']]],
   ['channels_5finput',['channels_input',['../class_s_a_c_effects.html#ab722cb425379e8f4ca55b0c37c5371ef',1,'SACEffects']]],
   ['channels_5foutput',['channels_output',['../class_s_a_c_effects.html#a0b5e9de7451cf915a3a781ee05e9abd1',1,'SACEffects']]],

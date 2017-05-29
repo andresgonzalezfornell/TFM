@@ -76,6 +76,7 @@ public:
 	void setSource(std::string filename);
 	void setBitstream(std::string filename);
 	void setInput(std::string filename);
+    void setFormat(int fs, int samplesize);
 	void setDuration(QLabel *label, double duration);
 	void getDuration(QLabel label);
 	void setUpmixType(UpmixType::upmixtype upmixtype);

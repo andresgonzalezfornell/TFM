@@ -76,6 +76,17 @@ void AudioOutput::stop() {
 }
 
 /**
+ * @brief   It sets signal sampling frequency.
+ * @param   fs                  signal sampling frequency.
+ * @param   samplesize          signal sample size
+ */
+void AudioOutput::setFormat(int fs, int samplesize) {
+    this->fs = fs;
+    this->samplesize = samplesize;
+    this->initialize();
+}
+
+/**
  * @brief   It sets all available audio output devices.
  */
 void AudioOutput::setDevices() {
@@ -353,6 +364,7 @@ void AudioTest::setSampleFormat(int index) {
 
 /**
  * @brief   It sets a sampling frequency
+ * @param   index               sampling frequency index
  */
 void AudioTest::setFS(int index) {
     consolelog("AudioTest", LogType::interaction,
@@ -363,6 +375,7 @@ void AudioTest::setFS(int index) {
 
 /**
  * @brief   It sets an amplitude
+ * @param   amplitude           amplitude value
  */
 void AudioTest::setAmplitude(int amplitude) {
     consolelog("AudioTest", LogType::interaction,
@@ -372,6 +385,7 @@ void AudioTest::setAmplitude(int amplitude) {
 
 /**
  * @brief   It sets a tone frequency
+ * @param   frequency           frequency value
  */
 void AudioTest::setFrequency(double frequency) {
     consolelog("AudioTest", LogType::interaction,

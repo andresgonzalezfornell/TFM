@@ -16,11 +16,10 @@ SACEffects::SACEffects(QWidget *framework) :
     ChannelsList::fs = this->fs;
     ChannelsList::samplesize = 32;
     this->chunksize = 2205;
-//    this->chunksize = 88200;
     consolelog("SACEffects", LogType::info,
                "signal process chunk = " + std::to_string(this->chunksize)
                + " samples");
-    this->process = new ProcessManager(this->fs, chunksize);
+    this->process = new ProcessManager(chunksize);
     // Clock
     this->clock = new QTimer(this);
     double period = (double) chunksize / this->fs;
@@ -169,6 +168,8 @@ void SACEffects::updateControls() {
     } else {
         ui->input_timer->setTime(QTime(0, 0, 0, 0));
         ui->output_timer->setTime(QTime(0, 0, 0, 0));
+        this->channels_input->setSize(0);
+        this->channels_output->setSize(0);
     }
 }
 
@@ -261,8 +262,7 @@ void SACEffects::setBitstream(std::string filename) {
 void SACEffects::setInput(std::string filename) {
     if (filename != "") {
         this->input = new WAVFile(filename, false);
-        ChannelsList::fs = this->input->header.samplerate;
-        ChannelsList::samplesize = this->input->header.bitspersample;
+        this->setFormat(this->process->fs, this->input->header.bitspersample);
         this->channels_input->setSize(this->input->header.numchannels);
         this->channels_output->setSize(this->input->header.numchannels);
         QObject::connect(this->channels_input, SIGNAL(namechanged(QString, int)), this->channels_output,
@@ -293,6 +293,20 @@ void SACEffects::setInput(std::string filename) {
     ui->input_filename->setFont(font);
     // Controls update
     this->updateControls();
+}
+
+/**
+ * @brief   It sets audio output format.
+ * @param   fs                  signal sampling frequency
+ * @param   samplesize          signal sample size
+ */
+void SACEffects::setFormat(int fs, int samplesize) {
+    ChannelsList::fs = fs;
+    ChannelsList::samplesize = samplesize;
+    for (int channel = 0; channel < this->channels_output->getSize(); channel++) {
+        this->channels_output->getChannel(channel)->audiooutput->setFormat(fs, samplesize);
+    }
+    consolelog("SACEffects", LogType::progress, "audio format has been changed (fs = " + std::to_string(fs) + " Hz and sample size = " + std::to_string(samplesize) + " bits)");
 }
 
 /**
@@ -593,7 +607,7 @@ void SACEffects::exportOutput() {
  */
 void SACEffects::openChannelsCharts() {
     QObject::sender()->blockSignals(true);
-    ChannelsCharts *window = new ChannelsCharts(this->process->input, this->process->output, this->channels_input, this->channels_output, this->process->samples, this->fs);
+    ChannelsCharts *window = new ChannelsCharts(this->process->input, this->process->output, this->channels_input, this->channels_output, this->process->samples);
     window->setWindowTitle("Channels charts");
     window->exec();
     delete window;

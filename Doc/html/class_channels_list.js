@@ -17,10 +17,7 @@ var class_channels_list =
     [ "setVolume", "class_channels_list.html#adbc31fe3486c8a6aa3302a1c226ca60a", null ],
     [ "channels", "class_channels_list.html#aada1aa2e93c00e98776ca02f4ba37807", null ],
     [ "framework", "class_channels_list.html#a95ce83d3108c23dacd899ff33e43e6f5", null ],
-    [ "fs", "class_channels_list.html#ab5b3fd699a6c96a59d237ff4e23fa3fa", null ],
     [ "layout", "class_channels_list.html#adeb9c603ac2216dd014b723a326f0c62", null ],
     [ "prefix", "class_channels_list.html#a452e6090d13b327758ae0e3992ed620c", null ],
-    [ "samplesize", "class_channels_list.html#ac9208b24e03fac37e06e9664ed26b13b", null ],
-    [ "showdevices", "class_channels_list.html#ac5467a8384f559129cc71c31a6c95972", null ],
-    [ "volumeter", "class_channels_list.html#a1c21f38b7f12f60f9cb6827cf4009a38", null ]
+    [ "showdevices", "class_channels_list.html#ac5467a8384f559129cc71c31a6c95972", null ]
 ];

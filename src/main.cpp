@@ -227,7 +227,7 @@ int main(int argc, char *argv[]) {
 	std::cout << message << "\n";
 	// Application
 	consolelog("main", LogType::progress, "running application");
-    ProcessManager *process = new ProcessManager(fs, 0);
+    ProcessManager *process = new ProcessManager(0);
 	// Decoding
     if (!process->decode(source, bitstream, input, upmixtype, decodingtype,
             binauralquality, hrtfmodel)) {

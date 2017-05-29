@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['wavfile',['WAVFile',['../class_w_a_v_file.html#a135707a98d9667622ce5056b68ed9abe',1,'WAVFile::WAVFile(bool writepermission)'],['../class_w_a_v_file.html#adc5bd36228dd18df58f2467546f367ef',1,'WAVFile::WAVFile(std::string filename, bool writepermission)'],['../class_w_a_v_file.html#a01baafcc33b738c26163b46bd05dde1d',1,'WAVFile::WAVFile(std::string filename, int channels, int fs, int sampleformat)']]],
-  ['write',['write',['../class_file.html#a1259d180d1a2ff95bcccecff547dc839',1,'File']]],
-  ['writedata',['writeData',['../class_output_device.html#ab616ad1f0080ce753b511c08360bdde8',1,'OutputDevice']]],
-  ['writeheader',['writeHeader',['../class_w_a_v_file.html#a1ae7240dbf26d73ad9bb712bbbd4d124',1,'WAVFile']]],
-  ['writenumber',['writeNumber',['../class_file.html#a75a4a4b828576e6912f75e22a7250e92',1,'File']]],
-  ['writesamples',['writeSamples',['../class_w_a_v_file.html#aa0f1b604b4ff5c00ee84dfd4851ad2f9',1,'WAVFile']]],
-  ['writetext',['writeText',['../class_file.html#a156d4a3d1e12e9ddf9c4948cae8c9734',1,'File']]]
+  ['_7eaudioinfo',['~AudioInfo',['../class_audio_info.html#ae6b316306b98617ceda7624bb04138fd',1,'AudioInfo']]],
+  ['_7eaudiooutput',['~AudioOutput',['../class_audio_output.html#a95719dfdce3899ee2847e20dc403e25e',1,'AudioOutput']]],
+  ['_7eaudiosignal',['~AudioSignal',['../class_audio_signal.html#afb379d0c192ec109f8469a118c81b5f5',1,'AudioSignal']]],
+  ['_7eaudiostream',['~AudioStream',['../class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449',1,'AudioStream']]],
+  ['_7eaudiotest',['~AudioTest',['../class_audio_test.html#ae37879db71b1540d84aa37a093978192',1,'AudioTest']]],
+  ['_7echannel',['~Channel',['../class_channel.html#a5f15ebd302464069f1a9e3f0ded14482',1,'Channel']]],
+  ['_7echannelscharts',['~ChannelsCharts',['../class_channels_charts.html#a459f485f41a6734fe486358502cb8cca',1,'ChannelsCharts']]],
+  ['_7echannelslist',['~ChannelsList',['../class_channels_list.html#a264a8cdd2dc552462b1de06ec02729ec',1,'ChannelsList']]],
+  ['_7echart2d',['~Chart2D',['../class_chart2_d.html#a73cac8978d3dd8a236ee4b2eae895a1e',1,'Chart2D']]],
+  ['_7eeffect',['~Effect',['../class_effect.html#ac26c0a394247e14c9081f875522b5b66',1,'Effect']]],
+  ['_7eeffectsmonitor',['~EffectsMonitor',['../class_effects_monitor.html#aeb3a098669694d424d02c3ed8294d923',1,'EffectsMonitor']]],
+  ['_7eencoder',['~Encoder',['../class_encoder.html#a87cc8067c98c0ab2134dee3822e3b250',1,'Encoder']]],
+  ['_7efile',['~File',['../class_file.html#ac704ebdf5f57d7a1c5ddf409d797fb69',1,'File']]],
+  ['_7eoutputdevice',['~OutputDevice',['../class_output_device.html#a10111574a055eee12fb86934f049a6b4',1,'OutputDevice']]],
+  ['_7eprocessmanager',['~ProcessManager',['../class_process_manager.html#aed3cd2ca11d92395228b758d39030b5f',1,'ProcessManager']]],
+  ['_7esacbitstream',['~SACBitstream',['../class_s_a_c_bitstream.html#a4a416e485fb3a14a7bafb0a5542d7945',1,'SACBitstream']]],
+  ['_7esaceffects',['~SACEffects',['../class_s_a_c_effects.html#a623a31e247ad7e94b2c14a640d8e3440',1,'SACEffects']]],
+  ['_7ewavfile',['~WAVFile',['../class_w_a_v_file.html#aae62931f83eaf70983372845dea3e205',1,'WAVFile']]]
 ];

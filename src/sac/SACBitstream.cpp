@@ -6,7 +6,7 @@
 SACBitstream::SACBitstream(std::string filename) {
     this->bitstream = new File(filename, false);
     this->load();
-    consolelog("Bitstream", LogType::progress, "bitstream object is created");
+    consolelog("SACBitstream", LogType::progress, "bitstream object is created");
 }
 
 /**
@@ -14,7 +14,7 @@ SACBitstream::SACBitstream(std::string filename) {
  */
 SACBitstream::~SACBitstream() {
     std::free(this->channel);
-    consolelog("Bitstream", LogType::progress, "bitstream object is deleted");
+    consolelog("SACBitstream", LogType::progress, "bitstream object is deleted");
 }
 
 /**

@@ -23,11 +23,9 @@ SOURCES += src/interface/main.cpp\
     src/interface/ChannelsList.cpp \
     src/interface/AudioOutput.cpp \
     src/interface/AudioInfo.cpp \
-    src/interface/Volumeter.cpp \
     src/interface/Chart2D.cpp \
     src/process/ProcessManager.cpp \
     src/process/File.cpp \
-    src/process/AudioStream.cpp \
     src/process/AudioSignal.cpp \
     src/sac/SACBitstream.cpp \
     src/sac/sac_encoder.c \
@@ -45,11 +43,9 @@ HEADERS  += \
     src/interface/ChannelsList.h \
     src/interface/AudioOutput.h \
     src/interface/AudioInfo.h \
-    src/interface/Volumeter.h \
     src/interface/Chart2D.h \
     src/process/ProcessManager.h \
     src/process/File.h \
-    src/process/AudioStream.h \
     src/process/AudioSignal.h \
     src/sac/SACBitstream.h \
     src/sac/sac_encoder.h \

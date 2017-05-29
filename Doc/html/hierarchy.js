@@ -5,6 +5,7 @@ var hierarchy =
     [ "AudioStream", "class_audio_stream.html", null ],
     [ "BinauralQuality", "struct_binaural_quality.html", null ],
     [ "Channel", "class_channel.html", null ],
+    [ "SACBitstream::ChannelType", "struct_s_a_c_bitstream_1_1_channel_type.html", null ],
     [ "Chart2D::ChartOptions", "struct_chart2_d_1_1_chart_options.html", null ],
     [ "Compressor", "class_compressor.html", null ],
     [ "DecodingType", "struct_decoding_type.html", null ],
@@ -39,11 +40,10 @@ var hierarchy =
       [ "EffectsMonitor", "class_effects_monitor.html", null ]
     ] ],
     [ "QWidget", null, [
-      [ "Chart2D", "class_chart2_d.html", null ],
-      [ "Volumeter", "class_volumeter.html", null ]
+      [ "Chart2D", "class_chart2_d.html", null ]
     ] ],
     [ "Reverb", "class_reverb.html", null ],
-    [ "AudioStream::SignalRange", "struct_audio_stream_1_1_signal_range.html", null ],
+    [ "SACBitstream", "class_s_a_c_bitstream.html", null ],
     [ "AudioStream::TimeSlot", "struct_audio_stream_1_1_time_slot.html", null ],
     [ "UpmixType", "struct_upmix_type.html", null ]
 ];

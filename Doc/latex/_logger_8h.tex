@@ -1,0 +1,41 @@
+\section{src/tools/\+Logger.h File Reference}
+\label{_logger_8h}\index{src/tools/\+Logger.\+h@{src/tools/\+Logger.\+h}}
+{\ttfamily \#include \char`\"{}iostream\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Log\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}\textbf{ Log\+Type}\par
+{\em Logger message type. }\begin{DoxyCompactItemize}
+\item 
+void \textbf{ consolelog} (std\+::string, \textbf{ Log\+Type\+::logtype} logtype, std\+::string)
+\begin{DoxyCompactList}\small\item\em Log a message on console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Function Documentation}
+\mbox{\label{_logger_8h_af8ed2de67925ca161726cfd305ea9f56}} 
+\index{Logger.\+h@{Logger.\+h}!consolelog@{consolelog}}
+\index{consolelog@{consolelog}!Logger.\+h@{Logger.\+h}}
+\subsubsection{consolelog()}
+{\footnotesize\ttfamily void consolelog (\begin{DoxyParamCaption}\item[{std\+::string}]{source,  }\item[{\textbf{ Log\+Type\+::logtype}}]{logtype,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Log a message on console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & origin class/method/file where the message was logged \\
+\hline
+{\em logtype} & type of message \\
+\hline
+{\em message} & message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

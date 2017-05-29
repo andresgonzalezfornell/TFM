@@ -1,0 +1,256 @@
+\section{Audio\+Test Class Reference}
+\label{class_audio_test}\index{Audio\+Test@{Audio\+Test}}
+
+
+Audio output test class.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Output.\+h$>$}
+
+Inheritance diagram for Audio\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_audio_test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Test} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Test}{p.}{class_audio_test} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Audio\+Test} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Test}{p.}{class_audio_test} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ play} ()
+\begin{DoxyCompactList}\small\item\em It plays audio test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ User interface slots}\par
+{\em They are called when a user interface element is being changed. }\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Device} (int index)
+\begin{DoxyCompactList}\small\item\em It sets a device. \end{DoxyCompactList}\item 
+void \textbf{ set\+Sample\+Format} (int index)
+\begin{DoxyCompactList}\small\item\em It sets a sample format. \end{DoxyCompactList}\item 
+void \textbf{ set\+FS} (int index)
+\begin{DoxyCompactList}\small\item\em It sets a sampling frequency. \end{DoxyCompactList}\item 
+void \textbf{ set\+Frequency} (double frequency)
+\begin{DoxyCompactList}\small\item\em It sets a tone frequency. \end{DoxyCompactList}\item 
+void \textbf{ set\+Amplitude} (int amplitude)
+\begin{DoxyCompactList}\small\item\em It sets an amplitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ get\+Sample\+Size} ()
+\begin{DoxyCompactList}\small\item\em It gets the sample size from the selected sample format. \end{DoxyCompactList}\item 
+int \textbf{ get\+FS} ()
+\begin{DoxyCompactList}\small\item\em It gets the selected sampling frequency. \end{DoxyCompactList}\item 
+void \textbf{ start} ()
+\begin{DoxyCompactList}\small\item\em It starts playing the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Audio\+Test $\ast$ \textbf{ ui}
+\item 
+\textbf{ Audio\+Output} $\ast$ \textbf{ audiooutput}
+\item 
+Q\+Timer $\ast$ \textbf{ clock}
+\item 
+const double \textbf{ period} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Audio output test class. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_audio_test_a8732c48308ca1352a4d89803553b395e}} 
+\index{Audio\+Test@{Audio\+Test}!Audio\+Test@{Audio\+Test}}
+\index{Audio\+Test@{Audio\+Test}!Audio\+Test@{Audio\+Test}}
+\subsubsection{Audio\+Test()}
+{\footnotesize\ttfamily Audio\+Test\+::\+Audio\+Test (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Audio\+Test}{p.}{class_audio_test} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & window parent \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_ae37879db71b1540d84aa37a093978192}} 
+\index{Audio\+Test@{Audio\+Test}!````~Audio\+Test@{$\sim$\+Audio\+Test}}
+\index{````~Audio\+Test@{$\sim$\+Audio\+Test}!Audio\+Test@{Audio\+Test}}
+\subsubsection{$\sim$\+Audio\+Test()}
+{\footnotesize\ttfamily Audio\+Test\+::$\sim$\+Audio\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Audio\+Test}{p.}{class_audio_test} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_audio_test_adc2f8babb42d1e765ffe11a15989bfa4}} 
+\index{Audio\+Test@{Audio\+Test}!get\+FS@{get\+FS}}
+\index{get\+FS@{get\+FS}!Audio\+Test@{Audio\+Test}}
+\subsubsection{get\+F\+S()}
+{\footnotesize\ttfamily int Audio\+Test\+::get\+FS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It gets the selected sampling frequency. 
+
+\begin{DoxyReturn}{Returns}
+sampling frequency [Hz] 
+\end{DoxyReturn}
+\mbox{\label{class_audio_test_a3f91d0a79b1ade0e8963d457c13b0931}} 
+\index{Audio\+Test@{Audio\+Test}!get\+Sample\+Size@{get\+Sample\+Size}}
+\index{get\+Sample\+Size@{get\+Sample\+Size}!Audio\+Test@{Audio\+Test}}
+\subsubsection{get\+Sample\+Size()}
+{\footnotesize\ttfamily int Audio\+Test\+::get\+Sample\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It gets the sample size from the selected sample format. 
+
+\begin{DoxyReturn}{Returns}
+sample size [bits] 
+\end{DoxyReturn}
+\mbox{\label{class_audio_test_add3394b989f124cd9a7152464d3ba90c}} 
+\index{Audio\+Test@{Audio\+Test}!play@{play}}
+\index{play@{play}!Audio\+Test@{Audio\+Test}}
+\subsubsection{play}
+{\footnotesize\ttfamily void Audio\+Test\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It plays audio test. 
+
+\mbox{\label{class_audio_test_a9c59788678892ea17238a7b0bc31883e}} 
+\index{Audio\+Test@{Audio\+Test}!set\+Amplitude@{set\+Amplitude}}
+\index{set\+Amplitude@{set\+Amplitude}!Audio\+Test@{Audio\+Test}}
+\subsubsection{set\+Amplitude}
+{\footnotesize\ttfamily void Audio\+Test\+::set\+Amplitude (\begin{DoxyParamCaption}\item[{int}]{amplitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets an amplitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amplitude} & amplitude value \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_a2962015ce25aafd5b3be20a657c21a31}} 
+\index{Audio\+Test@{Audio\+Test}!set\+Device@{set\+Device}}
+\index{set\+Device@{set\+Device}!Audio\+Test@{Audio\+Test}}
+\subsubsection{set\+Device}
+{\footnotesize\ttfamily void Audio\+Test\+::set\+Device (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets a device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & device index from the combo box \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_a4baeebc5b2467c30f1a3ac8116d686d9}} 
+\index{Audio\+Test@{Audio\+Test}!set\+Frequency@{set\+Frequency}}
+\index{set\+Frequency@{set\+Frequency}!Audio\+Test@{Audio\+Test}}
+\subsubsection{set\+Frequency}
+{\footnotesize\ttfamily void Audio\+Test\+::set\+Frequency (\begin{DoxyParamCaption}\item[{double}]{frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets a tone frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & frequency value \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_a24895d69ce1fb1c5463d89b6c765a545}} 
+\index{Audio\+Test@{Audio\+Test}!set\+FS@{set\+FS}}
+\index{set\+FS@{set\+FS}!Audio\+Test@{Audio\+Test}}
+\subsubsection{set\+FS}
+{\footnotesize\ttfamily void Audio\+Test\+::set\+FS (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets a sampling frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & sampling frequency index \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_ac734b0b67338a4a94c097de46d460d74}} 
+\index{Audio\+Test@{Audio\+Test}!set\+Sample\+Format@{set\+Sample\+Format}}
+\index{set\+Sample\+Format@{set\+Sample\+Format}!Audio\+Test@{Audio\+Test}}
+\subsubsection{set\+Sample\+Format}
+{\footnotesize\ttfamily void Audio\+Test\+::set\+Sample\+Format (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It sets a sample format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & sample format index from the combo box \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_audio_test_a77654e9df697a3c23d3374162c535b29}} 
+\index{Audio\+Test@{Audio\+Test}!start@{start}}
+\index{start@{start}!Audio\+Test@{Audio\+Test}}
+\subsubsection{start()}
+{\footnotesize\ttfamily void Audio\+Test\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It starts playing the test. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_audio_test_ab0651b1358e3a2f699ad98c6a68312c5}} 
+\index{Audio\+Test@{Audio\+Test}!audiooutput@{audiooutput}}
+\index{audiooutput@{audiooutput}!Audio\+Test@{Audio\+Test}}
+\subsubsection{audiooutput}
+{\footnotesize\ttfamily \textbf{ Audio\+Output}$\ast$ Audio\+Test\+::audiooutput\hspace{0.3cm}{\ttfamily [private]}}
+
+audio output object \mbox{\label{class_audio_test_af6eaf40c86a4b34c544ad2a05137eb25}} 
+\index{Audio\+Test@{Audio\+Test}!clock@{clock}}
+\index{clock@{clock}!Audio\+Test@{Audio\+Test}}
+\subsubsection{clock}
+{\footnotesize\ttfamily Q\+Timer$\ast$ Audio\+Test\+::clock\hspace{0.3cm}{\ttfamily [private]}}
+
+test clock to send test signal periodically \mbox{\label{class_audio_test_ae10d6702eb1038eff31a9f33e690a376}} 
+\index{Audio\+Test@{Audio\+Test}!period@{period}}
+\index{period@{period}!Audio\+Test@{Audio\+Test}}
+\subsubsection{period}
+{\footnotesize\ttfamily const double Audio\+Test\+::period = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+clock period to send new data [s] \mbox{\label{class_audio_test_aea101783b757891d369f4c0b45bc76b0}} 
+\index{Audio\+Test@{Audio\+Test}!ui@{ui}}
+\index{ui@{ui}!Audio\+Test@{Audio\+Test}}
+\subsubsection{ui}
+{\footnotesize\ttfamily Ui\+::\+Audio\+Test$\ast$ Audio\+Test\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+user interface object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interface/\textbf{ Audio\+Output.\+h}\item 
+src/interface/\textbf{ Audio\+Output.\+cpp}\end{DoxyCompactItemize}

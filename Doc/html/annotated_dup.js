@@ -24,8 +24,8 @@ var annotated_dup =
     [ "OutputDevice", "class_output_device.html", "class_output_device" ],
     [ "ProcessManager", "class_process_manager.html", "class_process_manager" ],
     [ "Reverb", "class_reverb.html", null ],
+    [ "SACBitstream", "class_s_a_c_bitstream.html", "class_s_a_c_bitstream" ],
     [ "SACEffects", "class_s_a_c_effects.html", "class_s_a_c_effects" ],
     [ "UpmixType", "struct_upmix_type.html", "struct_upmix_type" ],
-    [ "Volumeter", "class_volumeter.html", "class_volumeter" ],
     [ "WAVFile", "class_w_a_v_file.html", "class_w_a_v_file" ]
 ];

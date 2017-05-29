@@ -1,0 +1,40 @@
+\section{src/sac/sac\+\_\+encoder.h File Reference}
+\label{sac__encoder_8h}\index{src/sac/sac\+\_\+encoder.\+h@{src/sac/sac\+\_\+encoder.\+h}}
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \textbf{ sac\+\_\+encode} (const char $\ast$input\+\_\+filename, const char $\ast$output\+\_\+filename, const char $\ast$bitstream\+\_\+filename, double \textbf{ fs}, int tree, int timeslots)
+\begin{DoxyCompactList}\small\item\em It performs the S\+AC encoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{sac__encoder_8h_aa7ad450f2c4d427f5b854a439d959d4d}} 
+\index{sac\+\_\+encoder.\+h@{sac\+\_\+encoder.\+h}!sac\+\_\+encode@{sac\+\_\+encode}}
+\index{sac\+\_\+encode@{sac\+\_\+encode}!sac\+\_\+encoder.\+h@{sac\+\_\+encoder.\+h}}
+\subsubsection{sac\+\_\+encode()}
+{\footnotesize\ttfamily char$\ast$ sac\+\_\+encode (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input\+\_\+filename,  }\item[{const char $\ast$}]{output\+\_\+filename,  }\item[{const char $\ast$}]{bitstream\+\_\+filename,  }\item[{double}]{fs,  }\item[{int}]{tree,  }\item[{int}]{timeslots }\end{DoxyParamCaption})}
+
+
+
+It performs the S\+AC encoder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+filename} & filename of the multichannel input audio file \\
+\hline
+{\em output\+\_\+filename} & filename of the downmix output audio file (it will be automatically created) \\
+\hline
+{\em bitstream\+\_\+filename} & filename of the bitstream output file or \char`\"{}buried\char`\"{} (it will be automatically created) \\
+\hline
+{\em fs} & audio sampling frequency [Hz] \\
+\hline
+{\em tree} & tree config\+: 5151 (mono), 5152 (mono), 525 (stereo) (5151 by default) \\
+\hline
+{\em timeslots} & times slots\+: 16 or 32 (32 by default) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error message (N\+U\+LL if the encoding has succeded) 
+\end{DoxyReturn}

@@ -5,7 +5,7 @@ var searchData=
   ['binaural',['binaural',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa91c847f68238d3c40b4d29e07dd47c44',1,'UpmixType']]],
   ['binauralquality',['BinauralQuality',['../struct_binaural_quality.html',1,'BinauralQuality'],['../struct_binaural_quality.html#a3a009a287684c778dbb5507226cf24e4',1,'BinauralQuality::binauralquality()'],['../class_s_a_c_effects.html#a6d7c19e0a689b69f8a05ca0a81129634',1,'SACEffects::binauralquality()']]],
   ['bitspersample',['bitspersample',['../struct_w_a_v_file_1_1_header.html#ad731c9ced0b22903be0b24f6528ec061',1,'WAVFile::Header']]],
-  ['bitstream',['bitstream',['../class_encoder.html#a8cd18343fe80007dba58b4d716227544',1,'Encoder::bitstream()'],['../class_s_a_c_effects.html#a13428146c31d3fda1ed30773a35795bd',1,'SACEffects::bitstream()']]],
+  ['bitstream',['bitstream',['../class_encoder.html#a8cd18343fe80007dba58b4d716227544',1,'Encoder::bitstream()'],['../class_s_a_c_effects.html#a13428146c31d3fda1ed30773a35795bd',1,'SACEffects::bitstream()'],['../class_process_manager.html#a10fbb64432f5094289d7afeee057714c',1,'ProcessManager::bitstream()'],['../class_s_a_c_bitstream.html#a723578b5c58715e64c1ab8dfbbc97d71',1,'SACBitstream::bitstream()']]],
   ['black',['black',['../_logger_8cpp.html#a630d308e3f9d63ffeaca09929cf30ee4',1,'Logger.cpp']]],
   ['blind',['blind',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafac19cfeb8f83adfad653eac49b3c42ad6',1,'UpmixType']]],
   ['blockalign',['blockalign',['../struct_w_a_v_file_1_1_header.html#a5c212f5f08c59f8487ccc3d066753892',1,'WAVFile::Header']]],

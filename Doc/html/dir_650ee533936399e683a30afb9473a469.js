@@ -41,9 +41,5 @@ var dir_650ee533936399e683a30afb9473a469 =
       [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
       [ "HRTFModel", "struct_h_r_t_f_model.html", "struct_h_r_t_f_model" ],
       [ "SACEffects", "class_s_a_c_effects.html", "class_s_a_c_effects" ]
-    ] ],
-    [ "Volumeter.cpp", "_volumeter_8cpp.html", null ],
-    [ "Volumeter.h", "_volumeter_8h.html", [
-      [ "Volumeter", "class_volumeter.html", "class_volumeter" ]
     ] ]
 ];

@@ -1,0 +1,151 @@
+\section{Effect\+Base Class Reference}
+\label{class_effect_base}\index{Effect\+Base@{Effect\+Base}}
+
+
+\doxyref{Effect}{p.}{class_effect} base class.  
+
+
+
+
+{\ttfamily \#include $<$Effect\+Base.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Effect\+Base} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Effect\+Base}{p.}{class_effect_base} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \textbf{ get\+Int} (std\+::string param)
+\begin{DoxyCompactList}\small\item\em It parse a parameter value to double. \end{DoxyCompactList}\item 
+static double \textbf{ get\+Double} (std\+::string param)
+\begin{DoxyCompactList}\small\item\em It parse a parameter value to integer. \end{DoxyCompactList}\item 
+static std\+::string \textbf{ get\+String} (std\+::string param)
+\begin{DoxyCompactList}\small\item\em It parse a parameter value to string. \end{DoxyCompactList}\item 
+static bool \textbf{ get\+Bool} (std\+::string param)
+\begin{DoxyCompactList}\small\item\em It parse a parameter value to bool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \textbf{ fs}
+\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ params}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Effect}{p.}{class_effect} base class. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_effect_base_afcb5e7c5f5a689d7dc00d30eeefe5045}} 
+\index{Effect\+Base@{Effect\+Base}!Effect\+Base@{Effect\+Base}}
+\index{Effect\+Base@{Effect\+Base}!Effect\+Base@{Effect\+Base}}
+\subsubsection{Effect\+Base()}
+{\footnotesize\ttfamily Effect\+Base\+::\+Effect\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Effect\+Base}{p.}{class_effect_base} constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_effect_base_a5ce32d92ebf6973d177d0f8d1be8e8ba}} 
+\index{Effect\+Base@{Effect\+Base}!get\+Bool@{get\+Bool}}
+\index{get\+Bool@{get\+Bool}!Effect\+Base@{Effect\+Base}}
+\subsubsection{get\+Bool()}
+{\footnotesize\ttfamily bool Effect\+Base\+::get\+Bool (\begin{DoxyParamCaption}\item[{std\+::string}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It parse a parameter value to bool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & parameter value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean value (false by default) 
+\end{DoxyReturn}
+\mbox{\label{class_effect_base_a29ac04c6135b4a202c0fab169f97f436}} 
+\index{Effect\+Base@{Effect\+Base}!get\+Double@{get\+Double}}
+\index{get\+Double@{get\+Double}!Effect\+Base@{Effect\+Base}}
+\subsubsection{get\+Double()}
+{\footnotesize\ttfamily double Effect\+Base\+::get\+Double (\begin{DoxyParamCaption}\item[{std\+::string}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It parse a parameter value to integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & parameter value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\label{class_effect_base_aa2c8a7dfd4511cbb41f5ca1afd14cbb5}} 
+\index{Effect\+Base@{Effect\+Base}!get\+Int@{get\+Int}}
+\index{get\+Int@{get\+Int}!Effect\+Base@{Effect\+Base}}
+\subsubsection{get\+Int()}
+{\footnotesize\ttfamily int Effect\+Base\+::get\+Int (\begin{DoxyParamCaption}\item[{std\+::string}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It parse a parameter value to double. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & parameter value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value as integer 
+\end{DoxyReturn}
+\mbox{\label{class_effect_base_a74b8d00a78daa5a33db20543564c7350}} 
+\index{Effect\+Base@{Effect\+Base}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!Effect\+Base@{Effect\+Base}}
+\subsubsection{get\+String()}
+{\footnotesize\ttfamily std\+::string Effect\+Base\+::get\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It parse a parameter value to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & parameter value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_effect_base_a18021994da076630edfe26d69fd1384f}} 
+\index{Effect\+Base@{Effect\+Base}!fs@{fs}}
+\index{fs@{fs}!Effect\+Base@{Effect\+Base}}
+\subsubsection{fs}
+{\footnotesize\ttfamily int Effect\+Base\+::fs\hspace{0.3cm}{\ttfamily [static]}}
+
+signal sampling frequency [Hz] \mbox{\label{class_effect_base_a593c207eb855ae1bc37069766da29c9a}} 
+\index{Effect\+Base@{Effect\+Base}!params@{params}}
+\index{params@{params}!Effect\+Base@{Effect\+Base}}
+\subsubsection{params}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ Effect\+Base\+::params\hspace{0.3cm}{\ttfamily [static]}}
+
+string of effect parameters 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/effects/\textbf{ Effect\+Base.\+h}\item 
+src/effects/\textbf{ Effect.\+cpp}\end{DoxyCompactItemize}

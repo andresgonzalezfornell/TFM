@@ -1,0 +1,337 @@
+\section{File Class Reference}
+\label{class_file}\index{File@{File}}
+
+
+Audio file class.  
+
+
+
+
+{\ttfamily \#include $<$File.\+h$>$}
+
+Inheritance diagram for File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Endianess}
+\end{DoxyCompactItemize}
+\subsection*{Endianess}
+\label{_amgrp68d1da2139a8ed4b55ce04f6cab103e1}%
+\doxyref{Endianess}{p.}{struct_file_1_1_endianess} type. \begin{DoxyCompactItemize}
+\item 
+std\+::fstream $\ast$ \textbf{ file}
+\item 
+std\+::string \textbf{ filename}
+\item 
+bool \textbf{ writepermission}
+\item 
+int \textbf{ cursor}
+\item 
+\textbf{ File} (bool \textbf{ writepermission})
+\begin{DoxyCompactList}\small\item\em \doxyref{File}{p.}{class_file} constructor. \end{DoxyCompactList}\item 
+\textbf{ File} (std\+::string \textbf{ filename}, bool \textbf{ writepermission})
+\begin{DoxyCompactList}\small\item\em \doxyref{File}{p.}{class_file} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+File} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{File}{p.}{class_file} destructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Filename} (std\+::string \textbf{ filename})
+\begin{DoxyCompactList}\small\item\em It sets the file path name. \end{DoxyCompactList}\item 
+std\+::string \textbf{ get\+Filename} ()
+\begin{DoxyCompactList}\small\item\em It gets the file path name. \end{DoxyCompactList}\item 
+void \textbf{ set\+Cursor} (int \textbf{ cursor})
+\begin{DoxyCompactList}\small\item\em It sets the file reading cursor to keep on reading from another position. \end{DoxyCompactList}\item 
+int \textbf{ get\+Cursor} ()
+\begin{DoxyCompactList}\small\item\em It gets the current file reading cursor. \end{DoxyCompactList}\item 
+int \textbf{ size} ()
+\begin{DoxyCompactList}\small\item\em It gets the total file size. \end{DoxyCompactList}\item 
+bool \textbf{ exists} ()
+\begin{DoxyCompactList}\small\item\em It indicates if the file object exists. \end{DoxyCompactList}\item 
+char $\ast$ \textbf{ read} (int length)
+\begin{DoxyCompactList}\small\item\em It reads data from the file. \end{DoxyCompactList}\item 
+void \textbf{ write} (const char $\ast$data, int length)
+\begin{DoxyCompactList}\small\item\em It writes data on the file. \end{DoxyCompactList}\item 
+std\+::string \textbf{ read\+Text} (int length)
+\begin{DoxyCompactList}\small\item\em It reads text data from the file. \end{DoxyCompactList}\item 
+void \textbf{ write\+Text} (std\+::string data)
+\begin{DoxyCompactList}\small\item\em It writes text data on the file. \end{DoxyCompactList}\item 
+unsigned \textbf{ read\+Number} (int length, \textbf{ Endianess\+::endianess} endianess)
+\begin{DoxyCompactList}\small\item\em It reads a data number from the file. \end{DoxyCompactList}\item 
+void \textbf{ write\+Number} (unsigned int data, int length, \textbf{ Endianess\+::endianess} endianess)
+\begin{DoxyCompactList}\small\item\em It writes a data number on the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Audio file class. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_file_a6d35be1dc4e39ee66afd1696d8426bd2}} 
+\index{File@{File}!File@{File}}
+\index{File@{File}!File@{File}}
+\subsubsection{File()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily File\+::\+File (\begin{DoxyParamCaption}\item[{bool}]{writepermission }\end{DoxyParamCaption})}
+
+
+
+\doxyref{File}{p.}{class_file} constructor. 
+
+\mbox{\label{class_file_a8fedf48254fb2b7087fe82369301f6e6}} 
+\index{File@{File}!File@{File}}
+\index{File@{File}!File@{File}}
+\subsubsection{File()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily File\+::\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{bool}]{writepermission }\end{DoxyParamCaption})}
+
+
+
+\doxyref{File}{p.}{class_file} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path \\
+\hline
+{\em writepermission} & file write permission (true if it is allowed) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_file_ac704ebdf5f57d7a1c5ddf409d797fb69}} 
+\index{File@{File}!````~File@{$\sim$\+File}}
+\index{````~File@{$\sim$\+File}!File@{File}}
+\subsubsection{$\sim$\+File()}
+{\footnotesize\ttfamily File\+::$\sim$\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{File}{p.}{class_file} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_file_a4260fca380a387a8347b83bb4bee91b5}} 
+\index{File@{File}!exists@{exists}}
+\index{exists@{exists}!File@{File}}
+\subsubsection{exists()}
+{\footnotesize\ttfamily bool File\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It indicates if the file object exists. 
+
+\begin{DoxyReturn}{Returns}
+true if the file object exists 
+\end{DoxyReturn}
+\mbox{\label{class_file_a59701204411c5672fc35a95e31b002b3}} 
+\index{File@{File}!get\+Cursor@{get\+Cursor}}
+\index{get\+Cursor@{get\+Cursor}!File@{File}}
+\subsubsection{get\+Cursor()}
+{\footnotesize\ttfamily int File\+::get\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the current file reading cursor. 
+
+\begin{DoxyReturn}{Returns}
+cursor [Bytes] from the beginning of the file 
+\end{DoxyReturn}
+\mbox{\label{class_file_aff78fc9f04aecc0a56c151a5f328944a}} 
+\index{File@{File}!get\+Filename@{get\+Filename}}
+\index{get\+Filename@{get\+Filename}!File@{File}}
+\subsubsection{get\+Filename()}
+{\footnotesize\ttfamily std\+::string File\+::get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the file path name. 
+
+\begin{DoxyReturn}{Returns}
+file path name 
+\end{DoxyReturn}
+\mbox{\label{class_file_a917f13960e83613e5cb36d433b4cd833}} 
+\index{File@{File}!read@{read}}
+\index{read@{read}!File@{File}}
+\subsubsection{read()}
+{\footnotesize\ttfamily char $\ast$ File\+::read (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+It reads data from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & data length [Bytes] \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data pointer 
+\end{DoxyReturn}
+\mbox{\label{class_file_ab13f46c198a890f679351a2c9030e36d}} 
+\index{File@{File}!read\+Number@{read\+Number}}
+\index{read\+Number@{read\+Number}!File@{File}}
+\subsubsection{read\+Number()}
+{\footnotesize\ttfamily unsigned int File\+::read\+Number (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\textbf{ Endianess\+::endianess}}]{endianess }\end{DoxyParamCaption})}
+
+
+
+It reads a data number from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & data length [Bytes] \\
+\hline
+{\em endianess} & data order (big endian or little endian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of data number 
+\end{DoxyReturn}
+\mbox{\label{class_file_a01b5902198fefc46fe835f42386ce047}} 
+\index{File@{File}!read\+Text@{read\+Text}}
+\index{read\+Text@{read\+Text}!File@{File}}
+\subsubsection{read\+Text()}
+{\footnotesize\ttfamily std\+::string File\+::read\+Text (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+It reads text data from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & data length [Bytes] (if length = 0 function returns all available data from the file) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string of data 
+\end{DoxyReturn}
+\mbox{\label{class_file_a3320ff9a60903cdae6eb7f3fff06b05c}} 
+\index{File@{File}!set\+Cursor@{set\+Cursor}}
+\index{set\+Cursor@{set\+Cursor}!File@{File}}
+\subsubsection{set\+Cursor()}
+{\footnotesize\ttfamily void File\+::set\+Cursor (\begin{DoxyParamCaption}\item[{int}]{cursor }\end{DoxyParamCaption})}
+
+
+
+It sets the file reading cursor to keep on reading from another position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & new cursor position [Bytes] from the beginning of the file \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_file_a4fc5c5228613d30b136e5e9a0a046339}} 
+\index{File@{File}!set\+Filename@{set\+Filename}}
+\index{set\+Filename@{set\+Filename}!File@{File}}
+\subsubsection{set\+Filename()}
+{\footnotesize\ttfamily void File\+::set\+Filename (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+It sets the file path name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file path name \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_file_afcaf98328e440ccaedb20e310dc6b6c4}} 
+\index{File@{File}!size@{size}}
+\index{size@{size}!File@{File}}
+\subsubsection{size()}
+{\footnotesize\ttfamily int File\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the total file size. 
+
+\begin{DoxyReturn}{Returns}
+file size [Bytes] 
+\end{DoxyReturn}
+\mbox{\label{class_file_a1259d180d1a2ff95bcccecff547dc839}} 
+\index{File@{File}!write@{write}}
+\index{write@{write}!File@{File}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void File\+::write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+It writes data on the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data pointer \\
+\hline
+{\em length} & data length [Bytes] \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_file_a75a4a4b828576e6912f75e22a7250e92}} 
+\index{File@{File}!write\+Number@{write\+Number}}
+\index{write\+Number@{write\+Number}!File@{File}}
+\subsubsection{write\+Number()}
+{\footnotesize\ttfamily void File\+::write\+Number (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{int}]{length,  }\item[{\textbf{ Endianess\+::endianess}}]{endianess }\end{DoxyParamCaption})}
+
+
+
+It writes a data number on the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value of data number \\
+\hline
+{\em length} & data length [Bytes] \\
+\hline
+{\em endianess} & data order (big endian or little endian) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_file_a156d4a3d1e12e9ddf9c4948cae8c9734}} 
+\index{File@{File}!write\+Text@{write\+Text}}
+\index{write\+Text@{write\+Text}!File@{File}}
+\subsubsection{write\+Text()}
+{\footnotesize\ttfamily void File\+::write\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
+
+
+
+It writes text data on the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & string of data \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_file_aef76708f72e6c9b07fc7883a3fdacb2a}} 
+\index{File@{File}!cursor@{cursor}}
+\index{cursor@{cursor}!File@{File}}
+\subsubsection{cursor}
+{\footnotesize\ttfamily int File\+::cursor\hspace{0.3cm}{\ttfamily [private]}}
+
+file reading cursor [Bytes] \mbox{\label{class_file_a9fdd827019632755a0f8bcfdb86aad28}} 
+\index{File@{File}!file@{file}}
+\index{file@{file}!File@{File}}
+\subsubsection{file}
+{\footnotesize\ttfamily std\+::fstream$\ast$ File\+::file\hspace{0.3cm}{\ttfamily [private]}}
+
+file object \mbox{\label{class_file_a0cea8d01ab6c2653a95d75fc556e88dc}} 
+\index{File@{File}!filename@{filename}}
+\index{filename@{filename}!File@{File}}
+\subsubsection{filename}
+{\footnotesize\ttfamily std\+::string File\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+file path name \mbox{\label{class_file_a23e019a55df89545e84f34bf15b717d3}} 
+\index{File@{File}!writepermission@{writepermission}}
+\index{writepermission@{writepermission}!File@{File}}
+\subsubsection{writepermission}
+{\footnotesize\ttfamily bool File\+::writepermission\hspace{0.3cm}{\ttfamily [private]}}
+
+write file permission (true if it is allowed) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\textbf{ File.\+h}\item 
+src/process/\textbf{ File.\+cpp}\end{DoxyCompactItemize}

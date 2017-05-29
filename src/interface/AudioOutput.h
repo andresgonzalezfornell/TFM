@@ -66,6 +66,7 @@ public:
 	~AudioOutput();
 	void start();
 	void stop();
+    void setFormat(int fs, int samplesize);
 	void setDevices();
 	void setDevices(QList<QAudioDeviceInfo> devices);
 	void setVolume(float volume);public slots:

@@ -1,0 +1,336 @@
+\section{Effect Class Reference}
+\label{class_effect}\index{Effect@{Effect}}
+
+
+\doxyref{Effect}{p.}{class_effect} class. It contains (by inheritance) all effects classes.  
+
+
+
+
+{\ttfamily \#include $<$Effect.\+h$>$}
+
+Inheritance diagram for Effect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_effect}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ effect\+ID} \{ \textbf{ L\+I\+ST}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Effect} (\textbf{ Effect\+::effect\+ID} \textbf{ effect}, int \textbf{ fs})
+\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} constructor. \end{DoxyCompactList}\item 
+\textbf{ Effect} (\textbf{ Effect\+::effect\+ID} \textbf{ effect}, std\+::map$<$ std\+::string, std\+::string $>$ params, int \textbf{ fs})
+\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Effect} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} destructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Params} (std\+::map$<$ std\+::string, std\+::string $>$ params)
+\begin{DoxyCompactList}\small\item\em It sets params. \end{DoxyCompactList}\item 
+bool \textbf{ apply} (float $\ast$input, float $\ast$output, int samples, \textbf{ S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} channel)
+\begin{DoxyCompactList}\small\item\em It applies the selected effect to the input and sets the result into output variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \textbf{ plot} (std\+::string chart)
+\begin{DoxyCompactList}\small\item\em It sends some values to user interface charts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ get\+Effects} ()
+\begin{DoxyCompactList}\small\item\em It gets the list of available effects. \end{DoxyCompactList}\item 
+static \textbf{ Effect\+::effect\+ID} \textbf{ get\+Effect} (std\+::string effectname)
+\begin{DoxyCompactList}\small\item\em It get effects type from the effect name. \end{DoxyCompactList}\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ get\+Params} (std\+::string configuration)
+\begin{DoxyCompactList}\small\item\em It get params from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::vector$<$ bool $>$ \textbf{ get\+Channels} (std\+::string configuration, int size)
+\begin{DoxyCompactList}\small\item\em It get channels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::vector$<$ double $>$ \textbf{ get\+Levels} (std\+::string configuration, int size)
+\begin{DoxyCompactList}\small\item\em It get levels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::string \textbf{ get\+Tag} (std\+::string configuration, std\+::string tag)
+\begin{DoxyCompactList}\small\item\em It extracts the value in a tag from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ get\+Tag\+Map} (std\+::string configuration, std\+::string tag)
+\begin{DoxyCompactList}\small\item\em It extracts the map of values in a map-\/structured tag from a effect configuration file (.fx) text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ effect}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Effect}{p.}{class_effect} class. It contains (by inheritance) all effects classes. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{class_effect_a6422fe21e9e452943fbc3344884a6fed}} 
+\index{Effect@{Effect}!effect\+ID@{effect\+ID}}
+\index{effect\+ID@{effect\+ID}!Effect@{Effect}}
+\subsubsection{effect\+ID}
+{\footnotesize\ttfamily enum \textbf{ Effect\+::effect\+ID}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+I\+ST@{L\+I\+ST}!Effect@{Effect}}\index{Effect@{Effect}!L\+I\+ST@{L\+I\+ST}}}\mbox{\label{class_effect_a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a}} 
+L\+I\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_effect_a6ab7116f826b2607ada4630759f6afc5}} 
+\index{Effect@{Effect}!Effect@{Effect}}
+\index{Effect@{Effect}!Effect@{Effect}}
+\subsubsection{Effect()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect\+::effect\+ID}}]{effect,  }\item[{int}]{fs }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Effect}{p.}{class_effect} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & effect ID \\
+\hline
+{\em fs} & signal sampling frequency \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_effect_a2fbf9d2526c65543157370f68cbed091}} 
+\index{Effect@{Effect}!Effect@{Effect}}
+\index{Effect@{Effect}!Effect@{Effect}}
+\subsubsection{Effect()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect\+::effect\+ID}}]{effect,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{params,  }\item[{int}]{fs }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Effect}{p.}{class_effect} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & effect ID \\
+\hline
+{\em params} & map of effect parameters \\
+\hline
+{\em fs} & signal sampling frequency \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_effect_ac26c0a394247e14c9081f875522b5b66}} 
+\index{Effect@{Effect}!````~Effect@{$\sim$\+Effect}}
+\index{````~Effect@{$\sim$\+Effect}!Effect@{Effect}}
+\subsubsection{$\sim$\+Effect()}
+{\footnotesize\ttfamily Effect\+::$\sim$\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Effect}{p.}{class_effect} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_effect_aa25a507a9fe0b209bfb9f1b4bf9f97a9}} 
+\index{Effect@{Effect}!apply@{apply}}
+\index{apply@{apply}!Effect@{Effect}}
+\subsubsection{apply()}
+{\footnotesize\ttfamily bool Effect\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{\textbf{ S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype}}]{channel }\end{DoxyParamCaption})}
+
+
+
+It applies the selected effect to the input and sets the result into output variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input data pointer \\
+\hline
+{\em output} & output data pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em channel} & type of channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it was successful 
+\end{DoxyReturn}
+\mbox{\label{class_effect_ae108c1645f18162929cd5c272a30f74e}} 
+\index{Effect@{Effect}!get\+Channels@{get\+Channels}}
+\index{get\+Channels@{get\+Channels}!Effect@{Effect}}
+\subsubsection{get\+Channels()}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ Effect\+::get\+Channels (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It get channels vector from a effect configuration file (.fx) text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & contained text of a effect configuration file (.fx) \\
+\hline
+{\em size} & number of channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channels boolean vector to select channels when applying effects 
+\end{DoxyReturn}
+\mbox{\label{class_effect_a32185d446a9dc77963a322b64d2f9e27}} 
+\index{Effect@{Effect}!get\+Effect@{get\+Effect}}
+\index{get\+Effect@{get\+Effect}!Effect@{Effect}}
+\subsubsection{get\+Effect()}
+{\footnotesize\ttfamily \textbf{ Effect\+::effect\+ID} Effect\+::get\+Effect (\begin{DoxyParamCaption}\item[{std\+::string}]{effectname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It get effects type from the effect name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effectname} & effect name string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+effect type \doxyref{effect\+ID}{p.}{class_effect_a6422fe21e9e452943fbc3344884a6fed} 
+\end{DoxyReturn}
+\mbox{\label{class_effect_a2165f76956c91baf1482d2405eb1ed4e}} 
+\index{Effect@{Effect}!get\+Effects@{get\+Effects}}
+\index{get\+Effects@{get\+Effects}!Effect@{Effect}}
+\subsubsection{get\+Effects()}
+{\footnotesize\ttfamily std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ Effect\+::get\+Effects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It gets the list of available effects. 
+
+\begin{DoxyReturn}{Returns}
+map of available effects 
+\end{DoxyReturn}
+\mbox{\label{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92}} 
+\index{Effect@{Effect}!get\+Levels@{get\+Levels}}
+\index{get\+Levels@{get\+Levels}!Effect@{Effect}}
+\subsubsection{get\+Levels()}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Effect\+::get\+Levels (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It get levels vector from a effect configuration file (.fx) text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & contained text of a effect configuration file (.fx) \\
+\hline
+{\em size} & number of channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+levels vector of input channels before applying effects 
+\end{DoxyReturn}
+\mbox{\label{class_effect_ac322ae94a6b15b2d81053a55ce7542e2}} 
+\index{Effect@{Effect}!get\+Params@{get\+Params}}
+\index{get\+Params@{get\+Params}!Effect@{Effect}}
+\subsubsection{get\+Params()}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ Effect\+::get\+Params (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It get params from a effect configuration file (.fx) text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & contained text of a effect configuration file (.fx) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parameters map variable valid to apply effects 
+\end{DoxyReturn}
+\mbox{\label{class_effect_a607ab2a63d333137c1f07cf03611c4bf}} 
+\index{Effect@{Effect}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!Effect@{Effect}}
+\subsubsection{get\+Tag()}
+{\footnotesize\ttfamily std\+::string Effect\+::get\+Tag (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{std\+::string}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It extracts the value in a tag from a effect configuration file (.fx) text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & contained text of a effect configuration file (.fx) \\
+\hline
+{\em tag} & tag name of the requested field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+contained value in the tag 
+\end{DoxyReturn}
+\mbox{\label{class_effect_a616281286b866f1f8f6c66715e54ee89}} 
+\index{Effect@{Effect}!get\+Tag\+Map@{get\+Tag\+Map}}
+\index{get\+Tag\+Map@{get\+Tag\+Map}!Effect@{Effect}}
+\subsubsection{get\+Tag\+Map()}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ Effect\+::get\+Tag\+Map (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{std\+::string}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+It extracts the map of values in a map-\/structured tag from a effect configuration file (.fx) text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & contained text of a effect configuration file (.fx) \\
+\hline
+{\em tag} & tag name of the requested field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+contained map of values in the tag 
+\end{DoxyReturn}
+\mbox{\label{class_effect_ac2c35ce7382d627f20879b44be0e8132}} 
+\index{Effect@{Effect}!plot@{plot}}
+\index{plot@{plot}!Effect@{Effect}}
+\subsubsection{plot()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Effect\+::plot (\begin{DoxyParamCaption}\item[{std\+::string}]{chart }\end{DoxyParamCaption})}
+
+
+
+It sends some values to user interface charts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chart} & chart id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of values as values[axis][sample] axis\+: 0 = x (horizontal) and 1 = y (vertical) 
+\end{DoxyReturn}
+\mbox{\label{class_effect_af0094495d423173463fd3e9cd40789af}} 
+\index{Effect@{Effect}!set\+Params@{set\+Params}}
+\index{set\+Params@{set\+Params}!Effect@{Effect}}
+\subsubsection{set\+Params()}
+{\footnotesize\ttfamily void Effect\+::set\+Params (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{params }\end{DoxyParamCaption})}
+
+
+
+It sets params. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}} 
+\index{Effect@{Effect}!effect@{effect}}
+\index{effect@{effect}!Effect@{Effect}}
+\subsubsection{effect}
+{\footnotesize\ttfamily std\+::pair$<$\textbf{ Effect\+::effect\+ID}, std\+::string$>$ Effect\+::effect}
+
+selected effect name and id 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/effects/\textbf{ Effect.\+h}\item 
+src/effects/\textbf{ Effect.\+cpp}\end{DoxyCompactItemize}

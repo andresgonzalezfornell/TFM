@@ -27,7 +27,6 @@ SOURCES += \
     src/main.cpp \
     src/process/ProcessManager.cpp \
     src/process/File.cpp \
-    src/process/AudioStream.cpp \
     src/process/AudioSignal.cpp \
     src/sac/sac_decoder.c \
     src/sac/sac_encoder.c \
@@ -40,7 +39,6 @@ SOURCES += \
 
 HEADERS  += \
     src/process/ProcessManager.h \
-    src/process/AudioStream.h \
     src/process/File.h \
     src/process/AudioSignal.h \
     src/sac/sac_decoder.h \

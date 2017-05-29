@@ -20,6 +20,7 @@ var class_s_a_c_effects =
     [ "setDecodingType", "class_s_a_c_effects.html#a07d9b0135f5811a7b6e2d5d98c26fafe", null ],
     [ "setDuration", "class_s_a_c_effects.html#a69e964cefe25c40e7852cf7baeda28fd", null ],
     [ "setEffect", "class_s_a_c_effects.html#ab57fa3b5c11bafba4c2e471a80964c14", null ],
+    [ "setFormat", "class_s_a_c_effects.html#a3d06db323bc9a3a1bbfe810f2a30d10f", null ],
     [ "setHRTFModel", "class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c", null ],
     [ "setInput", "class_s_a_c_effects.html#a5292df44aee2a4ec49c99e3136b5472e", null ],
     [ "setPlayback", "class_s_a_c_effects.html#aa831f464a6675ee7db0b841f1c230426", null ],

@@ -6,7 +6,5 @@ var searchData=
   ['audiooutput_2ecpp',['AudioOutput.cpp',['../_audio_output_8cpp.html',1,'']]],
   ['audiooutput_2eh',['AudioOutput.h',['../_audio_output_8h.html',1,'']]],
   ['audiosignal_2ecpp',['AudioSignal.cpp',['../_audio_signal_8cpp.html',1,'']]],
-  ['audiosignal_2eh',['AudioSignal.h',['../_audio_signal_8h.html',1,'']]],
-  ['audiostream_2ecpp',['AudioStream.cpp',['../_audio_stream_8cpp.html',1,'']]],
-  ['audiostream_2eh',['AudioStream.h',['../_audio_stream_8h.html',1,'']]]
+  ['audiosignal_2eh',['AudioSignal.h',['../_audio_signal_8h.html',1,'']]]
 ];

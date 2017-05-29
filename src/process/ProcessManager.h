@@ -4,7 +4,6 @@
 // System libraries
 #include "stdlib.h"
 // Classes and local files
-#include "AudioStream.h"
 #include "File.h"
 #include "../effects/Effect.h"
 #include "../tools/Logger.h"
@@ -20,14 +19,15 @@ extern "C" {
  */
 class ProcessManager {
 public:
+    int fs;                 /**< signal sampling frequency */
     float **input;          /**< vector of input channels stream (sample = input[channel][sample index]) */
     float **output;         /**< vector of input channels stream (sample = output[channel][sample index]) */
     int channels;           /**< number of channels */
     int samples;            /**< number of samples in each channel */
     int cursor;             /**< pointer to current sample index when executing real time process*/
     int total;              /**< number of available output samples */
-	ProcessManager(int fs, int chunksize);
-	~ProcessManager();
+    ProcessManager(int chunksize);
+    ~ProcessManager();
     bool setInput(std::string filename);
     bool setOutput(std::string filename);
 	bool decode(std::string input, std::string bitstream, std::string output,
@@ -41,7 +41,6 @@ private:
     WAVFile *inputfile;     /**< audio input file object */
     WAVFile *outputfile;    /**< audio output file object */
     bool allocated;         /**< true if input and output signals variables are currently allocated */
-    int fs;                 /**< signal sampling frequency */
     int chunksize;          /**< number of samples in a chunk */
 };
 

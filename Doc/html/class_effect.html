@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0094495d423173463fd3e9cd40789af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#af0094495d423173463fd3e9cd40789af">setParams</a> (std::map&lt; std::string, std::string &gt; params)</td></tr>
 <tr class="memdesc:af0094495d423173463fd3e9cd40789af"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets params.  <a href="#af0094495d423173463fd3e9cd40789af">More...</a><br /></td></tr>
 <tr class="separator:af0094495d423173463fd3e9cd40789af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#a68f816d95f9a7383cd0df18d22e3e1ed">apply</a> (float *input, float *output, int samples)</td></tr>
-<tr class="memdesc:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applies the selected effect to the input and sets the result into output variable.  <a href="#a68f816d95f9a7383cd0df18d22e3e1ed">More...</a><br /></td></tr>
-<tr class="separator:a68f816d95f9a7383cd0df18d22e3e1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25a507a9fe0b209bfb9f1b4bf9f97a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#aa25a507a9fe0b209bfb9f1b4bf9f97a9">apply</a> (float *input, float *output, int samples, <a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">SACBitstream::ChannelType::channeltype</a> channel)</td></tr>
+<tr class="memdesc:aa25a507a9fe0b209bfb9f1b4bf9f97a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applies the selected effect to the input and sets the result into output variable.  <a href="#aa25a507a9fe0b209bfb9f1b4bf9f97a9">More...</a><br /></td></tr>
+<tr class="separator:aa25a507a9fe0b209bfb9f1b4bf9f97a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2c35ce7382d627f20879b44be0e8132"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_effect.html#ac2c35ce7382d627f20879b44be0e8132">plot</a> (std::string chart)</td></tr>
 <tr class="memdesc:ac2c35ce7382d627f20879b44be0e8132"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends some values to user interface charts.  <a href="#ac2c35ce7382d627f20879b44be0e8132">More...</a><br /></td></tr>
 <tr class="separator:ac2c35ce7382d627f20879b44be0e8132"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,8 +283,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a68f816d95f9a7383cd0df18d22e3e1ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68f816d95f9a7383cd0df18d22e3e1ed">&#9670;&nbsp;</a></span>apply()</h2>
+<a id="aa25a507a9fe0b209bfb9f1b4bf9f97a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25a507a9fe0b209bfb9f1b4bf9f97a9">&#9670;&nbsp;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,7 +305,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>samples</em>&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">SACBitstream::ChannelType::channeltype</a>&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -321,6 +327,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">input</td><td>input data pointer </td></tr>
     <tr><td class="paramname">output</td><td>output data pointer </td></tr>
     <tr><td class="paramname">samples</td><td>number of samples </td></tr>
+    <tr><td class="paramname">channel</td><td>type of channel </td></tr>
   </table>
   </dd>
 </dl>

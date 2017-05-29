@@ -1,0 +1,161 @@
+\section{src/tools/\+Logger.cpp File Reference}
+\label{_logger_8cpp}\index{src/tools/\+Logger.\+cpp@{src/tools/\+Logger.\+cpp}}
+
+
+Functions to create log messages on console.  
+
+
+{\ttfamily \#include \char`\"{}Logger.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ tab} (std\+::string content, const int tab\+\_\+max)
+\begin{DoxyCompactList}\small\item\em It returns the string tab code to align log messages. \end{DoxyCompactList}\item 
+void \textbf{ consolelog} (std\+::string source, \textbf{ Log\+Type\+::logtype} logtype, std\+::string message)
+\begin{DoxyCompactList}\small\item\em Log a message on console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{Indent}\textbf{ Font styles}\par
+{\em A\+N\+SI code for some font styles for log messages usage. }\begin{DoxyCompactItemize}
+\item 
+const std\+::string \textbf{ reset} = \char`\"{}\textbackslash{}033[0m\char`\"{}
+\item 
+const std\+::string \textbf{ bold} = \char`\"{}\textbackslash{}033[1m\char`\"{}
+\item 
+const std\+::string \textbf{ italic} = \char`\"{}\textbackslash{}033[3m\char`\"{}
+\item 
+const std\+::string \textbf{ black} = \char`\"{}\textbackslash{}033[30m\char`\"{}
+\item 
+const std\+::string \textbf{ red} = \char`\"{}\textbackslash{}033[31m\char`\"{}
+\item 
+const std\+::string \textbf{ green} = \char`\"{}\textbackslash{}033[32m\char`\"{}
+\item 
+const std\+::string \textbf{ yellow} = \char`\"{}\textbackslash{}033[33m\char`\"{}
+\item 
+const std\+::string \textbf{ blue} = \char`\"{}\textbackslash{}033[34m\char`\"{}
+\item 
+const std\+::string \textbf{ magenta} = \char`\"{}\textbackslash{}033[35m\char`\"{}
+\item 
+const std\+::string \textbf{ cyan} = \char`\"{}\textbackslash{}033[36m\char`\"{}
+\item 
+const std\+::string \textbf{ white} = \char`\"{}\textbackslash{}033[37m\char`\"{}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Functions to create log messages on console. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\label{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!consolelog@{consolelog}}
+\index{consolelog@{consolelog}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{consolelog()}
+{\footnotesize\ttfamily void consolelog (\begin{DoxyParamCaption}\item[{std\+::string}]{source,  }\item[{\textbf{ Log\+Type\+::logtype}}]{logtype,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Log a message on console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & origin class/method/file where the message was logged \\
+\hline
+{\em logtype} & type of message \\
+\hline
+{\em message} & message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\label{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!tab@{tab}}
+\index{tab@{tab}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{tab()}
+{\footnotesize\ttfamily std\+::string tab (\begin{DoxyParamCaption}\item[{std\+::string}]{content,  }\item[{const int}]{tab\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+It returns the string tab code to align log messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Content of the tabulation \\
+\hline
+{\em tab\+\_\+max} & Maximum number of tabulations \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{_logger_8cpp_a630d308e3f9d63ffeaca09929cf30ee4}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!black@{black}}
+\index{black@{black}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{black}
+{\footnotesize\ttfamily const std\+::string black = \char`\"{}\textbackslash{}033[30m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a3f312aaa00f31d382a52e52d9505df08}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!blue@{blue}}
+\index{blue@{blue}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{blue}
+{\footnotesize\ttfamily const std\+::string blue = \char`\"{}\textbackslash{}033[34m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a80cda35843a67360b271e19d75a25d32}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!bold@{bold}}
+\index{bold@{bold}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{bold}
+{\footnotesize\ttfamily const std\+::string bold = \char`\"{}\textbackslash{}033[1m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a318c6830790132f4763b2f2b6dbaf126}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!cyan@{cyan}}
+\index{cyan@{cyan}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{cyan}
+{\footnotesize\ttfamily const std\+::string cyan = \char`\"{}\textbackslash{}033[36m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a0490a675322d0259b6571db0d96599b8}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!green@{green}}
+\index{green@{green}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{green}
+{\footnotesize\ttfamily const std\+::string green = \char`\"{}\textbackslash{}033[32m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_af18f9cbf11b35a907dd685be2e87198b}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!italic@{italic}}
+\index{italic@{italic}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{italic}
+{\footnotesize\ttfamily const std\+::string italic = \char`\"{}\textbackslash{}033[3m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a9c3c2560b6f423f7902776457532fdba}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!magenta@{magenta}}
+\index{magenta@{magenta}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{magenta}
+{\footnotesize\ttfamily const std\+::string magenta = \char`\"{}\textbackslash{}033[35m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_acb5d1f5a5f86e947972f13be5e9bc5c8}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!red@{red}}
+\index{red@{red}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{red}
+{\footnotesize\ttfamily const std\+::string red = \char`\"{}\textbackslash{}033[31m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_a6ea20d23dc6f0e5681125ae9108d61e9}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!reset@{reset}}
+\index{reset@{reset}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{reset}
+{\footnotesize\ttfamily const std\+::string reset = \char`\"{}\textbackslash{}033[0m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_aa43aab7dde2acab2faa29544ea9e02ec}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!white@{white}}
+\index{white@{white}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{white}
+{\footnotesize\ttfamily const std\+::string white = \char`\"{}\textbackslash{}033[37m\char`\"{}}
+
+\mbox{\label{_logger_8cpp_ad2360f7af7d877c5a313e9ca50b65e8a}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!yellow@{yellow}}
+\index{yellow@{yellow}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{yellow}
+{\footnotesize\ttfamily const std\+::string yellow = \char`\"{}\textbackslash{}033[33m\char`\"{}}
+

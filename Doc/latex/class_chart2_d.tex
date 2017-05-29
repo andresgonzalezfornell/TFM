@@ -1,0 +1,245 @@
+\section{Chart2D Class Reference}
+\label{class_chart2_d}\index{Chart2D@{Chart2D}}
+
+
+Class for plotting two-\/dimensional charts.  
+
+
+
+
+{\ttfamily \#include $<$Chart2\+D.\+h$>$}
+
+Inheritance diagram for Chart2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_chart2_d}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Chart\+Options}
+\begin{DoxyCompactList}\small\item\em It defines some features of the chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Chart2D} (Q\+Widget $\ast$framework)
+\begin{DoxyCompactList}\small\item\em Chart constructor. \end{DoxyCompactList}\item 
+\textbf{ Chart2D} (Q\+Widget $\ast$framework, double range[2][2], std\+::string title, std\+::string \textbf{ xlabel}, std\+::string \textbf{ ylabel}, int options)
+\begin{DoxyCompactList}\small\item\em Chart constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Chart2D} ()
+\begin{DoxyCompactList}\small\item\em Chart destructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Points} (Q\+Vector$<$ Q\+PointF $>$ points)
+\begin{DoxyCompactList}\small\item\em It sets the points to the chart serie. \end{DoxyCompactList}\item 
+Q\+Vector$<$ Q\+PointF $>$ \textbf{ get\+Points} ()
+\begin{DoxyCompactList}\small\item\em It gets the points from the chart serie. \end{DoxyCompactList}\item 
+void \textbf{ set\+Range} (double range[2][2])
+\begin{DoxyCompactList}\small\item\em It sets the axis range. \end{DoxyCompactList}\item 
+void \textbf{ set\+Title} (std\+::string title)
+\begin{DoxyCompactList}\small\item\em It sets chart title. \end{DoxyCompactList}\item 
+void \textbf{ set\+Options} (int options)
+\begin{DoxyCompactList}\small\item\em It sets chart options. \end{DoxyCompactList}\item 
+void \textbf{ clear} ()
+\begin{DoxyCompactList}\small\item\em It clears the chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ xlabel}
+\item 
+std\+::string \textbf{ ylabel}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Chart $\ast$ \textbf{ chart}
+\item 
+Q\+Chart\+View $\ast$ \textbf{ view}
+\item 
+Q\+Line\+Series $\ast$ \textbf{ series}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for plotting two-\/dimensional charts. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_chart2_d_a6883ce065d3a6a52f6f72efdf35d62aa}} 
+\index{Chart2D@{Chart2D}!Chart2D@{Chart2D}}
+\index{Chart2D@{Chart2D}!Chart2D@{Chart2D}}
+\subsubsection{Chart2\+D()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Chart2\+D\+::\+Chart2D (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework }\end{DoxyParamCaption})}
+
+
+
+Chart constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em framework} & user interface framework of chart \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chart2_d_a4d29e59bc8eafa3267c62034b51725b4}} 
+\index{Chart2D@{Chart2D}!Chart2D@{Chart2D}}
+\index{Chart2D@{Chart2D}!Chart2D@{Chart2D}}
+\subsubsection{Chart2\+D()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Chart2\+D\+::\+Chart2D (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework,  }\item[{double}]{range[2][2],  }\item[{std\+::string}]{title,  }\item[{std\+::string}]{xlabel,  }\item[{std\+::string}]{ylabel,  }\item[{int}]{options }\end{DoxyParamCaption})}
+
+
+
+Chart constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em framework} & user interface framework of chart \\
+\hline
+{\em range} & axes range matrix (range[0][0] = x\+\_\+min, range[0][1] = x\+\_\+max, range[1][0] = y\+\_\+min, range[1][1] = y\+\_\+max) \\
+\hline
+{\em title} & chart title (it will be impress on the chart) \\
+\hline
+{\em xlabel} & label for horizontal (x) axis \\
+\hline
+{\em ylabel} & label for vertical (y) axis \\
+\hline
+{\em options} & \doxyref{Chart\+Options}{p.}{struct_chart2_d_1_1_chart_options} \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chart2_d_a73cac8978d3dd8a236ee4b2eae895a1e}} 
+\index{Chart2D@{Chart2D}!````~Chart2D@{$\sim$\+Chart2D}}
+\index{````~Chart2D@{$\sim$\+Chart2D}!Chart2D@{Chart2D}}
+\subsubsection{$\sim$\+Chart2\+D()}
+{\footnotesize\ttfamily Chart2\+D\+::$\sim$\+Chart2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chart destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_chart2_d_adc92e3ebe94275e02cf547c81d0410e9}} 
+\index{Chart2D@{Chart2D}!clear@{clear}}
+\index{clear@{clear}!Chart2D@{Chart2D}}
+\subsubsection{clear()}
+{\footnotesize\ttfamily void Chart2\+D\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It clears the chart. 
+
+\mbox{\label{class_chart2_d_acbc12395c5a24b7146b8262ec2dab315}} 
+\index{Chart2D@{Chart2D}!get\+Points@{get\+Points}}
+\index{get\+Points@{get\+Points}!Chart2D@{Chart2D}}
+\subsubsection{get\+Points()}
+{\footnotesize\ttfamily Q\+Vector$<$ Q\+PointF $>$ Chart2\+D\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the points from the chart serie. 
+
+\begin{DoxyReturn}{Returns}
+points 
+\end{DoxyReturn}
+\mbox{\label{class_chart2_d_a7a871b06da3b23bd7b452b75107132a6}} 
+\index{Chart2D@{Chart2D}!set\+Options@{set\+Options}}
+\index{set\+Options@{set\+Options}!Chart2D@{Chart2D}}
+\subsubsection{set\+Options()}
+{\footnotesize\ttfamily void Chart2\+D\+::set\+Options (\begin{DoxyParamCaption}\item[{int}]{options }\end{DoxyParamCaption})}
+
+
+
+It sets chart options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chart2_d_a90db5078374163beef86536a33bbe8ba}} 
+\index{Chart2D@{Chart2D}!set\+Points@{set\+Points}}
+\index{set\+Points@{set\+Points}!Chart2D@{Chart2D}}
+\subsubsection{set\+Points()}
+{\footnotesize\ttfamily void Chart2\+D\+::set\+Points (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ Q\+PointF $>$}]{points }\end{DoxyParamCaption})}
+
+
+
+It sets the points to the chart serie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chart2_d_acc60a5df11a3bb47c7888e108cd50f05}} 
+\index{Chart2D@{Chart2D}!set\+Range@{set\+Range}}
+\index{set\+Range@{set\+Range}!Chart2D@{Chart2D}}
+\subsubsection{set\+Range()}
+{\footnotesize\ttfamily void Chart2\+D\+::set\+Range (\begin{DoxyParamCaption}\item[{double}]{range[2][2] }\end{DoxyParamCaption})}
+
+
+
+It sets the axis range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & axis range matrix (range[0][0] = x\+\_\+min, range[0][1] = x\+\_\+max, range[1][0] = y\+\_\+min, range[1][1] = y\+\_\+max) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chart2_d_ac148952b822fcb1d0c865a7f36af85e4}} 
+\index{Chart2D@{Chart2D}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Chart2D@{Chart2D}}
+\subsubsection{set\+Title()}
+{\footnotesize\ttfamily void Chart2\+D\+::set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+
+
+It sets chart title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_chart2_d_ac795067359d934a6bfd747ae89ffcba8}} 
+\index{Chart2D@{Chart2D}!chart@{chart}}
+\index{chart@{chart}!Chart2D@{Chart2D}}
+\subsubsection{chart}
+{\footnotesize\ttfamily Q\+Chart$\ast$ Chart2\+D\+::chart\hspace{0.3cm}{\ttfamily [private]}}
+
+chart object \mbox{\label{class_chart2_d_a903c9c4bf3496612d8b7d06c3800d8a0}} 
+\index{Chart2D@{Chart2D}!series@{series}}
+\index{series@{series}!Chart2D@{Chart2D}}
+\subsubsection{series}
+{\footnotesize\ttfamily Q\+Line\+Series$\ast$ Chart2\+D\+::series\hspace{0.3cm}{\ttfamily [private]}}
+
+series object from chart \mbox{\label{class_chart2_d_aefd4e686c14c939b1a5e415d5149d712}} 
+\index{Chart2D@{Chart2D}!view@{view}}
+\index{view@{view}!Chart2D@{Chart2D}}
+\subsubsection{view}
+{\footnotesize\ttfamily Q\+Chart\+View$\ast$ Chart2\+D\+::view\hspace{0.3cm}{\ttfamily [private]}}
+
+chart view object from chart \mbox{\label{class_chart2_d_af463dc0d42e747ab4a208a44db003bd7}} 
+\index{Chart2D@{Chart2D}!xlabel@{xlabel}}
+\index{xlabel@{xlabel}!Chart2D@{Chart2D}}
+\subsubsection{xlabel}
+{\footnotesize\ttfamily std\+::string Chart2\+D\+::xlabel}
+
+horizontal (x) axis label \mbox{\label{class_chart2_d_afc4139568c9a63b3bcdc4eeefc0dd2e8}} 
+\index{Chart2D@{Chart2D}!ylabel@{ylabel}}
+\index{ylabel@{ylabel}!Chart2D@{Chart2D}}
+\subsubsection{ylabel}
+{\footnotesize\ttfamily std\+::string Chart2\+D\+::ylabel}
+
+vertical (y) axis label 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interface/\textbf{ Chart2\+D.\+h}\item 
+src/interface/\textbf{ Chart2\+D.\+cpp}\end{DoxyCompactItemize}

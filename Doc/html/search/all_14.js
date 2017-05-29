@@ -3,7 +3,6 @@ var searchData=
   ['warning',['warning',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af479132e55c523158544cc5c059bc9be',1,'LogType']]],
   ['wavfile',['WAVFile',['../class_w_a_v_file.html',1,'WAVFile'],['../class_w_a_v_file.html#a135707a98d9667622ce5056b68ed9abe',1,'WAVFile::WAVFile(bool writepermission)'],['../class_w_a_v_file.html#adc5bd36228dd18df58f2467546f367ef',1,'WAVFile::WAVFile(std::string filename, bool writepermission)'],['../class_w_a_v_file.html#a01baafcc33b738c26163b46bd05dde1d',1,'WAVFile::WAVFile(std::string filename, int channels, int fs, int sampleformat)']]],
   ['white',['white',['../_logger_8cpp.html#aa43aab7dde2acab2faa29544ea9e02ec',1,'Logger.cpp']]],
-  ['width',['width',['../class_volumeter.html#a9c1293ed0f2065e106c3839a0fa8df9e',1,'Volumeter']]],
   ['write',['write',['../class_file.html#a1259d180d1a2ff95bcccecff547dc839',1,'File']]],
   ['writedata',['writeData',['../class_output_device.html#ab616ad1f0080ce753b511c08360bdde8',1,'OutputDevice']]],
   ['writeheader',['writeHeader',['../class_w_a_v_file.html#a1ae7240dbf26d73ad9bb712bbbd4d124',1,'WAVFile']]],

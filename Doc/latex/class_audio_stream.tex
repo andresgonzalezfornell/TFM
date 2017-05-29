@@ -1,0 +1,143 @@
+\section{Audio\+Stream Class Reference}
+\label{class_audio_stream}\index{Audio\+Stream@{Audio\+Stream}}
+
+
+Audio objects for the S\+A\+OC interface.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Object.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Time\+Slot}
+\begin{DoxyCompactList}\small\item\em It indicates time slot of the available signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Stream} ()
+\item 
+\textbf{ Audio\+Stream} (int \textbf{ fs})
+\item 
+\textbf{ $\sim$\+Audio\+Stream} ()
+\item 
+void \textbf{ push} (float sample)
+\item 
+float \textbf{ pop} ()
+\item 
+std\+::vector$<$ float $>$ \textbf{ get\+Samples} ()
+\item 
+void \textbf{ set\+Sample} (int time, float sample)
+\item 
+float \textbf{ get\+Sample} (int time)
+\item 
+bool \textbf{ is\+Available} (int time)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Time\+Slot} \textbf{ timestamp}
+\item 
+int \textbf{ fs}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \textbf{ samples}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Audio objects for the S\+A\+OC interface. 
+
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_audio_stream_ab2e106f7e2f70f0cfb1d7b171da71f16}} 
+\index{Audio\+Stream@{Audio\+Stream}!Audio\+Stream@{Audio\+Stream}}
+\index{Audio\+Stream@{Audio\+Stream}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{Audio\+Stream()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Audio\+Stream\+::\+Audio\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_aea68e011ea0d4cf15a527492155a77c1}} 
+\index{Audio\+Stream@{Audio\+Stream}!Audio\+Stream@{Audio\+Stream}}
+\index{Audio\+Stream@{Audio\+Stream}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{Audio\+Stream()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Audio\+Stream\+::\+Audio\+Stream (\begin{DoxyParamCaption}\item[{int}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_a480e5d3468bfe9357dd6c40649b1e449}} 
+\index{Audio\+Stream@{Audio\+Stream}!````~Audio\+Stream@{$\sim$\+Audio\+Stream}}
+\index{````~Audio\+Stream@{$\sim$\+Audio\+Stream}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{$\sim$\+Audio\+Stream()}
+{\footnotesize\ttfamily Audio\+Stream\+::$\sim$\+Audio\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_audio_stream_a34fa6ead0ccde4cbe9db7435b3c1fe7a}} 
+\index{Audio\+Stream@{Audio\+Stream}!get\+Sample@{get\+Sample}}
+\index{get\+Sample@{get\+Sample}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{get\+Sample()}
+{\footnotesize\ttfamily float Audio\+Stream\+::get\+Sample (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_ae540add8cdf33421e2e3f9014cfa8c52}} 
+\index{Audio\+Stream@{Audio\+Stream}!get\+Samples@{get\+Samples}}
+\index{get\+Samples@{get\+Samples}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{get\+Samples()}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Audio\+Stream\+::get\+Samples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_ac129ca09a55aaeb905bb73ff9440b8ae}} 
+\index{Audio\+Stream@{Audio\+Stream}!is\+Available@{is\+Available}}
+\index{is\+Available@{is\+Available}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{is\+Available()}
+{\footnotesize\ttfamily bool Audio\+Stream\+::is\+Available (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_ab425433b7209483b2fb6c347a78483b5}} 
+\index{Audio\+Stream@{Audio\+Stream}!pop@{pop}}
+\index{pop@{pop}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{pop()}
+{\footnotesize\ttfamily float Audio\+Stream\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_ab2ceba569c33b8b5babc7294a2a42a83}} 
+\index{Audio\+Stream@{Audio\+Stream}!push@{push}}
+\index{push@{push}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{push()}
+{\footnotesize\ttfamily void Audio\+Stream\+::push (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})}
+
+\mbox{\label{class_audio_stream_a5ac03049345307942841bdfcdb75a7e8}} 
+\index{Audio\+Stream@{Audio\+Stream}!set\+Sample@{set\+Sample}}
+\index{set\+Sample@{set\+Sample}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{set\+Sample()}
+{\footnotesize\ttfamily void Audio\+Stream\+::set\+Sample (\begin{DoxyParamCaption}\item[{int}]{time,  }\item[{float}]{sample }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_audio_stream_ace8ac0e7fbaa176c74804b7133c03f45}} 
+\index{Audio\+Stream@{Audio\+Stream}!fs@{fs}}
+\index{fs@{fs}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{fs}
+{\footnotesize\ttfamily int Audio\+Stream\+::fs}
+
+signal sampling frequency [Hz] \mbox{\label{class_audio_stream_ac64fd676a85ecf3809ba31f16084596e}} 
+\index{Audio\+Stream@{Audio\+Stream}!samples@{samples}}
+\index{samples@{samples}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{samples}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Audio\+Stream\+::samples\hspace{0.3cm}{\ttfamily [private]}}
+
+available data from the audio object \mbox{\label{class_audio_stream_aeee7107c25a1ab45b8076e422864a518}} 
+\index{Audio\+Stream@{Audio\+Stream}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!Audio\+Stream@{Audio\+Stream}}
+\subsubsection{timestamp}
+{\footnotesize\ttfamily \textbf{ Time\+Slot} Audio\+Stream\+::timestamp}
+
+corresponding timestamp for the available data 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interface/\textbf{ Audio\+Object.\+h}\end{DoxyCompactItemize}

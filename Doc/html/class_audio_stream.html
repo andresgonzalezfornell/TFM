@@ -98,9 +98,6 @@ $(document).ready(function(){initNavTree('class_audio_stream.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_audio_stream_1_1_signal_range.html">SignalRange</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">index range.  <a href="struct_audio_stream_1_1_signal_range.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_audio_stream_1_1_time_slot.html">TimeSlot</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">It indicates time slot of the available signal.  <a href="struct_audio_stream_1_1_time_slot.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,57 +107,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2e106f7e2f70f0cfb1d7b171da71f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab2e106f7e2f70f0cfb1d7b171da71f16">AudioStream</a> ()</td></tr>
 <tr class="separator:ab2e106f7e2f70f0cfb1d7b171da71f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea68e011ea0d4cf15a527492155a77c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#aea68e011ea0d4cf15a527492155a77c1">AudioStream</a> (int <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a>)</td></tr>
-<tr class="memdesc:aea68e011ea0d4cf15a527492155a77c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_stream.html" title="Audio objects for the SAOC interface. ">AudioStream</a> constructor.  <a href="#aea68e011ea0d4cf15a527492155a77c1">More...</a><br /></td></tr>
 <tr class="separator:aea68e011ea0d4cf15a527492155a77c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a480e5d3468bfe9357dd6c40649b1e449"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449">~AudioStream</a> ()</td></tr>
-<tr class="memdesc:a480e5d3468bfe9357dd6c40649b1e449"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_audio_stream.html" title="Audio objects for the SAOC interface. ">AudioStream</a> destructor.  <a href="#a480e5d3468bfe9357dd6c40649b1e449">More...</a><br /></td></tr>
 <tr class="separator:a480e5d3468bfe9357dd6c40649b1e449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83">push</a> (float sample)</td></tr>
-<tr class="memdesc:ab2ceba569c33b8b5babc7294a2a42a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds a new sample to the end of the stream.  <a href="#ab2ceba569c33b8b5babc7294a2a42a83">More...</a><br /></td></tr>
 <tr class="separator:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab425433b7209483b2fb6c347a78483b5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5">pop</a> ()</td></tr>
-<tr class="memdesc:ab425433b7209483b2fb6c347a78483b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the first sample and deletes it from the stream.  <a href="#ab425433b7209483b2fb6c347a78483b5">More...</a><br /></td></tr>
 <tr class="separator:ab425433b7209483b2fb6c347a78483b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae540add8cdf33421e2e3f9014cfa8c52"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ae540add8cdf33421e2e3f9014cfa8c52">getSamples</a> ()</td></tr>
 <tr class="separator:ae540add8cdf33421e2e3f9014cfa8c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac03049345307942841bdfcdb75a7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a5ac03049345307942841bdfcdb75a7e8">setSample</a> (int time, float sample)</td></tr>
-<tr class="memdesc:a5ac03049345307942841bdfcdb75a7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a sample to a selected index (it replaces the previous sample at the same selected index).  <a href="#a5ac03049345307942841bdfcdb75a7e8">More...</a><br /></td></tr>
 <tr class="separator:a5ac03049345307942841bdfcdb75a7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34fa6ead0ccde4cbe9db7435b3c1fe7a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a34fa6ead0ccde4cbe9db7435b3c1fe7a">getSample</a> (int time)</td></tr>
 <tr class="separator:a34fa6ead0ccde4cbe9db7435b3c1fe7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae">isAvailable</a> (int time)</td></tr>
-<tr class="memdesc:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">It checks if the selected index is available in the stream.  <a href="#ac129ca09a55aaeb905bb73ff9440b8ae">More...</a><br /></td></tr>
 <tr class="separator:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea68e011ea0d4cf15a527492155a77c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#aea68e011ea0d4cf15a527492155a77c1">AudioStream</a> (int <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a>)</td></tr>
-<tr class="separator:aea68e011ea0d4cf15a527492155a77c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a480e5d3468bfe9357dd6c40649b1e449"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449">~AudioStream</a> ()</td></tr>
-<tr class="separator:a480e5d3468bfe9357dd6c40649b1e449"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a242f883430d1f95d3807efedb7851442"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a242f883430d1f95d3807efedb7851442">getfs</a> ()</td></tr>
-<tr class="memdesc:a242f883430d1f95d3807efedb7851442"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the signal sampling frequency.  <a href="#a242f883430d1f95d3807efedb7851442">More...</a><br /></td></tr>
-<tr class="separator:a242f883430d1f95d3807efedb7851442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae406f059959517054fb437af7a513015"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ae406f059959517054fb437af7a513015">setfs</a> (int value)</td></tr>
-<tr class="memdesc:ae406f059959517054fb437af7a513015"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the signal sampling frequency.  <a href="#ae406f059959517054fb437af7a513015">More...</a><br /></td></tr>
-<tr class="separator:ae406f059959517054fb437af7a513015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83">push</a> (float sample)</td></tr>
-<tr class="separator:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0fa149b636b94254d53ae8a98282542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#af0fa149b636b94254d53ae8a98282542">push</a> (<a class="el" href="class_audio_signal.html">AudioSignal</a> sample)</td></tr>
-<tr class="memdesc:af0fa149b636b94254d53ae8a98282542"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds several new samples to the end of the stream.  <a href="#af0fa149b636b94254d53ae8a98282542">More...</a><br /></td></tr>
-<tr class="separator:af0fa149b636b94254d53ae8a98282542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab425433b7209483b2fb6c347a78483b5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5">pop</a> ()</td></tr>
-<tr class="separator:ab425433b7209483b2fb6c347a78483b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a819c67cecaa154dcc60ed986d18a1233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_signal.html">AudioSignal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a819c67cecaa154dcc60ed986d18a1233">pop</a> (int n)</td></tr>
-<tr class="memdesc:a819c67cecaa154dcc60ed986d18a1233"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the first n samples and deletes them from the stream.  <a href="#a819c67cecaa154dcc60ed986d18a1233">More...</a><br /></td></tr>
-<tr class="separator:a819c67cecaa154dcc60ed986d18a1233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a212d4be6748eb09970910ca5827d3c42"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a212d4be6748eb09970910ca5827d3c42">operator[]</a> (int index)</td></tr>
-<tr class="memdesc:a212d4be6748eb09970910ca5827d3c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets a sample from a selected index (the sample is not deleted).  <a href="#a212d4be6748eb09970910ca5827d3c42">More...</a><br /></td></tr>
-<tr class="separator:a212d4be6748eb09970910ca5827d3c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f27b44986cb714ec9fe1e6598dd7c81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a5f27b44986cb714ec9fe1e6598dd7c81">setSample</a> (int index, float sample)</td></tr>
-<tr class="separator:a5f27b44986cb714ec9fe1e6598dd7c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa85d2b48a5f36328a60fdbadb2476e07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#aa85d2b48a5f36328a60fdbadb2476e07">size</a> ()</td></tr>
-<tr class="memdesc:aa85d2b48a5f36328a60fdbadb2476e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the number of samples.  <a href="#aa85d2b48a5f36328a60fdbadb2476e07">More...</a><br /></td></tr>
-<tr class="separator:aa85d2b48a5f36328a60fdbadb2476e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0fea4f8aedcda463e508ae648576790"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ad0fea4f8aedcda463e508ae648576790">isAvailable</a> (int index)</td></tr>
-<tr class="separator:ad0fea4f8aedcda463e508ae648576790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -168,10 +129,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aeee7107c25a1ab45b8076e422864a518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace8ac0e7fbaa176c74804b7133c03f45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a></td></tr>
 <tr class="separator:ace8ac0e7fbaa176c74804b7133c03f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9720bf635cb419c7823ec7c990aee294"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_audio_stream_1_1_signal_range.html">SignalRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a9720bf635cb419c7823ec7c990aee294">range</a></td></tr>
-<tr class="separator:a9720bf635cb419c7823ec7c990aee294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a743a4c2b87b810b3da5bcb5292cdc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_signal.html">AudioSignal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a3a743a4c2b87b810b3da5bcb5292cdc9">signal</a></td></tr>
-<tr class="separator:a3a743a4c2b87b810b3da5bcb5292cdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -180,11 +137,10 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Audio objects for the SAOC interface. </p>
-<p>Class for audio streams. This is the interface between the user interface and the coding and audio processing.</p>
 <dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab2e106f7e2f70f0cfb1d7b171da71f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2e106f7e2f70f0cfb1d7b171da71f16">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e106f7e2f70f0cfb1d7b171da71f16">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,52 +157,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aea68e011ea0d4cf15a527492155a77c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea68e011ea0d4cf15a527492155a77c1">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AudioStream::AudioStream </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_audio_stream.html" title="Audio objects for the SAOC interface. ">AudioStream</a> constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fs</td><td>signal sampling frequency [Hz] </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a480e5d3468bfe9357dd6c40649b1e449"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a480e5d3468bfe9357dd6c40649b1e449">&#9670;&nbsp;</a></span>~AudioStream() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AudioStream::~AudioStream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_audio_stream.html" title="Audio objects for the SAOC interface. ">AudioStream</a> destructor. </p>
-
-</div>
-</div>
-<a id="aea68e011ea0d4cf15a527492155a77c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea68e011ea0d4cf15a527492155a77c1">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea68e011ea0d4cf15a527492155a77c1">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +175,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a480e5d3468bfe9357dd6c40649b1e449"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a480e5d3468bfe9357dd6c40649b1e449">&#9670;&nbsp;</a></span>~AudioStream() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a480e5d3468bfe9357dd6c40649b1e449">&#9670;&nbsp;</a></span>~AudioStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,26 +192,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a242f883430d1f95d3807efedb7851442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a242f883430d1f95d3807efedb7851442">&#9670;&nbsp;</a></span>getfs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int AudioStream::getfs </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets the signal sampling frequency. </p>
-<dl class="section return"><dt>Returns</dt><dd>signal sampling frequency </dd></dl>
-
-</div>
-</div>
 <a id="a34fa6ead0ccde4cbe9db7435b3c1fe7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34fa6ead0ccde4cbe9db7435b3c1fe7a">&#9670;&nbsp;</a></span>getSample()</h2>
 
@@ -337,7 +228,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ac129ca09a55aaeb905bb73ff9440b8ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac129ca09a55aaeb905bb73ff9440b8ae">&#9670;&nbsp;</a></span>isAvailable() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac129ca09a55aaeb905bb73ff9440b8ae">&#9670;&nbsp;</a></span>isAvailable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,90 +237,16 @@ Private Attributes</h2></td></tr>
           <td class="memname">bool AudioStream::isAvailable </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It checks if the selected index is available in the stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if it is available </dd></dl>
-
-</div>
-</div>
-<a id="ad0fea4f8aedcda463e508ae648576790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0fea4f8aedcda463e508ae648576790">&#9670;&nbsp;</a></span>isAvailable() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AudioStream::isAvailable </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a212d4be6748eb09970910ca5827d3c42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a212d4be6748eb09970910ca5827d3c42">&#9670;&nbsp;</a></span>operator[]()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AudioStream::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets a sample from a selected index (the sample is not deleted). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>sample </dd></dl>
 
 </div>
 </div>
 <a id="ab425433b7209483b2fb6c347a78483b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab425433b7209483b2fb6c347a78483b5">&#9670;&nbsp;</a></span>pop() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AudioStream::pop </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets the first sample and deletes it from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>first sample </dd></dl>
-
-</div>
-</div>
-<a id="ab425433b7209483b2fb6c347a78483b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab425433b7209483b2fb6c347a78483b5">&#9670;&nbsp;</a></span>pop() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab425433b7209483b2fb6c347a78483b5">&#9670;&nbsp;</a></span>pop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,35 +262,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a819c67cecaa154dcc60ed986d18a1233"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a819c67cecaa154dcc60ed986d18a1233">&#9670;&nbsp;</a></span>pop() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_audio_signal.html">AudioSignal</a> AudioStream::pop </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets the first n samples and deletes them from the stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>number of samples to pop from the stream </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>first n samples </dd></dl>
-
-</div>
-</div>
 <a id="ab2ceba569c33b8b5babc7294a2a42a83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ceba569c33b8b5babc7294a2a42a83">&#9670;&nbsp;</a></span>push() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ceba569c33b8b5babc7294a2a42a83">&#9670;&nbsp;</a></span>push()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,89 +277,11 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It adds a new sample to the end of the stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sample</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab2ceba569c33b8b5babc7294a2a42a83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ceba569c33b8b5babc7294a2a42a83">&#9670;&nbsp;</a></span>push() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::push </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sample</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af0fa149b636b94254d53ae8a98282542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0fa149b636b94254d53ae8a98282542">&#9670;&nbsp;</a></span>push() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::push </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_audio_signal.html">AudioSignal</a>&#160;</td>
-          <td class="paramname"><em>samples</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It adds several new samples to the end of the stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">samples</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae406f059959517054fb437af7a513015"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae406f059959517054fb437af7a513015">&#9670;&nbsp;</a></span>setfs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::setfs </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It sets the signal sampling frequency. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fs</td><td>signal sampling frequency </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
 <a id="a5ac03049345307942841bdfcdb75a7e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ac03049345307942841bdfcdb75a7e8">&#9670;&nbsp;</a></span>setSample() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac03049345307942841bdfcdb75a7e8">&#9670;&nbsp;</a></span>setSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,7 +290,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void AudioStream::setSample </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
+          <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -593,63 +305,6 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It sets a sample to a selected index (it replaces the previous sample at the same selected index). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-    <tr><td class="paramname">sample</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5f27b44986cb714ec9fe1e6598dd7c81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f27b44986cb714ec9fe1e6598dd7c81">&#9670;&nbsp;</a></span>setSample() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::setSample </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sample</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa85d2b48a5f36328a60fdbadb2476e07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa85d2b48a5f36328a60fdbadb2476e07">&#9670;&nbsp;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int AudioStream::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It gets the number of samples. </p>
-<dl class="section return"><dt>Returns</dt><dd>number of samples of audio stream </dd></dl>
 
 </div>
 </div>
@@ -665,23 +320,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>signal sampling frequency [Hz]</p>
-<p>audio sampling frequency [Hz] </p>
-
-</div>
-</div>
-<a id="a9720bf635cb419c7823ec7c990aee294"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9720bf635cb419c7823ec7c990aee294">&#9670;&nbsp;</a></span>range</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_audio_stream_1_1_signal_range.html">SignalRange</a> AudioStream::range</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>index range of the audio stream </p>
+<p>signal sampling frequency [Hz] </p>
 
 </div>
 </div>
@@ -708,21 +347,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a743a4c2b87b810b3da5bcb5292cdc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a743a4c2b87b810b3da5bcb5292cdc9">&#9670;&nbsp;</a></span>signal</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_audio_signal.html">AudioSignal</a> AudioStream::signal</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>signal object </p>
-
-</div>
-</div>
 <a id="aeee7107c25a1ab45b8076e422864a518"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeee7107c25a1ab45b8076e422864a518">&#9670;&nbsp;</a></span>timestamp</h2>
 
@@ -738,10 +362,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/interface/<a class="el" href="_audio_object_8h_source.html">AudioObject.h</a></li>
-<li>src/process/<a class="el" href="_audio_stream_8h_source.html">AudioStream.h</a></li>
-<li>src/process/<a class="el" href="_audio_stream_8cpp.html">AudioStream.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
