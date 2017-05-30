@@ -1,0 +1,6 @@
+<map id="Effect::Effect" name="Effect::Effect">
+<area shape="rect" id="node2" href="$class_effect.html#a2165f76956c91baf1482d2405eb1ed4e" title="It gets the list of available effects. " alt="" coords="153,5,275,32"/>
+<area shape="rect" id="node5" href="$class_effect.html#af0094495d423173463fd3e9cd40789af" title="It sets parameters variable. " alt="" coords="151,56,277,83"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="325,31,411,57"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="459,31,499,57"/>
+</map>

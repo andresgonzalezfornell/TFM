@@ -1,0 +1,8 @@
+<map id="ChannelsList::ChannelsList" name="ChannelsList::ChannelsList">
+<area shape="rect" id="node2" href="$class_channels_list.html#ac059e3c89763f50705ce1e2633ee3d3d" title="It sets a number of channels up. " alt="" coords="237,81,388,108"/>
+<area shape="rect" id="node6" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="721,107,806,133"/>
+<area shape="rect" id="node3" href="$class_channels_list.html#aeaeb08c6bf8aa1a48b5cc52c56505408" title="It gets the number of channels. " alt="" coords="457,5,607,32"/>
+<area shape="rect" id="node4" href="$class_channels_list.html#a72dfd281e40fd29624354254ad3fa791" title="It deletes a channel. " alt="" coords="436,56,628,83"/>
+<area shape="rect" id="node5" href="$class_channels_list.html#a794574bee033fd0fa2bee54c615576f9" title="It gets a channel. " alt="" coords="676,56,851,83"/>
+<area shape="rect" id="node7" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="899,107,939,133"/>
+</map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TFM: SACBitstream Class Reference</title>
+<title>SAC Effects: SACBitstream Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="TFM - Banner.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TFM
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">SAC Effects
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
  </tr>
@@ -84,7 +85,6 @@ $(document).ready(function(){initNavTree('class_s_a_c_bitstream.html','');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_s_a_c_bitstream-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SACBitstream Class Reference</div>  </div>
@@ -104,81 +104,40 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a46fe059e932c2e72d07b4dbf982e6533"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533">SACBitstream</a> (std::string filename)</td></tr>
-<tr class="memdesc:a46fe059e932c2e72d07b4dbf982e6533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitstream constructor.  <a href="#a46fe059e932c2e72d07b4dbf982e6533">More...</a><br /></td></tr>
+<tr class="memitem:a46fe059e932c2e72d07b4dbf982e6533"><td class="memItemLeft" align="right" valign="top"><a id="a46fe059e932c2e72d07b4dbf982e6533"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533">SACBitstream</a> (std::string filename)</td></tr>
+<tr class="memdesc:a46fe059e932c2e72d07b4dbf982e6533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitstream constructor. <br /></td></tr>
 <tr class="separator:a46fe059e932c2e72d07b4dbf982e6533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a416e485fb3a14a7bafb0a5542d7945"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a4a416e485fb3a14a7bafb0a5542d7945">~SACBitstream</a> ()</td></tr>
-<tr class="memdesc:a4a416e485fb3a14a7bafb0a5542d7945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitstream destructor.  <a href="#a4a416e485fb3a14a7bafb0a5542d7945">More...</a><br /></td></tr>
+<tr class="memitem:a4a416e485fb3a14a7bafb0a5542d7945"><td class="memItemLeft" align="right" valign="top"><a id="a4a416e485fb3a14a7bafb0a5542d7945"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a4a416e485fb3a14a7bafb0a5542d7945">~SACBitstream</a> ()</td></tr>
+<tr class="memdesc:a4a416e485fb3a14a7bafb0a5542d7945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitstream destructor. <br /></td></tr>
 <tr class="separator:a4a416e485fb3a14a7bafb0a5542d7945"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0f39852ca2853efa15be087ce68c3b9"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#ad0f39852ca2853efa15be087ce68c3b9">getVariable</a> (int position, int length)</td></tr>
 <tr class="memdesc:ad0f39852ca2853efa15be087ce68c3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the value of a bitstream variable.  <a href="#ad0f39852ca2853efa15be087ce68c3b9">More...</a><br /></td></tr>
 <tr class="separator:ad0f39852ca2853efa15be087ce68c3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3113cb4df7e64416b156c4f1d9564a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a3113cb4df7e64416b156c4f1d9564a4e">load</a> ()</td></tr>
-<tr class="memdesc:a3113cb4df7e64416b156c4f1d9564a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It loads variables from bitstream file.  <a href="#a3113cb4df7e64416b156c4f1d9564a4e">More...</a><br /></td></tr>
+<tr class="memitem:a3113cb4df7e64416b156c4f1d9564a4e"><td class="memItemLeft" align="right" valign="top"><a id="a3113cb4df7e64416b156c4f1d9564a4e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a3113cb4df7e64416b156c4f1d9564a4e">load</a> ()</td></tr>
+<tr class="memdesc:a3113cb4df7e64416b156c4f1d9564a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It loads variables from bitstream file. <br /></td></tr>
 <tr class="separator:a3113cb4df7e64416b156c4f1d9564a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a94931a9831b06bba488d4f7b6f1e5744"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a94931a9831b06bba488d4f7b6f1e5744">fs</a></td></tr>
 <tr class="separator:a94931a9831b06bba488d4f7b6f1e5744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fa3fffab5ac8dc57bab6bbf64cf9a0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">ChannelType::channeltype</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a4fa3fffab5ac8dc57bab6bbf64cf9a0d">channel</a></td></tr>
-<tr class="separator:a4fa3fffab5ac8dc57bab6bbf64cf9a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385f676be794f5bb9bec896ef6eda43c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">ChannelType::channeltype</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a385f676be794f5bb9bec896ef6eda43c">channels</a></td></tr>
+<tr class="separator:a385f676be794f5bb9bec896ef6eda43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf9019de0f79c54aae0ffa29a57c3194"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#acf9019de0f79c54aae0ffa29a57c3194">gain_surround</a></td></tr>
 <tr class="separator:acf9019de0f79c54aae0ffa29a57c3194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4edc51fec93b93461156d8fa376e0116"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a4edc51fec93b93461156d8fa376e0116">gain_LFE</a></td></tr>
 <tr class="separator:a4edc51fec93b93461156d8fa376e0116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f4bba870168dd984a7ed4d5214024ed"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a2f4bba870168dd984a7ed4d5214024ed">gain_downmix</a></td></tr>
 <tr class="separator:a2f4bba870168dd984a7ed4d5214024ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a723578b5c58715e64c1ab8dfbbc97d71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file.html">File</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_a_c_bitstream.html#a723578b5c58715e64c1ab8dfbbc97d71">bitstream</a></td></tr>
-<tr class="separator:a723578b5c58715e64c1ab8dfbbc97d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SAC bitstream class. </p>
-<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a46fe059e932c2e72d07b4dbf982e6533"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46fe059e932c2e72d07b4dbf982e6533">&#9670;&nbsp;</a></span>SACBitstream()</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SACBitstream::SACBitstream </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bitstream constructor. </p>
-
-</div>
-</div>
-<a id="a4a416e485fb3a14a7bafb0a5542d7945"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a416e485fb3a14a7bafb0a5542d7945">&#9670;&nbsp;</a></span>~SACBitstream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SACBitstream::~SACBitstream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bitstream destructor. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00016">16</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad0f39852ca2853efa15be087ce68c3b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0f39852ca2853efa15be087ce68c3b9">&#9670;&nbsp;</a></span>getVariable()</h2>
 
@@ -204,8 +163,6 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It gets the value of a bitstream variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>position in bits </td></tr>
@@ -215,62 +172,49 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of the bitstream variable </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8cpp_source.html#l00025">25</a> of file <a class="el" href="_s_a_c_bitstream_8cpp_source.html">SACBitstream.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_cgraph.png" border="0" usemap="#class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_cgraph" alt=""/></div>
+<map name="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_cgraph" id="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_cgraph">
+<area shape="rect" id="node2" href="class_file.html#a3320ff9a60903cdae6eb7f3fff06b05c" title="It sets the file reading cursor to keep on reading from another position. " alt="" coords="233,5,343,32"/>
+<area shape="rect" id="node3" href="class_file.html#a01b5902198fefc46fe835f42386ce047" title="It reads text data from the file. " alt="" coords="236,56,340,83"/>
+<area shape="rect" id="node4" href="class_file.html#afcaf98328e440ccaedb20e310dc6b6c4" title="It gets the total file size. " alt="" coords="541,31,615,57"/>
+<area shape="rect" id="node7" href="class_file.html#a917f13960e83613e5cb36d433b4cd833" title="It reads data from the file. " alt="" coords="391,81,468,108"/>
+<area shape="rect" id="node5" href="_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="688,56,773,83"/>
+<area shape="rect" id="node6" href="_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="821,56,861,83"/>
+<area shape="rect" id="node8" href="class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="535,132,621,159"/>
+<area shape="rect" id="node9" href="class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="516,183,640,209"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_icgraph.png" border="0" usemap="#class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_icgraph" alt=""/></div>
+<map name="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_icgraph" id="class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_icgraph">
+<area shape="rect" id="node2" href="class_s_a_c_bitstream.html#a3113cb4df7e64416b156c4f1d9564a4e" title="It loads variables from bitstream file. " alt="" coords="233,5,372,32"/>
+<area shape="rect" id="node3" href="class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533" title="Bitstream constructor. " alt="" coords="420,5,617,32"/>
+</map>
 </div>
-<a id="a3113cb4df7e64416b156c4f1d9564a4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3113cb4df7e64416b156c4f1d9564a4e">&#9670;&nbsp;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SACBitstream::load </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>It loads variables from bitstream file. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a723578b5c58715e64c1ab8dfbbc97d71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a723578b5c58715e64c1ab8dfbbc97d71">&#9670;&nbsp;</a></span>bitstream</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_file.html">File</a>* SACBitstream::bitstream</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4fa3fffab5ac8dc57bab6bbf64cf9a0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fa3fffab5ac8dc57bab6bbf64cf9a0d">&#9670;&nbsp;</a></span>channel</h2>
+<a id="a385f676be794f5bb9bec896ef6eda43c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385f676be794f5bb9bec896ef6eda43c">&#9670;&nbsp;</a></span>channels</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">ChannelType::channeltype</a>* SACBitstream::channel</td>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">ChannelType::channeltype</a>&gt; SACBitstream::channels</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>channels order </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00036">36</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
 
 </div>
 </div>
@@ -287,6 +231,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>signal sampling frequencye </p>
 
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00035">35</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
+
 </div>
 </div>
 <a id="a2f4bba870168dd984a7ed4d5214024ed"></a>
@@ -301,6 +247,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>gain of downmix </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00039">39</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
 
 </div>
 </div>
@@ -317,6 +265,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>downmix of LFE channels </p>
 
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00038">38</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
+
 </div>
 </div>
 <a id="acf9019de0f79c54aae0ffa29a57c3194"></a>
@@ -332,11 +282,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>downmix of surround channels </p>
 
+<p class="definition">Definition at line <a class="el" href="_s_a_c_bitstream_8h_source.html#l00037">37</a> of file <a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/sac/<a class="el" href="_s_a_c_bitstream_8h_source.html">SACBitstream.h</a></li>
-<li>src/sac/<a class="el" href="_s_a_c_bitstream_8cpp.html">SACBitstream.cpp</a></li>
+<li>src/sac/<a class="el" href="_s_a_c_bitstream_8cpp_source.html">SACBitstream.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

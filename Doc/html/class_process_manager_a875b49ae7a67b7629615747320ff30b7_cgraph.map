@@ -1,0 +1,5 @@
+<map id="ProcessManager::ProcessManager" name="ProcessManager::ProcessManager">
+<area shape="rect" id="node2" href="$class_process_manager.html#a9c807d64f58ca890b9b4acde3f1c1bb2" title="It clears all variables and resets the process. " alt="" coords="284,5,443,32"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="321,56,406,83"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="491,56,531,83"/>
+</map>

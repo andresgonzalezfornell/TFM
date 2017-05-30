@@ -12,17 +12,17 @@
  * @brief	ANSI code for some font styles for log messages usage.
  * @{
  */
-const std::string reset = "\033[0m";
-const std::string bold = "\033[1m";
-const std::string italic = "\033[3m";
-const std::string black = "\033[30m";
-const std::string red = "\033[31m";
-const std::string green = "\033[32m";
-const std::string yellow = "\033[33m";
-const std::string blue = "\033[34m";
-const std::string magenta = "\033[35m";
-const std::string cyan = "\033[36m";
-const std::string white = "\033[37m";
+const std::string reset = "\033[0m"; /**< default style */
+const std::string bold = "\033[1m"; /**< bold */
+const std::string italic = "\033[3m"; /**< italic */
+const std::string black = "\033[30m"; /**< black color font */
+const std::string red = "\033[31m"; /**< red color font */
+const std::string green = "\033[32m"; /**< green color font */
+const std::string yellow = "\033[33m"; /**< yellow color font */
+const std::string blue = "\033[34m"; /**< blue color font */
+const std::string magenta = "\033[35m"; /**< magenta color font */
+const std::string cyan = "\033[36m"; /**< cyan color font */
+const std::string grey = "\033[37m"; /**< grey color font */
 /** @} */
 
 /**
@@ -86,7 +86,7 @@ void consolelog(std::string source, LogType::logtype logtype,
         break;
     }
     // Log
-    std::cout << white << "Log message ";
+    std::cout << grey << "Log message ";
     std::cout << "from " << italic << source << tab(source, tab_max) << reset;
     std::cout << bold << type_style << type_name << tab(type_name, tab_max)
               << reset;

@@ -534,7 +534,7 @@ void SACEffects::setTimer() {
 
 /**
  * @brief   It sets audio playback time from a specific time selected by user.
- * @param   time
+ * @param   time                selected time
  */
 void SACEffects::setTimer(QTime time) {
     QObject::sender()->blockSignals(true);

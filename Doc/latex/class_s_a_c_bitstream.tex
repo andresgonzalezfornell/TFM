@@ -1,4 +1,4 @@
-\section{S\+A\+C\+Bitstream Class Reference}
+\hypertarget{class_s_a_c_bitstream}{}\section{S\+A\+C\+Bitstream Class Reference}
 \label{class_s_a_c_bitstream}\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
 
 
@@ -12,80 +12,53 @@ S\+AC bitstream class.
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \textbf{ Channel\+Type}
+struct \hyperlink{struct_s_a_c_bitstream_1_1_channel_type}{Channel\+Type}
 \begin{DoxyCompactList}\small\item\em It specifies the channel type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ S\+A\+C\+Bitstream} (std\+::string filename)
+\mbox{\Hypertarget{class_s_a_c_bitstream_a46fe059e932c2e72d07b4dbf982e6533}\label{class_s_a_c_bitstream_a46fe059e932c2e72d07b4dbf982e6533}} 
+\hyperlink{class_s_a_c_bitstream_a46fe059e932c2e72d07b4dbf982e6533}{S\+A\+C\+Bitstream} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em Bitstream constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+S\+A\+C\+Bitstream} ()
+\mbox{\Hypertarget{class_s_a_c_bitstream_a4a416e485fb3a14a7bafb0a5542d7945}\label{class_s_a_c_bitstream_a4a416e485fb3a14a7bafb0a5542d7945}} 
+\hyperlink{class_s_a_c_bitstream_a4a416e485fb3a14a7bafb0a5542d7945}{$\sim$\+S\+A\+C\+Bitstream} ()
 \begin{DoxyCompactList}\small\item\em Bitstream destructor. \end{DoxyCompactList}\item 
-long \textbf{ get\+Variable} (int position, int length)
+long \hyperlink{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9}{get\+Variable} (int position, int length)
 \begin{DoxyCompactList}\small\item\em It gets the value of a bitstream variable. \end{DoxyCompactList}\item 
-void \textbf{ load} ()
+\mbox{\Hypertarget{class_s_a_c_bitstream_a3113cb4df7e64416b156c4f1d9564a4e}\label{class_s_a_c_bitstream_a3113cb4df7e64416b156c4f1d9564a4e}} 
+void \hyperlink{class_s_a_c_bitstream_a3113cb4df7e64416b156c4f1d9564a4e}{load} ()
 \begin{DoxyCompactList}\small\item\em It loads variables from bitstream file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ fs}
+int \hyperlink{class_s_a_c_bitstream_a94931a9831b06bba488d4f7b6f1e5744}{fs}
 \item 
-\textbf{ Channel\+Type\+::channeltype} $\ast$ \textbf{ channel}
+std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{Channel\+Type\+::channeltype} $>$ \hyperlink{class_s_a_c_bitstream_a385f676be794f5bb9bec896ef6eda43c}{channels}
 \item 
-double \textbf{ gain\+\_\+surround}
+double \hyperlink{class_s_a_c_bitstream_acf9019de0f79c54aae0ffa29a57c3194}{gain\+\_\+surround}
 \item 
-double \textbf{ gain\+\_\+\+L\+FE}
+double \hyperlink{class_s_a_c_bitstream_a4edc51fec93b93461156d8fa376e0116}{gain\+\_\+\+L\+FE}
 \item 
-double \textbf{ gain\+\_\+downmix}
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\textbf{ File} $\ast$ \textbf{ bitstream}
+double \hyperlink{class_s_a_c_bitstream_a2f4bba870168dd984a7ed4d5214024ed}{gain\+\_\+downmix}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-S\+AC bitstream class. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_s_a_c_bitstream_a46fe059e932c2e72d07b4dbf982e6533}} 
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{S\+A\+C\+Bitstream()}
-{\footnotesize\ttfamily S\+A\+C\+Bitstream\+::\+S\+A\+C\+Bitstream (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
-
-
-
-Bitstream constructor. 
-
-\mbox{\label{class_s_a_c_bitstream_a4a416e485fb3a14a7bafb0a5542d7945}} 
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!````~S\+A\+C\+Bitstream@{$\sim$\+S\+A\+C\+Bitstream}}
-\index{````~S\+A\+C\+Bitstream@{$\sim$\+S\+A\+C\+Bitstream}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{$\sim$\+S\+A\+C\+Bitstream()}
-{\footnotesize\ttfamily S\+A\+C\+Bitstream\+::$\sim$\+S\+A\+C\+Bitstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Bitstream destructor. 
+Definition at line 16 of file S\+A\+C\+Bitstream.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9}} 
+\mbox{\Hypertarget{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9}\label{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9}} 
 \index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!get\+Variable@{get\+Variable}}
 \index{get\+Variable@{get\+Variable}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{get\+Variable()}
+\subsubsection{\texorpdfstring{get\+Variable()}{getVariable()}}
 {\footnotesize\ttfamily long int S\+A\+C\+Bitstream\+::get\+Variable (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{length }\end{DoxyParamCaption})}
-
-
-
-It gets the value of a bitstream variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -97,58 +70,82 @@ It gets the value of a bitstream variable.
 \begin{DoxyReturn}{Returns}
 value of the bitstream variable 
 \end{DoxyReturn}
-\mbox{\label{class_s_a_c_bitstream_a3113cb4df7e64416b156c4f1d9564a4e}} 
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!load@{load}}
-\index{load@{load}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{load()}
-{\footnotesize\ttfamily void S\+A\+C\+Bitstream\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 25 of file S\+A\+C\+Bitstream.\+cpp.
 
-It loads variables from bitstream file. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_a_c_bitstream_ad0f39852ca2853efa15be087ce68c3b9_icgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_s_a_c_bitstream_a723578b5c58715e64c1ab8dfbbc97d71}} 
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!bitstream@{bitstream}}
-\index{bitstream@{bitstream}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{bitstream}
-{\footnotesize\ttfamily \textbf{ File}$\ast$ S\+A\+C\+Bitstream\+::bitstream\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_s_a_c_bitstream_a385f676be794f5bb9bec896ef6eda43c}\label{class_s_a_c_bitstream_a385f676be794f5bb9bec896ef6eda43c}} 
+\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!channels@{channels}}
+\index{channels@{channels}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
+\subsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{Channel\+Type\+::channeltype}$>$ S\+A\+C\+Bitstream\+::channels}
 
-\mbox{\label{class_s_a_c_bitstream_a4fa3fffab5ac8dc57bab6bbf64cf9a0d}} 
-\index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!channel@{channel}}
-\index{channel@{channel}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{channel}
-{\footnotesize\ttfamily \textbf{ Channel\+Type\+::channeltype}$\ast$ S\+A\+C\+Bitstream\+::channel}
+channels order 
 
-channels order \mbox{\label{class_s_a_c_bitstream_a94931a9831b06bba488d4f7b6f1e5744}} 
+Definition at line 36 of file S\+A\+C\+Bitstream.\+h.
+
+\mbox{\Hypertarget{class_s_a_c_bitstream_a94931a9831b06bba488d4f7b6f1e5744}\label{class_s_a_c_bitstream_a94931a9831b06bba488d4f7b6f1e5744}} 
 \index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!fs@{fs}}
 \index{fs@{fs}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int S\+A\+C\+Bitstream\+::fs}
 
-signal sampling frequencye \mbox{\label{class_s_a_c_bitstream_a2f4bba870168dd984a7ed4d5214024ed}} 
+signal sampling frequencye 
+
+Definition at line 35 of file S\+A\+C\+Bitstream.\+h.
+
+\mbox{\Hypertarget{class_s_a_c_bitstream_a2f4bba870168dd984a7ed4d5214024ed}\label{class_s_a_c_bitstream_a2f4bba870168dd984a7ed4d5214024ed}} 
 \index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+downmix@{gain\+\_\+downmix}}
 \index{gain\+\_\+downmix@{gain\+\_\+downmix}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{gain\+\_\+downmix}
+\subsubsection{\texorpdfstring{gain\+\_\+downmix}{gain\_downmix}}
 {\footnotesize\ttfamily double S\+A\+C\+Bitstream\+::gain\+\_\+downmix}
 
-gain of downmix \mbox{\label{class_s_a_c_bitstream_a4edc51fec93b93461156d8fa376e0116}} 
+gain of downmix 
+
+Definition at line 39 of file S\+A\+C\+Bitstream.\+h.
+
+\mbox{\Hypertarget{class_s_a_c_bitstream_a4edc51fec93b93461156d8fa376e0116}\label{class_s_a_c_bitstream_a4edc51fec93b93461156d8fa376e0116}} 
 \index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+\+L\+FE@{gain\+\_\+\+L\+FE}}
 \index{gain\+\_\+\+L\+FE@{gain\+\_\+\+L\+FE}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{gain\+\_\+\+L\+FE}
+\subsubsection{\texorpdfstring{gain\+\_\+\+L\+FE}{gain\_LFE}}
 {\footnotesize\ttfamily double S\+A\+C\+Bitstream\+::gain\+\_\+\+L\+FE}
 
-downmix of L\+FE channels \mbox{\label{class_s_a_c_bitstream_acf9019de0f79c54aae0ffa29a57c3194}} 
+downmix of L\+FE channels 
+
+Definition at line 38 of file S\+A\+C\+Bitstream.\+h.
+
+\mbox{\Hypertarget{class_s_a_c_bitstream_acf9019de0f79c54aae0ffa29a57c3194}\label{class_s_a_c_bitstream_acf9019de0f79c54aae0ffa29a57c3194}} 
 \index{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+surround@{gain\+\_\+surround}}
 \index{gain\+\_\+surround@{gain\+\_\+surround}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}}
-\subsubsection{gain\+\_\+surround}
+\subsubsection{\texorpdfstring{gain\+\_\+surround}{gain\_surround}}
 {\footnotesize\ttfamily double S\+A\+C\+Bitstream\+::gain\+\_\+surround}
 
 downmix of surround channels 
 
+Definition at line 37 of file S\+A\+C\+Bitstream.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/sac/\textbf{ S\+A\+C\+Bitstream.\+h}\item 
-src/sac/\textbf{ S\+A\+C\+Bitstream.\+cpp}\end{DoxyCompactItemize}
+src/sac/S\+A\+C\+Bitstream.\+h\item 
+src/sac/S\+A\+C\+Bitstream.\+cpp\end{DoxyCompactItemize}

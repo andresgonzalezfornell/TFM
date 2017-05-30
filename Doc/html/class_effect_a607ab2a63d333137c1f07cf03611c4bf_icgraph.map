@@ -1,0 +1,6 @@
+<map id="Effect::getTag" name="Effect::getTag">
+<area shape="rect" id="node2" href="$class_effect.html#a616281286b866f1f8f6c66715e54ee89" title="It extracts the map of values in a map&#45;structured tag from a effect configuration file (..." alt="" coords="159,56,289,83"/>
+<area shape="rect" id="node3" href="$class_effect.html#ae108c1645f18162929cd5c272a30f74e" title="It gets channels vector from a effect configuration file (.fx) text. " alt="" coords="337,5,476,32"/>
+<area shape="rect" id="node4" href="$class_effect.html#ad0f19e11abff1f815c8b3b36b1f28c92" title="It gets levels vector from a effect configuration file (.fx) text. " alt="" coords="347,56,467,83"/>
+<area shape="rect" id="node5" href="$class_effect.html#ac322ae94a6b15b2d81053a55ce7542e2" title="It gets params from a effect configuration file (.fx) text. " alt="" coords="343,107,471,133"/>
+</map>

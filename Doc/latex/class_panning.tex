@@ -1,0 +1,67 @@
+\hypertarget{class_panning}{}\section{Panning Class Reference}
+\label{class_panning}\index{Panning@{Panning}}
+
+
+Audio panning effect.  
+
+
+
+
+{\ttfamily \#include $<$Panning.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_panning_a34a63be4543f6d7bafaeaa14421c7719}\label{class_panning_a34a63be4543f6d7bafaeaa14421c7719}} 
+\hyperlink{class_panning_a34a63be4543f6d7bafaeaa14421c7719}{Panning} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_panning}{Panning} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_panning_a24d4cc11b0ee5c3838fcd042302ea90e}{apply} (float $\ast$$\ast$input, float $\ast$$\ast$output, int samples, std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$ channels)
+\begin{DoxyCompactList}\small\item\em It applies panning effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Andrés González Fornell 
+\end{DoxyAuthor}
+
+
+Definition at line 12 of file Panning.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_panning_a24d4cc11b0ee5c3838fcd042302ea90e}\label{class_panning_a24d4cc11b0ee5c3838fcd042302ea90e}} 
+\index{Panning@{Panning}!apply@{apply}}
+\index{apply@{apply}!Panning@{Panning}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Panning\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{int}]{samples,  }\item[{std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$}]{channels }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em channels} & vector of channel types \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Panning.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_panning_a24d4cc11b0ee5c3838fcd042302ea90e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/effects/Panning.\+h\item 
+src/effects/Panning.\+cpp\end{DoxyCompactItemize}

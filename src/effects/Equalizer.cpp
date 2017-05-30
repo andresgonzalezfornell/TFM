@@ -2,13 +2,8 @@
 
 /**
  * @brief	Equalizer constructor.
- * @param   params          string of effect parameters
  */
 Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
-    for (int n = 0; n < order + 1; n++) {
-        x[n] = 0;
-        y[n] = 0;
-    }
 }
 
 /**
@@ -16,8 +11,9 @@ Equalizer::Equalizer() AS_EFFECT_CONSTRUCTOR {
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
+ * @param   channels        vector of channel types
  */
-void Equalizer::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
+void Equalizer::apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels) {
     const double Q = std::sqrt(2);
     // Gain-compensanting matrix
     const double C[bands][bands] = {{1.32220858046976,-0.312321455237198,0.0381733194898166,0.00472793396660785,0.000796727762724219,-0.000744140323074050,6.80405294875517e-05,7.36601688367619e-06,4.14703938689660e-06,-5.19536284602576e-07},
@@ -38,27 +34,21 @@ void Equalizer::apply(float *input, float *output, int samples, SACBitstream::Ch
         gain[band] = 0;
     }
     // Effect
-    for (int band = 0; band < bands; band++) {
-        for (int i = 0; i < bands; i++) {
-            gain[band] += C[band][i]*level[band]; // [dB]
-        }
-        if (band == 0) {
-            lowShelfFilter(input, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
-        } else if (band == bands) {
-            highShelfFilter(output, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
-        } else {
-            peakingFilter(output, output, samples, frequency[band] / this->fs, pow(10, gain[band] / 20), Q, order);
+    for (channel = 0; channel < (int)channels.size(); channel++) {
+        filterindex = 0;
+        for (int band = 0; band < bands; band++) {
+            for (int i = 0; i < bands; i++) {
+                gain[band] += C[band][i]*level[band]; // [dB]
+            }
+            if (band == 0) {
+                lowShelfFilter(input[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
+            } else if (band == bands) {
+                highShelfFilter(output[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
+            } else {
+                peakingFilter(output[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), Q, order);
+            }
         }
     }
-}
-
-/**
- * @brief   It sends some values to user interface charts.
- * @param   chart           chart id
- * @return  array of values as values[axis][sample]     axis: 0 = x (horizontal) and 1 = y (vertical)
- */
-std::vector<std::vector<double>> Equalizer::plot(std::string chart) {
-    return std::vector<std::vector<double>>();
 }
 
 /**
@@ -67,8 +57,9 @@ std::vector<std::vector<double>> Equalizer::plot(std::string chart) {
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  * @param   f_0             center frequency (real frequency / sampling frequency)
- * @param   level           peak level (amplitude)
+ * @param   gain            peak power gain
  * @param   Q               quality factor
+ * @param   order           filter order (value of the highest exponent)
  */
 void Equalizer::peakingFilter(float *input, float *output, int samples, double f_0, double gain, double Q, int order) {
     // Initialization
@@ -98,7 +89,8 @@ void Equalizer::peakingFilter(float *input, float *output, int samples, double f
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  * @param   f_0             midpoint frequency (real frequency / sampling frequency)
- * @param   level           peak level (amplitude)
+ * @param   gain            peak power gain
+ * @param   order           filter order (value of the highest exponent)
  */
 void Equalizer::lowShelfFilter(float *input, float *output, int samples, double f_0, double gain, int order) {
     // Initialization
@@ -128,7 +120,8 @@ void Equalizer::lowShelfFilter(float *input, float *output, int samples, double 
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
  * @param   f_0             midpoint frequency (real frequency / sampling frequency)
- * @param   level           peak level (amplitude)
+ * @param   gain            peak power gain
+ * @param   order           filter order (value of the highest exponent)
  */
 void Equalizer::highShelfFilter(float *input, float *output, int samples, double f_0, double gain, int order) {
     // Initialization
@@ -166,17 +159,18 @@ void Equalizer::filter(float *input, float *output, int samples, float *a, float
         for (int n = 0; n < samples; n++) {
             // Memories update
             for (int index = order; index > 0; index--) {
-                x[index] = x[index - 1];
-                y[index] = y[index - 1];
+                x[channel][filterindex][index] = x[channel][filterindex][index - 1];
+                y[channel][filterindex][index] = y[channel][filterindex][index - 1];
             }
-            x[0] = input[n];
+            x[channel][filterindex][0] = input[n];
             // Filter
-            y[0] = b[0] * x[0];
+            y[channel][filterindex][0] = b[0] * x[channel][filterindex][0];
             for (int index = 1; index < order + 1; index++) {
-                y[0] += b[index] * x[index] - a[index] * y[index];
+                y[channel][filterindex][0] += b[index] * x[channel][filterindex][index] - a[index] * y[channel][filterindex][index];
             }
-            y[0] /= a[0];
-            output[n] = y[0];
+            y[channel][filterindex][0] /= a[0];
+            output[n] = y[channel][filterindex][0];
         }
     }
+    filterindex++;
 }

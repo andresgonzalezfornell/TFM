@@ -15,9 +15,5 @@ var class_file =
     [ "size", "class_file.html#afcaf98328e440ccaedb20e310dc6b6c4", null ],
     [ "write", "class_file.html#a1259d180d1a2ff95bcccecff547dc839", null ],
     [ "writeNumber", "class_file.html#a75a4a4b828576e6912f75e22a7250e92", null ],
-    [ "writeText", "class_file.html#a156d4a3d1e12e9ddf9c4948cae8c9734", null ],
-    [ "cursor", "class_file.html#aef76708f72e6c9b07fc7883a3fdacb2a", null ],
-    [ "file", "class_file.html#a9fdd827019632755a0f8bcfdb86aad28", null ],
-    [ "filename", "class_file.html#a0cea8d01ab6c2653a95d75fc556e88dc", null ],
-    [ "writepermission", "class_file.html#a23e019a55df89545e84f34bf15b717d3", null ]
+    [ "writeText", "class_file.html#a156d4a3d1e12e9ddf9c4948cae8c9734", null ]
 ];

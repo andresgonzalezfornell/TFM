@@ -1,0 +1,6 @@
+<map id="Equalizer::apply" name="Equalizer::apply">
+<area shape="rect" id="node2" href="$class_equalizer.html#a45f228e5ba216af9214f9a0070d2199e" title="It applies a low shelf filter. " alt="" coords="173,5,339,32"/>
+<area shape="rect" id="node4" href="$class_equalizer.html#af1bbd593cf7943262d40c80f2869c932" title="It applies a high shelf filter. " alt="" coords="171,56,341,83"/>
+<area shape="rect" id="node5" href="$class_equalizer.html#af30b0db022898105af9bee40d374fcde" title="It applies a peaking filter. " alt="" coords="175,107,337,133"/>
+<area shape="rect" id="node3" href="$class_equalizer.html#ad34a5bb0d644d3242147bf393ce84f02" title="It applies a filter according to the transfer function H(z) = ( b[0] + b[1]·z^&#45;1 + ..." alt="" coords="389,56,500,83"/>
+</map>

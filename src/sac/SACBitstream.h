@@ -3,6 +3,7 @@
 
 // System libraries
 #include "stdlib.h"
+#include "vector"
 // Classes and local files
 #include "../process/File.h"
 #include "../tools/Logger.h"
@@ -32,7 +33,7 @@ public:
         };
     };
     int fs; /**< signal sampling frequencye */
-    ChannelType::channeltype *channel; /**< channels order */
+    std::vector<ChannelType::channeltype> channels; /**< channels order */
     double gain_surround; /**< downmix of surround channels */
     double gain_LFE; /**< downmix of LFE channels */
     double gain_downmix; /**< gain of downmix*/

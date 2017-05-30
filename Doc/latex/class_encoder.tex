@@ -1,278 +1,204 @@
-\section{Encoder Class Reference}
+\hypertarget{class_encoder}{}\section{Encoder Class Reference}
 \label{class_encoder}\index{Encoder@{Encoder}}
 
 
-\doxyref{Encoder}{p.}{class_encoder} window interface.  
+\hyperlink{class_encoder}{Encoder} window interface.  
 
 
 
 
 {\ttfamily \#include $<$Encoder.\+h$>$}
 
-Inheritance diagram for Encoder\+:\begin{figure}[H]
+
+
+Inheritance diagram for Encoder\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_encoder}
+\includegraphics[width=134pt]{class_encoder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Encoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_encoder__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Encoder} (Q\+Widget $\ast$parent=0)
-\begin{DoxyCompactList}\small\item\em \doxyref{Encoder}{p.}{class_encoder} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Encoder} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Encoder}{p.}{class_encoder} destructor. \end{DoxyCompactList}\item 
-void \textbf{ set\+Input} (std\+::string filename)
+\mbox{\Hypertarget{class_encoder_a0b084c3a7e670faafd9d651d6913d105}\label{class_encoder_a0b084c3a7e670faafd9d651d6913d105}} 
+\hyperlink{class_encoder_a0b084c3a7e670faafd9d651d6913d105}{Encoder} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_encoder}{Encoder} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_encoder_a87cc8067c98c0ab2134dee3822e3b250}\label{class_encoder_a87cc8067c98c0ab2134dee3822e3b250}} 
+\hyperlink{class_encoder_a87cc8067c98c0ab2134dee3822e3b250}{$\sim$\+Encoder} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_encoder}{Encoder} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1}{set\+Input} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em It sets the input audio file. \end{DoxyCompactList}\item 
-void \textbf{ set\+Output} (std\+::string filename)
+void \hyperlink{class_encoder_a81e43409dc83e9118472a81ba65e6779}{set\+Output} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em It sets the output audio file. \end{DoxyCompactList}\item 
-void \textbf{ set\+Tree} (int \textbf{ tree})
+void \hyperlink{class_encoder_adc879a1000d99660b36d7369e00f4f06}{set\+Tree} (int tree)
 \begin{DoxyCompactList}\small\item\em It sets a tree configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ fs}
+int \hyperlink{class_encoder_aa0549b597ab8fda7191f2e659a56044b}{fs}
 \item 
-\textbf{ W\+A\+V\+File} $\ast$ \textbf{ input}
+\hyperlink{class_w_a_v_file}{W\+A\+V\+File} $\ast$ \hyperlink{class_encoder_aa851a11113fd12d5cfa04a4a72013157}{input}
 \item 
-\textbf{ W\+A\+V\+File} $\ast$ \textbf{ output}
+\hyperlink{class_w_a_v_file}{W\+A\+V\+File} $\ast$ \hyperlink{class_encoder_ac4d4774d75750c1fdddd3740b7f30985}{output}
 \item 
-\textbf{ File} $\ast$ \textbf{ bitstream}
-\end{DoxyCompactItemize}
-\subsection*{Private Slots}
-\begin{Indent}\textbf{ Coder interface slots}\par
-{\em User interface control functions of coder. }\begin{DoxyCompactItemize}
-\item 
-void \textbf{ set\+Bitstream} ()
-\begin{DoxyCompactList}\small\item\em It sets the bitstream file name. \end{DoxyCompactList}\item 
-void \textbf{ set\+Buried} (bool state)
-\begin{DoxyCompactList}\small\item\em It sets the buried parameter. \end{DoxyCompactList}\item 
-void \textbf{ toggle\+Tree} ()
-\begin{DoxyCompactList}\small\item\em It performs change action when tree configuration is changed. \end{DoxyCompactList}\item 
-void \textbf{ load} ()
-\begin{DoxyCompactList}\small\item\em It loads an input audio file. \end{DoxyCompactList}\item 
-void \textbf{ reset} ()
-\begin{DoxyCompactList}\small\item\em It resets all encoding parameters, including output file. \end{DoxyCompactList}\item 
-void \textbf{ apply} ()
-\begin{DoxyCompactList}\small\item\em It applies the codification. \end{DoxyCompactList}\item 
-void \textbf{ cancel} ()
-\begin{DoxyCompactList}\small\item\em It closes the coder dialog without no consequences. \end{DoxyCompactList}\item 
-void \textbf{ submit} ()
-\begin{DoxyCompactList}\small\item\em It loads the output to decoder and closes coder dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\end{Indent}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Ui\+::\+Encoder $\ast$ \textbf{ ui}
-\item 
-int \textbf{ tree}
+\hyperlink{class_file}{File} $\ast$ \hyperlink{class_encoder_a8cd18343fe80007dba58b4d716227544}{bitstream}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\doxyref{Encoder}{p.}{class_encoder} window interface. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_encoder_a0b084c3a7e670faafd9d651d6913d105}} 
-\index{Encoder@{Encoder}!Encoder@{Encoder}}
-\index{Encoder@{Encoder}!Encoder@{Encoder}}
-\subsubsection{Encoder()}
-{\footnotesize\ttfamily Encoder\+::\+Encoder (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Encoder}{p.}{class_encoder} constructor. 
-
-\mbox{\label{class_encoder_a87cc8067c98c0ab2134dee3822e3b250}} 
-\index{Encoder@{Encoder}!````~Encoder@{$\sim$\+Encoder}}
-\index{````~Encoder@{$\sim$\+Encoder}!Encoder@{Encoder}}
-\subsubsection{$\sim$\+Encoder()}
-{\footnotesize\ttfamily Encoder\+::$\sim$\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Encoder}{p.}{class_encoder} destructor. 
+Definition at line 29 of file Encoder.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_encoder_a7260ab57c7af8403feb51a09a6d7bf51}} 
-\index{Encoder@{Encoder}!apply@{apply}}
-\index{apply@{apply}!Encoder@{Encoder}}
-\subsubsection{apply}
-{\footnotesize\ttfamily void Encoder\+::apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It applies the codification. 
-
-\mbox{\label{class_encoder_aa804c0901e17069b89eced2358aae058}} 
-\index{Encoder@{Encoder}!cancel@{cancel}}
-\index{cancel@{cancel}!Encoder@{Encoder}}
-\subsubsection{cancel}
-{\footnotesize\ttfamily void Encoder\+::cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It closes the coder dialog without no consequences. 
-
-\mbox{\label{class_encoder_a876b53dd1557eb0b6a5a391576ca4ef5}} 
-\index{Encoder@{Encoder}!load@{load}}
-\index{load@{load}!Encoder@{Encoder}}
-\subsubsection{load}
-{\footnotesize\ttfamily void Encoder\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It loads an input audio file. 
-
-\mbox{\label{class_encoder_a8ad34a60288f78310ee465da3832b405}} 
-\index{Encoder@{Encoder}!reset@{reset}}
-\index{reset@{reset}!Encoder@{Encoder}}
-\subsubsection{reset}
-{\footnotesize\ttfamily void Encoder\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It resets all encoding parameters, including output file. 
-
-\mbox{\label{class_encoder_a0cac88e0c6a13275b09374ff7c663e1d}} 
-\index{Encoder@{Encoder}!set\+Bitstream@{set\+Bitstream}}
-\index{set\+Bitstream@{set\+Bitstream}!Encoder@{Encoder}}
-\subsubsection{set\+Bitstream}
-{\footnotesize\ttfamily void Encoder\+::set\+Bitstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It sets the bitstream file name. 
-
-\mbox{\label{class_encoder_a950faf1cc76fe686575b2a0bef45d2b5}} 
-\index{Encoder@{Encoder}!set\+Buried@{set\+Buried}}
-\index{set\+Buried@{set\+Buried}!Encoder@{Encoder}}
-\subsubsection{set\+Buried}
-{\footnotesize\ttfamily void Encoder\+::set\+Buried (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It sets the buried parameter. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em state} & true if it is buried \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1}} 
+\mbox{\Hypertarget{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1}\label{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1}} 
 \index{Encoder@{Encoder}!set\+Input@{set\+Input}}
 \index{set\+Input@{set\+Input}!Encoder@{Encoder}}
-\subsubsection{set\+Input()}
+\subsubsection{\texorpdfstring{set\+Input()}{setInput()}}
 {\footnotesize\ttfamily void Encoder\+::set\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
 
 
-
-It sets the input audio file. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em filename} & file path \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_encoder_a81e43409dc83e9118472a81ba65e6779}} 
+
+
+Definition at line 52 of file Encoder.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_encoder_af5623d0bd5fc7b1b2be27375d2994eb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_encoder_a81e43409dc83e9118472a81ba65e6779}\label{class_encoder_a81e43409dc83e9118472a81ba65e6779}} 
 \index{Encoder@{Encoder}!set\+Output@{set\+Output}}
 \index{set\+Output@{set\+Output}!Encoder@{Encoder}}
-\subsubsection{set\+Output()}
+\subsubsection{\texorpdfstring{set\+Output()}{setOutput()}}
 {\footnotesize\ttfamily void Encoder\+::set\+Output (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
 
 
-
-It sets the output audio file. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em filename} & file path \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_encoder_adc879a1000d99660b36d7369e00f4f06}} 
+
+
+Definition at line 85 of file Encoder.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoder_a81e43409dc83e9118472a81ba65e6779_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_encoder_a81e43409dc83e9118472a81ba65e6779_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_encoder_adc879a1000d99660b36d7369e00f4f06}\label{class_encoder_adc879a1000d99660b36d7369e00f4f06}} 
 \index{Encoder@{Encoder}!set\+Tree@{set\+Tree}}
 \index{set\+Tree@{set\+Tree}!Encoder@{Encoder}}
-\subsubsection{set\+Tree()}
+\subsubsection{\texorpdfstring{set\+Tree()}{setTree()}}
 {\footnotesize\ttfamily void Encoder\+::set\+Tree (\begin{DoxyParamCaption}\item[{int}]{tree }\end{DoxyParamCaption})}
-
-
-
-It sets a tree configuration. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em tree} & configuration index \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_encoder_a84f9f117d1d105c90ef00a689c3fa080}} 
-\index{Encoder@{Encoder}!submit@{submit}}
-\index{submit@{submit}!Encoder@{Encoder}}
-\subsubsection{submit}
-{\footnotesize\ttfamily void Encoder\+::submit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
+Definition at line 116 of file Encoder.\+cpp.
 
-It loads the output to decoder and closes coder dialog. 
-
-\mbox{\label{class_encoder_a3a727a4957a8d77b39a0a3c3519f4245}} 
-\index{Encoder@{Encoder}!toggle\+Tree@{toggle\+Tree}}
-\index{toggle\+Tree@{toggle\+Tree}!Encoder@{Encoder}}
-\subsubsection{toggle\+Tree}
-{\footnotesize\ttfamily void Encoder\+::toggle\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-It performs change action when tree configuration is changed. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoder_adc879a1000d99660b36d7369e00f4f06_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_encoder_a8cd18343fe80007dba58b4d716227544}} 
+\mbox{\Hypertarget{class_encoder_a8cd18343fe80007dba58b4d716227544}\label{class_encoder_a8cd18343fe80007dba58b4d716227544}} 
 \index{Encoder@{Encoder}!bitstream@{bitstream}}
 \index{bitstream@{bitstream}!Encoder@{Encoder}}
-\subsubsection{bitstream}
-{\footnotesize\ttfamily \textbf{ File}$\ast$ Encoder\+::bitstream}
+\subsubsection{\texorpdfstring{bitstream}{bitstream}}
+{\footnotesize\ttfamily \hyperlink{class_file}{File}$\ast$ Encoder\+::bitstream}
 
-output bit stream file object \mbox{\label{class_encoder_aa0549b597ab8fda7191f2e659a56044b}} 
+output bit stream file object 
+
+Definition at line 35 of file Encoder.\+h.
+
+\mbox{\Hypertarget{class_encoder_aa0549b597ab8fda7191f2e659a56044b}\label{class_encoder_aa0549b597ab8fda7191f2e659a56044b}} 
 \index{Encoder@{Encoder}!fs@{fs}}
 \index{fs@{fs}!Encoder@{Encoder}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int Encoder\+::fs}
 
-signal sampling frequency [Hz] \mbox{\label{class_encoder_aa851a11113fd12d5cfa04a4a72013157}} 
+signal sampling frequency \mbox{[}Hz\mbox{]} 
+
+Definition at line 32 of file Encoder.\+h.
+
+\mbox{\Hypertarget{class_encoder_aa851a11113fd12d5cfa04a4a72013157}\label{class_encoder_aa851a11113fd12d5cfa04a4a72013157}} 
 \index{Encoder@{Encoder}!input@{input}}
 \index{input@{input}!Encoder@{Encoder}}
-\subsubsection{input}
-{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ Encoder\+::input}
+\subsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily \hyperlink{class_w_a_v_file}{W\+A\+V\+File}$\ast$ Encoder\+::input}
 
-input file object \mbox{\label{class_encoder_ac4d4774d75750c1fdddd3740b7f30985}} 
+input file object 
+
+Definition at line 33 of file Encoder.\+h.
+
+\mbox{\Hypertarget{class_encoder_ac4d4774d75750c1fdddd3740b7f30985}\label{class_encoder_ac4d4774d75750c1fdddd3740b7f30985}} 
 \index{Encoder@{Encoder}!output@{output}}
 \index{output@{output}!Encoder@{Encoder}}
-\subsubsection{output}
-{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ Encoder\+::output}
+\subsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily \hyperlink{class_w_a_v_file}{W\+A\+V\+File}$\ast$ Encoder\+::output}
 
-output file object \mbox{\label{class_encoder_a63cddbd0a9a17e862351a14f6badf335}} 
-\index{Encoder@{Encoder}!tree@{tree}}
-\index{tree@{tree}!Encoder@{Encoder}}
-\subsubsection{tree}
-{\footnotesize\ttfamily int Encoder\+::tree\hspace{0.3cm}{\ttfamily [private]}}
+output file object 
 
-S\+AC encoder parameter \mbox{\label{class_encoder_a7d3a28662bdddfc72e1180fd72f7506f}} 
-\index{Encoder@{Encoder}!ui@{ui}}
-\index{ui@{ui}!Encoder@{Encoder}}
-\subsubsection{ui}
-{\footnotesize\ttfamily Ui\+::\+Encoder$\ast$ Encoder\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+Definition at line 34 of file Encoder.\+h.
 
-user interface object 
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Encoder.\+h}\item 
-src/interface/\textbf{ Encoder.\+cpp}\end{DoxyCompactItemize}
+src/interface/Encoder.\+h\item 
+src/interface/Encoder.\+cpp\end{DoxyCompactItemize}

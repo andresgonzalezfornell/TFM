@@ -1,4 +1,4 @@
-\section{Reverb Class Reference}
+\hypertarget{class_reverb}{}\section{Reverb Class Reference}
 \label{class_reverb}\index{Reverb@{Reverb}}
 
 
@@ -9,16 +9,292 @@ Audio reverb effect.
 
 {\ttfamily \#include $<$Reverb.\+h$>$}
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_reverb_a765b925557df7e43bf5ed275fc6950d1}\label{class_reverb_a765b925557df7e43bf5ed275fc6950d1}} 
+\hyperlink{class_reverb_a765b925557df7e43bf5ed275fc6950d1}{Reverb} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_reverb}{Reverb} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_aba9f2e90b04114cc9525b3b4cabfecf9}{apply} (float $\ast$$\ast$input, float $\ast$$\ast$output, int samples, std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$ channels)
+\begin{DoxyCompactList}\small\item\em It applies reverb effect. \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_acbac17709b0977fc0fabdb7bc2aa2f50}{schroederfilter} (float $\ast$input, float $\ast$output, int samples, bool addition, float gain, float g, int delay)
+\begin{DoxyCompactList}\small\item\em It applies a shcroeder allpass filter, according to the transfer function H(z) = gain $\ast$ (g + z$^\wedge$-\/delay) / (1 + g·z$^\wedge$-\/delay). \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_ab166279827798af21a9f19756d860be1}{schroederdiffusionfilter} (float $\ast$input, float $\ast$output, int samples, bool addition, float gain, float g, int delay)
+\begin{DoxyCompactList}\small\item\em It applies a schroeder diffusion allpass filter, according to the transfer function H(z) = gain $\ast$ (-\/g + z$^\wedge$-\/delay) / (1 -\/ g·z$^\wedge$-\/delay). \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_aabbbdbef25b5d4518e5611c608c37b0a}{feedforwardfilter} (float $\ast$input, float $\ast$output, int samples, bool addition, float gain, float original, int delay)
+\begin{DoxyCompactList}\small\item\em It applies a feed forward comb filter, according to the transfer function H(z) = gain $\ast$ (g + z$^\wedge$-\/delay). \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_a43184fe4ef185da6d7d6049c3866c294}{lowpassfeedbackfilter} (float $\ast$input, float $\ast$output, int samples, bool addition, float gain, float rs, float d, int delay)
+\begin{DoxyCompactList}\small\item\em It applies a Schroeder-\/\+Moorer low pass feedback comb filter, according to the transfer function H(z) = gain / (1 -\/ f · (1-\/d) / (1-\/d·z$^\wedge$-\/1) · z$\ast$-\/N). \end{DoxyCompactList}\item 
+void \hyperlink{class_reverb_ab6dd1add7689fcf4ef2d2958e0a5acc4}{combfilter} (float $\ast$input, float $\ast$output, int samples, bool addition, float $\ast$a, float $\ast$b, int order, float a\+\_\+delay, float b\+\_\+delay, int delay)
+\begin{DoxyCompactList}\small\item\em It applies a comb filter, according to the transfer function H(z) = (b\mbox{[}0\mbox{]} + b\mbox{[}1\mbox{]}·z$^\wedge$-\/1 + ... + b\mbox{[}order\mbox{]}·z$^\wedge$-\/order + b\+\_\+delay·z$^\wedge$-\/delay) / (a\mbox{[}0\mbox{]} + a\mbox{[}1\mbox{]}·z$^\wedge$-\/1 + ... + a\mbox{[}order\mbox{]}·z$^\wedge$-\/order + a\+\_\+delay·z$^\wedge$-\/delay). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio reverb effect. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Definition at line 12 of file Reverb.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_reverb_aba9f2e90b04114cc9525b3b4cabfecf9}\label{class_reverb_aba9f2e90b04114cc9525b3b4cabfecf9}} 
+\index{Reverb@{Reverb}!apply@{apply}}
+\index{apply@{apply}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Reverb\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{int}]{samples,  }\item[{std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$}]{channels }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em channels} & vector of channel types \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Reverb.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_aba9f2e90b04114cc9525b3b4cabfecf9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_aba9f2e90b04114cc9525b3b4cabfecf9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reverb_ab6dd1add7689fcf4ef2d2958e0a5acc4}\label{class_reverb_ab6dd1add7689fcf4ef2d2958e0a5acc4}} 
+\index{Reverb@{Reverb}!combfilter@{combfilter}}
+\index{combfilter@{combfilter}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{combfilter()}{combfilter()}}
+{\footnotesize\ttfamily void Reverb\+::combfilter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{bool}]{addition,  }\item[{float $\ast$}]{a,  }\item[{float $\ast$}]{b,  }\item[{int}]{order,  }\item[{float}]{a\+\_\+delay,  }\item[{float}]{b\+\_\+delay,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em addition} & true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples) \\
+\hline
+{\em a} & y coefficients of transfer function \\
+\hline
+{\em b} & x coefficients of transfer function \\
+\hline
+{\em order} & filter order (value of the highest exponent) without including delay term \\
+\hline
+{\em a\+\_\+delay} & y delay coefficients of transfer function \\
+\hline
+{\em b\+\_\+delay} & x delay coefficients of transfer function \\
+\hline
+{\em delay} & number of samples to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Reverb.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_ab6dd1add7689fcf4ef2d2958e0a5acc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reverb_aabbbdbef25b5d4518e5611c608c37b0a}\label{class_reverb_aabbbdbef25b5d4518e5611c608c37b0a}} 
+\index{Reverb@{Reverb}!feedforwardfilter@{feedforwardfilter}}
+\index{feedforwardfilter@{feedforwardfilter}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{feedforwardfilter()}{feedforwardfilter()}}
+{\footnotesize\ttfamily void Reverb\+::feedforwardfilter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{bool}]{addition,  }\item[{float}]{gain,  }\item[{float}]{original,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em addition} & true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples) \\
+\hline
+{\em gain} & function transfer gain \\
+\hline
+{\em original} & gain of the original signal \\
+\hline
+{\em delay} & number of samples to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file Reverb.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_reverb_aabbbdbef25b5d4518e5611c608c37b0a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_aabbbdbef25b5d4518e5611c608c37b0a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reverb_a43184fe4ef185da6d7d6049c3866c294}\label{class_reverb_a43184fe4ef185da6d7d6049c3866c294}} 
+\index{Reverb@{Reverb}!lowpassfeedbackfilter@{lowpassfeedbackfilter}}
+\index{lowpassfeedbackfilter@{lowpassfeedbackfilter}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{lowpassfeedbackfilter()}{lowpassfeedbackfilter()}}
+{\footnotesize\ttfamily void Reverb\+::lowpassfeedbackfilter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{bool}]{addition,  }\item[{float}]{gain,  }\item[{float}]{rs,  }\item[{float}]{d,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em addition} & true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples) \\
+\hline
+{\em gain} & function transfer gain \\
+\hline
+{\em rs} & feed forward comb filter gain \\
+\hline
+{\em d} & low pass filter gain \\
+\hline
+{\em delay} & number of samples to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file Reverb.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_a43184fe4ef185da6d7d6049c3866c294_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_a43184fe4ef185da6d7d6049c3866c294_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reverb_ab166279827798af21a9f19756d860be1}\label{class_reverb_ab166279827798af21a9f19756d860be1}} 
+\index{Reverb@{Reverb}!schroederdiffusionfilter@{schroederdiffusionfilter}}
+\index{schroederdiffusionfilter@{schroederdiffusionfilter}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{schroederdiffusionfilter()}{schroederdiffusionfilter()}}
+{\footnotesize\ttfamily void Reverb\+::schroederdiffusionfilter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{bool}]{addition,  }\item[{float}]{gain,  }\item[{float}]{g,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em addition} & true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples) \\
+\hline
+{\em gain} & function transfer gain \\
+\hline
+{\em g} & all pass filter gain \\
+\hline
+{\em delay} & number of samples to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file Reverb.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_ab166279827798af21a9f19756d860be1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_ab166279827798af21a9f19756d860be1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reverb_acbac17709b0977fc0fabdb7bc2aa2f50}\label{class_reverb_acbac17709b0977fc0fabdb7bc2aa2f50}} 
+\index{Reverb@{Reverb}!schroederfilter@{schroederfilter}}
+\index{schroederfilter@{schroederfilter}!Reverb@{Reverb}}
+\subsubsection{\texorpdfstring{schroederfilter()}{schroederfilter()}}
+{\footnotesize\ttfamily void Reverb\+::schroederfilter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{bool}]{addition,  }\item[{float}]{gain,  }\item[{float}]{g,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em addition} & true if the filter is in serie (filter output is summed to the existing output samples) and false if the filter is in cascade (filter output overwrites the existing output samples) \\
+\hline
+{\em gain} & function transfer gain \\
+\hline
+{\em g} & all pass filter gain \\
+\hline
+{\em delay} & number of samples to delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file Reverb.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_reverb_acbac17709b0977fc0fabdb7bc2aa2f50_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reverb_acbac17709b0977fc0fabdb7bc2aa2f50_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/effects/\textbf{ Reverb.\+h}\end{DoxyCompactItemize}
+src/effects/Reverb.\+h\item 
+src/effects/Reverb.\+cpp\end{DoxyCompactItemize}

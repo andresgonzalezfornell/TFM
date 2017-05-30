@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TFM: AudioStream Class Reference</title>
+<title>SAC Effects: AudioStream Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="TFM - Banner.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TFM
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">SAC Effects
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
  </tr>
@@ -84,7 +85,6 @@ $(document).ready(function(){initNavTree('class_audio_stream.html','');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_audio_stream-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AudioStream Class Reference</div>  </div>
@@ -95,6 +95,14 @@ $(document).ready(function(){initNavTree('class_audio_stream.html','');});
  <a href="class_audio_stream.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_audio_object_8h_source.html">AudioObject.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for AudioStream:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_audio_stream__coll__graph.png" border="0" usemap="#_audio_stream_coll__map" alt="Collaboration graph"/></div>
+<map name="_audio_stream_coll__map" id="_audio_stream_coll__map">
+<area shape="rect" id="node2" href="struct_audio_stream_1_1_time_slot.html" title="It indicates time slot of the available signal. " alt="" coords="5,5,164,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -104,23 +112,26 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab2e106f7e2f70f0cfb1d7b171da71f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab2e106f7e2f70f0cfb1d7b171da71f16">AudioStream</a> ()</td></tr>
-<tr class="separator:ab2e106f7e2f70f0cfb1d7b171da71f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea68e011ea0d4cf15a527492155a77c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#aea68e011ea0d4cf15a527492155a77c1">AudioStream</a> (int <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a>)</td></tr>
+<tr class="memitem:aea68e011ea0d4cf15a527492155a77c1"><td class="memItemLeft" align="right" valign="top"><a id="aea68e011ea0d4cf15a527492155a77c1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AudioStream</b> (int <a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a>)</td></tr>
 <tr class="separator:aea68e011ea0d4cf15a527492155a77c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a480e5d3468bfe9357dd6c40649b1e449"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449">~AudioStream</a> ()</td></tr>
-<tr class="separator:a480e5d3468bfe9357dd6c40649b1e449"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83">push</a> (float sample)</td></tr>
+<tr class="memitem:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memItemLeft" align="right" valign="top"><a id="ab2ceba569c33b8b5babc7294a2a42a83"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>push</b> (float sample)</td></tr>
 <tr class="separator:ab2ceba569c33b8b5babc7294a2a42a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab425433b7209483b2fb6c347a78483b5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5">pop</a> ()</td></tr>
+<tr class="memitem:ab425433b7209483b2fb6c347a78483b5"><td class="memItemLeft" align="right" valign="top"><a id="ab425433b7209483b2fb6c347a78483b5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
 <tr class="separator:ab425433b7209483b2fb6c347a78483b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae540add8cdf33421e2e3f9014cfa8c52"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ae540add8cdf33421e2e3f9014cfa8c52">getSamples</a> ()</td></tr>
+<tr class="memitem:ae540add8cdf33421e2e3f9014cfa8c52"><td class="memItemLeft" align="right" valign="top"><a id="ae540add8cdf33421e2e3f9014cfa8c52"></a>
+std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSamples</b> ()</td></tr>
 <tr class="separator:ae540add8cdf33421e2e3f9014cfa8c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ac03049345307942841bdfcdb75a7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a5ac03049345307942841bdfcdb75a7e8">setSample</a> (int time, float sample)</td></tr>
+<tr class="memitem:a5ac03049345307942841bdfcdb75a7e8"><td class="memItemLeft" align="right" valign="top"><a id="a5ac03049345307942841bdfcdb75a7e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSample</b> (int time, float sample)</td></tr>
 <tr class="separator:a5ac03049345307942841bdfcdb75a7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34fa6ead0ccde4cbe9db7435b3c1fe7a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#a34fa6ead0ccde4cbe9db7435b3c1fe7a">getSample</a> (int time)</td></tr>
+<tr class="memitem:a34fa6ead0ccde4cbe9db7435b3c1fe7a"><td class="memItemLeft" align="right" valign="top"><a id="a34fa6ead0ccde4cbe9db7435b3c1fe7a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>getSample</b> (int time)</td></tr>
 <tr class="separator:a34fa6ead0ccde4cbe9db7435b3c1fe7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae">isAvailable</a> (int time)</td></tr>
+<tr class="memitem:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="memItemLeft" align="right" valign="top"><a id="ac129ca09a55aaeb905bb73ff9440b8ae"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAvailable</b> (int time)</td></tr>
 <tr class="separator:ac129ca09a55aaeb905bb73ff9440b8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -129,186 +140,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aeee7107c25a1ab45b8076e422864a518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace8ac0e7fbaa176c74804b7133c03f45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45">fs</a></td></tr>
 <tr class="separator:ace8ac0e7fbaa176c74804b7133c03f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ac64fd676a85ecf3809ba31f16084596e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_audio_stream.html#ac64fd676a85ecf3809ba31f16084596e">samples</a></td></tr>
-<tr class="separator:ac64fd676a85ecf3809ba31f16084596e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Audio objects for the SAOC interface. </p>
-<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab2e106f7e2f70f0cfb1d7b171da71f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2e106f7e2f70f0cfb1d7b171da71f16">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[1/2]</span></h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AudioStream::AudioStream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aea68e011ea0d4cf15a527492155a77c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea68e011ea0d4cf15a527492155a77c1">&#9670;&nbsp;</a></span>AudioStream() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AudioStream::AudioStream </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a480e5d3468bfe9357dd6c40649b1e449"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a480e5d3468bfe9357dd6c40649b1e449">&#9670;&nbsp;</a></span>~AudioStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AudioStream::~AudioStream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a34fa6ead0ccde4cbe9db7435b3c1fe7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34fa6ead0ccde4cbe9db7435b3c1fe7a">&#9670;&nbsp;</a></span>getSample()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AudioStream::getSample </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae540add8cdf33421e2e3f9014cfa8c52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae540add8cdf33421e2e3f9014cfa8c52">&#9670;&nbsp;</a></span>getSamples()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;float&gt; AudioStream::getSamples </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac129ca09a55aaeb905bb73ff9440b8ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac129ca09a55aaeb905bb73ff9440b8ae">&#9670;&nbsp;</a></span>isAvailable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AudioStream::isAvailable </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab425433b7209483b2fb6c347a78483b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab425433b7209483b2fb6c347a78483b5">&#9670;&nbsp;</a></span>pop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AudioStream::pop </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab2ceba569c33b8b5babc7294a2a42a83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ceba569c33b8b5babc7294a2a42a83">&#9670;&nbsp;</a></span>push()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::push </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sample</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ac03049345307942841bdfcdb75a7e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ac03049345307942841bdfcdb75a7e8">&#9670;&nbsp;</a></span>setSample()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AudioStream::setSample </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sample</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="_audio_object_8h_source.html#l00014">14</a> of file <a class="el" href="_audio_object_8h_source.html">AudioObject.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ace8ac0e7fbaa176c74804b7133c03f45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace8ac0e7fbaa176c74804b7133c03f45">&#9670;&nbsp;</a></span>fs</h2>
 
@@ -322,28 +159,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>signal sampling frequency [Hz] </p>
 
-</div>
-</div>
-<a id="ac64fd676a85ecf3809ba31f16084596e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64fd676a85ecf3809ba31f16084596e">&#9670;&nbsp;</a></span>samples</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;float&gt; AudioStream::samples</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>available data from the audio object </p>
+<p class="definition">Definition at line <a class="el" href="_audio_object_8h_source.html#l00024">24</a> of file <a class="el" href="_audio_object_8h_source.html">AudioObject.h</a>.</p>
 
 </div>
 </div>
@@ -359,6 +175,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>corresponding timestamp for the available data </p>
+
+<p class="definition">Definition at line <a class="el" href="_audio_object_8h_source.html#l00023">23</a> of file <a class="el" href="_audio_object_8h_source.html">AudioObject.h</a>.</p>
 
 </div>
 </div>

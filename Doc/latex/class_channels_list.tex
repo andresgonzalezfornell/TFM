@@ -1,4 +1,4 @@
-\section{Channels\+List Class Reference}
+\hypertarget{class_channels_list}{}\section{Channels\+List Class Reference}
 \label{class_channels_list}\index{Channels\+List@{Channels\+List}}
 
 
@@ -9,96 +9,75 @@ Channels list class. It shows information about channels signals.
 
 {\ttfamily \#include $<$Channels\+List.\+h$>$}
 
-Inheritance diagram for Channels\+List\+:\begin{figure}[H]
+
+
+Inheritance diagram for Channels\+List\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_channels_list}
+\includegraphics[width=154pt]{class_channels_list__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Channels\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_channels_list__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ namechanged} (Q\+String, int)
+\mbox{\Hypertarget{class_channels_list_a78d7e060309b406ad27f4abf148e76d0}\label{class_channels_list_a78d7e060309b406ad27f4abf148e76d0}} 
+void {\bfseries namechanged} (Q\+String, int)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Channels\+List} (Q\+Widget $\ast$\textbf{ framework}, int number, bool \textbf{ showdevices})
-\begin{DoxyCompactList}\small\item\em \doxyref{Channels\+List}{p.}{class_channels_list} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Channels\+List} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Channels\+List}{p.}{class_channels_list} destructor. \end{DoxyCompactList}\item 
-\textbf{ Channel} $\ast$ \textbf{ get\+Channel} (int index)
+\hyperlink{class_channels_list_a2be2b5b850d9841fc90208afc7c6f112}{Channels\+List} (Q\+Widget $\ast$framework, int number, bool showdevices)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_channels_list}{Channels\+List} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_channels_list_a264a8cdd2dc552462b1de06ec02729ec}\label{class_channels_list_a264a8cdd2dc552462b1de06ec02729ec}} 
+\hyperlink{class_channels_list_a264a8cdd2dc552462b1de06ec02729ec}{$\sim$\+Channels\+List} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_channels_list}{Channels\+List} destructor. \end{DoxyCompactList}\item 
+\hyperlink{class_channel}{Channel} $\ast$ \hyperlink{class_channels_list_a794574bee033fd0fa2bee54c615576f9}{get\+Channel} (int index)
 \begin{DoxyCompactList}\small\item\em It gets a channel. \end{DoxyCompactList}\item 
-void \textbf{ delete\+Channel} (int index)
+void \hyperlink{class_channels_list_a72dfd281e40fd29624354254ad3fa791}{delete\+Channel} (int index)
 \begin{DoxyCompactList}\small\item\em It deletes a channel. \end{DoxyCompactList}\item 
-int \textbf{ get\+Size} ()
+int \hyperlink{class_channels_list_aeaeb08c6bf8aa1a48b5cc52c56505408}{get\+Size} ()
 \begin{DoxyCompactList}\small\item\em It gets the number of channels. \end{DoxyCompactList}\item 
-void \textbf{ set\+Size} (int size)
+void \hyperlink{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d}{set\+Size} (int size)
 \begin{DoxyCompactList}\small\item\em It sets a number of channels up. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::string $>$ \textbf{ get\+Names} ()
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668}{get\+Names} ()
 \begin{DoxyCompactList}\small\item\em It gets all channels names. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int \textbf{ fs}
+static int \hyperlink{class_channels_list_ab5b3fd699a6c96a59d237ff4e23fa3fa}{fs}
 \item 
-static int \textbf{ samplesize}
-\end{DoxyCompactItemize}
-\subsection*{Private Slots}
-\begin{Indent}\textbf{ Channels interface slots}\par
-{\em User interface control functions of channels list. }\begin{DoxyCompactItemize}
-\item 
-void \textbf{ set\+Label} (Q\+String label)
-\begin{DoxyCompactList}\small\item\em Slot for setting the channel label. \end{DoxyCompactList}\item 
-void \textbf{ set\+Label} (Q\+String label, int index)
-\begin{DoxyCompactList}\small\item\em Slot for setting the channel label. \end{DoxyCompactList}\item 
-void \textbf{ set\+Volume} (int volume)
-\begin{DoxyCompactList}\small\item\em Slots for setting the channel level. \end{DoxyCompactList}\item 
-void \textbf{ mute} (bool state)
-\begin{DoxyCompactList}\small\item\em Slots when muted checkbox has been changed. \end{DoxyCompactList}\item 
-void \textbf{ bypass} (bool state)
-\begin{DoxyCompactList}\small\item\em Slots when muted checkbox has been changed. \end{DoxyCompactList}\item 
-void \textbf{ set\+Device} (int device)
-\begin{DoxyCompactList}\small\item\em Slots for setting an audio output device. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\end{Indent}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-int \textbf{ get\+Index} (Q\+Object $\ast$element)
-\begin{DoxyCompactList}\small\item\em It gets the channel index of a user interface element. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ \textbf{ Channel} $\ast$ $>$ \textbf{ channels}
-\item 
-std\+::string \textbf{ prefix}
-\item 
-bool \textbf{ showdevices}
-\item 
-Q\+Widget $\ast$ \textbf{ framework}
-\item 
-Q\+Layout $\ast$ \textbf{ layout}
+static int \hyperlink{class_channels_list_ac9208b24e03fac37e06e9664ed26b13b}{samplesize}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Channels list class. It shows information about channels signals. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 69 of file Channels\+List.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_channels_list_a2be2b5b850d9841fc90208afc7c6f112}} 
+\mbox{\Hypertarget{class_channels_list_a2be2b5b850d9841fc90208afc7c6f112}\label{class_channels_list_a2be2b5b850d9841fc90208afc7c6f112}} 
 \index{Channels\+List@{Channels\+List}!Channels\+List@{Channels\+List}}
 \index{Channels\+List@{Channels\+List}!Channels\+List@{Channels\+List}}
-\subsubsection{Channels\+List()}
+\subsubsection{\texorpdfstring{Channels\+List()}{ChannelsList()}}
 {\footnotesize\ttfamily Channels\+List\+::\+Channels\+List (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework,  }\item[{int}]{number,  }\item[{bool}]{showdevices }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Channels\+List}{p.}{class_channels_list} constructor. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -109,58 +88,57 @@ Andrés González Fornell
 {\em showdevices} & true to create device selector to send audio to the system audio output devices \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channels_list_a264a8cdd2dc552462b1de06ec02729ec}} 
-\index{Channels\+List@{Channels\+List}!````~Channels\+List@{$\sim$\+Channels\+List}}
-\index{````~Channels\+List@{$\sim$\+Channels\+List}!Channels\+List@{Channels\+List}}
-\subsubsection{$\sim$\+Channels\+List()}
-{\footnotesize\ttfamily Channels\+List\+::$\sim$\+Channels\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 10 of file Channels\+List.\+cpp.
 
-\doxyref{Channels\+List}{p.}{class_channels_list} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a2be2b5b850d9841fc90208afc7c6f112_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_channels_list_a95eca3eefbcf94fa4c7a3d3af3941319}} 
-\index{Channels\+List@{Channels\+List}!bypass@{bypass}}
-\index{bypass@{bypass}!Channels\+List@{Channels\+List}}
-\subsubsection{bypass}
-{\footnotesize\ttfamily void Channels\+List\+::bypass (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Slots when muted checkbox has been changed. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em state} & current checkbox state \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_channels_list_a72dfd281e40fd29624354254ad3fa791}} 
+\mbox{\Hypertarget{class_channels_list_a72dfd281e40fd29624354254ad3fa791}\label{class_channels_list_a72dfd281e40fd29624354254ad3fa791}} 
 \index{Channels\+List@{Channels\+List}!delete\+Channel@{delete\+Channel}}
 \index{delete\+Channel@{delete\+Channel}!Channels\+List@{Channels\+List}}
-\subsubsection{delete\+Channel()}
+\subsubsection{\texorpdfstring{delete\+Channel()}{deleteChannel()}}
 {\footnotesize\ttfamily void Channels\+List\+::delete\+Channel (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
-
-
-
-It deletes a channel. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em index} & channel index \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channels_list_a794574bee033fd0fa2bee54c615576f9}} 
+
+
+Definition at line 40 of file Channels\+List.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a72dfd281e40fd29624354254ad3fa791_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a72dfd281e40fd29624354254ad3fa791_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_channels_list_a794574bee033fd0fa2bee54c615576f9}\label{class_channels_list_a794574bee033fd0fa2bee54c615576f9}} 
 \index{Channels\+List@{Channels\+List}!get\+Channel@{get\+Channel}}
 \index{get\+Channel@{get\+Channel}!Channels\+List@{Channels\+List}}
-\subsubsection{get\+Channel()}
-{\footnotesize\ttfamily \textbf{ Channel} $\ast$ Channels\+List\+::get\+Channel (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
-
-
-
-It gets a channel. 
+\subsubsection{\texorpdfstring{get\+Channel()}{getChannel()}}
+{\footnotesize\ttfamily \hyperlink{class_channel}{Channel} $\ast$ Channels\+List\+::get\+Channel (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -170,197 +148,126 @@ It gets a channel.
 \begin{DoxyReturn}{Returns}
 channel pointer 
 \end{DoxyReturn}
-\mbox{\label{class_channels_list_a47e6b8432656134624e311f6a16da67d}} 
-\index{Channels\+List@{Channels\+List}!get\+Index@{get\+Index}}
-\index{get\+Index@{get\+Index}!Channels\+List@{Channels\+List}}
-\subsubsection{get\+Index()}
-{\footnotesize\ttfamily int Channels\+List\+::get\+Index (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
+Definition at line 32 of file Channels\+List.\+cpp.
 
-It gets the channel index of a user interface element. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em element} & user interface element \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-index 
-\end{DoxyReturn}
-\mbox{\label{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a794574bee033fd0fa2bee54c615576f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668}\label{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668}} 
 \index{Channels\+List@{Channels\+List}!get\+Names@{get\+Names}}
 \index{get\+Names@{get\+Names}!Channels\+List@{Channels\+List}}
-\subsubsection{get\+Names()}
+\subsubsection{\texorpdfstring{get\+Names()}{getNames()}}
 {\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Channels\+List\+::get\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets all channels names. 
 
 \begin{DoxyReturn}{Returns}
 list of channels names 
 \end{DoxyReturn}
-\mbox{\label{class_channels_list_aeaeb08c6bf8aa1a48b5cc52c56505408}} 
+
+
+Definition at line 100 of file Channels\+List.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_a17482d918a0dbbd4bf0fc2a22ee67668_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_channels_list_aeaeb08c6bf8aa1a48b5cc52c56505408}\label{class_channels_list_aeaeb08c6bf8aa1a48b5cc52c56505408}} 
 \index{Channels\+List@{Channels\+List}!get\+Size@{get\+Size}}
 \index{get\+Size@{get\+Size}!Channels\+List@{Channels\+List}}
-\subsubsection{get\+Size()}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
 {\footnotesize\ttfamily int Channels\+List\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets the number of channels. 
 
 \begin{DoxyReturn}{Returns}
 number of channels 
 \end{DoxyReturn}
-\mbox{\label{class_channels_list_adeed14dbeece6de23be83bfb6e7ab680}} 
-\index{Channels\+List@{Channels\+List}!mute@{mute}}
-\index{mute@{mute}!Channels\+List@{Channels\+List}}
-\subsubsection{mute}
-{\footnotesize\ttfamily void Channels\+List\+::mute (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
+Definition at line 53 of file Channels\+List.\+cpp.
 
-Slots when muted checkbox has been changed. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em state} & current checkbox state \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_channels_list_a78d7e060309b406ad27f4abf148e76d0}} 
-\index{Channels\+List@{Channels\+List}!namechanged@{namechanged}}
-\index{namechanged@{namechanged}!Channels\+List@{Channels\+List}}
-\subsubsection{namechanged}
-{\footnotesize\ttfamily void Channels\+List\+::namechanged (\begin{DoxyParamCaption}\item[{Q\+String}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
-
-\mbox{\label{class_channels_list_ae1edf65c94deca2a3911d11a9b96cd8e}} 
-\index{Channels\+List@{Channels\+List}!set\+Device@{set\+Device}}
-\index{set\+Device@{set\+Device}!Channels\+List@{Channels\+List}}
-\subsubsection{set\+Device}
-{\footnotesize\ttfamily void Channels\+List\+::set\+Device (\begin{DoxyParamCaption}\item[{int}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Slots for setting an audio output device. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em device} & device index \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_channels_list_adc787dbb51d4e2d2c733d53f4ee293fa}} 
-\index{Channels\+List@{Channels\+List}!set\+Label@{set\+Label}}
-\index{set\+Label@{set\+Label}!Channels\+List@{Channels\+List}}
-\subsubsection{set\+Label\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Channels\+List\+::set\+Label (\begin{DoxyParamCaption}\item[{Q\+String}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Slot for setting the channel label. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em label} & \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_channels_list_ad1f939c83b4444269d130dcb5569133f}} 
-\index{Channels\+List@{Channels\+List}!set\+Label@{set\+Label}}
-\index{set\+Label@{set\+Label}!Channels\+List@{Channels\+List}}
-\subsubsection{set\+Label\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Channels\+List\+::set\+Label (\begin{DoxyParamCaption}\item[{Q\+String}]{label,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Slot for setting the channel label. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em label} & \\
-\hline
-{\em index} & channel index \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_aeaeb08c6bf8aa1a48b5cc52c56505408_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d}\label{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d}} 
 \index{Channels\+List@{Channels\+List}!set\+Size@{set\+Size}}
 \index{set\+Size@{set\+Size}!Channels\+List@{Channels\+List}}
-\subsubsection{set\+Size()}
+\subsubsection{\texorpdfstring{set\+Size()}{setSize()}}
 {\footnotesize\ttfamily void Channels\+List\+::set\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
-
-
-
-It sets a number of channels up. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em size} & number of channels \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channels_list_adbc31fe3486c8a6aa3302a1c226ca60a}} 
-\index{Channels\+List@{Channels\+List}!set\+Volume@{set\+Volume}}
-\index{set\+Volume@{set\+Volume}!Channels\+List@{Channels\+List}}
-\subsubsection{set\+Volume}
-{\footnotesize\ttfamily void Channels\+List\+::set\+Volume (\begin{DoxyParamCaption}\item[{int}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
+Definition at line 61 of file Channels\+List.\+cpp.
 
-Slots for setting the channel level. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em volume} & integer number from 0 to 100 \\
-\hline
-\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_channels_list_ac059e3c89763f50705ce1e2633ee3d3d_icgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_channels_list_aada1aa2e93c00e98776ca02f4ba37807}} 
-\index{Channels\+List@{Channels\+List}!channels@{channels}}
-\index{channels@{channels}!Channels\+List@{Channels\+List}}
-\subsubsection{channels}
-{\footnotesize\ttfamily std\+::vector$<$\textbf{ Channel} $\ast$$>$ Channels\+List\+::channels\hspace{0.3cm}{\ttfamily [private]}}
-
-list of channels \mbox{\label{class_channels_list_a95ce83d3108c23dacd899ff33e43e6f5}} 
-\index{Channels\+List@{Channels\+List}!framework@{framework}}
-\index{framework@{framework}!Channels\+List@{Channels\+List}}
-\subsubsection{framework}
-{\footnotesize\ttfamily Q\+Widget$\ast$ Channels\+List\+::framework\hspace{0.3cm}{\ttfamily [private]}}
-
-user interface framework of channels list \mbox{\label{class_channels_list_ab5b3fd699a6c96a59d237ff4e23fa3fa}} 
+\mbox{\Hypertarget{class_channels_list_ab5b3fd699a6c96a59d237ff4e23fa3fa}\label{class_channels_list_ab5b3fd699a6c96a59d237ff4e23fa3fa}} 
 \index{Channels\+List@{Channels\+List}!fs@{fs}}
 \index{fs@{fs}!Channels\+List@{Channels\+List}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int Channels\+List\+::fs\hspace{0.3cm}{\ttfamily [static]}}
 
-signal sampling frequency \mbox{\label{class_channels_list_adeb9c603ac2216dd014b723a326f0c62}} 
-\index{Channels\+List@{Channels\+List}!layout@{layout}}
-\index{layout@{layout}!Channels\+List@{Channels\+List}}
-\subsubsection{layout}
-{\footnotesize\ttfamily Q\+Layout$\ast$ Channels\+List\+::layout\hspace{0.3cm}{\ttfamily [private]}}
+signal sampling frequency 
 
-user interface layout of channels list \mbox{\label{class_channels_list_a452e6090d13b327758ae0e3992ed620c}} 
-\index{Channels\+List@{Channels\+List}!prefix@{prefix}}
-\index{prefix@{prefix}!Channels\+List@{Channels\+List}}
-\subsubsection{prefix}
-{\footnotesize\ttfamily std\+::string Channels\+List\+::prefix\hspace{0.3cm}{\ttfamily [private]}}
+Definition at line 72 of file Channels\+List.\+h.
 
-user interface prefix \mbox{\label{class_channels_list_ac9208b24e03fac37e06e9664ed26b13b}} 
+\mbox{\Hypertarget{class_channels_list_ac9208b24e03fac37e06e9664ed26b13b}\label{class_channels_list_ac9208b24e03fac37e06e9664ed26b13b}} 
 \index{Channels\+List@{Channels\+List}!samplesize@{samplesize}}
 \index{samplesize@{samplesize}!Channels\+List@{Channels\+List}}
-\subsubsection{samplesize}
+\subsubsection{\texorpdfstring{samplesize}{samplesize}}
 {\footnotesize\ttfamily int Channels\+List\+::samplesize\hspace{0.3cm}{\ttfamily [static]}}
 
-signal sample size \mbox{\label{class_channels_list_ac5467a8384f559129cc71c31a6c95972}} 
-\index{Channels\+List@{Channels\+List}!showdevices@{showdevices}}
-\index{showdevices@{showdevices}!Channels\+List@{Channels\+List}}
-\subsubsection{showdevices}
-{\footnotesize\ttfamily bool Channels\+List\+::showdevices\hspace{0.3cm}{\ttfamily [private]}}
+signal sample size 
 
-true to show audio output device selector (in case of sending channels to speakers or other audio output system devices) 
+Definition at line 73 of file Channels\+List.\+h.
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Channels\+List.\+h}\item 
-src/interface/\textbf{ Channels\+List.\+cpp}\item 
-src/interface/\textbf{ S\+A\+C\+Effects.\+cpp}\end{DoxyCompactItemize}
+src/interface/Channels\+List.\+h\item 
+src/interface/Channels\+List.\+cpp\item 
+src/interface/S\+A\+C\+Effects.\+cpp\end{DoxyCompactItemize}

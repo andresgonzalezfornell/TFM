@@ -14,12 +14,10 @@ var class_channel =
     [ "deviceselector", "class_channel.html#a9dcb50dc41866fbe60424553f1b910fa", null ],
     [ "groupbox", "class_channel.html#a99287738754d9e20c0ca639d6d26f28c", null ],
     [ "index", "class_channel.html#a992b8f195f395a64b4e966886bb41f00", null ],
-    [ "isoutput", "class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b", null ],
     [ "label", "class_channel.html#a66a7e30d0b8c6ee9c0b0d537b59bd695", null ],
     [ "mutecheckbox", "class_channel.html#a0e7f90da49f291a7bac498e11e886fbd", null ],
     [ "muted", "class_channel.html#ada7e3a050c346ad283ad302745f03f3c", null ],
     [ "name", "class_channel.html#ae080e1afd52f3b70e04c62fea46447aa", null ],
-    [ "prefix", "class_channel.html#ac13acc069e61428aca057f9c84bc7338", null ],
     [ "volume", "class_channel.html#aa8977e4605932b2201b03ebf3aa14ffd", null ],
     [ "volumeslider", "class_channel.html#acbcbfb33558a69224daa176372eb8be3", null ]
 ];

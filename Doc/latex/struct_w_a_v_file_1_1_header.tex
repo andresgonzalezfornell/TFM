@@ -1,4 +1,4 @@
-\section{W\+A\+V\+File\+:\+:Header Struct Reference}
+\hypertarget{struct_w_a_v_file_1_1_header}{}\section{W\+A\+V\+File\+:\+:Header Struct Reference}
 \label{struct_w_a_v_file_1_1_header}\index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
 
 
@@ -12,142 +12,190 @@ Audio file header struct.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ size} ()
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_aa725ada977810d575cad1a55b0030514}\label{struct_w_a_v_file_1_1_header_aa725ada977810d575cad1a55b0030514}} 
+int {\bfseries size} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{Indent}\textbf{ Chunk header}\par
 {\em It indicates the audio format (wave). }\begin{DoxyCompactItemize}
 \item 
-std\+::string \textbf{ chunk\+ID}
+std\+::string \hyperlink{struct_w_a_v_file_1_1_header_a796a84d05ba0ddeb837804dff90b730b}{chunk\+ID}
 \item 
-unsigned int \textbf{ chunksize}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_aee17e466b00a8b1d274be731f58d5fc0}{chunksize}
 \item 
-std\+::string \textbf{ format}
+std\+::string \hyperlink{struct_w_a_v_file_1_1_header_aa3a54e23ce34d6f9cba9e9853915e30c}{format}
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ Subshunk 1 header}\par
 {\em It describes the format of the sound information in the data sub-\/chunk. }\begin{DoxyCompactItemize}
 \item 
-std\+::string \textbf{ subchunk1\+ID}
+std\+::string \hyperlink{struct_w_a_v_file_1_1_header_ae52803bdbed54de73d48d2c0bf45099d}{subchunk1\+ID}
 \item 
-unsigned int \textbf{ subchunk1size}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_ae4e68dc34f2431942bbe6a5586a3ec55}{subchunk1size}
 \item 
-unsigned int \textbf{ audioformat}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_a6d16652e388f953230b0275301c87d2f}{audioformat}
 \item 
-unsigned int \textbf{ numchannels}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_a1636a3deffe4e61b7ab8e8b8168a7b18}{numchannels}
 \item 
-unsigned int \textbf{ samplerate}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_a271b0090295f7276b1d91683bc2a0f74}{samplerate}
 \item 
-unsigned int \textbf{ byterate}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_ac6e4c7534bfdd6e9cbd4b73079438e7f}{byterate}
 \item 
-unsigned int \textbf{ blockalign}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_a5c212f5f08c59f8487ccc3d066753892}{blockalign}
 \item 
-unsigned int \textbf{ bitspersample}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_ad731c9ced0b22903be0b24f6528ec061}{bitspersample}
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ Subshunk 2 header}\par
 {\em It indicates the size of the sound information. }\begin{DoxyCompactItemize}
 \item 
-std\+::string \textbf{ subchunk2\+ID}
+std\+::string \hyperlink{struct_w_a_v_file_1_1_header_a8623063c7d187207e3bca18930adacb2}{subchunk2\+ID}
 \item 
-unsigned int \textbf{ subchunk2size}
+unsigned int \hyperlink{struct_w_a_v_file_1_1_header_ad5ed192e56a65a330d7320769f49c5bc}{subchunk2size}
 \end{DoxyCompactItemize}
 \end{Indent}
 
 
 \subsection{Detailed Description}
-Audio file header struct. 
 
-\subsection{Member Function Documentation}
-\mbox{\label{struct_w_a_v_file_1_1_header_aa725ada977810d575cad1a55b0030514}} 
-\index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!size@{size}}
-\index{size@{size}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{size()}
-{\footnotesize\ttfamily int W\+A\+V\+File\+::\+Header\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Definition at line 62 of file File.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{struct_w_a_v_file_1_1_header_a6d16652e388f953230b0275301c87d2f}} 
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a6d16652e388f953230b0275301c87d2f}\label{struct_w_a_v_file_1_1_header_a6d16652e388f953230b0275301c87d2f}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!audioformat@{audioformat}}
 \index{audioformat@{audioformat}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{audioformat}
+\subsubsection{\texorpdfstring{audioformat}{audioformat}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::audioformat}
 
-P\+CM = 1 (linear quantization) values others than 1 indicate some form of compression \mbox{\label{struct_w_a_v_file_1_1_header_ad731c9ced0b22903be0b24f6528ec061}} 
+P\+CM = 1 (linear quantization) values others than 1 indicate some form of compression 
+
+Definition at line 79 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_ad731c9ced0b22903be0b24f6528ec061}\label{struct_w_a_v_file_1_1_header_ad731c9ced0b22903be0b24f6528ec061}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!bitspersample@{bitspersample}}
 \index{bitspersample@{bitspersample}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{bitspersample}
+\subsubsection{\texorpdfstring{bitspersample}{bitspersample}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::bitspersample}
 
-number of bits per sample \mbox{\label{struct_w_a_v_file_1_1_header_a5c212f5f08c59f8487ccc3d066753892}} 
+number of bits per sample 
+
+Definition at line 84 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a5c212f5f08c59f8487ccc3d066753892}\label{struct_w_a_v_file_1_1_header_a5c212f5f08c59f8487ccc3d066753892}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!blockalign@{blockalign}}
 \index{blockalign@{blockalign}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{blockalign}
+\subsubsection{\texorpdfstring{blockalign}{blockalign}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::blockalign}
 
-number of bytes for one sample including all channels (= numchannels $\ast$ bitspersample/8) \mbox{\label{struct_w_a_v_file_1_1_header_ac6e4c7534bfdd6e9cbd4b73079438e7f}} 
+number of bytes for one sample including all channels (= numchannels $\ast$ bitspersample/8) 
+
+Definition at line 83 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_ac6e4c7534bfdd6e9cbd4b73079438e7f}\label{struct_w_a_v_file_1_1_header_ac6e4c7534bfdd6e9cbd4b73079438e7f}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!byterate@{byterate}}
 \index{byterate@{byterate}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{byterate}
+\subsubsection{\texorpdfstring{byterate}{byterate}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::byterate}
 
-byte rate (= samplerate $\ast$ numchannels $\ast$ bitspersample/8) \mbox{\label{struct_w_a_v_file_1_1_header_a796a84d05ba0ddeb837804dff90b730b}} 
+byte rate (= samplerate $\ast$ numchannels $\ast$ bitspersample/8) 
+
+Definition at line 82 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a796a84d05ba0ddeb837804dff90b730b}\label{struct_w_a_v_file_1_1_header_a796a84d05ba0ddeb837804dff90b730b}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!chunk\+ID@{chunk\+ID}}
 \index{chunk\+ID@{chunk\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{chunk\+ID}
+\subsubsection{\texorpdfstring{chunk\+ID}{chunkID}}
 {\footnotesize\ttfamily std\+::string W\+A\+V\+File\+::\+Header\+::chunk\+ID}
 
-it contains the letters \char`\"{}\+R\+I\+F\+F\char`\"{} in A\+S\+C\+II form \mbox{\label{struct_w_a_v_file_1_1_header_aee17e466b00a8b1d274be731f58d5fc0}} 
+it contains the letters \char`\"{}\+R\+I\+F\+F\char`\"{} in A\+S\+C\+II form 
+
+Definition at line 68 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_aee17e466b00a8b1d274be731f58d5fc0}\label{struct_w_a_v_file_1_1_header_aee17e466b00a8b1d274be731f58d5fc0}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!chunksize@{chunksize}}
 \index{chunksize@{chunksize}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{chunksize}
+\subsubsection{\texorpdfstring{chunksize}{chunksize}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::chunksize}
 
-size of the entire file in bytes minus 8 bytes for the two fields not included in this count (Chunk\+ID and Chunk\+Size) \mbox{\label{struct_w_a_v_file_1_1_header_aa3a54e23ce34d6f9cba9e9853915e30c}} 
+size of the entire file in bytes minus 8 bytes for the two fields not included in this count (Chunk\+ID and Chunk\+Size) 
+
+Definition at line 69 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_aa3a54e23ce34d6f9cba9e9853915e30c}\label{struct_w_a_v_file_1_1_header_aa3a54e23ce34d6f9cba9e9853915e30c}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!format@{format}}
 \index{format@{format}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{format}
+\subsubsection{\texorpdfstring{format}{format}}
 {\footnotesize\ttfamily std\+::string W\+A\+V\+File\+::\+Header\+::format}
 
-it contains the letters \char`\"{}\+W\+A\+V\+E\char`\"{} \mbox{\label{struct_w_a_v_file_1_1_header_a1636a3deffe4e61b7ab8e8b8168a7b18}} 
+it contains the letters \char`\"{}\+W\+A\+V\+E\char`\"{} 
+
+Definition at line 70 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a1636a3deffe4e61b7ab8e8b8168a7b18}\label{struct_w_a_v_file_1_1_header_a1636a3deffe4e61b7ab8e8b8168a7b18}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!numchannels@{numchannels}}
 \index{numchannels@{numchannels}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{numchannels}
+\subsubsection{\texorpdfstring{numchannels}{numchannels}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::numchannels}
 
-number of channels \mbox{\label{struct_w_a_v_file_1_1_header_a271b0090295f7276b1d91683bc2a0f74}} 
+number of channels 
+
+Definition at line 80 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a271b0090295f7276b1d91683bc2a0f74}\label{struct_w_a_v_file_1_1_header_a271b0090295f7276b1d91683bc2a0f74}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!samplerate@{samplerate}}
 \index{samplerate@{samplerate}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{samplerate}
+\subsubsection{\texorpdfstring{samplerate}{samplerate}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::samplerate}
 
-sample rate \mbox{\label{struct_w_a_v_file_1_1_header_ae52803bdbed54de73d48d2c0bf45099d}} 
+sample rate 
+
+Definition at line 81 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_ae52803bdbed54de73d48d2c0bf45099d}\label{struct_w_a_v_file_1_1_header_ae52803bdbed54de73d48d2c0bf45099d}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk1\+ID@{subchunk1\+ID}}
 \index{subchunk1\+ID@{subchunk1\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{subchunk1\+ID}
+\subsubsection{\texorpdfstring{subchunk1\+ID}{subchunk1ID}}
 {\footnotesize\ttfamily std\+::string W\+A\+V\+File\+::\+Header\+::subchunk1\+ID}
 
-it contains the letters \char`\"{}fmt \char`\"{} \mbox{\label{struct_w_a_v_file_1_1_header_ae4e68dc34f2431942bbe6a5586a3ec55}} 
+it contains the letters \char`\"{}fmt \char`\"{} 
+
+Definition at line 77 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_ae4e68dc34f2431942bbe6a5586a3ec55}\label{struct_w_a_v_file_1_1_header_ae4e68dc34f2431942bbe6a5586a3ec55}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk1size@{subchunk1size}}
 \index{subchunk1size@{subchunk1size}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{subchunk1size}
+\subsubsection{\texorpdfstring{subchunk1size}{subchunk1size}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::subchunk1size}
 
-size of the rest of the subchunk (16 for P\+CM) \mbox{\label{struct_w_a_v_file_1_1_header_a8623063c7d187207e3bca18930adacb2}} 
+size of the rest of the subchunk (16 for P\+CM) 
+
+Definition at line 78 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_a8623063c7d187207e3bca18930adacb2}\label{struct_w_a_v_file_1_1_header_a8623063c7d187207e3bca18930adacb2}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk2\+ID@{subchunk2\+ID}}
 \index{subchunk2\+ID@{subchunk2\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{subchunk2\+ID}
+\subsubsection{\texorpdfstring{subchunk2\+ID}{subchunk2ID}}
 {\footnotesize\ttfamily std\+::string W\+A\+V\+File\+::\+Header\+::subchunk2\+ID}
 
-it contains the letters "data \mbox{\label{struct_w_a_v_file_1_1_header_ad5ed192e56a65a330d7320769f49c5bc}} 
+it contains the letters "data 
+
+Definition at line 91 of file File.\+h.
+
+\mbox{\Hypertarget{struct_w_a_v_file_1_1_header_ad5ed192e56a65a330d7320769f49c5bc}\label{struct_w_a_v_file_1_1_header_ad5ed192e56a65a330d7320769f49c5bc}} 
 \index{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk2size@{subchunk2size}}
 \index{subchunk2size@{subchunk2size}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}}
-\subsubsection{subchunk2size}
+\subsubsection{\texorpdfstring{subchunk2size}{subchunk2size}}
 {\footnotesize\ttfamily unsigned int W\+A\+V\+File\+::\+Header\+::subchunk2size}
 
 size of ther rest of the subchunk (it is the size of the data) 
 
+Definition at line 92 of file File.\+h.
+
+
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/process/\textbf{ File.\+h}\end{DoxyCompactItemize}
+src/process/File.\+h\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal',['normal',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa396ec163fe547f88b1907dbba219e522',1,'UpmixType']]]
+  ['progress',['progress',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217aaf0ab04c6e780051a63639d0df57eb20',1,'LogType']]]
 ];

@@ -113,7 +113,7 @@ std::vector<std::string> ChannelsList::getNames() {
 
 /**
  * @brief   Slot for setting the channel label.
- * @param   label
+ * @param   label           new label
  */
 void ChannelsList::setLabel(QString label) {
     QObject::sender()->blockSignals(true);
@@ -125,7 +125,7 @@ void ChannelsList::setLabel(QString label) {
 
 /**
  * @brief   Slot for setting the channel label.
- * @param   label
+ * @param   label           new label
  * @param   index           channel index
  */
 void ChannelsList::setLabel(QString label, int index) {
@@ -232,7 +232,7 @@ Channel::Channel(QLayout *framework, std::string prefix, int index,
     this->setLabel(this->name);
     this->mute(false);
     this->bypass(false);
-    this->setVolume(100);
+    this->setVolume(75);
     // Elements attributes
     int layout_height = 120; // height of channel configuration interface
     this->groupbox->setMinimumSize(200, 0);
@@ -292,7 +292,7 @@ void Channel::setIndex(int index) {
 
 /**
  * @brief   It sets a label to the channel name, i.e., group box title and label text.
- * @param   label
+ * @param   label           new label
  */
 void Channel::setLabel(std::string label) {
     this->name = label;
@@ -506,7 +506,7 @@ void ChannelsCharts::plot() {
             break;
         case 1:
             // Spectrum plot
-            std::vector<float> vector = std::vector<float>(samples + this->getTimeCursor(), samples + this->getTimeCursor() + this->getScope());;
+            std::vector<float> vector = std::vector<float>(samples + this->getTimeCursor(), samples + this->getTimeCursor() + this->getScope());
             AudioSignal signal = AudioSignal(vector, ChannelsList::fs);
             range[0][0] = 0;
             range[0][1] = (double) ChannelsList::fs / 2;

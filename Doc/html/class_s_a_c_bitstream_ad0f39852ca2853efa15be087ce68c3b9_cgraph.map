@@ -1,0 +1,10 @@
+<map id="SACBitstream::getVariable" name="SACBitstream::getVariable">
+<area shape="rect" id="node2" href="$class_file.html#a3320ff9a60903cdae6eb7f3fff06b05c" title="It sets the file reading cursor to keep on reading from another position. " alt="" coords="233,5,343,32"/>
+<area shape="rect" id="node3" href="$class_file.html#a01b5902198fefc46fe835f42386ce047" title="It reads text data from the file. " alt="" coords="236,56,340,83"/>
+<area shape="rect" id="node4" href="$class_file.html#afcaf98328e440ccaedb20e310dc6b6c4" title="It gets the total file size. " alt="" coords="541,31,615,57"/>
+<area shape="rect" id="node7" href="$class_file.html#a917f13960e83613e5cb36d433b4cd833" title="It reads data from the file. " alt="" coords="391,81,468,108"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="688,56,773,83"/>
+<area shape="rect" id="node6" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="821,56,861,83"/>
+<area shape="rect" id="node8" href="$class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="535,132,621,159"/>
+<area shape="rect" id="node9" href="$class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="516,183,640,209"/>
+</map>

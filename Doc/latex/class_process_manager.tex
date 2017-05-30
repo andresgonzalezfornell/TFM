@@ -1,4 +1,4 @@
-\section{Process\+Manager Class Reference}
+\hypertarget{class_process_manager}{}\section{Process\+Manager Class Reference}
 \label{class_process_manager}\index{Process\+Manager@{Process\+Manager}}
 
 
@@ -12,98 +12,83 @@ Process manager class. It contains all functions to perform the signal treatment
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Process\+Manager} (int \textbf{ chunksize})
-\begin{DoxyCompactList}\small\item\em \doxyref{Process\+Manager}{p.}{class_process_manager} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Process\+Manager} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Process\+Manager}{p.}{class_process_manager} destructor. \end{DoxyCompactList}\item 
-bool \textbf{ set\+Input} (std\+::string filename)
+\hyperlink{class_process_manager_a875b49ae7a67b7629615747320ff30b7}{Process\+Manager} (int chunksize)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_process_manager}{Process\+Manager} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_process_manager_aed3cd2ca11d92395228b758d39030b5f}\label{class_process_manager_aed3cd2ca11d92395228b758d39030b5f}} 
+\hyperlink{class_process_manager_aed3cd2ca11d92395228b758d39030b5f}{$\sim$\+Process\+Manager} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_process_manager}{Process\+Manager} destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4}{set\+Input} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em It sets input variable from the existing input file. \end{DoxyCompactList}\item 
-bool \textbf{ set\+Output} (std\+::string filename)
+bool \hyperlink{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626}{set\+Output} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em It sets an output file from the existing output variable. \end{DoxyCompactList}\item 
-bool \textbf{ decode} (std\+::string \textbf{ input}, std\+::string \textbf{ bitstream}, std\+::string \textbf{ output}, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)
+bool \hyperlink{class_process_manager_ad882d23c995a27ac064826412b5127a8}{decode} (std\+::string \hyperlink{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}{input}, std\+::string bitstream, std\+::string \hyperlink{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}{output}, int upmixtype, int decodingtype, int binauralquality, int hrtfmodel)
 \begin{DoxyCompactList}\small\item\em It performs the S\+AC encoder. \end{DoxyCompactList}\item 
-bool \textbf{ apply\+Effect} (\textbf{ Effect} $\ast$effect, std\+::vector$<$ bool $>$ \textbf{ channels}, std\+::vector$<$ double $>$ levels)
+bool \hyperlink{class_process_manager_a91a8718847e535f297756fa8604dc8f4}{apply\+Effect} (\hyperlink{class_effect}{Effect} $\ast$effect, std\+::vector$<$ bool $>$ \hyperlink{class_process_manager_a325109138cabf342e5beacf7af67480b}{channels}, std\+::vector$<$ double $>$ levels)
 \begin{DoxyCompactList}\small\item\em It applys the selected effect to the input stream. \end{DoxyCompactList}\item 
-void \textbf{ clear} ()
+\mbox{\Hypertarget{class_process_manager_a9c807d64f58ca890b9b4acde3f1c1bb2}\label{class_process_manager_a9c807d64f58ca890b9b4acde3f1c1bb2}} 
+void \hyperlink{class_process_manager_a9c807d64f58ca890b9b4acde3f1c1bb2}{clear} ()
 \begin{DoxyCompactList}\small\item\em It clears all variables and resets the process. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ fs}
+int \hyperlink{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}{fs}
 \item 
-float $\ast$$\ast$ \textbf{ input}
+float $\ast$$\ast$ \hyperlink{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}{input}
 \item 
-float $\ast$$\ast$ \textbf{ output}
+float $\ast$$\ast$ \hyperlink{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}{output}
 \item 
-int \textbf{ channels}
+int \hyperlink{class_process_manager_a325109138cabf342e5beacf7af67480b}{channels}
 \item 
-int \textbf{ samples}
+int \hyperlink{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}{samples}
 \item 
-int \textbf{ cursor}
+int \hyperlink{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}{cursor}
 \item 
-int \textbf{ total}
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\textbf{ S\+A\+C\+Bitstream} $\ast$ \textbf{ bitstream}
-\item 
-\textbf{ W\+A\+V\+File} $\ast$ \textbf{ inputfile}
-\item 
-\textbf{ W\+A\+V\+File} $\ast$ \textbf{ outputfile}
-\item 
-bool \textbf{ allocated}
-\item 
-int \textbf{ chunksize}
+int \hyperlink{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}{total}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Process manager class. It contains all functions to perform the signal treatment process. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 20 of file Process\+Manager.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_process_manager_a875b49ae7a67b7629615747320ff30b7}} 
+\mbox{\Hypertarget{class_process_manager_a875b49ae7a67b7629615747320ff30b7}\label{class_process_manager_a875b49ae7a67b7629615747320ff30b7}} 
 \index{Process\+Manager@{Process\+Manager}!Process\+Manager@{Process\+Manager}}
 \index{Process\+Manager@{Process\+Manager}!Process\+Manager@{Process\+Manager}}
-\subsubsection{Process\+Manager()}
+\subsubsection{\texorpdfstring{Process\+Manager()}{ProcessManager()}}
 {\footnotesize\ttfamily Process\+Manager\+::\+Process\+Manager (\begin{DoxyParamCaption}\item[{int}]{chunksize }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Process\+Manager}{p.}{class_process_manager} constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em chunksize} & number of samples in a chunk to apply effect step by step (if 0 then chunk size is the number of samples and effect is applied at once) \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_process_manager_aed3cd2ca11d92395228b758d39030b5f}} 
-\index{Process\+Manager@{Process\+Manager}!````~Process\+Manager@{$\sim$\+Process\+Manager}}
-\index{````~Process\+Manager@{$\sim$\+Process\+Manager}!Process\+Manager@{Process\+Manager}}
-\subsubsection{$\sim$\+Process\+Manager()}
-{\footnotesize\ttfamily Process\+Manager\+::$\sim$\+Process\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 8 of file Process\+Manager.\+cpp.
 
-\doxyref{Process\+Manager}{p.}{class_process_manager} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_a875b49ae7a67b7629615747320ff30b7_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_process_manager_a91a8718847e535f297756fa8604dc8f4}} 
+\mbox{\Hypertarget{class_process_manager_a91a8718847e535f297756fa8604dc8f4}\label{class_process_manager_a91a8718847e535f297756fa8604dc8f4}} 
 \index{Process\+Manager@{Process\+Manager}!apply\+Effect@{apply\+Effect}}
 \index{apply\+Effect@{apply\+Effect}!Process\+Manager@{Process\+Manager}}
-\subsubsection{apply\+Effect()}
-{\footnotesize\ttfamily bool Process\+Manager\+::apply\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect} $\ast$}]{effect,  }\item[{std\+::vector$<$ bool $>$}]{channels,  }\item[{std\+::vector$<$ double $>$}]{levels }\end{DoxyParamCaption})}
-
-
-
-It applys the selected effect to the input stream. 
+\subsubsection{\texorpdfstring{apply\+Effect()}{applyEffect()}}
+{\footnotesize\ttfamily bool Process\+Manager\+::apply\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{class_effect}{Effect} $\ast$}]{effect,  }\item[{std\+::vector$<$ bool $>$}]{channels,  }\item[{std\+::vector$<$ double $>$}]{levels }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -117,25 +102,31 @@ It applys the selected effect to the input stream.
 \begin{DoxyReturn}{Returns}
 true if it was successful 
 \end{DoxyReturn}
-\mbox{\label{class_process_manager_a9c807d64f58ca890b9b4acde3f1c1bb2}} 
-\index{Process\+Manager@{Process\+Manager}!clear@{clear}}
-\index{clear@{clear}!Process\+Manager@{Process\+Manager}}
-\subsubsection{clear()}
-{\footnotesize\ttfamily void Process\+Manager\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 127 of file Process\+Manager.\+cpp.
 
-It clears all variables and resets the process. 
-
-\mbox{\label{class_process_manager_ad882d23c995a27ac064826412b5127a8}} 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_a91a8718847e535f297756fa8604dc8f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_a91a8718847e535f297756fa8604dc8f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_process_manager_ad882d23c995a27ac064826412b5127a8}\label{class_process_manager_ad882d23c995a27ac064826412b5127a8}} 
 \index{Process\+Manager@{Process\+Manager}!decode@{decode}}
 \index{decode@{decode}!Process\+Manager@{Process\+Manager}}
-\subsubsection{decode()}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
 {\footnotesize\ttfamily bool Process\+Manager\+::decode (\begin{DoxyParamCaption}\item[{std\+::string}]{input,  }\item[{std\+::string}]{bitstream,  }\item[{std\+::string}]{output,  }\item[{int}]{decodingtype,  }\item[{int}]{upmixtype,  }\item[{int}]{binauralquality,  }\item[{int}]{hrtfmodel }\end{DoxyParamCaption})}
-
-
-
-It performs the S\+AC encoder. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -157,15 +148,31 @@ It performs the S\+AC encoder.
 \begin{DoxyReturn}{Returns}
 true if it was successful 
 \end{DoxyReturn}
-\mbox{\label{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4}} 
+
+
+Definition at line 76 of file Process\+Manager.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_ad882d23c995a27ac064826412b5127a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_ad882d23c995a27ac064826412b5127a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4}\label{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4}} 
 \index{Process\+Manager@{Process\+Manager}!set\+Input@{set\+Input}}
 \index{set\+Input@{set\+Input}!Process\+Manager@{Process\+Manager}}
-\subsubsection{set\+Input()}
+\subsubsection{\texorpdfstring{set\+Input()}{setInput()}}
 {\footnotesize\ttfamily bool Process\+Manager\+::set\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
-
-
-
-It sets input variable from the existing input file. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -175,15 +182,31 @@ It sets input variable from the existing input file.
 \begin{DoxyReturn}{Returns}
 true if it was successful 
 \end{DoxyReturn}
-\mbox{\label{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626}} 
+
+
+Definition at line 30 of file Process\+Manager.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_a830d46989b28e8c4b37f4bcf94dc76a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626}\label{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626}} 
 \index{Process\+Manager@{Process\+Manager}!set\+Output@{set\+Output}}
 \index{set\+Output@{set\+Output}!Process\+Manager@{Process\+Manager}}
-\subsubsection{set\+Output()}
+\subsubsection{\texorpdfstring{set\+Output()}{setOutput()}}
 {\footnotesize\ttfamily bool Process\+Manager\+::set\+Output (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
-
-
-
-It sets an output file from the existing output variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -195,82 +218,100 @@ true if it was successful
 \end{DoxyReturn}
 
 
+Definition at line 56 of file Process\+Manager.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_process_manager_aa2deb4f60f83a490ed7520d2ce926626_icgraph}
+\end{center}
+\end{figure}
+
+
 \subsection{Member Data Documentation}
-\mbox{\label{class_process_manager_ae845668d01f7402bb2a7ce667dd347c4}} 
-\index{Process\+Manager@{Process\+Manager}!allocated@{allocated}}
-\index{allocated@{allocated}!Process\+Manager@{Process\+Manager}}
-\subsubsection{allocated}
-{\footnotesize\ttfamily bool Process\+Manager\+::allocated\hspace{0.3cm}{\ttfamily [private]}}
-
-true if input and output signals variables are currently allocated \mbox{\label{class_process_manager_a10fbb64432f5094289d7afeee057714c}} 
-\index{Process\+Manager@{Process\+Manager}!bitstream@{bitstream}}
-\index{bitstream@{bitstream}!Process\+Manager@{Process\+Manager}}
-\subsubsection{bitstream}
-{\footnotesize\ttfamily \textbf{ S\+A\+C\+Bitstream}$\ast$ Process\+Manager\+::bitstream\hspace{0.3cm}{\ttfamily [private]}}
-
-bitstream object \mbox{\label{class_process_manager_a325109138cabf342e5beacf7af67480b}} 
+\mbox{\Hypertarget{class_process_manager_a325109138cabf342e5beacf7af67480b}\label{class_process_manager_a325109138cabf342e5beacf7af67480b}} 
 \index{Process\+Manager@{Process\+Manager}!channels@{channels}}
 \index{channels@{channels}!Process\+Manager@{Process\+Manager}}
-\subsubsection{channels}
+\subsubsection{\texorpdfstring{channels}{channels}}
 {\footnotesize\ttfamily int Process\+Manager\+::channels}
 
-number of channels \mbox{\label{class_process_manager_a09d599d29e49011dbd1e205756782690}} 
-\index{Process\+Manager@{Process\+Manager}!chunksize@{chunksize}}
-\index{chunksize@{chunksize}!Process\+Manager@{Process\+Manager}}
-\subsubsection{chunksize}
-{\footnotesize\ttfamily int Process\+Manager\+::chunksize\hspace{0.3cm}{\ttfamily [private]}}
+number of channels 
 
-number of samples in a chunk \mbox{\label{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}} 
+Definition at line 25 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}\label{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}} 
 \index{Process\+Manager@{Process\+Manager}!cursor@{cursor}}
 \index{cursor@{cursor}!Process\+Manager@{Process\+Manager}}
-\subsubsection{cursor}
+\subsubsection{\texorpdfstring{cursor}{cursor}}
 {\footnotesize\ttfamily int Process\+Manager\+::cursor}
 
-pointer to current sample index when executing real time process \mbox{\label{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}} 
+pointer to current sample index when executing real time process 
+
+Definition at line 27 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}\label{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}} 
 \index{Process\+Manager@{Process\+Manager}!fs@{fs}}
 \index{fs@{fs}!Process\+Manager@{Process\+Manager}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int Process\+Manager\+::fs}
 
-signal sampling frequency \mbox{\label{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}} 
+signal sampling frequency 
+
+Definition at line 22 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}\label{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}} 
 \index{Process\+Manager@{Process\+Manager}!input@{input}}
 \index{input@{input}!Process\+Manager@{Process\+Manager}}
-\subsubsection{input}
+\subsubsection{\texorpdfstring{input}{input}}
 {\footnotesize\ttfamily float$\ast$$\ast$ Process\+Manager\+::input}
 
-vector of input channels stream (sample = input[channel][sample index]) \mbox{\label{class_process_manager_aa7c29a18734bf13e49e56184ca945c40}} 
-\index{Process\+Manager@{Process\+Manager}!inputfile@{inputfile}}
-\index{inputfile@{inputfile}!Process\+Manager@{Process\+Manager}}
-\subsubsection{inputfile}
-{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ Process\+Manager\+::inputfile\hspace{0.3cm}{\ttfamily [private]}}
+vector of input channels stream (sample = input\mbox{[}channel\mbox{]}\mbox{[}sample index\mbox{]}) 
 
-audio input file object \mbox{\label{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}} 
+Definition at line 23 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}\label{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}} 
 \index{Process\+Manager@{Process\+Manager}!output@{output}}
 \index{output@{output}!Process\+Manager@{Process\+Manager}}
-\subsubsection{output}
+\subsubsection{\texorpdfstring{output}{output}}
 {\footnotesize\ttfamily float$\ast$$\ast$ Process\+Manager\+::output}
 
-vector of input channels stream (sample = output[channel][sample index]) \mbox{\label{class_process_manager_af6611aa1fb921606bec95f6366ce3b07}} 
-\index{Process\+Manager@{Process\+Manager}!outputfile@{outputfile}}
-\index{outputfile@{outputfile}!Process\+Manager@{Process\+Manager}}
-\subsubsection{outputfile}
-{\footnotesize\ttfamily \textbf{ W\+A\+V\+File}$\ast$ Process\+Manager\+::outputfile\hspace{0.3cm}{\ttfamily [private]}}
+vector of input channels stream (sample = output\mbox{[}channel\mbox{]}\mbox{[}sample index\mbox{]}) 
 
-audio output file object \mbox{\label{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}} 
+Definition at line 24 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}\label{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}} 
 \index{Process\+Manager@{Process\+Manager}!samples@{samples}}
 \index{samples@{samples}!Process\+Manager@{Process\+Manager}}
-\subsubsection{samples}
+\subsubsection{\texorpdfstring{samples}{samples}}
 {\footnotesize\ttfamily int Process\+Manager\+::samples}
 
-number of samples in each channel \mbox{\label{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}} 
+number of samples in each channel 
+
+Definition at line 26 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}\label{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}} 
 \index{Process\+Manager@{Process\+Manager}!total@{total}}
 \index{total@{total}!Process\+Manager@{Process\+Manager}}
-\subsubsection{total}
+\subsubsection{\texorpdfstring{total}{total}}
 {\footnotesize\ttfamily int Process\+Manager\+::total}
 
 number of available output samples 
 
+Definition at line 28 of file Process\+Manager.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/process/\textbf{ Process\+Manager.\+h}\item 
-src/process/\textbf{ Process\+Manager.\+cpp}\end{DoxyCompactItemize}
+src/process/Process\+Manager.\+h\item 
+src/process/Process\+Manager.\+cpp\end{DoxyCompactItemize}

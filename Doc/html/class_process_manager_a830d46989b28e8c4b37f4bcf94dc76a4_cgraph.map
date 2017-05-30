@@ -1,0 +1,12 @@
+<map id="ProcessManager::setInput" name="ProcessManager::setInput">
+<area shape="rect" id="node2" href="$class_w_a_v_file.html#a9ca294afee7e0c17ac00cd37b56dafd6" title="It gets the number of audio samples. " alt="" coords="439,5,569,32"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="789,183,875,209"/>
+<area shape="rect" id="node5" href="$class_w_a_v_file.html#af9ffb0dd3ec2746708dd25546b2e7afd" title="It sets the signal reading cursor to keep on reading from another position. " alt="" coords="241,183,380,209"/>
+<area shape="rect" id="node7" href="$class_w_a_v_file.html#aa14a22c094f310cecc33cc573507378c" title="It reads an array of samples from the audio file. " alt="" coords="231,107,391,133"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="923,183,963,209"/>
+<area shape="rect" id="node6" href="$class_file.html#a3320ff9a60903cdae6eb7f3fff06b05c" title="It sets the file reading cursor to keep on reading from another position. " alt="" coords="449,183,559,209"/>
+<area shape="rect" id="node8" href="$class_file.html#a917f13960e83613e5cb36d433b4cd833" title="It reads data from the file. " alt="" coords="465,132,543,159"/>
+<area shape="rect" id="node9" href="$class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="637,208,722,235"/>
+<area shape="rect" id="node10" href="$class_file.html#afcaf98328e440ccaedb20e310dc6b6c4" title="It gets the total file size. " alt="" coords="642,259,717,285"/>
+<area shape="rect" id="node11" href="$class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="617,157,741,184"/>
+</map>

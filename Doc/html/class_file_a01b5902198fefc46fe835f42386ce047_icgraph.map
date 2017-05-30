@@ -1,0 +1,7 @@
+<map id="File::readText" name="File::readText">
+<area shape="rect" id="node2" href="$class_w_a_v_file.html#a040205c616651ffcefff3d417c72aa6c" title="It reads the file header and sets the format header into the audio file object. " alt="" coords="171,5,323,32"/>
+<area shape="rect" id="node4" href="$class_s_a_c_bitstream.html#ad0f39852ca2853efa15be087ce68c3b9" title="It gets the value of a bitstream variable. " alt="" coords="157,56,337,83"/>
+<area shape="rect" id="node3" href="$class_w_a_v_file.html#adc5bd36228dd18df58f2467546f367ef" title="WAVFile constructor. " alt="" coords="388,5,521,32"/>
+<area shape="rect" id="node5" href="$class_s_a_c_bitstream.html#a3113cb4df7e64416b156c4f1d9564a4e" title="It loads variables from bitstream file. " alt="" coords="385,56,524,83"/>
+<area shape="rect" id="node6" href="$class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533" title="Bitstream constructor. " alt="" coords="572,56,769,83"/>
+</map>

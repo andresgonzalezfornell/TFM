@@ -47,7 +47,7 @@ Chart2D::~Chart2D() {
 
 /**
  * @brief	It sets the points to the chart serie.
- * @param   points
+ * @param   points      new chart points
  */
 void Chart2D::setPoints(QVector<QPointF> points) {
     this->series->replace(points);
@@ -55,7 +55,7 @@ void Chart2D::setPoints(QVector<QPointF> points) {
 
 /**
  * @brief	It gets the points from the chart serie.
- * @return  points
+ * @return  points      chart points
  */
 QVector<QPointF> Chart2D::getPoints() {
     return series->pointsVector();
@@ -72,7 +72,7 @@ void Chart2D::setRange(double range[2][2]) {
 
 /**
  * @brief   It sets chart title.
- * @param   title
+ * @param   title       chart title
  */
 void Chart2D::setTitle(std::string title) {
     this->chart->setTitle(QString::fromStdString(title));
@@ -81,6 +81,7 @@ void Chart2D::setTitle(std::string title) {
 /**
  * @brief   It sets chart options.
  * @param   options
+ * @ref     ChartOptions
  */
 void Chart2D::setOptions(int options) {
     QAbstractAxis *x_axis;

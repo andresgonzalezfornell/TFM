@@ -1,0 +1,8 @@
+<map id="Panning::apply" name="Panning::apply">
+<area shape="rect" id="node2" href="$class_effect.html#a6d212ada944f12afbcd8e3e6e623df51" title="It applies the selected effect to the input and sets the result into output variable. " alt="" coords="164,31,260,57"/>
+<area shape="rect" id="node3" href="$class_process_manager.html#a91a8718847e535f297756fa8604dc8f4" title="It applys the selected effect to the input stream. " alt="" coords="308,31,504,57"/>
+<area shape="rect" id="node4" href="$class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="552,31,739,57"/>
+<area shape="rect" id="node5" href="$class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="787,5,913,32"/>
+<area shape="rect" id="node6" href="$class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="1167,31,1332,57"/>
+<area shape="rect" id="node7" href="$class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="961,56,1119,83"/>
+</map>

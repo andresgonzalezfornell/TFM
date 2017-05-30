@@ -11,5 +11,6 @@
         <file>effects/Compressor.xml</file>
         <file>effects/Reverb.xml</file>
         <file>effects/Equalizer.xml</file>
+        <file>effects/Panning.xml</file>
     </qresource>
 </RCC>

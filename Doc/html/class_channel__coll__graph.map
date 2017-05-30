@@ -1,0 +1,4 @@
+<map id="Channel" name="Channel">
+<area shape="rect" id="node2" href="$class_audio_output.html" title="Audio output class. " alt="" coords="31,171,127,197"/>
+<area shape="rect" id="node4" href="$class_output_device.html" title="Audio output device class (QIODevice extension). " alt="" coords="100,81,203,108"/>
+</map>

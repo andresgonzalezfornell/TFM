@@ -34,7 +34,8 @@ SOURCES += src/interface/main.cpp\
     src/effects/Effect.cpp \
     src/effects/Compressor.cpp \
     src/effects/Equalizer.cpp \
-    src/effects/Reverb.cpp
+    src/effects/Reverb.cpp \
+    src/effects/Panning.cpp
 
 HEADERS  += \
     src/interface/SACEffects.h \
@@ -56,7 +57,8 @@ HEADERS  += \
     src/effects/EffectBase.h \
     src/effects/Compressor.h \
     src/effects/Equalizer.h \
-    src/effects/Reverb.h
+    src/effects/Reverb.h \
+    src/effects/Panning.h
 
 FORMS    += \
     src/interface/Encoder.ui \

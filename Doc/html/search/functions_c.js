@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['openchannelscharts',['openChannelsCharts',['../class_s_a_c_effects.html#a20e8fbb737842ec52c4bcd318ae518fa',1,'SACEffects']]],
-  ['openinfo',['openInfo',['../class_s_a_c_effects.html#a083d44f0c8cc244fd462ba63f671e857',1,'SACEffects']]],
-  ['operator_5b_5d',['operator[]',['../class_audio_signal.html#a92f6f979d43fe72d965e17b86dd82e79',1,'AudioSignal']]],
-  ['outputdevice',['OutputDevice',['../class_output_device.html#aa1e4dbe8403fb3fc022f71e3e3c26ee7',1,'OutputDevice']]]
+  ['read',['read',['../class_file.html#a917f13960e83613e5cb36d433b4cd833',1,'File']]],
+  ['readdata',['readData',['../class_output_device.html#a5f455a9fdaa26664957b54b7806a1b7d',1,'OutputDevice']]],
+  ['readheader',['readHeader',['../class_w_a_v_file.html#a040205c616651ffcefff3d417c72aa6c',1,'WAVFile']]],
+  ['readnumber',['readNumber',['../class_file.html#ab13f46c198a890f679351a2c9030e36d',1,'File']]],
+  ['readsamples',['readSamples',['../class_w_a_v_file.html#aa14a22c094f310cecc33cc573507378c',1,'WAVFile']]],
+  ['readtext',['readText',['../class_file.html#a01b5902198fefc46fe835f42386ce047',1,'File']]],
+  ['reset',['reset',['../class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3',1,'SACEffects']]],
+  ['reverb',['Reverb',['../class_reverb.html#a765b925557df7e43bf5ed275fc6950d1',1,'Reverb']]]
 ];

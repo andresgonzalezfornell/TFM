@@ -2,7 +2,6 @@
 
 /**
  * @brief   Reverb constructor.
- * @param   params          string of effect parameters
  */
 Reverb::Reverb() AS_EFFECT_CONSTRUCTOR {
 }
@@ -12,55 +11,40 @@ Reverb::Reverb() AS_EFFECT_CONSTRUCTOR {
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
+ * @param   channels        vector of channel types
  */
-void Reverb::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
+void Reverb::apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels) {
     double phase = getDouble(params["phase"]);
     double roomsize = getDouble(params["roomsize"]);
     double damping = getDouble(params["damping"]);
     std::string method = params["method"];
-    filterindex = 0;
-    if (method == "JCRev") {
-        feedforwardfilter(input, output, samples, false, 0.25, 0.742, 4799);
-        feedforwardfilter(input, output, samples, true, 0.25, 0.733, 4999);
-        feedforwardfilter(input, output, samples, true, 0.25, 0.715, 5399);
-        feedforwardfilter(input, output, samples, true, 0.25, 0.697, 5899);
-        schroederfilter(input, output, samples, false, 1, phase, 1051);
-        schroederfilter(output, output, samples, false, 1, phase, 337);
-        schroederfilter(output, output, samples, false, 1, phase, 113);
-    } else if (method == "freeverb") {
-        lowpassfeedbackfilter(input, output, samples, false, 0.125, roomsize, damping, 1557);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1617);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1491);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1422);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1277);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1356);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1188);
-        lowpassfeedbackfilter(input, output, samples, true, 0.125, roomsize, damping, 1116);
-        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 225);
-        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 556);
-        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 441);
-        schroederdiffusionfilter(output, output, samples, false, 1, 0.5, 341);
-    } else {
-        consolelog("Reverb", LogType::error, "unkown method \"" + method + "\"");
-    }
-}
-
-/**
- * @brief   It sends some values to user interface charts.
- * @param   chart           chart id
- * @return  array of values as values[axis][sample]     axis: 0 = x (horizontal) and 1 = y (vertical)
- */
-std::vector<std::vector<double>> Reverb::plot(std::string chart) {
-    // Initialization
-    const int N = 1000;
-    std::vector<std::vector<double>> values = std::vector<std::vector<double>>(2, std::vector<double>(N));
-    // Points
-    for (int n = 0; n <= N; n++) {
-        if (chart == "") {
-
+    for (channel = 0; channel< (int)channels.size(); channel++) {
+        filterindex = 0;
+        if (method == "JCRev") {
+            feedforwardfilter(input[channel], output[channel], samples, false, 0.25, 0.742, 4799);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.733, 4999);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.715, 5399);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.697, 5899);
+            schroederfilter(input[channel], output[channel], samples, false, 1, phase, 1051);
+            schroederfilter(output[channel], output[channel], samples, false, 1, phase, 337);
+            schroederfilter(output[channel], output[channel], samples, false, 1, phase, 113);
+        } else if (method == "freeverb") {
+            lowpassfeedbackfilter(input[channel], output[channel], samples, false, 0.125, roomsize, damping, 1557);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1617);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1491);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1422);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1277);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1356);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1188);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1116);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 225);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 556);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 441);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 341);
+        } else {
+            consolelog("Reverb", LogType::error, "unkown method \"" + method + "\"");
         }
     }
-    return values;
 }
 
 /**
@@ -195,25 +179,25 @@ void Reverb::combfilter(float *input, float *output, int samples, bool addition,
         } else {
             buffersize = order + 1;
         }
-        int n = pointer[filterindex];
+        int n = pointer[channel][filterindex];
         for (int sample = 0; sample < samples; sample++) {
-            x[filterindex][n] = input[sample];
+            x[channel][filterindex][n] = input[sample];
             // Filter
-            y[filterindex][n] = b[0] * x[filterindex][n];
+            y[channel][filterindex][n] = b[0] * x[channel][filterindex][n];
             for (int index = 1; index < order + 1; index++) {
-                y[filterindex][n] += b[index] * x[filterindex][(buffersize + n - index) % buffersize] - a[index] * y[filterindex][(buffersize + n - index) % buffersize];
+                y[channel][filterindex][n] += b[index] * x[channel][filterindex][(buffersize + n - index) % buffersize] - a[index] * y[channel][filterindex][(buffersize + n - index) % buffersize];
             }
-            y[filterindex][n] += b_delay * x[filterindex][(buffersize + n - delay) % buffersize] - a_delay * y[filterindex][(buffersize + n - delay) % buffersize];
-            y[filterindex][n] /= a[0];
+            y[channel][filterindex][n] += b_delay * x[channel][filterindex][(buffersize + n - delay) % buffersize] - a_delay * y[channel][filterindex][(buffersize + n - delay) % buffersize];
+            y[channel][filterindex][n] /= a[0];
             if (addition) {
-                output[sample] += y[filterindex][n];
+                output[sample] += y[channel][filterindex][n];
             } else {
-                output[sample] = y[filterindex][n];
+                output[sample] = y[channel][filterindex][n];
             }
             // Memories update
             n = (n + 1) % buffersize;
         }
-        pointer[filterindex] = n;
+        pointer[channel][filterindex] = n;
     }
     filterindex++;
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mps_5fvt',['mps_vt',['../struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82a14e4aa4784083d62a00452f4d32b4098',1,'HRTFModel']]]
+  ['normal',['normal',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa396ec163fe547f88b1907dbba219e522',1,'UpmixType']]]
 ];

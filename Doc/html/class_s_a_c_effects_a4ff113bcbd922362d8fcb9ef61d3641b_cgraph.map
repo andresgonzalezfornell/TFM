@@ -1,0 +1,11 @@
+<map id="SACEffects::setBitstream" name="SACEffects::setBitstream">
+<area shape="rect" id="node2" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="945,27,1030,54"/>
+<area shape="rect" id="node4" href="$class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="257,27,381,54"/>
+<area shape="rect" id="node5" href="$class_s_a_c_effects.html#aab4eb7a1cfb54e995a43967843e0c4b7" title="It updates enability of user interface controls according to the current parameters state..." alt="" coords="225,78,413,105"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="1123,27,1163,54"/>
+<area shape="rect" id="node6" href="$class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="494,27,579,54"/>
+<area shape="rect" id="node7" href="$class_channels_list.html#ac059e3c89763f50705ce1e2633ee3d3d" title="It sets a number of channels up. " alt="" coords="461,78,612,105"/>
+<area shape="rect" id="node8" href="$class_channels_list.html#aeaeb08c6bf8aa1a48b5cc52c56505408" title="It gets the number of channels. " alt="" coords="681,78,831,105"/>
+<area shape="rect" id="node9" href="$class_channels_list.html#a72dfd281e40fd29624354254ad3fa791" title="It deletes a channel. " alt="" coords="660,129,852,155"/>
+<area shape="rect" id="node10" href="$class_channels_list.html#a794574bee033fd0fa2bee54c615576f9" title="It gets a channel. " alt="" coords="900,129,1075,155"/>
+</map>

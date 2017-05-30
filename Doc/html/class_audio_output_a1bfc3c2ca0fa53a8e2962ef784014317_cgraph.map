@@ -1,0 +1,6 @@
+<map id="AudioOutput::setDevice" name="AudioOutput::setDevice">
+<area shape="rect" id="node2" href="$class_audio_output.html#a3f4858aa5c581613e32b30ee6c5339a6" title="It stops audio output playback. " alt="" coords="216,5,345,32"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="420,56,505,83"/>
+<area shape="rect" id="node3" href="$class_output_device.html#a9c3515a8c1812a08bd74d87389554767" title="It clears output buffer. " alt="" coords="393,5,532,32"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="580,56,620,83"/>
+</map>

@@ -1,11 +1,11 @@
 <!DOCTYPE fxtemplate SYSTEM "Equalizer">
-<double id="band0" text="31.25 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band1" text="62.5 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band2" text="125 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band3" text="250 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band4" text="500 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band5" text="1000 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band6" text="2000 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band7" text="4000 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band8" text="8000 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
-<double id="band9" text="16000 Hz" value="0" suffix=" dB" min="-50" max="50" step="10"></double>
+<double id="band0" text="31.25 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band1" text="62.5 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band2" text="125 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band3" text="250 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band4" text="500 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band5" text="1000 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band6" text="2000 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band7" text="4000 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band8" text="8000 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>
+<double id="band9" text="16000 Hz" value="0" suffix=" dB" min="-50" max="20" step="10"></double>

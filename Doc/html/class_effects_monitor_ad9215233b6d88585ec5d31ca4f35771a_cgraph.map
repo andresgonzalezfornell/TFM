@@ -1,0 +1,10 @@
+<map id="EffectsMonitor::EffectsMonitor" name="EffectsMonitor::EffectsMonitor">
+<area shape="rect" id="node2" href="$class_effects_monitor.html#ade184df36063a2c7ef2855c12265bd78" title="It selects an effect. " alt="" coords="253,56,420,83"/>
+<area shape="rect" id="node3" href="$class_effect.html#af0094495d423173463fd3e9cd40789af" title="It sets parameters variable. " alt="" coords="685,5,812,32"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="879,81,965,108"/>
+<area shape="rect" id="node6" href="$class_effects_monitor.html#a50df1e2902fde1839b541b3429f8f02d" title="It plots every chart on the effects monitor. " alt="" coords="468,107,637,133"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="1083,81,1123,108"/>
+<area shape="rect" id="node7" href="$class_effect.html#ac2c35ce7382d627f20879b44be0e8132" title="It sends some values to user interface charts. " alt="" coords="706,157,791,184"/>
+<area shape="rect" id="node8" href="$class_compressor.html#a57e231b206c612382a6cf4c348868838" title="It sends some values to user interface charts. " alt="" coords="860,157,984,184"/>
+<area shape="rect" id="node9" href="$class_compressor.html#adabaa093dd4341c70f1388bbfbd0693a" title="It sets params from map of params. " alt="" coords="1032,157,1175,184"/>
+</map>

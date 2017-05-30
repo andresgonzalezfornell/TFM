@@ -1,0 +1,10 @@
+<map id="WAVFile::WAVFile" name="WAVFile::WAVFile">
+<area shape="rect" id="node2" href="$class_w_a_v_file.html#a1ae7240dbf26d73ad9bb712bbbd4d124" title="It writes the header on the file from the audio file object header. " alt="" coords="187,107,340,133"/>
+<area shape="rect" id="node3" href="$class_file.html#a59701204411c5672fc35a95e31b002b3" title="It gets the current file reading cursor. " alt="" coords="397,5,506,32"/>
+<area shape="rect" id="node4" href="$class_file.html#a3320ff9a60903cdae6eb7f3fff06b05c" title="It sets the file reading cursor to keep on reading from another position. " alt="" coords="397,56,506,83"/>
+<area shape="rect" id="node5" href="$class_file.html#a156d4a3d1e12e9ddf9c4948cae8c9734" title="It writes text data on the file. " alt="" coords="399,107,504,133"/>
+<area shape="rect" id="node7" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="689,183,775,209"/>
+<area shape="rect" id="node9" href="$class_file.html#a75a4a4b828576e6912f75e22a7250e92" title="It writes a data number on the file. " alt="" coords="388,157,515,184"/>
+<area shape="rect" id="node6" href="$class_file.html#a1259d180d1a2ff95bcccecff547dc839" title="It writes data on the file. " alt="" coords="563,157,641,184"/>
+<area shape="rect" id="node8" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="823,183,863,209"/>
+</map>

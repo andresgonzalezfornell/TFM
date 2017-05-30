@@ -1,24 +1,241 @@
-\section{Equalizer Class Reference}
+\hypertarget{class_equalizer}{}\section{Equalizer Class Reference}
 \label{class_equalizer}\index{Equalizer@{Equalizer}}
 
 
-Audio compressor.  
+Audio equalizer effect.  
 
 
 
 
 {\ttfamily \#include $<$Equalizer.\+h$>$}
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_equalizer_a0bde3f0da43020c61665e1b6fd4b5854}\label{class_equalizer_a0bde3f0da43020c61665e1b6fd4b5854}} 
+\hyperlink{class_equalizer_a0bde3f0da43020c61665e1b6fd4b5854}{Equalizer} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_equalizer}{Equalizer} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_equalizer_ab58427efe27cc81be35410453a4158d6}{apply} (float $\ast$$\ast$input, float $\ast$$\ast$output, int samples, std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$ channels)
+\begin{DoxyCompactList}\small\item\em It applies equalization effect. \end{DoxyCompactList}\item 
+void \hyperlink{class_equalizer_af30b0db022898105af9bee40d374fcde}{peaking\+Filter} (float $\ast$input, float $\ast$output, int samples, double f\+\_\+0, double gain, double Q, int order)
+\begin{DoxyCompactList}\small\item\em It applies a peaking filter. \end{DoxyCompactList}\item 
+void \hyperlink{class_equalizer_a45f228e5ba216af9214f9a0070d2199e}{low\+Shelf\+Filter} (float $\ast$input, float $\ast$output, int samples, double f\+\_\+0, double gain, int order)
+\begin{DoxyCompactList}\small\item\em It applies a low shelf filter. \end{DoxyCompactList}\item 
+void \hyperlink{class_equalizer_af1bbd593cf7943262d40c80f2869c932}{high\+Shelf\+Filter} (float $\ast$input, float $\ast$output, int samples, double f\+\_\+0, double gain, int order)
+\begin{DoxyCompactList}\small\item\em It applies a high shelf filter. \end{DoxyCompactList}\item 
+void \hyperlink{class_equalizer_ad34a5bb0d644d3242147bf393ce84f02}{filter} (float $\ast$x, float $\ast$y, int samples, float $\ast$a, float $\ast$b, int order)
+\begin{DoxyCompactList}\small\item\em It applies a filter according to the transfer function H(z) = ( b\mbox{[}0\mbox{]} + b\mbox{[}1\mbox{]}·z$^\wedge$-\/1 + ... + b\mbox{[}order\mbox{]}·z$^\wedge$-\/order ) / ( a\mbox{[}0\mbox{]} + a\mbox{[}1\mbox{]}·z$^\wedge$-\/1 + ... + a\mbox{[}order\mbox{]}·z$^\wedge$-\/order ). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio compressor. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Definition at line 12 of file Equalizer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_equalizer_ab58427efe27cc81be35410453a4158d6}\label{class_equalizer_ab58427efe27cc81be35410453a4158d6}} 
+\index{Equalizer@{Equalizer}!apply@{apply}}
+\index{apply@{apply}!Equalizer@{Equalizer}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Equalizer\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{int}]{samples,  }\item[{std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$}]{channels }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em channels} & vector of channel types \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Equalizer.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_ab58427efe27cc81be35410453a4158d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_ab58427efe27cc81be35410453a4158d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_equalizer_ad34a5bb0d644d3242147bf393ce84f02}\label{class_equalizer_ad34a5bb0d644d3242147bf393ce84f02}} 
+\index{Equalizer@{Equalizer}!filter@{filter}}
+\index{filter@{filter}!Equalizer@{Equalizer}}
+\subsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily void Equalizer\+::filter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{float $\ast$}]{a,  }\item[{float $\ast$}]{b,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em a} & y coefficients of transfer function \\
+\hline
+{\em b} & x coefficients of transfer function \\
+\hline
+{\em order} & filter order (value of the highest exponent) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file Equalizer.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_ad34a5bb0d644d3242147bf393ce84f02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_equalizer_af1bbd593cf7943262d40c80f2869c932}\label{class_equalizer_af1bbd593cf7943262d40c80f2869c932}} 
+\index{Equalizer@{Equalizer}!high\+Shelf\+Filter@{high\+Shelf\+Filter}}
+\index{high\+Shelf\+Filter@{high\+Shelf\+Filter}!Equalizer@{Equalizer}}
+\subsubsection{\texorpdfstring{high\+Shelf\+Filter()}{highShelfFilter()}}
+{\footnotesize\ttfamily void Equalizer\+::high\+Shelf\+Filter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{double}]{f\+\_\+0,  }\item[{double}]{gain,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em f\+\_\+0} & midpoint frequency (real frequency / sampling frequency) \\
+\hline
+{\em gain} & peak power gain \\
+\hline
+{\em order} & filter order (value of the highest exponent) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Equalizer.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_equalizer_af1bbd593cf7943262d40c80f2869c932_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_af1bbd593cf7943262d40c80f2869c932_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_equalizer_a45f228e5ba216af9214f9a0070d2199e}\label{class_equalizer_a45f228e5ba216af9214f9a0070d2199e}} 
+\index{Equalizer@{Equalizer}!low\+Shelf\+Filter@{low\+Shelf\+Filter}}
+\index{low\+Shelf\+Filter@{low\+Shelf\+Filter}!Equalizer@{Equalizer}}
+\subsubsection{\texorpdfstring{low\+Shelf\+Filter()}{lowShelfFilter()}}
+{\footnotesize\ttfamily void Equalizer\+::low\+Shelf\+Filter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{double}]{f\+\_\+0,  }\item[{double}]{gain,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em f\+\_\+0} & midpoint frequency (real frequency / sampling frequency) \\
+\hline
+{\em gain} & peak power gain \\
+\hline
+{\em order} & filter order (value of the highest exponent) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Equalizer.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_equalizer_a45f228e5ba216af9214f9a0070d2199e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_a45f228e5ba216af9214f9a0070d2199e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_equalizer_af30b0db022898105af9bee40d374fcde}\label{class_equalizer_af30b0db022898105af9bee40d374fcde}} 
+\index{Equalizer@{Equalizer}!peaking\+Filter@{peaking\+Filter}}
+\index{peaking\+Filter@{peaking\+Filter}!Equalizer@{Equalizer}}
+\subsubsection{\texorpdfstring{peaking\+Filter()}{peakingFilter()}}
+{\footnotesize\ttfamily void Equalizer\+::peaking\+Filter (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{double}]{f\+\_\+0,  }\item[{double}]{gain,  }\item[{double}]{Q,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em f\+\_\+0} & center frequency (real frequency / sampling frequency) \\
+\hline
+{\em gain} & peak power gain \\
+\hline
+{\em Q} & quality factor \\
+\hline
+{\em order} & filter order (value of the highest exponent) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Equalizer.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_equalizer_af30b0db022898105af9bee40d374fcde_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equalizer_af30b0db022898105af9bee40d374fcde_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/effects/\textbf{ Equalizer.\+h}\end{DoxyCompactItemize}
+src/effects/Equalizer.\+h\item 
+src/effects/Equalizer.\+cpp\end{DoxyCompactItemize}

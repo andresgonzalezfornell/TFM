@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['parametric',['parametric',['../struct_binaural_quality.html#a3a009a287684c778dbb5507226cf24e4ae3a48f1342d8b4ee9527c620af1c0f7b',1,'BinauralQuality']]],
-  ['progress',['progress',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217aaf0ab04c6e780051a63639d0df57eb20',1,'LogType']]]
+  ['r',['R',['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9a464953c6afaf1a65f4e7fbeba29c6049',1,'SACBitstream::ChannelType']]],
+  ['rc',['Rc',['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9abb6f27e48c485d4c40f2fb4035c033ca',1,'SACBitstream::ChannelType']]],
+  ['rs',['Rs',['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9a58602376d8c460fe2b26af6b4eb7c837',1,'SACBitstream::ChannelType']]],
+  ['rsr',['Rsr',['../struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9a3fa09df79b849c2f632473b2380ad07e',1,'SACBitstream::ChannelType']]]
 ];

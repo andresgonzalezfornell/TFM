@@ -1,0 +1,8 @@
+<map id="AudioOutput::AudioOutput" name="AudioOutput::AudioOutput">
+<area shape="rect" id="node2" href="$class_audio_output.html#a1bfc3c2ca0fa53a8e2962ef784014317" title="It selects an output device. " alt="" coords="234,56,397,83"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="652,56,737,83"/>
+<area shape="rect" id="node7" href="$class_audio_output.html#a5b8fb2dfc8057c8195c192ae65820821" title="It sets all available audio output devices. " alt="" coords="231,157,400,184"/>
+<area shape="rect" id="node3" href="$class_audio_output.html#a3f4858aa5c581613e32b30ee6c5339a6" title="It stops audio output playback. " alt="" coords="448,5,577,32"/>
+<area shape="rect" id="node4" href="$class_output_device.html#a9c3515a8c1812a08bd74d87389554767" title="It clears output buffer. " alt="" coords="625,5,764,32"/>
+<area shape="rect" id="node6" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="812,56,852,83"/>
+</map>

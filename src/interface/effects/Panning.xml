@@ -1,0 +1,43 @@
+<!DOCTYPE fxtemplate SYSTEM "Panning">
+<label id="L" text="Output L"></label>
+<double id="L2L" text="Input L" value="1" min="0" max="10" step="0.1"></double>
+<double id="L2R" text="Input R" value="0" min="0" max="10" step="0.1"></double>
+<double id="L2C" text="Input C" value="0" min="0" max="10" step="0.1"></double>
+<double id="L2LFE" text="Input LFE" value="0" min="0" max="10" step="0.1"></double>
+<double id="L2Ls" text="Input Ls" value="0" min="0" max="10" step="0.1"></double>
+<double id="L2Rs" text="Input Rs" value="0" min="0" max="10" step="0.1"></double>
+<label id="R" text="Output R"></label>
+<double id="R2L" text="Input L" value="0" min="0" max="10" step="0.1"></double>
+<double id="R2R" text="Input R" value="1" min="0" max="10" step="0.1"></double>
+<double id="R2C" text="Input C" value="0" min="0" max="10" step="0.1"></double>
+<double id="R2LFE" text="Input LFE" value="0" min="0" max="10" step="0.1"></double>
+<double id="R2Ls" text="Input Ls" value="0" min="0" max="10" step="0.1"></double>
+<double id="R2Rs" text="Input Rs" value="0" min="0" max="10" step="0.1"></double>
+<label id="C" text="Output C"></label>
+<double id="C2L" text="Input L" value="0" min="0" max="10" step="0.1"></double>
+<double id="C2R" text="Input R" value="0" min="0" max="10" step="0.1"></double>
+<double id="C2C" text="Input C" value="1" min="0" max="10" step="0.1"></double>
+<double id="C2LFE" text="Input LFE" value="0" min="0" max="10" step="0.1"></double>
+<double id="C2Ls" text="Input Ls" value="0" min="0" max="10" step="0.1"></double>
+<double id="C2Rs" text="Input Rs" value="0" min="0" max="10" step="0.1"></double>
+<label id="LFE" text="Output LFE"></label>
+<double id="LFE2L" text="Input L" value="0" min="0" max="10" step="0.1"></double>
+<double id="LFE2R" text="Input R" value="0" min="0" max="10" step="0.1"></double>
+<double id="LFE2C" text="Input C" value="0" min="0" max="10" step="0.1"></double>
+<double id="LFE2LFE" text="Input LFE" value="1" min="0" max="10" step="0.1"></double>
+<double id="LFE2Ls" text="Input Ls" value="0" min="0" max="10" step="0.1"></double>
+<double id="LFE2Rs" text="Input Rs" value="0" min="0" max="10" step="0.1"></double>
+<label id="Ls" text="Output Ls"></label>
+<double id="Ls2L" text="Input L" value="0" min="0" max="10" step="0.1"></double>
+<double id="Ls2R" text="Input R" value="0" min="0" max="10" step="0.1"></double>
+<double id="Ls2C" text="Input C" value="0" min="0" max="10" step="0.1"></double>
+<double id="Ls2LFE" text="Input LFE" value="0" min="0" max="10" step="0.1"></double>
+<double id="Ls2Ls" text="Input Ls" value="1" min="0" max="10" step="0.1"></double>
+<double id="Ls2Rs" text="Input Rs" value="0" min="0" max="10" step="0.1"></double>
+<label id="Rs" text="Output Rs"></label>
+<double id="Rs2L" text="Input L" value="0" min="0" max="10" step="0.1"></double>
+<double id="Rs2R" text="Input R" value="0" min="0" max="10" step="0.1"></double>
+<double id="Rs2C" text="Input C" value="0" min="0" max="10" step="0.1"></double>
+<double id="Rs2LFE" text="Input LFE" value="0" min="0" max="10" step="0.1"></double>
+<double id="Rs2Ls" text="Input Ls" value="0" min="0" max="10" step="0.1"></double>
+<double id="Rs2Rs" text="Input Rs" value="1" min="0" max="10" step="0.1"></double>

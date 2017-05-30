@@ -1,0 +1,8 @@
+<map id="Encoder::setTree" name="Encoder::setTree">
+<area shape="rect" id="node2" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="382,5,467,32"/>
+<area shape="rect" id="node4" href="$class_encoder.html#af5623d0bd5fc7b1b2be27375d2994eb1" title="It sets the input audio file. " alt="" coords="183,31,309,57"/>
+<area shape="rect" id="node6" href="$class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="363,107,487,133"/>
+<area shape="rect" id="node7" href="$class_encoder.html#a81e43409dc83e9118472a81ba65e6779" title="It sets the output audio file. " alt="" coords="177,81,315,108"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="535,5,575,32"/>
+<area shape="rect" id="node5" href="$class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="382,56,467,83"/>
+</map>

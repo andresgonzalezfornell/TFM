@@ -1,0 +1,12 @@
+<map id="Equalizer::filter" name="Equalizer::filter">
+<area shape="rect" id="node2" href="$class_equalizer.html#af30b0db022898105af9bee40d374fcde" title="It applies a peaking filter. " alt="" coords="169,5,330,32"/>
+<area shape="rect" id="node10" href="$class_equalizer.html#a45f228e5ba216af9214f9a0070d2199e" title="It applies a low shelf filter. " alt="" coords="167,56,332,83"/>
+<area shape="rect" id="node11" href="$class_equalizer.html#af1bbd593cf7943262d40c80f2869c932" title="It applies a high shelf filter. " alt="" coords="164,107,335,133"/>
+<area shape="rect" id="node3" href="$class_equalizer.html#ab58427efe27cc81be35410453a4158d6" title="It applies equalization effect. " alt="" coords="383,56,500,83"/>
+<area shape="rect" id="node4" href="$class_effect.html#a6d212ada944f12afbcd8e3e6e623df51" title="It applies the selected effect to the input and sets the result into output variable. " alt="" coords="548,56,644,83"/>
+<area shape="rect" id="node5" href="$class_process_manager.html#a91a8718847e535f297756fa8604dc8f4" title="It applys the selected effect to the input stream. " alt="" coords="692,56,888,83"/>
+<area shape="rect" id="node6" href="$class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="936,56,1123,83"/>
+<area shape="rect" id="node7" href="$class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="1171,31,1297,57"/>
+<area shape="rect" id="node8" href="$class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="1551,56,1716,83"/>
+<area shape="rect" id="node9" href="$class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="1345,81,1503,108"/>
+</map>

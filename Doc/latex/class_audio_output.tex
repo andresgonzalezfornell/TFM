@@ -1,4 +1,4 @@
-\section{Audio\+Output Class Reference}
+\hypertarget{class_audio_output}{}\section{Audio\+Output Class Reference}
 \label{class_audio_output}\index{Audio\+Output@{Audio\+Output}}
 
 
@@ -9,87 +9,85 @@ Audio output class.
 
 {\ttfamily \#include $<$Audio\+Output.\+h$>$}
 
-Inheritance diagram for Audio\+Output\+:\begin{figure}[H]
+
+
+Inheritance diagram for Audio\+Output\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_audio_output}
+\includegraphics[width=152pt]{class_audio_output__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Output\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_audio_output__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
 \begin{Indent}\textbf{ User interface slots}\par
 {\em They are called when a user interface element is being changed. }\begin{DoxyCompactItemize}
 \item 
-void \textbf{ set\+Device} (int index)
+void \hyperlink{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317}{set\+Device} (int index)
 \begin{DoxyCompactList}\small\item\em It selects an output device. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Audio\+Output} (Q\+Combo\+Box $\ast$\textbf{ selector}, int \textbf{ fs}, int \textbf{ samplesize})
+\hyperlink{class_audio_output_afd879db4e79ccc430bd9d9a795534323}{Audio\+Output} (Q\+Combo\+Box $\ast$selector, int \hyperlink{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}{fs}, int \hyperlink{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}{samplesize})
 \begin{DoxyCompactList}\small\item\em Audio\+Ouput constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Audio\+Output} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Output}{p.}{class_audio_output} destructor. \end{DoxyCompactList}\item 
-void \textbf{ start} ()
+\mbox{\Hypertarget{class_audio_output_a95719dfdce3899ee2847e20dc403e25e}\label{class_audio_output_a95719dfdce3899ee2847e20dc403e25e}} 
+\hyperlink{class_audio_output_a95719dfdce3899ee2847e20dc403e25e}{$\sim$\+Audio\+Output} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_audio_output}{Audio\+Output} destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_output_a686dd972cb2043552063b34ae67eaadc}\label{class_audio_output_a686dd972cb2043552063b34ae67eaadc}} 
+void \hyperlink{class_audio_output_a686dd972cb2043552063b34ae67eaadc}{start} ()
 \begin{DoxyCompactList}\small\item\em It resumes audio output playback. \end{DoxyCompactList}\item 
-void \textbf{ stop} ()
+\mbox{\Hypertarget{class_audio_output_a3f4858aa5c581613e32b30ee6c5339a6}\label{class_audio_output_a3f4858aa5c581613e32b30ee6c5339a6}} 
+void \hyperlink{class_audio_output_a3f4858aa5c581613e32b30ee6c5339a6}{stop} ()
 \begin{DoxyCompactList}\small\item\em It stops audio output playback. \end{DoxyCompactList}\item 
-void \textbf{ set\+Format} (int \textbf{ fs}, int \textbf{ samplesize})
+void \hyperlink{class_audio_output_a467f6e31cf89b89e9986caa05ec7fe62}{set\+Format} (int \hyperlink{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}{fs}, int \hyperlink{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}{samplesize})
 \begin{DoxyCompactList}\small\item\em It sets signal sampling frequency. \end{DoxyCompactList}\item 
-void \textbf{ set\+Devices} ()
+\mbox{\Hypertarget{class_audio_output_a5b8fb2dfc8057c8195c192ae65820821}\label{class_audio_output_a5b8fb2dfc8057c8195c192ae65820821}} 
+void \hyperlink{class_audio_output_a5b8fb2dfc8057c8195c192ae65820821}{set\+Devices} ()
 \begin{DoxyCompactList}\small\item\em It sets all available audio output devices. \end{DoxyCompactList}\item 
-void \textbf{ set\+Devices} (Q\+List$<$ Q\+Audio\+Device\+Info $>$ \textbf{ devices})
+void \hyperlink{class_audio_output_a27ada29ff74a99f5c21d949caba261ee}{set\+Devices} (Q\+List$<$ Q\+Audio\+Device\+Info $>$ devices)
 \begin{DoxyCompactList}\small\item\em It sets a list of audio devices. \end{DoxyCompactList}\item 
-void \textbf{ set\+Volume} (float \textbf{ volume})
+void \hyperlink{class_audio_output_a97008d6a17c3dc03c64e421f563e04b8}{set\+Volume} (float \hyperlink{class_audio_output_a16937c9086904959b06b77326032aa72}{volume})
 \begin{DoxyCompactList}\small\item\em It sets audio output volume level. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Output\+Device} $\ast$ \textbf{ outputdevice}
+\hyperlink{class_output_device}{Output\+Device} $\ast$ \hyperlink{class_audio_output_aa3e000199604f972e59242fb15a6707e}{outputdevice}
 \item 
-int \textbf{ fs}
+int \hyperlink{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}{fs}
 \item 
-int \textbf{ samplesize}
+int \hyperlink{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}{samplesize}
 \item 
-float \textbf{ volume}
-\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \textbf{ initialize} ()
-\begin{DoxyCompactList}\small\item\em It initializes output audio device. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Q\+List$<$ Q\+Audio\+Device\+Info $>$ \textbf{ devices}
-\item 
-Q\+Audio\+Device\+Info \textbf{ device}
-\item 
-Q\+Audio\+Output $\ast$ \textbf{ audiooutput}
-\item 
-Q\+Audio\+Format \textbf{ format}
-\item 
-Q\+Combo\+Box $\ast$ \textbf{ selector}
+float \hyperlink{class_audio_output_a16937c9086904959b06b77326032aa72}{volume}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio output class. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 58 of file Audio\+Output.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_audio_output_afd879db4e79ccc430bd9d9a795534323}} 
+\mbox{\Hypertarget{class_audio_output_afd879db4e79ccc430bd9d9a795534323}\label{class_audio_output_afd879db4e79ccc430bd9d9a795534323}} 
 \index{Audio\+Output@{Audio\+Output}!Audio\+Output@{Audio\+Output}}
 \index{Audio\+Output@{Audio\+Output}!Audio\+Output@{Audio\+Output}}
-\subsubsection{Audio\+Output()}
+\subsubsection{\texorpdfstring{Audio\+Output()}{AudioOutput()}}
 {\footnotesize\ttfamily Audio\+Output\+::\+Audio\+Output (\begin{DoxyParamCaption}\item[{Q\+Combo\+Box $\ast$}]{selector,  }\item[{int}]{fs,  }\item[{int}]{samplesize }\end{DoxyParamCaption})}
-
-
-
-Audio\+Ouput constructor. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -97,81 +95,83 @@ Audio\+Ouput constructor.
 \hline
 {\em fs} & signal sampling frequency \\
 \hline
-{\em samplesize} & audio sample size [bits] \\
+{\em samplesize} & audio sample size \mbox{[}bits\mbox{]} \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_output_a95719dfdce3899ee2847e20dc403e25e}} 
-\index{Audio\+Output@{Audio\+Output}!````~Audio\+Output@{$\sim$\+Audio\+Output}}
-\index{````~Audio\+Output@{$\sim$\+Audio\+Output}!Audio\+Output@{Audio\+Output}}
-\subsubsection{$\sim$\+Audio\+Output()}
-{\footnotesize\ttfamily Audio\+Output\+::$\sim$\+Audio\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 10 of file Audio\+Output.\+cpp.
 
-\doxyref{Audio\+Output}{p.}{class_audio_output} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_output_afd879db4e79ccc430bd9d9a795534323_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_audio_output_ab9bd7ed5d3dec7dfe35644db41fe0677}} 
-\index{Audio\+Output@{Audio\+Output}!initialize@{initialize}}
-\index{initialize@{initialize}!Audio\+Output@{Audio\+Output}}
-\subsubsection{initialize()}
-{\footnotesize\ttfamily void Audio\+Output\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-It initializes output audio device. 
-
-\mbox{\label{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317}} 
+\mbox{\Hypertarget{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317}\label{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317}} 
 \index{Audio\+Output@{Audio\+Output}!set\+Device@{set\+Device}}
 \index{set\+Device@{set\+Device}!Audio\+Output@{Audio\+Output}}
-\subsubsection{set\+Device}
+\subsubsection{\texorpdfstring{set\+Device}{setDevice}}
 {\footnotesize\ttfamily void Audio\+Output\+::set\+Device (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-It selects an output device. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em index} & device index \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_output_a5b8fb2dfc8057c8195c192ae65820821}} 
+
+
+Definition at line 137 of file Audio\+Output.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_output_a1bfc3c2ca0fa53a8e2962ef784014317_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_output_a27ada29ff74a99f5c21d949caba261ee}\label{class_audio_output_a27ada29ff74a99f5c21d949caba261ee}} 
 \index{Audio\+Output@{Audio\+Output}!set\+Devices@{set\+Devices}}
 \index{set\+Devices@{set\+Devices}!Audio\+Output@{Audio\+Output}}
-\subsubsection{set\+Devices()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Audio\+Output\+::set\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It sets all available audio output devices. 
-
-\mbox{\label{class_audio_output_a27ada29ff74a99f5c21d949caba261ee}} 
-\index{Audio\+Output@{Audio\+Output}!set\+Devices@{set\+Devices}}
-\index{set\+Devices@{set\+Devices}!Audio\+Output@{Audio\+Output}}
-\subsubsection{set\+Devices()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{set\+Devices()}{setDevices()}}
 {\footnotesize\ttfamily void Audio\+Output\+::set\+Devices (\begin{DoxyParamCaption}\item[{Q\+List$<$ Q\+Audio\+Device\+Info $>$}]{devices }\end{DoxyParamCaption})}
-
-
-
-It sets a list of audio devices. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em devices} & \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_output_a467f6e31cf89b89e9986caa05ec7fe62}} 
+
+
+Definition at line 100 of file Audio\+Output.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_output_a27ada29ff74a99f5c21d949caba261ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_output_a467f6e31cf89b89e9986caa05ec7fe62}\label{class_audio_output_a467f6e31cf89b89e9986caa05ec7fe62}} 
 \index{Audio\+Output@{Audio\+Output}!set\+Format@{set\+Format}}
 \index{set\+Format@{set\+Format}!Audio\+Output@{Audio\+Output}}
-\subsubsection{set\+Format()}
+\subsubsection{\texorpdfstring{set\+Format()}{setFormat()}}
 {\footnotesize\ttfamily void Audio\+Output\+::set\+Format (\begin{DoxyParamCaption}\item[{int}]{fs,  }\item[{int}]{samplesize }\end{DoxyParamCaption})}
-
-
-
-It sets signal sampling frequency. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -180,101 +180,79 @@ It sets signal sampling frequency.
 {\em samplesize} & signal sample size \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_output_a97008d6a17c3dc03c64e421f563e04b8}} 
+
+
+Definition at line 83 of file Audio\+Output.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_output_a467f6e31cf89b89e9986caa05ec7fe62_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_output_a97008d6a17c3dc03c64e421f563e04b8}\label{class_audio_output_a97008d6a17c3dc03c64e421f563e04b8}} 
 \index{Audio\+Output@{Audio\+Output}!set\+Volume@{set\+Volume}}
 \index{set\+Volume@{set\+Volume}!Audio\+Output@{Audio\+Output}}
-\subsubsection{set\+Volume()}
+\subsubsection{\texorpdfstring{set\+Volume()}{setVolume()}}
 {\footnotesize\ttfamily void Audio\+Output\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
-
-
-
-It sets audio output volume level. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em volume} & real number from 0 to 1 \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_output_a686dd972cb2043552063b34ae67eaadc}} 
-\index{Audio\+Output@{Audio\+Output}!start@{start}}
-\index{start@{start}!Audio\+Output@{Audio\+Output}}
-\subsubsection{start()}
-{\footnotesize\ttfamily void Audio\+Output\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-
-It resumes audio output playback. 
-
-\mbox{\label{class_audio_output_a3f4858aa5c581613e32b30ee6c5339a6}} 
-\index{Audio\+Output@{Audio\+Output}!stop@{stop}}
-\index{stop@{stop}!Audio\+Output@{Audio\+Output}}
-\subsubsection{stop()}
-{\footnotesize\ttfamily void Audio\+Output\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It stops audio output playback. 
+Definition at line 122 of file Audio\+Output.\+cpp.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_audio_output_a05a990352ae483be08231b218e00c394}} 
-\index{Audio\+Output@{Audio\+Output}!audiooutput@{audiooutput}}
-\index{audiooutput@{audiooutput}!Audio\+Output@{Audio\+Output}}
-\subsubsection{audiooutput}
-{\footnotesize\ttfamily Q\+Audio\+Output$\ast$ Audio\+Output\+::audiooutput\hspace{0.3cm}{\ttfamily [private]}}
-
-audio output object \mbox{\label{class_audio_output_afe431392e1f107dfe9e33dc59fb857b0}} 
-\index{Audio\+Output@{Audio\+Output}!device@{device}}
-\index{device@{device}!Audio\+Output@{Audio\+Output}}
-\subsubsection{device}
-{\footnotesize\ttfamily Q\+Audio\+Device\+Info Audio\+Output\+::device\hspace{0.3cm}{\ttfamily [private]}}
-
-current system audio output device \mbox{\label{class_audio_output_a7b380c191677c4732e8d5e8f06c65eeb}} 
-\index{Audio\+Output@{Audio\+Output}!devices@{devices}}
-\index{devices@{devices}!Audio\+Output@{Audio\+Output}}
-\subsubsection{devices}
-{\footnotesize\ttfamily Q\+List$<$Q\+Audio\+Device\+Info$>$ Audio\+Output\+::devices\hspace{0.3cm}{\ttfamily [private]}}
-
-list of system audio output devices \mbox{\label{class_audio_output_a2905b4cc065c76e54da2a5287c2d038b}} 
-\index{Audio\+Output@{Audio\+Output}!format@{format}}
-\index{format@{format}!Audio\+Output@{Audio\+Output}}
-\subsubsection{format}
-{\footnotesize\ttfamily Q\+Audio\+Format Audio\+Output\+::format\hspace{0.3cm}{\ttfamily [private]}}
-
-output audio format object \mbox{\label{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}} 
+\mbox{\Hypertarget{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}\label{class_audio_output_ac2a46ded8a978627b8af81458a714ef3}} 
 \index{Audio\+Output@{Audio\+Output}!fs@{fs}}
 \index{fs@{fs}!Audio\+Output@{Audio\+Output}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int Audio\+Output\+::fs}
 
-signal sampling frequency [Hz] \mbox{\label{class_audio_output_aa3e000199604f972e59242fb15a6707e}} 
+signal sampling frequency \mbox{[}Hz\mbox{]} 
+
+Definition at line 62 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_audio_output_aa3e000199604f972e59242fb15a6707e}\label{class_audio_output_aa3e000199604f972e59242fb15a6707e}} 
 \index{Audio\+Output@{Audio\+Output}!outputdevice@{outputdevice}}
 \index{outputdevice@{outputdevice}!Audio\+Output@{Audio\+Output}}
-\subsubsection{outputdevice}
-{\footnotesize\ttfamily \textbf{ Output\+Device}$\ast$ Audio\+Output\+::outputdevice}
+\subsubsection{\texorpdfstring{outputdevice}{outputdevice}}
+{\footnotesize\ttfamily \hyperlink{class_output_device}{Output\+Device}$\ast$ Audio\+Output\+::outputdevice}
 
-audio output Q\+I\+O\+Device class object to control audio output device functions \mbox{\label{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}} 
+audio output Q\+I\+O\+Device class object to control audio output device functions 
+
+Definition at line 61 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}\label{class_audio_output_aac9c297a839bb25c1232fc5adcce6cab}} 
 \index{Audio\+Output@{Audio\+Output}!samplesize@{samplesize}}
 \index{samplesize@{samplesize}!Audio\+Output@{Audio\+Output}}
-\subsubsection{samplesize}
+\subsubsection{\texorpdfstring{samplesize}{samplesize}}
 {\footnotesize\ttfamily int Audio\+Output\+::samplesize}
 
-audio sample size [bits] \mbox{\label{class_audio_output_a52eb3989d7c470fefb780d9fe9b08141}} 
-\index{Audio\+Output@{Audio\+Output}!selector@{selector}}
-\index{selector@{selector}!Audio\+Output@{Audio\+Output}}
-\subsubsection{selector}
-{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ Audio\+Output\+::selector\hspace{0.3cm}{\ttfamily [private]}}
+audio sample size \mbox{[}bits\mbox{]} 
 
-user interface combo box to select audio device \mbox{\label{class_audio_output_a16937c9086904959b06b77326032aa72}} 
+Definition at line 63 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_audio_output_a16937c9086904959b06b77326032aa72}\label{class_audio_output_a16937c9086904959b06b77326032aa72}} 
 \index{Audio\+Output@{Audio\+Output}!volume@{volume}}
 \index{volume@{volume}!Audio\+Output@{Audio\+Output}}
-\subsubsection{volume}
+\subsubsection{\texorpdfstring{volume}{volume}}
 {\footnotesize\ttfamily float Audio\+Output\+::volume}
 
 audio output volume 
 
+Definition at line 64 of file Audio\+Output.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Audio\+Output.\+h}\item 
-src/interface/\textbf{ Audio\+Output.\+cpp}\end{DoxyCompactItemize}
+src/interface/Audio\+Output.\+h\item 
+src/interface/Audio\+Output.\+cpp\end{DoxyCompactItemize}

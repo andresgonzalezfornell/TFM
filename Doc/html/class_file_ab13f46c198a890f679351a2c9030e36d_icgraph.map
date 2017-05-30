@@ -1,0 +1,4 @@
+<map id="File::readNumber" name="File::readNumber">
+<area shape="rect" id="node2" href="$class_w_a_v_file.html#a040205c616651ffcefff3d417c72aa6c" title="It reads the file header and sets the format header into the audio file object. " alt="" coords="179,5,331,32"/>
+<area shape="rect" id="node3" href="$class_w_a_v_file.html#adc5bd36228dd18df58f2467546f367ef" title="WAVFile constructor. " alt="" coords="379,5,512,32"/>
+</map>

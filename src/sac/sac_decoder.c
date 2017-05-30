@@ -6,8 +6,8 @@
 char *error = "";
 
 /**
- * @brief   It adds a char string to the char string variable error to s
- * @param s
+ * @brief   It adds a char string to the char string variable error to s.
+ * @param   s                   char pointer to exit message
  */
 void myexit(char *s) {
     // End line
@@ -23,7 +23,7 @@ void myexit(char *s) {
 }
 
 /**
- * @brief   It performs the SAC decoder.
+ * @brief   It performs the SAC decoding.
  * @param   input_filename      filename of the downmix input audio file
  * @param   output_filename     filename of the multichannel output audio file (it will be automatically created)
  * @param   bitstream_filename  filename of the bitstream file (not present in blind upmix case)
@@ -37,6 +37,7 @@ void myexit(char *s) {
 char *sac_decode(const char *input_filename, const char *output_filename,
                  const char *bitstream_filename, double fs, int upmixtype,
                  int decodingtype, int binauralquality, int hrtfmodel) {
+    /** @cond */
     // Arguments
     int buried = strcmp(bitstream_filename, "buried") == 0;
     BITSTREAM_SOURCE bitstream_type;
@@ -295,4 +296,5 @@ char *sac_decode(const char *input_filename, const char *output_filename,
     } else {
         return error;
     }
+    /** @endcond */
 }

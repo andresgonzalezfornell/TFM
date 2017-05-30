@@ -1,98 +1,95 @@
-\section{Effect Class Reference}
+\hypertarget{class_effect}{}\section{Effect Class Reference}
 \label{class_effect}\index{Effect@{Effect}}
 
 
-\doxyref{Effect}{p.}{class_effect} class. It contains (by inheritance) all effects classes.  
+\hyperlink{class_effect}{Effect} class. It contains (by inheritance) all effects classes.  
 
 
 
 
 {\ttfamily \#include $<$Effect.\+h$>$}
 
-Inheritance diagram for Effect\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_effect}
-\end{center}
-\end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \textbf{ effect\+ID} \{ \textbf{ L\+I\+ST}
- \}
+enum \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{effect\+ID} \{ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a}{L\+I\+ST}
+ \}\begin{DoxyCompactList}\small\item\em available effects enumeration \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Effect} (\textbf{ Effect\+::effect\+ID} \textbf{ effect}, int \textbf{ fs})
-\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} constructor. \end{DoxyCompactList}\item 
-\textbf{ Effect} (\textbf{ Effect\+::effect\+ID} \textbf{ effect}, std\+::map$<$ std\+::string, std\+::string $>$ params, int \textbf{ fs})
-\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Effect} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Effect}{p.}{class_effect} destructor. \end{DoxyCompactList}\item 
-void \textbf{ set\+Params} (std\+::map$<$ std\+::string, std\+::string $>$ params)
-\begin{DoxyCompactList}\small\item\em It sets params. \end{DoxyCompactList}\item 
-bool \textbf{ apply} (float $\ast$input, float $\ast$output, int samples, \textbf{ S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} channel)
+\hyperlink{class_effect_a6ab7116f826b2607ada4630759f6afc5}{Effect} (\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID} \hyperlink{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}{effect}, int fs)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effect}{Effect} constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_effect_a2fbf9d2526c65543157370f68cbed091}{Effect} (\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID} \hyperlink{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}{effect}, std\+::map$<$ std\+::string, std\+::string $>$ params, int fs)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effect}{Effect} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_effect_ac26c0a394247e14c9081f875522b5b66}\label{class_effect_ac26c0a394247e14c9081f875522b5b66}} 
+\hyperlink{class_effect_ac26c0a394247e14c9081f875522b5b66}{$\sim$\+Effect} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effect}{Effect} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_effect_af0094495d423173463fd3e9cd40789af}{set\+Params} (std\+::map$<$ std\+::string, std\+::string $>$ params)
+\begin{DoxyCompactList}\small\item\em It sets parameters variable. \end{DoxyCompactList}\item 
+bool \hyperlink{class_effect_a6d212ada944f12afbcd8e3e6e623df51}{apply} (float $\ast$$\ast$input, float $\ast$$\ast$output, int samples, std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$ channels)
 \begin{DoxyCompactList}\small\item\em It applies the selected effect to the input and sets the result into output variable. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \textbf{ plot} (std\+::string chart)
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{class_effect_ac2c35ce7382d627f20879b44be0e8132}{plot} (std\+::string chart)
 \begin{DoxyCompactList}\small\item\em It sends some values to user interface charts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ get\+Effects} ()
+static std\+::map$<$ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string $>$ \hyperlink{class_effect_a2165f76956c91baf1482d2405eb1ed4e}{get\+Effects} ()
 \begin{DoxyCompactList}\small\item\em It gets the list of available effects. \end{DoxyCompactList}\item 
-static \textbf{ Effect\+::effect\+ID} \textbf{ get\+Effect} (std\+::string effectname)
-\begin{DoxyCompactList}\small\item\em It get effects type from the effect name. \end{DoxyCompactList}\item 
-static std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ get\+Params} (std\+::string configuration)
-\begin{DoxyCompactList}\small\item\em It get params from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
-static std\+::vector$<$ bool $>$ \textbf{ get\+Channels} (std\+::string configuration, int size)
-\begin{DoxyCompactList}\small\item\em It get channels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
-static std\+::vector$<$ double $>$ \textbf{ get\+Levels} (std\+::string configuration, int size)
-\begin{DoxyCompactList}\small\item\em It get levels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
-static std\+::string \textbf{ get\+Tag} (std\+::string configuration, std\+::string tag)
+static \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID} \hyperlink{class_effect_a32185d446a9dc77963a322b64d2f9e27}{get\+Effect} (std\+::string effectname)
+\begin{DoxyCompactList}\small\item\em It gets effects type from the effect name. \end{DoxyCompactList}\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_effect_ac322ae94a6b15b2d81053a55ce7542e2}{get\+Params} (std\+::string configuration)
+\begin{DoxyCompactList}\small\item\em It gets params from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::vector$<$ bool $>$ \hyperlink{class_effect_ae108c1645f18162929cd5c272a30f74e}{get\+Channels} (std\+::string configuration, int size)
+\begin{DoxyCompactList}\small\item\em It gets channels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::vector$<$ double $>$ \hyperlink{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92}{get\+Levels} (std\+::string configuration, int size)
+\begin{DoxyCompactList}\small\item\em It gets levels vector from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{class_effect_a607ab2a63d333137c1f07cf03611c4bf}{get\+Tag} (std\+::string configuration, std\+::string tag)
 \begin{DoxyCompactList}\small\item\em It extracts the value in a tag from a effect configuration file (.fx) text. \end{DoxyCompactList}\item 
-static std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ get\+Tag\+Map} (std\+::string configuration, std\+::string tag)
+static std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_effect_a616281286b866f1f8f6c66715e54ee89}{get\+Tag\+Map} (std\+::string configuration, std\+::string tag)
 \begin{DoxyCompactList}\small\item\em It extracts the map of values in a map-\/structured tag from a effect configuration file (.fx) text. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::pair$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ effect}
+std\+::pair$<$ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string $>$ \hyperlink{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}{effect}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\doxyref{Effect}{p.}{class_effect} class. It contains (by inheritance) all effects classes. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 44 of file Effect.\+h.
+
+
+
 \subsection{Member Enumeration Documentation}
-\mbox{\label{class_effect_a6422fe21e9e452943fbc3344884a6fed}} 
+\mbox{\Hypertarget{class_effect_a6422fe21e9e452943fbc3344884a6fed}\label{class_effect_a6422fe21e9e452943fbc3344884a6fed}} 
 \index{Effect@{Effect}!effect\+ID@{effect\+ID}}
 \index{effect\+ID@{effect\+ID}!Effect@{Effect}}
-\subsubsection{effect\+ID}
-{\footnotesize\ttfamily enum \textbf{ Effect\+::effect\+ID}}
+\subsubsection{\texorpdfstring{effect\+ID}{effectID}}
+{\footnotesize\ttfamily enum \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+I\+ST@{L\+I\+ST}!Effect@{Effect}}\index{Effect@{Effect}!L\+I\+ST@{L\+I\+ST}}}\mbox{\label{class_effect_a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a}} 
-L\+I\+ST&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+I\+ST@{L\+I\+ST}!Effect@{Effect}}\index{Effect@{Effect}!L\+I\+ST@{L\+I\+ST}}}\mbox{\Hypertarget{class_effect_a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a}\label{class_effect_a6422fe21e9e452943fbc3344884a6fedae2be861676276fd732d86f36e663295a}} 
+L\+I\+ST&macros variable which contains all the effects \\
 \hline
 
 \end{DoxyEnumFields}
 
 
+Definition at line 50 of file Effect.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_effect_a6ab7116f826b2607ada4630759f6afc5}} 
+\mbox{\Hypertarget{class_effect_a6ab7116f826b2607ada4630759f6afc5}\label{class_effect_a6ab7116f826b2607ada4630759f6afc5}} 
 \index{Effect@{Effect}!Effect@{Effect}}
 \index{Effect@{Effect}!Effect@{Effect}}
-\subsubsection{Effect()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect\+::effect\+ID}}]{effect,  }\item[{int}]{fs }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Effect}{p.}{class_effect} constructor. 
+\subsubsection{\texorpdfstring{Effect()}{Effect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}}]{effect,  }\item[{int}]{fs }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -101,15 +98,23 @@ L\+I\+ST&\\
 {\em fs} & signal sampling frequency \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effect_a2fbf9d2526c65543157370f68cbed091}} 
+
+
+Definition at line 12 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a6ab7116f826b2607ada4630759f6afc5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_a2fbf9d2526c65543157370f68cbed091}\label{class_effect_a2fbf9d2526c65543157370f68cbed091}} 
 \index{Effect@{Effect}!Effect@{Effect}}
 \index{Effect@{Effect}!Effect@{Effect}}
-\subsubsection{Effect()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect\+::effect\+ID}}]{effect,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{params,  }\item[{int}]{fs }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Effect}{p.}{class_effect} constructor. 
+\subsubsection{\texorpdfstring{Effect()}{Effect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Effect\+::\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}}]{effect,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{params,  }\item[{int}]{fs }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -120,28 +125,26 @@ L\+I\+ST&\\
 {\em fs} & signal sampling frequency \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effect_ac26c0a394247e14c9081f875522b5b66}} 
-\index{Effect@{Effect}!````~Effect@{$\sim$\+Effect}}
-\index{````~Effect@{$\sim$\+Effect}!Effect@{Effect}}
-\subsubsection{$\sim$\+Effect()}
-{\footnotesize\ttfamily Effect\+::$\sim$\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 24 of file Effect.\+cpp.
 
-\doxyref{Effect}{p.}{class_effect} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a2fbf9d2526c65543157370f68cbed091_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_effect_aa25a507a9fe0b209bfb9f1b4bf9f97a9}} 
+\mbox{\Hypertarget{class_effect_a6d212ada944f12afbcd8e3e6e623df51}\label{class_effect_a6d212ada944f12afbcd8e3e6e623df51}} 
 \index{Effect@{Effect}!apply@{apply}}
 \index{apply@{apply}!Effect@{Effect}}
-\subsubsection{apply()}
-{\footnotesize\ttfamily bool Effect\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{output,  }\item[{int}]{samples,  }\item[{\textbf{ S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype}}]{channel }\end{DoxyParamCaption})}
-
-
-
-It applies the selected effect to the input and sets the result into output variable. 
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily bool Effect\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{int}]{samples,  }\item[{std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$}]{channels }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -151,21 +154,37 @@ It applies the selected effect to the input and sets the result into output vari
 \hline
 {\em samples} & number of samples \\
 \hline
-{\em channel} & type of channel \\
+{\em channels} & vector of channel types \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if it was successful 
 \end{DoxyReturn}
-\mbox{\label{class_effect_ae108c1645f18162929cd5c272a30f74e}} 
+
+
+Definition at line 70 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a6d212ada944f12afbcd8e3e6e623df51_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a6d212ada944f12afbcd8e3e6e623df51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_ae108c1645f18162929cd5c272a30f74e}\label{class_effect_ae108c1645f18162929cd5c272a30f74e}} 
 \index{Effect@{Effect}!get\+Channels@{get\+Channels}}
 \index{get\+Channels@{get\+Channels}!Effect@{Effect}}
-\subsubsection{get\+Channels()}
+\subsubsection{\texorpdfstring{get\+Channels()}{getChannels()}}
 {\footnotesize\ttfamily std\+::vector$<$ bool $>$ Effect\+::get\+Channels (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It get channels vector from a effect configuration file (.fx) text. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -177,15 +196,23 @@ It get channels vector from a effect configuration file (.fx) text.
 \begin{DoxyReturn}{Returns}
 channels boolean vector to select channels when applying effects 
 \end{DoxyReturn}
-\mbox{\label{class_effect_a32185d446a9dc77963a322b64d2f9e27}} 
+
+
+Definition at line 162 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_ae108c1645f18162929cd5c272a30f74e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_a32185d446a9dc77963a322b64d2f9e27}\label{class_effect_a32185d446a9dc77963a322b64d2f9e27}} 
 \index{Effect@{Effect}!get\+Effect@{get\+Effect}}
 \index{get\+Effect@{get\+Effect}!Effect@{Effect}}
-\subsubsection{get\+Effect()}
-{\footnotesize\ttfamily \textbf{ Effect\+::effect\+ID} Effect\+::get\+Effect (\begin{DoxyParamCaption}\item[{std\+::string}]{effectname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It get effects type from the effect name. 
+\subsubsection{\texorpdfstring{get\+Effect()}{getEffect()}}
+{\footnotesize\ttfamily \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID} Effect\+::get\+Effect (\begin{DoxyParamCaption}\item[{std\+::string}]{effectname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -193,30 +220,62 @@ It get effects type from the effect name.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-effect type \doxyref{effect\+ID}{p.}{class_effect_a6422fe21e9e452943fbc3344884a6fed} 
+effect type \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{effect\+ID} 
 \end{DoxyReturn}
-\mbox{\label{class_effect_a2165f76956c91baf1482d2405eb1ed4e}} 
+
+
+Definition at line 141 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_effect_a32185d446a9dc77963a322b64d2f9e27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_effect_a32185d446a9dc77963a322b64d2f9e27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_a2165f76956c91baf1482d2405eb1ed4e}\label{class_effect_a2165f76956c91baf1482d2405eb1ed4e}} 
 \index{Effect@{Effect}!get\+Effects@{get\+Effects}}
 \index{get\+Effects@{get\+Effects}!Effect@{Effect}}
-\subsubsection{get\+Effects()}
-{\footnotesize\ttfamily std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ Effect\+::get\+Effects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It gets the list of available effects. 
+\subsubsection{\texorpdfstring{get\+Effects()}{getEffects()}}
+{\footnotesize\ttfamily std\+::map$<$ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string $>$ Effect\+::get\+Effects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \begin{DoxyReturn}{Returns}
 map of available effects 
 \end{DoxyReturn}
-\mbox{\label{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92}} 
+
+
+Definition at line 115 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_effect_a2165f76956c91baf1482d2405eb1ed4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_effect_a2165f76956c91baf1482d2405eb1ed4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92}\label{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92}} 
 \index{Effect@{Effect}!get\+Levels@{get\+Levels}}
 \index{get\+Levels@{get\+Levels}!Effect@{Effect}}
-\subsubsection{get\+Levels()}
+\subsubsection{\texorpdfstring{get\+Levels()}{getLevels()}}
 {\footnotesize\ttfamily std\+::vector$<$ double $>$ Effect\+::get\+Levels (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It get levels vector from a effect configuration file (.fx) text. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -228,15 +287,23 @@ It get levels vector from a effect configuration file (.fx) text.
 \begin{DoxyReturn}{Returns}
 levels vector of input channels before applying effects 
 \end{DoxyReturn}
-\mbox{\label{class_effect_ac322ae94a6b15b2d81053a55ce7542e2}} 
+
+
+Definition at line 178 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_ad0f19e11abff1f815c8b3b36b1f28c92_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_ac322ae94a6b15b2d81053a55ce7542e2}\label{class_effect_ac322ae94a6b15b2d81053a55ce7542e2}} 
 \index{Effect@{Effect}!get\+Params@{get\+Params}}
 \index{get\+Params@{get\+Params}!Effect@{Effect}}
-\subsubsection{get\+Params()}
+\subsubsection{\texorpdfstring{get\+Params()}{getParams()}}
 {\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ Effect\+::get\+Params (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It get params from a effect configuration file (.fx) text. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -246,15 +313,23 @@ It get params from a effect configuration file (.fx) text.
 \begin{DoxyReturn}{Returns}
 parameters map variable valid to apply effects 
 \end{DoxyReturn}
-\mbox{\label{class_effect_a607ab2a63d333137c1f07cf03611c4bf}} 
+
+
+Definition at line 200 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_ac322ae94a6b15b2d81053a55ce7542e2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_a607ab2a63d333137c1f07cf03611c4bf}\label{class_effect_a607ab2a63d333137c1f07cf03611c4bf}} 
 \index{Effect@{Effect}!get\+Tag@{get\+Tag}}
 \index{get\+Tag@{get\+Tag}!Effect@{Effect}}
-\subsubsection{get\+Tag()}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}}
 {\footnotesize\ttfamily std\+::string Effect\+::get\+Tag (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{std\+::string}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It extracts the value in a tag from a effect configuration file (.fx) text. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -266,15 +341,31 @@ It extracts the value in a tag from a effect configuration file (.fx) text.
 \begin{DoxyReturn}{Returns}
 contained value in the tag 
 \end{DoxyReturn}
-\mbox{\label{class_effect_a616281286b866f1f8f6c66715e54ee89}} 
+
+
+Definition at line 211 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_effect_a607ab2a63d333137c1f07cf03611c4bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a607ab2a63d333137c1f07cf03611c4bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_a616281286b866f1f8f6c66715e54ee89}\label{class_effect_a616281286b866f1f8f6c66715e54ee89}} 
 \index{Effect@{Effect}!get\+Tag\+Map@{get\+Tag\+Map}}
 \index{get\+Tag\+Map@{get\+Tag\+Map}!Effect@{Effect}}
-\subsubsection{get\+Tag\+Map()}
+\subsubsection{\texorpdfstring{get\+Tag\+Map()}{getTagMap()}}
 {\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ Effect\+::get\+Tag\+Map (\begin{DoxyParamCaption}\item[{std\+::string}]{configuration,  }\item[{std\+::string}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-It extracts the map of values in a map-\/structured tag from a effect configuration file (.fx) text. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -286,15 +377,31 @@ It extracts the map of values in a map-\/structured tag from a effect configurat
 \begin{DoxyReturn}{Returns}
 contained map of values in the tag 
 \end{DoxyReturn}
-\mbox{\label{class_effect_ac2c35ce7382d627f20879b44be0e8132}} 
+
+
+Definition at line 224 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_a616281286b866f1f8f6c66715e54ee89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_effect_a616281286b866f1f8f6c66715e54ee89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_ac2c35ce7382d627f20879b44be0e8132}\label{class_effect_ac2c35ce7382d627f20879b44be0e8132}} 
 \index{Effect@{Effect}!plot@{plot}}
 \index{plot@{plot}!Effect@{Effect}}
-\subsubsection{plot()}
+\subsubsection{\texorpdfstring{plot()}{plot()}}
 {\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Effect\+::plot (\begin{DoxyParamCaption}\item[{std\+::string}]{chart }\end{DoxyParamCaption})}
-
-
-
-It sends some values to user interface charts. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -302,35 +409,75 @@ It sends some values to user interface charts.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-array of values as values[axis][sample] axis\+: 0 = x (horizontal) and 1 = y (vertical) 
+array of values as values\mbox{[}axis\mbox{]}\mbox{[}sample\mbox{]} axis\+: 0 = x (horizontal) and 1 = y (vertical) 
 \end{DoxyReturn}
-\mbox{\label{class_effect_af0094495d423173463fd3e9cd40789af}} 
+
+
+Definition at line 100 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_ac2c35ce7382d627f20879b44be0e8132_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_ac2c35ce7382d627f20879b44be0e8132_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effect_af0094495d423173463fd3e9cd40789af}\label{class_effect_af0094495d423173463fd3e9cd40789af}} 
 \index{Effect@{Effect}!set\+Params@{set\+Params}}
 \index{set\+Params@{set\+Params}!Effect@{Effect}}
-\subsubsection{set\+Params()}
+\subsubsection{\texorpdfstring{set\+Params()}{setParams()}}
 {\footnotesize\ttfamily void Effect\+::set\+Params (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{params }\end{DoxyParamCaption})}
 
 
-
-It sets params. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em params} & \\
+{\em params} & parameters variable \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line 40 of file Effect.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_effect_af0094495d423173463fd3e9cd40789af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effect_af0094495d423173463fd3e9cd40789af_icgraph}
+\end{center}
+\end{figure}
+
+
 \subsection{Member Data Documentation}
-\mbox{\label{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}} 
+\mbox{\Hypertarget{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}\label{class_effect_ae23ae4e48c344fa374730a9ae24e7ad3}} 
 \index{Effect@{Effect}!effect@{effect}}
 \index{effect@{effect}!Effect@{Effect}}
-\subsubsection{effect}
-{\footnotesize\ttfamily std\+::pair$<$\textbf{ Effect\+::effect\+ID}, std\+::string$>$ Effect\+::effect}
+\subsubsection{\texorpdfstring{effect}{effect}}
+{\footnotesize\ttfamily std\+::pair$<$\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string$>$ Effect\+::effect}
 
 selected effect name and id 
 
+Definition at line 53 of file Effect.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/effects/\textbf{ Effect.\+h}\item 
-src/effects/\textbf{ Effect.\+cpp}\end{DoxyCompactItemize}
+src/effects/Effect.\+h\item 
+src/effects/Effect.\+cpp\end{DoxyCompactItemize}

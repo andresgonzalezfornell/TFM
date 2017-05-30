@@ -1,4 +1,4 @@
-\section{Channel Class Reference}
+\hypertarget{class_channel}{}\section{Channel Class Reference}
 \label{class_channel}\index{Channel@{Channel}}
 
 
@@ -9,83 +9,86 @@ Single-\/object class from channels list.
 
 {\ttfamily \#include $<$Channels\+List.\+h$>$}
 
+
+
+Collaboration diagram for Channel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_channel__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Channel} (Q\+Layout $\ast$framework, std\+::string \textbf{ prefix}, int \textbf{ index}, bool \textbf{ isoutput})
+\hyperlink{class_channel_a3a5079024e870e5188f7af98772ae38c}{Channel} (Q\+Layout $\ast$framework, std\+::string prefix, int \hyperlink{class_channel_a992b8f195f395a64b4e966886bb41f00}{index}, bool isoutput)
 \begin{DoxyCompactList}\small\item\em Channels constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Channel} ()
+\mbox{\Hypertarget{class_channel_a5f15ebd302464069f1a9e3f0ded14482}\label{class_channel_a5f15ebd302464069f1a9e3f0ded14482}} 
+\hyperlink{class_channel_a5f15ebd302464069f1a9e3f0ded14482}{$\sim$\+Channel} ()
 \begin{DoxyCompactList}\small\item\em Channels desctructor. \end{DoxyCompactList}\item 
-int \textbf{ get\+Index} ()
+int \hyperlink{class_channel_af0427a10e1713ba8327df0b0cd0fb2f5}{get\+Index} ()
 \begin{DoxyCompactList}\small\item\em It gets the channel index. \end{DoxyCompactList}\item 
-void \textbf{ set\+Index} (int \textbf{ index})
+\mbox{\Hypertarget{class_channel_a21286e2c4add83ea96e2636e87e9871b}\label{class_channel_a21286e2c4add83ea96e2636e87e9871b}} 
+void {\bfseries set\+Index} (int \hyperlink{class_channel_a992b8f195f395a64b4e966886bb41f00}{index})
 \item 
-void \textbf{ set\+Label} (std\+::string \textbf{ label})
+void \hyperlink{class_channel_a1d0ac75e7416c18c3695de418e9137e1}{set\+Label} (std\+::string \hyperlink{class_channel_a66a7e30d0b8c6ee9c0b0d537b59bd695}{label})
 \begin{DoxyCompactList}\small\item\em It sets a label to the channel name, i.\+e., group box title and label text. \end{DoxyCompactList}\item 
-void \textbf{ set\+Volume} (int \textbf{ volume})
+void \hyperlink{class_channel_a381d4ad81038cb9bcf393fa47b13cdb0}{set\+Volume} (int \hyperlink{class_channel_aa8977e4605932b2201b03ebf3aa14ffd}{volume})
 \begin{DoxyCompactList}\small\item\em It sets the channel volume level. \end{DoxyCompactList}\item 
-void \textbf{ mute} (bool state)
+void \hyperlink{class_channel_a88f542e0f6d1e1d384ad8bf79a9e305b}{mute} (bool state)
 \begin{DoxyCompactList}\small\item\em It mutes channel. \end{DoxyCompactList}\item 
-void \textbf{ bypass} (bool state)
+void \hyperlink{class_channel_a2574d67b3f0d3f90c04a6154b96e303a}{bypass} (bool state)
 \begin{DoxyCompactList}\small\item\em It sets channel to bypass effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ index}
+int \hyperlink{class_channel_a992b8f195f395a64b4e966886bb41f00}{index}
 \item 
-std\+::string \textbf{ name}
+std\+::string \hyperlink{class_channel_ae080e1afd52f3b70e04c62fea46447aa}{name}
 \item 
-double \textbf{ volume}
+double \hyperlink{class_channel_aa8977e4605932b2201b03ebf3aa14ffd}{volume}
 \item 
-bool \textbf{ muted}
+bool \hyperlink{class_channel_ada7e3a050c346ad283ad302745f03f3c}{muted}
 \item 
-bool \textbf{ bypassed}
+bool \hyperlink{class_channel_a94507945240717f2570e3baadd02d08a}{bypassed}
 \item 
-\textbf{ Audio\+Output} $\ast$ \textbf{ audiooutput}
+\hyperlink{class_audio_output}{Audio\+Output} $\ast$ \hyperlink{class_channel_a7c8a0b25848ab487c39a803785f7ed21}{audiooutput}
 \end{DoxyCompactItemize}
 \textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
-Q\+Group\+Box $\ast$ \textbf{ groupbox}
+Q\+Group\+Box $\ast$ \hyperlink{class_channel_a99287738754d9e20c0ca639d6d26f28c}{groupbox}
 \begin{DoxyCompactList}\small\item\em user interface elements \end{DoxyCompactList}\item 
-Q\+Line\+Edit $\ast$ \textbf{ label}
+Q\+Line\+Edit $\ast$ \hyperlink{class_channel_a66a7e30d0b8c6ee9c0b0d537b59bd695}{label}
 \item 
-Q\+Slider $\ast$ \textbf{ volumeslider}
+Q\+Slider $\ast$ \hyperlink{class_channel_acbcbfb33558a69224daa176372eb8be3}{volumeslider}
 \item 
-Q\+Check\+Box $\ast$ \textbf{ mutecheckbox}
+Q\+Check\+Box $\ast$ \hyperlink{class_channel_a0e7f90da49f291a7bac498e11e886fbd}{mutecheckbox}
 \item 
-Q\+Check\+Box $\ast$ \textbf{ bypasscheckbox}
+Q\+Check\+Box $\ast$ \hyperlink{class_channel_a285eab1752d5e9407e1bc1e75353df34}{bypasscheckbox}
 \item 
-Q\+Combo\+Box $\ast$ \textbf{ deviceselector}
+Q\+Combo\+Box $\ast$ \hyperlink{class_channel_a9dcb50dc41866fbe60424553f1b910fa}{deviceselector}
 \end{DoxyCompactItemize}
 
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::string \textbf{ prefix}
-\item 
-bool \textbf{ isoutput}
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Single-\/object class from channels list. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 32 of file Channels\+List.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_channel_a3a5079024e870e5188f7af98772ae38c}} 
+\mbox{\Hypertarget{class_channel_a3a5079024e870e5188f7af98772ae38c}\label{class_channel_a3a5079024e870e5188f7af98772ae38c}} 
 \index{Channel@{Channel}!Channel@{Channel}}
 \index{Channel@{Channel}!Channel@{Channel}}
-\subsubsection{Channel()}
+\subsubsection{\texorpdfstring{Channel()}{Channel()}}
 {\footnotesize\ttfamily Channel\+::\+Channel (\begin{DoxyParamCaption}\item[{Q\+Layout $\ast$}]{framework,  }\item[{std\+::string}]{prefix,  }\item[{int}]{index,  }\item[{bool}]{isoutput }\end{DoxyParamCaption})}
-
-
-
-Channels constructor. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -98,92 +101,84 @@ Channels constructor.
 {\em isoutput} & true to create device selector to send audio to the system audio output devices \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channel_a5f15ebd302464069f1a9e3f0ded14482}} 
-\index{Channel@{Channel}!````~Channel@{$\sim$\+Channel}}
-\index{````~Channel@{$\sim$\+Channel}!Channel@{Channel}}
-\subsubsection{$\sim$\+Channel()}
-{\footnotesize\ttfamily Channel\+::$\sim$\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 213 of file Channels\+List.\+cpp.
 
-Channels desctructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_channel_a3a5079024e870e5188f7af98772ae38c_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_channel_a2574d67b3f0d3f90c04a6154b96e303a}} 
+\mbox{\Hypertarget{class_channel_a2574d67b3f0d3f90c04a6154b96e303a}\label{class_channel_a2574d67b3f0d3f90c04a6154b96e303a}} 
 \index{Channel@{Channel}!bypass@{bypass}}
 \index{bypass@{bypass}!Channel@{Channel}}
-\subsubsection{bypass()}
+\subsubsection{\texorpdfstring{bypass()}{bypass()}}
 {\footnotesize\ttfamily void Channel\+::bypass (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
-
-
-
-It sets channel to bypass effects. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em state} & true to bypass effects and false to apply them \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channel_af0427a10e1713ba8327df0b0cd0fb2f5}} 
+
+
+Definition at line 318 of file Channels\+List.\+cpp.
+
+\mbox{\Hypertarget{class_channel_af0427a10e1713ba8327df0b0cd0fb2f5}\label{class_channel_af0427a10e1713ba8327df0b0cd0fb2f5}} 
 \index{Channel@{Channel}!get\+Index@{get\+Index}}
 \index{get\+Index@{get\+Index}!Channel@{Channel}}
-\subsubsection{get\+Index()}
+\subsubsection{\texorpdfstring{get\+Index()}{getIndex()}}
 {\footnotesize\ttfamily int Channel\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets the channel index. 
 
 \begin{DoxyReturn}{Returns}
 index 
 \end{DoxyReturn}
-\mbox{\label{class_channel_a88f542e0f6d1e1d384ad8bf79a9e305b}} 
+
+
+Definition at line 271 of file Channels\+List.\+cpp.
+
+\mbox{\Hypertarget{class_channel_a88f542e0f6d1e1d384ad8bf79a9e305b}\label{class_channel_a88f542e0f6d1e1d384ad8bf79a9e305b}} 
 \index{Channel@{Channel}!mute@{mute}}
 \index{mute@{mute}!Channel@{Channel}}
-\subsubsection{mute()}
+\subsubsection{\texorpdfstring{mute()}{mute()}}
 {\footnotesize\ttfamily void Channel\+::mute (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
-
-
-
-It mutes channel. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em state} & true to mute the channel and false to unmuted \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channel_a21286e2c4add83ea96e2636e87e9871b}} 
-\index{Channel@{Channel}!set\+Index@{set\+Index}}
-\index{set\+Index@{set\+Index}!Channel@{Channel}}
-\subsubsection{set\+Index()}
-{\footnotesize\ttfamily void Channel\+::set\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
 
-\mbox{\label{class_channel_a1d0ac75e7416c18c3695de418e9137e1}} 
+
+Definition at line 309 of file Channels\+List.\+cpp.
+
+\mbox{\Hypertarget{class_channel_a1d0ac75e7416c18c3695de418e9137e1}\label{class_channel_a1d0ac75e7416c18c3695de418e9137e1}} 
 \index{Channel@{Channel}!set\+Label@{set\+Label}}
 \index{set\+Label@{set\+Label}!Channel@{Channel}}
-\subsubsection{set\+Label()}
+\subsubsection{\texorpdfstring{set\+Label()}{setLabel()}}
 {\footnotesize\ttfamily void Channel\+::set\+Label (\begin{DoxyParamCaption}\item[{std\+::string}]{label }\end{DoxyParamCaption})}
 
 
-
-It sets a label to the channel name, i.\+e., group box title and label text. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em label} & \\
+{\em label} & new label \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_channel_a381d4ad81038cb9bcf393fa47b13cdb0}} 
+
+
+Definition at line 297 of file Channels\+List.\+cpp.
+
+\mbox{\Hypertarget{class_channel_a381d4ad81038cb9bcf393fa47b13cdb0}\label{class_channel_a381d4ad81038cb9bcf393fa47b13cdb0}} 
 \index{Channel@{Channel}!set\+Volume@{set\+Volume}}
 \index{set\+Volume@{set\+Volume}!Channel@{Channel}}
-\subsubsection{set\+Volume()}
+\subsubsection{\texorpdfstring{set\+Volume()}{setVolume()}}
 {\footnotesize\ttfamily void Channel\+::set\+Volume (\begin{DoxyParamCaption}\item[{int}]{volume }\end{DoxyParamCaption})}
-
-
-
-It sets the channel volume level. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -192,98 +187,134 @@ It sets the channel volume level.
 \end{DoxyParams}
 
 
+Definition at line 327 of file Channels\+List.\+cpp.
+
+
+
 \subsection{Member Data Documentation}
-\mbox{\label{class_channel_a7c8a0b25848ab487c39a803785f7ed21}} 
+\mbox{\Hypertarget{class_channel_a7c8a0b25848ab487c39a803785f7ed21}\label{class_channel_a7c8a0b25848ab487c39a803785f7ed21}} 
 \index{Channel@{Channel}!audiooutput@{audiooutput}}
 \index{audiooutput@{audiooutput}!Channel@{Channel}}
-\subsubsection{audiooutput}
-{\footnotesize\ttfamily \textbf{ Audio\+Output}$\ast$ Channel\+::audiooutput}
+\subsubsection{\texorpdfstring{audiooutput}{audiooutput}}
+{\footnotesize\ttfamily \hyperlink{class_audio_output}{Audio\+Output}$\ast$ Channel\+::audiooutput}
 
-system audio output devices object \mbox{\label{class_channel_a285eab1752d5e9407e1bc1e75353df34}} 
+system audio output devices object 
+
+Definition at line 39 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a285eab1752d5e9407e1bc1e75353df34}\label{class_channel_a285eab1752d5e9407e1bc1e75353df34}} 
 \index{Channel@{Channel}!bypasscheckbox@{bypasscheckbox}}
 \index{bypasscheckbox@{bypasscheckbox}!Channel@{Channel}}
-\subsubsection{bypasscheckbox}
+\subsubsection{\texorpdfstring{bypasscheckbox}{bypasscheckbox}}
 {\footnotesize\ttfamily Q\+Check\+Box$\ast$ Channel\+::bypasscheckbox}
 
-checkbox object to bypass effect \mbox{\label{class_channel_a94507945240717f2570e3baadd02d08a}} 
+checkbox object to bypass effect 
+
+Definition at line 48 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a94507945240717f2570e3baadd02d08a}\label{class_channel_a94507945240717f2570e3baadd02d08a}} 
 \index{Channel@{Channel}!bypassed@{bypassed}}
 \index{bypassed@{bypassed}!Channel@{Channel}}
-\subsubsection{bypassed}
+\subsubsection{\texorpdfstring{bypassed}{bypassed}}
 {\footnotesize\ttfamily bool Channel\+::bypassed}
 
-it tells channel to bypass effects or apply them \mbox{\label{class_channel_a9dcb50dc41866fbe60424553f1b910fa}} 
+it tells channel to bypass effects or apply them 
+
+Definition at line 38 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a9dcb50dc41866fbe60424553f1b910fa}\label{class_channel_a9dcb50dc41866fbe60424553f1b910fa}} 
 \index{Channel@{Channel}!deviceselector@{deviceselector}}
 \index{deviceselector@{deviceselector}!Channel@{Channel}}
-\subsubsection{deviceselector}
+\subsubsection{\texorpdfstring{deviceselector}{deviceselector}}
 {\footnotesize\ttfamily Q\+Combo\+Box$\ast$ Channel\+::deviceselector}
 
-audio output device selector object \mbox{\label{class_channel_a99287738754d9e20c0ca639d6d26f28c}} 
+audio output device selector object 
+
+Definition at line 49 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a99287738754d9e20c0ca639d6d26f28c}\label{class_channel_a99287738754d9e20c0ca639d6d26f28c}} 
 \index{Channel@{Channel}!groupbox@{groupbox}}
 \index{groupbox@{groupbox}!Channel@{Channel}}
-\subsubsection{groupbox}
+\subsubsection{\texorpdfstring{groupbox}{groupbox}}
 {\footnotesize\ttfamily Q\+Group\+Box$\ast$ Channel\+::groupbox}
 
+channel group box 
 
+Definition at line 44 of file Channels\+List.\+h.
 
-user interface elements 
-
-channel group box \mbox{\label{class_channel_a992b8f195f395a64b4e966886bb41f00}} 
+\mbox{\Hypertarget{class_channel_a992b8f195f395a64b4e966886bb41f00}\label{class_channel_a992b8f195f395a64b4e966886bb41f00}} 
 \index{Channel@{Channel}!index@{index}}
 \index{index@{index}!Channel@{Channel}}
-\subsubsection{index}
+\subsubsection{\texorpdfstring{index}{index}}
 {\footnotesize\ttfamily int Channel\+::index}
 
-channel index \mbox{\label{class_channel_a01aee8d0f6f9b56328f6a061b4a5a44b}} 
-\index{Channel@{Channel}!isoutput@{isoutput}}
-\index{isoutput@{isoutput}!Channel@{Channel}}
-\subsubsection{isoutput}
-{\footnotesize\ttfamily bool Channel\+::isoutput\hspace{0.3cm}{\ttfamily [private]}}
+channel index 
 
-true to show audio output device selector (in case of sending channel to speakers or other audio output system device) \mbox{\label{class_channel_a66a7e30d0b8c6ee9c0b0d537b59bd695}} 
+Definition at line 34 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a66a7e30d0b8c6ee9c0b0d537b59bd695}\label{class_channel_a66a7e30d0b8c6ee9c0b0d537b59bd695}} 
 \index{Channel@{Channel}!label@{label}}
 \index{label@{label}!Channel@{Channel}}
-\subsubsection{label}
+\subsubsection{\texorpdfstring{label}{label}}
 {\footnotesize\ttfamily Q\+Line\+Edit$\ast$ Channel\+::label}
 
-field to change the channel label \mbox{\label{class_channel_a0e7f90da49f291a7bac498e11e886fbd}} 
+field to change the channel label 
+
+Definition at line 45 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_a0e7f90da49f291a7bac498e11e886fbd}\label{class_channel_a0e7f90da49f291a7bac498e11e886fbd}} 
 \index{Channel@{Channel}!mutecheckbox@{mutecheckbox}}
 \index{mutecheckbox@{mutecheckbox}!Channel@{Channel}}
-\subsubsection{mutecheckbox}
+\subsubsection{\texorpdfstring{mutecheckbox}{mutecheckbox}}
 {\footnotesize\ttfamily Q\+Check\+Box$\ast$ Channel\+::mutecheckbox}
 
-muted checkbox object \mbox{\label{class_channel_ada7e3a050c346ad283ad302745f03f3c}} 
+muted checkbox object 
+
+Definition at line 47 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_ada7e3a050c346ad283ad302745f03f3c}\label{class_channel_ada7e3a050c346ad283ad302745f03f3c}} 
 \index{Channel@{Channel}!muted@{muted}}
 \index{muted@{muted}!Channel@{Channel}}
-\subsubsection{muted}
+\subsubsection{\texorpdfstring{muted}{muted}}
 {\footnotesize\ttfamily bool Channel\+::muted}
 
-it indicates if channel is muted \mbox{\label{class_channel_ae080e1afd52f3b70e04c62fea46447aa}} 
+it indicates if channel is muted 
+
+Definition at line 37 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_ae080e1afd52f3b70e04c62fea46447aa}\label{class_channel_ae080e1afd52f3b70e04c62fea46447aa}} 
 \index{Channel@{Channel}!name@{name}}
 \index{name@{name}!Channel@{Channel}}
-\subsubsection{name}
+\subsubsection{\texorpdfstring{name}{name}}
 {\footnotesize\ttfamily std\+::string Channel\+::name}
 
-channel name \mbox{\label{class_channel_ac13acc069e61428aca057f9c84bc7338}} 
-\index{Channel@{Channel}!prefix@{prefix}}
-\index{prefix@{prefix}!Channel@{Channel}}
-\subsubsection{prefix}
-{\footnotesize\ttfamily std\+::string Channel\+::prefix\hspace{0.3cm}{\ttfamily [private]}}
+channel name 
 
-user interface prefix \mbox{\label{class_channel_aa8977e4605932b2201b03ebf3aa14ffd}} 
+Definition at line 35 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_aa8977e4605932b2201b03ebf3aa14ffd}\label{class_channel_aa8977e4605932b2201b03ebf3aa14ffd}} 
 \index{Channel@{Channel}!volume@{volume}}
 \index{volume@{volume}!Channel@{Channel}}
-\subsubsection{volume}
+\subsubsection{\texorpdfstring{volume}{volume}}
 {\footnotesize\ttfamily double Channel\+::volume}
 
-current audio volume level \mbox{\label{class_channel_acbcbfb33558a69224daa176372eb8be3}} 
+current audio volume level 
+
+Definition at line 36 of file Channels\+List.\+h.
+
+\mbox{\Hypertarget{class_channel_acbcbfb33558a69224daa176372eb8be3}\label{class_channel_acbcbfb33558a69224daa176372eb8be3}} 
 \index{Channel@{Channel}!volumeslider@{volumeslider}}
 \index{volumeslider@{volumeslider}!Channel@{Channel}}
-\subsubsection{volumeslider}
+\subsubsection{\texorpdfstring{volumeslider}{volumeslider}}
 {\footnotesize\ttfamily Q\+Slider$\ast$ Channel\+::volumeslider}
 
 volume level slider 
 
+Definition at line 46 of file Channels\+List.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Channels\+List.\+h}\item 
-src/interface/\textbf{ Channels\+List.\+cpp}\end{DoxyCompactItemize}
+src/interface/Channels\+List.\+h\item 
+src/interface/Channels\+List.\+cpp\end{DoxyCompactItemize}

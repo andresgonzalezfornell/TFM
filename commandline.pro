@@ -35,6 +35,7 @@ SOURCES += \
     src/effects/Compressor.cpp \
     src/effects/Equalizer.cpp \
     src/effects/Reverb.cpp \
+    src/effects/Panning.cpp \
     src/sac/SACBitstream.cpp
 
 HEADERS  += \
@@ -49,6 +50,7 @@ HEADERS  += \
     src/effects/Effect.h \
     src/effects/Equalizer.h \
     src/effects/Reverb.h \
+    src/effects/Panning.h \
     src/sac/SACBitstream.h
 
 unix|win32: LIBS += -L$$PWD/lib/SAC/sac_enc/lib/ -lsac_enc

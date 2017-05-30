@@ -4,10 +4,6 @@ var class_effects_monitor =
     [ "EffectsMonitor", "class_effects_monitor.html#ad9215233b6d88585ec5d31ca4f35771a", null ],
     [ "~EffectsMonitor", "class_effects_monitor.html#aeb3a098669694d424d02c3ed8294d923", null ],
     [ "clear", "class_effects_monitor.html#ad6ad01ab2de7ca57a57e5fb71c2f85d9", null ],
-    [ "getAttribute", "class_effects_monitor.html#af8d00220f20116b5ccb18110612dba03", null ],
-    [ "loadField", "class_effects_monitor.html#aecf0c620e7e5320d9c0b9b606d336378", null ],
-    [ "loadFiles", "class_effects_monitor.html#a1b2a5daf9175082f1fe733cf8c744893", null ],
-    [ "loadTemplate", "class_effects_monitor.html#a2b1bda48b061be65774b08ea5654177d", null ],
     [ "plotChart", "class_effects_monitor.html#a50df1e2902fde1839b541b3429f8f02d", null ],
     [ "setEffect", "class_effects_monitor.html#ade184df36063a2c7ef2855c12265bd78", null ],
     [ "setParameter", "class_effects_monitor.html#a96ff58c6076dd68e03aea26896b69d78", null ],
@@ -19,7 +15,5 @@ var class_effects_monitor =
     [ "effect", "class_effects_monitor.html#a4ec98ceedd0d8bea006da1fc97f02124", null ],
     [ "effects", "class_effects_monitor.html#abf43aed9b7bcc0dee032f5e2e6a3e438", null ],
     [ "files", "class_effects_monitor.html#a88dbd80c419f86e09919761011c2a152", null ],
-    [ "framework", "class_effects_monitor.html#a2a95d542a26e21f0bbcfd4b7b6f85144", null ],
-    [ "layout", "class_effects_monitor.html#a267bd44e97f74c2b60993fc52b3c6ed1", null ],
     [ "parameters", "class_effects_monitor.html#aae2cb43d0ee0c182eca7309c561071ba", null ]
 ];

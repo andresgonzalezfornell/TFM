@@ -2,7 +2,6 @@
 
 /**
  * @brief   Compressor constructor.
- * @param   params          string of effect parameters
  */
 Compressor::Compressor() AS_EFFECT_CONSTRUCTOR {
 }
@@ -12,19 +11,22 @@ Compressor::Compressor() AS_EFFECT_CONSTRUCTOR {
  * @param 	input			input signal pointer
  * @param 	output			output signal pointer
  * @param 	samples			number of samples
+ * @param   channels        vector of channel types
  */
-void Compressor::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
+void Compressor::apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels) {
     const int chunksize = 20;
     this->update();
-    double level = 0;
-    double meanlevel = 0;
-    for (int sample = 0; sample < samples; sample++) {
-        level += std::pow(input[sample], 2) / chunksize;
-        if (sample % chunksize == chunksize - 1) {
-            meanlevel = 10*std::log10(level);
-            level = 0;
+    for (int channel = 0; channel < (int)channels.size(); channel++) {
+        double level = 0;
+        double meanlevel = -50;
+        for (int sample = 0; sample < samples; sample++) {
+            level += std::pow(input[channel][sample], 2) / chunksize;
+            if (sample % chunksize == chunksize - 1) {
+                meanlevel = 10*std::log10(level);
+                level = 0;
+            }
+            output[channel][sample] = input[channel][sample]*std::pow(10, gain(meanlevel) / 20);
         }
-        output[sample] = input[sample]*std::pow(10, gain(meanlevel) / 20);
     }
 }
 

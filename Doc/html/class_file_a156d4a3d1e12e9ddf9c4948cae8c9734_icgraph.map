@@ -1,0 +1,10 @@
+<map id="File::writeText" name="File::writeText">
+<area shape="rect" id="node2" href="$class_w_a_v_file.html#a1ae7240dbf26d73ad9bb712bbbd4d124" title="It writes the header on the file from the audio file object header. " alt="" coords="159,31,312,57"/>
+<area shape="rect" id="node3" href="$class_w_a_v_file.html#a01baafcc33b738c26163b46bd05dde1d" title="WAVFile constructor. Write file is allowed. " alt="" coords="374,5,507,32"/>
+<area shape="rect" id="node4" href="$class_w_a_v_file.html#aa0f1b604b4ff5c00ee84dfd4851ad2f9" title="It writes an array of samples on the audio file. " alt="" coords="360,56,521,83"/>
+<area shape="rect" id="node5" href="$class_process_manager.html#aa2deb4f60f83a490ed7520d2ce926626" title="It sets an output file from the existing output variable. " alt="" coords="569,56,757,83"/>
+<area shape="rect" id="node6" href="$class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="805,56,992,83"/>
+<area shape="rect" id="node7" href="$class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="1040,31,1167,57"/>
+<area shape="rect" id="node8" href="$class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="1420,56,1585,83"/>
+<area shape="rect" id="node9" href="$class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="1215,81,1372,108"/>
+</map>

@@ -7,12 +7,12 @@
 /**
  * @class	Compressor
  * @author	Andrés González Fornell
- * @brief	Audio compressor.
+ * @brief	Audio compressor effect.
  */
-class Compressor AS_EFFECT {
+class Compressor /** @cond */ AS_EFFECT /** @endcond */ {
 public:
     Compressor();
-    void apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel);
+    void apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels);
     std::vector<std::vector<double> > plot(std::string chart);
     void update();
 private:

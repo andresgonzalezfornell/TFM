@@ -1,4 +1,4 @@
-\section{Effects\+Monitor Class Reference}
+\hypertarget{class_effects_monitor}{}\section{Effects\+Monitor Class Reference}
 \label{class_effects_monitor}\index{Effects\+Monitor@{Effects\+Monitor}}
 
 
@@ -9,108 +9,113 @@ Class for managing effects parameters.
 
 {\ttfamily \#include $<$Effects\+Monitor.\+h$>$}
 
-Inheritance diagram for Effects\+Monitor\+:\begin{figure}[H]
+
+
+Inheritance diagram for Effects\+Monitor\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_effects_monitor}
+\includegraphics[width=160pt]{class_effects_monitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Effects\+Monitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_effects_monitor__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
 \begin{Indent}\textbf{ Parameters slots}\par
 {\em User interface functions for effect parameters control. }\begin{DoxyCompactItemize}
 \item 
-void \textbf{ update\+Parameter} (int value)
+void \hyperlink{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea}{update\+Parameter} (int value)
 \begin{DoxyCompactList}\small\item\em Slot for updating parameters parameters of type int when one of them is changed. \end{DoxyCompactList}\item 
-void \textbf{ update\+Parameter} (double value)
+void \hyperlink{class_effects_monitor_aa32c90185185305770ad5ab911641e17}{update\+Parameter} (double value)
 \begin{DoxyCompactList}\small\item\em Slot for updating parameters parameters of type double when one of them is changed. \end{DoxyCompactList}\item 
-void \textbf{ update\+Parameter} (Q\+String value)
+void \hyperlink{class_effects_monitor_ab2be23fba9628432cacdfc83cc75e9f4}{update\+Parameter} (Q\+String value)
 \begin{DoxyCompactList}\small\item\em Slot for updating parameters of type string when one of them is changed. \end{DoxyCompactList}\item 
-void \textbf{ update\+Parameter} (bool value)
+void \hyperlink{class_effects_monitor_a3488d6ae49a81de79fe6913a7bebcafe}{update\+Parameter} (bool value)
 \begin{DoxyCompactList}\small\item\em Slot for updating parameters parameters of type bool and enum when one of them is changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Effects\+Monitor} (Q\+Widget $\ast$\textbf{ framework})
-\begin{DoxyCompactList}\small\item\em \doxyref{Effects\+Monitor}{p.}{class_effects_monitor} constructor. \end{DoxyCompactList}\item 
-\textbf{ Effects\+Monitor} (Q\+Widget $\ast$\textbf{ framework}, \textbf{ Effect} $\ast$\textbf{ effect})
-\begin{DoxyCompactList}\small\item\em \doxyref{Effects\+Monitor}{p.}{class_effects_monitor} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Effects\+Monitor} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Effects\+Monitor}{p.}{class_effects_monitor} destructor. \end{DoxyCompactList}\item 
-void \textbf{ set\+Effect} (\textbf{ Effect} $\ast$\textbf{ effect})
+\hyperlink{class_effects_monitor_a484d2e47c270b1a9f608dd7c2c7e3994}{Effects\+Monitor} (Q\+Widget $\ast$framework)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effects_monitor}{Effects\+Monitor} constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_effects_monitor_ad9215233b6d88585ec5d31ca4f35771a}{Effects\+Monitor} (Q\+Widget $\ast$framework, \hyperlink{class_effect}{Effect} $\ast$\hyperlink{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}{effect})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effects_monitor}{Effects\+Monitor} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_effects_monitor_aeb3a098669694d424d02c3ed8294d923}\label{class_effects_monitor_aeb3a098669694d424d02c3ed8294d923}} 
+\hyperlink{class_effects_monitor_aeb3a098669694d424d02c3ed8294d923}{$\sim$\+Effects\+Monitor} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_effects_monitor}{Effects\+Monitor} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78}{set\+Effect} (\hyperlink{class_effect}{Effect} $\ast$\hyperlink{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}{effect})
 \begin{DoxyCompactList}\small\item\em It selects an effect. \end{DoxyCompactList}\item 
-void \textbf{ clear} ()
+\mbox{\Hypertarget{class_effects_monitor_ad6ad01ab2de7ca57a57e5fb71c2f85d9}\label{class_effects_monitor_ad6ad01ab2de7ca57a57e5fb71c2f85d9}} 
+void \hyperlink{class_effects_monitor_ad6ad01ab2de7ca57a57e5fb71c2f85d9}{clear} ()
 \begin{DoxyCompactList}\small\item\em It clears the user interface framework. \end{DoxyCompactList}\item 
-void \textbf{ set\+Parameter} (std\+::string key, std\+::string value)
+void \hyperlink{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78}{set\+Parameter} (std\+::string key, std\+::string value)
 \begin{DoxyCompactList}\small\item\em It sets a parameter from the parameter user interface object. \end{DoxyCompactList}\item 
-void \textbf{ plot\+Chart} ()
+\mbox{\Hypertarget{class_effects_monitor_a50df1e2902fde1839b541b3429f8f02d}\label{class_effects_monitor_a50df1e2902fde1839b541b3429f8f02d}} 
+void \hyperlink{class_effects_monitor_a50df1e2902fde1839b541b3429f8f02d}{plot\+Chart} ()
 \begin{DoxyCompactList}\small\item\em It plots every chart on the effects monitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Effect} $\ast$ \textbf{ effect}
+\hyperlink{class_effect}{Effect} $\ast$ \hyperlink{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}{effect}
 \item 
-std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ effects}
+std\+::map$<$ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string $>$ \hyperlink{class_effects_monitor_abf43aed9b7bcc0dee032f5e2e6a3e438}{effects}
 \item 
-std\+::map$<$ \textbf{ Effect\+::effect\+ID}, std\+::string $>$ \textbf{ files}
+std\+::map$<$ \hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string $>$ \hyperlink{class_effects_monitor_a88dbd80c419f86e09919761011c2a152}{files}
 \item 
-std\+::map$<$ std\+::string, std\+::string $>$ \textbf{ parameters}
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_effects_monitor_aae2cb43d0ee0c182eca7309c561071ba}{parameters}
 \item 
-std\+::map$<$ std\+::string, \textbf{ Chart2D} $\ast$ $>$ \textbf{ charts}
-\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \textbf{ load\+Files} ()
-\begin{DoxyCompactList}\small\item\em It loads all imported effects template files from the effects folder as application resource in order to be used by the running program. \end{DoxyCompactList}\item 
-void \textbf{ load\+Template} ()
-\begin{DoxyCompactList}\small\item\em It loads a user interface template from a xml file and loads it as an effect monitor interface. \end{DoxyCompactList}\item 
-std\+::string \textbf{ get\+Attribute} (std\+::string element, std\+::string attribute)
-\begin{DoxyCompactList}\small\item\em It gets an attribute from a xml line (correponded to a xml element). \end{DoxyCompactList}\item 
-void \textbf{ load\+Field} (std\+::string element)
-\begin{DoxyCompactList}\small\item\em It loads a field from a xml line (corresponded to an element). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Q\+Widget $\ast$ \textbf{ framework}
-\item 
-Q\+Form\+Layout $\ast$ \textbf{ layout}
+std\+::map$<$ std\+::string, \hyperlink{class_chart2_d}{Chart2D} $\ast$ $>$ \hyperlink{class_effects_monitor_a2b5f5373404adac3f94bdab2f423d958}{charts}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class for managing effects parameters. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 33 of file Effects\+Monitor.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_effects_monitor_a484d2e47c270b1a9f608dd7c2c7e3994}} 
+\mbox{\Hypertarget{class_effects_monitor_a484d2e47c270b1a9f608dd7c2c7e3994}\label{class_effects_monitor_a484d2e47c270b1a9f608dd7c2c7e3994}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}}
 \index{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{Effects\+Monitor()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Effects\+Monitor()}{EffectsMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Effects\+Monitor\+::\+Effects\+Monitor (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Effects\+Monitor}{p.}{class_effects_monitor} constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em framework} & user interface framework \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_ad9215233b6d88585ec5d31ca4f35771a}} 
+
+
+Definition at line 10 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_a484d2e47c270b1a9f608dd7c2c7e3994_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_ad9215233b6d88585ec5d31ca4f35771a}\label{class_effects_monitor_ad9215233b6d88585ec5d31ca4f35771a}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}}
 \index{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{Effects\+Monitor()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Effects\+Monitor\+::\+Effects\+Monitor (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework,  }\item[{\textbf{ Effect} $\ast$}]{effect }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Effects\+Monitor}{p.}{class_effects_monitor} constructor. 
+\subsubsection{\texorpdfstring{Effects\+Monitor()}{EffectsMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Effects\+Monitor\+::\+Effects\+Monitor (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{framework,  }\item[{\hyperlink{class_effect}{Effect} $\ast$}]{effect }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -119,118 +124,57 @@ Andrés González Fornell
 {\em effect} & selected effect to be load \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_aeb3a098669694d424d02c3ed8294d923}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!````~Effects\+Monitor@{$\sim$\+Effects\+Monitor}}
-\index{````~Effects\+Monitor@{$\sim$\+Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{$\sim$\+Effects\+Monitor()}
-{\footnotesize\ttfamily Effects\+Monitor\+::$\sim$\+Effects\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 23 of file Effects\+Monitor.\+cpp.
 
-\doxyref{Effects\+Monitor}{p.}{class_effects_monitor} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ad9215233b6d88585ec5d31ca4f35771a_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_effects_monitor_ad6ad01ab2de7ca57a57e5fb71c2f85d9}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!clear@{clear}}
-\index{clear@{clear}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{clear()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It clears the user interface framework. 
-
-\mbox{\label{class_effects_monitor_af8d00220f20116b5ccb18110612dba03}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!get\+Attribute@{get\+Attribute}}
-\index{get\+Attribute@{get\+Attribute}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{get\+Attribute()}
-{\footnotesize\ttfamily std\+::string Effects\+Monitor\+::get\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{element,  }\item[{std\+::string}]{attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-It gets an attribute from a xml line (correponded to a xml element). 
-
-
-\begin{DoxyParams}{Parameters}
-{\em element} & string of the xml line (full element) \\
-\hline
-{\em attribute} & name of the attribute \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the attribute 
-\end{DoxyReturn}
-\mbox{\label{class_effects_monitor_aecf0c620e7e5320d9c0b9b606d336378}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!load\+Field@{load\+Field}}
-\index{load\+Field@{load\+Field}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{load\+Field()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::load\+Field (\begin{DoxyParamCaption}\item[{std\+::string}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-It loads a field from a xml line (corresponded to an element). 
-
-
-\begin{DoxyParams}{Parameters}
-{\em element} & string of the xml line (full element) \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_effects_monitor_a1b2a5daf9175082f1fe733cf8c744893}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!load\+Files@{load\+Files}}
-\index{load\+Files@{load\+Files}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{load\+Files()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::load\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-It loads all imported effects template files from the effects folder as application resource in order to be used by the running program. 
-
-\mbox{\label{class_effects_monitor_a2b1bda48b061be65774b08ea5654177d}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!load\+Template@{load\+Template}}
-\index{load\+Template@{load\+Template}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{load\+Template()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::load\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-It loads a user interface template from a xml file and loads it as an effect monitor interface. 
-
-\mbox{\label{class_effects_monitor_a50df1e2902fde1839b541b3429f8f02d}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!plot\+Chart@{plot\+Chart}}
-\index{plot\+Chart@{plot\+Chart}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{plot\+Chart()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::plot\+Chart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It plots every chart on the effects monitor. 
-
-\mbox{\label{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78}} 
+\mbox{\Hypertarget{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78}\label{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!set\+Effect@{set\+Effect}}
 \index{set\+Effect@{set\+Effect}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{set\+Effect()}
-{\footnotesize\ttfamily void Effects\+Monitor\+::set\+Effect (\begin{DoxyParamCaption}\item[{\textbf{ Effect} $\ast$}]{effect }\end{DoxyParamCaption})}
-
-
-
-It selects an effect. 
+\subsubsection{\texorpdfstring{set\+Effect()}{setEffect()}}
+{\footnotesize\ttfamily void Effects\+Monitor\+::set\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{class_effect}{Effect} $\ast$}]{effect }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
 {\em effect} & selected effect \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78}} 
+
+
+Definition at line 40 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ade184df36063a2c7ef2855c12265bd78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78}\label{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!set\+Parameter@{set\+Parameter}}
 \index{set\+Parameter@{set\+Parameter}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{set\+Parameter()}
+\subsubsection{\texorpdfstring{set\+Parameter()}{setParameter()}}
 {\footnotesize\ttfamily void Effects\+Monitor\+::set\+Parameter (\begin{DoxyParamCaption}\item[{std\+::string}]{parameter,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})}
-
-
-
-It sets a parameter from the parameter user interface object. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -239,114 +183,182 @@ It sets a parameter from the parameter user interface object.
 {\em value} & new parameter value \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea}} 
+
+
+Definition at line 362 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_a96ff58c6076dd68e03aea26896b69d78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea}\label{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}}
 \index{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{update\+Parameter\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\subsubsection{\texorpdfstring{update\+Parameter}{updateParameter}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily void Effects\+Monitor\+::update\+Parameter (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
-
-Slot for updating parameters parameters of type int when one of them is changed. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em value} & changed value \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_aa32c90185185305770ad5ab911641e17}} 
+
+
+Definition at line 403 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ae2cc992b9bb457da2a0cdab854a414ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_aa32c90185185305770ad5ab911641e17}\label{class_effects_monitor_aa32c90185185305770ad5ab911641e17}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}}
 \index{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{update\+Parameter\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\subsubsection{\texorpdfstring{update\+Parameter}{updateParameter}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily void Effects\+Monitor\+::update\+Parameter (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
-
-Slot for updating parameters parameters of type double when one of them is changed. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em value} & changed value \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_ab2be23fba9628432cacdfc83cc75e9f4}} 
+
+
+Definition at line 413 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_aa32c90185185305770ad5ab911641e17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_ab2be23fba9628432cacdfc83cc75e9f4}\label{class_effects_monitor_ab2be23fba9628432cacdfc83cc75e9f4}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}}
 \index{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{update\+Parameter\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\subsubsection{\texorpdfstring{update\+Parameter}{updateParameter}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily void Effects\+Monitor\+::update\+Parameter (\begin{DoxyParamCaption}\item[{Q\+String}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
-
-Slot for updating parameters of type string when one of them is changed. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em value} & changed value \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_effects_monitor_a3488d6ae49a81de79fe6913a7bebcafe}} 
+
+
+Definition at line 423 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_ab2be23fba9628432cacdfc83cc75e9f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_effects_monitor_a3488d6ae49a81de79fe6913a7bebcafe}\label{class_effects_monitor_a3488d6ae49a81de79fe6913a7bebcafe}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}}
 \index{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{update\+Parameter\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\subsubsection{\texorpdfstring{update\+Parameter}{updateParameter}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily void Effects\+Monitor\+::update\+Parameter (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
-
-Slot for updating parameters parameters of type bool and enum when one of them is changed. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em value} & changed value \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line 433 of file Effects\+Monitor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_effects_monitor_a3488d6ae49a81de79fe6913a7bebcafe_cgraph}
+\end{center}
+\end{figure}
+
+
 \subsection{Member Data Documentation}
-\mbox{\label{class_effects_monitor_a2b5f5373404adac3f94bdab2f423d958}} 
+\mbox{\Hypertarget{class_effects_monitor_a2b5f5373404adac3f94bdab2f423d958}\label{class_effects_monitor_a2b5f5373404adac3f94bdab2f423d958}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!charts@{charts}}
 \index{charts@{charts}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{charts}
-{\footnotesize\ttfamily std\+::map$<$std\+::string, \textbf{ Chart2D} $\ast$$>$ Effects\+Monitor\+::charts}
+\subsubsection{\texorpdfstring{charts}{charts}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{class_chart2_d}{Chart2D} $\ast$$>$ Effects\+Monitor\+::charts}
 
-list of charts of effect monitoring \mbox{\label{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}} 
+list of charts of effect monitoring 
+
+Definition at line 40 of file Effects\+Monitor.\+h.
+
+\mbox{\Hypertarget{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}\label{class_effects_monitor_a4ec98ceedd0d8bea006da1fc97f02124}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!effect@{effect}}
 \index{effect@{effect}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{effect}
-{\footnotesize\ttfamily \textbf{ Effect}$\ast$ Effects\+Monitor\+::effect}
+\subsubsection{\texorpdfstring{effect}{effect}}
+{\footnotesize\ttfamily \hyperlink{class_effect}{Effect}$\ast$ Effects\+Monitor\+::effect}
 
-pointer to current selected effect \mbox{\label{class_effects_monitor_abf43aed9b7bcc0dee032f5e2e6a3e438}} 
+pointer to current selected effect 
+
+Definition at line 36 of file Effects\+Monitor.\+h.
+
+\mbox{\Hypertarget{class_effects_monitor_abf43aed9b7bcc0dee032f5e2e6a3e438}\label{class_effects_monitor_abf43aed9b7bcc0dee032f5e2e6a3e438}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!effects@{effects}}
 \index{effects@{effects}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{effects}
-{\footnotesize\ttfamily std\+::map$<$\textbf{ Effect\+::effect\+ID}, std\+::string$>$ Effects\+Monitor\+::effects}
+\subsubsection{\texorpdfstring{effects}{effects}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string$>$ Effects\+Monitor\+::effects}
 
-list of all available effects \mbox{\label{class_effects_monitor_a88dbd80c419f86e09919761011c2a152}} 
+list of all available effects 
+
+Definition at line 37 of file Effects\+Monitor.\+h.
+
+\mbox{\Hypertarget{class_effects_monitor_a88dbd80c419f86e09919761011c2a152}\label{class_effects_monitor_a88dbd80c419f86e09919761011c2a152}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!files@{files}}
 \index{files@{files}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{files}
-{\footnotesize\ttfamily std\+::map$<$\textbf{ Effect\+::effect\+ID}, std\+::string$>$ Effects\+Monitor\+::files}
+\subsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{class_effect_a6422fe21e9e452943fbc3344884a6fed}{Effect\+::effect\+ID}, std\+::string$>$ Effects\+Monitor\+::files}
 
-list of all available effects template files \mbox{\label{class_effects_monitor_a2a95d542a26e21f0bbcfd4b7b6f85144}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!framework@{framework}}
-\index{framework@{framework}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{framework}
-{\footnotesize\ttfamily Q\+Widget$\ast$ Effects\+Monitor\+::framework\hspace{0.3cm}{\ttfamily [private]}}
+list of all available effects template files 
 
-effects monitor framework \mbox{\label{class_effects_monitor_a267bd44e97f74c2b60993fc52b3c6ed1}} 
-\index{Effects\+Monitor@{Effects\+Monitor}!layout@{layout}}
-\index{layout@{layout}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{layout}
-{\footnotesize\ttfamily Q\+Form\+Layout$\ast$ Effects\+Monitor\+::layout\hspace{0.3cm}{\ttfamily [private]}}
+Definition at line 38 of file Effects\+Monitor.\+h.
 
-form layout of effect parameters \mbox{\label{class_effects_monitor_aae2cb43d0ee0c182eca7309c561071ba}} 
+\mbox{\Hypertarget{class_effects_monitor_aae2cb43d0ee0c182eca7309c561071ba}\label{class_effects_monitor_aae2cb43d0ee0c182eca7309c561071ba}} 
 \index{Effects\+Monitor@{Effects\+Monitor}!parameters@{parameters}}
 \index{parameters@{parameters}!Effects\+Monitor@{Effects\+Monitor}}
-\subsubsection{parameters}
+\subsubsection{\texorpdfstring{parameters}{parameters}}
 {\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ Effects\+Monitor\+::parameters}
 
 list of the current effect parameters and their values 
 
+Definition at line 39 of file Effects\+Monitor.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Effects\+Monitor.\+h}\item 
-src/interface/\textbf{ Effects\+Monitor.\+cpp}\end{DoxyCompactItemize}
+src/interface/Effects\+Monitor.\+h\item 
+src/interface/Effects\+Monitor.\+cpp\end{DoxyCompactItemize}

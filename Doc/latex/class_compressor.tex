@@ -1,24 +1,114 @@
-\section{Compressor Class Reference}
+\hypertarget{class_compressor}{}\section{Compressor Class Reference}
 \label{class_compressor}\index{Compressor@{Compressor}}
 
 
-Audio compressor.  
+Audio compressor effect.  
 
 
 
 
 {\ttfamily \#include $<$Compressor.\+h$>$}
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_compressor_a8a728ed1544cc0f82e8390f4606026b0}\label{class_compressor_a8a728ed1544cc0f82e8390f4606026b0}} 
+\hyperlink{class_compressor_a8a728ed1544cc0f82e8390f4606026b0}{Compressor} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_compressor}{Compressor} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_compressor_a2937588c4c8ff8cb3781444663f392e9}{apply} (float $\ast$$\ast$input, float $\ast$$\ast$output, int samples, std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$ channels)
+\begin{DoxyCompactList}\small\item\em It applies compression effect. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{class_compressor_a57e231b206c612382a6cf4c348868838}{plot} (std\+::string chart)
+\begin{DoxyCompactList}\small\item\em It sends some values to user interface charts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_compressor_adabaa093dd4341c70f1388bbfbd0693a}\label{class_compressor_adabaa093dd4341c70f1388bbfbd0693a}} 
+void \hyperlink{class_compressor_adabaa093dd4341c70f1388bbfbd0693a}{update} ()
+\begin{DoxyCompactList}\small\item\em It sets params from map of params. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio compressor. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Definition at line 12 of file Compressor.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_compressor_a2937588c4c8ff8cb3781444663f392e9}\label{class_compressor_a2937588c4c8ff8cb3781444663f392e9}} 
+\index{Compressor@{Compressor}!apply@{apply}}
+\index{apply@{apply}!Compressor@{Compressor}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Compressor\+::apply (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{input,  }\item[{float $\ast$$\ast$}]{output,  }\item[{int}]{samples,  }\item[{std\+::vector$<$ \hyperlink{struct_s_a_c_bitstream_1_1_channel_type_a31c32b34085c06a1c58d920ca28c17c9}{S\+A\+C\+Bitstream\+::\+Channel\+Type\+::channeltype} $>$}]{channels }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input signal pointer \\
+\hline
+{\em output} & output signal pointer \\
+\hline
+{\em samples} & number of samples \\
+\hline
+{\em channels} & vector of channel types \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Compressor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_compressor_a2937588c4c8ff8cb3781444663f392e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_compressor_a2937588c4c8ff8cb3781444663f392e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_compressor_a57e231b206c612382a6cf4c348868838}\label{class_compressor_a57e231b206c612382a6cf4c348868838}} 
+\index{Compressor@{Compressor}!plot@{plot}}
+\index{plot@{plot}!Compressor@{Compressor}}
+\subsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Compressor\+::plot (\begin{DoxyParamCaption}\item[{std\+::string}]{chart }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em chart} & chart id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of values as values\mbox{[}axis\mbox{]}\mbox{[}sample\mbox{]} axis\+: 0 = x (horizontal) and 1 = y (vertical) 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Compressor.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_compressor_a57e231b206c612382a6cf4c348868838_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_compressor_a57e231b206c612382a6cf4c348868838_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/effects/\textbf{ Compressor.\+h}\end{DoxyCompactItemize}
+src/effects/Compressor.\+h\item 
+src/effects/Compressor.\+cpp\end{DoxyCompactItemize}

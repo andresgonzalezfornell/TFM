@@ -12,6 +12,7 @@
 #include "Compressor.h"
 #include "Equalizer.h"
 #include "Reverb.h"
+#include "Panning.h"
 // ----------------------------------------------------------------------
 // 2. LIST
 // Add:         EFFECT(EffectClassName, "EffectClassName")
@@ -21,7 +22,8 @@
 #define LIST \
     EFFECT(Compressor, "Compressor") \
     EFFECT(Equalizer, "Equalizer") \
-    EFFECT(Reverb, "Reverb")
+    EFFECT(Reverb, "Reverb") \
+    EFFECT(Panning, "Panning")
 // ----------------------------------------------------------------------
 // 3. INHERITANCE OF CLASSES
 // Add:         public EffectClassName
@@ -31,25 +33,29 @@
 #define INHERITANCE \
     public Compressor, \
     public Equalizer, \
-    public Reverb
+    public Reverb, \
+    public Panning
 
 /**
  * @class	Effect
  * @author	Andrés González Fornell
  * @brief	Effect class. It contains (by inheritance) all effects classes.
  */
-class Effect: INHERITANCE {
+class Effect: /** @cond */ INHERITANCE /** @endcond */ {
 public:
 #define EFFECT(ID,NAME) ID,
+    /**
+     * @brief   available effects enumeration
+     */
     enum effectID {
-        LIST
-    }; /**< available effects enumeration */
+        LIST /**< macros variable which contains all the effects **/
+    };
     std::pair<Effect::effectID, std::string> effect; /**< selected effect name and id */
     Effect(Effect::effectID effect, int fs);
     Effect(Effect::effectID effect, std::map<std::string, std::string> params, int fs);
     ~Effect();
     void setParams(std::map<std::string, std::string> params);
-    bool apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel);
+    bool apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels);
     std::vector<std::vector<double> > plot(std::string chart);
     static std::map<Effect::effectID, std::string> getEffects();
     static Effect::effectID getEffect(std::string effectname);

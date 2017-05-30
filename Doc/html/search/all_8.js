@@ -1,17 +1,8 @@
 var searchData=
 [
-  ['if',['if',['../sac__decoder_8c.html#a4886878a85e5c08aa353bdec90d702db',1,'if(input_samples !=NULL):&#160;sac_decoder.c'],['../sac__decoder_8c.html#a16c12acc93abe028863508fe88aa1f53',1,'if(input_interleaved !=NULL):&#160;sac_decoder.c'],['../sac__decoder_8c.html#ae607b3e1359f2da19367b45b67da6dee',1,'if(bitstream_type==BS_FILE):&#160;sac_decoder.c'],['../sac__decoder_8c.html#a1815c8f6ab79fa11002471bc2d0acbdf',1,'if(strcmp(error,&quot;&quot;)==0):&#160;sac_decoder.c']]],
-  ['imag',['imag',['../_audio_signal_8cpp.html#a06ebc6bb2d8547759c483e78d2087c51',1,'AudioSignal.cpp']]],
   ['index',['index',['../class_channel.html#a992b8f195f395a64b4e966886bb41f00',1,'Channel']]],
   ['info',['info',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217af6cbcad76cc2c860c206cefe43716a6b',1,'LogType']]],
-  ['inheritance',['INHERITANCE',['../_effect_8h.html#adb682ae52063604d1f6a6b0adf393d02',1,'Effect.h']]],
-  ['initialize',['initialize',['../class_audio_output.html#ab9bd7ed5d3dec7dfe35644db41fe0677',1,'AudioOutput']]],
-  ['input',['input',['../class_channels_charts.html#ab3a9a79fe459610f67633438f496b18b',1,'ChannelsCharts::input()'],['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_s_a_c_effects.html#abcfd19153f333c1a87d6fca5a25dd938',1,'SACEffects::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
-  ['input_5fchannels',['input_channels',['../class_channels_charts.html#af3c81ffd63585ea7967c6b2221b5e588',1,'ChannelsCharts']]],
-  ['input_5fchart',['input_chart',['../class_channels_charts.html#a87ae986ae562c146145eca33fa85b36e',1,'ChannelsCharts']]],
-  ['inputfile',['inputfile',['../class_process_manager.html#aa7c29a18734bf13e49e56184ca945c40',1,'ProcessManager']]],
+  ['input',['input',['../class_encoder.html#aa851a11113fd12d5cfa04a4a72013157',1,'Encoder::input()'],['../class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b',1,'ProcessManager::input()']]],
   ['interaction',['interaction',['../struct_log_type.html#a42f5153a559d41c697e4763ed36ff217a53f06005557a25a49c105c26c34e8a6c',1,'LogType']]],
-  ['isavailable',['isAvailable',['../class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae',1,'AudioStream']]],
-  ['isoutput',['isoutput',['../class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b',1,'Channel']]],
   ['italic',['italic',['../_logger_8cpp.html#af18f9cbf11b35a907dd685be2e87198b',1,'Logger.cpp']]]
 ];

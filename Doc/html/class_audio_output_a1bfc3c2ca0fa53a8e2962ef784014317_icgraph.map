@@ -1,0 +1,4 @@
+<map id="AudioOutput::setDevice" name="AudioOutput::setDevice">
+<area shape="rect" id="node2" href="$class_audio_output.html#afd879db4e79ccc430bd9d9a795534323" title="AudioOuput constructor. " alt="" coords="216,5,393,32"/>
+<area shape="rect" id="node3" href="$class_audio_output.html#a27ada29ff74a99f5c21d949caba261ee" title="It sets a list of audio devices. " alt="" coords="220,56,389,83"/>
+</map>

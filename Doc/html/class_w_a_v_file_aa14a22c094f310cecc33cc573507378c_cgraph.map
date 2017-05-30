@@ -1,0 +1,9 @@
+<map id="WAVFile::readSamples" name="WAVFile::readSamples">
+<area shape="rect" id="node2" href="$class_file.html#a917f13960e83613e5cb36d433b4cd833" title="It reads data from the file. " alt="" coords="240,107,317,133"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="564,107,649,133"/>
+<area shape="rect" id="node8" href="$class_w_a_v_file.html#a9ca294afee7e0c17ac00cd37b56dafd6" title="It gets the number of audio samples. " alt="" coords="213,259,344,285"/>
+<area shape="rect" id="node3" href="$class_file.html#a4260fca380a387a8347b83bb4bee91b5" title="It indicates if the file object exists. " alt="" coords="411,5,497,32"/>
+<area shape="rect" id="node4" href="$class_file.html#afcaf98328e440ccaedb20e310dc6b6c4" title="It gets the total file size. " alt="" coords="417,56,491,83"/>
+<area shape="rect" id="node7" href="$class_file.html#aff78fc9f04aecc0a56c151a5f328944a" title="It gets the file path name. " alt="" coords="392,157,516,184"/>
+<area shape="rect" id="node6" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="697,107,737,133"/>
+</map>

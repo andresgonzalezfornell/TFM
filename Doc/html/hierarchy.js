@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "AS_EFFECT", "class_a_s___e_f_f_e_c_t.html", null ],
     [ "AudioSignal", "class_audio_signal.html", null ],
     [ "AudioStream", "class_audio_stream.html", null ],
     [ "BinauralQuality", "struct_binaural_quality.html", null ],
@@ -9,6 +8,7 @@ var hierarchy =
     [ "Chart2D::ChartOptions", "struct_chart2_d_1_1_chart_options.html", null ],
     [ "Compressor", "class_compressor.html", null ],
     [ "DecodingType", "struct_decoding_type.html", null ],
+    [ "Effect", "class_effect.html", null ],
     [ "EffectBase", "class_effect_base.html", null ],
     [ "File::Endianess", "struct_file_1_1_endianess.html", null ],
     [ "Equalizer", "class_equalizer.html", null ],
@@ -17,10 +17,8 @@ var hierarchy =
     ] ],
     [ "WAVFile::Header", "struct_w_a_v_file_1_1_header.html", null ],
     [ "HRTFModel", "struct_h_r_t_f_model.html", null ],
-    [ "INHERITANCE", null, [
-      [ "Effect", "class_effect.html", null ]
-    ] ],
     [ "LogType", "struct_log_type.html", null ],
+    [ "Panning", "class_panning.html", null ],
     [ "ProcessManager", "class_process_manager.html", null ],
     [ "QDialog", null, [
       [ "AudioInfo", "class_audio_info.html", null ],

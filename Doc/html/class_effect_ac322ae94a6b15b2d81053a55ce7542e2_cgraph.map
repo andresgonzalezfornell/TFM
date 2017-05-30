@@ -1,0 +1,6 @@
+<map id="Effect::getParams" name="Effect::getParams">
+<area shape="rect" id="node2" href="$class_effect.html#a616281286b866f1f8f6c66715e54ee89" title="It extracts the map of values in a map&#45;structured tag from a effect configuration file (..." alt="" coords="181,31,312,57"/>
+<area shape="rect" id="node3" href="$class_effect.html#a607ab2a63d333137c1f07cf03611c4bf" title="It extracts the value in a tag from a effect configuration file (.fx) text. " alt="" coords="360,5,465,32"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="513,31,599,57"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="647,31,687,57"/>
+</map>

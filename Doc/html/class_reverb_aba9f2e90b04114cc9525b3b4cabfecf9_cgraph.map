@@ -1,0 +1,9 @@
+<map id="Reverb::apply" name="Reverb::apply">
+<area shape="rect" id="node2" href="$class_reverb.html#aabbbdbef25b5d4518e5611c608c37b0a" title="It applies a feed forward comb filter, according to the transfer function H(z) = gain * (g + z^&#45;delay..." alt="" coords="177,5,345,32"/>
+<area shape="rect" id="node4" href="$class_reverb.html#acbac17709b0977fc0fabdb7bc2aa2f50" title="It applies a shcroeder allpass filter, according to the transfer function H(z) = gain * (g + z^&#45;delay..." alt="" coords="182,56,339,83"/>
+<area shape="rect" id="node5" href="$class_reverb.html#a43184fe4ef185da6d7d6049c3866c294" title="It applies a Schroeder&#45;Moorer low pass feedback comb filter, according to the transfer function H(z) ..." alt="" coords="161,107,361,133"/>
+<area shape="rect" id="node6" href="$class_reverb.html#ab166279827798af21a9f19756d860be1" title="It applies a schroeder diffusion allpass filter, according to the transfer function H(z) = gain * (&#45;g..." alt="" coords="157,157,364,184"/>
+<area shape="rect" id="node7" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="218,208,303,235"/>
+<area shape="rect" id="node3" href="$class_reverb.html#ab6dd1add7689fcf4ef2d2958e0a5acc4" title="It applies a comb filter, according to the transfer function H(z) = (b[0] + b[1]·z^&#45;1 + ..." alt="" coords="412,81,543,108"/>
+<area shape="rect" id="node8" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="457,208,497,235"/>
+</map>

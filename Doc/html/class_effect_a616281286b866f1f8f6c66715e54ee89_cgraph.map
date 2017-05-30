@@ -1,0 +1,5 @@
+<map id="Effect::getTagMap" name="Effect::getTagMap">
+<area shape="rect" id="node2" href="$class_effect.html#a607ab2a63d333137c1f07cf03611c4bf" title="It extracts the value in a tag from a effect configuration file (.fx) text. " alt="" coords="184,5,289,32"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="337,31,423,57"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="471,31,511,57"/>
+</map>

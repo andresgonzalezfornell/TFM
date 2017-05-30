@@ -1,0 +1,7 @@
+<map id="SACEffects::setFormat" name="SACEffects::setFormat">
+<area shape="rect" id="node2" href="$class_channels_list.html#aeaeb08c6bf8aa1a48b5cc52c56505408" title="It gets the number of channels. " alt="" coords="223,5,373,32"/>
+<area shape="rect" id="node3" href="$class_channels_list.html#a794574bee033fd0fa2bee54c615576f9" title="It gets a channel. " alt="" coords="211,56,385,83"/>
+<area shape="rect" id="node4" href="$class_audio_output.html#a467f6e31cf89b89e9986caa05ec7fe62" title="It sets signal sampling frequency. " alt="" coords="216,107,380,133"/>
+<area shape="rect" id="node5" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="255,157,341,184"/>
+<area shape="rect" id="node6" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="433,157,473,184"/>
+</map>

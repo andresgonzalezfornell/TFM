@@ -1,4 +1,4 @@
-\section{Audio\+Signal Class Reference}
+\hypertarget{class_audio_signal}{}\section{Audio\+Signal Class Reference}
 \label{class_audio_signal}\index{Audio\+Signal@{Audio\+Signal}}
 
 
@@ -12,164 +12,155 @@ Audio signal class.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Audio\+Signal} (int \textbf{ fs})
-\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Signal}{p.}{class_audio_signal} constructor (empty signal vector). \end{DoxyCompactList}\item 
-\textbf{ Audio\+Signal} (std\+::vector$<$ float $>$ \textbf{ signal}, int \textbf{ fs})
-\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Signal}{p.}{class_audio_signal} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Audio\+Signal} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Audio\+Signal}{p.}{class_audio_signal} destructor. \end{DoxyCompactList}\item 
-float \textbf{ operator[$\,$]} (int index)
+\hyperlink{class_audio_signal_a72df7e0c092777d7b829ee7229d5d6f8}{Audio\+Signal} (int \hyperlink{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}{fs})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_audio_signal}{Audio\+Signal} constructor (empty signal vector). \end{DoxyCompactList}\item 
+\hyperlink{class_audio_signal_a755ad45352e2b260a2ee7fde2440a486}{Audio\+Signal} (std\+::vector$<$ float $>$ signal, int \hyperlink{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}{fs})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_audio_signal}{Audio\+Signal} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_signal_afb379d0c192ec109f8469a118c81b5f5}\label{class_audio_signal_afb379d0c192ec109f8469a118c81b5f5}} 
+\hyperlink{class_audio_signal_afb379d0c192ec109f8469a118c81b5f5}{$\sim$\+Audio\+Signal} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_audio_signal}{Audio\+Signal} destructor. \end{DoxyCompactList}\item 
+float \hyperlink{class_audio_signal_a92f6f979d43fe72d965e17b86dd82e79}{operator\mbox{[}$\,$\mbox{]}} (int index)
 \begin{DoxyCompactList}\small\item\em It gets a sample from the selected index. \end{DoxyCompactList}\item 
-\textbf{ Audio\+Signal} \textbf{ get\+Sample} (int start, int end)
+\hyperlink{class_audio_signal}{Audio\+Signal} \hyperlink{class_audio_signal_adfa4565e6ff0d8dc6bcbf87dbf6d01d1}{get\+Sample} (int start, int end)
 \begin{DoxyCompactList}\small\item\em It gets samples from a specific range. \end{DoxyCompactList}\item 
-void \textbf{ set\+Sample} (int index, float sample)
+void \hyperlink{class_audio_signal_aeef099025639235c7f062294470a691f}{set\+Sample} (int index, float sample)
 \begin{DoxyCompactList}\small\item\em It sets a sample in the selected index. \end{DoxyCompactList}\item 
-void \textbf{ add\+Sample} (float sample)
+void \hyperlink{class_audio_signal_a94c974f752e3045190944860bd8b0ad8}{add\+Sample} (float sample)
 \begin{DoxyCompactList}\small\item\em It adds a sample to the end of the signal. \end{DoxyCompactList}\item 
-void \textbf{ delete\+Sample} (int index)
+void \hyperlink{class_audio_signal_aac1c34bc8bfcf31fdbac847e67cbea7f}{delete\+Sample} (int index)
 \begin{DoxyCompactList}\small\item\em It deletes a sample at a selected position. \end{DoxyCompactList}\item 
-void \textbf{ delete\+Sample} (int start, int end)
+void \hyperlink{class_audio_signal_a0c12f9dab81440c887138f8308d5f3b6}{delete\+Sample} (int start, int end)
 \begin{DoxyCompactList}\small\item\em It deletes a range of samples. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Signal} ()
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_aa86d766d3fe58e23a852751bbe2ecc78}{get\+Signal} ()
 \begin{DoxyCompactList}\small\item\em It gets the entire signal. \end{DoxyCompactList}\item 
-void \textbf{ set\+Signal} (std\+::vector$<$ float $>$ \textbf{ signal})
+void \hyperlink{class_audio_signal_a90eda59db04d3b18bd1949b8fa9e9c81}{set\+Signal} (std\+::vector$<$ float $>$ signal)
 \begin{DoxyCompactList}\small\item\em It sets the entire signal. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Times} ()
-\begin{DoxyCompactList}\small\item\em It gets time [s] axis as a vector beggining at time t = 0 s. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Times} (float initialtime)
-\begin{DoxyCompactList}\small\item\em It gets time [s] axis as a vector beggining at a specific initial time. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Spectrum} ()
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_afff46a70335800ba93ae513bdea7e4c9}{get\+Times} ()
+\begin{DoxyCompactList}\small\item\em It gets time \mbox{[}s\mbox{]} axis as a vector beggining at time t = 0 s. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_aa04d6fcd3219f4bb8d77916c60d85ad2}{get\+Times} (float initialtime)
+\begin{DoxyCompactList}\small\item\em It gets time \mbox{[}s\mbox{]} axis as a vector beggining at a specific initial time. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_a1c1330b11b635cfafe2edb75fd0d2e70}{get\+Spectrum} ()
 \begin{DoxyCompactList}\small\item\em It gets the signal spectral density. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Spectrum} (int bands)
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_ae49bd4dc391e6ae0e8a673ff8d5089fb}{get\+Spectrum} (int bands)
 \begin{DoxyCompactList}\small\item\em It gets the signal spectral density. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Frequencies} ()
-\begin{DoxyCompactList}\small\item\em It gets frequencies [Hz] axis as a vector. \end{DoxyCompactList}\item 
-std\+::vector$<$ float $>$ \textbf{ get\+Frequencies} (int bands)
-\begin{DoxyCompactList}\small\item\em It gets frequencies [Hz] axis as a vector. \end{DoxyCompactList}\item 
-void \textbf{ clear} ()
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_a4e45a4b1adc16a9cbd65501efafb6ded}{get\+Frequencies} ()
+\begin{DoxyCompactList}\small\item\em It gets frequencies \mbox{[}Hz\mbox{]} axis as a vector. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{class_audio_signal_a9b7d7a655913f579c0df8b2639b3ce56}{get\+Frequencies} (int bands)
+\begin{DoxyCompactList}\small\item\em It gets frequencies \mbox{[}Hz\mbox{]} axis as a vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_signal_a69279f3fee0a4fe11d3e9a8361615a96}\label{class_audio_signal_a69279f3fee0a4fe11d3e9a8361615a96}} 
+void \hyperlink{class_audio_signal_a69279f3fee0a4fe11d3e9a8361615a96}{clear} ()
 \begin{DoxyCompactList}\small\item\em It removes all samples from the signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \textbf{ size}
+int \hyperlink{class_audio_signal_a44e595328705720f380613f1675dbdd1}{size}
 \item 
-int \textbf{ fs}
+int \hyperlink{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}{fs}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const unsigned int \textbf{ maxsamples} = 0x\+F\+F\+F\+F\+FF
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ float $>$ \textbf{ signal}
+static const unsigned int \hyperlink{class_audio_signal_a5d68faf1ab7f19197b93cc2cc0a7e645}{maxsamples} = 0x\+F\+F\+F\+F\+FF
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio signal class. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 17 of file Audio\+Signal.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_audio_signal_a72df7e0c092777d7b829ee7229d5d6f8}} 
+\mbox{\Hypertarget{class_audio_signal_a72df7e0c092777d7b829ee7229d5d6f8}\label{class_audio_signal_a72df7e0c092777d7b829ee7229d5d6f8}} 
 \index{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}}
 \index{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{Audio\+Signal()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Audio\+Signal()}{AudioSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Audio\+Signal\+::\+Audio\+Signal (\begin{DoxyParamCaption}\item[{int}]{fs }\end{DoxyParamCaption})}
 
 
-
-\doxyref{Audio\+Signal}{p.}{class_audio_signal} constructor (empty signal vector). 
-
-
 \begin{DoxyParams}{Parameters}
-{\em fs} & signal sampling frequency [Hz] \\
+{\em fs} & signal sampling frequency \mbox{[}Hz\mbox{]} \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_a755ad45352e2b260a2ee7fde2440a486}} 
+
+
+Definition at line 18 of file Audio\+Signal.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a72df7e0c092777d7b829ee7229d5d6f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_a755ad45352e2b260a2ee7fde2440a486}\label{class_audio_signal_a755ad45352e2b260a2ee7fde2440a486}} 
 \index{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}}
 \index{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{Audio\+Signal()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Audio\+Signal()}{AudioSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Audio\+Signal\+::\+Audio\+Signal (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{signal,  }\item[{int}]{fs }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Audio\+Signal}{p.}{class_audio_signal} constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em signal} & vector of signal samples \\
 \hline
-{\em fs} & signal sampling frequency [Hz] \\
+{\em fs} & signal sampling frequency \mbox{[}Hz\mbox{]} \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_afb379d0c192ec109f8469a118c81b5f5}} 
-\index{Audio\+Signal@{Audio\+Signal}!````~Audio\+Signal@{$\sim$\+Audio\+Signal}}
-\index{````~Audio\+Signal@{$\sim$\+Audio\+Signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{$\sim$\+Audio\+Signal()}
-{\footnotesize\ttfamily Audio\+Signal\+::$\sim$\+Audio\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-
-\doxyref{Audio\+Signal}{p.}{class_audio_signal} destructor. 
+Definition at line 29 of file Audio\+Signal.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_audio_signal_a94c974f752e3045190944860bd8b0ad8}} 
+\mbox{\Hypertarget{class_audio_signal_a94c974f752e3045190944860bd8b0ad8}\label{class_audio_signal_a94c974f752e3045190944860bd8b0ad8}} 
 \index{Audio\+Signal@{Audio\+Signal}!add\+Sample@{add\+Sample}}
 \index{add\+Sample@{add\+Sample}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{add\+Sample()}
+\subsubsection{\texorpdfstring{add\+Sample()}{addSample()}}
 {\footnotesize\ttfamily void Audio\+Signal\+::add\+Sample (\begin{DoxyParamCaption}\item[{float}]{sample }\end{DoxyParamCaption})}
 
 
-
-It adds a sample to the end of the signal. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em sample} & \\
+{\em sample} & new signal sample \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_a69279f3fee0a4fe11d3e9a8361615a96}} 
-\index{Audio\+Signal@{Audio\+Signal}!clear@{clear}}
-\index{clear@{clear}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{clear()}
-{\footnotesize\ttfamily void Audio\+Signal\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 89 of file Audio\+Signal.\+cpp.
 
-It removes all samples from the signal. 
-
-\mbox{\label{class_audio_signal_aac1c34bc8bfcf31fdbac847e67cbea7f}} 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a94c974f752e3045190944860bd8b0ad8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_aac1c34bc8bfcf31fdbac847e67cbea7f}\label{class_audio_signal_aac1c34bc8bfcf31fdbac847e67cbea7f}} 
 \index{Audio\+Signal@{Audio\+Signal}!delete\+Sample@{delete\+Sample}}
 \index{delete\+Sample@{delete\+Sample}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{delete\+Sample()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{delete\+Sample()}{deleteSample()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Audio\+Signal\+::delete\+Sample (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
-
-
-
-It deletes a sample at a selected position. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em index} & sample position index \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_a0c12f9dab81440c887138f8308d5f3b6}} 
+
+
+Definition at line 104 of file Audio\+Signal.\+cpp.
+
+\mbox{\Hypertarget{class_audio_signal_a0c12f9dab81440c887138f8308d5f3b6}\label{class_audio_signal_a0c12f9dab81440c887138f8308d5f3b6}} 
 \index{Audio\+Signal@{Audio\+Signal}!delete\+Sample@{delete\+Sample}}
 \index{delete\+Sample@{delete\+Sample}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{delete\+Sample()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{delete\+Sample()}{deleteSample()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Audio\+Signal\+::delete\+Sample (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
-
-
-
-It deletes a range of samples. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -178,28 +169,36 @@ It deletes a range of samples.
 {\em end} & last index of the range (included) \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_a4e45a4b1adc16a9cbd65501efafb6ded}} 
+
+
+Definition at line 114 of file Audio\+Signal.\+cpp.
+
+\mbox{\Hypertarget{class_audio_signal_a4e45a4b1adc16a9cbd65501efafb6ded}\label{class_audio_signal_a4e45a4b1adc16a9cbd65501efafb6ded}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Frequencies@{get\+Frequencies}}
 \index{get\+Frequencies@{get\+Frequencies}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Frequencies()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{get\+Frequencies()}{getFrequencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Frequencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets frequencies [Hz] axis as a vector. 
 
 \begin{DoxyReturn}{Returns}
 frequencies vector 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_a9b7d7a655913f579c0df8b2639b3ce56}} 
+
+
+Definition at line 227 of file Audio\+Signal.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a4e45a4b1adc16a9cbd65501efafb6ded_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_a9b7d7a655913f579c0df8b2639b3ce56}\label{class_audio_signal_a9b7d7a655913f579c0df8b2639b3ce56}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Frequencies@{get\+Frequencies}}
 \index{get\+Frequencies@{get\+Frequencies}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Frequencies()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{get\+Frequencies()}{getFrequencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Frequencies (\begin{DoxyParamCaption}\item[{int}]{bands }\end{DoxyParamCaption})}
-
-
-
-It gets frequencies [Hz] axis as a vector. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -209,15 +208,23 @@ It gets frequencies [Hz] axis as a vector.
 \begin{DoxyReturn}{Returns}
 frequencies vector 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_adfa4565e6ff0d8dc6bcbf87dbf6d01d1}} 
+
+
+Definition at line 241 of file Audio\+Signal.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a9b7d7a655913f579c0df8b2639b3ce56_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_adfa4565e6ff0d8dc6bcbf87dbf6d01d1}\label{class_audio_signal_adfa4565e6ff0d8dc6bcbf87dbf6d01d1}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Sample@{get\+Sample}}
 \index{get\+Sample@{get\+Sample}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Sample()}
-{\footnotesize\ttfamily \textbf{ Audio\+Signal} Audio\+Signal\+::get\+Sample (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
-
-
-
-It gets samples from a specific range. 
+\subsubsection{\texorpdfstring{get\+Sample()}{getSample()}}
+{\footnotesize\ttfamily \hyperlink{class_audio_signal}{Audio\+Signal} Audio\+Signal\+::get\+Sample (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -229,41 +236,57 @@ It gets samples from a specific range.
 \begin{DoxyReturn}{Returns}
 subsignal object 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_aa86d766d3fe58e23a852751bbe2ecc78}} 
+
+
+Definition at line 64 of file Audio\+Signal.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_adfa4565e6ff0d8dc6bcbf87dbf6d01d1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_aa86d766d3fe58e23a852751bbe2ecc78}\label{class_audio_signal_aa86d766d3fe58e23a852751bbe2ecc78}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Signal@{get\+Signal}}
 \index{get\+Signal@{get\+Signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Signal()}
+\subsubsection{\texorpdfstring{get\+Signal()}{getSignal()}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-It gets the entire signal. 
-
 \begin{DoxyReturn}{Returns}
-signal 
+audio signal 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_a1c1330b11b635cfafe2edb75fd0d2e70}} 
+
+
+Definition at line 124 of file Audio\+Signal.\+cpp.
+
+\mbox{\Hypertarget{class_audio_signal_a1c1330b11b635cfafe2edb75fd0d2e70}\label{class_audio_signal_a1c1330b11b635cfafe2edb75fd0d2e70}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Spectrum@{get\+Spectrum}}
 \index{get\+Spectrum@{get\+Spectrum}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Spectrum()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{get\+Spectrum()}{getSpectrum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Spectrum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets the signal spectral density. 
 
 \begin{DoxyReturn}{Returns}
 signal spectral density 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_ae49bd4dc391e6ae0e8a673ff8d5089fb}} 
+
+
+Definition at line 169 of file Audio\+Signal.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a1c1330b11b635cfafe2edb75fd0d2e70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_ae49bd4dc391e6ae0e8a673ff8d5089fb}\label{class_audio_signal_ae49bd4dc391e6ae0e8a673ff8d5089fb}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Spectrum@{get\+Spectrum}}
 \index{get\+Spectrum@{get\+Spectrum}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Spectrum()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{get\+Spectrum()}{getSpectrum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Spectrum (\begin{DoxyParamCaption}\item[{int}]{bands }\end{DoxyParamCaption})}
-
-
-
-It gets the signal spectral density. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -273,117 +296,151 @@ It gets the signal spectral density.
 \begin{DoxyReturn}{Returns}
 signal spectral density 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_afff46a70335800ba93ae513bdea7e4c9}} 
+
+
+Definition at line 195 of file Audio\+Signal.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_ae49bd4dc391e6ae0e8a673ff8d5089fb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_afff46a70335800ba93ae513bdea7e4c9}\label{class_audio_signal_afff46a70335800ba93ae513bdea7e4c9}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Times@{get\+Times}}
 \index{get\+Times@{get\+Times}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Times()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{get\+Times()}{getTimes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-It gets time [s] axis as a vector beggining at time t = 0 s. 
 
 \begin{DoxyReturn}{Returns}
 time vector 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_aa04d6fcd3219f4bb8d77916c60d85ad2}} 
+
+
+Definition at line 141 of file Audio\+Signal.\+cpp.
+
+\mbox{\Hypertarget{class_audio_signal_aa04d6fcd3219f4bb8d77916c60d85ad2}\label{class_audio_signal_aa04d6fcd3219f4bb8d77916c60d85ad2}} 
 \index{Audio\+Signal@{Audio\+Signal}!get\+Times@{get\+Times}}
 \index{get\+Times@{get\+Times}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{get\+Times()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{get\+Times()}{getTimes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ float $>$ Audio\+Signal\+::get\+Times (\begin{DoxyParamCaption}\item[{float}]{initialtime }\end{DoxyParamCaption})}
 
 
-
-It gets time [s] axis as a vector beggining at a specific initial time. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em initialtime} & initial time [s] \\
+{\em initialtime} & initial time \mbox{[}s\mbox{]} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 time vector 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_a92f6f979d43fe72d965e17b86dd82e79}} 
-\index{Audio\+Signal@{Audio\+Signal}!operator[]@{operator[]}}
-\index{operator[]@{operator[]}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{operator[]()}
-{\footnotesize\ttfamily float Audio\+Signal\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
 
 
+Definition at line 155 of file Audio\+Signal.\+cpp.
 
-It gets a sample from the selected index. 
+\mbox{\Hypertarget{class_audio_signal_a92f6f979d43fe72d965e17b86dd82e79}\label{class_audio_signal_a92f6f979d43fe72d965e17b86dd82e79}} 
+\index{Audio\+Signal@{Audio\+Signal}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Audio\+Signal@{Audio\+Signal}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily float Audio\+Signal\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
-{\em index} & \\
+{\em index} & selected index \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-sample 
+sample signal sample 
 \end{DoxyReturn}
-\mbox{\label{class_audio_signal_aeef099025639235c7f062294470a691f}} 
+
+
+Definition at line 46 of file Audio\+Signal.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_a92f6f979d43fe72d965e17b86dd82e79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_aeef099025639235c7f062294470a691f}\label{class_audio_signal_aeef099025639235c7f062294470a691f}} 
 \index{Audio\+Signal@{Audio\+Signal}!set\+Sample@{set\+Sample}}
 \index{set\+Sample@{set\+Sample}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{set\+Sample()}
+\subsubsection{\texorpdfstring{set\+Sample()}{setSample()}}
 {\footnotesize\ttfamily void Audio\+Signal\+::set\+Sample (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{float}]{sample }\end{DoxyParamCaption})}
 
 
-
-It sets a sample in the selected index. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em index} & \\
+{\em index} & selected index \\
 \hline
-{\em sample} & \\
+{\em sample} & new signal sample \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_audio_signal_a90eda59db04d3b18bd1949b8fa9e9c81}} 
+
+
+Definition at line 76 of file Audio\+Signal.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_audio_signal_aeef099025639235c7f062294470a691f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_audio_signal_a90eda59db04d3b18bd1949b8fa9e9c81}\label{class_audio_signal_a90eda59db04d3b18bd1949b8fa9e9c81}} 
 \index{Audio\+Signal@{Audio\+Signal}!set\+Signal@{set\+Signal}}
 \index{set\+Signal@{set\+Signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{set\+Signal()}
+\subsubsection{\texorpdfstring{set\+Signal()}{setSignal()}}
 {\footnotesize\ttfamily void Audio\+Signal\+::set\+Signal (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{signal }\end{DoxyParamCaption})}
 
 
-
-It sets the entire signal. 
-
-
 \begin{DoxyParams}{Parameters}
-{\em signal} & \\
+{\em signal} & audio signal \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line 132 of file Audio\+Signal.\+cpp.
+
+
+
 \subsection{Member Data Documentation}
-\mbox{\label{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}} 
+\mbox{\Hypertarget{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}\label{class_audio_signal_acc2dc31d0dc3ca222df68a88c00cf2c9}} 
 \index{Audio\+Signal@{Audio\+Signal}!fs@{fs}}
 \index{fs@{fs}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{fs}
+\subsubsection{\texorpdfstring{fs}{fs}}
 {\footnotesize\ttfamily int Audio\+Signal\+::fs}
 
-signal sampling frequency [Hz] \mbox{\label{class_audio_signal_a5d68faf1ab7f19197b93cc2cc0a7e645}} 
+signal sampling frequency \mbox{[}Hz\mbox{]} 
+
+Definition at line 20 of file Audio\+Signal.\+h.
+
+\mbox{\Hypertarget{class_audio_signal_a5d68faf1ab7f19197b93cc2cc0a7e645}\label{class_audio_signal_a5d68faf1ab7f19197b93cc2cc0a7e645}} 
 \index{Audio\+Signal@{Audio\+Signal}!maxsamples@{maxsamples}}
 \index{maxsamples@{maxsamples}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{maxsamples}
+\subsubsection{\texorpdfstring{maxsamples}{maxsamples}}
 {\footnotesize\ttfamily const unsigned int Audio\+Signal\+::maxsamples = 0x\+F\+F\+F\+F\+FF\hspace{0.3cm}{\ttfamily [static]}}
 
-maximum number of samples \mbox{\label{class_audio_signal_acd6f3fc199a736b66a2efba59e8683b8}} 
-\index{Audio\+Signal@{Audio\+Signal}!signal@{signal}}
-\index{signal@{signal}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{signal}
-{\footnotesize\ttfamily std\+::vector$<$float$>$ Audio\+Signal\+::signal\hspace{0.3cm}{\ttfamily [private]}}
+maximum number of samples 
 
-signal data vector \mbox{\label{class_audio_signal_a44e595328705720f380613f1675dbdd1}} 
+Definition at line 21 of file Audio\+Signal.\+h.
+
+\mbox{\Hypertarget{class_audio_signal_a44e595328705720f380613f1675dbdd1}\label{class_audio_signal_a44e595328705720f380613f1675dbdd1}} 
 \index{Audio\+Signal@{Audio\+Signal}!size@{size}}
 \index{size@{size}!Audio\+Signal@{Audio\+Signal}}
-\subsubsection{size}
+\subsubsection{\texorpdfstring{size}{size}}
 {\footnotesize\ttfamily int Audio\+Signal\+::size}
 
 number of samples 
 
+Definition at line 19 of file Audio\+Signal.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/process/\textbf{ Audio\+Signal.\+h}\item 
-src/process/\textbf{ Audio\+Signal.\+cpp}\end{DoxyCompactItemize}
+src/process/Audio\+Signal.\+h\item 
+src/process/Audio\+Signal.\+cpp\end{DoxyCompactItemize}

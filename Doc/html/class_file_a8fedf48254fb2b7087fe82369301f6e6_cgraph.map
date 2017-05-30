@@ -1,0 +1,6 @@
+<map id="File::File" name="File::File">
+<area shape="rect" id="node2" href="$class_file.html#a4fc5c5228613d30b136e5e9a0a046339" title="It sets the file path name. " alt="" coords="125,5,249,32"/>
+<area shape="rect" id="node5" href="$class_file.html#a3320ff9a60903cdae6eb7f3fff06b05c" title="It sets the file reading cursor to keep on reading from another position. " alt="" coords="133,56,242,83"/>
+<area shape="rect" id="node3" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="297,5,383,32"/>
+<area shape="rect" id="node4" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="431,5,471,32"/>
+</map>

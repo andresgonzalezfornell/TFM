@@ -1,7 +1,7 @@
 /**
  * @name	main.cpp
  * @author	Andrés González Fornell
- * @brief	Main function
+ * @brief	Main function for SAC Effects via user interface.
  */
 
 // Qt libraries

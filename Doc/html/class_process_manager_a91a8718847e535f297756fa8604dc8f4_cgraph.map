@@ -1,0 +1,19 @@
+<map id="ProcessManager::applyEffect" name="ProcessManager::applyEffect">
+<area shape="rect" id="node2" href="$class_effect.html#a6d212ada944f12afbcd8e3e6e623df51" title="It applies the selected effect to the input and sets the result into output variable. " alt="" coords="249,284,345,311"/>
+<area shape="rect" id="node16" href="$_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="635,411,721,437"/>
+<area shape="rect" id="node3" href="$class_compressor.html#a2937588c4c8ff8cb3781444663f392e9" title="It applies compression effect. " alt="" coords="393,44,527,71"/>
+<area shape="rect" id="node5" href="$class_equalizer.html#ab58427efe27cc81be35410453a4158d6" title="It applies equalization effect. " alt="" coords="401,132,519,159"/>
+<area shape="rect" id="node10" href="$class_reverb.html#aba9f2e90b04114cc9525b3b4cabfecf9" title="It applies reverb effect. " alt="" coords="408,259,512,285"/>
+<area shape="rect" id="node18" href="$class_panning.html#a24d4cc11b0ee5c3838fcd042302ea90e" title="It applies panning effect. " alt="" coords="405,360,515,387"/>
+<area shape="rect" id="node4" href="$class_compressor.html#adabaa093dd4341c70f1388bbfbd0693a" title="It sets params from map of params. " alt="" coords="607,5,749,32"/>
+<area shape="rect" id="node6" href="$class_equalizer.html#a45f228e5ba216af9214f9a0070d2199e" title="It applies a low shelf filter. " alt="" coords="595,56,761,83"/>
+<area shape="rect" id="node8" href="$class_equalizer.html#af1bbd593cf7943262d40c80f2869c932" title="It applies a high shelf filter. " alt="" coords="593,107,763,133"/>
+<area shape="rect" id="node9" href="$class_equalizer.html#af30b0db022898105af9bee40d374fcde" title="It applies a peaking filter. " alt="" coords="597,157,759,184"/>
+<area shape="rect" id="node7" href="$class_equalizer.html#ad34a5bb0d644d3242147bf393ce84f02" title="It applies a filter according to the transfer function H(z) = ( b[0] + b[1]·z^&#45;1 + ..." alt="" coords="839,107,950,133"/>
+<area shape="rect" id="node11" href="$class_reverb.html#aabbbdbef25b5d4518e5611c608c37b0a" title="It applies a feed forward comb filter, according to the transfer function H(z) = gain * (g + z^&#45;delay..." alt="" coords="594,208,762,235"/>
+<area shape="rect" id="node13" href="$class_reverb.html#acbac17709b0977fc0fabdb7bc2aa2f50" title="It applies a shcroeder allpass filter, according to the transfer function H(z) = gain * (g + z^&#45;delay..." alt="" coords="599,259,757,285"/>
+<area shape="rect" id="node14" href="$class_reverb.html#a43184fe4ef185da6d7d6049c3866c294" title="It applies a Schroeder&#45;Moorer low pass feedback comb filter, according to the transfer function H(z) ..." alt="" coords="578,309,778,336"/>
+<area shape="rect" id="node15" href="$class_reverb.html#ab166279827798af21a9f19756d860be1" title="It applies a schroeder diffusion allpass filter, according to the transfer function H(z) = gain * (&#45;g..." alt="" coords="575,360,781,387"/>
+<area shape="rect" id="node12" href="$class_reverb.html#ab6dd1add7689fcf4ef2d2958e0a5acc4" title="It applies a comb filter, according to the transfer function H(z) = (b[0] + b[1]·z^&#45;1 + ..." alt="" coords="829,284,960,311"/>
+<area shape="rect" id="node17" href="$_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="875,411,915,437"/>
+</map>

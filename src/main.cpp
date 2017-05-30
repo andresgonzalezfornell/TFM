@@ -1,7 +1,7 @@
 /**
- * @name	TFM.cpp
+ * @name	main.cpp
  * @author	Andrés González Fornell
- * @brief	Test Unit file.
+ * @brief	Main function for SAC Effects via command line.
  */
 
 // System libraries

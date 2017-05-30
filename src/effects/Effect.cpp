@@ -34,8 +34,8 @@ Effect::~Effect() {
 }
 
 /**
- * @brief   It sets params.
- * @param   params
+ * @brief   It sets parameters variable.
+ * @param   params              parameters variable
  */
 void Effect::setParams(std::map<std::string, std::string> params) {
     this->params.clear();
@@ -64,19 +64,22 @@ void Effect::setParams(std::map<std::string, std::string> params) {
  * @param   input               input data pointer
  * @param   output              output data pointer
  * @param   samples             number of samples
- * @param   channel             type of channel
+ * @param   channels            vector of channel types
  * @return  true if it was successful
  */
-bool Effect::apply(float *input, float *output, int samples, SACBitstream::ChannelType::channeltype channel) {
+bool Effect::apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels) {
     switch (this->effect.first) {
     case effectID::Compressor:
-        Compressor::apply(input, output, samples, channel);
+        Compressor::apply(input, output, samples, channels);
         break;
     case effectID::Equalizer:
-        Equalizer::apply(input, output, samples, channel);
+        Equalizer::apply(input, output, samples, channels);
         break;
     case effectID::Reverb:
-        Reverb::apply(input, output, samples, channel);
+        Reverb::apply(input, output, samples, channels);
+        break;
+    case effectID::Panning:
+        Panning::apply(input, output, samples, channels);
         break;
     default:
         consolelog("Effect", LogType::error,
@@ -98,11 +101,6 @@ std::vector<std::vector<double>> Effect::plot(std::string chart) {
     switch (this->effect.first) {
     case effectID::Compressor:
         return Compressor::plot(chart);
-    case effectID::Equalizer:
-        return Equalizer::plot(chart);
-    case effectID::Reverb:
-        return Reverb::plot(chart);
-        break;
     default:
         consolelog("Effect", LogType::error,
                    "selected effect is not available");
@@ -135,7 +133,7 @@ std::map<Effect::effectID, std::string> Effect::getEffects() {
 }
 
 /**
- * @brief   It get effects type from the effect name.
+ * @brief   It gets effects type from the effect name.
  * @param   effectname          effect name string
  * @return  effect type
  * @ref     effectID
@@ -156,7 +154,7 @@ Effect::effectID Effect::getEffect(std::string effectname) {
 }
 
 /**
- * @brief   It get channels vector from a effect configuration file (.fx) text.
+ * @brief   It gets channels vector from a effect configuration file (.fx) text.
  * @param   configuration       contained text of a effect configuration file (.fx)
  * @param   size                number of channels
  * @return  channels boolean vector to select channels when applying effects
@@ -172,7 +170,7 @@ std::vector<bool> Effect::getChannels(std::string configuration, int size) {
 }
 
 /**
- * @brief   It get levels vector from a effect configuration file (.fx) text.
+ * @brief   It gets levels vector from a effect configuration file (.fx) text.
  * @param   configuration       contained text of a effect configuration file (.fx)
  * @param   size                number of channels
  * @return  levels vector of input channels before applying effects
@@ -195,7 +193,7 @@ std::vector<double> Effect::getLevels(std::string configuration, int size) {
 }
 
 /**
- * @brief   It get params from a effect configuration file (.fx) text.
+ * @brief   It gets params from a effect configuration file (.fx) text.
  * @param   configuration       contained text of a effect configuration file (.fx)
  * @return  parameters map variable valid to apply effects
  */
@@ -275,7 +273,7 @@ EffectBase::EffectBase() {
 }
 
 /**
- * @brief   It parse a parameter value to double
+ * @brief   It parses a parameter value to double
  * @param   param               parameter value
  * @return  value as integer
  */
@@ -284,7 +282,7 @@ int EffectBase::getInt(std::string param) {
 }
 
 /**
- * @brief   It parse a parameter value to integer
+ * @brief   It parses a parameter value to integer
  * @param   param               parameter value
  * @return  value
  */
@@ -293,7 +291,7 @@ double EffectBase::getDouble(std::string param) {
 }
 
 /**
- * @brief   It parse a parameter value to string
+ * @brief   It parses a parameter value to string
  * @param   param               parameter value
  * @return  value
  */
@@ -309,7 +307,7 @@ std::string EffectBase::getString(std::string param) {
 }
 
 /**
- * @brief   It parse a parameter value to bool
+ * @brief   It parses a parameter value to bool
  * @param   param               parameter value
  * @return  boolean value (false by default)
  */

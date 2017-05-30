@@ -1,4 +1,4 @@
-\section{src/tools/\+Logger.cpp File Reference}
+\hypertarget{_logger_8cpp}{}\section{src/tools/\+Logger.cpp File Reference}
 \label{_logger_8cpp}\index{src/tools/\+Logger.\+cpp@{src/tools/\+Logger.\+cpp}}
 
 
@@ -6,60 +6,62 @@ Functions to create log messages on console.
 
 
 {\ttfamily \#include \char`\"{}Logger.\+h\char`\"{}}\newline
+Include dependency graph for Logger.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{_logger_8cpp__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \textbf{ tab} (std\+::string content, const int tab\+\_\+max)
+std\+::string \hyperlink{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd}{tab} (std\+::string content, const int tab\+\_\+max)
 \begin{DoxyCompactList}\small\item\em It returns the string tab code to align log messages. \end{DoxyCompactList}\item 
-void \textbf{ consolelog} (std\+::string source, \textbf{ Log\+Type\+::logtype} logtype, std\+::string message)
+void \hyperlink{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4}{consolelog} (std\+::string source, \hyperlink{struct_log_type_a42f5153a559d41c697e4763ed36ff217}{Log\+Type\+::logtype} logtype, std\+::string message)
 \begin{DoxyCompactList}\small\item\em Log a message on console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{Indent}\textbf{ Font styles}\par
 {\em A\+N\+SI code for some font styles for log messages usage. }\begin{DoxyCompactItemize}
 \item 
-const std\+::string \textbf{ reset} = \char`\"{}\textbackslash{}033[0m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a6ea20d23dc6f0e5681125ae9108d61e9}{reset} = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
 \item 
-const std\+::string \textbf{ bold} = \char`\"{}\textbackslash{}033[1m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a80cda35843a67360b271e19d75a25d32}{bold} = \char`\"{}\textbackslash{}033\mbox{[}1m\char`\"{}
 \item 
-const std\+::string \textbf{ italic} = \char`\"{}\textbackslash{}033[3m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_af18f9cbf11b35a907dd685be2e87198b}{italic} = \char`\"{}\textbackslash{}033\mbox{[}3m\char`\"{}
 \item 
-const std\+::string \textbf{ black} = \char`\"{}\textbackslash{}033[30m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a630d308e3f9d63ffeaca09929cf30ee4}{black} = \char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}
 \item 
-const std\+::string \textbf{ red} = \char`\"{}\textbackslash{}033[31m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_acb5d1f5a5f86e947972f13be5e9bc5c8}{red} = \char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
 \item 
-const std\+::string \textbf{ green} = \char`\"{}\textbackslash{}033[32m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a0490a675322d0259b6571db0d96599b8}{green} = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
 \item 
-const std\+::string \textbf{ yellow} = \char`\"{}\textbackslash{}033[33m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_ad2360f7af7d877c5a313e9ca50b65e8a}{yellow} = \char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
 \item 
-const std\+::string \textbf{ blue} = \char`\"{}\textbackslash{}033[34m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a3f312aaa00f31d382a52e52d9505df08}{blue} = \char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}
 \item 
-const std\+::string \textbf{ magenta} = \char`\"{}\textbackslash{}033[35m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a9c3c2560b6f423f7902776457532fdba}{magenta} = \char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}
 \item 
-const std\+::string \textbf{ cyan} = \char`\"{}\textbackslash{}033[36m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a318c6830790132f4763b2f2b6dbaf126}{cyan} = \char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
 \item 
-const std\+::string \textbf{ white} = \char`\"{}\textbackslash{}033[37m\char`\"{}
+const std\+::string \hyperlink{_logger_8cpp_a06b2aafe2aee6b2b52f9e9c3271d75fc}{grey} = \char`\"{}\textbackslash{}033\mbox{[}37m\char`\"{}
 \end{DoxyCompactItemize}
 \end{Indent}
 
 
 \subsection{Detailed Description}
-Functions to create log messages on console. 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
 \subsection{Function Documentation}
-\mbox{\label{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4}} 
+\mbox{\Hypertarget{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4}\label{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!consolelog@{consolelog}}
 \index{consolelog@{consolelog}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{consolelog()}
-{\footnotesize\ttfamily void consolelog (\begin{DoxyParamCaption}\item[{std\+::string}]{source,  }\item[{\textbf{ Log\+Type\+::logtype}}]{logtype,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
-
-
-
-Log a message on console. 
+\subsubsection{\texorpdfstring{consolelog()}{consolelog()}}
+{\footnotesize\ttfamily void consolelog (\begin{DoxyParamCaption}\item[{std\+::string}]{source,  }\item[{\hyperlink{struct_log_type_a42f5153a559d41c697e4763ed36ff217}{Log\+Type\+::logtype}}]{logtype,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -73,15 +75,23 @@ Log a message on console.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\label{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd}} 
+
+
+Definition at line 51 of file Logger.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{_logger_8cpp_ad3268f5fc285cfb356a498e2d24b27f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd}\label{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!tab@{tab}}
 \index{tab@{tab}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{tab()}
+\subsubsection{\texorpdfstring{tab()}{tab()}}
 {\footnotesize\ttfamily std\+::string tab (\begin{DoxyParamCaption}\item[{std\+::string}]{content,  }\item[{const int}]{tab\+\_\+max }\end{DoxyParamCaption})}
-
-
-
-It returns the string tab code to align log messages. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -92,70 +102,126 @@ It returns the string tab code to align log messages.
 \end{DoxyParams}
 
 
+Definition at line 33 of file Logger.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_logger_8cpp_a551ee9103bbb16b6eea45a3f536617bd_icgraph}
+\end{center}
+\end{figure}
+
+
 \subsection{Variable Documentation}
-\mbox{\label{_logger_8cpp_a630d308e3f9d63ffeaca09929cf30ee4}} 
+\mbox{\Hypertarget{_logger_8cpp_a630d308e3f9d63ffeaca09929cf30ee4}\label{_logger_8cpp_a630d308e3f9d63ffeaca09929cf30ee4}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!black@{black}}
 \index{black@{black}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{black}
-{\footnotesize\ttfamily const std\+::string black = \char`\"{}\textbackslash{}033[30m\char`\"{}}
+\subsubsection{\texorpdfstring{black}{black}}
+{\footnotesize\ttfamily const std\+::string black = \char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a3f312aaa00f31d382a52e52d9505df08}} 
+black color font 
+
+Definition at line 18 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a3f312aaa00f31d382a52e52d9505df08}\label{_logger_8cpp_a3f312aaa00f31d382a52e52d9505df08}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!blue@{blue}}
 \index{blue@{blue}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{blue}
-{\footnotesize\ttfamily const std\+::string blue = \char`\"{}\textbackslash{}033[34m\char`\"{}}
+\subsubsection{\texorpdfstring{blue}{blue}}
+{\footnotesize\ttfamily const std\+::string blue = \char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a80cda35843a67360b271e19d75a25d32}} 
+blue color font 
+
+Definition at line 22 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a80cda35843a67360b271e19d75a25d32}\label{_logger_8cpp_a80cda35843a67360b271e19d75a25d32}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!bold@{bold}}
 \index{bold@{bold}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{bold}
-{\footnotesize\ttfamily const std\+::string bold = \char`\"{}\textbackslash{}033[1m\char`\"{}}
+\subsubsection{\texorpdfstring{bold}{bold}}
+{\footnotesize\ttfamily const std\+::string bold = \char`\"{}\textbackslash{}033\mbox{[}1m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a318c6830790132f4763b2f2b6dbaf126}} 
+bold 
+
+Definition at line 16 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a318c6830790132f4763b2f2b6dbaf126}\label{_logger_8cpp_a318c6830790132f4763b2f2b6dbaf126}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!cyan@{cyan}}
 \index{cyan@{cyan}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{cyan}
-{\footnotesize\ttfamily const std\+::string cyan = \char`\"{}\textbackslash{}033[36m\char`\"{}}
+\subsubsection{\texorpdfstring{cyan}{cyan}}
+{\footnotesize\ttfamily const std\+::string cyan = \char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a0490a675322d0259b6571db0d96599b8}} 
+cyan color font 
+
+Definition at line 24 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a0490a675322d0259b6571db0d96599b8}\label{_logger_8cpp_a0490a675322d0259b6571db0d96599b8}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!green@{green}}
 \index{green@{green}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{green}
-{\footnotesize\ttfamily const std\+::string green = \char`\"{}\textbackslash{}033[32m\char`\"{}}
+\subsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily const std\+::string green = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_af18f9cbf11b35a907dd685be2e87198b}} 
+green color font 
+
+Definition at line 20 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a06b2aafe2aee6b2b52f9e9c3271d75fc}\label{_logger_8cpp_a06b2aafe2aee6b2b52f9e9c3271d75fc}} 
+\index{Logger.\+cpp@{Logger.\+cpp}!grey@{grey}}
+\index{grey@{grey}!Logger.\+cpp@{Logger.\+cpp}}
+\subsubsection{\texorpdfstring{grey}{grey}}
+{\footnotesize\ttfamily const std\+::string grey = \char`\"{}\textbackslash{}033\mbox{[}37m\char`\"{}}
+
+grey color font 
+
+Definition at line 25 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_af18f9cbf11b35a907dd685be2e87198b}\label{_logger_8cpp_af18f9cbf11b35a907dd685be2e87198b}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!italic@{italic}}
 \index{italic@{italic}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{italic}
-{\footnotesize\ttfamily const std\+::string italic = \char`\"{}\textbackslash{}033[3m\char`\"{}}
+\subsubsection{\texorpdfstring{italic}{italic}}
+{\footnotesize\ttfamily const std\+::string italic = \char`\"{}\textbackslash{}033\mbox{[}3m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a9c3c2560b6f423f7902776457532fdba}} 
+italic 
+
+Definition at line 17 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a9c3c2560b6f423f7902776457532fdba}\label{_logger_8cpp_a9c3c2560b6f423f7902776457532fdba}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!magenta@{magenta}}
 \index{magenta@{magenta}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{magenta}
-{\footnotesize\ttfamily const std\+::string magenta = \char`\"{}\textbackslash{}033[35m\char`\"{}}
+\subsubsection{\texorpdfstring{magenta}{magenta}}
+{\footnotesize\ttfamily const std\+::string magenta = \char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_acb5d1f5a5f86e947972f13be5e9bc5c8}} 
+magenta color font 
+
+Definition at line 23 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_acb5d1f5a5f86e947972f13be5e9bc5c8}\label{_logger_8cpp_acb5d1f5a5f86e947972f13be5e9bc5c8}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!red@{red}}
 \index{red@{red}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{red}
-{\footnotesize\ttfamily const std\+::string red = \char`\"{}\textbackslash{}033[31m\char`\"{}}
+\subsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily const std\+::string red = \char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_a6ea20d23dc6f0e5681125ae9108d61e9}} 
+red color font 
+
+Definition at line 19 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_a6ea20d23dc6f0e5681125ae9108d61e9}\label{_logger_8cpp_a6ea20d23dc6f0e5681125ae9108d61e9}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!reset@{reset}}
 \index{reset@{reset}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{reset}
-{\footnotesize\ttfamily const std\+::string reset = \char`\"{}\textbackslash{}033[0m\char`\"{}}
+\subsubsection{\texorpdfstring{reset}{reset}}
+{\footnotesize\ttfamily const std\+::string reset = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
 
-\mbox{\label{_logger_8cpp_aa43aab7dde2acab2faa29544ea9e02ec}} 
-\index{Logger.\+cpp@{Logger.\+cpp}!white@{white}}
-\index{white@{white}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{white}
-{\footnotesize\ttfamily const std\+::string white = \char`\"{}\textbackslash{}033[37m\char`\"{}}
+default style 
 
-\mbox{\label{_logger_8cpp_ad2360f7af7d877c5a313e9ca50b65e8a}} 
+Definition at line 15 of file Logger.\+cpp.
+
+\mbox{\Hypertarget{_logger_8cpp_ad2360f7af7d877c5a313e9ca50b65e8a}\label{_logger_8cpp_ad2360f7af7d877c5a313e9ca50b65e8a}} 
 \index{Logger.\+cpp@{Logger.\+cpp}!yellow@{yellow}}
 \index{yellow@{yellow}!Logger.\+cpp@{Logger.\+cpp}}
-\subsubsection{yellow}
-{\footnotesize\ttfamily const std\+::string yellow = \char`\"{}\textbackslash{}033[33m\char`\"{}}
+\subsubsection{\texorpdfstring{yellow}{yellow}}
+{\footnotesize\ttfamily const std\+::string yellow = \char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}}
+
+yellow color font 
+
+Definition at line 21 of file Logger.\+cpp.
 

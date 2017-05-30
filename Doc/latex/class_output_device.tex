@@ -1,4 +1,4 @@
-\section{Output\+Device Class Reference}
+\hypertarget{class_output_device}{}\section{Output\+Device Class Reference}
 \label{class_output_device}\index{Output\+Device@{Output\+Device}}
 
 
@@ -9,122 +9,115 @@ Audio output device class (Q\+I\+O\+Device extension).
 
 {\ttfamily \#include $<$Audio\+Output.\+h$>$}
 
-Inheritance diagram for Output\+Device\+:\begin{figure}[H]
+
+
+Inheritance diagram for Output\+Device\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_output_device}
+\includegraphics[width=157pt]{class_output_device__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Output\+Device\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_output_device__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Output\+Device} (Q\+Audio\+Format \textbf{ format})
-\begin{DoxyCompactList}\small\item\em \doxyref{Output\+Device}{p.}{class_output_device} constructor. \end{DoxyCompactList}\item 
-\textbf{ $\sim$\+Output\+Device} ()
-\begin{DoxyCompactList}\small\item\em \doxyref{Output\+Device}{p.}{class_output_device} destructor. \end{DoxyCompactList}\item 
-void \textbf{ send} (float $\ast$signal, int samples)
+\hyperlink{class_output_device_aa1e4dbe8403fb3fc022f71e3e3c26ee7}{Output\+Device} (Q\+Audio\+Format format)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_output_device}{Output\+Device} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_output_device_a10111574a055eee12fb86934f049a6b4}\label{class_output_device_a10111574a055eee12fb86934f049a6b4}} 
+\hyperlink{class_output_device_a10111574a055eee12fb86934f049a6b4}{$\sim$\+Output\+Device} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_output_device}{Output\+Device} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_device_aa4906f742ed51716dfc9a7602014efcc}{send} (float $\ast$signal, int samples)
 \begin{DoxyCompactList}\small\item\em It sends an audio signal to the buffer to be sent to the audio output device. \end{DoxyCompactList}\item 
-qint64 \textbf{ read\+Data} (char $\ast$data, qint64 length)
+qint64 \hyperlink{class_output_device_a5f455a9fdaa26664957b54b7806a1b7d}{read\+Data} (char $\ast$data, qint64 length)
 \begin{DoxyCompactList}\small\item\em It gets data from the audio output device. \end{DoxyCompactList}\item 
-qint64 \textbf{ write\+Data} (const char $\ast$data, qint64 length)
+qint64 \hyperlink{class_output_device_ab616ad1f0080ce753b511c08360bdde8}{write\+Data} (const char $\ast$data, qint64 length)
 \begin{DoxyCompactList}\small\item\em It gets written data from the audio input device (not used). \end{DoxyCompactList}\item 
-qint64 \textbf{ bytes\+Available} () const
+qint64 \hyperlink{class_output_device_ae15675354b4b09ca3ff02a24be102c4d}{bytes\+Available} () const
 \begin{DoxyCompactList}\small\item\em It gets available bytes to be read by the audio output device. \end{DoxyCompactList}\item 
-void \textbf{ test} (double \textbf{ amplitude}, double frequency, float duration)
+void \hyperlink{class_output_device_a78e2163a6f7051d49d3483234003d684}{test} (double amplitude, double frequency, float duration)
 \begin{DoxyCompactList}\small\item\em It plays an audio test by generating a tone. \end{DoxyCompactList}\item 
-void \textbf{ clear} ()
+\mbox{\Hypertarget{class_output_device_a9c3515a8c1812a08bd74d87389554767}\label{class_output_device_a9c3515a8c1812a08bd74d87389554767}} 
+void \hyperlink{class_output_device_a9c3515a8c1812a08bd74d87389554767}{clear} ()
 \begin{DoxyCompactList}\small\item\em It clears output buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \textbf{ buffer}
+char $\ast$ \hyperlink{class_output_device_adf56f9d3e97d766a2e2b04c7bc743ee2}{buffer}
 \item 
-int \textbf{ cursor\+\_\+read}
+int \hyperlink{class_output_device_ab49ebf067d9b6f15f2305d5028cde85e}{cursor\+\_\+read}
 \item 
-int \textbf{ cursor\+\_\+write}
+int \hyperlink{class_output_device_ad770c7e5e833ccd9030382e16691f331}{cursor\+\_\+write}
 \item 
-int \textbf{ buffersize}
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Q\+Audio\+Format \textbf{ format}
-\item 
-long int \textbf{ amplitude}
-\item 
-double \textbf{ offset}
+int \hyperlink{class_output_device_a04e2fe4f9b7a15bf6993144d49f29461}{buffersize}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Audio output device class (Q\+I\+O\+Device extension). 
-
 \begin{DoxyAuthor}{Author}
 Andrés González Fornell 
 \end{DoxyAuthor}
 
 
+Definition at line 31 of file Audio\+Output.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_output_device_aa1e4dbe8403fb3fc022f71e3e3c26ee7}} 
+\mbox{\Hypertarget{class_output_device_aa1e4dbe8403fb3fc022f71e3e3c26ee7}\label{class_output_device_aa1e4dbe8403fb3fc022f71e3e3c26ee7}} 
 \index{Output\+Device@{Output\+Device}!Output\+Device@{Output\+Device}}
 \index{Output\+Device@{Output\+Device}!Output\+Device@{Output\+Device}}
-\subsubsection{Output\+Device()}
+\subsubsection{\texorpdfstring{Output\+Device()}{OutputDevice()}}
 {\footnotesize\ttfamily Output\+Device\+::\+Output\+Device (\begin{DoxyParamCaption}\item[{Q\+Audio\+Format}]{format }\end{DoxyParamCaption})}
-
-
-
-\doxyref{Output\+Device}{p.}{class_output_device} constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em format} & audio format object \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_output_device_a10111574a055eee12fb86934f049a6b4}} 
-\index{Output\+Device@{Output\+Device}!````~Output\+Device@{$\sim$\+Output\+Device}}
-\index{````~Output\+Device@{$\sim$\+Output\+Device}!Output\+Device@{Output\+Device}}
-\subsubsection{$\sim$\+Output\+Device()}
-{\footnotesize\ttfamily Output\+Device\+::$\sim$\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 155 of file Audio\+Output.\+cpp.
 
-\doxyref{Output\+Device}{p.}{class_output_device} destructor. 
-
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_output_device_aa1e4dbe8403fb3fc022f71e3e3c26ee7_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_output_device_ae15675354b4b09ca3ff02a24be102c4d}} 
+\mbox{\Hypertarget{class_output_device_ae15675354b4b09ca3ff02a24be102c4d}\label{class_output_device_ae15675354b4b09ca3ff02a24be102c4d}} 
 \index{Output\+Device@{Output\+Device}!bytes\+Available@{bytes\+Available}}
 \index{bytes\+Available@{bytes\+Available}!Output\+Device@{Output\+Device}}
-\subsubsection{bytes\+Available()}
+\subsubsection{\texorpdfstring{bytes\+Available()}{bytesAvailable()}}
 {\footnotesize\ttfamily qint64 Output\+Device\+::bytes\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-It gets available bytes to be read by the audio output device. 
 
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\label{class_output_device_a9c3515a8c1812a08bd74d87389554767}} 
-\index{Output\+Device@{Output\+Device}!clear@{clear}}
-\index{clear@{clear}!Output\+Device@{Output\+Device}}
-\subsubsection{clear()}
-{\footnotesize\ttfamily void Output\+Device\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+Definition at line 265 of file Audio\+Output.\+cpp.
 
-It clears output buffer. 
-
-\mbox{\label{class_output_device_a5f455a9fdaa26664957b54b7806a1b7d}} 
+\mbox{\Hypertarget{class_output_device_a5f455a9fdaa26664957b54b7806a1b7d}\label{class_output_device_a5f455a9fdaa26664957b54b7806a1b7d}} 
 \index{Output\+Device@{Output\+Device}!read\+Data@{read\+Data}}
 \index{read\+Data@{read\+Data}!Output\+Device@{Output\+Device}}
-\subsubsection{read\+Data()}
+\subsubsection{\texorpdfstring{read\+Data()}{readData()}}
 {\footnotesize\ttfamily qint64 Output\+Device\+::read\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data,  }\item[{qint64}]{length }\end{DoxyParamCaption})}
-
-
-
-It gets data from the audio output device. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -136,15 +129,15 @@ It gets data from the audio output device.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\label{class_output_device_aa4906f742ed51716dfc9a7602014efcc}} 
+
+
+Definition at line 228 of file Audio\+Output.\+cpp.
+
+\mbox{\Hypertarget{class_output_device_aa4906f742ed51716dfc9a7602014efcc}\label{class_output_device_aa4906f742ed51716dfc9a7602014efcc}} 
 \index{Output\+Device@{Output\+Device}!send@{send}}
 \index{send@{send}!Output\+Device@{Output\+Device}}
-\subsubsection{send()}
+\subsubsection{\texorpdfstring{send()}{send()}}
 {\footnotesize\ttfamily void Output\+Device\+::send (\begin{DoxyParamCaption}\item[{float $\ast$}]{signal,  }\item[{int}]{samples }\end{DoxyParamCaption})}
-
-
-
-It sends an audio signal to the buffer to be sent to the audio output device. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -153,34 +146,58 @@ It sends an audio signal to the buffer to be sent to the audio output device.
 {\em samples} & number of samples \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_output_device_a78e2163a6f7051d49d3483234003d684}} 
+
+
+Definition at line 195 of file Audio\+Output.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_output_device_aa4906f742ed51716dfc9a7602014efcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_output_device_a78e2163a6f7051d49d3483234003d684}\label{class_output_device_a78e2163a6f7051d49d3483234003d684}} 
 \index{Output\+Device@{Output\+Device}!test@{test}}
 \index{test@{test}!Output\+Device@{Output\+Device}}
-\subsubsection{test()}
+\subsubsection{\texorpdfstring{test()}{test()}}
 {\footnotesize\ttfamily void Output\+Device\+::test (\begin{DoxyParamCaption}\item[{double}]{amplitude,  }\item[{double}]{frequency,  }\item[{float}]{duration }\end{DoxyParamCaption})}
-
-
-
-It plays an audio test by generating a tone. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em amplitude} & tone amplitude (from 0 to 1) \\
 \hline
-{\em frequency} & tone frequency [Hz] \\
+{\em frequency} & tone frequency \mbox{[}Hz\mbox{]} \\
 \hline
-{\em duration} & test duration [s] \\
+{\em duration} & test duration \mbox{[}s\mbox{]} \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_output_device_ab616ad1f0080ce753b511c08360bdde8}} 
+
+
+Definition at line 284 of file Audio\+Output.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_output_device_a78e2163a6f7051d49d3483234003d684_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_output_device_a78e2163a6f7051d49d3483234003d684_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_output_device_ab616ad1f0080ce753b511c08360bdde8}\label{class_output_device_ab616ad1f0080ce753b511c08360bdde8}} 
 \index{Output\+Device@{Output\+Device}!write\+Data@{write\+Data}}
 \index{write\+Data@{write\+Data}!Output\+Device@{Output\+Device}}
-\subsubsection{write\+Data()}
+\subsubsection{\texorpdfstring{write\+Data()}{writeData()}}
 {\footnotesize\ttfamily qint64 Output\+Device\+::write\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{qint64}]{length }\end{DoxyParamCaption})}
-
-
-
-It gets written data from the audio input device (not used). 
 
 
 \begin{DoxyParams}{Parameters}
@@ -194,52 +211,54 @@ It gets written data from the audio input device (not used).
 \end{DoxyReturn}
 
 
-\subsection{Member Data Documentation}
-\mbox{\label{class_output_device_a5f91d32d6e37acbf28651793f68eaa8c}} 
-\index{Output\+Device@{Output\+Device}!amplitude@{amplitude}}
-\index{amplitude@{amplitude}!Output\+Device@{Output\+Device}}
-\subsubsection{amplitude}
-{\footnotesize\ttfamily long int Output\+Device\+::amplitude\hspace{0.3cm}{\ttfamily [private]}}
+Definition at line 255 of file Audio\+Output.\+cpp.
 
-audio signal max amplitude \mbox{\label{class_output_device_adf56f9d3e97d766a2e2b04c7bc743ee2}} 
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_output_device_adf56f9d3e97d766a2e2b04c7bc743ee2}\label{class_output_device_adf56f9d3e97d766a2e2b04c7bc743ee2}} 
 \index{Output\+Device@{Output\+Device}!buffer@{buffer}}
 \index{buffer@{buffer}!Output\+Device@{Output\+Device}}
-\subsubsection{buffer}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
 {\footnotesize\ttfamily char$\ast$ Output\+Device\+::buffer}
 
-audio output data buffer \mbox{\label{class_output_device_a04e2fe4f9b7a15bf6993144d49f29461}} 
+audio output data buffer 
+
+Definition at line 34 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_output_device_a04e2fe4f9b7a15bf6993144d49f29461}\label{class_output_device_a04e2fe4f9b7a15bf6993144d49f29461}} 
 \index{Output\+Device@{Output\+Device}!buffersize@{buffersize}}
 \index{buffersize@{buffersize}!Output\+Device@{Output\+Device}}
-\subsubsection{buffersize}
+\subsubsection{\texorpdfstring{buffersize}{buffersize}}
 {\footnotesize\ttfamily int Output\+Device\+::buffersize}
 
-total size of buffer [Bytes] \mbox{\label{class_output_device_ab49ebf067d9b6f15f2305d5028cde85e}} 
+total size of buffer \mbox{[}Bytes\mbox{]} 
+
+Definition at line 37 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_output_device_ab49ebf067d9b6f15f2305d5028cde85e}\label{class_output_device_ab49ebf067d9b6f15f2305d5028cde85e}} 
 \index{Output\+Device@{Output\+Device}!cursor\+\_\+read@{cursor\+\_\+read}}
 \index{cursor\+\_\+read@{cursor\+\_\+read}!Output\+Device@{Output\+Device}}
-\subsubsection{cursor\+\_\+read}
+\subsubsection{\texorpdfstring{cursor\+\_\+read}{cursor\_read}}
 {\footnotesize\ttfamily int Output\+Device\+::cursor\+\_\+read}
 
-cursor of read audio output data in buffer \mbox{\label{class_output_device_ad770c7e5e833ccd9030382e16691f331}} 
+cursor of read audio output data in buffer 
+
+Definition at line 35 of file Audio\+Output.\+h.
+
+\mbox{\Hypertarget{class_output_device_ad770c7e5e833ccd9030382e16691f331}\label{class_output_device_ad770c7e5e833ccd9030382e16691f331}} 
 \index{Output\+Device@{Output\+Device}!cursor\+\_\+write@{cursor\+\_\+write}}
 \index{cursor\+\_\+write@{cursor\+\_\+write}!Output\+Device@{Output\+Device}}
-\subsubsection{cursor\+\_\+write}
+\subsubsection{\texorpdfstring{cursor\+\_\+write}{cursor\_write}}
 {\footnotesize\ttfamily int Output\+Device\+::cursor\+\_\+write}
 
-cursor of pendient audio output data in buffer \mbox{\label{class_output_device_a80fa36f98b5f99c7dab4b1197e8ea136}} 
-\index{Output\+Device@{Output\+Device}!format@{format}}
-\index{format@{format}!Output\+Device@{Output\+Device}}
-\subsubsection{format}
-{\footnotesize\ttfamily Q\+Audio\+Format Output\+Device\+::format\hspace{0.3cm}{\ttfamily [private]}}
+cursor of pendient audio output data in buffer 
 
-audio format object \mbox{\label{class_output_device_a784c815c3f04113ebcdc2d4842a5d49a}} 
-\index{Output\+Device@{Output\+Device}!offset@{offset}}
-\index{offset@{offset}!Output\+Device@{Output\+Device}}
-\subsubsection{offset}
-{\footnotesize\ttfamily double Output\+Device\+::offset\hspace{0.3cm}{\ttfamily [private]}}
+Definition at line 36 of file Audio\+Output.\+h.
 
-audio signal offset (used only for unsigned format) 
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/interface/\textbf{ Audio\+Output.\+h}\item 
-src/interface/\textbf{ Audio\+Output.\+cpp}\end{DoxyCompactItemize}
+src/interface/Audio\+Output.\+h\item 
+src/interface/Audio\+Output.\+cpp\end{DoxyCompactItemize}

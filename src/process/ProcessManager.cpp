@@ -139,10 +139,13 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                     N = this->samples - n;
                 }
             }
-            float *input_effect = (float *) std::malloc(N * sizeof(float));
+            float **input_effect = (float **) std::malloc(this->channels * sizeof(float *));
+            float **output_effect = (float **) std::malloc(this->channels * sizeof(float *));
             for (int channel = 0; channel < this->channels; channel++) {
+                input_effect[channel] = (float *) std::malloc(N * sizeof(float));
+                output_effect[channel] = (float *) std::malloc(N * sizeof(float));
                 // Pre-amplifier
-                switch (this->bitstream->channel[channel]) {
+                switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
                 case SACBitstream::ChannelType::Rs:
@@ -152,40 +155,46 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                 case SACBitstream::ChannelType::LFE:
                     levels[channel] *= this->bitstream->gain_LFE;
                     break;
+                default:
+                    break;
                 }
                 // Levels
                 for (int sample = n; sample < (n + N); sample++) {
-                    input_effect[sample - n] = levels[channel] * this->input[channel][sample];
+                    input_effect[channel][sample - n] = levels[channel] * this->input[channel][sample];
                 }
+            }
+            // Effect
+            effect->apply(input_effect, output_effect, N, this->bitstream->channels);
+            for (int channel = 0; channel < this->channels; channel++) {
                 // Channels selection
                 if (channels[channel]) {
-                    // Effect
-                    effect->apply(input_effect, output[channel] + n, N, this->bitstream->channel[channel]);
+                    std::memcpy(this->output[channel] + n, output_effect[channel], N*sizeof(float));
                 } else {
-                    for (int sample = n; sample < (n + N); sample++) {
-                        this->output[channel][sample] = input_effect[sample - n];
-                    }
+                    std::memcpy(this->output[channel] + n, input_effect[channel], N*sizeof(float));
                 }
                 // Post-amplifier
-                switch (this->bitstream->channel[channel]) {
+                switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
                 case SACBitstream::ChannelType::Rs:
                 case SACBitstream::ChannelType::Rsr:
+                    levels[channel] /= this->bitstream->gain_surround;
                     for (int sample = n; sample < (n + N); sample++) {
-                        levels[channel] /= this->bitstream->gain_surround;
                         this->output[channel][sample] /= this->bitstream->gain_surround;
                     }
                     break;
                 case SACBitstream::ChannelType::LFE:
+                    levels[channel] /= this->bitstream->gain_LFE;
                     for (int sample = n; sample < (n + N); sample++) {
-                        levels[channel] /= this->bitstream->gain_LFE;
                         this->output[channel][sample] /= this->bitstream->gain_LFE;
                     }
+                    break;
+                default:
                     break;
                 }
             }
             std::free(input_effect);
+            std::free(output_effect);
             this->cursor += N;
             if (this->cursor > this->total) {
                 this->total = this->cursor;

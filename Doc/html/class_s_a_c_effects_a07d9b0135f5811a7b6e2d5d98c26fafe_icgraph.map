@@ -1,0 +1,6 @@
+<map id="SACEffects::setDecodingType" name="SACEffects::setDecodingType">
+<area shape="rect" id="node2" href="$class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="255,56,381,83"/>
+<area shape="rect" id="node5" href="$class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="635,81,821,108"/>
+<area shape="rect" id="node3" href="$class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="645,5,811,32"/>
+<area shape="rect" id="node4" href="$class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="429,31,587,57"/>
+</map>

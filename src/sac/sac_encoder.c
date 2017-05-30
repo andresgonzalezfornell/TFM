@@ -9,7 +9,7 @@
 #include "sac_bd_embedder.h"
 
 /**
- * @brief   It performs the SAC encoder.
+ * @brief   It performs the SAC encoding.
  * @param   input_filename      filename of the multichannel input audio file
  * @param   output_filename     filename of the downmix output audio file (it will be automatically created)
  * @param   bitstream_filename  filename of the bitstream output file or "buried" (it will be automatically created)

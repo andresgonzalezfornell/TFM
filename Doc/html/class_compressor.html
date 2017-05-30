@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TFM: Compressor Class Reference</title>
+<title>SAC Effects: Compressor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="TFM - Banner.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TFM
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">SAC Effects
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
  </tr>
@@ -80,20 +81,170 @@ $(document).ready(function(){initNavTree('class_compressor.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="class_compressor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Compressor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Audio compressor.  
+<p>Audio compressor effect.  
  <a href="class_compressor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_compressor_8h_source.html">Compressor.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8a728ed1544cc0f82e8390f4606026b0"><td class="memItemLeft" align="right" valign="top"><a id="a8a728ed1544cc0f82e8390f4606026b0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a8a728ed1544cc0f82e8390f4606026b0">Compressor</a> ()</td></tr>
+<tr class="memdesc:a8a728ed1544cc0f82e8390f4606026b0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_compressor.html" title="Audio compressor effect. ">Compressor</a> constructor. <br /></td></tr>
+<tr class="separator:a8a728ed1544cc0f82e8390f4606026b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2937588c4c8ff8cb3781444663f392e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a2937588c4c8ff8cb3781444663f392e9">apply</a> (float **input, float **output, int samples, std::vector&lt; <a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">SACBitstream::ChannelType::channeltype</a> &gt; channels)</td></tr>
+<tr class="memdesc:a2937588c4c8ff8cb3781444663f392e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It applies compression effect.  <a href="#a2937588c4c8ff8cb3781444663f392e9">More...</a><br /></td></tr>
+<tr class="separator:a2937588c4c8ff8cb3781444663f392e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e231b206c612382a6cf4c348868838"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a57e231b206c612382a6cf4c348868838">plot</a> (std::string chart)</td></tr>
+<tr class="memdesc:a57e231b206c612382a6cf4c348868838"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sends some values to user interface charts.  <a href="#a57e231b206c612382a6cf4c348868838">More...</a><br /></td></tr>
+<tr class="separator:a57e231b206c612382a6cf4c348868838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabaa093dd4341c70f1388bbfbd0693a"><td class="memItemLeft" align="right" valign="top"><a id="adabaa093dd4341c70f1388bbfbd0693a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#adabaa093dd4341c70f1388bbfbd0693a">update</a> ()</td></tr>
+<tr class="memdesc:adabaa093dd4341c70f1388bbfbd0693a"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets params from map of params. <br /></td></tr>
+<tr class="separator:adabaa093dd4341c70f1388bbfbd0693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Audio compressor. </p>
-<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_compressor_8h_source.html#l00012">12</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2937588c4c8ff8cb3781444663f392e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2937588c4c8ff8cb3781444663f392e9">&#9670;&nbsp;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compressor::apply </td>
+          <td>(</td>
+          <td class="paramtype">float **&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9">SACBitstream::ChannelType::channeltype</a> &gt;&#160;</td>
+          <td class="paramname"><em>channels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input signal pointer </td></tr>
+    <tr><td class="paramname">output</td><td>output signal pointer </td></tr>
+    <tr><td class="paramname">samples</td><td>number of samples </td></tr>
+    <tr><td class="paramname">channels</td><td>vector of channel types </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_compressor_8cpp_source.html#l00016">16</a> of file <a class="el" href="_compressor_8cpp_source.html">Compressor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_compressor_a2937588c4c8ff8cb3781444663f392e9_cgraph.png" border="0" usemap="#class_compressor_a2937588c4c8ff8cb3781444663f392e9_cgraph" alt=""/></div>
+<map name="class_compressor_a2937588c4c8ff8cb3781444663f392e9_cgraph" id="class_compressor_a2937588c4c8ff8cb3781444663f392e9_cgraph">
+<area shape="rect" id="node2" href="class_compressor.html#adabaa093dd4341c70f1388bbfbd0693a" title="It sets params from map of params. " alt="" coords="187,5,329,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_compressor_a2937588c4c8ff8cb3781444663f392e9_icgraph.png" border="0" usemap="#class_compressor_a2937588c4c8ff8cb3781444663f392e9_icgraph" alt=""/></div>
+<map name="class_compressor_a2937588c4c8ff8cb3781444663f392e9_icgraph" id="class_compressor_a2937588c4c8ff8cb3781444663f392e9_icgraph">
+<area shape="rect" id="node2" href="class_effect.html#a6d212ada944f12afbcd8e3e6e623df51" title="It applies the selected effect to the input and sets the result into output variable. " alt="" coords="187,31,283,57"/>
+<area shape="rect" id="node3" href="class_process_manager.html#a91a8718847e535f297756fa8604dc8f4" title="It applys the selected effect to the input stream. " alt="" coords="331,31,527,57"/>
+<area shape="rect" id="node4" href="class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="575,31,761,57"/>
+<area shape="rect" id="node5" href="class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="809,5,936,32"/>
+<area shape="rect" id="node6" href="class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="1189,31,1355,57"/>
+<area shape="rect" id="node7" href="class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="984,56,1141,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57e231b206c612382a6cf4c348868838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e231b206c612382a6cf4c348868838">&#9670;&nbsp;</a></span>plot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; Compressor::plot </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>chart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chart</td><td>chart id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array of values as values[axis][sample] axis: 0 = x (horizontal) and 1 = y (vertical) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_compressor_8cpp_source.html#l00038">38</a> of file <a class="el" href="_compressor_8cpp_source.html">Compressor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_compressor_a57e231b206c612382a6cf4c348868838_cgraph.png" border="0" usemap="#class_compressor_a57e231b206c612382a6cf4c348868838_cgraph" alt=""/></div>
+<map name="class_compressor_a57e231b206c612382a6cf4c348868838_cgraph" id="class_compressor_a57e231b206c612382a6cf4c348868838_cgraph">
+<area shape="rect" id="node2" href="class_compressor.html#adabaa093dd4341c70f1388bbfbd0693a" title="It sets params from map of params. " alt="" coords="177,5,320,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_compressor_a57e231b206c612382a6cf4c348868838_icgraph.png" border="0" usemap="#class_compressor_a57e231b206c612382a6cf4c348868838_icgraph" alt=""/></div>
+<map name="class_compressor_a57e231b206c612382a6cf4c348868838_icgraph" id="class_compressor_a57e231b206c612382a6cf4c348868838_icgraph">
+<area shape="rect" id="node2" href="class_effect.html#ac2c35ce7382d627f20879b44be0e8132" title="It sends some values to user interface charts. " alt="" coords="177,81,263,108"/>
+<area shape="rect" id="node3" href="class_effects_monitor.html#a50df1e2902fde1839b541b3429f8f02d" title="It plots every chart on the effects monitor. " alt="" coords="311,81,480,108"/>
+<area shape="rect" id="node4" href="class_effects_monitor.html#ade184df36063a2c7ef2855c12265bd78" title="It selects an effect. " alt="" coords="542,56,709,83"/>
+<area shape="rect" id="node11" href="class_effects_monitor.html#a96ff58c6076dd68e03aea26896b69d78" title="It sets a parameter from the parameter user interface object. " alt="" coords="528,107,723,133"/>
+<area shape="rect" id="node5" href="class_effects_monitor.html#ad9215233b6d88585ec5d31ca4f35771a" title="EffectsMonitor constructor. " alt="" coords="779,5,979,32"/>
+<area shape="rect" id="node6" href="class_s_a_c_effects.html#ab57fa3b5c11bafba4c2e471a80964c14" title="It sets an effect for the effect monitor. " alt="" coords="805,56,954,83"/>
+<area shape="rect" id="node7" href="class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="1651,56,1816,83"/>
+<area shape="rect" id="node8" href="class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="1036,56,1223,83"/>
+<area shape="rect" id="node9" href="class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="1271,56,1397,83"/>
+<area shape="rect" id="node10" href="class_s_a_c_effects.html#aaa9092eb132a8fe2b0560b3a600747b5" title="It sets the source audio file. " alt="" coords="1445,107,1603,133"/>
+<area shape="rect" id="node12" href="class_effects_monitor.html#ae2cc992b9bb457da2a0cdab854a414ea" title="Slot for updating parameters parameters of type int when one of them is changed. " alt="" coords="771,107,988,133"/>
+<area shape="rect" id="node13" href="class_effects_monitor.html#ad6ad01ab2de7ca57a57e5fb71c2f85d9" title="It clears the user interface framework. " alt="" coords="1057,107,1201,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/effects/<a class="el" href="_compressor_8h_source.html">Compressor.h</a></li>
+<li>src/effects/<a class="el" href="_compressor_8cpp_source.html">Compressor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -19,6 +19,5 @@ var class_audio_signal =
     [ "setSample", "class_audio_signal.html#aeef099025639235c7f062294470a691f", null ],
     [ "setSignal", "class_audio_signal.html#a90eda59db04d3b18bd1949b8fa9e9c81", null ],
     [ "fs", "class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9", null ],
-    [ "signal", "class_audio_signal.html#acd6f3fc199a736b66a2efba59e8683b8", null ],
     [ "size", "class_audio_signal.html#a44e595328705720f380613f1675dbdd1", null ]
 ];

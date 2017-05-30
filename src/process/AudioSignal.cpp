@@ -40,8 +40,8 @@ AudioSignal::~AudioSignal() {
 
 /**
  * @brief	It gets a sample from the selected index.
- * @param   index
- * @return  sample
+ * @param   index           selected index
+ * @return  sample          signal sample
  */
 float AudioSignal::operator[](int index) {
     if (0 <= index && index < this->size) {
@@ -70,8 +70,8 @@ AudioSignal AudioSignal::getSample(int start, int end) {
 
 /**
  * @brief	It sets a sample in the selected index.
- * @param   index
- * @param   sample
+ * @param   index           selected index
+ * @param   sample          new signal sample
  */
 void AudioSignal::setSample(int index, float sample) {
     if (index >= this->size) {
@@ -84,7 +84,7 @@ void AudioSignal::setSample(int index, float sample) {
 
 /**
  * @brief	It adds a sample to the end of the signal.
- * @param   sample
+ * @param   sample          new signal sample
  */
 void AudioSignal::addSample(float sample) {
     if (this->size + 1 < (int)this->maxsamples) {
@@ -119,7 +119,7 @@ void AudioSignal::deleteSample(int start, int end) {
 
 /**
  * @brief	It gets the entire signal.
- * @return  signal
+ * @return  audio signal
  */
 std::vector<float> AudioSignal::getSignal() {
     return this->signal;
@@ -127,7 +127,7 @@ std::vector<float> AudioSignal::getSignal() {
 
 /**
  * @brief	It sets the entire signal.
- * @param   signal
+ * @param   signal          audio signal
  */
 void AudioSignal::setSignal(std::vector<float> signal) {
     this->signal = signal;

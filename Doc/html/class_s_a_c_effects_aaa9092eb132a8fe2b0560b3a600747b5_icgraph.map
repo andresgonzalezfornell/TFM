@@ -1,0 +1,5 @@
+<map id="SACEffects::setSource" name="SACEffects::setSource">
+<area shape="rect" id="node2" href="$class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33" title="SACEffects constructor. " alt="" coords="620,5,785,32"/>
+<area shape="rect" id="node3" href="$class_s_a_c_effects.html#a9af83c6a63fcdf10e4bd849fa3c5973c" title="It sets SAC parameter HRTF model. " alt="" coords="211,31,397,57"/>
+<area shape="rect" id="node4" href="$class_s_a_c_effects.html#a4500b30a621d5eff4a108f1f8d0d59a3" title="It resets all decoding parameters, including input file. " alt="" coords="445,31,572,57"/>
+</map>

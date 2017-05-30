@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TFM: Channel Class Reference</title>
+<title>SAC Effects: Channel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="TFM - Banner.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TFM
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">SAC Effects
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
  </tr>
@@ -83,7 +84,6 @@ $(document).ready(function(){initNavTree('class_channel.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_channel-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Channel Class Reference</div>  </div>
@@ -94,19 +94,30 @@ $(document).ready(function(){initNavTree('class_channel.html','');});
  <a href="class_channel.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Channel:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel__coll__graph.png" border="0" usemap="#_channel_coll__map" alt="Collaboration graph"/></div>
+<map name="_channel_coll__map" id="_channel_coll__map">
+<area shape="rect" id="node2" href="class_audio_output.html" title="Audio output class. " alt="" coords="31,171,127,197"/>
+<area shape="rect" id="node4" href="class_output_device.html" title="Audio output device class (QIODevice extension). " alt="" coords="100,81,203,108"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3a5079024e870e5188f7af98772ae38c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a3a5079024e870e5188f7af98772ae38c">Channel</a> (QLayout *framework, std::string <a class="el" href="class_channel.html#ac13acc069e61428aca057f9c84bc7338">prefix</a>, int <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">index</a>, bool <a class="el" href="class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b">isoutput</a>)</td></tr>
+<tr class="memitem:a3a5079024e870e5188f7af98772ae38c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a3a5079024e870e5188f7af98772ae38c">Channel</a> (QLayout *framework, std::string prefix, int <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">index</a>, bool isoutput)</td></tr>
 <tr class="memdesc:a3a5079024e870e5188f7af98772ae38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channels constructor.  <a href="#a3a5079024e870e5188f7af98772ae38c">More...</a><br /></td></tr>
 <tr class="separator:a3a5079024e870e5188f7af98772ae38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f15ebd302464069f1a9e3f0ded14482"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a5f15ebd302464069f1a9e3f0ded14482">~Channel</a> ()</td></tr>
-<tr class="memdesc:a5f15ebd302464069f1a9e3f0ded14482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channels desctructor.  <a href="#a5f15ebd302464069f1a9e3f0ded14482">More...</a><br /></td></tr>
+<tr class="memitem:a5f15ebd302464069f1a9e3f0ded14482"><td class="memItemLeft" align="right" valign="top"><a id="a5f15ebd302464069f1a9e3f0ded14482"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a5f15ebd302464069f1a9e3f0ded14482">~Channel</a> ()</td></tr>
+<tr class="memdesc:a5f15ebd302464069f1a9e3f0ded14482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channels desctructor. <br /></td></tr>
 <tr class="separator:a5f15ebd302464069f1a9e3f0ded14482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0427a10e1713ba8327df0b0cd0fb2f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#af0427a10e1713ba8327df0b0cd0fb2f5">getIndex</a> ()</td></tr>
 <tr class="memdesc:af0427a10e1713ba8327df0b0cd0fb2f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It gets the channel index.  <a href="#af0427a10e1713ba8327df0b0cd0fb2f5">More...</a><br /></td></tr>
 <tr class="separator:af0427a10e1713ba8327df0b0cd0fb2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21286e2c4add83ea96e2636e87e9871b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a21286e2c4add83ea96e2636e87e9871b">setIndex</a> (int <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">index</a>)</td></tr>
+<tr class="memitem:a21286e2c4add83ea96e2636e87e9871b"><td class="memItemLeft" align="right" valign="top"><a id="a21286e2c4add83ea96e2636e87e9871b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIndex</b> (int <a class="el" href="class_channel.html#a992b8f195f395a64b4e966886bb41f00">index</a>)</td></tr>
 <tr class="separator:a21286e2c4add83ea96e2636e87e9871b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d0ac75e7416c18c3695de418e9137e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a1d0ac75e7416c18c3695de418e9137e1">setLabel</a> (std::string <a class="el" href="class_channel.html#a66a7e30d0b8c6ee9c0b0d537b59bd695">label</a>)</td></tr>
 <tr class="memdesc:a1d0ac75e7416c18c3695de418e9137e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets a label to the channel name, i.e., group box title and label text.  <a href="#a1d0ac75e7416c18c3695de418e9137e1">More...</a><br /></td></tr>
@@ -149,17 +160,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a285eab1752d5e9407e1bc1e75353df34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dcb50dc41866fbe60424553f1b910fa"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a9dcb50dc41866fbe60424553f1b910fa">deviceselector</a></td></tr>
 <tr class="separator:a9dcb50dc41866fbe60424553f1b910fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ac13acc069e61428aca057f9c84bc7338"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#ac13acc069e61428aca057f9c84bc7338">prefix</a></td></tr>
-<tr class="separator:ac13acc069e61428aca057f9c84bc7338"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01aee8d0f6f9b56328f6a061b4a5a44b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a01aee8d0f6f9b56328f6a061b4a5a44b">isoutput</a></td></tr>
-<tr class="separator:a01aee8d0f6f9b56328f6a061b4a5a44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Single-object class from channels list. </p>
-<dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andrés González Fornell </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00032">32</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3a5079024e870e5188f7af98772ae38c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a5079024e870e5188f7af98772ae38c">&#9670;&nbsp;</a></span>Channel()</h2>
@@ -198,8 +203,6 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Channels constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">framework</td><td>channel user interface framework </td></tr>
@@ -210,24 +213,16 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00213">213</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a3a5079024e870e5188f7af98772ae38c_cgraph.png" border="0" usemap="#class_channel_a3a5079024e870e5188f7af98772ae38c_cgraph" alt=""/></div>
+<map name="class_channel_a3a5079024e870e5188f7af98772ae38c_cgraph" id="class_channel_a3a5079024e870e5188f7af98772ae38c_cgraph">
+<area shape="rect" id="node2" href="_logger_8cpp.html#ad3268f5fc285cfb356a498e2d24b27f4" title="Log a message on console. " alt="" coords="183,5,268,32"/>
+<area shape="rect" id="node3" href="_logger_8cpp.html#a551ee9103bbb16b6eea45a3f536617bd" title="It returns the string tab code to align log messages. " alt="" coords="316,5,356,32"/>
+</map>
 </div>
-</div>
-<a id="a5f15ebd302464069f1a9e3f0ded14482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f15ebd302464069f1a9e3f0ded14482">&#9670;&nbsp;</a></span>~Channel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Channel::~Channel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Channels desctructor. </p>
 
 </div>
 </div>
@@ -247,14 +242,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It sets channel to bypass effects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>true to bypass effects and false to apply them </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00318">318</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,9 +267,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It gets the channel index. </p>
 <dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00271">271</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,8 +288,6 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It mutes channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>true to mute the channel and false to unmuted </td></tr>
@@ -302,23 +295,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-</div>
-</div>
-<a id="a21286e2c4add83ea96e2636e87e9871b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21286e2c4add83ea96e2636e87e9871b">&#9670;&nbsp;</a></span>setIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Channel::setIndex </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00309">309</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
 
 </div>
 </div>
@@ -337,14 +314,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It sets a label to the channel name, i.e., group box title and label text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">label</td><td></td></tr>
+    <tr><td class="paramname">label</td><td>new label </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00297">297</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
 
 </div>
 </div>
@@ -363,14 +340,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>It sets the channel volume level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">volume</td><td>integer number from 0 to 100 </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8cpp_source.html#l00327">327</a> of file <a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a>.</p>
 
 </div>
 </div>
@@ -388,6 +365,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>system audio output devices object </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00039">39</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="a285eab1752d5e9407e1bc1e75353df34"></a>
@@ -402,6 +381,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>checkbox object to bypass effect </p>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00048">48</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 
 </div>
 </div>
@@ -418,6 +399,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>it tells channel to bypass effects or apply them </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00038">38</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="a9dcb50dc41866fbe60424553f1b910fa"></a>
@@ -433,6 +416,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>audio output device selector object </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00049">49</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="a99287738754d9e20c0ca639d6d26f28c"></a>
@@ -446,9 +431,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>user interface elements </p>
 <p>channel group box </p>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00044">44</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 
 </div>
 </div>
@@ -465,28 +450,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>channel index </p>
 
-</div>
-</div>
-<a id="a01aee8d0f6f9b56328f6a061b4a5a44b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01aee8d0f6f9b56328f6a061b4a5a44b">&#9670;&nbsp;</a></span>isoutput</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Channel::isoutput</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>true to show audio output device selector (in case of sending channel to speakers or other audio output system device) </p>
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00034">34</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 
 </div>
 </div>
@@ -503,6 +467,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>field to change the channel label </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00045">45</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="a0e7f90da49f291a7bac498e11e886fbd"></a>
@@ -517,6 +483,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>muted checkbox object </p>
+
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00047">47</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 
 </div>
 </div>
@@ -533,6 +501,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>it indicates if channel is muted </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00037">37</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="ae080e1afd52f3b70e04c62fea46447aa"></a>
@@ -548,28 +518,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>channel name </p>
 
-</div>
-</div>
-<a id="ac13acc069e61428aca057f9c84bc7338"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac13acc069e61428aca057f9c84bc7338">&#9670;&nbsp;</a></span>prefix</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Channel::prefix</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>user interface prefix </p>
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00035">35</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
 
 </div>
 </div>
@@ -586,6 +535,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>current audio volume level </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00036">36</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <a id="acbcbfb33558a69224daa176372eb8be3"></a>
@@ -601,11 +552,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>volume level slider </p>
 
+<p class="definition">Definition at line <a class="el" href="_channels_list_8h_source.html#l00046">46</a> of file <a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/interface/<a class="el" href="_channels_list_8h_source.html">ChannelsList.h</a></li>
-<li>src/interface/<a class="el" href="_channels_list_8cpp.html">ChannelsList.cpp</a></li>
+<li>src/interface/<a class="el" href="_channels_list_8cpp_source.html">ChannelsList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -25,7 +25,10 @@
  */
 struct UpmixType {
 	enum upmixtype {
-		normal = 0, blind = 1, binaural = 2, stereo = 3
+        normal = 0, /**< normal upmix */
+        blind = 1, /**< blind upmix */
+        binaural = 2, /**< binaural upmix */
+        stereo = 3 /**< stereo upmix */
 	};
 };
 /**
@@ -33,7 +36,8 @@ struct UpmixType {
  */
 struct DecodingType {
 	enum decodingtype {
-		low = 0, high = 1
+        low = 0, /**< low complexity decoding mode */
+        high = 1 /**< high complexity decoding mode */
 	};
 };
 /**
@@ -41,7 +45,8 @@ struct DecodingType {
  */
 struct BinauralQuality {
 	enum binauralquality {
-		parametric = 0, filtering = 1
+        parametric = 0, /** parametric binaural quality */
+        filtering = 1 /**< filtering binaural quality */
 	};
 };
 /**
@@ -49,10 +54,16 @@ struct BinauralQuality {
  */
 struct HRTFModel {
 	enum hrtfmodel {
-		kemar = 0, vast = 1, mps_vt = 2
+        kemar = 0, /**< kemar head related transfer funcion model */
+        vast = 1, /**< vast head related transfer funcion model */
+        mps_vt = 2 /**< MPS VT head related transfer funcion model */
 	};
 };
 
+/**
+ * @namespace   Ui
+ * @brief   Qt user interfaces namespace (see http://doc.qt.io/qt-5/topics-ui.html).
+ */
 namespace Ui {
 class SACEffects;
 }

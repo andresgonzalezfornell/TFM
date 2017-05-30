@@ -11,6 +11,5 @@ var class_audio_stream =
     [ "push", "class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83", null ],
     [ "setSample", "class_audio_stream.html#a5ac03049345307942841bdfcdb75a7e8", null ],
     [ "fs", "class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45", null ],
-    [ "samples", "class_audio_stream.html#ac64fd676a85ecf3809ba31f16084596e", null ],
     [ "timestamp", "class_audio_stream.html#aeee7107c25a1ab45b8076e422864a518", null ]
 ];

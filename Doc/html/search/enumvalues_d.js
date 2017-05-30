@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stereo',['stereo',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa43533cc1c81e6c6faa432117de399809',1,'UpmixType']]]
+  ['vast',['vast',['../struct_h_r_t_f_model.html#ae01efd7375e498a14624bbeebb93fa82a3c1d54f796975db036c93d624e6f2730',1,'HRTFModel']]]
 ];

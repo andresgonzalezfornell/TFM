@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['highshelffilter',['highShelfFilter',['../class_a_s___e_f_f_e_c_t.html#a4b16d06bae51799e65684fc8ba86bf36',1,'AS_EFFECT']]]
+  ['highshelffilter',['highShelfFilter',['../class_equalizer.html#af1bbd593cf7943262d40c80f2869c932',1,'Equalizer']]]
 ];

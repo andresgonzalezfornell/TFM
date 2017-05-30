@@ -13,7 +13,6 @@ SACBitstream::SACBitstream(std::string filename) {
  * @brief   Bitstream destructor.
  */
 SACBitstream::~SACBitstream() {
-    std::free(this->channel);
     consolelog("SACBitstream", LogType::progress, "bitstream object is deleted");
 }
 
@@ -110,47 +109,47 @@ void SACBitstream::load() {
     switch (treeconfig) {
     default:
     case 5151:
-        this->channel = (ChannelType::channeltype *)std::malloc(6*sizeof(ChannelType::channeltype));
-        this->channel[0] = ChannelType::L;
-        this->channel[1] = ChannelType::R;
-        this->channel[2] = ChannelType::C;
-        this->channel[3] = ChannelType::LFE;
-        this->channel[4] = ChannelType::Ls;
-        this->channel[5] = ChannelType::Rs;
+        this->channels = std::vector<ChannelType::channeltype>(6);
+        this->channels[0] = ChannelType::L;
+        this->channels[1] = ChannelType::R;
+        this->channels[2] = ChannelType::C;
+        this->channels[3] = ChannelType::LFE;
+        this->channels[4] = ChannelType::Ls;
+        this->channels[5] = ChannelType::Rs;
         break;
     case 5152:
     case 525:
-        this->channel = (ChannelType::channeltype *)std::malloc(6*sizeof(ChannelType::channeltype));
-        this->channel[0] = ChannelType::L;
-        this->channel[1] = ChannelType::Ls;
-        this->channel[2] = ChannelType::R;
-        this->channel[3] = ChannelType::Rs;
-        this->channel[4] = ChannelType::C;
-        this->channel[5] = ChannelType::LFE;
+        this->channels = std::vector<ChannelType::channeltype>(6);
+        this->channels[0] = ChannelType::L;
+        this->channels[1] = ChannelType::Ls;
+        this->channels[2] = ChannelType::R;
+        this->channels[3] = ChannelType::Rs;
+        this->channels[4] = ChannelType::C;
+        this->channels[5] = ChannelType::LFE;
         break;
     case 7271:
     case 7571:
-        this->channel = (ChannelType::channeltype *)std::malloc(8*sizeof(ChannelType::channeltype));
-        this->channel[0] = ChannelType::L;
-        this->channel[1] = ChannelType::Lc;
-        this->channel[2] = ChannelType::Ls;
-        this->channel[3] = ChannelType::R;
-        this->channel[4] = ChannelType::Rc;
-        this->channel[5] = ChannelType::Rs;
-        this->channel[6] = ChannelType::C;
-        this->channel[7] = ChannelType::LFE;
+        this->channels = std::vector<ChannelType::channeltype>(8);
+        this->channels[0] = ChannelType::L;
+        this->channels[1] = ChannelType::Lc;
+        this->channels[2] = ChannelType::Ls;
+        this->channels[3] = ChannelType::R;
+        this->channels[4] = ChannelType::Rc;
+        this->channels[5] = ChannelType::Rs;
+        this->channels[6] = ChannelType::C;
+        this->channels[7] = ChannelType::LFE;
         break;
     case 7272:
     case 7572:
-        this->channel = (ChannelType::channeltype *)std::malloc(8*sizeof(ChannelType::channeltype));
-        this->channel[0] = ChannelType::L;
-        this->channel[1] = ChannelType::Lsr;
-        this->channel[2] = ChannelType::Ls;
-        this->channel[3] = ChannelType::R;
-        this->channel[4] = ChannelType::Rsr;
-        this->channel[5] = ChannelType::Rs;
-        this->channel[6] = ChannelType::C;
-        this->channel[7] = ChannelType::LFE;
+        this->channels = std::vector<ChannelType::channeltype>(8);
+        this->channels[0] = ChannelType::L;
+        this->channels[1] = ChannelType::Lsr;
+        this->channels[2] = ChannelType::Ls;
+        this->channels[3] = ChannelType::R;
+        this->channels[4] = ChannelType::Rsr;
+        this->channels[5] = ChannelType::Rs;
+        this->channels[6] = ChannelType::C;
+        this->channels[7] = ChannelType::LFE;
         break;
     }
     // Gain of surround channels
