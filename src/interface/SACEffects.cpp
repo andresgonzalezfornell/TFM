@@ -15,6 +15,7 @@ SACEffects::SACEffects(QWidget *framework) :
     ui->setupUi(this);
     ChannelsList::fs = this->fs;
     ChannelsList::samplesize = 32;
+    this->effect = NULL;
     this->chunksize = 2205;
     consolelog("SACEffects", LogType::info,
                "signal process chunk = " + std::to_string(this->chunksize)
@@ -36,6 +37,7 @@ SACEffects::SACEffects(QWidget *framework) :
     // Input & Output
     this->channels_input = new ChannelsList(ui->input_channels, 0, false);
     this->channels_output = new ChannelsList(ui->output_channels, 0, true);
+    this->source = NULL;
     this->input = NULL;
     this->bitstream = NULL;
     this->setSource("");
@@ -178,7 +180,9 @@ void SACEffects::updateControls() {
  * @param   effect              selected effect
  */
 void SACEffects::setEffect(Effect::effectID effect) {
-    delete this->effect;
+    if (this->effect != NULL) {
+        delete this->effect;
+    }
     this->effect = new Effect(effect, this->fs);
     this->effectsmonitor->setEffect(this->effect);
     std::map<Effect::effectID, std::string> effects = this->effectsmonitor->effects;

@@ -277,7 +277,7 @@ tSpatialEnc *SpatialEncOpen(int treeConfig, int timeSlots, int *bufferSize, Stre
   SacEncInitSbrSynFilterbank(0,0);
   for(i = 0; i < 6; i++) {
     SacEncInitAnaFilterbank(&enc->filterbank[i]);
-    SacEncInitAnaHybFilterbank(&enc->hybState[i]);
+    SacEncInitAnaHybFilterbank(&enc->hybStateEnc[i]);
   }
 
 
@@ -368,7 +368,7 @@ void SpatialEncApply(tSpatialEnc *self, float *audioInput, float *audioOutput, S
 
   for(k = 0; k < 6; k++) {
     SacEncApplyAnaHybFilterbank(
-      &self->hybState[k],
+      &self->hybStateEnc[k],
       mQmfReal[k],
       mQmfImag[k],
       self->timeSlots,

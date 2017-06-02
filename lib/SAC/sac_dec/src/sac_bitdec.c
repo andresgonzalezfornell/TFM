@@ -38,7 +38,7 @@ Copyright (c) ISO/IEC 2009.
 #include "sac_resdefs.h"
 #include "sac_bitinput.h"
 #include "sac_nlc_dec.h"
-#include "sac_hybfilter.h"
+#include "sac_dec_hybfilter.h"
 
 #include <assert.h>
 

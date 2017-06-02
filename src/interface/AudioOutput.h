@@ -1,11 +1,12 @@
 #ifndef AUDIOOUTPUT_H
 #define AUDIOOUTPUT_H
 
-#include <cmath>
-#include "QtMath"
-
 // System libraries
 #include "stdlib.h"
+#include "cmath"
+#include "iostream"
+#include "cstdint"
+#include "cstring"
 // Qt libraries
 #include "QIODevice"
 #include "QDialog"

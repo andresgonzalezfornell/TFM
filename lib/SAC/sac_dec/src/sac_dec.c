@@ -36,7 +36,7 @@ Copyright (c) ISO/IEC 2009.
 #include "sac_process.h"
 #include "sac_bitdec.h"
 #include "sac_decor.h"
-#include "sac_hybfilter.h"
+#include "sac_dec_hybfilter.h"
 #include "sac_types.h"
 #include "sac_smoothing.h"
 #include "sac_tonality.h"

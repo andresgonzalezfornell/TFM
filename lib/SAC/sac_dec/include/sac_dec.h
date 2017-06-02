@@ -40,7 +40,7 @@ Copyright (c) ISO/IEC 2009.
 
 #include "sac_dec_interface.h" 
 
-#include "sac_polyphase.h"
+#include "sac_dec_polyphase.h"
 #include "sac_bitinput.h"
 
 #ifndef max
@@ -159,7 +159,7 @@ typedef struct {
   float bufferHFReal[MAX_NUM_QMF_BANDS][BUFFER_LEN_HF];
   float bufferHFImag[MAX_NUM_QMF_BANDS][BUFFER_LEN_HF];
 
-} tHybFilterState;
+} tHybFilterStateDec;
 
 typedef struct {
   
@@ -656,7 +656,7 @@ struct spatialDec_struct {
 
 
 
-  tHybFilterState hybFilterState[MAX_INPUT_CHANNELS+MAX_RESIDUAL_CHANNELS];
+  tHybFilterStateDec hybFilterState[MAX_INPUT_CHANNELS+MAX_RESIDUAL_CHANNELS];
   SAC_POLYPHASE_SYN_FILTERBANK *qmfFilterState[2*MAX_OUTPUT_CHANNELS];
 
   HANDLE_DECORR_DEC apDecor[MAX_NO_DECORR_CHANNELS];

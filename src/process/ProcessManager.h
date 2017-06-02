@@ -3,6 +3,7 @@
 
 // System libraries
 #include "stdlib.h"
+#include "cstring"
 // Classes and local files
 #include "File.h"
 #include "../effects/Effect.h"

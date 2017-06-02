@@ -34,8 +34,8 @@ Copyright (c) ISO/IEC 2009.
 
 #include "stdio.h"
 
-#include "sac_polyphase.h"
-#include "sac_hybfilter.h"
+#include "sac_enc_polyphase.h"
+#include "sac_enc_hybfilter.h"
 #include "bitstream.h"
 
 typedef struct sSpatialEnc {
@@ -44,7 +44,7 @@ typedef struct sSpatialEnc {
   int timeSlots;
   int frameSize;
   SBR_ENCODER_ANA_FILTERBANK filterbank[6];
-  tHybFilterState hybState[6];
+  tHybFilterStateEnc hybStateEnc[6];
   BSF_INSTANCE *bitstreamFormatter;
 } tSpatialEnc;
 

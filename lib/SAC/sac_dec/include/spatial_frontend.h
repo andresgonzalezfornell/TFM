@@ -14,7 +14,7 @@
 #include "sac_dec.h"
 #include "libtsp.h"
 #include "libtsp/AFpar.h"
-#include "sac_polyphase.h"
+#include "sac_dec_polyphase.h"
 #include "spatial_filereader.h"
 #include "spatial_bdreader.h"
 #ifdef HRTF_DYNAMIC_UPDATE

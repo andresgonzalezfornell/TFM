@@ -30,7 +30,7 @@ Copyright (c) ISO/IEC 2009.
 *******************************************************************************/
 
 #include "sac_dec.h"
-#include "sac_polyphase.h"
+#include "sac_dec_polyphase.h"
 #include "sac_config.h"
 #include "sac_calcM1andM2.h"
 #include "sac_bitdec.h"

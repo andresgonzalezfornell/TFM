@@ -39,7 +39,7 @@ Copyright (c) ISO/IEC 2009.
 #include "sac_decor.h"
 #include "sac_sbrconst.h"
 #include "sac_calcM1andM2.h"
-#include "sac_hybfilter.h"
+#include "sac_dec_hybfilter.h"
 
 #include <assert.h>
 

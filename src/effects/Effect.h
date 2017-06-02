@@ -54,11 +54,11 @@ public:
     Effect(Effect::effectID effect, int fs);
     Effect(Effect::effectID effect, std::map<std::string, std::string> params, int fs);
     ~Effect();
+    void setParams(std::map<std::string, std::string> params);
     bool apply(float **input, float **output, int samples, std::vector<SACBitstream::ChannelType::channeltype> channels);
     std::vector<std::vector<double> > plot(std::string chart);
     static std::map<Effect::effectID, std::string> getEffects();
     static Effect::effectID getEffect(std::string effectname);
-    void setParams(std::map<std::string, std::string> params);
     static std::map<std::string, std::string> getParams(std::string configuration);
     static std::vector<bool> getChannels(std::string configuration, int size);
     static std::vector<double> getLevels(std::string configuration, int size);
