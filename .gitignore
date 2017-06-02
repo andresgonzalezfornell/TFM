@@ -4,8 +4,8 @@ bin/*
 Test/*
 
 # Qt
-commandline.pro.user
-interface.pro.user
+*.pro.user
+*.pro
 
 # Eclipse
 <<<<<<< Updated upstream
@@ -42,5 +42,3 @@ src/.settings/language.settings.xml
 /.DS_Store
 /Test/
 >>>>>>> Stashed changes
-
-*.user

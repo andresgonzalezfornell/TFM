@@ -87,10 +87,8 @@ HEADERS += \
 
 INCLUDEPATH += $$PWD/include
 
-unix|win32: LIBS += -L$$PWD/../../AFsp/lib/ -ltsp
-
+# AFsp library
+LIBS += -L$$PWD/../../AFsp/lib/ -ltsp
 INCLUDEPATH += $$PWD/../../AFsp/include
 DEPENDPATH += $$PWD/../../AFsp/include
-
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../AFsp/lib/tsp.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../AFsp/lib/libtsp.a
+PRE_TARGETDEPS += $$PWD/../../AFsp/lib/libtsp.a

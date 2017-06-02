@@ -27,7 +27,6 @@ public:
     static double getDouble(std::string param);
     static std::string getString(std::string param);
     static bool getBool(std::string param);
-private:
 };
 
 #endif // EFFECTBASE_H
