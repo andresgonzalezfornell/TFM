@@ -29,10 +29,11 @@ SOURCES += \
     src/sac_calcM1andM2.c \
     src/sac_config.c \
     src/sac_dec.c \
+    src/sac_dec_hybfilter.c \
+    src/sac_dec_polyphase.c \
     src/sac_decor.c \
     src/sac_hrtf.c \
     src/sac_hrtffilter.c \
-    src/sac_hybfilter.c \
     src/sac_mdct2qmf.c \
     src/sac_mdct2qmf_wf_tables.c \
     src/sac_nlc_dec.c \
@@ -43,7 +44,6 @@ SOURCES += \
     src/sac_nodes_reshape.c \
     src/sac_parallelReverb.c \
     src/sac_partiallyComplex.c \
-    src/sac_polyphase.c \
     src/sac_process.c \
     src/sac_resdecode.c \
     src/sac_reshapeBBEnv.c \
@@ -70,18 +70,18 @@ HEADERS += \
     include/sac_chandefs.h \
     include/sac_config.h \
     include/sac_dec.h \
+    include/sac_dec_hybfilter.h \
     include/sac_dec_interface.h \
+    include/sac_dec_polyphase.h \
     include/sac_decor.h \
     include/sac_hrtf.h \
     include/sac_huff_nodes.h \
-    include/sac_hybfilter.h \
     include/sac_interface.h \
     include/sac_intrins.h \
     include/sac_mdct2qmf.h \
     include/sac_mdct2qmf_wf_tables.h \
     include/sac_nlc_dec.h \
     include/sac_parallelReverb.h \
-    include/sac_polyphase.h \
     include/sac_process.h \
     include/sac_resdecode.h \
     include/sac_resdefs.h \
@@ -110,10 +110,8 @@ unix {
     INSTALLS += target
 }
 
-unix|win32: LIBS += -L$$PWD/../../AFsp/lib/ -ltsp
-
+# AFsp
+LIBS += -L$$PWD/../../AFsp/lib/ -ltsp
 INCLUDEPATH += $$PWD/../../AFsp/include
 DEPENDPATH += $$PWD/../../AFsp/include
-
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../AFsp/lib/tsp.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../AFsp/lib/libtsp.a
+PRE_TARGETDEPS += $$PWD/../../AFsp/lib/libtsp.a

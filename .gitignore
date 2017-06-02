@@ -18,6 +18,9 @@ src/.project
 src/.settings/language.settings.xml
 >>>>>>> Stashed changes
 
+# Makefiles
+Makefile
+
 # Compiled Object files
 *.slo
 *.lo
