@@ -4,6 +4,11 @@
  * @brief   Reverb constructor.
  */
 Reverb::Reverb() AS_EFFECT_CONSTRUCTOR {
+    for (int i = 0; i < maxchannels; i++) {
+        for (int j = 0; j < maxfilters; j++) {
+            pointer[i][j] = 0;
+        }
+    }
 }
 
 /**
@@ -18,7 +23,7 @@ void Reverb::apply(float **input, float **output, int samples, std::vector<SACBi
     double roomsize = getDouble(params["roomsize"]);
     double damping = getDouble(params["damping"]);
     std::string method = params["method"];
-    for (channel = 0; channel< (int)channels.size(); channel++) {
+    for (channel = 0; channel < (int)channels.size(); channel++) {
         filterindex = 0;
         if (method == "JCRev") {
             feedforwardfilter(input[channel], output[channel], samples, false, 0.25, 0.742, 4799);

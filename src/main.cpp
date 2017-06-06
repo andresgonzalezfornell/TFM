@@ -6,6 +6,7 @@
 
 // System libraries
 #include "cstring"
+#include "ctime"
 // Classes and local files
 #include "process/ProcessManager.h"
 #include "effects/Effect.h"
@@ -75,6 +76,7 @@ void printHelp(std::string app) {
 }
 
 int main(int argc, char *argv[]) {
+    double runtime = (double)clock()/CLOCKS_PER_SEC;
 	// Arguments
 	std::string app = std::string(argv[0]);
 	std::string source = "";
@@ -254,5 +256,7 @@ int main(int argc, char *argv[]) {
 	// End
 	delete effectinfo;
     consolelog("main", LogType::progress, "application was successful");
+    runtime = (double)clock()/CLOCKS_PER_SEC - runtime;
+    consolelog("main", LogType::info, "the application took " + std::to_string(runtime) + "s");
 	return 0;
 }
