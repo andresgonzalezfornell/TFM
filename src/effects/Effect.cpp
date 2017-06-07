@@ -258,6 +258,10 @@ std::map<std::string, std::string> Effect::getTagMap(std::string configuration, 
             while (value[value.size() - 1] == ' ') {
                 value = value.substr(0, value.size() - 1);
             }
+            // Quotes deletion
+            if (value[0] == '"' && value[value.size()-1] == '"') {
+                value = value.substr(1, value.size() - 2);
+            }
             map.insert(std::pair<std::string, std::string>(key, value));
         } else if (line != "") {
             consolelog("Effect", LogType::error, "syntax error in \"" + line + "\" (\"=\" is missed)");
@@ -288,22 +292,6 @@ int EffectBase::getInt(std::string param) {
  */
 double EffectBase::getDouble(std::string param) {
     return std::atof(param.c_str());
-}
-
-/**
- * @brief   It parses a parameter value to string
- * @param   param               parameter value
- * @return  value
- */
-std::string EffectBase::getString(std::string param) {
-    // Quotes deletion
-    if (param[0] == '"' && param[param.size()-1] == '"') {
-        param = param.substr(1, param.size() - 2);
-        return param;
-    } else {
-        consolelog("EffectBase", LogType::error, "param = " + param + " is not a string");
-        return NULL;
-    }
 }
 
 /**

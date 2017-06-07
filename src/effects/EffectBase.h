@@ -25,7 +25,6 @@ public:
     EffectBase();
     static int getInt(std::string param);
     static double getDouble(std::string param);
-    static std::string getString(std::string param);
     static bool getBool(std::string param);
 private:
 };
