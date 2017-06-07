@@ -6,20 +6,21 @@
 char *error = "";
 
 /**
- * @brief   It adds a char string to the char string variable error to s.
- * @param   s                   char pointer to exit message
+ * @brief   It adds a char string to the char string variable error.
+ * @param   newerror            char pointer to exit message
  */
-void myexit(char *s) {
-    // End line
-    error = (char *) malloc(1 + strlen(error) + strlen("\n"));
-    strcpy(error, error);
-    strcat(error, "\n");
-    free(error);
-    // Message
-    error = (char *) malloc(1 + strlen(error) + strlen(s));
-    strcpy(error, error);
-    strcat(error, s);
-    free(error);
+void myexit(char *newerror) {
+    char *endline = "\n";
+    char *previous = error;
+    if (strcmp(previous,"") == 0) {
+        error = (char *) malloc(1 + strlen(newerror));
+        error = newerror;
+    } else {
+        error = (char *) malloc(1 + strlen(previous) + strlen(endline) + strlen(newerror));
+        strcat(error, previous);
+        strcat(error, endline);
+        strcat(error, newerror);
+    }
 }
 
 /**

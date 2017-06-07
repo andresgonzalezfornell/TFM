@@ -146,7 +146,7 @@ void SACEffects::reset() {
 void SACEffects::updateControls() {
     // SACEffects
     ui->menu_decode->setEnabled(
-                this->source->exists() && this->bitstream->exists());
+                this->source->exists() && (this->bitstream->exists() || this->buried));
     // Bitstream
     ui->menu_load_bitstream->setEnabled(this->source->exists() && !this->buried);
     // Input & output controls
