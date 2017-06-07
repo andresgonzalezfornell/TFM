@@ -81,11 +81,11 @@ bool ProcessManager::decode(std::string input, std::string bitstream,
     const char *bitstream_char = bitstream.c_str();
     const char *output_char = output.c_str();
     if (bitstream == "buried") {
-        this->bitstream = NULL;
+        this->bitstream = new SACBitstream();
     } else {
         this->bitstream = new SACBitstream(bitstream);
-        this->fs = this->bitstream->fs;
     }
+    this->fs = this->bitstream->fs;
     consolelog("ProcessManager", LogType::info, "input file:\t\t " + input);
     consolelog("ProcessManager", LogType::info,
                "bitstream file:\t " + bitstream);

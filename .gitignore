@@ -6,6 +6,10 @@ Test/*
 # Qt
 *.pro.user
 *.pro
+lib/SAC/sac_dec/libsac_dec.pro.user
+lib/SAC/sac_dec/sac_dec.pro.user
+lib/SAC/sac_enc/libsac_enc.pro.user
+lib/SAC/sac_enc/sac_enc.pro.user
 
 # Eclipse
 <<<<<<< Updated upstream

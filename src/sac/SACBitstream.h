@@ -37,6 +37,7 @@ public:
     double gain_surround; /**< downmix of surround channels */
     double gain_LFE; /**< downmix of LFE channels */
     double gain_downmix; /**< gain of downmix*/
+    SACBitstream();
     SACBitstream(std::string filename);
     ~SACBitstream();
     long getVariable(int position, int length);

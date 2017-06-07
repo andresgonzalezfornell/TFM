@@ -3,6 +3,24 @@
 /**
  * @brief   Bitstream constructor.
  */
+SACBitstream::SACBitstream() {
+    // Default values
+    this->fs = 44100;
+    this->channels = std::vector<ChannelType::channeltype>(6);
+    this->channels[0] = ChannelType::L;
+    this->channels[1] = ChannelType::R;
+    this->channels[2] = ChannelType::C;
+    this->channels[3] = ChannelType::LFE;
+    this->channels[4] = ChannelType::Ls;
+    this->channels[5] = ChannelType::Rs;
+    this->gain_surround = 2;
+    this->gain_LFE = 0.5;
+    this->gain_downmix = 1;
+}
+
+/**
+ * @brief   Bitstream constructor.
+ */
 SACBitstream::SACBitstream(std::string filename) {
     this->bitstream = new File(filename, false);
     this->load();
