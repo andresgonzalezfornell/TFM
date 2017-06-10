@@ -40,8 +40,12 @@ bool ProcessManager::setInput(std::string filename) {
     this->input = this->inputfile->readSamples(this->samples);
     // Output initialization
     this->output = (float **)std::malloc(this->channels * sizeof(float *));
+    this->NRG = (float **)std::malloc(this->channels * sizeof(float *));
+    this->OLD = (float **)std::malloc(this->channels * sizeof(float *));
     for (int channel = 0; channel < this->channels; channel++) {
         this->output[channel] = (float *)std::malloc(this->samples * sizeof(float));
+        this->NRG[channel] = (float *)std::malloc(std::ceil((double)this->samples / this->chunksize) * sizeof(float));
+        this->OLD[channel] = (float *)std::malloc(std::ceil((double)this->samples / this->chunksize) * sizeof(float));
     }
     this->allocated = true;
     consolelog("ProcessManager", LogType::progress, "input file has been loaded");
@@ -133,6 +137,7 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
     if (this->cursor < this->samples) {
         if ((int) channels.size() == this->channels) {
             int n, N;
+            int chunk = 0;
             if (this->chunksize == 0) {
                 n = 0;
                 N = this->samples;
@@ -142,29 +147,31 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                 if (n + N >= this->samples) {
                     N = this->samples - n;
                 }
+                chunk = n / this->chunksize;
             }
             float **input_effect = (float **) std::malloc(this->channels * sizeof(float *));
             float **output_effect = (float **) std::malloc(this->channels * sizeof(float *));
+            float NRG_max = 0;
             for (int channel = 0; channel < this->channels; channel++) {
                 input_effect[channel] = (float *) std::malloc(N * sizeof(float));
                 output_effect[channel] = (float *) std::malloc(N * sizeof(float));
                 // Pre-amplifier
+                int pregain = 1;
                 switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
                 case SACBitstream::ChannelType::Rs:
                 case SACBitstream::ChannelType::Rsr:
-                    levels[channel] *= this->bitstream->gain_surround;
+                    pregain = this->bitstream->gain_surround;
                     break;
                 case SACBitstream::ChannelType::LFE:
-                    levels[channel] *= this->bitstream->gain_LFE;
+                    pregain = this->bitstream->gain_LFE;
                     break;
                 default:
                     break;
                 }
-                // Levels
                 for (int sample = n; sample < (n + N); sample++) {
-                    input_effect[channel][sample - n] = levels[channel] * this->input[channel][sample];
+                    input_effect[channel][sample - n] = levels[channel] * pregain * this->input[channel][sample];
                 }
             }
             // Effect
@@ -177,25 +184,33 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                     std::memcpy(this->output[channel] + n, input_effect[channel], N*sizeof(float));
                 }
                 // Post-amplifier
+                int postgain = 1;
                 switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
                 case SACBitstream::ChannelType::Rs:
                 case SACBitstream::ChannelType::Rsr:
-                    levels[channel] /= this->bitstream->gain_surround;
-                    for (int sample = n; sample < (n + N); sample++) {
-                        this->output[channel][sample] /= this->bitstream->gain_surround;
-                    }
+                    postgain = 1/this->bitstream->gain_surround;
                     break;
                 case SACBitstream::ChannelType::LFE:
-                    levels[channel] /= this->bitstream->gain_LFE;
-                    for (int sample = n; sample < (n + N); sample++) {
-                        this->output[channel][sample] /= this->bitstream->gain_LFE;
-                    }
+                    postgain = 1/this->bitstream->gain_LFE;
                     break;
                 default:
                     break;
                 }
+                this->NRG[channel][chunk] = 0;
+                for (int sample = n; sample < (n + N); sample++) {
+                    this->output[channel][sample] *= postgain;
+                    this->NRG[channel][chunk] += this->output[channel][sample] / this->chunksize;
+                }
+                if (NRG[channel][chunk] > NRG_max) {
+                    NRG_max = NRG[channel][chunk];
+                }
+
+            }
+            // SAOC parameters
+            for (int channel = 0; channel < this->channels; channel++) {
+                this->OLD[channel][chunk] = this->NRG[channel][chunk] / NRG_max;
             }
             std::free(input_effect);
             std::free(output_effect);
@@ -229,6 +244,8 @@ void ProcessManager::clear() {
     if (this->allocated) {
         std::free(this->input);
         std::free(this->output);
+        std::free(this->NRG);
+        std::free(this->OLD);
         this->allocated = false;
     }
     this->inputfile = NULL;

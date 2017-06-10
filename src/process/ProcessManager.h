@@ -27,6 +27,9 @@ public:
     int samples;            /**< number of samples in each channel */
     int cursor;             /**< pointer to current sample index when executing real time process*/
     int total;              /**< number of available output samples */
+    // SAOC parameters
+    float **NRG;            /**< object energies (NRG[channel][chunk]) */
+    float **OLD;            /**< object level differences (OLD[channel][chunk]) */
     ProcessManager(int chunksize);
     ~ProcessManager();
     bool setInput(std::string filename);
