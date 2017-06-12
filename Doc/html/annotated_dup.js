@@ -3,7 +3,6 @@ var annotated_dup =
     [ "AudioInfo", "class_audio_info.html", "class_audio_info" ],
     [ "AudioOutput", "class_audio_output.html", "class_audio_output" ],
     [ "AudioSignal", "class_audio_signal.html", "class_audio_signal" ],
-    [ "AudioStream", "class_audio_stream.html", "class_audio_stream" ],
     [ "AudioTest", "class_audio_test.html", "class_audio_test" ],
     [ "BinauralQuality", "struct_binaural_quality.html", "struct_binaural_quality" ],
     [ "Channel", "class_channel.html", "class_channel" ],

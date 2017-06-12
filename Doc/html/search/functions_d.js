@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sacbitstream',['SACBitstream',['../class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533',1,'SACBitstream']]],
+  ['sacbitstream',['SACBitstream',['../class_s_a_c_bitstream.html#ac9a2c174ea2d49d0804dc33e75690984',1,'SACBitstream::SACBitstream()'],['../class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533',1,'SACBitstream::SACBitstream(std::string filename)']]],
   ['saceffects',['SACEffects',['../class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33',1,'SACEffects']]],
   ['samples',['samples',['../class_w_a_v_file.html#a9ca294afee7e0c17ac00cd37b56dafd6',1,'WAVFile']]],
   ['schroederdiffusionfilter',['schroederdiffusionfilter',['../class_reverb.html#ab166279827798af21a9f19756d860be1',1,'Reverb']]],

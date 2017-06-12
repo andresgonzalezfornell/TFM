@@ -1,7 +1,6 @@
 var hierarchy =
 [
     [ "AudioSignal", "class_audio_signal.html", null ],
-    [ "AudioStream", "class_audio_stream.html", null ],
     [ "BinauralQuality", "struct_binaural_quality.html", null ],
     [ "Channel", "class_channel.html", null ],
     [ "SACBitstream::ChannelType", "struct_s_a_c_bitstream_1_1_channel_type.html", null ],
@@ -42,6 +41,5 @@ var hierarchy =
     ] ],
     [ "Reverb", "class_reverb.html", null ],
     [ "SACBitstream", "class_s_a_c_bitstream.html", null ],
-    [ "AudioStream::TimeSlot", "struct_audio_stream_1_1_time_slot.html", null ],
     [ "UpmixType", "struct_upmix_type.html", null ]
 ];

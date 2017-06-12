@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upmixtype',['UpmixType',['../struct_upmix_type.html',1,'']]]
+  ['wavfile',['WAVFile',['../class_w_a_v_file.html',1,'']]]
 ];

@@ -1,0 +1,537 @@
+\indexentry{Ui@{Ui}|hyperpage}{9}
+\indexentry{Audio\+Info@{Audio\+Info}|hyperpage}{11}
+\indexentry{Audio\+Info@{Audio\+Info}!Audio\+Info@{Audio\+Info}|hyperpage}{12}
+\indexentry{Audio\+Info@{Audio\+Info}!Audio\+Info@{Audio\+Info}|hyperpage}{12}
+\indexentry{Audio\+Info@{Audio\+Info}!set\+File@{set\+File}|hyperpage}{12}
+\indexentry{set\+File@{set\+File}!Audio\+Info@{Audio\+Info}|hyperpage}{12}
+\indexentry{Audio\+Output@{Audio\+Output}|hyperpage}{13}
+\indexentry{Audio\+Output@{Audio\+Output}!Audio\+Output@{Audio\+Output}|hyperpage}{15}
+\indexentry{Audio\+Output@{Audio\+Output}!Audio\+Output@{Audio\+Output}|hyperpage}{15}
+\indexentry{Audio\+Output@{Audio\+Output}!set\+Device@{set\+Device}|hyperpage}{15}
+\indexentry{set\+Device@{set\+Device}!Audio\+Output@{Audio\+Output}|hyperpage}{15}
+\indexentry{Audio\+Output@{Audio\+Output}!set\+Devices@{set\+Devices}|hyperpage}{16}
+\indexentry{set\+Devices@{set\+Devices}!Audio\+Output@{Audio\+Output}|hyperpage}{16}
+\indexentry{Audio\+Output@{Audio\+Output}!set\+Format@{set\+Format}|hyperpage}{17}
+\indexentry{set\+Format@{set\+Format}!Audio\+Output@{Audio\+Output}|hyperpage}{17}
+\indexentry{Audio\+Output@{Audio\+Output}!set\+Volume@{set\+Volume}|hyperpage}{17}
+\indexentry{set\+Volume@{set\+Volume}!Audio\+Output@{Audio\+Output}|hyperpage}{17}
+\indexentry{Audio\+Output@{Audio\+Output}!fs@{fs}|hyperpage}{18}
+\indexentry{fs@{fs}!Audio\+Output@{Audio\+Output}|hyperpage}{18}
+\indexentry{Audio\+Output@{Audio\+Output}!outputdevice@{outputdevice}|hyperpage}{18}
+\indexentry{outputdevice@{outputdevice}!Audio\+Output@{Audio\+Output}|hyperpage}{18}
+\indexentry{Audio\+Output@{Audio\+Output}!samplesize@{samplesize}|hyperpage}{18}
+\indexentry{samplesize@{samplesize}!Audio\+Output@{Audio\+Output}|hyperpage}{18}
+\indexentry{Audio\+Output@{Audio\+Output}!volume@{volume}|hyperpage}{18}
+\indexentry{volume@{volume}!Audio\+Output@{Audio\+Output}|hyperpage}{18}
+\indexentry{Audio\+Signal@{Audio\+Signal}|hyperpage}{19}
+\indexentry{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{20}
+\indexentry{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{20}
+\indexentry{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{20}
+\indexentry{Audio\+Signal@{Audio\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{20}
+\indexentry{Audio\+Signal@{Audio\+Signal}!add\+Sample@{add\+Sample}|hyperpage}{21}
+\indexentry{add\+Sample@{add\+Sample}!Audio\+Signal@{Audio\+Signal}|hyperpage}{21}
+\indexentry{Audio\+Signal@{Audio\+Signal}!delete\+Sample@{delete\+Sample}|hyperpage}{21}
+\indexentry{delete\+Sample@{delete\+Sample}!Audio\+Signal@{Audio\+Signal}|hyperpage}{21}
+\indexentry{Audio\+Signal@{Audio\+Signal}!delete\+Sample@{delete\+Sample}|hyperpage}{21}
+\indexentry{delete\+Sample@{delete\+Sample}!Audio\+Signal@{Audio\+Signal}|hyperpage}{21}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Frequencies@{get\+Frequencies}|hyperpage}{22}
+\indexentry{get\+Frequencies@{get\+Frequencies}!Audio\+Signal@{Audio\+Signal}|hyperpage}{22}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Frequencies@{get\+Frequencies}|hyperpage}{22}
+\indexentry{get\+Frequencies@{get\+Frequencies}!Audio\+Signal@{Audio\+Signal}|hyperpage}{22}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Sample@{get\+Sample}|hyperpage}{23}
+\indexentry{get\+Sample@{get\+Sample}!Audio\+Signal@{Audio\+Signal}|hyperpage}{23}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Signal@{get\+Signal}|hyperpage}{23}
+\indexentry{get\+Signal@{get\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{23}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Spectrum@{get\+Spectrum}|hyperpage}{24}
+\indexentry{get\+Spectrum@{get\+Spectrum}!Audio\+Signal@{Audio\+Signal}|hyperpage}{24}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Spectrum@{get\+Spectrum}|hyperpage}{24}
+\indexentry{get\+Spectrum@{get\+Spectrum}!Audio\+Signal@{Audio\+Signal}|hyperpage}{24}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Times@{get\+Times}|hyperpage}{25}
+\indexentry{get\+Times@{get\+Times}!Audio\+Signal@{Audio\+Signal}|hyperpage}{25}
+\indexentry{Audio\+Signal@{Audio\+Signal}!get\+Times@{get\+Times}|hyperpage}{25}
+\indexentry{get\+Times@{get\+Times}!Audio\+Signal@{Audio\+Signal}|hyperpage}{25}
+\indexentry{Audio\+Signal@{Audio\+Signal}!operator\mbox{[}\mbox{]}@{operator[]}|hyperpage}{25}
+\indexentry{operator\mbox{[}\mbox{]}@{operator[]}!Audio\+Signal@{Audio\+Signal}|hyperpage}{25}
+\indexentry{Audio\+Signal@{Audio\+Signal}!set\+Sample@{set\+Sample}|hyperpage}{26}
+\indexentry{set\+Sample@{set\+Sample}!Audio\+Signal@{Audio\+Signal}|hyperpage}{26}
+\indexentry{Audio\+Signal@{Audio\+Signal}!set\+Signal@{set\+Signal}|hyperpage}{26}
+\indexentry{set\+Signal@{set\+Signal}!Audio\+Signal@{Audio\+Signal}|hyperpage}{26}
+\indexentry{Audio\+Signal@{Audio\+Signal}!fs@{fs}|hyperpage}{27}
+\indexentry{fs@{fs}!Audio\+Signal@{Audio\+Signal}|hyperpage}{27}
+\indexentry{Audio\+Signal@{Audio\+Signal}!maxsamples@{maxsamples}|hyperpage}{27}
+\indexentry{maxsamples@{maxsamples}!Audio\+Signal@{Audio\+Signal}|hyperpage}{27}
+\indexentry{Audio\+Signal@{Audio\+Signal}!size@{size}|hyperpage}{27}
+\indexentry{size@{size}!Audio\+Signal@{Audio\+Signal}|hyperpage}{27}
+\indexentry{Audio\+Test@{Audio\+Test}|hyperpage}{28}
+\indexentry{Audio\+Test@{Audio\+Test}!Audio\+Test@{Audio\+Test}|hyperpage}{29}
+\indexentry{Audio\+Test@{Audio\+Test}!Audio\+Test@{Audio\+Test}|hyperpage}{29}
+\indexentry{Binaural\+Quality@{Binaural\+Quality}|hyperpage}{29}
+\indexentry{Binaural\+Quality@{Binaural\+Quality}!binauralquality@{binauralquality}|hyperpage}{30}
+\indexentry{binauralquality@{binauralquality}!Binaural\+Quality@{Binaural\+Quality}|hyperpage}{30}
+\indexentry{filtering@{filtering}!Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Quality@{Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Quality}|hyperpage}{31}
+\indexentry{Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Quality@{Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Quality}!filtering@{filtering}|hyperpage}{31}
+\indexentry{Channel@{Channel}|hyperpage}{31}
+\indexentry{Channel@{Channel}!Channel@{Channel}|hyperpage}{32}
+\indexentry{Channel@{Channel}!Channel@{Channel}|hyperpage}{32}
+\indexentry{Channel@{Channel}!bypass@{bypass}|hyperpage}{33}
+\indexentry{bypass@{bypass}!Channel@{Channel}|hyperpage}{33}
+\indexentry{Channel@{Channel}!get\+Index@{get\+Index}|hyperpage}{33}
+\indexentry{get\+Index@{get\+Index}!Channel@{Channel}|hyperpage}{33}
+\indexentry{Channel@{Channel}!mute@{mute}|hyperpage}{33}
+\indexentry{mute@{mute}!Channel@{Channel}|hyperpage}{33}
+\indexentry{Channel@{Channel}!set\+Label@{set\+Label}|hyperpage}{34}
+\indexentry{set\+Label@{set\+Label}!Channel@{Channel}|hyperpage}{34}
+\indexentry{Channel@{Channel}!set\+Volume@{set\+Volume}|hyperpage}{34}
+\indexentry{set\+Volume@{set\+Volume}!Channel@{Channel}|hyperpage}{34}
+\indexentry{Channel@{Channel}!audiooutput@{audiooutput}|hyperpage}{34}
+\indexentry{audiooutput@{audiooutput}!Channel@{Channel}|hyperpage}{34}
+\indexentry{Channel@{Channel}!bypasscheckbox@{bypasscheckbox}|hyperpage}{34}
+\indexentry{bypasscheckbox@{bypasscheckbox}!Channel@{Channel}|hyperpage}{34}
+\indexentry{Channel@{Channel}!bypassed@{bypassed}|hyperpage}{35}
+\indexentry{bypassed@{bypassed}!Channel@{Channel}|hyperpage}{35}
+\indexentry{Channel@{Channel}!deviceselector@{deviceselector}|hyperpage}{35}
+\indexentry{deviceselector@{deviceselector}!Channel@{Channel}|hyperpage}{35}
+\indexentry{Channel@{Channel}!groupbox@{groupbox}|hyperpage}{35}
+\indexentry{groupbox@{groupbox}!Channel@{Channel}|hyperpage}{35}
+\indexentry{Channel@{Channel}!index@{index}|hyperpage}{35}
+\indexentry{index@{index}!Channel@{Channel}|hyperpage}{35}
+\indexentry{Channel@{Channel}!label@{label}|hyperpage}{35}
+\indexentry{label@{label}!Channel@{Channel}|hyperpage}{35}
+\indexentry{Channel@{Channel}!mutecheckbox@{mutecheckbox}|hyperpage}{36}
+\indexentry{mutecheckbox@{mutecheckbox}!Channel@{Channel}|hyperpage}{36}
+\indexentry{Channel@{Channel}!muted@{muted}|hyperpage}{36}
+\indexentry{muted@{muted}!Channel@{Channel}|hyperpage}{36}
+\indexentry{Channel@{Channel}!name@{name}|hyperpage}{36}
+\indexentry{name@{name}!Channel@{Channel}|hyperpage}{36}
+\indexentry{Channel@{Channel}!volume@{volume}|hyperpage}{36}
+\indexentry{volume@{volume}!Channel@{Channel}|hyperpage}{36}
+\indexentry{Channel@{Channel}!volumeslider@{volumeslider}|hyperpage}{36}
+\indexentry{volumeslider@{volumeslider}!Channel@{Channel}|hyperpage}{36}
+\indexentry{Channels\+Charts@{Channels\+Charts}|hyperpage}{37}
+\indexentry{Channels\+Charts@{Channels\+Charts}!Channels\+Charts@{Channels\+Charts}|hyperpage}{38}
+\indexentry{Channels\+Charts@{Channels\+Charts}!Channels\+Charts@{Channels\+Charts}|hyperpage}{38}
+\indexentry{Channels\+List@{Channels\+List}|hyperpage}{38}
+\indexentry{Channels\+List@{Channels\+List}!Channels\+List@{Channels\+List}|hyperpage}{40}
+\indexentry{Channels\+List@{Channels\+List}!Channels\+List@{Channels\+List}|hyperpage}{40}
+\indexentry{Channels\+List@{Channels\+List}!delete\+Channel@{delete\+Channel}|hyperpage}{40}
+\indexentry{delete\+Channel@{delete\+Channel}!Channels\+List@{Channels\+List}|hyperpage}{40}
+\indexentry{Channels\+List@{Channels\+List}!get\+Channel@{get\+Channel}|hyperpage}{41}
+\indexentry{get\+Channel@{get\+Channel}!Channels\+List@{Channels\+List}|hyperpage}{41}
+\indexentry{Channels\+List@{Channels\+List}!get\+Names@{get\+Names}|hyperpage}{42}
+\indexentry{get\+Names@{get\+Names}!Channels\+List@{Channels\+List}|hyperpage}{42}
+\indexentry{Channels\+List@{Channels\+List}!get\+Size@{get\+Size}|hyperpage}{42}
+\indexentry{get\+Size@{get\+Size}!Channels\+List@{Channels\+List}|hyperpage}{42}
+\indexentry{Channels\+List@{Channels\+List}!set\+Size@{set\+Size}|hyperpage}{43}
+\indexentry{set\+Size@{set\+Size}!Channels\+List@{Channels\+List}|hyperpage}{43}
+\indexentry{Channels\+List@{Channels\+List}!fs@{fs}|hyperpage}{44}
+\indexentry{fs@{fs}!Channels\+List@{Channels\+List}|hyperpage}{44}
+\indexentry{Channels\+List@{Channels\+List}!samplesize@{samplesize}|hyperpage}{44}
+\indexentry{samplesize@{samplesize}!Channels\+List@{Channels\+List}|hyperpage}{44}
+\indexentry{S\+A\+C\+Bitstream\+::\+Channel\+Type@{S\+A\+C\+Bitstream\+::\+Channel\+Type}|hyperpage}{44}
+\indexentry{S\+A\+C\+Bitstream\+::\+Channel\+Type@{S\+A\+C\+Bitstream\+::\+Channel\+Type}!channeltype@{channeltype}|hyperpage}{45}
+\indexentry{channeltype@{channeltype}!S\+A\+C\+Bitstream\+::\+Channel\+Type@{S\+A\+C\+Bitstream\+::\+Channel\+Type}|hyperpage}{45}
+\indexentry{L@{L}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!L@{L}|hyperpage}{45}
+\indexentry{Lc@{Lc}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Lc@{Lc}|hyperpage}{45}
+\indexentry{Ls@{Ls}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Ls@{Ls}|hyperpage}{45}
+\indexentry{Lsr@{Lsr}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Lsr@{Lsr}|hyperpage}{45}
+\indexentry{R@{R}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!R@{R}|hyperpage}{45}
+\indexentry{Rc@{Rc}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Rc@{Rc}|hyperpage}{45}
+\indexentry{Rs@{Rs}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Rs@{Rs}|hyperpage}{45}
+\indexentry{Rsr@{Rsr}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!Rsr@{Rsr}|hyperpage}{45}
+\indexentry{C@{C}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!C@{C}|hyperpage}{45}
+\indexentry{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}FE@{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}FE}!S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{45}
+\indexentry{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}FE@{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}FE}|hyperpage}{45}
+\indexentry{Chart2D@{Chart2D}|hyperpage}{45}
+\indexentry{Chart2D@{Chart2D}!Chart2D@{Chart2D}|hyperpage}{47}
+\indexentry{Chart2D@{Chart2D}!Chart2D@{Chart2D}|hyperpage}{47}
+\indexentry{Chart2D@{Chart2D}!Chart2D@{Chart2D}|hyperpage}{47}
+\indexentry{Chart2D@{Chart2D}!Chart2D@{Chart2D}|hyperpage}{47}
+\indexentry{Chart2D@{Chart2D}!get\+Points@{get\+Points}|hyperpage}{48}
+\indexentry{get\+Points@{get\+Points}!Chart2D@{Chart2D}|hyperpage}{48}
+\indexentry{Chart2D@{Chart2D}!set\+Options@{set\+Options}|hyperpage}{48}
+\indexentry{set\+Options@{set\+Options}!Chart2D@{Chart2D}|hyperpage}{48}
+\indexentry{Chart2D@{Chart2D}!set\+Points@{set\+Points}|hyperpage}{49}
+\indexentry{set\+Points@{set\+Points}!Chart2D@{Chart2D}|hyperpage}{49}
+\indexentry{Chart2D@{Chart2D}!set\+Range@{set\+Range}|hyperpage}{49}
+\indexentry{set\+Range@{set\+Range}!Chart2D@{Chart2D}|hyperpage}{49}
+\indexentry{Chart2D@{Chart2D}!set\+Title@{set\+Title}|hyperpage}{50}
+\indexentry{set\+Title@{set\+Title}!Chart2D@{Chart2D}|hyperpage}{50}
+\indexentry{Chart2D@{Chart2D}!xlabel@{xlabel}|hyperpage}{51}
+\indexentry{xlabel@{xlabel}!Chart2D@{Chart2D}|hyperpage}{51}
+\indexentry{Chart2D@{Chart2D}!ylabel@{ylabel}|hyperpage}{51}
+\indexentry{ylabel@{ylabel}!Chart2D@{Chart2D}|hyperpage}{51}
+\indexentry{Chart2\+D\+::\+Chart\+Options@{Chart2\+D\+::\+Chart\+Options}|hyperpage}{51}
+\indexentry{Chart2\+D\+::\+Chart\+Options@{Chart2\+D\+::\+Chart\+Options}!Options@{Options}|hyperpage}{51}
+\indexentry{Options@{Options}!Chart2\+D\+::\+Chart\+Options@{Chart2\+D\+::\+Chart\+Options}|hyperpage}{51}
+\indexentry{logX@{logX}!Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}|hyperpage}{52}
+\indexentry{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}!logX@{logX}|hyperpage}{52}
+\indexentry{logY@{logY}!Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}|hyperpage}{52}
+\indexentry{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}!logY@{logY}|hyperpage}{52}
+\indexentry{labelX@{labelX}!Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}|hyperpage}{52}
+\indexentry{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}!labelX@{labelX}|hyperpage}{52}
+\indexentry{labelY@{labelY}!Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}|hyperpage}{52}
+\indexentry{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}!labelY@{labelY}|hyperpage}{52}
+\indexentry{legend@{legend}!Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}|hyperpage}{52}
+\indexentry{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options@{Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Options}!legend@{legend}|hyperpage}{52}
+\indexentry{Compressor@{Compressor}|hyperpage}{52}
+\indexentry{Compressor@{Compressor}!apply@{apply}|hyperpage}{52}
+\indexentry{apply@{apply}!Compressor@{Compressor}|hyperpage}{52}
+\indexentry{Compressor@{Compressor}!plot@{plot}|hyperpage}{53}
+\indexentry{plot@{plot}!Compressor@{Compressor}|hyperpage}{53}
+\indexentry{Decoding\+Type@{Decoding\+Type}|hyperpage}{54}
+\indexentry{Decoding\+Type@{Decoding\+Type}!decodingtype@{decodingtype}|hyperpage}{54}
+\indexentry{decodingtype@{decodingtype}!Decoding\+Type@{Decoding\+Type}|hyperpage}{54}
+\indexentry{low@{low}!Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{55}
+\indexentry{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!low@{low}|hyperpage}{55}
+\indexentry{high@{high}!Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{55}
+\indexentry{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!high@{high}|hyperpage}{55}
+\indexentry{Effect@{Effect}|hyperpage}{55}
+\indexentry{Effect@{Effect}!effect\+ID@{effect\+ID}|hyperpage}{56}
+\indexentry{effect\+ID@{effect\+ID}!Effect@{Effect}|hyperpage}{56}
+\indexentry{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}ST@{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}ST}!Effect@{Effect}|hyperpage}{56}
+\indexentry{Effect@{Effect}!L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}ST@{L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}ST}|hyperpage}{56}
+\indexentry{Effect@{Effect}!Effect@{Effect}|hyperpage}{56}
+\indexentry{Effect@{Effect}!Effect@{Effect}|hyperpage}{56}
+\indexentry{Effect@{Effect}!Effect@{Effect}|hyperpage}{57}
+\indexentry{Effect@{Effect}!Effect@{Effect}|hyperpage}{57}
+\indexentry{Effect@{Effect}!apply@{apply}|hyperpage}{57}
+\indexentry{apply@{apply}!Effect@{Effect}|hyperpage}{57}
+\indexentry{Effect@{Effect}!get\+Channels@{get\+Channels}|hyperpage}{58}
+\indexentry{get\+Channels@{get\+Channels}!Effect@{Effect}|hyperpage}{58}
+\indexentry{Effect@{Effect}!get\+Effect@{get\+Effect}|hyperpage}{59}
+\indexentry{get\+Effect@{get\+Effect}!Effect@{Effect}|hyperpage}{59}
+\indexentry{Effect@{Effect}!get\+Effects@{get\+Effects}|hyperpage}{60}
+\indexentry{get\+Effects@{get\+Effects}!Effect@{Effect}|hyperpage}{60}
+\indexentry{Effect@{Effect}!get\+Levels@{get\+Levels}|hyperpage}{60}
+\indexentry{get\+Levels@{get\+Levels}!Effect@{Effect}|hyperpage}{60}
+\indexentry{Effect@{Effect}!get\+Params@{get\+Params}|hyperpage}{62}
+\indexentry{get\+Params@{get\+Params}!Effect@{Effect}|hyperpage}{62}
+\indexentry{Effect@{Effect}!get\+Tag@{get\+Tag}|hyperpage}{62}
+\indexentry{get\+Tag@{get\+Tag}!Effect@{Effect}|hyperpage}{62}
+\indexentry{Effect@{Effect}!get\+Tag\+Map@{get\+Tag\+Map}|hyperpage}{63}
+\indexentry{get\+Tag\+Map@{get\+Tag\+Map}!Effect@{Effect}|hyperpage}{63}
+\indexentry{Effect@{Effect}!plot@{plot}|hyperpage}{64}
+\indexentry{plot@{plot}!Effect@{Effect}|hyperpage}{64}
+\indexentry{Effect@{Effect}!set\+Params@{set\+Params}|hyperpage}{65}
+\indexentry{set\+Params@{set\+Params}!Effect@{Effect}|hyperpage}{65}
+\indexentry{Effect@{Effect}!effect@{effect}|hyperpage}{66}
+\indexentry{effect@{effect}!Effect@{Effect}|hyperpage}{66}
+\indexentry{Effect\+Base@{Effect\+Base}|hyperpage}{66}
+\indexentry{Effect\+Base@{Effect\+Base}!get\+Bool@{get\+Bool}|hyperpage}{67}
+\indexentry{get\+Bool@{get\+Bool}!Effect\+Base@{Effect\+Base}|hyperpage}{67}
+\indexentry{Effect\+Base@{Effect\+Base}!get\+Double@{get\+Double}|hyperpage}{67}
+\indexentry{get\+Double@{get\+Double}!Effect\+Base@{Effect\+Base}|hyperpage}{67}
+\indexentry{Effect\+Base@{Effect\+Base}!get\+Int@{get\+Int}|hyperpage}{68}
+\indexentry{get\+Int@{get\+Int}!Effect\+Base@{Effect\+Base}|hyperpage}{68}
+\indexentry{Effect\+Base@{Effect\+Base}!fs@{fs}|hyperpage}{68}
+\indexentry{fs@{fs}!Effect\+Base@{Effect\+Base}|hyperpage}{68}
+\indexentry{Effect\+Base@{Effect\+Base}!params@{params}|hyperpage}{68}
+\indexentry{params@{params}!Effect\+Base@{Effect\+Base}|hyperpage}{68}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}|hyperpage}{69}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{70}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{70}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{71}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{71}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!set\+Effect@{set\+Effect}|hyperpage}{71}
+\indexentry{set\+Effect@{set\+Effect}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{71}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!set\+Parameter@{set\+Parameter}|hyperpage}{72}
+\indexentry{set\+Parameter@{set\+Parameter}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{72}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}|hyperpage}{73}
+\indexentry{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{73}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}|hyperpage}{73}
+\indexentry{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{73}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}|hyperpage}{74}
+\indexentry{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{74}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!update\+Parameter@{update\+Parameter}|hyperpage}{74}
+\indexentry{update\+Parameter@{update\+Parameter}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{74}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!charts@{charts}|hyperpage}{75}
+\indexentry{charts@{charts}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{75}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!effect@{effect}|hyperpage}{75}
+\indexentry{effect@{effect}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{75}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!effects@{effects}|hyperpage}{75}
+\indexentry{effects@{effects}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{75}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!files@{files}|hyperpage}{75}
+\indexentry{files@{files}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{75}
+\indexentry{Effects\+Monitor@{Effects\+Monitor}!parameters@{parameters}|hyperpage}{76}
+\indexentry{parameters@{parameters}!Effects\+Monitor@{Effects\+Monitor}|hyperpage}{76}
+\indexentry{Encoder@{Encoder}|hyperpage}{76}
+\indexentry{Encoder@{Encoder}!set\+Input@{set\+Input}|hyperpage}{78}
+\indexentry{set\+Input@{set\+Input}!Encoder@{Encoder}|hyperpage}{78}
+\indexentry{Encoder@{Encoder}!set\+Output@{set\+Output}|hyperpage}{78}
+\indexentry{set\+Output@{set\+Output}!Encoder@{Encoder}|hyperpage}{78}
+\indexentry{Encoder@{Encoder}!set\+Tree@{set\+Tree}|hyperpage}{79}
+\indexentry{set\+Tree@{set\+Tree}!Encoder@{Encoder}|hyperpage}{79}
+\indexentry{Encoder@{Encoder}!bitstream@{bitstream}|hyperpage}{80}
+\indexentry{bitstream@{bitstream}!Encoder@{Encoder}|hyperpage}{80}
+\indexentry{Encoder@{Encoder}!fs@{fs}|hyperpage}{80}
+\indexentry{fs@{fs}!Encoder@{Encoder}|hyperpage}{80}
+\indexentry{Encoder@{Encoder}!input@{input}|hyperpage}{80}
+\indexentry{input@{input}!Encoder@{Encoder}|hyperpage}{80}
+\indexentry{Encoder@{Encoder}!output@{output}|hyperpage}{80}
+\indexentry{output@{output}!Encoder@{Encoder}|hyperpage}{80}
+\indexentry{File\+::\+Endianess@{File\+::\+Endianess}|hyperpage}{81}
+\indexentry{File\+::\+Endianess@{File\+::\+Endianess}!endianess@{endianess}|hyperpage}{81}
+\indexentry{endianess@{endianess}!File\+::\+Endianess@{File\+::\+Endianess}|hyperpage}{81}
+\indexentry{littleendian@{littleendian}!File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess@{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess}|hyperpage}{81}
+\indexentry{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess@{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess}!littleendian@{littleendian}|hyperpage}{81}
+\indexentry{bigendian@{bigendian}!File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess@{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess}|hyperpage}{81}
+\indexentry{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess@{File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}::\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Endianess}!bigendian@{bigendian}|hyperpage}{81}
+\indexentry{Equalizer@{Equalizer}|hyperpage}{81}
+\indexentry{Equalizer@{Equalizer}!apply@{apply}|hyperpage}{82}
+\indexentry{apply@{apply}!Equalizer@{Equalizer}|hyperpage}{82}
+\indexentry{Equalizer@{Equalizer}!filter@{filter}|hyperpage}{83}
+\indexentry{filter@{filter}!Equalizer@{Equalizer}|hyperpage}{83}
+\indexentry{Equalizer@{Equalizer}!high\+Shelf\+Filter@{high\+Shelf\+Filter}|hyperpage}{84}
+\indexentry{high\+Shelf\+Filter@{high\+Shelf\+Filter}!Equalizer@{Equalizer}|hyperpage}{84}
+\indexentry{Equalizer@{Equalizer}!low\+Shelf\+Filter@{low\+Shelf\+Filter}|hyperpage}{84}
+\indexentry{low\+Shelf\+Filter@{low\+Shelf\+Filter}!Equalizer@{Equalizer}|hyperpage}{84}
+\indexentry{Equalizer@{Equalizer}!peaking\+Filter@{peaking\+Filter}|hyperpage}{85}
+\indexentry{peaking\+Filter@{peaking\+Filter}!Equalizer@{Equalizer}|hyperpage}{85}
+\indexentry{File@{File}|hyperpage}{86}
+\indexentry{File@{File}!File@{File}|hyperpage}{87}
+\indexentry{File@{File}!File@{File}|hyperpage}{87}
+\indexentry{File@{File}!exists@{exists}|hyperpage}{88}
+\indexentry{exists@{exists}!File@{File}|hyperpage}{88}
+\indexentry{File@{File}!get\+Cursor@{get\+Cursor}|hyperpage}{88}
+\indexentry{get\+Cursor@{get\+Cursor}!File@{File}|hyperpage}{88}
+\indexentry{File@{File}!get\+Filename@{get\+Filename}|hyperpage}{89}
+\indexentry{get\+Filename@{get\+Filename}!File@{File}|hyperpage}{89}
+\indexentry{File@{File}!read@{read}|hyperpage}{89}
+\indexentry{read@{read}!File@{File}|hyperpage}{89}
+\indexentry{File@{File}!read\+Number@{read\+Number}|hyperpage}{90}
+\indexentry{read\+Number@{read\+Number}!File@{File}|hyperpage}{90}
+\indexentry{File@{File}!read\+Text@{read\+Text}|hyperpage}{91}
+\indexentry{read\+Text@{read\+Text}!File@{File}|hyperpage}{91}
+\indexentry{File@{File}!set\+Cursor@{set\+Cursor}|hyperpage}{92}
+\indexentry{set\+Cursor@{set\+Cursor}!File@{File}|hyperpage}{92}
+\indexentry{File@{File}!set\+Filename@{set\+Filename}|hyperpage}{92}
+\indexentry{set\+Filename@{set\+Filename}!File@{File}|hyperpage}{92}
+\indexentry{File@{File}!size@{size}|hyperpage}{93}
+\indexentry{size@{size}!File@{File}|hyperpage}{93}
+\indexentry{File@{File}!write@{write}|hyperpage}{94}
+\indexentry{write@{write}!File@{File}|hyperpage}{94}
+\indexentry{File@{File}!write\+Number@{write\+Number}|hyperpage}{95}
+\indexentry{write\+Number@{write\+Number}!File@{File}|hyperpage}{95}
+\indexentry{File@{File}!write\+Text@{write\+Text}|hyperpage}{95}
+\indexentry{write\+Text@{write\+Text}!File@{File}|hyperpage}{95}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{96}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!audioformat@{audioformat}|hyperpage}{97}
+\indexentry{audioformat@{audioformat}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{97}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!bitspersample@{bitspersample}|hyperpage}{97}
+\indexentry{bitspersample@{bitspersample}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{97}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!blockalign@{blockalign}|hyperpage}{97}
+\indexentry{blockalign@{blockalign}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{97}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!byterate@{byterate}|hyperpage}{98}
+\indexentry{byterate@{byterate}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{98}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!chunk\+ID@{chunk\+ID}|hyperpage}{98}
+\indexentry{chunk\+ID@{chunk\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{98}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!chunksize@{chunksize}|hyperpage}{98}
+\indexentry{chunksize@{chunksize}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{98}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!format@{format}|hyperpage}{98}
+\indexentry{format@{format}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{98}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!numchannels@{numchannels}|hyperpage}{98}
+\indexentry{numchannels@{numchannels}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{98}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!samplerate@{samplerate}|hyperpage}{99}
+\indexentry{samplerate@{samplerate}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{99}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk1\+ID@{subchunk1\+ID}|hyperpage}{99}
+\indexentry{subchunk1\+ID@{subchunk1\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{99}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk1size@{subchunk1size}|hyperpage}{99}
+\indexentry{subchunk1size@{subchunk1size}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{99}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk2\+ID@{subchunk2\+ID}|hyperpage}{99}
+\indexentry{subchunk2\+ID@{subchunk2\+ID}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{99}
+\indexentry{W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}!subchunk2size@{subchunk2size}|hyperpage}{99}
+\indexentry{subchunk2size@{subchunk2size}!W\+A\+V\+File\+::\+Header@{W\+A\+V\+File\+::\+Header}|hyperpage}{99}
+\indexentry{H\+R\+T\+F\+Model@{H\+R\+T\+F\+Model}|hyperpage}{100}
+\indexentry{H\+R\+T\+F\+Model@{H\+R\+T\+F\+Model}!hrtfmodel@{hrtfmodel}|hyperpage}{100}
+\indexentry{hrtfmodel@{hrtfmodel}!H\+R\+T\+F\+Model@{H\+R\+T\+F\+Model}|hyperpage}{100}
+\indexentry{kemar@{kemar}!H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}|hyperpage}{100}
+\indexentry{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}!kemar@{kemar}|hyperpage}{100}
+\indexentry{vast@{vast}!H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}|hyperpage}{100}
+\indexentry{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}!vast@{vast}|hyperpage}{100}
+\indexentry{mps\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}vt@{mps\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}vt}!H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}|hyperpage}{100}
+\indexentry{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model@{H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Model}!mps\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}vt@{mps\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}vt}|hyperpage}{100}
+\indexentry{Log\+Type@{Log\+Type}|hyperpage}{101}
+\indexentry{Log\+Type@{Log\+Type}!logtype@{logtype}|hyperpage}{101}
+\indexentry{logtype@{logtype}!Log\+Type@{Log\+Type}|hyperpage}{101}
+\indexentry{info@{info}!Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{101}
+\indexentry{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!info@{info}|hyperpage}{101}
+\indexentry{warning@{warning}!Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{101}
+\indexentry{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!warning@{warning}|hyperpage}{101}
+\indexentry{error@{error}!Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{101}
+\indexentry{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!error@{error}|hyperpage}{101}
+\indexentry{progress@{progress}!Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{101}
+\indexentry{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!progress@{progress}|hyperpage}{101}
+\indexentry{interaction@{interaction}!Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{101}
+\indexentry{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!interaction@{interaction}|hyperpage}{101}
+\indexentry{Output\+Device@{Output\+Device}|hyperpage}{101}
+\indexentry{Output\+Device@{Output\+Device}!Output\+Device@{Output\+Device}|hyperpage}{103}
+\indexentry{Output\+Device@{Output\+Device}!Output\+Device@{Output\+Device}|hyperpage}{103}
+\indexentry{Output\+Device@{Output\+Device}!bytes\+Available@{bytes\+Available}|hyperpage}{103}
+\indexentry{bytes\+Available@{bytes\+Available}!Output\+Device@{Output\+Device}|hyperpage}{103}
+\indexentry{Output\+Device@{Output\+Device}!read\+Data@{read\+Data}|hyperpage}{104}
+\indexentry{read\+Data@{read\+Data}!Output\+Device@{Output\+Device}|hyperpage}{104}
+\indexentry{Output\+Device@{Output\+Device}!send@{send}|hyperpage}{104}
+\indexentry{send@{send}!Output\+Device@{Output\+Device}|hyperpage}{104}
+\indexentry{Output\+Device@{Output\+Device}!test@{test}|hyperpage}{105}
+\indexentry{test@{test}!Output\+Device@{Output\+Device}|hyperpage}{105}
+\indexentry{Output\+Device@{Output\+Device}!write\+Data@{write\+Data}|hyperpage}{105}
+\indexentry{write\+Data@{write\+Data}!Output\+Device@{Output\+Device}|hyperpage}{105}
+\indexentry{Output\+Device@{Output\+Device}!buffer@{buffer}|hyperpage}{106}
+\indexentry{buffer@{buffer}!Output\+Device@{Output\+Device}|hyperpage}{106}
+\indexentry{Output\+Device@{Output\+Device}!buffersize@{buffersize}|hyperpage}{106}
+\indexentry{buffersize@{buffersize}!Output\+Device@{Output\+Device}|hyperpage}{106}
+\indexentry{Output\+Device@{Output\+Device}!cursor\+\_\+read@{cursor\+\_\+read}|hyperpage}{106}
+\indexentry{cursor\+\_\+read@{cursor\+\_\+read}!Output\+Device@{Output\+Device}|hyperpage}{106}
+\indexentry{Output\+Device@{Output\+Device}!cursor\+\_\+write@{cursor\+\_\+write}|hyperpage}{106}
+\indexentry{cursor\+\_\+write@{cursor\+\_\+write}!Output\+Device@{Output\+Device}|hyperpage}{106}
+\indexentry{Panning@{Panning}|hyperpage}{107}
+\indexentry{Panning@{Panning}!apply@{apply}|hyperpage}{107}
+\indexentry{apply@{apply}!Panning@{Panning}|hyperpage}{107}
+\indexentry{Process\+Manager@{Process\+Manager}|hyperpage}{108}
+\indexentry{Process\+Manager@{Process\+Manager}!Process\+Manager@{Process\+Manager}|hyperpage}{109}
+\indexentry{Process\+Manager@{Process\+Manager}!Process\+Manager@{Process\+Manager}|hyperpage}{109}
+\indexentry{Process\+Manager@{Process\+Manager}!apply\+Effect@{apply\+Effect}|hyperpage}{110}
+\indexentry{apply\+Effect@{apply\+Effect}!Process\+Manager@{Process\+Manager}|hyperpage}{110}
+\indexentry{Process\+Manager@{Process\+Manager}!decode@{decode}|hyperpage}{110}
+\indexentry{decode@{decode}!Process\+Manager@{Process\+Manager}|hyperpage}{110}
+\indexentry{Process\+Manager@{Process\+Manager}!set\+Input@{set\+Input}|hyperpage}{111}
+\indexentry{set\+Input@{set\+Input}!Process\+Manager@{Process\+Manager}|hyperpage}{111}
+\indexentry{Process\+Manager@{Process\+Manager}!set\+Output@{set\+Output}|hyperpage}{112}
+\indexentry{set\+Output@{set\+Output}!Process\+Manager@{Process\+Manager}|hyperpage}{112}
+\indexentry{Process\+Manager@{Process\+Manager}!channels@{channels}|hyperpage}{113}
+\indexentry{channels@{channels}!Process\+Manager@{Process\+Manager}|hyperpage}{113}
+\indexentry{Process\+Manager@{Process\+Manager}!cursor@{cursor}|hyperpage}{113}
+\indexentry{cursor@{cursor}!Process\+Manager@{Process\+Manager}|hyperpage}{113}
+\indexentry{Process\+Manager@{Process\+Manager}!fs@{fs}|hyperpage}{113}
+\indexentry{fs@{fs}!Process\+Manager@{Process\+Manager}|hyperpage}{113}
+\indexentry{Process\+Manager@{Process\+Manager}!input@{input}|hyperpage}{114}
+\indexentry{input@{input}!Process\+Manager@{Process\+Manager}|hyperpage}{114}
+\indexentry{Process\+Manager@{Process\+Manager}!N\+RG@{N\+RG}|hyperpage}{114}
+\indexentry{N\+RG@{N\+RG}!Process\+Manager@{Process\+Manager}|hyperpage}{114}
+\indexentry{Process\+Manager@{Process\+Manager}!O\+LD@{O\+LD}|hyperpage}{114}
+\indexentry{O\+LD@{O\+LD}!Process\+Manager@{Process\+Manager}|hyperpage}{114}
+\indexentry{Process\+Manager@{Process\+Manager}!output@{output}|hyperpage}{114}
+\indexentry{output@{output}!Process\+Manager@{Process\+Manager}|hyperpage}{114}
+\indexentry{Process\+Manager@{Process\+Manager}!samples@{samples}|hyperpage}{114}
+\indexentry{samples@{samples}!Process\+Manager@{Process\+Manager}|hyperpage}{114}
+\indexentry{Process\+Manager@{Process\+Manager}!total@{total}|hyperpage}{115}
+\indexentry{total@{total}!Process\+Manager@{Process\+Manager}|hyperpage}{115}
+\indexentry{Reverb@{Reverb}|hyperpage}{115}
+\indexentry{Reverb@{Reverb}!apply@{apply}|hyperpage}{116}
+\indexentry{apply@{apply}!Reverb@{Reverb}|hyperpage}{116}
+\indexentry{Reverb@{Reverb}!combfilter@{combfilter}|hyperpage}{117}
+\indexentry{combfilter@{combfilter}!Reverb@{Reverb}|hyperpage}{117}
+\indexentry{Reverb@{Reverb}!feedforwardfilter@{feedforwardfilter}|hyperpage}{117}
+\indexentry{feedforwardfilter@{feedforwardfilter}!Reverb@{Reverb}|hyperpage}{117}
+\indexentry{Reverb@{Reverb}!lowpassfeedbackfilter@{lowpassfeedbackfilter}|hyperpage}{118}
+\indexentry{lowpassfeedbackfilter@{lowpassfeedbackfilter}!Reverb@{Reverb}|hyperpage}{118}
+\indexentry{Reverb@{Reverb}!schroederdiffusionfilter@{schroederdiffusionfilter}|hyperpage}{119}
+\indexentry{schroederdiffusionfilter@{schroederdiffusionfilter}!Reverb@{Reverb}|hyperpage}{119}
+\indexentry{Reverb@{Reverb}!schroederfilter@{schroederfilter}|hyperpage}{120}
+\indexentry{schroederfilter@{schroederfilter}!Reverb@{Reverb}|hyperpage}{120}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{121}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!get\+Variable@{get\+Variable}|hyperpage}{122}
+\indexentry{get\+Variable@{get\+Variable}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{122}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!channels@{channels}|hyperpage}{123}
+\indexentry{channels@{channels}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{123}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!fs@{fs}|hyperpage}{123}
+\indexentry{fs@{fs}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{123}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+downmix@{gain\+\_\+downmix}|hyperpage}{123}
+\indexentry{gain\+\_\+downmix@{gain\+\_\+downmix}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{123}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+\+L\+FE@{gain\+\_\+\+L\+FE}|hyperpage}{123}
+\indexentry{gain\+\_\+\+L\+FE@{gain\+\_\+\+L\+FE}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{123}
+\indexentry{S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}!gain\+\_\+surround@{gain\+\_\+surround}|hyperpage}{123}
+\indexentry{gain\+\_\+surround@{gain\+\_\+surround}!S\+A\+C\+Bitstream@{S\+A\+C\+Bitstream}|hyperpage}{123}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{124}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{126}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{126}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Binaural\+Quality@{set\+Binaural\+Quality}|hyperpage}{126}
+\indexentry{set\+Binaural\+Quality@{set\+Binaural\+Quality}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{126}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Bitstream@{set\+Bitstream}|hyperpage}{127}
+\indexentry{set\+Bitstream@{set\+Bitstream}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{127}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Decoding\+Type@{set\+Decoding\+Type}|hyperpage}{127}
+\indexentry{set\+Decoding\+Type@{set\+Decoding\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{127}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Duration@{set\+Duration}|hyperpage}{128}
+\indexentry{set\+Duration@{set\+Duration}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{128}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Effect@{set\+Effect}|hyperpage}{128}
+\indexentry{set\+Effect@{set\+Effect}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{128}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Format@{set\+Format}|hyperpage}{129}
+\indexentry{set\+Format@{set\+Format}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{129}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+H\+R\+T\+F\+Model@{set\+H\+R\+T\+F\+Model}|hyperpage}{130}
+\indexentry{set\+H\+R\+T\+F\+Model@{set\+H\+R\+T\+F\+Model}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{130}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Input@{set\+Input}|hyperpage}{131}
+\indexentry{set\+Input@{set\+Input}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{131}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Source@{set\+Source}|hyperpage}{132}
+\indexentry{set\+Source@{set\+Source}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{132}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!set\+Upmix\+Type@{set\+Upmix\+Type}|hyperpage}{133}
+\indexentry{set\+Upmix\+Type@{set\+Upmix\+Type}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{133}
+\indexentry{S\+A\+C\+Effects@{S\+A\+C\+Effects}!fs@{fs}|hyperpage}{134}
+\indexentry{fs@{fs}!S\+A\+C\+Effects@{S\+A\+C\+Effects}|hyperpage}{134}
+\indexentry{Upmix\+Type@{Upmix\+Type}|hyperpage}{134}
+\indexentry{Upmix\+Type@{Upmix\+Type}!upmixtype@{upmixtype}|hyperpage}{134}
+\indexentry{upmixtype@{upmixtype}!Upmix\+Type@{Upmix\+Type}|hyperpage}{134}
+\indexentry{normal@{normal}!Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{135}
+\indexentry{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!normal@{normal}|hyperpage}{135}
+\indexentry{blind@{blind}!Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{135}
+\indexentry{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!blind@{blind}|hyperpage}{135}
+\indexentry{binaural@{binaural}!Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{135}
+\indexentry{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!binaural@{binaural}|hyperpage}{135}
+\indexentry{stereo@{stereo}!Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}|hyperpage}{135}
+\indexentry{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type@{Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Type}!stereo@{stereo}|hyperpage}{135}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{135}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{136}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{136}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{137}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{137}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{137}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{137}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!get\+Cursor@{get\+Cursor}|hyperpage}{138}
+\indexentry{get\+Cursor@{get\+Cursor}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{138}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!read\+Samples@{read\+Samples}|hyperpage}{138}
+\indexentry{read\+Samples@{read\+Samples}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{138}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!samples@{samples}|hyperpage}{139}
+\indexentry{samples@{samples}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{139}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!set\+Cursor@{set\+Cursor}|hyperpage}{139}
+\indexentry{set\+Cursor@{set\+Cursor}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{139}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!write\+Samples@{write\+Samples}|hyperpage}{140}
+\indexentry{write\+Samples@{write\+Samples}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{140}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!duration@{duration}|hyperpage}{141}
+\indexentry{duration@{duration}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{141}
+\indexentry{W\+A\+V\+File@{W\+A\+V\+File}!header@{header}|hyperpage}{141}
+\indexentry{header@{header}!W\+A\+V\+File@{W\+A\+V\+File}|hyperpage}{141}
+\indexentry{src/tools/\+Logger.\+cpp@{src/tools/\+Logger.\+cpp}|hyperpage}{143}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!consolelog@{consolelog}|hyperpage}{144}
+\indexentry{consolelog@{consolelog}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{144}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!tab@{tab}|hyperpage}{145}
+\indexentry{tab@{tab}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{145}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!black@{black}|hyperpage}{146}
+\indexentry{black@{black}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{146}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!blue@{blue}|hyperpage}{147}
+\indexentry{blue@{blue}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{147}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!bold@{bold}|hyperpage}{147}
+\indexentry{bold@{bold}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{147}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!cyan@{cyan}|hyperpage}{147}
+\indexentry{cyan@{cyan}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{147}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!green@{green}|hyperpage}{147}
+\indexentry{green@{green}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{147}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!grey@{grey}|hyperpage}{147}
+\indexentry{grey@{grey}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{147}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!italic@{italic}|hyperpage}{148}
+\indexentry{italic@{italic}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{148}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!magenta@{magenta}|hyperpage}{148}
+\indexentry{magenta@{magenta}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{148}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!red@{red}|hyperpage}{148}
+\indexentry{red@{red}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{148}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!reset@{reset}|hyperpage}{148}
+\indexentry{reset@{reset}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{148}
+\indexentry{Logger.\+cpp@{Logger.\+cpp}!yellow@{yellow}|hyperpage}{148}
+\indexentry{yellow@{yellow}!Logger.\+cpp@{Logger.\+cpp}|hyperpage}{148}

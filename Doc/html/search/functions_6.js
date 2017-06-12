@@ -19,7 +19,6 @@ var searchData=
   ['getsignal',['getSignal',['../class_audio_signal.html#aa86d766d3fe58e23a852751bbe2ecc78',1,'AudioSignal']]],
   ['getsize',['getSize',['../class_channels_list.html#aeaeb08c6bf8aa1a48b5cc52c56505408',1,'ChannelsList']]],
   ['getspectrum',['getSpectrum',['../class_audio_signal.html#a1c1330b11b635cfafe2edb75fd0d2e70',1,'AudioSignal::getSpectrum()'],['../class_audio_signal.html#ae49bd4dc391e6ae0e8a673ff8d5089fb',1,'AudioSignal::getSpectrum(int bands)']]],
-  ['getstring',['getString',['../class_effect_base.html#a74b8d00a78daa5a33db20543564c7350',1,'EffectBase']]],
   ['gettag',['getTag',['../class_effect.html#a607ab2a63d333137c1f07cf03611c4bf',1,'Effect']]],
   ['gettagmap',['getTagMap',['../class_effect.html#a616281286b866f1f8f6c66715e54ee89',1,'Effect']]],
   ['gettimes',['getTimes',['../class_audio_signal.html#afff46a70335800ba93ae513bdea7e4c9',1,'AudioSignal::getTimes()'],['../class_audio_signal.html#aa04d6fcd3219f4bb8d77916c60d85ad2',1,'AudioSignal::getTimes(float initialtime)']]],

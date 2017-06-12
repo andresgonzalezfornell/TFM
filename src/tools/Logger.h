@@ -4,6 +4,7 @@
 // System libraries
 #include "iostream"
 #include "stdlib.h"
+#include "ctime"
 
 /**
  * @name    LogType

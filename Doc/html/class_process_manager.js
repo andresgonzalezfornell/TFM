@@ -11,6 +11,8 @@ var class_process_manager =
     [ "cursor", "class_process_manager.html#a337af1b32b2f6bf94ed98ef98e6d1226", null ],
     [ "fs", "class_process_manager.html#ae7ce9ead957c4f78d74206baf1837a59", null ],
     [ "input", "class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b", null ],
+    [ "NRG", "class_process_manager.html#a70a556eaff879d870603033a9ffcbc5b", null ],
+    [ "OLD", "class_process_manager.html#a3c015ada1a03ef508a542f9b2f6a8ff3", null ],
     [ "output", "class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3", null ],
     [ "samples", "class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a", null ],
     [ "total", "class_process_manager.html#abcf97b9835a8dfb0d55e37069663cda9", null ]

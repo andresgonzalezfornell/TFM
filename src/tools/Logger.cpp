@@ -86,9 +86,24 @@ void consolelog(std::string source, LogType::logtype logtype,
         break;
     }
     // Log
+    time_t rawtime;
+    time(&rawtime);
+    struct tm *timeinfo = localtime(&rawtime);
+    std::string hh = std::to_string(timeinfo->tm_hour);
+    if (timeinfo->tm_hour < 10) {
+        hh = "0" + hh;
+    }
+    std::string mm = std::to_string(timeinfo->tm_min);
+    if (timeinfo->tm_min < 10) {
+        mm = "0" + mm;
+    }
+    std::string ss = std::to_string(timeinfo->tm_sec);
+    if (timeinfo->tm_sec < 10) {
+        ss = "0" + ss;
+    }
+    std::cout << reset << hh << ":" << mm << ":" << ss << "\t" << reset;
     std::cout << grey << "Log message ";
     std::cout << "from " << italic << source << tab(source, tab_max) << reset;
-    std::cout << bold << type_style << type_name << tab(type_name, tab_max)
-              << reset;
+    std::cout << bold << type_style << type_name << tab(type_name, tab_max) << reset;
     std::cout << message << reset << std::endl;
 }

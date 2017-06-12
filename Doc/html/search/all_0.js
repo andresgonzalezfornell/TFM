@@ -7,6 +7,5 @@ var searchData=
   ['audioinfo',['AudioInfo',['../class_audio_info.html',1,'AudioInfo'],['../class_audio_info.html#ad24c69ecc331c48790cdf2886c721132',1,'AudioInfo::AudioInfo()']]],
   ['audiooutput',['AudioOutput',['../class_audio_output.html',1,'AudioOutput'],['../class_audio_output.html#afd879db4e79ccc430bd9d9a795534323',1,'AudioOutput::AudioOutput()'],['../class_channel.html#a7c8a0b25848ab487c39a803785f7ed21',1,'Channel::audiooutput()']]],
   ['audiosignal',['AudioSignal',['../class_audio_signal.html',1,'AudioSignal'],['../class_audio_signal.html#a72df7e0c092777d7b829ee7229d5d6f8',1,'AudioSignal::AudioSignal(int fs)'],['../class_audio_signal.html#a755ad45352e2b260a2ee7fde2440a486',1,'AudioSignal::AudioSignal(std::vector&lt; float &gt; signal, int fs)']]],
-  ['audiostream',['AudioStream',['../class_audio_stream.html',1,'']]],
   ['audiotest',['AudioTest',['../class_audio_test.html',1,'AudioTest'],['../class_audio_test.html#a8732c48308ca1352a4d89803553b395e',1,'AudioTest::AudioTest()']]]
 ];

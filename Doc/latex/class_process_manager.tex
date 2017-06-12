@@ -44,6 +44,10 @@ int \hyperlink{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}{samples}
 int \hyperlink{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}{cursor}
 \item 
 int \hyperlink{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}{total}
+\item 
+float $\ast$$\ast$ \hyperlink{class_process_manager_a70a556eaff879d870603033a9ffcbc5b}{N\+RG}
+\item 
+float $\ast$$\ast$ \hyperlink{class_process_manager_a3c015ada1a03ef508a542f9b2f6a8ff3}{O\+LD}
 \end{DoxyCompactItemize}
 
 
@@ -53,7 +57,7 @@ Andrés González Fornell
 \end{DoxyAuthor}
 
 
-Definition at line 20 of file Process\+Manager.\+h.
+Definition at line 21 of file Process\+Manager.\+h.
 
 
 
@@ -104,7 +108,7 @@ true if it was successful
 \end{DoxyReturn}
 
 
-Definition at line 127 of file Process\+Manager.\+cpp.
+Definition at line 135 of file Process\+Manager.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -150,7 +154,7 @@ true if it was successful
 \end{DoxyReturn}
 
 
-Definition at line 76 of file Process\+Manager.\+cpp.
+Definition at line 80 of file Process\+Manager.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -218,7 +222,7 @@ true if it was successful
 \end{DoxyReturn}
 
 
-Definition at line 56 of file Process\+Manager.\+cpp.
+Definition at line 60 of file Process\+Manager.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -247,7 +251,7 @@ Here is the caller graph for this function\+:
 
 number of channels 
 
-Definition at line 25 of file Process\+Manager.\+h.
+Definition at line 26 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}\label{class_process_manager_a337af1b32b2f6bf94ed98ef98e6d1226}} 
 \index{Process\+Manager@{Process\+Manager}!cursor@{cursor}}
@@ -257,7 +261,7 @@ Definition at line 25 of file Process\+Manager.\+h.
 
 pointer to current sample index when executing real time process 
 
-Definition at line 27 of file Process\+Manager.\+h.
+Definition at line 28 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}\label{class_process_manager_ae7ce9ead957c4f78d74206baf1837a59}} 
 \index{Process\+Manager@{Process\+Manager}!fs@{fs}}
@@ -267,7 +271,7 @@ Definition at line 27 of file Process\+Manager.\+h.
 
 signal sampling frequency 
 
-Definition at line 22 of file Process\+Manager.\+h.
+Definition at line 23 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}\label{class_process_manager_aafb2937f6a2f261b1581917ba872ba9b}} 
 \index{Process\+Manager@{Process\+Manager}!input@{input}}
@@ -277,7 +281,27 @@ Definition at line 22 of file Process\+Manager.\+h.
 
 vector of input channels stream (sample = input\mbox{[}channel\mbox{]}\mbox{[}sample index\mbox{]}) 
 
-Definition at line 23 of file Process\+Manager.\+h.
+Definition at line 24 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_a70a556eaff879d870603033a9ffcbc5b}\label{class_process_manager_a70a556eaff879d870603033a9ffcbc5b}} 
+\index{Process\+Manager@{Process\+Manager}!N\+RG@{N\+RG}}
+\index{N\+RG@{N\+RG}!Process\+Manager@{Process\+Manager}}
+\subsubsection{\texorpdfstring{N\+RG}{NRG}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Process\+Manager\+::\+N\+RG}
+
+object energies (N\+RG\mbox{[}channel\mbox{]}\mbox{[}chunk\mbox{]}) 
+
+Definition at line 31 of file Process\+Manager.\+h.
+
+\mbox{\Hypertarget{class_process_manager_a3c015ada1a03ef508a542f9b2f6a8ff3}\label{class_process_manager_a3c015ada1a03ef508a542f9b2f6a8ff3}} 
+\index{Process\+Manager@{Process\+Manager}!O\+LD@{O\+LD}}
+\index{O\+LD@{O\+LD}!Process\+Manager@{Process\+Manager}}
+\subsubsection{\texorpdfstring{O\+LD}{OLD}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Process\+Manager\+::\+O\+LD}
+
+object level differences (O\+LD\mbox{[}channel\mbox{]}\mbox{[}chunk\mbox{]}) 
+
+Definition at line 32 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}\label{class_process_manager_a135c866f06b0042c2835cd9ecefa05f3}} 
 \index{Process\+Manager@{Process\+Manager}!output@{output}}
@@ -287,7 +311,7 @@ Definition at line 23 of file Process\+Manager.\+h.
 
 vector of input channels stream (sample = output\mbox{[}channel\mbox{]}\mbox{[}sample index\mbox{]}) 
 
-Definition at line 24 of file Process\+Manager.\+h.
+Definition at line 25 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}\label{class_process_manager_aac9c5dea3ac0ed72df1f6f780c62010a}} 
 \index{Process\+Manager@{Process\+Manager}!samples@{samples}}
@@ -297,7 +321,7 @@ Definition at line 24 of file Process\+Manager.\+h.
 
 number of samples in each channel 
 
-Definition at line 26 of file Process\+Manager.\+h.
+Definition at line 27 of file Process\+Manager.\+h.
 
 \mbox{\Hypertarget{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}\label{class_process_manager_abcf97b9835a8dfb0d55e37069663cda9}} 
 \index{Process\+Manager@{Process\+Manager}!total@{total}}
@@ -307,7 +331,7 @@ Definition at line 26 of file Process\+Manager.\+h.
 
 number of available output samples 
 
-Definition at line 28 of file Process\+Manager.\+h.
+Definition at line 29 of file Process\+Manager.\+h.
 
 
 

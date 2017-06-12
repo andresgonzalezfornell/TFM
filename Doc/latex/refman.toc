@@ -1,0 +1,356 @@
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Ui Namespace Reference}{9}{section.5.1}
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Info Class Reference}{11}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{12}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{12}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Info()}{12}{subsubsection.6.1.2.1}
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{12}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File()}{13}{subsubsection.6.1.3.1}
+\contentsline {section}{\numberline {6.2}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output Class Reference}{13}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{15}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{15}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output()}{15}{subsubsection.6.2.2.1}
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{15}{subsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.3.1}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Device}{16}{subsubsection.6.2.3.1}
+\contentsline {subsubsection}{\numberline {6.2.3.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Devices()}{16}{subsubsection.6.2.3.2}
+\contentsline {subsubsection}{\numberline {6.2.3.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Format()}{17}{subsubsection.6.2.3.3}
+\contentsline {subsubsection}{\numberline {6.2.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Volume()}{17}{subsubsection.6.2.3.4}
+\contentsline {subsection}{\numberline {6.2.4}Member Data Documentation}{18}{subsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.4.1}fs}{18}{subsubsection.6.2.4.1}
+\contentsline {subsubsection}{\numberline {6.2.4.2}outputdevice}{18}{subsubsection.6.2.4.2}
+\contentsline {subsubsection}{\numberline {6.2.4.3}samplesize}{18}{subsubsection.6.2.4.3}
+\contentsline {subsubsection}{\numberline {6.2.4.4}volume}{18}{subsubsection.6.2.4.4}
+\contentsline {section}{\numberline {6.3}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Signal Class Reference}{19}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{20}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{20}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Signal()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{20}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Signal()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{20}{subsubsection.6.3.2.2}
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{21}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sample()}{21}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}delete\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sample()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{21}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}delete\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sample()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{22}{subsubsection.6.3.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Frequencies()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{22}{subsubsection.6.3.3.4}
+\contentsline {subsubsection}{\numberline {6.3.3.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Frequencies()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{22}{subsubsection.6.3.3.5}
+\contentsline {subsubsection}{\numberline {6.3.3.6}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sample()}{23}{subsubsection.6.3.3.6}
+\contentsline {subsubsection}{\numberline {6.3.3.7}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Signal()}{24}{subsubsection.6.3.3.7}
+\contentsline {subsubsection}{\numberline {6.3.3.8}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Spectrum()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{24}{subsubsection.6.3.3.8}
+\contentsline {subsubsection}{\numberline {6.3.3.9}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Spectrum()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{24}{subsubsection.6.3.3.9}
+\contentsline {subsubsection}{\numberline {6.3.3.10}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Times()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{25}{subsubsection.6.3.3.10}
+\contentsline {subsubsection}{\numberline {6.3.3.11}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Times()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{25}{subsubsection.6.3.3.11}
+\contentsline {subsubsection}{\numberline {6.3.3.12}operator[]()}{25}{subsubsection.6.3.3.12}
+\contentsline {subsubsection}{\numberline {6.3.3.13}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sample()}{26}{subsubsection.6.3.3.13}
+\contentsline {subsubsection}{\numberline {6.3.3.14}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Signal()}{27}{subsubsection.6.3.3.14}
+\contentsline {subsection}{\numberline {6.3.4}Member Data Documentation}{27}{subsection.6.3.4}
+\contentsline {subsubsection}{\numberline {6.3.4.1}fs}{27}{subsubsection.6.3.4.1}
+\contentsline {subsubsection}{\numberline {6.3.4.2}maxsamples}{27}{subsubsection.6.3.4.2}
+\contentsline {subsubsection}{\numberline {6.3.4.3}size}{27}{subsubsection.6.3.4.3}
+\contentsline {section}{\numberline {6.4}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Test Class Reference}{28}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{28}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{29}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}Audio\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Test()}{29}{subsubsection.6.4.2.1}
+\contentsline {section}{\numberline {6.5}Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Quality Struct Reference}{29}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{29}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Member Enumeration Documentation}{30}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}binauralquality}{30}{subsubsection.6.5.2.1}
+\contentsline {section}{\numberline {6.6}Channel Class Reference}{31}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{32}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{32}{subsection.6.6.2}
+\contentsline {subsubsection}{\numberline {6.6.2.1}Channel()}{32}{subsubsection.6.6.2.1}
+\contentsline {subsection}{\numberline {6.6.3}Member Function Documentation}{33}{subsection.6.6.3}
+\contentsline {subsubsection}{\numberline {6.6.3.1}bypass()}{33}{subsubsection.6.6.3.1}
+\contentsline {subsubsection}{\numberline {6.6.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index()}{33}{subsubsection.6.6.3.2}
+\contentsline {subsubsection}{\numberline {6.6.3.3}mute()}{34}{subsubsection.6.6.3.3}
+\contentsline {subsubsection}{\numberline {6.6.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Label()}{34}{subsubsection.6.6.3.4}
+\contentsline {subsubsection}{\numberline {6.6.3.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Volume()}{34}{subsubsection.6.6.3.5}
+\contentsline {subsection}{\numberline {6.6.4}Member Data Documentation}{34}{subsection.6.6.4}
+\contentsline {subsubsection}{\numberline {6.6.4.1}audiooutput}{34}{subsubsection.6.6.4.1}
+\contentsline {subsubsection}{\numberline {6.6.4.2}bypasscheckbox}{35}{subsubsection.6.6.4.2}
+\contentsline {subsubsection}{\numberline {6.6.4.3}bypassed}{35}{subsubsection.6.6.4.3}
+\contentsline {subsubsection}{\numberline {6.6.4.4}deviceselector}{35}{subsubsection.6.6.4.4}
+\contentsline {subsubsection}{\numberline {6.6.4.5}groupbox}{35}{subsubsection.6.6.4.5}
+\contentsline {subsubsection}{\numberline {6.6.4.6}index}{35}{subsubsection.6.6.4.6}
+\contentsline {subsubsection}{\numberline {6.6.4.7}label}{36}{subsubsection.6.6.4.7}
+\contentsline {subsubsection}{\numberline {6.6.4.8}mutecheckbox}{36}{subsubsection.6.6.4.8}
+\contentsline {subsubsection}{\numberline {6.6.4.9}muted}{36}{subsubsection.6.6.4.9}
+\contentsline {subsubsection}{\numberline {6.6.4.10}name}{36}{subsubsection.6.6.4.10}
+\contentsline {subsubsection}{\numberline {6.6.4.11}volume}{36}{subsubsection.6.6.4.11}
+\contentsline {subsubsection}{\numberline {6.6.4.12}volumeslider}{37}{subsubsection.6.6.4.12}
+\contentsline {section}{\numberline {6.7}Channels\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Charts Class Reference}{37}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{38}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{38}{subsection.6.7.2}
+\contentsline {subsubsection}{\numberline {6.7.2.1}Channels\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Charts()}{38}{subsubsection.6.7.2.1}
+\contentsline {section}{\numberline {6.8}Channels\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}List Class Reference}{38}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{40}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{40}{subsection.6.8.2}
+\contentsline {subsubsection}{\numberline {6.8.2.1}Channels\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}List()}{40}{subsubsection.6.8.2.1}
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{40}{subsection.6.8.3}
+\contentsline {subsubsection}{\numberline {6.8.3.1}delete\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Channel()}{41}{subsubsection.6.8.3.1}
+\contentsline {subsubsection}{\numberline {6.8.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Channel()}{41}{subsubsection.6.8.3.2}
+\contentsline {subsubsection}{\numberline {6.8.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names()}{42}{subsubsection.6.8.3.3}
+\contentsline {subsubsection}{\numberline {6.8.3.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Size()}{43}{subsubsection.6.8.3.4}
+\contentsline {subsubsection}{\numberline {6.8.3.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Size()}{43}{subsubsection.6.8.3.5}
+\contentsline {subsection}{\numberline {6.8.4}Member Data Documentation}{44}{subsection.6.8.4}
+\contentsline {subsubsection}{\numberline {6.8.4.1}fs}{44}{subsubsection.6.8.4.1}
+\contentsline {subsubsection}{\numberline {6.8.4.2}samplesize}{44}{subsubsection.6.8.4.2}
+\contentsline {section}{\numberline {6.9}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bitstream\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:Channel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type Struct Reference}{44}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{45}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Member Enumeration Documentation}{45}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}channeltype}{45}{subsubsection.6.9.2.1}
+\contentsline {section}{\numberline {6.10}Chart2D Class Reference}{45}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{47}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Constructor \& Destructor Documentation}{47}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{47}{subsubsection.6.10.2.1}
+\contentsline {subsubsection}{\numberline {6.10.2.2}Chart2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{47}{subsubsection.6.10.2.2}
+\contentsline {subsection}{\numberline {6.10.3}Member Function Documentation}{48}{subsection.6.10.3}
+\contentsline {subsubsection}{\numberline {6.10.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Points()}{48}{subsubsection.6.10.3.1}
+\contentsline {subsubsection}{\numberline {6.10.3.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Options()}{48}{subsubsection.6.10.3.2}
+\contentsline {subsubsection}{\numberline {6.10.3.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Points()}{49}{subsubsection.6.10.3.3}
+\contentsline {subsubsection}{\numberline {6.10.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Range()}{50}{subsubsection.6.10.3.4}
+\contentsline {subsubsection}{\numberline {6.10.3.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Title()}{50}{subsubsection.6.10.3.5}
+\contentsline {subsection}{\numberline {6.10.4}Member Data Documentation}{51}{subsection.6.10.4}
+\contentsline {subsubsection}{\numberline {6.10.4.1}xlabel}{51}{subsubsection.6.10.4.1}
+\contentsline {subsubsection}{\numberline {6.10.4.2}ylabel}{51}{subsubsection.6.10.4.2}
+\contentsline {section}{\numberline {6.11}Chart2D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:Chart\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Options Struct Reference}{51}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{51}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}Member Enumeration Documentation}{51}{subsection.6.11.2}
+\contentsline {subsubsection}{\numberline {6.11.2.1}Options}{51}{subsubsection.6.11.2.1}
+\contentsline {section}{\numberline {6.12}Compressor Class Reference}{52}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{52}{subsection.6.12.1}
+\contentsline {subsection}{\numberline {6.12.2}Member Function Documentation}{52}{subsection.6.12.2}
+\contentsline {subsubsection}{\numberline {6.12.2.1}apply()}{52}{subsubsection.6.12.2.1}
+\contentsline {subsubsection}{\numberline {6.12.2.2}plot()}{53}{subsubsection.6.12.2.2}
+\contentsline {section}{\numberline {6.13}Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type Struct Reference}{54}{section.6.13}
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{54}{subsection.6.13.1}
+\contentsline {subsection}{\numberline {6.13.2}Member Enumeration Documentation}{54}{subsection.6.13.2}
+\contentsline {subsubsection}{\numberline {6.13.2.1}decodingtype}{54}{subsubsection.6.13.2.1}
+\contentsline {section}{\numberline {6.14}Effect Class Reference}{55}{section.6.14}
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{56}{subsection.6.14.1}
+\contentsline {subsection}{\numberline {6.14.2}Member Enumeration Documentation}{56}{subsection.6.14.2}
+\contentsline {subsubsection}{\numberline {6.14.2.1}effect\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ID}{56}{subsubsection.6.14.2.1}
+\contentsline {subsection}{\numberline {6.14.3}Constructor \& Destructor Documentation}{56}{subsection.6.14.3}
+\contentsline {subsubsection}{\numberline {6.14.3.1}Effect()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{56}{subsubsection.6.14.3.1}
+\contentsline {subsubsection}{\numberline {6.14.3.2}Effect()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{57}{subsubsection.6.14.3.2}
+\contentsline {subsection}{\numberline {6.14.4}Member Function Documentation}{57}{subsection.6.14.4}
+\contentsline {subsubsection}{\numberline {6.14.4.1}apply()}{57}{subsubsection.6.14.4.1}
+\contentsline {subsubsection}{\numberline {6.14.4.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Channels()}{58}{subsubsection.6.14.4.2}
+\contentsline {subsubsection}{\numberline {6.14.4.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effect()}{59}{subsubsection.6.14.4.3}
+\contentsline {subsubsection}{\numberline {6.14.4.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effects()}{60}{subsubsection.6.14.4.4}
+\contentsline {subsubsection}{\numberline {6.14.4.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Levels()}{61}{subsubsection.6.14.4.5}
+\contentsline {subsubsection}{\numberline {6.14.4.6}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params()}{62}{subsubsection.6.14.4.6}
+\contentsline {subsubsection}{\numberline {6.14.4.7}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tag()}{63}{subsubsection.6.14.4.7}
+\contentsline {subsubsection}{\numberline {6.14.4.8}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tag\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Map()}{63}{subsubsection.6.14.4.8}
+\contentsline {subsubsection}{\numberline {6.14.4.9}plot()}{64}{subsubsection.6.14.4.9}
+\contentsline {subsubsection}{\numberline {6.14.4.10}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params()}{65}{subsubsection.6.14.4.10}
+\contentsline {subsection}{\numberline {6.14.5}Member Data Documentation}{66}{subsection.6.14.5}
+\contentsline {subsubsection}{\numberline {6.14.5.1}effect}{66}{subsubsection.6.14.5.1}
+\contentsline {section}{\numberline {6.15}Effect\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Base Class Reference}{66}{section.6.15}
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{67}{subsection.6.15.1}
+\contentsline {subsection}{\numberline {6.15.2}Member Function Documentation}{67}{subsection.6.15.2}
+\contentsline {subsubsection}{\numberline {6.15.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bool()}{67}{subsubsection.6.15.2.1}
+\contentsline {subsubsection}{\numberline {6.15.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Double()}{67}{subsubsection.6.15.2.2}
+\contentsline {subsubsection}{\numberline {6.15.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Int()}{68}{subsubsection.6.15.2.3}
+\contentsline {subsection}{\numberline {6.15.3}Member Data Documentation}{68}{subsection.6.15.3}
+\contentsline {subsubsection}{\numberline {6.15.3.1}fs}{68}{subsubsection.6.15.3.1}
+\contentsline {subsubsection}{\numberline {6.15.3.2}params}{68}{subsubsection.6.15.3.2}
+\contentsline {section}{\numberline {6.16}Effects\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Monitor Class Reference}{69}{section.6.16}
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{70}{subsection.6.16.1}
+\contentsline {subsection}{\numberline {6.16.2}Constructor \& Destructor Documentation}{70}{subsection.6.16.2}
+\contentsline {subsubsection}{\numberline {6.16.2.1}Effects\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Monitor()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{70}{subsubsection.6.16.2.1}
+\contentsline {subsubsection}{\numberline {6.16.2.2}Effects\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Monitor()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{71}{subsubsection.6.16.2.2}
+\contentsline {subsection}{\numberline {6.16.3}Member Function Documentation}{71}{subsection.6.16.3}
+\contentsline {subsubsection}{\numberline {6.16.3.1}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effect()}{71}{subsubsection.6.16.3.1}
+\contentsline {subsubsection}{\numberline {6.16.3.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parameter()}{72}{subsubsection.6.16.3.2}
+\contentsline {subsubsection}{\numberline {6.16.3.3}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parameter\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/4]}}{73}{subsubsection.6.16.3.3}
+\contentsline {subsubsection}{\numberline {6.16.3.4}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parameter\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/4]}}{73}{subsubsection.6.16.3.4}
+\contentsline {subsubsection}{\numberline {6.16.3.5}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parameter\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [3/4]}}{74}{subsubsection.6.16.3.5}
+\contentsline {subsubsection}{\numberline {6.16.3.6}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parameter\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [4/4]}}{74}{subsubsection.6.16.3.6}
+\contentsline {subsection}{\numberline {6.16.4}Member Data Documentation}{75}{subsection.6.16.4}
+\contentsline {subsubsection}{\numberline {6.16.4.1}charts}{75}{subsubsection.6.16.4.1}
+\contentsline {subsubsection}{\numberline {6.16.4.2}effect}{75}{subsubsection.6.16.4.2}
+\contentsline {subsubsection}{\numberline {6.16.4.3}effects}{75}{subsubsection.6.16.4.3}
+\contentsline {subsubsection}{\numberline {6.16.4.4}files}{76}{subsubsection.6.16.4.4}
+\contentsline {subsubsection}{\numberline {6.16.4.5}parameters}{76}{subsubsection.6.16.4.5}
+\contentsline {section}{\numberline {6.17}Encoder Class Reference}{76}{section.6.17}
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{77}{subsection.6.17.1}
+\contentsline {subsection}{\numberline {6.17.2}Member Function Documentation}{78}{subsection.6.17.2}
+\contentsline {subsubsection}{\numberline {6.17.2.1}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Input()}{78}{subsubsection.6.17.2.1}
+\contentsline {subsubsection}{\numberline {6.17.2.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output()}{78}{subsubsection.6.17.2.2}
+\contentsline {subsubsection}{\numberline {6.17.2.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tree()}{79}{subsubsection.6.17.2.3}
+\contentsline {subsection}{\numberline {6.17.3}Member Data Documentation}{80}{subsection.6.17.3}
+\contentsline {subsubsection}{\numberline {6.17.3.1}bitstream}{80}{subsubsection.6.17.3.1}
+\contentsline {subsubsection}{\numberline {6.17.3.2}fs}{80}{subsubsection.6.17.3.2}
+\contentsline {subsubsection}{\numberline {6.17.3.3}input}{80}{subsubsection.6.17.3.3}
+\contentsline {subsubsection}{\numberline {6.17.3.4}output}{81}{subsubsection.6.17.3.4}
+\contentsline {section}{\numberline {6.18}File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:Endianess Struct Reference}{81}{section.6.18}
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{81}{subsection.6.18.1}
+\contentsline {subsection}{\numberline {6.18.2}Member Enumeration Documentation}{81}{subsection.6.18.2}
+\contentsline {subsubsection}{\numberline {6.18.2.1}endianess}{81}{subsubsection.6.18.2.1}
+\contentsline {section}{\numberline {6.19}Equalizer Class Reference}{81}{section.6.19}
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{82}{subsection.6.19.1}
+\contentsline {subsection}{\numberline {6.19.2}Member Function Documentation}{82}{subsection.6.19.2}
+\contentsline {subsubsection}{\numberline {6.19.2.1}apply()}{82}{subsubsection.6.19.2.1}
+\contentsline {subsubsection}{\numberline {6.19.2.2}filter()}{83}{subsubsection.6.19.2.2}
+\contentsline {subsubsection}{\numberline {6.19.2.3}high\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shelf\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Filter()}{84}{subsubsection.6.19.2.3}
+\contentsline {subsubsection}{\numberline {6.19.2.4}low\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shelf\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Filter()}{84}{subsubsection.6.19.2.4}
+\contentsline {subsubsection}{\numberline {6.19.2.5}peaking\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Filter()}{85}{subsubsection.6.19.2.5}
+\contentsline {section}{\numberline {6.20}File Class Reference}{86}{section.6.20}
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{87}{subsection.6.20.1}
+\contentsline {subsection}{\numberline {6.20.2}Constructor \& Destructor Documentation}{87}{subsection.6.20.2}
+\contentsline {subsubsection}{\numberline {6.20.2.1}File()}{87}{subsubsection.6.20.2.1}
+\contentsline {subsection}{\numberline {6.20.3}Member Function Documentation}{88}{subsection.6.20.3}
+\contentsline {subsubsection}{\numberline {6.20.3.1}exists()}{88}{subsubsection.6.20.3.1}
+\contentsline {subsubsection}{\numberline {6.20.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cursor()}{89}{subsubsection.6.20.3.2}
+\contentsline {subsubsection}{\numberline {6.20.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Filename()}{89}{subsubsection.6.20.3.3}
+\contentsline {subsubsection}{\numberline {6.20.3.4}read()}{89}{subsubsection.6.20.3.4}
+\contentsline {subsubsection}{\numberline {6.20.3.5}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Number()}{90}{subsubsection.6.20.3.5}
+\contentsline {subsubsection}{\numberline {6.20.3.6}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Text()}{91}{subsubsection.6.20.3.6}
+\contentsline {subsubsection}{\numberline {6.20.3.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cursor()}{92}{subsubsection.6.20.3.7}
+\contentsline {subsubsection}{\numberline {6.20.3.8}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Filename()}{93}{subsubsection.6.20.3.8}
+\contentsline {subsubsection}{\numberline {6.20.3.9}size()}{93}{subsubsection.6.20.3.9}
+\contentsline {subsubsection}{\numberline {6.20.3.10}write()}{94}{subsubsection.6.20.3.10}
+\contentsline {subsubsection}{\numberline {6.20.3.11}write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Number()}{95}{subsubsection.6.20.3.11}
+\contentsline {subsubsection}{\numberline {6.20.3.12}write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Text()}{95}{subsubsection.6.20.3.12}
+\contentsline {section}{\numberline {6.21}W\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:Header Struct Reference}{96}{section.6.21}
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{97}{subsection.6.21.1}
+\contentsline {subsection}{\numberline {6.21.2}Member Data Documentation}{97}{subsection.6.21.2}
+\contentsline {subsubsection}{\numberline {6.21.2.1}audioformat}{97}{subsubsection.6.21.2.1}
+\contentsline {subsubsection}{\numberline {6.21.2.2}bitspersample}{97}{subsubsection.6.21.2.2}
+\contentsline {subsubsection}{\numberline {6.21.2.3}blockalign}{98}{subsubsection.6.21.2.3}
+\contentsline {subsubsection}{\numberline {6.21.2.4}byterate}{98}{subsubsection.6.21.2.4}
+\contentsline {subsubsection}{\numberline {6.21.2.5}chunk\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ID}{98}{subsubsection.6.21.2.5}
+\contentsline {subsubsection}{\numberline {6.21.2.6}chunksize}{98}{subsubsection.6.21.2.6}
+\contentsline {subsubsection}{\numberline {6.21.2.7}format}{98}{subsubsection.6.21.2.7}
+\contentsline {subsubsection}{\numberline {6.21.2.8}numchannels}{99}{subsubsection.6.21.2.8}
+\contentsline {subsubsection}{\numberline {6.21.2.9}samplerate}{99}{subsubsection.6.21.2.9}
+\contentsline {subsubsection}{\numberline {6.21.2.10}subchunk1\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ID}{99}{subsubsection.6.21.2.10}
+\contentsline {subsubsection}{\numberline {6.21.2.11}subchunk1size}{99}{subsubsection.6.21.2.11}
+\contentsline {subsubsection}{\numberline {6.21.2.12}subchunk2\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ID}{99}{subsubsection.6.21.2.12}
+\contentsline {subsubsection}{\numberline {6.21.2.13}subchunk2size}{100}{subsubsection.6.21.2.13}
+\contentsline {section}{\numberline {6.22}H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model Struct Reference}{100}{section.6.22}
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{100}{subsection.6.22.1}
+\contentsline {subsection}{\numberline {6.22.2}Member Enumeration Documentation}{100}{subsection.6.22.2}
+\contentsline {subsubsection}{\numberline {6.22.2.1}hrtfmodel}{100}{subsubsection.6.22.2.1}
+\contentsline {section}{\numberline {6.23}Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type Struct Reference}{101}{section.6.23}
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{101}{subsection.6.23.1}
+\contentsline {subsection}{\numberline {6.23.2}Member Enumeration Documentation}{101}{subsection.6.23.2}
+\contentsline {subsubsection}{\numberline {6.23.2.1}logtype}{101}{subsubsection.6.23.2.1}
+\contentsline {section}{\numberline {6.24}Output\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Device Class Reference}{101}{section.6.24}
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{103}{subsection.6.24.1}
+\contentsline {subsection}{\numberline {6.24.2}Constructor \& Destructor Documentation}{103}{subsection.6.24.2}
+\contentsline {subsubsection}{\numberline {6.24.2.1}Output\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Device()}{103}{subsubsection.6.24.2.1}
+\contentsline {subsection}{\numberline {6.24.3}Member Function Documentation}{103}{subsection.6.24.3}
+\contentsline {subsubsection}{\numberline {6.24.3.1}bytes\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Available()}{104}{subsubsection.6.24.3.1}
+\contentsline {subsubsection}{\numberline {6.24.3.2}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data()}{104}{subsubsection.6.24.3.2}
+\contentsline {subsubsection}{\numberline {6.24.3.3}send()}{104}{subsubsection.6.24.3.3}
+\contentsline {subsubsection}{\numberline {6.24.3.4}test()}{105}{subsubsection.6.24.3.4}
+\contentsline {subsubsection}{\numberline {6.24.3.5}write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data()}{106}{subsubsection.6.24.3.5}
+\contentsline {subsection}{\numberline {6.24.4}Member Data Documentation}{106}{subsection.6.24.4}
+\contentsline {subsubsection}{\numberline {6.24.4.1}buffer}{106}{subsubsection.6.24.4.1}
+\contentsline {subsubsection}{\numberline {6.24.4.2}buffersize}{106}{subsubsection.6.24.4.2}
+\contentsline {subsubsection}{\numberline {6.24.4.3}cursor\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}read}{106}{subsubsection.6.24.4.3}
+\contentsline {subsubsection}{\numberline {6.24.4.4}cursor\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}write}{107}{subsubsection.6.24.4.4}
+\contentsline {section}{\numberline {6.25}Panning Class Reference}{107}{section.6.25}
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{107}{subsection.6.25.1}
+\contentsline {subsection}{\numberline {6.25.2}Member Function Documentation}{107}{subsection.6.25.2}
+\contentsline {subsubsection}{\numberline {6.25.2.1}apply()}{107}{subsubsection.6.25.2.1}
+\contentsline {section}{\numberline {6.26}Process\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Manager Class Reference}{108}{section.6.26}
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{109}{subsection.6.26.1}
+\contentsline {subsection}{\numberline {6.26.2}Constructor \& Destructor Documentation}{109}{subsection.6.26.2}
+\contentsline {subsubsection}{\numberline {6.26.2.1}Process\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Manager()}{109}{subsubsection.6.26.2.1}
+\contentsline {subsection}{\numberline {6.26.3}Member Function Documentation}{110}{subsection.6.26.3}
+\contentsline {subsubsection}{\numberline {6.26.3.1}apply\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effect()}{110}{subsubsection.6.26.3.1}
+\contentsline {subsubsection}{\numberline {6.26.3.2}decode()}{111}{subsubsection.6.26.3.2}
+\contentsline {subsubsection}{\numberline {6.26.3.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Input()}{112}{subsubsection.6.26.3.3}
+\contentsline {subsubsection}{\numberline {6.26.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output()}{112}{subsubsection.6.26.3.4}
+\contentsline {subsection}{\numberline {6.26.4}Member Data Documentation}{113}{subsection.6.26.4}
+\contentsline {subsubsection}{\numberline {6.26.4.1}channels}{113}{subsubsection.6.26.4.1}
+\contentsline {subsubsection}{\numberline {6.26.4.2}cursor}{113}{subsubsection.6.26.4.2}
+\contentsline {subsubsection}{\numberline {6.26.4.3}fs}{114}{subsubsection.6.26.4.3}
+\contentsline {subsubsection}{\numberline {6.26.4.4}input}{114}{subsubsection.6.26.4.4}
+\contentsline {subsubsection}{\numberline {6.26.4.5}N\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}RG}{114}{subsubsection.6.26.4.5}
+\contentsline {subsubsection}{\numberline {6.26.4.6}O\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}LD}{114}{subsubsection.6.26.4.6}
+\contentsline {subsubsection}{\numberline {6.26.4.7}output}{114}{subsubsection.6.26.4.7}
+\contentsline {subsubsection}{\numberline {6.26.4.8}samples}{115}{subsubsection.6.26.4.8}
+\contentsline {subsubsection}{\numberline {6.26.4.9}total}{115}{subsubsection.6.26.4.9}
+\contentsline {section}{\numberline {6.27}Reverb Class Reference}{115}{section.6.27}
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{116}{subsection.6.27.1}
+\contentsline {subsection}{\numberline {6.27.2}Member Function Documentation}{116}{subsection.6.27.2}
+\contentsline {subsubsection}{\numberline {6.27.2.1}apply()}{116}{subsubsection.6.27.2.1}
+\contentsline {subsubsection}{\numberline {6.27.2.2}combfilter()}{117}{subsubsection.6.27.2.2}
+\contentsline {subsubsection}{\numberline {6.27.2.3}feedforwardfilter()}{118}{subsubsection.6.27.2.3}
+\contentsline {subsubsection}{\numberline {6.27.2.4}lowpassfeedbackfilter()}{118}{subsubsection.6.27.2.4}
+\contentsline {subsubsection}{\numberline {6.27.2.5}schroederdiffusionfilter()}{119}{subsubsection.6.27.2.5}
+\contentsline {subsubsection}{\numberline {6.27.2.6}schroederfilter()}{120}{subsubsection.6.27.2.6}
+\contentsline {section}{\numberline {6.28}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bitstream Class Reference}{121}{section.6.28}
+\contentsline {subsection}{\numberline {6.28.1}Detailed Description}{122}{subsection.6.28.1}
+\contentsline {subsection}{\numberline {6.28.2}Member Function Documentation}{122}{subsection.6.28.2}
+\contentsline {subsubsection}{\numberline {6.28.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Variable()}{122}{subsubsection.6.28.2.1}
+\contentsline {subsection}{\numberline {6.28.3}Member Data Documentation}{123}{subsection.6.28.3}
+\contentsline {subsubsection}{\numberline {6.28.3.1}channels}{123}{subsubsection.6.28.3.1}
+\contentsline {subsubsection}{\numberline {6.28.3.2}fs}{123}{subsubsection.6.28.3.2}
+\contentsline {subsubsection}{\numberline {6.28.3.3}gain\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}downmix}{123}{subsubsection.6.28.3.3}
+\contentsline {subsubsection}{\numberline {6.28.3.4}gain\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}FE}{123}{subsubsection.6.28.3.4}
+\contentsline {subsubsection}{\numberline {6.28.3.5}gain\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}surround}{124}{subsubsection.6.28.3.5}
+\contentsline {section}{\numberline {6.29}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effects Class Reference}{124}{section.6.29}
+\contentsline {subsection}{\numberline {6.29.1}Detailed Description}{125}{subsection.6.29.1}
+\contentsline {subsection}{\numberline {6.29.2}Constructor \& Destructor Documentation}{126}{subsection.6.29.2}
+\contentsline {subsubsection}{\numberline {6.29.2.1}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effects()}{126}{subsubsection.6.29.2.1}
+\contentsline {subsection}{\numberline {6.29.3}Member Function Documentation}{126}{subsection.6.29.3}
+\contentsline {subsubsection}{\numberline {6.29.3.1}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Binaural\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Quality()}{126}{subsubsection.6.29.3.1}
+\contentsline {subsubsection}{\numberline {6.29.3.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bitstream()}{127}{subsubsection.6.29.3.2}
+\contentsline {subsubsection}{\numberline {6.29.3.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Decoding\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type()}{128}{subsubsection.6.29.3.3}
+\contentsline {subsubsection}{\numberline {6.29.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Duration()}{128}{subsubsection.6.29.3.4}
+\contentsline {subsubsection}{\numberline {6.29.3.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Effect()}{129}{subsubsection.6.29.3.5}
+\contentsline {subsubsection}{\numberline {6.29.3.6}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Format()}{129}{subsubsection.6.29.3.6}
+\contentsline {subsubsection}{\numberline {6.29.3.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model()}{130}{subsubsection.6.29.3.7}
+\contentsline {subsubsection}{\numberline {6.29.3.8}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Input()}{131}{subsubsection.6.29.3.8}
+\contentsline {subsubsection}{\numberline {6.29.3.9}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Source()}{132}{subsubsection.6.29.3.9}
+\contentsline {subsubsection}{\numberline {6.29.3.10}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type()}{133}{subsubsection.6.29.3.10}
+\contentsline {subsection}{\numberline {6.29.4}Member Data Documentation}{134}{subsection.6.29.4}
+\contentsline {subsubsection}{\numberline {6.29.4.1}fs}{134}{subsubsection.6.29.4.1}
+\contentsline {section}{\numberline {6.30}Upmix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Type Struct Reference}{134}{section.6.30}
+\contentsline {subsection}{\numberline {6.30.1}Detailed Description}{134}{subsection.6.30.1}
+\contentsline {subsection}{\numberline {6.30.2}Member Enumeration Documentation}{134}{subsection.6.30.2}
+\contentsline {subsubsection}{\numberline {6.30.2.1}upmixtype}{134}{subsubsection.6.30.2.1}
+\contentsline {section}{\numberline {6.31}W\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File Class Reference}{135}{section.6.31}
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{136}{subsection.6.31.1}
+\contentsline {subsection}{\numberline {6.31.2}Constructor \& Destructor Documentation}{136}{subsection.6.31.2}
+\contentsline {subsubsection}{\numberline {6.31.2.1}W\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/3]}}{136}{subsubsection.6.31.2.1}
+\contentsline {subsubsection}{\numberline {6.31.2.2}W\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/3]}}{137}{subsubsection.6.31.2.2}
+\contentsline {subsubsection}{\numberline {6.31.2.3}W\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}File()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [3/3]}}{137}{subsubsection.6.31.2.3}
+\contentsline {subsection}{\numberline {6.31.3}Member Function Documentation}{138}{subsection.6.31.3}
+\contentsline {subsubsection}{\numberline {6.31.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cursor()}{138}{subsubsection.6.31.3.1}
+\contentsline {subsubsection}{\numberline {6.31.3.2}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Samples()}{138}{subsubsection.6.31.3.2}
+\contentsline {subsubsection}{\numberline {6.31.3.3}samples()}{139}{subsubsection.6.31.3.3}
+\contentsline {subsubsection}{\numberline {6.31.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cursor()}{140}{subsubsection.6.31.3.4}
+\contentsline {subsubsection}{\numberline {6.31.3.5}write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Samples()}{140}{subsubsection.6.31.3.5}
+\contentsline {subsection}{\numberline {6.31.4}Member Data Documentation}{141}{subsection.6.31.4}
+\contentsline {subsubsection}{\numberline {6.31.4.1}duration}{141}{subsubsection.6.31.4.1}
+\contentsline {subsubsection}{\numberline {6.31.4.2}header}{141}{subsubsection.6.31.4.2}
+\contentsline {chapter}{\numberline {7}File Documentation}{143}{chapter.7}
+\contentsline {section}{\numberline {7.1}src/tools/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Logger.cpp File Reference}{143}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{144}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Function Documentation}{144}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}consolelog()}{144}{subsubsection.7.1.2.1}
+\contentsline {subsubsection}{\numberline {7.1.2.2}tab()}{145}{subsubsection.7.1.2.2}
+\contentsline {subsection}{\numberline {7.1.3}Variable Documentation}{146}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.3.1}black}{146}{subsubsection.7.1.3.1}
+\contentsline {subsubsection}{\numberline {7.1.3.2}blue}{147}{subsubsection.7.1.3.2}
+\contentsline {subsubsection}{\numberline {7.1.3.3}bold}{147}{subsubsection.7.1.3.3}
+\contentsline {subsubsection}{\numberline {7.1.3.4}cyan}{147}{subsubsection.7.1.3.4}
+\contentsline {subsubsection}{\numberline {7.1.3.5}green}{147}{subsubsection.7.1.3.5}
+\contentsline {subsubsection}{\numberline {7.1.3.6}grey}{148}{subsubsection.7.1.3.6}
+\contentsline {subsubsection}{\numberline {7.1.3.7}italic}{148}{subsubsection.7.1.3.7}
+\contentsline {subsubsection}{\numberline {7.1.3.8}magenta}{148}{subsubsection.7.1.3.8}
+\contentsline {subsubsection}{\numberline {7.1.3.9}red}{148}{subsubsection.7.1.3.9}
+\contentsline {subsubsection}{\numberline {7.1.3.10}reset}{148}{subsubsection.7.1.3.10}
+\contentsline {subsubsection}{\numberline {7.1.3.11}yellow}{148}{subsubsection.7.1.3.11}

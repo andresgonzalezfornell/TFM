@@ -48,23 +48,6 @@
         <topic label="fs" href="class_audio_signal.html#acc2dc31d0dc3ca222df68a88c00cf2c9"/>
         <topic label="size" href="class_audio_signal.html#a44e595328705720f380613f1675dbdd1"/>
       </topic>
-      <topic label="AudioStream" href="class_audio_stream.html">
-        <topic label="TimeSlot" href="struct_audio_stream_1_1_time_slot.html">
-          <topic label="end" href="struct_audio_stream_1_1_time_slot.html#a8e20d0e50a37bade2849f0c09f1034cc"/>
-          <topic label="start" href="struct_audio_stream_1_1_time_slot.html#ae5191a76f4255eec3ea4fb6f7c3a5246"/>
-        </topic>
-        <topic label="AudioStream" href="class_audio_stream.html#ab2e106f7e2f70f0cfb1d7b171da71f16"/>
-        <topic label="AudioStream" href="class_audio_stream.html#aea68e011ea0d4cf15a527492155a77c1"/>
-        <topic label="~AudioStream" href="class_audio_stream.html#a480e5d3468bfe9357dd6c40649b1e449"/>
-        <topic label="getSample" href="class_audio_stream.html#a34fa6ead0ccde4cbe9db7435b3c1fe7a"/>
-        <topic label="getSamples" href="class_audio_stream.html#ae540add8cdf33421e2e3f9014cfa8c52"/>
-        <topic label="isAvailable" href="class_audio_stream.html#ac129ca09a55aaeb905bb73ff9440b8ae"/>
-        <topic label="pop" href="class_audio_stream.html#ab425433b7209483b2fb6c347a78483b5"/>
-        <topic label="push" href="class_audio_stream.html#ab2ceba569c33b8b5babc7294a2a42a83"/>
-        <topic label="setSample" href="class_audio_stream.html#a5ac03049345307942841bdfcdb75a7e8"/>
-        <topic label="fs" href="class_audio_stream.html#ace8ac0e7fbaa176c74804b7133c03f45"/>
-        <topic label="timestamp" href="class_audio_stream.html#aeee7107c25a1ab45b8076e422864a518"/>
-      </topic>
       <topic label="AudioTest" href="class_audio_test.html">
         <topic label="AudioTest" href="class_audio_test.html#a8732c48308ca1352a4d89803553b395e"/>
         <topic label="~AudioTest" href="class_audio_test.html#ae37879db71b1540d84aa37a093978192"/>
@@ -266,6 +249,8 @@
         <topic label="cursor" href="class_process_manager.html#a337af1b32b2f6bf94ed98ef98e6d1226"/>
         <topic label="fs" href="class_process_manager.html#ae7ce9ead957c4f78d74206baf1837a59"/>
         <topic label="input" href="class_process_manager.html#aafb2937f6a2f261b1581917ba872ba9b"/>
+        <topic label="NRG" href="class_process_manager.html#a70a556eaff879d870603033a9ffcbc5b"/>
+        <topic label="OLD" href="class_process_manager.html#a3c015ada1a03ef508a542f9b2f6a8ff3"/>
         <topic label="output" href="class_process_manager.html#a135c866f06b0042c2835cd9ecefa05f3"/>
         <topic label="samples" href="class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a"/>
         <topic label="total" href="class_process_manager.html#abcf97b9835a8dfb0d55e37069663cda9"/>
@@ -294,6 +279,7 @@
             <topic label="LFE" href="struct_s_a_c_bitstream_1_1_channel_type.html#a31c32b34085c06a1c58d920ca28c17c9a9ea1b895ad06ec34500fa5ce86f261d4"/>
           </topic>
         </topic>
+        <topic label="SACBitstream" href="class_s_a_c_bitstream.html#ac9a2c174ea2d49d0804dc33e75690984"/>
         <topic label="SACBitstream" href="class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533"/>
         <topic label="~SACBitstream" href="class_s_a_c_bitstream.html#a4a416e485fb3a14a7bafb0a5542d7945"/>
         <topic label="getVariable" href="class_s_a_c_bitstream.html#ad0f39852ca2853efa15be087ce68c3b9"/>
@@ -367,7 +353,6 @@
     <topic label="Class Index" href="classes.html"/>
     <topic label="Class Hierarchy" href="hierarchy.html">
       <topic label="AudioSignal" href="class_audio_signal.html"/>
-      <topic label="AudioStream" href="class_audio_stream.html"/>
       <topic label="BinauralQuality" href="struct_binaural_quality.html"/>
       <topic label="Channel" href="class_channel.html"/>
       <topic label="SACBitstream::ChannelType" href="struct_s_a_c_bitstream_1_1_channel_type.html"/>
@@ -408,7 +393,6 @@
       </topic>
       <topic label="Reverb" href="class_reverb.html"/>
       <topic label="SACBitstream" href="class_s_a_c_bitstream.html"/>
-      <topic label="AudioStream::TimeSlot" href="struct_audio_stream_1_1_time_slot.html"/>
       <topic label="UpmixType" href="struct_upmix_type.html"/>
     </topic>
     <topic label="Class Members" href="functions.html">
@@ -463,7 +447,6 @@
         <topic label="interface" href="dir_650ee533936399e683a30afb9473a469.html">
           <topic label="AudioInfo.cpp" href="_audio_info_8cpp_source.html"/>
           <topic label="AudioInfo.h" href="_audio_info_8h_source.html"/>
-          <topic label="AudioObject.h" href="_audio_object_8h_source.html"/>
           <topic label="AudioOutput.cpp" href="_audio_output_8cpp_source.html"/>
           <topic label="AudioOutput.h" href="_audio_output_8h_source.html"/>
           <topic label="ChannelsList.cpp" href="_channels_list_8cpp_source.html"/>

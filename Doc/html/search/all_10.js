@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sacbitstream',['SACBitstream',['../class_s_a_c_bitstream.html',1,'SACBitstream'],['../class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533',1,'SACBitstream::SACBitstream()']]],
+  ['sacbitstream',['SACBitstream',['../class_s_a_c_bitstream.html',1,'SACBitstream'],['../class_s_a_c_bitstream.html#ac9a2c174ea2d49d0804dc33e75690984',1,'SACBitstream::SACBitstream()'],['../class_s_a_c_bitstream.html#a46fe059e932c2e72d07b4dbf982e6533',1,'SACBitstream::SACBitstream(std::string filename)']]],
   ['saceffects',['SACEffects',['../class_s_a_c_effects.html',1,'SACEffects'],['../class_s_a_c_effects.html#aad64fe6a36a53d1ffeae59bccbd8af33',1,'SACEffects::SACEffects()']]],
   ['samplerate',['samplerate',['../struct_w_a_v_file_1_1_header.html#a271b0090295f7276b1d91683bc2a0f74',1,'WAVFile::Header']]],
   ['samples',['samples',['../class_process_manager.html#aac9c5dea3ac0ed72df1f6f780c62010a',1,'ProcessManager::samples()'],['../class_w_a_v_file.html#a9ca294afee7e0c17ac00cd37b56dafd6',1,'WAVFile::samples()']]],
@@ -37,7 +37,7 @@ var searchData=
   ['setupmixtype',['setUpmixType',['../class_s_a_c_effects.html#afd3f1f8b005595d4adf06d67c2bd556c',1,'SACEffects']]],
   ['setvolume',['setVolume',['../class_audio_output.html#a97008d6a17c3dc03c64e421f563e04b8',1,'AudioOutput::setVolume()'],['../class_channel.html#a381d4ad81038cb9bcf393fa47b13cdb0',1,'Channel::setVolume()']]],
   ['size',['size',['../class_audio_signal.html#a44e595328705720f380613f1675dbdd1',1,'AudioSignal::size()'],['../class_file.html#afcaf98328e440ccaedb20e310dc6b6c4',1,'File::size()']]],
-  ['start',['start',['../struct_audio_stream_1_1_time_slot.html#ae5191a76f4255eec3ea4fb6f7c3a5246',1,'AudioStream::TimeSlot::start()'],['../class_audio_output.html#a686dd972cb2043552063b34ae67eaadc',1,'AudioOutput::start()']]],
+  ['start',['start',['../class_audio_output.html#a686dd972cb2043552063b34ae67eaadc',1,'AudioOutput']]],
   ['stereo',['stereo',['../struct_upmix_type.html#a6e154a570349b46c268b300b13d65dafa43533cc1c81e6c6faa432117de399809',1,'UpmixType']]],
   ['stop',['stop',['../class_audio_output.html#a3f4858aa5c581613e32b30ee6c5339a6',1,'AudioOutput']]],
   ['subchunk1id',['subchunk1ID',['../struct_w_a_v_file_1_1_header.html#ae52803bdbed54de73d48d2c0bf45099d',1,'WAVFile::Header']]],

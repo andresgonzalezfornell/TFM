@@ -2,7 +2,6 @@ var dir_650ee533936399e683a30afb9473a469 =
 [
     [ "AudioInfo.cpp", "_audio_info_8cpp_source.html", null ],
     [ "AudioInfo.h", "_audio_info_8h_source.html", null ],
-    [ "AudioObject.h", "_audio_object_8h_source.html", null ],
     [ "AudioOutput.cpp", "_audio_output_8cpp_source.html", null ],
     [ "AudioOutput.h", "_audio_output_8h_source.html", null ],
     [ "ChannelsList.cpp", "_channels_list_8cpp_source.html", null ],
