@@ -166,7 +166,7 @@ int main(int argc, char *argv[]) {
 			return 0;
 		}
 	}
-	if (source.empty() || input.empty() || output.empty()) {
+    if (source.empty() || input.empty() || output.empty() || effect.empty()) {
 		std::cout << "\nusage error\n";
 		printHelp(app);
 		return 1;
