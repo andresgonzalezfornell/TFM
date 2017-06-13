@@ -1,8 +1,6 @@
 # Folders
 Debug
-bin/commandline/*
-bin/interface/*
-bin/.qmake.stash
+bin
 Test/*
 
 # Qt
