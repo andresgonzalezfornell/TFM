@@ -730,16 +730,19 @@ EXPORT_ACTIVE_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(ARCHS))
 
 # Build rules
 
-$(TARGET): /usr/local/lib/libfftw3.a lib/AFsp/lib/libtsp.a lib/SAC/sac_dec/lib/libsac_dec.a $(OBJECTS) $(OBJECTS_EFFECTS)
+$(TARGET): folder /usr/local/lib/libfftw3.a lib/AFsp/lib/libtsp.a lib/SAC/sac_dec/lib/libsac_dec.a $(OBJECTS) $(OBJECTS_EFFECTS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS) $(OBJECTS_EFFECTS) $(LIBS)
 
-force:	/usr/local/lib/libfftw3.a $(OBJECTS) $(OBJECTS_EFFECTS) $(OBJECTS_LIBS)
+force: folder /usr/local/lib/libfftw3.a $(OBJECTS) $(OBJECTS_EFFECTS) $(OBJECTS_LIBS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)$(OBJECTS_EFFECTS) $(OBJECTS_LIBS) $(LIBS)
 
 clean:
 	-$(DEL_FILE) moc_predefs.h
 	-$(DEL_FILE) $(OBJECTS) $(OBJECTS_EFFECTS) $(OBJECTS_LIBS)
 	-$(DEL_FILE) *~ core *.core
+
+folder:
+	@mkdir -p $(DIR)
 	
 # Install
 
