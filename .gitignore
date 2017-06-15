@@ -1,11 +1,15 @@
+.tmp
+
 # Folders
 Debug
 bin
-Test/*
+configure_src
 
 # Qt
 *.pro.user
-*.pro
+commandline_macos.pro
+commandline_linux.pro
+.qmake.stash
 lib/SAC/sac_dec/libsac_dec.pro.user
 lib/SAC/sac_dec/sac_dec.pro.user
 lib/SAC/sac_enc/libsac_enc.pro.user
@@ -21,9 +25,6 @@ src/.cproject
 src/.project
 src/.settings/language.settings.xml
 >>>>>>> Stashed changes
-
-# Makefiles
-Makefile
 
 # Compiled Object files
 *.slo
