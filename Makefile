@@ -747,7 +747,7 @@ folder:
 # Install
 
 configure: configure_src/main.o
-	$(CXX) $(CXXFLAGS) -o configure configure_src/main.o
+	$(CXX) $(CXXFLAGS) -o configure_OS configure_src/main.o
 	
 clean_configure:
 	-$(DEL_FILE) configure_src/main.o
