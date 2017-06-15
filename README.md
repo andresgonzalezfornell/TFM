@@ -14,9 +14,11 @@ PREREQUISITES
 	- Linux or Mac OS X
 	- 32bits system architecture or higher
 	- C++11 compiler or higher
+    - FTTw3 libraries (install it in http://www.fftw.org/)
 	- Qt libraries (only for interface)
 
 HOW TO BUILD
+Before install you need to meet the prerequisites.
 
 	- commandline
 		In files folder, execute the following commands on the terminal:
@@ -51,9 +53,12 @@ HOW TO ADD NEW EFFECTS
 			make
 
 	- interface
-		1. Copy the new effect source file (.cpp) and header file (.h) to src/effects.		2. Copy the user interface control description file (.xml) to src/interface.
+		1. Copy the new effect source file (.cpp) and header file (.h) to src/effects.
+		2. Copy the user interface control description file (.xml) to src/interface.
 		3. Open Qt project (interface.pro) with Qt Creator and configure project if it is required.
-		4. On Qt Creator, add the three copied files to the project by right-clicking on the project folder and clicking on Add new files.		5. On Qt Creator, add the user interface control description file to media.qrc by right-clicking on media.qrc file and clicking on Open with editor. Then select prefix folder /imports and click on Add and Add files.		6. Add the following line on the top of file src/effects/Effect.h:
+		4. On Qt Creator, add the three copied files to the project by right-clicking on the project folder and clicking on Add new files.
+		5. On Qt Creator, add the user interface control description file to media.qrc by right-clicking on media.qrc file and clicking on Open with editor. Then select prefix folder /imports and click on Add and Add files.
+		6. Add the following line on the top of file src/effects/Effect.h:
 			#include “HeaderFile.h”
 		7. Add the following line in file src/effects/Effect.h according to description 2. LIST:
 			EFFECT(EffectClass, “EffectClass”)
