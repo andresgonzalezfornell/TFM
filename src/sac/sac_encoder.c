@@ -42,6 +42,9 @@ char *sac_encode(const char *input_filename, const char *output_filename, const 
     Stream bitstream;
     long int input_channels;
     long int samples;
+    if(buried) {
+        bitstream_filename = NULL;
+    }
     InitStream(&bitstream, (char *)bitstream_filename, STREAM_WRITE);
     input = AFopnRead(input_filename, &samples, &input_channels, &fs, NULL);
     if(input_channels != 6) {
