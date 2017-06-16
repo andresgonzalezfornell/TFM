@@ -24,6 +24,8 @@ Before install you need to meet the prerequisites.
 		In files folder, execute the following commands on the terminal:
 			./configure
 			make
+        In case of errors with links to SAC library try to compile including SAC library from source code by executing the following command instead:
+            make force
 		It creates a binary application in bin/commandline/saceffects that you can run.
 
 	- interface
