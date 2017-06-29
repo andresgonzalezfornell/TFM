@@ -211,6 +211,8 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
             // SAOC parameters
             for (int channel = 0; channel < this->channels; channel++) {
                 this->OLD[channel][chunk] = this->NRG[channel][chunk] / NRG_max;
+                std::free(input_effect[channel]);
+                std::free(output_effect[channel]);
             }
             std::free(input_effect);
             std::free(output_effect);
@@ -242,6 +244,12 @@ void ProcessManager::clear() {
     this->cursor = 0;
     this->total = 0;
     if (this->allocated) {
+        for (int channel = 0; channel < this->channels; channel++) {
+            std::free(this->input[channel]);
+            std::free(this->output[channel]);
+            std::free(this->NRG[channel]);
+            std::free(this->OLD[channel]);
+        }
         std::free(this->input);
         std::free(this->output);
         std::free(this->NRG);
