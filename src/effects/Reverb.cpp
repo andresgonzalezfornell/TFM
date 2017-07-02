@@ -23,33 +23,63 @@ void Reverb::apply(float **input, float **output, int samples, std::vector<SACBi
     double roomsize = getDouble(params["roomsize"]);
     double damping = getDouble(params["damping"]);
     std::string method = params["method"];
+    int **delay = (int **)std::malloc(2*sizeof(int *));
+    if (method == "JCRev") {
+        delay[0] = (int *)std::malloc(4*sizeof(int));
+        delay[0][0] = std::round(0.108821*this->fs);
+        delay[0][1] = std::round(0.113356*this->fs);
+        delay[0][2] = std::round(0.122426*this->fs);
+        delay[0][3] = std::round(0.133764*this->fs);
+        delay[1] = (int *)std::malloc(3*sizeof(int));
+        delay[1][0] = std::round(0.023832*this->fs);
+        delay[1][1] = std::round(0.007642*this->fs);
+        delay[1][2] = std::round(0.002562*this->fs);
+    } else if (method == "freeverb") {
+        delay[0] = (int *)std::malloc(8*sizeof(int));
+        delay[0][0] = std::round(0.035306*this->fs);
+        delay[0][1] = std::round(0.036667*this->fs);
+        delay[0][2] = std::round(0.033810*this->fs);
+        delay[0][3] = std::round(0.032245*this->fs);
+        delay[0][4] = std::round(0.028957*this->fs);
+        delay[0][5] = std::round(0.030748*this->fs);
+        delay[0][6] = std::round(0.026939*this->fs);
+        delay[0][7] = std::round(0.025306*this->fs);
+        delay[1] = (int *)std::malloc(4*sizeof(int));
+        delay[1][0] = std::round(0.005102*this->fs);
+        delay[1][1] = std::round(0.012608*this->fs);
+        delay[1][2] = std::round(0.010000*this->fs);
+        delay[1][3] = std::round(0.007732*this->fs);
+    }
     for (channel = 0; channel < (int)channels.size(); channel++) {
         filterindex = 0;
         if (method == "JCRev") {
-            feedforwardfilter(input[channel], output[channel], samples, false, 0.25, 0.742, 4799);
-            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.733, 4999);
-            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.715, 5399);
-            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.697, 5899);
-            schroederfilter(input[channel], output[channel], samples, false, 1, phase, 1051);
-            schroederfilter(output[channel], output[channel], samples, false, 1, phase, 337);
-            schroederfilter(output[channel], output[channel], samples, false, 1, phase, 113);
+            feedforwardfilter(input[channel], output[channel], samples, false, 0.25, 0.742, delay[0][0]);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.733, delay[0][1]);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.715, delay[0][2]);
+            feedforwardfilter(input[channel], output[channel], samples, true, 0.25, 0.697, delay[0][3]);
+            schroederfilter(input[channel], output[channel], samples, false, 1, phase, delay[1][0]);
+            schroederfilter(output[channel], output[channel], samples, false, 1, phase, delay[1][1]);
+            schroederfilter(output[channel], output[channel], samples, false, 1, phase, delay[1][2]);
         } else if (method == "freeverb") {
-            lowpassfeedbackfilter(input[channel], output[channel], samples, false, 0.125, roomsize, damping, 1557);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1617);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1491);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1422);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1277);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1356);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1188);
-            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, 1116);
-            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 225);
-            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 556);
-            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 441);
-            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, 341);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, false, 0.125, roomsize, damping, delay[0][0]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][1]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][2]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][3]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][4]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][5]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][6]);
+            lowpassfeedbackfilter(input[channel], output[channel], samples, true, 0.125, roomsize, damping, delay[0][7]);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, delay[1][0]);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, delay[1][1]);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, delay[1][2]);
+            schroederdiffusionfilter(output[channel], output[channel], samples, false, 1, 0.5, delay[1][3]);
         } else {
             consolelog("Reverb", LogType::error, "unkown method \"" + method + "\"");
         }
     }
+    std::free(delay[0]);
+    std::free(delay[1]);
+    std::free(delay);
 }
 
 /**
