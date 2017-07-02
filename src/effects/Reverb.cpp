@@ -178,9 +178,16 @@ void Reverb::lowpassfeedbackfilter(float *input, float *output, int samples, boo
  */
 void Reverb::combfilter(float *input, float *output, int samples, bool addition, float *a, float *b, int order, float a_delay, float b_delay, int delay) {
     if (a[0] != 0) {
+        // Normalization of coefficients
+        for (int index = 0; index < order + 1; index++) {
+            a[index] /= a[0];
+            b[index] /= a[0];
+        }
         int buffersize;
         if (delay > order) {
             buffersize = delay + 1;
+            a_delay /= a[0];
+            b_delay /= a[0];
         } else {
             buffersize = order + 1;
         }
@@ -193,7 +200,6 @@ void Reverb::combfilter(float *input, float *output, int samples, bool addition,
                 y[channel][filterindex][n] += b[index] * x[channel][filterindex][(buffersize + n - index) % buffersize] - a[index] * y[channel][filterindex][(buffersize + n - index) % buffersize];
             }
             y[channel][filterindex][n] += b_delay * x[channel][filterindex][(buffersize + n - delay) % buffersize] - a_delay * y[channel][filterindex][(buffersize + n - delay) % buffersize];
-            y[channel][filterindex][n] /= a[0];
             if (addition) {
                 output[sample] += y[channel][filterindex][n];
             } else {

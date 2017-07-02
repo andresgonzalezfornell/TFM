@@ -156,6 +156,11 @@ void Equalizer::highShelfFilter(float *input, float *output, int samples, double
  */
 void Equalizer::filter(float *input, float *output, int samples, float *a, float *b, int order) {
     if (a[0] != 0) {
+        // Normalization of coefficients
+        for (int index = 0; index < order + 1; index++) {
+            a[index] /= a[0];
+            b[index] /= a[0];
+        }
         for (int n = 0; n < samples; n++) {
             // Memories update
             for (int index = order; index > 0; index--) {
@@ -168,7 +173,6 @@ void Equalizer::filter(float *input, float *output, int samples, float *a, float
             for (int index = 1; index < order + 1; index++) {
                 y[channel][filterindex][0] += b[index] * x[channel][filterindex][index] - a[index] * y[channel][filterindex][index];
             }
-            y[channel][filterindex][0] /= a[0];
             output[n] = y[channel][filterindex][0];
         }
     }
