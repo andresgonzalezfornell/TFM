@@ -40,6 +40,8 @@ SACEffects::SACEffects(QWidget *framework) :
     this->source = NULL;
     this->input = NULL;
     this->bitstream = NULL;
+    this->muted = false;
+    ui->output_playback->setChecked(true);
     this->setSource("");
     this->reset();
     // Signals - Source
@@ -119,7 +121,7 @@ void SACEffects::pause() {
 void SACEffects::stop() {
     this->pause();
     this->process->cursor = 0;
-    this->setTimer();
+    this->setTimer(QTime(0,0,0,0));
 }
 
 /**
@@ -202,6 +204,7 @@ void SACEffects::setEffect(Effect::effectID effect) {
 void SACEffects::setSource(std::string filename) {
     if (filename != "") {
         this->source = new WAVFile(filename, false);
+        this->stop();
         this->reset();
     }
     bool loaded = this->source->exists();
@@ -688,7 +691,9 @@ void SACEffects::decode() {
  * @param   state               true if bitstream is buried
  */
 void SACEffects::setBuried(bool state) {
+    QObject::blockSignals(true);
     this->buried = state;
+    ui->menu_bitstream_buried->setChecked(state);
     ui->menu_load_bitstream->setEnabled(!state);
     this->setBitstream("");
     if (state) {
@@ -698,6 +703,7 @@ void SACEffects::setBuried(bool state) {
         consolelog("SACEffects", LogType::interaction,
                    "bitstream is not buried now");
     }
+    QObject::blockSignals(false);
 }
 
 /**

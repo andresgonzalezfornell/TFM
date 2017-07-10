@@ -42,7 +42,7 @@ void Equalizer::apply(float **input, float **output, int samples, std::vector<SA
             }
             if (band == 0) {
                 lowShelfFilter(input[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
-            } else if (band == bands) {
+            } else if (band == bands - 1) {
                 highShelfFilter(output[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), order);
             } else {
                 peakingFilter(output[channel], output[channel], samples, frequency[band] / this->fs, pow(10, gain[band] / 20), Q, order);
@@ -157,9 +157,9 @@ void Equalizer::highShelfFilter(float *input, float *output, int samples, double
 void Equalizer::filter(float *input, float *output, int samples, float *a, float *b, int order) {
     if (a[0] != 0) {
         // Normalization of coefficients
-        for (int index = 0; index < order + 1; index++) {
-            a[index] /= a[0];
+        for (int index = order; index >= 0; index--) {
             b[index] /= a[0];
+            a[index] /= a[0];
         }
         for (int n = 0; n < samples; n++) {
             // Memories update
