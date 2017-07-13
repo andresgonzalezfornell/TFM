@@ -156,7 +156,7 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                 input_effect[channel] = (float *) std::malloc(N * sizeof(float));
                 output_effect[channel] = (float *) std::malloc(N * sizeof(float));
                 // Pre-amplifier
-                int pregain = 1;
+                double pregain = 1;
                 switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
@@ -184,16 +184,16 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                     std::memcpy(this->output[channel] + n, input_effect[channel], N*sizeof(float));
                 }
                 // Post-amplifier
-                int postgain = 1;
+                double postgain = 1;
                 switch (this->bitstream->channels[channel]) {
                 case SACBitstream::ChannelType::Ls:
                 case SACBitstream::ChannelType::Lsr:
                 case SACBitstream::ChannelType::Rs:
                 case SACBitstream::ChannelType::Rsr:
-                    postgain = 1/this->bitstream->gain_surround;
+                    postgain = (double) 1 / this->bitstream->gain_surround;
                     break;
                 case SACBitstream::ChannelType::LFE:
-                    postgain = 1/this->bitstream->gain_LFE;
+                    postgain = (double) 1 / this->bitstream->gain_LFE;
                     break;
                 default:
                     break;
@@ -206,7 +206,6 @@ bool ProcessManager::applyEffect(Effect *effect, std::vector<bool> channels,
                 if (NRG[channel][chunk] > NRG_max) {
                     NRG_max = NRG[channel][chunk];
                 }
-
             }
             // SAOC parameters
             for (int channel = 0; channel < this->channels; channel++) {

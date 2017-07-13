@@ -354,7 +354,7 @@ ChannelsCharts::ChannelsCharts(float **input, float **output, ChannelsList *inpu
     this->setTimeCursor(0);
     this->setScope(100);
     ui->scope->setMinimum(10);
-    ui->scope->setMaximum(std::floor(this->samples * 1000 / ChannelsList::fs));
+    ui->scope->setMaximum(std::floor((double) this->samples * 1000 / ChannelsList::fs));
     this->updateSelectors();
     QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(setTimeCursor(int)));
     QObject::connect(ui->cursor, SIGNAL(valueChanged(int)), this, SLOT(plot()));
@@ -438,7 +438,7 @@ void ChannelsCharts::setScope(int time) {
  * @return  number of sample of charts scope
  */
 int ChannelsCharts::getScope() {
-    return std::floor(ui->scope->value() * ChannelsList::fs / 1000);
+    return std::floor((double) ui->scope->value() * ChannelsList::fs / 1000);
 }
 
 /**
